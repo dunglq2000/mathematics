@@ -3,8 +3,13 @@
 
 format: jb-book
 root: intro
+
 parts:
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
+  - caption: Xác suất
+    numbered: true
+    chapters:
+    - file: probability/intro.md
 
