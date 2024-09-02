@@ -3,7 +3,7 @@
 ```{contents}
 ```
 
-## 1. Xác suất là gì?
+## Xác suất là gì?
 
 ```{admonition} **Định nghĩa.** (Định nghĩa cổ điển của xác suất)
 Định nghĩa thống kê của xác suất nói rằng, giả sử trong một phép thử có $n$ khả năng có thể xảy ra. Xét một biến cố $A$ xảy ra khi thực hiện phép thử có $k$ khả năng xảy ra. Khi đó xác suất của biến cố $A$ ký hiệu là $P(A)$ và được tính:
@@ -47,7 +47,7 @@ Gọi $A$ là biến cố tổng số nút của hai con súc sắc bằng 4. Ta
 Như vậy $|\Omega_A| = 3$ và $P(A) = \dfrac{3}{36} = \dfrac{1}{12}$
 ```
 
-### 1.1. Ba tiên đề về sự nhất quán của xác suất
+### Ba tiên đề về sự nhất quán của xác suất
 
 **Tiên đề 1.** Nếu $A$ là một sự kiện và kí hiệu $P(A)$ là **xác suất của** $A$ thì:
 
@@ -67,7 +67,7 @@ $$\begin{equation}
 P(A \cap B) = 0 \Rightarrow P(A \cup B) = P(A) + P(B)
 \end{equation}$$
 
-### 1.2. Không gian xác suất
+### Không gian xác suất
 
 ```{admonition} **Định nghĩa.** (Không gian xác suất)
 Một **không gian xác suất** là một tập hợp $\Omega$ cùng với:
@@ -124,7 +124,7 @@ P(A) & = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) + \su
 
 Đẳng thức $P\left(\bigcup\limits_i A_i\right) = \sum\limits_{i} P(A_i)$ không được suy ra từ $P(A \cup B) = P(A) + P(B)$ mà là một tiên đề trong xác suất. Tiên đề này được đưa ra bởi nhà toán học người Nga Andrei Nikolaievich Kolmogorov.
 
-### 1.3. Phép cộng xác suất mở rộng
+### Phép cộng xác suất mở rộng
 
 Ở tiền đề 3 bên trên, hai biến cố khi đó được gọi là **xung khắc**, nghĩa là nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.
 
@@ -169,7 +169,7 @@ $$   \begin{equation*}
 \end{equation*}$$
 ```
 
-### 1.4. Mô hình xác suất với vô hạn các sự kiện
+### Mô hình xác suất với vô hạn các sự kiện
 
 ```{admonition} **Ví dụ.** (Phân phối Poisson)
 :class: caution
@@ -187,7 +187,7 @@ $$\sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^
 Giả sử ta biết rằng có một xe hơi $X$ đang đậu trên một khúc phố $Z$ và ta quan tâm đến vị trí của $X$ trên khúc phố đó. Ta có thể mô hình $X$ bằng một điểm và $Z$ là một đoạn thẳng và lấy đoạn thẳng đó làm không gian xác suất $\Omega = [a, b]$, $a, b \in \mathbb{R}, a < b$. (mô hình xác suất liên tục này có lực lượng continuum, không đếm được). Sự kiện "xe hơi đỗ chỗ nào đó trên khúc phố" chuyển thành sự kiện "điểm $x$ nằm trong một đoạn thẳng con nào đó trên đoạn thẳng $\Omega = [a, b]$". Ta có thể chọn phân bố xác suất đều trên $\Omega = [a, b]$ theo nghĩa sau: xác suất mỗi đoạn thẳng con trên $\Omega$ tỷ lệ thuận với độ dài của đoạn thẳng con đó, hay $P([c, d]) = (d - c) / (b - a)$.
 ```
 
-### 1.5. Ánh xạ giữa các không gian xác suất
+### Ánh xạ giữa các không gian xác suất
 
 ```{admonition} **Định nghĩa.**
 Một ánh xạ $\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)$ từ một không gian xác suất $(\Omega_1, P_1)$ vào một không gian xác suất $(\Omega_2, P_2)$ được gọi là một **ánh xạ bảo toàn xác suất** nếu nó bảo toàn độ đo xác suất, nghĩa là với mọi tập con $B \subset \Omega_2$ đo được, ta có:
@@ -212,7 +212,7 @@ $$P_2(B) = P_1(\phi^{-1}(B))$$
 
 Giải: vì $\phi$ là song ánh, đối với tính phản xứng chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.
 
-### 1.6. Tích của các không gian xác suất
+### Tích của các không gian xác suất
 
 Nếu $(\Omega_1, P_1)$ và $(\Omega_2, P_2)$ là hai không gian xác suất thì tích $\Omega_1 \times \Omega_2$ cũng có một độ đo xác suất $P$ được xác định bởi $P_1$ và $P_2$ bằng công thức: nếu $A_1 \subset \Omega_1$ và $A_2 \subset \Omega_2$ nằm trong các sigma-đại số tương ứng của $P_1$ và $P_2$ thì:
 
@@ -227,9 +227,9 @@ Tương tự ta có thể định nghĩa tích trực tiếp của $n$ không gi
 Hai phép chiếu tự nhiên từ tích $(\Omega_1, P_1) \times (\Omega_2, P_2)$ của hai không gian xác suất xuống $(\Omega_1, P_1)$ và $(\Omega_2, P_2)$ là hai ánh xạ bảo toàn xác suất.
 ```
 
-## 2. Xác suất có điều kiện
+## Xác suất có điều kiện
 
-### 2.1. Xác suất có điều kiện
+### Xác suất có điều kiện
 
 ```{admonition} **Định nghĩa.**
 Xác suất có điều kiện. Xét hai biến cố $A$ và $B$. Khi đó xác suất xảy ra của biến cố $B$ với điều kiện biến cố $A$ xảy ra là: 
@@ -266,7 +266,7 @@ Tương tự như vậy, $A_i$ xảy ra với điều kiện tất cả $A_1, \l
 
 Cũng từ nhận xét trên, các biến cố có vai trò như nhau nên việc đổi vị trí không thay đổi kết quả $P(A_1 \ldots A_n)$.
 
-### 2.2. Sự độc lập và phụ thuộc của các sự kiện
+### Sự độc lập và phụ thuộc của các sự kiện
 
 Nếu hai biến cố không ảnh hưởng việc xảy ra của nhau thì ta gọi là biến cố độc lập.
 
@@ -293,7 +293,7 @@ $$P(A_1 \cdots A_k) = P(A_1) \cdot P(A_2) \cdots P(A_k).$$
 Nếu ta có một họ các sự kiện độc lập thì các sự kiện trong họ độc lập đôi một với nhau. Nhưng ngược lại chưa chắc: có những họ không độc lập mà trong đó các sự kiện độc lập từng đôi một với nhau!
 ```
 
-### 2.3. Công thức xác suất toàn phần
+### Công thức xác suất toàn phần
 
 ```{admonition} **Định nghĩa.** (Hệ biến cố đầy đủ)
 Xét phép thử có không gian mẫu là $\Omega$. Một hệ các biến cố $A_1$, $A_2$, ..., $A_n$ là một **hệ biến cố đầy đủ** (hoặc **phân hoạch**) của $\Omega$ nếu chúng thỏa các điều kiện:
@@ -345,7 +345,7 @@ $$\begin{equation*}
 
 Để trả lời câu hỏi này chúng ta sử dụng công thức Bayes.
 
-### 2.4. Công thức Bayes
+### Công thức Bayes
 
 ```{admonition} **Định lí.** (Công thức Bayes)
 :class: hint
@@ -364,9 +364,9 @@ $$\begin{equation*}
     P(A_2 \vert B) = \dfrac{P(A_2) \cdot P(B \vert A_2)}{P(B)} = \dfrac{\dfrac{2}{5} \cdot \dfrac{1}{5}}{\dfrac{7}{25}} = \dfrac{2}{7}.
 \end{equation*}$$
 
-## 3. Biến ngẫu nhiên
+## Biến ngẫu nhiên
 
-### 3.1. Biến ngẫu nhiên
+### Biến ngẫu nhiên
 
 Xét phép thử với không gian mẫu $\Omega$. Với mỗi biến cố sơ cấp $\omega \in \Omega$ ta liên kết với một số thực $\xi(\omega) \in \mathbb{R}$ thì $\xi$ được gọi là **biến ngẫu nhiên** (hay **random variable**, BNN).
 
@@ -385,7 +385,7 @@ Giá trị $\xi(\omega)$ được gọi là một giá trị của biến ngẫu
 - Nếu $\xi(\Omega)$ là một tập hữu hạn $\{\xi_1, \xi_2, \ldots,\xi_n\}$ hay tập vô hạn đếm được thì $\xi$ được gọi là **biến ngẫu nhiên rời rạc**.
 - Nếu $\xi(\Omega)$ là một khoảng của $\mathbb{R}$ hay toàn bộ $\mathbb{R}$ thì $\xi$ được gọi là **biến ngẫu nhiên liên tục**.
 
-### 3.2. Phân bố xác suất của biến ngẫu nhiên
+### Phân bố xác suất của biến ngẫu nhiên
 
 ```{admonition} **Định nghĩa.** (Hàm phân phối xác suất)
 **Hàm phân phối** của biến ngẫu nhiên $\xi$ là hàm số $F(x)$, xác định bởi:
@@ -397,7 +397,7 @@ $$\begin{equation}
 
 Ở đây ta viết gọn $P(\xi \leqslant x)$ từ $P(\{ \omega: \xi(\omega) \leqslant x \})$. Tập hợp $\{ \omega: \xi(\omega) \leqslant x\}$ có thể không thuộc một biến cố nào, do đó có thể là tập rỗng (ứng với xác suất là $0$).
 
-### 3.3. Tính chất của hàm phân phối
+### Tính chất của hàm phân phối
 
 **Tính chất 1.** Hàm phân phối $F(x)$ không giảm trên mọi đoạn thẳng.
 
@@ -422,7 +422,7 @@ Xác suất luôn không âm, hay $P(x_1 < \xi \leqslant x_2) \geqslant 0$, suy 
 
 Để chứng minh các tính chất 2, 3, 4 chúng ta cần các tiên đề của sự liên tục (continunity axioms) và sẽ không đề cập ở đây.
 
-### 3.4. Biến ngẫu nhiên rời rạc
+### Biến ngẫu nhiên rời rạc
 
 Cho BNN rời rạc $\xi = \xi(\omega)$, $\xi = \{ a_1, a_2, \ldots, a_n, \ldots \}$. Giả sử $a_1 < a_2 < \ldots < a_n < \ldots$ với xác suất tương ứng là $P(\xi = a_i) = p_i$, $i = 1, 2, \ldots$
 
@@ -494,7 +494,7 @@ $$\begin{equation}
 
 Tham số $\lambda$ thể hiện số lần trung bình mà một sự kiện xảy ra trong một khoảng thời gian nhất định. Khi đó, nếu một biến ngẫu nhiên có số lần xuất hiện trung bình của một sự kiện trong thời gian $t$ thì nó có phân phối Poisson với tham số $\lambda t$, với $\lambda$ là số lần trung bình trong một đơn vị thời gian.
 
-### 3.5. Biến ngẫu nhiên liên tục
+### Biến ngẫu nhiên liên tục
 
 ```{admonition} **Định nghĩa.** (Biến ngẫu nhiên liên tục)
 Biến ngẫu nhiên $\xi$ được gọi là **liên tục**, nếu nó nhận giá trị tại mọi điểm thuộc một đoạn liên tục nào đó trên trục số, và tồn tại một hàm số không âm $p(x)$ sao cho với mọi đoạn $[a ,b]$ (hữu hạn hoặc vô hạn) ta có
@@ -517,7 +517,7 @@ Từ định nghĩa của hàm phân phối $F(x) = P(\xi \leqslant x)$ ta có h
 
 Tính chất thứ nhất là từ định nghĩa hàm phân phối. Tính chất thứ hai suy ra từ việc cận trên của tích phân là hữu hạn.
 
-### 3.5. Hàm mật độ của biến ngẫu nhiên rời rạc
+### Hàm mật độ của biến ngẫu nhiên rời rạc
 
 Biến ngẫu nhiên rời rạc có bảng xác suất sau:
 
@@ -539,7 +539,7 @@ Ta có các lưu ý sau:
 - $\displaystyle{P(a < X \leqslant b) = \sum_{a < x_i \leqslant b} p_i}$
 ```
 
-### 4.6. Hàm mật độ của biến ngẫu nhiên liên tục
+### Hàm mật độ của biến ngẫu nhiên liên tục
 
 ```{admonition} **Định nghĩa.**
 Hàm số $f: \mathbb{R} \mapsto \mathbb{R}$ được gọi là **hàm mật độ** của biến ngẫu nhiên liên tục $X$ nếu:
