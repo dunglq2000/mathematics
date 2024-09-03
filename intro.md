@@ -12,4 +12,5 @@ Notebook về toán ...
 ## Tài liệu tham khảo
 
 ```{bibliography}
+:style: plain
 ```

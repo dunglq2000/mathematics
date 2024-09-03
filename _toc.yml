@@ -12,4 +12,8 @@ parts:
     numbered: true
     chapters:
     - file: probability/intro.md
+  - caption: Lý thuyết nhóm
+    numbered: true
+    chapters:
+    - file: discrete-mathematics/group.md
 
