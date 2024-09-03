@@ -189,7 +189,7 @@ Giả sử ta biết rằng có một xe hơi $X$ đang đậu trên một khúc
 
 ### Ánh xạ giữa các không gian xác suất
 
-```{admonition} **Định nghĩa.**
+```{admonition} **Định nghĩa.** (Ánh xạ bảo toàn xác suất)
 Một ánh xạ $\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)$ từ một không gian xác suất $(\Omega_1, P_1)$ vào một không gian xác suất $(\Omega_2, P_2)$ được gọi là một **ánh xạ bảo toàn xác suất** nếu nó bảo toàn độ đo xác suất, nghĩa là với mọi tập con $B \subset \Omega_2$ đo được, ta có:
 
 $$P_1(\phi^{-1}(B)) = P_2(B)$$
@@ -231,8 +231,8 @@ Hai phép chiếu tự nhiên từ tích $(\Omega_1, P_1) \times (\Omega_2, P_2)
 
 ### Xác suất có điều kiện
 
-```{admonition} **Định nghĩa.**
-Xác suất có điều kiện. Xét hai biến cố $A$ và $B$. Khi đó xác suất xảy ra của biến cố $B$ với điều kiện biến cố $A$ xảy ra là: 
+```{admonition} **Định nghĩa.** (Xác suất có điều kiện)
+Xét hai biến cố $A$ và $B$. Khi đó xác suất xảy ra của biến cố $B$ với điều kiện biến cố $A$ xảy ra là: 
 
 $$\begin{equation}
     P(A \vert B) = \frac{P(AB)}{P(B)}
@@ -282,7 +282,7 @@ $$P(AB) = P(A) \cdot P(B)$$
 
 Khi đó, giả sử ta có một họ $\mathcal{M}$ các sự kiện.
 
-```{admonition} **Định nghĩa.**
+```{admonition} **Định nghĩa.** (Họ các sự kiện độc lập)
 Họ $\mathcal{M}$ được gọi là một **họ các sự kiện độc lập** nếu như với bất kì số tự nhiên $k$ nào và bất kì sự kiện $A_i, \ldots, A_k$ khác nhau nào trong họ $\mathcal{M}$ ta cũng có:
 
 $$P(A_1 \cdots A_k) = P(A_1) \cdot P(A_2) \cdots P(A_k).$$
