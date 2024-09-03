@@ -605,9 +605,9 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 <h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">1.1.4. </span>Mô hình xác suất với vô hạn các sự kiện</a><a class="headerlink" href="#mo-hinh-xac-suat-voi-vo-han-cac-su-kien" title="Link to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title"><strong>Ví dụ.</strong> (Phân phối Poisson)</p>
-<p>Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là <span class="math notranslate nohighlight">\(\lambda\)</span>. Phân bố Poisson <span class="math notranslate nohighlight">\(P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}\)</span> thể hiện xác suất có <span class="math notranslate nohighlight">\(n\)</span> khách hàng đến siêu thị theo tỉ lệ thời gian <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là <span class="math notranslate nohighlight">\(\lambda\)</span>. Phân phối Poisson <span class="math notranslate nohighlight">\(P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}\)</span> thể hiện xác suất có <span class="math notranslate nohighlight">\(n\)</span> khách hàng đến siêu thị theo tỉ lệ thời gian <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 </div>
-<p>Ở phân phối Poisson, <span class="math notranslate nohighlight">\(n\)</span> nhận tất cả giá trị nguyên dương <span class="math notranslate nohighlight">\(0, 1, \ldots\)</span> cũng như thỏa điều kiện:</p>
+<p>Ở phân phối Poisson, <span class="math notranslate nohighlight">\(n\)</span> nhận tất cả giá trị nguyên không âm <span class="math notranslate nohighlight">\(0, 1, \ldots\)</span> cũng như thỏa điều kiện:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^n}{n!} = e^{-\lambda} \sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^{-\lambda} \cdot e^\lambda = 1.\]</div>
 <p>Ở biến đổi trên, <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^\lambda}\)</span> là khai triển Taylor.</p>
@@ -634,7 +634,7 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 \[P_2(B) = P_1(\phi^{-1}(B))\]</div>
 <p>Độ đo xác suất <span class="math notranslate nohighlight">\(P_2\)</span> như trên gọi là <strong>push-forward</strong> của <span class="math notranslate nohighlight">\(P_1\)</span> qua ánh xạ <span class="math notranslate nohighlight">\(\phi\)</span>, hay <strong>phân bố xác suất cảm sinh</strong> từ <span class="math notranslate nohighlight">\(P_1\)</span> qua ánh xạ <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
 <p><strong>Câu hỏi:</strong> chứng minh rằng quan hệ đẳng cấu xác suất giữa các không gian xác suất là một quan hệ tương đương.</p>
-<p>Giải: vì <span class="math notranslate nohighlight">\(\phi\)</span> là song ánh, đối với tính phản xứng chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.</p>
+<p>Giải: vì <span class="math notranslate nohighlight">\(\phi\)</span> là song ánh, đối với tính phản xạ chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.</p>
 </section>
 <section id="tich-cua-cac-khong-gian-xac-suat">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">1.1.6. </span>Tích của các không gian xác suất</a><a class="headerlink" href="#tich-cua-cac-khong-gian-xac-suat" title="Link to this heading">#</a></h3>

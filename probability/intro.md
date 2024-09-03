@@ -173,10 +173,10 @@ $$   \begin{equation*}
 
 ```{admonition} **Ví dụ.** (Phân phối Poisson)
 :class: caution
-Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là $\lambda$. Phân bố Poisson $P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}$ thể hiện xác suất có $n$ khách hàng đến siêu thị theo tỉ lệ thời gian $\lambda$. 
+Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là $\lambda$. Phân phối Poisson $P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}$ thể hiện xác suất có $n$ khách hàng đến siêu thị theo tỉ lệ thời gian $\lambda$. 
 ```
 
-Ở phân phối Poisson, $n$ nhận tất cả giá trị nguyên dương $0, 1, \ldots$ cũng như thỏa điều kiện:
+Ở phân phối Poisson, $n$ nhận tất cả giá trị nguyên không âm $0, 1, \ldots$ cũng như thỏa điều kiện:
 
 $$\sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^n}{n!} = e^{-\lambda} \sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^{-\lambda} \cdot e^\lambda = 1.$$
 
@@ -210,7 +210,7 @@ $$P_2(B) = P_1(\phi^{-1}(B))$$
 
 **Câu hỏi:** chứng minh rằng quan hệ đẳng cấu xác suất giữa các không gian xác suất là một quan hệ tương đương.
 
-Giải: vì $\phi$ là song ánh, đối với tính phản xứng chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.
+Giải: vì $\phi$ là song ánh, đối với tính phản xạ chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.
 
 ### Tích của các không gian xác suất
 
