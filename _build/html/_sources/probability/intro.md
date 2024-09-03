@@ -386,7 +386,8 @@ $$\begin{equation}
 
 **Tính chất 1.** Hàm phân phối $F(x)$ không giảm trên mọi đoạn thẳng.
 
-````{prf:proof}
+```{admonition} **Chứng minh.**
+:class: danger, dropdown
 Đặt $x_2 > x_1$. Ta thấy rằng
 
 $$\{ \xi \leqslant x_2 \} = \{ \xi \leqslant x_1 \} + \{ x_1 < \xi \leqslant x_2 \},$$
