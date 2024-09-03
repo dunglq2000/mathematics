@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -467,36 +468,39 @@ document.write(`
 </nav>
 <section id="xac-suat-la-gi">
 <h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">1.1. </span>Xác suất là gì?</a><a class="headerlink" href="#xac-suat-la-gi" title="Link to this heading">#</a></h2>
-<div class="admonition-dinh-nghia-dinh-nghia-co-dien-cua-xac-suat admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Định nghĩa cổ điển của xác suất)</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Định nghĩa cổ điển của xác suất)</p>
+<section class="definition-content" id="proof-content">
 <p>Định nghĩa thống kê của xác suất nói rằng, giả sử trong một phép thử có <span class="math notranslate nohighlight">\(n\)</span> khả năng có thể xảy ra. Xét một biến cố <span class="math notranslate nohighlight">\(A\)</span> xảy ra khi thực hiện phép thử có <span class="math notranslate nohighlight">\(k\)</span> khả năng xảy ra. Khi đó xác suất của biến cố <span class="math notranslate nohighlight">\(A\)</span> ký hiệu là <span class="math notranslate nohighlight">\(P(A)\)</span> và được tính:</p>
 <div class="math notranslate nohighlight">
 \[P(A) = \frac{k}{n}\]</div>
-</div>
-<p>Dễ thấy, do biến cố <span class="math notranslate nohighlight">\(A\)</span> là một trường hợp nhỏ trong tổng thể tất cả trường hợp khi thực hiện phép thử, nên <span class="math notranslate nohighlight">\(0 \leqslant k \leqslant n\)</span>. Nghĩa là:</p>
+</section>
+</div><p>Dễ thấy, do biến cố <span class="math notranslate nohighlight">\(A\)</span> là một trường hợp nhỏ trong tổng thể tất cả trường hợp khi thực hiện phép thử, nên <span class="math notranslate nohighlight">\(0 \leqslant k \leqslant n\)</span>. Nghĩa là:</p>
 <div class="math notranslate nohighlight">
 \[0 \leqslant P(A) \leqslant 1\]</div>
 <p>với mọi biến cố <span class="math notranslate nohighlight">\(A\)</span> bất kì.</p>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<section class="example-content" id="proof-content">
 <p>Xét phép thử tung hai đồng xu. Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố hai đồng xu cùng mặt.</p>
 <p>Ta ký hiệu <span class="math notranslate nohighlight">\(S\)</span> là đồng xu sấp, <span class="math notranslate nohighlight">\(N\)</span> là đồng xu ngửa. Khi đó các trường hợp có thể xảy ra của phép thử là <span class="math notranslate nohighlight">\(S-S\)</span>, <span class="math notranslate nohighlight">\(S-N\)</span>, <span class="math notranslate nohighlight">\(N-S\)</span>, <span class="math notranslate nohighlight">\(N-N\)</span> (4 trường hợp).</p>
 <p>Trong khi đó, các trường hợp có thể xảy ra của biến cố <span class="math notranslate nohighlight">\(A\)</span> là <span class="math notranslate nohighlight">\(S-S\)</span>, <span class="math notranslate nohighlight">\(N-N\)</span> (2 trường hợp).</p>
 <p>Kết luận: <span class="math notranslate nohighlight">\(P(A) = \dfrac{2}{4} = \dfrac{1}{2}\)</span>.</p>
-</div>
-<p>Chúng ta gọi tập hợp tất cả các trường hợp khi thực hiện phép thử là <strong>không gian mẫu</strong> và ký hiệu là <span class="math notranslate nohighlight">\(\Omega\)</span>. Mỗi phần tử trong không gian mẫu được gọi là <strong>biến cố sơ cấp</strong>. Trong ví dụ trên:</p>
+</section>
+</div><p>Chúng ta gọi tập hợp tất cả các trường hợp khi thực hiện phép thử là <strong>không gian mẫu</strong> và ký hiệu là <span class="math notranslate nohighlight">\(\Omega\)</span>. Mỗi phần tử trong không gian mẫu được gọi là <strong>biến cố sơ cấp</strong>. Trong ví dụ trên:</p>
 <div class="math notranslate nohighlight">
 \[\Omega = \{ S-S, S-N, N-S, N-N \}\]</div>
 <p>Tập hợp các trường hợp có thể xảy ra của biến cố gọi là <strong>không gian biến cố</strong> và ký hiệu là <span class="math notranslate nohighlight">\(\Omega_A\)</span>. Trong ví dụ trên, <span class="math notranslate nohighlight">\(\Omega_A = \{S-S, N-N\}\)</span>.</p>
 <p>Như vậy, <span class="math notranslate nohighlight">\(P(A) = \dfrac{|\Omega_A|}{|\Omega|}\)</span>.</p>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
+<section class="example-content" id="proof-content">
 <p>Tung hai con súc sắc cân đối và đồng chất. Tính xác suất tổng số nút của hai con súc sắc bằng 4.</p>
 <p>Việc tung mỗi con súc sắc có 6 trường hợp. Do đó <span class="math notranslate nohighlight">\(|\Omega| = 6^2 = 36\)</span>.</p>
 <p>Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố tổng số nút của hai con súc sắc bằng 4. Ta có các trường hợp là <span class="math notranslate nohighlight">\(4=1+3=3+1=2+2\)</span> (3 trường hợp).</p>
 <p>Như vậy <span class="math notranslate nohighlight">\(|\Omega_A| = 3\)</span> và <span class="math notranslate nohighlight">\(P(A) = \dfrac{3}{36} = \dfrac{1}{12}\)</span></p>
-</div>
-<section id="ba-tien-de-ve-su-nhat-quan-cua-xac-suat">
+</section>
+</div><section id="ba-tien-de-ve-su-nhat-quan-cua-xac-suat">
 <h3><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">1.1.1. </span>Ba tiên đề về sự nhất quán của xác suất</a><a class="headerlink" href="#ba-tien-de-ve-su-nhat-quan-cua-xac-suat" title="Link to this heading">#</a></h3>
 <p><strong>Tiên đề 1.</strong> Nếu <span class="math notranslate nohighlight">\(A\)</span> là một sự kiện và kí hiệu <span class="math notranslate nohighlight">\(P(A)\)</span> là <strong>xác suất của</strong> <span class="math notranslate nohighlight">\(A\)</span> thì:</p>
 <div class="math notranslate nohighlight">
@@ -516,8 +520,9 @@ P(A \cap B) = 0 \Rightarrow P(A \cup B) = P(A) + P(B)
 </section>
 <section id="khong-gian-xac-suat">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">1.1.2. </span>Không gian xác suất</a><a class="headerlink" href="#khong-gian-xac-suat" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-khong-gian-xac-suat admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Không gian xác suất)</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Không gian xác suất)</p>
+<section class="definition-content" id="proof-content">
 <p>Một <strong>không gian xác suất</strong> là một tập hợp <span class="math notranslate nohighlight">\(\Omega\)</span> cùng với:</p>
 <ol class="arabic simple">
 <li><p>Một họ <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> các tập con của <span class="math notranslate nohighlight">\(\Omega\)</span>, thỏa mãn các tính chất sau:</p>
@@ -546,8 +551,8 @@ P(A \cap B) = 0 \Rightarrow P(A \cup B) = P(A) + P(B)
 <p>Tổng quát hơn, nếu <span class="math notranslate nohighlight">\(A_i\)</span>, với <span class="math notranslate nohighlight">\(i = 1, 2, 3, \ldots\)</span> là một dãy các tập hợp con đo được và chúng đôi một không giao nhau thì:</p>
 <div class="math notranslate nohighlight">
 \[P\left(\bigcup_i A_i\right) = \sum_{i} P(A_i)\]</div>
-</div>
-<p>Một số lưu ý:</p>
+</section>
+</div><p>Một số lưu ý:</p>
 <ol class="arabic simple">
 <li><p>Không gian xác suất <span class="math notranslate nohighlight">\(\Omega\)</span> còn được gọi là <strong>không gian mẫu</strong> (hay <strong>sample space</strong>) và nó là mô hình toán học trừu tượng cho vấn đề tính toán xác suất đang được quan tâm. Mỗi phần tử của <span class="math notranslate nohighlight">\(\Omega\)</span> có thể được gọi là một <strong>sự kiện thành phần</strong> (hay <strong>biến cố sơ cấp</strong>, <strong>elementary event</strong>). Nếu <span class="math notranslate nohighlight">\(A\)</span> là một phần tử trong <span class="math notranslate nohighlight">\(\Omega\)</span> thì ta cũng có thể viết <span class="math notranslate nohighlight">\(P(A)\)</span> và hiểu là <span class="math notranslate nohighlight">\(P(\{ A \})\)</span>, trong đó <span class="math notranslate nohighlight">\(\{ A \}\)</span> là tập con của <span class="math notranslate nohighlight">\(\Omega\)</span> chứa duy nhất một phần tử <span class="math notranslate nohighlight">\(A\)</span>. Mỗi sự kiện là một tập con của <span class="math notranslate nohighlight">\(\Omega\)</span> nên có thể chứa nhiều (thậm chí vô hạn) sự kiện thành phần. Không nhất thiết tập con nào của <span class="math notranslate nohighlight">\(\Omega\)</span> cũng đo được (nằm trong họ <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>) và chúng ta sẽ chỉ quan tâm đến các tập con đo được.</p></li>
 <li><p>Trong toán học, một đại số là một tập hợp với các phép tính cộng, trừ và nhân (vành). Các tính chất của họ <span class="math notranslate nohighlight">\(\mathcal{S}\)</span> trong định nghĩa không gian xác suất khiến nó là một đại số theo nghĩa:</p>
@@ -573,18 +578,19 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 </section>
 <section id="phep-cong-xac-suat-mo-rong">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">1.1.3. </span>Phép cộng xác suất mở rộng</a><a class="headerlink" href="#phep-cong-xac-suat-mo-rong" title="Link to this heading">#</a></h3>
-<p>Ở tiền đề 3 bên trên, hai biến cố khi đó được gọi là <strong>xung khắc</strong>, nghĩa là nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.</p>
+<p>Ở tiên đề 3 bên trên, hai biến cố khi đó được gọi là <strong>xung khắc</strong>, nghĩa là nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.</p>
 <p>Ta còn có thể ký hiệu giao hai biến cố <span class="math notranslate nohighlight">\(P(A \cap B)\)</span> là <span class="math notranslate nohighlight">\(P(AB)\)</span>.</p>
 <p>Một trường hợp đơn giản nhất của hai biến cố xung khắc là <strong>biến cố đối</strong>.</p>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
+<section class="example-content" id="proof-content">
 <p>Tung một đồng xu và gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố đồng xu ra mặt ngửa. Khi đó biến cố đối của <span class="math notranslate nohighlight">\(A\)</span>, kí hiệu là <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố ra mặt sấp. Ở đây <span class="math notranslate nohighlight">\(A \cup \bar{A} = \Omega\)</span> và <span class="math notranslate nohighlight">\(A \cap \bar{A} = \emptyset\)</span>.</p>
 <p>Từ đó:</p>
 <div class="math notranslate nohighlight">
 \[1 = P(\Omega) = P(A \cup \bar{A}) = P(A) + P(\bar{A}),\]</div>
 <p>nói cách khác <span class="math notranslate nohighlight">\(P(\bar{A}) = 1 - P(A)\)</span>.</p>
-</div>
-<p>Xét hai tập hợp <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span>. Số phần tử của phép hợp hai tập hợp trong trường hợp tổng quát được tính như sau:</p>
+</section>
+</div><p>Xét hai tập hợp <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span>. Số phần tử của phép hợp hai tập hợp trong trường hợp tổng quát được tính như sau:</p>
 <div class="math notranslate nohighlight">
 \[|A \cup B| = |A| + |B| - |A \cap B|\]</div>
 <p>Tương tự, xác suất của phép cộng xác suất đối với hai biến cố có giao khác rỗng là:</p>
@@ -598,43 +604,48 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
     \end{split}
 \end{equation*}\end{split}\]</div>
 <p>Tương tự, ta có phép cộng xác suất:</p>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Định lí.</strong> (Phép cộng xác suất mở rộng)</p>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Phép cộng xác suất mở rộng)</p>
+<section class="theorem-content" id="proof-content">
 <div class="math notranslate nohighlight">
 \[   \begin{equation*}
     P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum_{i=1}^n (-1)^{i+1} \sum_{j_1, j_2, \cdots, j_i} P(A_{j_1} \cap A_{j_2} \cap \cdots \cap A_{j_i})
 \end{equation*}\]</div>
-</div>
 </section>
+</div></section>
 <section id="mo-hinh-xac-suat-voi-vo-han-cac-su-kien">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">1.1.4. </span>Mô hình xác suất với vô hạn các sự kiện</a><a class="headerlink" href="#mo-hinh-xac-suat-voi-vo-han-cac-su-kien" title="Link to this heading">#</a></h3>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong> (Phân phối Poisson)</p>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 1.4 </span> (Phân phối Poisson)</p>
+<section class="example-content" id="proof-content">
 <p>Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là <span class="math notranslate nohighlight">\(\lambda\)</span>. Phân phối Poisson <span class="math notranslate nohighlight">\(P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}\)</span> thể hiện xác suất có <span class="math notranslate nohighlight">\(n\)</span> khách hàng đến siêu thị theo tỉ lệ thời gian <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
-</div>
-<p>Ở phân phối Poisson, <span class="math notranslate nohighlight">\(n\)</span> nhận tất cả giá trị nguyên không âm <span class="math notranslate nohighlight">\(0, 1, \ldots\)</span> cũng như thỏa điều kiện:</p>
+</section>
+</div><p>Ở phân phối Poisson, <span class="math notranslate nohighlight">\(n\)</span> nhận tất cả giá trị nguyên không âm <span class="math notranslate nohighlight">\(0, 1, \ldots\)</span> cũng như thỏa điều kiện:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^n}{n!} = e^{-\lambda} \sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^{-\lambda} \cdot e^\lambda = 1.\]</div>
 <p>Ở biến đổi trên, <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^\lambda}\)</span> là khai triển Taylor.</p>
-<div class="warning admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 1.5 </span></p>
+<section class="example-content" id="proof-content">
 <p>Giả sử ta biết rằng có một xe hơi <span class="math notranslate nohighlight">\(X\)</span> đang đậu trên một khúc phố <span class="math notranslate nohighlight">\(Z\)</span> và ta quan tâm đến vị trí của <span class="math notranslate nohighlight">\(X\)</span> trên khúc phố đó. Ta có thể mô hình <span class="math notranslate nohighlight">\(X\)</span> bằng một điểm và <span class="math notranslate nohighlight">\(Z\)</span> là một đoạn thẳng và lấy đoạn thẳng đó làm không gian xác suất <span class="math notranslate nohighlight">\(\Omega = [a, b]\)</span>, <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}, a &lt; b\)</span>. (mô hình xác suất liên tục này có lực lượng continuum, không đếm được). Sự kiện “xe hơi đỗ chỗ nào đó trên khúc phố” chuyển thành sự kiện “điểm <span class="math notranslate nohighlight">\(x\)</span> nằm trong một đoạn thẳng con nào đó trên đoạn thẳng <span class="math notranslate nohighlight">\(\Omega = [a, b]\)</span>”. Ta có thể chọn phân bố xác suất đều trên <span class="math notranslate nohighlight">\(\Omega = [a, b]\)</span> theo nghĩa sau: xác suất mỗi đoạn thẳng con trên <span class="math notranslate nohighlight">\(\Omega\)</span> tỷ lệ thuận với độ dài của đoạn thẳng con đó, hay <span class="math notranslate nohighlight">\(P([c, d]) = (d - c) / (b - a)\)</span>.</p>
-</div>
 </section>
+</div></section>
 <section id="anh-xa-giua-cac-khong-gian-xac-suat">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">1.1.5. </span>Ánh xạ giữa các không gian xác suất</a><a class="headerlink" href="#anh-xa-giua-cac-khong-gian-xac-suat" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-anh-xa-bao-toan-xac-suat admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Ánh xạ bảo toàn xác suất)</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Ánh xạ bảo toàn xác suất)</p>
+<section class="definition-content" id="proof-content">
 <p>Một ánh xạ <span class="math notranslate nohighlight">\(\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)\)</span> từ một không gian xác suất <span class="math notranslate nohighlight">\((\Omega_1, P_1)\)</span> vào một không gian xác suất <span class="math notranslate nohighlight">\((\Omega_2, P_2)\)</span> được gọi là một <strong>ánh xạ bảo toàn xác suất</strong> nếu nó bảo toàn độ đo xác suất, nghĩa là với mọi tập con <span class="math notranslate nohighlight">\(B \subset \Omega_2\)</span> đo được, ta có:</p>
 <div class="math notranslate nohighlight">
 \[P_1(\phi^{-1}(B)) = P_2(B)\]</div>
-</div>
-<p>Hơn nữa, nếu <span class="math notranslate nohighlight">\(\phi\)</span> là một song ánh modulo những tập có xác suất bằng <span class="math notranslate nohighlight">\(0\)</span>, nghĩa là tồn tại các tập con <span class="math notranslate nohighlight">\(A \in \Omega_1\)</span>, <span class="math notranslate nohighlight">\(B \in \Omega_2\)</span> sao cho <span class="math notranslate nohighlight">\(P_1(A) = P_2(B) = 0\)</span> và <span class="math notranslate nohighlight">\(\phi : \Omega_1 \setminus A \to \Omega_2 \setminus B\)</span> là song ánh bảo toàn xác suất, thì <span class="math notranslate nohighlight">\(\phi\)</span> được gọi là <strong>đẳng cấu xác suất</strong>, và ta nói rằng <span class="math notranslate nohighlight">\((\Omega_1, P_1)\)</span> đẳng cấu xác suất với <span class="math notranslate nohighlight">\((\Omega_2, P_2)\)</span>.</p>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Định lí.</strong></p>
+</section>
+</div><p>Hơn nữa, nếu <span class="math notranslate nohighlight">\(\phi\)</span> là một song ánh modulo những tập có xác suất bằng <span class="math notranslate nohighlight">\(0\)</span>, nghĩa là tồn tại các tập con <span class="math notranslate nohighlight">\(A \in \Omega_1\)</span>, <span class="math notranslate nohighlight">\(B \in \Omega_2\)</span> sao cho <span class="math notranslate nohighlight">\(P_1(A) = P_2(B) = 0\)</span> và <span class="math notranslate nohighlight">\(\phi : \Omega_1 \setminus A \to \Omega_2 \setminus B\)</span> là song ánh bảo toàn xác suất, thì <span class="math notranslate nohighlight">\(\phi\)</span> được gọi là <strong>đẳng cấu xác suất</strong>, và ta nói rằng <span class="math notranslate nohighlight">\((\Omega_1, P_1)\)</span> đẳng cấu xác suất với <span class="math notranslate nohighlight">\((\Omega_2, P_2)\)</span>.</p>
+<div class="proof theorem admonition" id="theorem-9">
+<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span></p>
+<section class="theorem-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\((\Omega_1, P_1)\)</span> là một không gian xác suất và <span class="math notranslate nohighlight">\(\phi : \Omega_1 \to \Omega_2\)</span> là một ánh xạ tùy ý thì tồn tại một độ đo xác suất <span class="math notranslate nohighlight">\(P_2\)</span> sao cho ánh xạ <span class="math notranslate nohighlight">\(\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)\)</span> là ánh xạ bảo toàn xác suất.</p>
-</div>
-<p>Ta xây dựng <span class="math notranslate nohighlight">\(P_2\)</span> theo công thức: với mỗi tập con <span class="math notranslate nohighlight">\(B \subset \Omega_2\)</span>, nếu tồn tại <span class="math notranslate nohighlight">\(P_1(\phi^{-1}(B))\)</span> thì ta đặt</p>
+</section>
+</div><p>Ta xây dựng <span class="math notranslate nohighlight">\(P_2\)</span> theo công thức: với mỗi tập con <span class="math notranslate nohighlight">\(B \subset \Omega_2\)</span>, nếu tồn tại <span class="math notranslate nohighlight">\(P_1(\phi^{-1}(B))\)</span> thì ta đặt</p>
 <div class="math notranslate nohighlight">
 \[P_2(B) = P_1(\phi^{-1}(B))\]</div>
 <p>Độ đo xác suất <span class="math notranslate nohighlight">\(P_2\)</span> như trên gọi là <strong>push-forward</strong> của <span class="math notranslate nohighlight">\(P_1\)</span> qua ánh xạ <span class="math notranslate nohighlight">\(\phi\)</span>, hay <strong>phân bố xác suất cảm sinh</strong> từ <span class="math notranslate nohighlight">\(P_1\)</span> qua ánh xạ <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
@@ -648,35 +659,38 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 \[P(A_1 \times A_2) = P_1(A_1) \times P_2(A_2).\]</div>
 <p>Sigma-đại số của <span class="math notranslate nohighlight">\(P\)</span> chính là sigma-đại số sinh bởi các tập con của <span class="math notranslate nohighlight">\(\Omega_1 \times \Omega_2\)</span> có dạng <span class="math notranslate nohighlight">\(A_1 \times A_2\)</span> như trên.</p>
 <p>Tương tự ta có thể định nghĩa tích trực tiếp của <span class="math notranslate nohighlight">\(n\)</span> không gian xác suất hay thập chí một dãy vô hạn các không gian xác suất.</p>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Định lí.</strong></p>
+<div class="proof theorem admonition" id="theorem-10">
+<p class="admonition-title"><span class="caption-number">Theorem 1.3 </span></p>
+<section class="theorem-content" id="proof-content">
 <p>Hai phép chiếu tự nhiên từ tích <span class="math notranslate nohighlight">\((\Omega_1, P_1) \times (\Omega_2, P_2)\)</span> của hai không gian xác suất xuống <span class="math notranslate nohighlight">\((\Omega_1, P_1)\)</span> và <span class="math notranslate nohighlight">\((\Omega_2, P_2)\)</span> là hai ánh xạ bảo toàn xác suất.</p>
-</div>
 </section>
+</div></section>
 </section>
 <section id="xac-suat-co-dieu-kien">
 <h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">1.2. </span>Xác suất có điều kiện</a><a class="headerlink" href="#xac-suat-co-dieu-kien" title="Link to this heading">#</a></h2>
 <section id="id1">
 <h3><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">1.2.1. </span>Xác suất có điều kiện</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-xac-suat-co-dieu-kien admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Xác suất có điều kiện)</p>
+<div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Xác suất có điều kiện)</p>
+<section class="definition-content" id="proof-content">
 <p>Xét hai biến cố <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span>. Khi đó xác suất xảy ra của biến cố <span class="math notranslate nohighlight">\(B\)</span> với điều kiện biến cố <span class="math notranslate nohighlight">\(A\)</span> xảy ra là:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     P(A \vert B) = \frac{P(AB)}{P(B)}
 \end{equation}\]</div>
-</div>
-<p>Ý nghĩa của công thức trên có thể hiểu là, việc biến cố <span class="math notranslate nohighlight">\(A\)</span> xảy ra dựa trên cơ sở biến cố <span class="math notranslate nohighlight">\(B\)</span> đã xảy ra, do đó không gian mẫu sẽ giảm xuống còn <span class="math notranslate nohighlight">\(B\)</span> và biến cố giảm còn <span class="math notranslate nohighlight">\(AB\)</span>.</p>
+</section>
+</div><p>Ý nghĩa của công thức trên có thể hiểu là, việc biến cố <span class="math notranslate nohighlight">\(A\)</span> xảy ra dựa trên cơ sở biến cố <span class="math notranslate nohighlight">\(B\)</span> đã xảy ra, do đó không gian mẫu sẽ giảm xuống còn <span class="math notranslate nohighlight">\(B\)</span> và biến cố giảm còn <span class="math notranslate nohighlight">\(AB\)</span>.</p>
 <p>Dựa trên định nghĩa của xác suất có điều kiện có thể đưa ra nhận xét sau.</p>
-<div class="important admonition">
-<p class="admonition-title"><strong>Nhận xét.</strong></p>
+<div class="proof remark admonition" id="remark-12">
+<p class="admonition-title"><span class="caption-number">Remark 1.1 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Từ công thức trên có thể thấy sự tương đương:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     P(AB) = P(B) \cdot P(A \vert B) = P(A) \cdot P(B \vert A)
 \end{equation*}\]</div>
-</div>
-<p>Nhận xét trên cho thấy sự liên hệ của hai biến cố. Nói cách khác việc xảy ra của biến cố này sẽ ảnh hưởng đến biến cố kia và ngược lại.</p>
+</section>
+</div><p>Nhận xét trên cho thấy sự liên hệ của hai biến cố. Nói cách khác việc xảy ra của biến cố này sẽ ảnh hưởng đến biến cố kia và ngược lại.</p>
 <p>Tổng quát, nếu <span class="math notranslate nohighlight">\(n\)</span> biến cố <span class="math notranslate nohighlight">\(A_i\)</span>, <span class="math notranslate nohighlight">\(i=1, \ldots, n\)</span> không độc lập thì:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
@@ -689,52 +703,59 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 <section id="su-doc-lap-va-phu-thuoc-cua-cac-su-kien">
 <h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">1.2.2. </span>Sự độc lập và phụ thuộc của các sự kiện</a><a class="headerlink" href="#su-doc-lap-va-phu-thuoc-cua-cac-su-kien" title="Link to this heading">#</a></h3>
 <p>Nếu hai biến cố không ảnh hưởng việc xảy ra của nhau thì ta gọi là biến cố độc lập.</p>
-<div class="admonition-dinh-nghia-bien-co-doc-lap admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Biến cố độc lập)</p>
+<div class="proof definition admonition" id="definition-13">
+<p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Biến cố độc lập)</p>
+<section class="definition-content" id="proof-content">
 <p>Hai biến cố được gọi là <strong>độc lập</strong> nếu việc xảy ra của biến cố này không ảnh hưởng đến việc xảy ra của biến cố kia, hay:</p>
 <div class="math notranslate nohighlight">
 \[P(A) = P(A \vert B) = P(AB) / P(B)\]</div>
-</div>
-<p>Viết cách khác là:</p>
+</section>
+</div><p>Viết cách khác là:</p>
 <div class="math notranslate nohighlight">
 \[P(AB) = P(A) \cdot P(B)\]</div>
 <p>Khi đó, giả sử ta có một họ <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> các sự kiện.</p>
-<div class="admonition-dinh-nghia-ho-cac-su-kien-doc-lap admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Họ các sự kiện độc lập)</p>
+<div class="proof definition admonition" id="definition-14">
+<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Họ các sự kiện độc lập)</p>
+<section class="definition-content" id="proof-content">
 <p>Họ <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> được gọi là một <strong>họ các sự kiện độc lập</strong> nếu như với bất kì số tự nhiên <span class="math notranslate nohighlight">\(k\)</span> nào và bất kì sự kiện <span class="math notranslate nohighlight">\(A_i, \ldots, A_k\)</span> khác nhau nào trong họ <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> ta cũng có:</p>
 <div class="math notranslate nohighlight">
 \[P(A_1 \cdots A_k) = P(A_1) \cdot P(A_2) \cdots P(A_k).\]</div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title"><strong>Lưu ý.</strong></p>
-<p>Nếu ta có một họ các sự kiện độc lập thì các sự kiện trong họ độc lập đôi một với nhau. Nhưng ngược lại chưa chắc: có những họ không độc lập mà trong đó các sự kiện độc lập từng đôi một với nhau!</p>
-</div>
 </section>
+</div><div class="proof remark admonition" id="remark-15">
+<p class="admonition-title"><span class="caption-number">Remark 1.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu ta có một họ các sự kiện độc lập thì các sự kiện trong họ độc lập đôi một với nhau. Nhưng ngược lại chưa chắc: có những họ không độc lập mà trong đó các sự kiện độc lập từng đôi một với nhau!</p>
+</section>
+</div></section>
 <section id="cong-thuc-xac-suat-toan-phan">
 <h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">1.2.3. </span>Công thức xác suất toàn phần</a><a class="headerlink" href="#cong-thuc-xac-suat-toan-phan" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-he-bien-co-day-du admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Hệ biến cố đầy đủ)</p>
+<div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Hệ biến cố đầy đủ)</p>
+<section class="definition-content" id="proof-content">
 <p>Xét phép thử có không gian mẫu là <span class="math notranslate nohighlight">\(\Omega\)</span>. Một hệ các biến cố <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span>, …, <span class="math notranslate nohighlight">\(A_n\)</span> là một <strong>hệ biến cố đầy đủ</strong> (hoặc <strong>phân hoạch</strong>) của <span class="math notranslate nohighlight">\(\Omega\)</span> nếu chúng thỏa các điều kiện:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(A_1 \cup A_2 \cup \cdots \cup A_n = \Omega\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(A_i \cap A_j = \emptyset\)</span> với mọi <span class="math notranslate nohighlight">\(i \neq j\)</span></p></li>
 </ul>
-</div>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+</section>
+</div><div class="proof example admonition" id="example-17">
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
+<section class="example-content" id="proof-content">
 <p>Một hệ biến cố đầy đủ đơn giản là <span class="math notranslate nohighlight">\(\Omega = \{ A, \bar{A} \}\)</span> gồm biến cố <span class="math notranslate nohighlight">\(A\)</span> và biến cố đối của <span class="math notranslate nohighlight">\(A\)</span>.</p>
-</div>
-<p>Khi có một hệ biến cố đầy đủ, ta có thể tính xác suất của một biến cố bất kì nếu biết xác suất của các biến cố trong hệ biến cố đầy đủ và xác suất có điều kiện tương ứng.</p>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Định lí.</strong> (Công thức xác suất toàn phần)</p>
+</section>
+</div><p>Khi có một hệ biến cố đầy đủ, ta có thể tính xác suất của một biến cố bất kì nếu biết xác suất của các biến cố trong hệ biến cố đầy đủ và xác suất có điều kiện tương ứng.</p>
+<div class="proof theorem admonition" id="theorem-18">
+<p class="admonition-title"><span class="caption-number">Theorem 1.4 </span> (Công thức xác suất toàn phần)</p>
+<section class="theorem-content" id="proof-content">
 <p>Gọi <span class="math notranslate nohighlight">\(A_1, A_2, \ldots, A_n\)</span> là một hệ biến cố đầy đủ của <span class="math notranslate nohighlight">\(\Omega\)</span>. Khi đó, với biến cố <span class="math notranslate nohighlight">\(B\)</span> bất kì trong phép thử:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}    
     P(B) = P(A_1) \cdot P(B | A_1) + \cdots + P(A_n) \cdot P(B | A_n)
 \end{equation}\]</div>
-</div>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+</section>
+</div><div class="proof example admonition" id="example-19">
+<p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
+<section class="example-content" id="proof-content">
 <p><strong>Đề bài.</strong> Trong một lớp học có 15 bạn nam và 10 bạn nữ. Trong đó có 5 bạn nam biết chơi bóng chuyền và 2 bạn nữ biết chơi bóng chuyền. Chọn ngẫu nhiên một bạn trong lớp, tính xác suất bạn đó biết chơi bóng chuyền.</p>
 <p><strong>Giải.</strong> Bài này có thể giải đơn giản bằng việc xác định số bạn biết chơi bóng chuyền là <span class="math notranslate nohighlight">\(5 + 2 = 7\)</span> (5 nam và 2 nữ), trong khi không gian mẫu là <span class="math notranslate nohighlight">\(15 + 10 = 25\)</span> nên kết quả là <span class="math notranslate nohighlight">\(\dfrac{7}{25}\)</span>.</p>
 <p>Bài này nhằm đưa ra cái nhìn đơn giản về việc xác định điều kiện để thành lập hệ biến cố đầy đủ và giải bài toán.</p>
@@ -747,20 +768,21 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 \[\begin{equation*}
     P(B) = P(A_1) \cdot P(B \vert A_1) + P(A_2) \cdot P(B \vert A_2) = \frac{3}{5} \cdot \frac{1}{3} + \frac{2}{5} \cdot \frac{1}{5} = \frac{7}{25}.
 \end{equation*}\]</div>
-</div>
-<p>Ở đây, nếu chúng ta thêm điều kiện cho đề bài, ví dụ như bạn được chọn ngẫu nhiên biết chơi bóng chuyền <em>với điều kiện bạn đó là nữ</em> thì sao? Đề bài lúc này tương đương việc tính <span class="math notranslate nohighlight">\(P(B \vert A_2)\)</span>.</p>
+</section>
+</div><p>Ở đây, nếu chúng ta thêm điều kiện cho đề bài, ví dụ như bạn được chọn ngẫu nhiên biết chơi bóng chuyền <em>với điều kiện bạn đó là nữ</em> thì sao? Đề bài lúc này tương đương việc tính <span class="math notranslate nohighlight">\(P(B \vert A_2)\)</span>.</p>
 <p>Để trả lời câu hỏi này chúng ta sử dụng công thức Bayes.</p>
 </section>
 <section id="cong-thuc-bayes">
 <h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">1.2.4. </span>Công thức Bayes</a><a class="headerlink" href="#cong-thuc-bayes" title="Link to this heading">#</a></h3>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Định lí.</strong> (Công thức Bayes)</p>
-<p>Xét phân hoạch <span class="math notranslate nohighlight">\(\{ A_1, A_2, \ldots, A_n \}\)</span> của không gian xác suất. Với biến cố <span class="math notranslate nohighlight">\(B\)</span> bất kì ta có <strong>công thức Bayes</strong>:</p>
+<div class="proof theorem admonition" id="theorem-20">
+<p class="admonition-title"><span class="caption-number">Theorem 1.5 </span> (Công thức Bayes)</p>
+<section class="theorem-content" id="proof-content">
+<p>Xét hệ biến cố đầy đủ <span class="math notranslate nohighlight">\(\{ A_1, A_2, \ldots, A_n \}\)</span> của không gian xác suất. Với biến cố <span class="math notranslate nohighlight">\(B\)</span> bất kì ta có <strong>công thức Bayes</strong>:</p>
 <div class="math notranslate nohighlight">
 \[P(A_i | B) = \frac{P(A_i) P(B | A_i)}{\displaystyle{\sum_{j=1}^n P(A_j) P(B | A_j)}}\]</div>
 <p>với mọi <span class="math notranslate nohighlight">\(1 \leqslant i \leqslant n\)</span>.</p>
-</div>
-<p>Công thức Bayes thực ra là công thức xác suất có điều kiện <span class="math notranslate nohighlight">\(P(B) \cdot P(A \vert B) = P(A) \cdot P(B \vert A)\)</span>, trong đó ta thay <span class="math notranslate nohighlight">\(P(B)\)</span> bởi công thức xác suất toàn phần.</p>
+</section>
+</div><p>Công thức Bayes thực ra là công thức xác suất có điều kiện <span class="math notranslate nohighlight">\(P(B) \cdot P(A \vert B) = P(A) \cdot P(B \vert A)\)</span>, trong đó ta thay <span class="math notranslate nohighlight">\(P(B)\)</span> bởi công thức xác suất toàn phần.</p>
 <p>Như vậy, để trả lời cho câu hỏi trên, ta có</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
@@ -773,8 +795,9 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 <section id="id2">
 <h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">1.3.1. </span>Biến ngẫu nhiên</a><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Xét phép thử với không gian mẫu <span class="math notranslate nohighlight">\(\Omega\)</span>. Với mỗi biến cố sơ cấp <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span> ta liên kết với một số thực <span class="math notranslate nohighlight">\(\xi(\omega) \in \mathbb{R}\)</span> thì <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là <strong>biến ngẫu nhiên</strong> (hay <strong>random variable</strong>, BNN).</p>
-<div class="admonition-dinh-nghia-bien-ngau-nhien admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Biến ngẫu nhiên)</p>
+<div class="proof definition admonition" id="definition-21">
+<p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Biến ngẫu nhiên)</p>
+<section class="definition-content" id="proof-content">
 <p><strong>Biến ngẫu nhiên</strong> <span class="math notranslate nohighlight">\(\xi\)</span> của một phép thử với không gian mẫu <span class="math notranslate nohighlight">\(\Omega\)</span> là ánh xạ:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
@@ -782,8 +805,8 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
         \xi = \xi (\omega), \quad \omega \in \Omega
     \end{split}
 \end{equation*}\]</div>
-</div>
-<p>Giá trị <span class="math notranslate nohighlight">\(\xi(\omega)\)</span> được gọi là một giá trị của biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span>.</p>
+</section>
+</div><p>Giá trị <span class="math notranslate nohighlight">\(\xi(\omega)\)</span> được gọi là một giá trị của biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span>.</p>
 <ul class="simple">
 <li><p>Nếu <span class="math notranslate nohighlight">\(\xi(\Omega)\)</span> là một tập hữu hạn <span class="math notranslate nohighlight">\(\{\xi_1, \xi_2, \ldots,\xi_n\}\)</span> hay tập vô hạn đếm được thì <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là <strong>biến ngẫu nhiên rời rạc</strong>.</p></li>
 <li><p>Nếu <span class="math notranslate nohighlight">\(\xi(\Omega)\)</span> là một khoảng của <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> hay toàn bộ <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> thì <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là <strong>biến ngẫu nhiên liên tục</strong>.</p></li>
@@ -791,22 +814,22 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 </section>
 <section id="phan-bo-xac-suat-cua-bien-ngau-nhien">
 <h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.3.2. </span>Phân bố xác suất của biến ngẫu nhiên</a><a class="headerlink" href="#phan-bo-xac-suat-cua-bien-ngau-nhien" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-ham-phan-phoi-xac-suat admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Hàm phân phối xác suất)</p>
+<div class="proof definition admonition" id="definition-22">
+<p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Hàm phân phối xác suất)</p>
+<section class="definition-content" id="proof-content">
 <p><strong>Hàm phân phối</strong> của biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span> là hàm số <span class="math notranslate nohighlight">\(F(x)\)</span>, xác định bởi:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     F(x) = P(\xi \leqslant x), \quad x \in \mathbb{R}
 \end{equation}\]</div>
-</div>
-<p>Ở đây ta viết gọn <span class="math notranslate nohighlight">\(P(\xi \leqslant x)\)</span> từ <span class="math notranslate nohighlight">\(P(\{ \omega: \xi(\omega) \leqslant x \})\)</span>. Tập hợp <span class="math notranslate nohighlight">\(\{ \omega: \xi(\omega) \leqslant x\}\)</span> có thể không thuộc một biến cố nào, do đó có thể là tập rỗng (ứng với xác suất là <span class="math notranslate nohighlight">\(0\)</span>).</p>
+</section>
+</div><p>Ở đây ta viết gọn <span class="math notranslate nohighlight">\(P(\xi \leqslant x)\)</span> từ <span class="math notranslate nohighlight">\(P(\{ \omega: \xi(\omega) \leqslant x \})\)</span>. Tập hợp <span class="math notranslate nohighlight">\(\{ \omega: \xi(\omega) \leqslant x\}\)</span> có thể không thuộc một biến cố nào, do đó có thể là tập rỗng (ứng với xác suất là <span class="math notranslate nohighlight">\(0\)</span>).</p>
 </section>
 <section id="tinh-chat-cua-ham-phan-phoi">
 <h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">1.3.3. </span>Tính chất của hàm phân phối</a><a class="headerlink" href="#tinh-chat-cua-ham-phan-phoi" title="Link to this heading">#</a></h3>
 <p><strong>Tính chất 1.</strong> Hàm phân phối <span class="math notranslate nohighlight">\(F(x)\)</span> không giảm trên mọi đoạn thẳng.</p>
-<div class="danger admonition">
-<p class="admonition-title"><strong>Chứng minh.</strong></p>
-<p>Đặt <span class="math notranslate nohighlight">\(x_2 &gt; x_1\)</span>. Ta thấy rằng</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Đặt <span class="math notranslate nohighlight">\(x_2 &gt; x_1\)</span>. Ta thấy rằng</p>
 <div class="math notranslate nohighlight">
 \[\{ \xi \leqslant x_2 \} = \{ \xi \leqslant x_1 \} + \{ x_1 &lt; \xi \leqslant x_2 \},\]</div>
 <p>Do đó nếu ta lấy xác suất thì cũng có</p>
@@ -853,60 +876,67 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
 <p>Các biến ngẫu nhiên xung khắc nhau (vì <span class="math notranslate nohighlight">\(\xi\)</span> không thể nhận hai giá trị khác nhau cùng lúc), do đó xác suất cả không gian mẫu là</p>
 <div class="math notranslate nohighlight">
 \[1 = P(\Omega) = P(\xi = a_1) + P(\xi = a_2) + \ldots = p_1 + p_2 + \ldots\]</div>
-<div class="admonition-dinh-nghia-phan-bo-bernoulli admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Phân bố Bernoulli)</p>
+<div class="proof definition admonition" id="definition-23">
+<p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Phân bố Bernoulli)</p>
+<section class="definition-content" id="proof-content">
 <p>Phân bố xác suất cho không gian sinh bởi đúng một sự kiện <span class="math notranslate nohighlight">\(A\)</span> và phủ định của nó <span class="math notranslate nohighlight">\(\bar{A}\)</span>, hay <span class="math notranslate nohighlight">\(\Omega = \{ A, \bar{A} \}\)</span>. Nếu xác suất xảy ra sự kiện <span class="math notranslate nohighlight">\(A\)</span> là <span class="math notranslate nohighlight">\(p\)</span> thì xác suất xảy ra <span class="math notranslate nohighlight">\(\bar{A}\)</span> là <span class="math notranslate nohighlight">\(1-p\)</span>.</p>
-</div>
-<p>Phân bố Bernoulli được đặt tên theo nhà toán học Jacob Bernoulli (1654-1705).</p>
-<div class="admonition-dinh-nghia-phan-phoi-nhi-thuc admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Phân phối nhị thức)</p>
+</section>
+</div><p>Phân bố Bernoulli được đặt tên theo nhà toán học Jacob Bernoulli (1654-1705).</p>
+<div class="proof definition admonition" id="definition-24">
+<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Phân phối nhị thức)</p>
+<section class="definition-content" id="proof-content">
 <p>Biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là có <strong>phân phối nhị thức</strong> với tham số <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, với <span class="math notranslate nohighlight">\(p \in [0, 1]\)</span> và <span class="math notranslate nohighlight">\(n\)</span> là số tự nhiên, nếu <span class="math notranslate nohighlight">\(\xi\)</span> nhận các giá trị <span class="math notranslate nohighlight">\(0, 1, \ldots, n\)</span> và</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     P(\xi = k) = C^k_n p^k q^{n-k}, \quad k = 0, 1, \ldots, n
 \end{equation}\]</div>
 <p>Ở đây <span class="math notranslate nohighlight">\(q = 1 - p\)</span>.</p>
-</div>
-<div class="caution admonition">
-<p class="admonition-title"><strong>Ví dụ.</strong></p>
+</section>
+</div><div class="proof example admonition" id="example-25">
+<p class="admonition-title"><span class="caption-number">Example 1.8 </span></p>
+<section class="example-content" id="proof-content">
 <p>Một bài kiểm tra có 100 câu hỏi trắc nghiệm bốn đáp án. Xác suất chọn ngẫu nhiên đúng đáp án của mỗi câu hỏi thì giống nhau và bằng <span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span>.</p>
 <p>Ở đây xác suất chọn ngẫu nhiên đúng đáp án của một câu hỏi bất kì là <span class="math notranslate nohighlight">\(p = \dfrac{1}{4}\)</span>, và số lượng câu hỏi là <span class="math notranslate nohighlight">\(n = 100\)</span>.</p>
 <p>Gọi <span class="math notranslate nohighlight">\(\xi\)</span> là biến ngẫu nhiên số câu hỏi trả lời đúng. Khi đó <span class="math notranslate nohighlight">\(\xi\)</span> nhận các giá trị <span class="math notranslate nohighlight">\(0, 1, \ldots, 100\)</span>.</p>
 <p>Do đó bài toán này có phân phối nhị nhức và</p>
 <div class="math notranslate nohighlight">
 \[P(\xi = k) = C^k_{100} \left(\dfrac{1}{4}\right)^k \left(\dfrac{3}{4}\right)^{100-k}\]</div>
-</div>
-<div class="admonition-dinh-nghia-phan-bo-xac-suat-deu admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Phân bố xác suất đều)</p>
+</section>
+</div><div class="proof definition admonition" id="definition-26">
+<p class="admonition-title"><span class="caption-number">Definition 1.12 </span> (Phân bố xác suất đều)</p>
+<section class="definition-content" id="proof-content">
 <p>Phân bố xác suất <span class="math notranslate nohighlight">\(P\)</span> trên không gian xác suất hữu hạn với <span class="math notranslate nohighlight">\(N\)</span> phần tử <span class="math notranslate nohighlight">\(\Omega = \{ A_1, \ldots, A_n \}\)</span> được gọi là <strong>phân bố xác suất đều</strong> nếu như <span class="math notranslate nohighlight">\(P(A_1) = \ldots = P(A_n) = 1 / N\)</span>.</p>
-</div>
-<p>Khái niệm phân bố đều không mở rộng được lên các không gian xác suất có số phần tử là vô hạn và đếm được vì <span class="math notranslate nohighlight">\(1\)</span> chia vô cùng bằng <span class="math notranslate nohighlight">\(0\)</span> mà tổng của chuỗi vô hạn số <span class="math notranslate nohighlight">\(0\)</span> vẫn bằng <span class="math notranslate nohighlight">\(0\)</span> chứ không bằng <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<div class="warning admonition">
-<p class="admonition-title"><strong>Lưu ý.</strong></p>
+</section>
+</div><p>Khái niệm phân bố đều không mở rộng được lên các không gian xác suất có số phần tử là vô hạn và đếm được vì <span class="math notranslate nohighlight">\(1\)</span> chia vô cùng bằng <span class="math notranslate nohighlight">\(0\)</span> mà tổng của chuỗi vô hạn số <span class="math notranslate nohighlight">\(0\)</span> vẫn bằng <span class="math notranslate nohighlight">\(0\)</span> chứ không bằng <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="proof remark admonition" id="remark-27">
+<p class="admonition-title"><span class="caption-number">Remark 1.3 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Phân bố xác suất đều có <strong>tính đối xứng</strong>, <strong>cân bằng</strong> hay <strong>hoán vị được</strong> của các sự kiện thành phần.</p>
-</div>
-<div class="admonition-dinh-nghia-phan-phoi-poisson admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Phân phối Poisson)</p>
+</section>
+</div><div class="proof definition admonition" id="definition-28">
+<p class="admonition-title"><span class="caption-number">Definition 1.13 </span> (Phân phối Poisson)</p>
+<section class="definition-content" id="proof-content">
 <p>Biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là có <strong>phân phối Poisson</strong> với tham số <span class="math notranslate nohighlight">\(\lambda\)</span>, nếu <span class="math notranslate nohighlight">\(\xi\)</span> nhận các giá trị <span class="math notranslate nohighlight">\(0, 1, \ldots, n\)</span> và</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     P(\xi = k) = \dfrac{\lambda^k \cdot e^{-\lambda}}{k!}, \quad k = 0, 1, \ldots, n
 \end{equation}\]</div>
-</div>
-<p>Tham số <span class="math notranslate nohighlight">\(\lambda\)</span> thể hiện số lần trung bình mà một sự kiện xảy ra trong một khoảng thời gian nhất định. Khi đó, nếu một biến ngẫu nhiên có số lần xuất hiện trung bình của một sự kiện trong thời gian <span class="math notranslate nohighlight">\(t\)</span> thì nó có phân phối Poisson với tham số <span class="math notranslate nohighlight">\(\lambda t\)</span>, với <span class="math notranslate nohighlight">\(\lambda\)</span> là số lần trung bình trong một đơn vị thời gian.</p>
+</section>
+</div><p>Tham số <span class="math notranslate nohighlight">\(\lambda\)</span> thể hiện số lần trung bình mà một sự kiện xảy ra trong một khoảng thời gian nhất định. Khi đó, nếu một biến ngẫu nhiên có số lần xuất hiện trung bình của một sự kiện trong thời gian <span class="math notranslate nohighlight">\(t\)</span> thì nó có phân phối Poisson với tham số <span class="math notranslate nohighlight">\(\lambda t\)</span>, với <span class="math notranslate nohighlight">\(\lambda\)</span> là số lần trung bình trong một đơn vị thời gian.</p>
 </section>
 <section id="bien-ngau-nhien-lien-tuc">
 <h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">1.3.5. </span>Biến ngẫu nhiên liên tục</a><a class="headerlink" href="#bien-ngau-nhien-lien-tuc" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia-bien-ngau-nhien-lien-tuc admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong> (Biến ngẫu nhiên liên tục)</p>
+<div class="proof definition admonition" id="definition-29">
+<p class="admonition-title"><span class="caption-number">Definition 1.14 </span> (Biến ngẫu nhiên liên tục)</p>
+<section class="definition-content" id="proof-content">
 <p>Biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span> được gọi là <strong>liên tục</strong>, nếu nó nhận giá trị tại mọi điểm thuộc một đoạn liên tục nào đó trên trục số, và tồn tại một hàm số không âm <span class="math notranslate nohighlight">\(p(x)\)</span> sao cho với mọi đoạn <span class="math notranslate nohighlight">\([a ,b]\)</span> (hữu hạn hoặc vô hạn) ta có</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
     P(a \leqslant \xi \leqslant b) = \int\limits_{a}^{b} p(x)\, dx
 \end{equation}\]</div>
 <p>Hàm <span class="math notranslate nohighlight">\(p(x)\)</span> được gọi là <strong>hàm mật độ</strong> của biến ngẫu nhiên <span class="math notranslate nohighlight">\(\xi\)</span>.</p>
-</div>
-<p>Tương tự biến ngẫu nhiên rời rạc, <span class="math notranslate nohighlight">\(p(x) \geqslant 0\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> và khi hai cận là vô cực thì biến ngẫu nhiên bao quát toàn bộ không gian mẫu. Nghĩa là</p>
+</section>
+</div><p>Tương tự biến ngẫu nhiên rời rạc, <span class="math notranslate nohighlight">\(p(x) \geqslant 0\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> và khi hai cận là vô cực thì biến ngẫu nhiên bao quát toàn bộ không gian mẫu. Nghĩa là</p>
 <div class="math notranslate nohighlight">
 \[\int\limits_{-\infty}^{+\infty} p(x)\, dx = 1\]</div>
 <p>Từ định nghĩa của hàm phân phối <span class="math notranslate nohighlight">\(F(x) = P(\xi \leqslant x)\)</span> ta có hai tính chất của hàm mật độ:</p>
@@ -946,28 +976,31 @@ P(A) &amp; = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) +
         p_i &amp; \text{khi} \ x = x_i, \\
         0 &amp; \text{khi} \ x \neq x_i, \ \text{với mọi} \ i
 \end{cases}\end{split}\]</div>
-<div class="warning admonition">
-<p class="admonition-title"><strong>Lưu ý.</strong></p>
+<div class="proof remark admonition" id="remark-30">
+<p class="admonition-title"><span class="caption-number">Remark 1.4 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Ta có các lưu ý sau:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(p_i \geqslant 0\)</span>, <span class="math notranslate nohighlight">\(\sum p_i = 1\)</span>, <span class="math notranslate nohighlight">\(i = 1, 2, \ldots\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\displaystyle{P(a &lt; X \leqslant b) = \sum_{a &lt; x_i \leqslant b} p_i}\)</span></p></li>
 </ul>
-</div>
 </section>
+</div></section>
 <section id="ham-mat-do-cua-bien-ngau-nhien-lien-tuc">
 <h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">1.3.7. </span>Hàm mật độ của biến ngẫu nhiên liên tục</a><a class="headerlink" href="#ham-mat-do-cua-bien-ngau-nhien-lien-tuc" title="Link to this heading">#</a></h3>
-<div class="admonition-dinh-nghia admonition">
-<p class="admonition-title"><strong>Định nghĩa.</strong></p>
+<div class="proof definition admonition" id="definition-31">
+<p class="admonition-title"><span class="caption-number">Definition 1.15 </span></p>
+<section class="definition-content" id="proof-content">
 <p>Hàm số <span class="math notranslate nohighlight">\(f: \mathbb{R} \mapsto \mathbb{R}\)</span> được gọi là <strong>hàm mật độ</strong> của biến ngẫu nhiên liên tục <span class="math notranslate nohighlight">\(X\)</span> nếu:</p>
 <div class="math notranslate nohighlight">
 \[P(a \leqslant X \leqslant b) = \displaystyle{\int\limits_a^b f(x)\,dx}, \forall a, b \in \mathbb{R}\]</div>
-</div>
-<div class="important admonition">
-<p class="admonition-title"><strong>Nhận xét.</strong></p>
+</section>
+</div><div class="proof remark admonition" id="remark-32">
+<p class="admonition-title"><span class="caption-number">Remark 1.5 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(x) \geqslant 0\)</span> và <span class="math notranslate nohighlight">\(\displaystyle{\int\limits_{-\infty}^{+\infty}f(x)\,dx = 1}\)</span>.</p>
-</div>
-<p><strong>Ý nghĩa hình học.</strong> Xác suất của biến ngẫu nhiên <span class="math notranslate nohighlight">\(X\)</span> nhận giá trị trong <span class="math notranslate nohighlight">\([a, b]\)</span> bằng diện tích hình thang cong giới hạn bởi <span class="math notranslate nohighlight">\(x=a\)</span>, <span class="math notranslate nohighlight">\(x=b\)</span>, <span class="math notranslate nohighlight">\(y=f(x)\)</span> và <span class="math notranslate nohighlight">\(Ox\)</span>.</p>
+</section>
+</div><p><strong>Ý nghĩa hình học.</strong> Xác suất của biến ngẫu nhiên <span class="math notranslate nohighlight">\(X\)</span> nhận giá trị trong <span class="math notranslate nohighlight">\([a, b]\)</span> bằng diện tích hình thang cong giới hạn bởi <span class="math notranslate nohighlight">\(x=a\)</span>, <span class="math notranslate nohighlight">\(x=b\)</span>, <span class="math notranslate nohighlight">\(y=f(x)\)</span> và <span class="math notranslate nohighlight">\(Ox\)</span>.</p>
 </section>
 </section>
 </section>

@@ -5,11 +5,11 @@
 
 ## Xác suất là gì?
 
-```{admonition} **Định nghĩa.** (Định nghĩa cổ điển của xác suất)
+````{prf:definition} Định nghĩa cổ điển của xác suất
 Định nghĩa thống kê của xác suất nói rằng, giả sử trong một phép thử có $n$ khả năng có thể xảy ra. Xét một biến cố $A$ xảy ra khi thực hiện phép thử có $k$ khả năng xảy ra. Khi đó xác suất của biến cố $A$ ký hiệu là $P(A)$ và được tính:
 
 $$P(A) = \frac{k}{n}$$
-```
+````
 
 Dễ thấy, do biến cố $A$ là một trường hợp nhỏ trong tổng thể tất cả trường hợp khi thực hiện phép thử, nên $0 \leqslant k \leqslant n$. Nghĩa là:
 
@@ -17,8 +17,7 @@ $$0 \leqslant P(A) \leqslant 1$$
 
 với mọi biến cố $A$ bất kì.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét phép thử tung hai đồng xu. Gọi $A$ là biến cố hai đồng xu cùng mặt.
 
 Ta ký hiệu $S$ là đồng xu sấp, $N$ là đồng xu ngửa. Khi đó các trường hợp có thể xảy ra của phép thử là $S-S$, $S-N$, $N-S$, $N-N$ (4 trường hợp). 
@@ -26,7 +25,7 @@ Ta ký hiệu $S$ là đồng xu sấp, $N$ là đồng xu ngửa. Khi đó các
 Trong khi đó, các trường hợp có thể xảy ra của biến cố $A$ là $S-S$, $N-N$ (2 trường hợp).
 
 Kết luận: $P(A) = \dfrac{2}{4} = \dfrac{1}{2}$.
-```
+````
 
 Chúng ta gọi tập hợp tất cả các trường hợp khi thực hiện phép thử là **không gian mẫu** và ký hiệu là $\Omega$. Mỗi phần tử trong không gian mẫu được gọi là **biến cố sơ cấp**. Trong ví dụ trên:
 
@@ -36,8 +35,7 @@ Tập hợp các trường hợp có thể xảy ra của biến cố gọi là 
     
 Như vậy, $P(A) = \dfrac{|\Omega_A|}{|\Omega|}$.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Tung hai con súc sắc cân đối và đồng chất. Tính xác suất tổng số nút của hai con súc sắc bằng 4.
 
 Việc tung mỗi con súc sắc có 6 trường hợp. Do đó $|\Omega| = 6^2 = 36$.
@@ -45,7 +43,7 @@ Việc tung mỗi con súc sắc có 6 trường hợp. Do đó $|\Omega| = 6^2 
 Gọi $A$ là biến cố tổng số nút của hai con súc sắc bằng 4. Ta có các trường hợp là $4=1+3=3+1=2+2$ (3 trường hợp).
 
 Như vậy $|\Omega_A| = 3$ và $P(A) = \dfrac{3}{36} = \dfrac{1}{12}$
-```
+````
 
 ### Ba tiên đề về sự nhất quán của xác suất
 
@@ -69,7 +67,7 @@ P(A \cap B) = 0 \Rightarrow P(A \cup B) = P(A) + P(B)
 
 ### Không gian xác suất
 
-```{admonition} **Định nghĩa.** (Không gian xác suất)
+````{prf:definition} Không gian xác suất
 Một **không gian xác suất** là một tập hợp $\Omega$ cùng với:
 
 1) Một họ $\mathcal{S}$ các tập con của $\Omega$, thỏa mãn các tính chất sau:
@@ -99,7 +97,7 @@ Với điều kiện thêm này, $\mathcal{S}$ được gọi là một **sigma-
 Tổng quát hơn, nếu $A_i$, với $i = 1, 2, 3, \ldots$ là một dãy các tập hợp con đo được và chúng đôi một không giao nhau thì:
 
 $$P\left(\bigcup_i A_i\right) = \sum_{i} P(A_i)$$
-```
+````
 
 Một số lưu ý:
 
@@ -126,14 +124,13 @@ P(A) & = P(A_1 \cup \bigcup_{n=1}^\infty (A_{n+1} \setminus A_n)) = P(A_1) + \su
 
 ### Phép cộng xác suất mở rộng
 
-Ở tiền đề 3 bên trên, hai biến cố khi đó được gọi là **xung khắc**, nghĩa là nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.
+Ở tiên đề 3 bên trên, hai biến cố khi đó được gọi là **xung khắc**, nghĩa là nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.
 
 Ta còn có thể ký hiệu giao hai biến cố $P(A \cap B)$ là $P(AB)$.
     
 Một trường hợp đơn giản nhất của hai biến cố xung khắc là **biến cố đối**.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Tung một đồng xu và gọi $A$ là biến cố đồng xu ra mặt ngửa. Khi đó biến cố đối của $A$, kí hiệu là $\bar{A}$ là biến cố ra mặt sấp. Ở đây $A \cup \bar{A} = \Omega$ và $A \cap \bar{A} = \emptyset$.
 
 Từ đó:
@@ -141,7 +138,7 @@ Từ đó:
 $$1 = P(\Omega) = P(A \cup \bar{A}) = P(A) + P(\bar{A}),$$
 
 nói cách khác $P(\bar{A}) = 1 - P(A)$.
-```
+````
 
 Xét hai tập hợp $A$ và $B$. Số phần tử của phép hợp hai tập hợp trong trường hợp tổng quát được tính như sau: 
 
@@ -161,20 +158,17 @@ $$\begin{equation*}
 
 Tương tự, ta có phép cộng xác suất:
 
-```{admonition} **Định lí.** (Phép cộng xác suất mở rộng)
-:class: hint
-
+````{prf:theorem} Phép cộng xác suất mở rộng
 $$   \begin{equation*}
     P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum_{i=1}^n (-1)^{i+1} \sum_{j_1, j_2, \cdots, j_i} P(A_{j_1} \cap A_{j_2} \cap \cdots \cap A_{j_i})
 \end{equation*}$$
-```
+````
 
 ### Mô hình xác suất với vô hạn các sự kiện
 
-```{admonition} **Ví dụ.** (Phân phối Poisson)
-:class: caution
+````{prf:example} Phân phối Poisson
 Giả sử tỉ lệ số khách hàng trung bình đến siêu thị trong một đơn vị thời gian cố định là $\lambda$. Phân phối Poisson $P(n) = e^{-\lambda} \cdot \dfrac{\lambda^n}{n!}$ thể hiện xác suất có $n$ khách hàng đến siêu thị theo tỉ lệ thời gian $\lambda$. 
-```
+````
 
 Ở phân phối Poisson, $n$ nhận tất cả giá trị nguyên không âm $0, 1, \ldots$ cũng như thỏa điều kiện:
 
@@ -182,25 +176,23 @@ $$\sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^
 
 Ở biến đổi trên, $\displaystyle{\sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^\lambda}$ là khai triển Taylor.
 
-```{admonition} **Ví dụ.**
-:class: warning
+````{prf:example}
 Giả sử ta biết rằng có một xe hơi $X$ đang đậu trên một khúc phố $Z$ và ta quan tâm đến vị trí của $X$ trên khúc phố đó. Ta có thể mô hình $X$ bằng một điểm và $Z$ là một đoạn thẳng và lấy đoạn thẳng đó làm không gian xác suất $\Omega = [a, b]$, $a, b \in \mathbb{R}, a < b$. (mô hình xác suất liên tục này có lực lượng continuum, không đếm được). Sự kiện "xe hơi đỗ chỗ nào đó trên khúc phố" chuyển thành sự kiện "điểm $x$ nằm trong một đoạn thẳng con nào đó trên đoạn thẳng $\Omega = [a, b]$". Ta có thể chọn phân bố xác suất đều trên $\Omega = [a, b]$ theo nghĩa sau: xác suất mỗi đoạn thẳng con trên $\Omega$ tỷ lệ thuận với độ dài của đoạn thẳng con đó, hay $P([c, d]) = (d - c) / (b - a)$.
-```
+````
 
 ### Ánh xạ giữa các không gian xác suất
 
-```{admonition} **Định nghĩa.** (Ánh xạ bảo toàn xác suất)
+````{prf:definition} Ánh xạ bảo toàn xác suất
 Một ánh xạ $\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)$ từ một không gian xác suất $(\Omega_1, P_1)$ vào một không gian xác suất $(\Omega_2, P_2)$ được gọi là một **ánh xạ bảo toàn xác suất** nếu nó bảo toàn độ đo xác suất, nghĩa là với mọi tập con $B \subset \Omega_2$ đo được, ta có:
 
 $$P_1(\phi^{-1}(B)) = P_2(B)$$
-```
+````
 
 Hơn nữa, nếu $\phi$ là một song ánh modulo những tập có xác suất bằng $0$, nghĩa là tồn tại các tập con $A \in \Omega_1$, $B \in \Omega_2$ sao cho $P_1(A) = P_2(B) = 0$ và $\phi : \Omega_1 \setminus A \to \Omega_2 \setminus B$ là song ánh bảo toàn xác suất, thì $\phi$ được gọi là **đẳng cấu xác suất**, và ta nói rằng $(\Omega_1, P_1)$ đẳng cấu xác suất với $(\Omega_2, P_2)$.
 
-```{admonition} **Định lí.**
-:class: hint
+````{prf:theorem}
 Nếu $(\Omega_1, P_1)$ là một không gian xác suất và $\phi : \Omega_1 \to \Omega_2$ là một ánh xạ tùy ý thì tồn tại một độ đo xác suất $P_2$ sao cho ánh xạ $\phi : (\Omega_1, P_1) \to (\Omega_2, P_2)$ là ánh xạ bảo toàn xác suất.
-```
+````
 
 Ta xây dựng $P_2$ theo công thức: với mỗi tập con $B \subset \Omega_2$, nếu tồn tại $P_1(\phi^{-1}(B))$ thì ta đặt
 
@@ -222,35 +214,33 @@ Sigma-đại số của $P$ chính là sigma-đại số sinh bởi các tập c
 
 Tương tự ta có thể định nghĩa tích trực tiếp của $n$ không gian xác suất hay thập chí một dãy vô hạn các không gian xác suất.
 
-```{admonition} **Định lí.**
-:class: hint
+````{prf:theorem}
 Hai phép chiếu tự nhiên từ tích $(\Omega_1, P_1) \times (\Omega_2, P_2)$ của hai không gian xác suất xuống $(\Omega_1, P_1)$ và $(\Omega_2, P_2)$ là hai ánh xạ bảo toàn xác suất.
-```
+````
 
 ## Xác suất có điều kiện
 
 ### Xác suất có điều kiện
 
-```{admonition} **Định nghĩa.** (Xác suất có điều kiện)
+````{prf:definition} Xác suất có điều kiện
 Xét hai biến cố $A$ và $B$. Khi đó xác suất xảy ra của biến cố $B$ với điều kiện biến cố $A$ xảy ra là: 
 
 $$\begin{equation}
     P(A \vert B) = \frac{P(AB)}{P(B)}
 \end{equation}$$
-```
+````
 
 Ý nghĩa của công thức trên có thể hiểu là, việc biến cố $A$ xảy ra dựa trên cơ sở biến cố $B$ đã xảy ra, do đó không gian mẫu sẽ giảm xuống còn $B$ và biến cố giảm còn $AB$.
 
 Dựa trên định nghĩa của xác suất có điều kiện có thể đưa ra nhận xét sau.
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Từ công thức trên có thể thấy sự tương đương:
 
 $$\begin{equation*}
     P(AB) = P(B) \cdot P(A \vert B) = P(A) \cdot P(B \vert A)
 \end{equation*}$$
-```
+````
 
 Nhận xét trên cho thấy sự liên hệ của hai biến cố. Nói cách khác việc xảy ra của biến cố này sẽ ảnh hưởng đến biến cố kia và ngược lại.
 
@@ -270,11 +260,11 @@ Cũng từ nhận xét trên, các biến cố có vai trò như nhau nên việ
 
 Nếu hai biến cố không ảnh hưởng việc xảy ra của nhau thì ta gọi là biến cố độc lập.
 
-```{admonition} **Định nghĩa.** (Biến cố độc lập)
+````{prf:definition} Biến cố độc lập
 Hai biến cố được gọi là **độc lập** nếu việc xảy ra của biến cố này không ảnh hưởng đến việc xảy ra của biến cố kia, hay:
 
 $$P(A) = P(A \vert B) = P(AB) / P(B)$$
-```
+````
 
 Viết cách khác là:
 
@@ -282,44 +272,40 @@ $$P(AB) = P(A) \cdot P(B)$$
 
 Khi đó, giả sử ta có một họ $\mathcal{M}$ các sự kiện.
 
-```{admonition} **Định nghĩa.** (Họ các sự kiện độc lập)
+````{prf:definition} Họ các sự kiện độc lập
 Họ $\mathcal{M}$ được gọi là một **họ các sự kiện độc lập** nếu như với bất kì số tự nhiên $k$ nào và bất kì sự kiện $A_i, \ldots, A_k$ khác nhau nào trong họ $\mathcal{M}$ ta cũng có:
 
 $$P(A_1 \cdots A_k) = P(A_1) \cdot P(A_2) \cdots P(A_k).$$
-```
+````
 
-```{admonition} **Lưu ý.**
-:class: warning
+````{prf:remark}
 Nếu ta có một họ các sự kiện độc lập thì các sự kiện trong họ độc lập đôi một với nhau. Nhưng ngược lại chưa chắc: có những họ không độc lập mà trong đó các sự kiện độc lập từng đôi một với nhau!
-```
+````
 
 ### Công thức xác suất toàn phần
 
-```{admonition} **Định nghĩa.** (Hệ biến cố đầy đủ)
+````{prf:definition} Hệ biến cố đầy đủ
 Xét phép thử có không gian mẫu là $\Omega$. Một hệ các biến cố $A_1$, $A_2$, ..., $A_n$ là một **hệ biến cố đầy đủ** (hoặc **phân hoạch**) của $\Omega$ nếu chúng thỏa các điều kiện:
 
 - $A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$
 - $A_i \cap A_j = \emptyset$ với mọi $i \neq j$
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Một hệ biến cố đầy đủ đơn giản là $\Omega = \{ A, \bar{A} \}$ gồm biến cố $A$ và biến cố đối của $A$.
-```
+````
 
 Khi có một hệ biến cố đầy đủ, ta có thể tính xác suất của một biến cố bất kì nếu biết xác suất của các biến cố trong hệ biến cố đầy đủ và xác suất có điều kiện tương ứng.
 
-```{admonition} **Định lí.** (Công thức xác suất toàn phần)
-:class: hint
+````{prf:theorem} Công thức xác suất toàn phần
 Gọi $A_1, A_2, \ldots, A_n$ là một hệ biến cố đầy đủ của $\Omega$. Khi đó, với biến cố $B$ bất kì trong phép thử: 
 
 $$\begin{equation}    
     P(B) = P(A_1) \cdot P(B | A_1) + \cdots + P(A_n) \cdot P(B | A_n)
 \end{equation}$$
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 **Đề bài.** Trong một lớp học có 15 bạn nam và 10 bạn nữ. Trong đó có 5 bạn nam biết chơi bóng chuyền và 2 bạn nữ biết chơi bóng chuyền. Chọn ngẫu nhiên một bạn trong lớp, tính xác suất bạn đó biết chơi bóng chuyền.
 
 **Giải.** Bài này có thể giải đơn giản bằng việc xác định số bạn biết chơi bóng chuyền là $5 + 2 = 7$ (5 nam và 2 nữ), trong khi không gian mẫu là $15 + 10 = 25$ nên kết quả là $\dfrac{7}{25}$.
@@ -339,7 +325,7 @@ Theo công thức xác suất toàn phần, xác suất bạn được chọn ng
 $$\begin{equation*}
     P(B) = P(A_1) \cdot P(B \vert A_1) + P(A_2) \cdot P(B \vert A_2) = \frac{3}{5} \cdot \frac{1}{3} + \frac{2}{5} \cdot \frac{1}{5} = \frac{7}{25}.
 \end{equation*}$$
-```
+````
 
 Ở đây, nếu chúng ta thêm điều kiện cho đề bài, ví dụ như bạn được chọn ngẫu nhiên biết chơi bóng chuyền *với điều kiện bạn đó là nữ* thì sao? Đề bài lúc này tương đương việc tính $P(B \vert A_2)$.
 
@@ -347,14 +333,13 @@ $$\begin{equation*}
 
 ### Công thức Bayes
 
-```{admonition} **Định lí.** (Công thức Bayes)
-:class: hint
-Xét phân hoạch $\{ A_1, A_2, \ldots, A_n \}$ của không gian xác suất. Với biến cố $B$ bất kì ta có **công thức Bayes**: 
+````{prf:theorem} Công thức Bayes
+Xét hệ biến cố đầy đủ $\{ A_1, A_2, \ldots, A_n \}$ của không gian xác suất. Với biến cố $B$ bất kì ta có **công thức Bayes**: 
 
 $$P(A_i | B) = \frac{P(A_i) P(B | A_i)}{\displaystyle{\sum_{j=1}^n P(A_j) P(B | A_j)}}$$
 
 với mọi $1 \leqslant i \leqslant n$.
-```
+````
 
 Công thức Bayes thực ra là công thức xác suất có điều kiện $P(B) \cdot P(A \vert B) = P(A) \cdot P(B \vert A)$, trong đó ta thay $P(B)$ bởi công thức xác suất toàn phần.
 
@@ -370,7 +355,7 @@ $$\begin{equation*}
 
 Xét phép thử với không gian mẫu $\Omega$. Với mỗi biến cố sơ cấp $\omega \in \Omega$ ta liên kết với một số thực $\xi(\omega) \in \mathbb{R}$ thì $\xi$ được gọi là **biến ngẫu nhiên** (hay **random variable**, BNN).
 
-```{admonition} **Định nghĩa.** (Biến ngẫu nhiên)
+````{prf:definition} Biến ngẫu nhiên
 **Biến ngẫu nhiên** $\xi$ của một phép thử với không gian mẫu $\Omega$ là ánh xạ: 
 
 $$\begin{equation*}
@@ -378,7 +363,7 @@ $$\begin{equation*}
         \xi = \xi (\omega), \quad \omega \in \Omega
     \end{split}
 \end{equation*}$$
-```
+````
 
 Giá trị $\xi(\omega)$ được gọi là một giá trị của biến ngẫu nhiên $\xi$.
 
@@ -387,13 +372,13 @@ Giá trị $\xi(\omega)$ được gọi là một giá trị của biến ngẫu
 
 ### Phân bố xác suất của biến ngẫu nhiên
 
-```{admonition} **Định nghĩa.** (Hàm phân phối xác suất)
+````{prf:definition} Hàm phân phối xác suất
 **Hàm phân phối** của biến ngẫu nhiên $\xi$ là hàm số $F(x)$, xác định bởi:
 
 $$\begin{equation}
     F(x) = P(\xi \leqslant x), \quad x \in \mathbb{R}
 \end{equation}$$
-```
+````
 
 Ở đây ta viết gọn $P(\xi \leqslant x)$ từ $P(\{ \omega: \xi(\omega) \leqslant x \})$. Tập hợp $\{ \omega: \xi(\omega) \leqslant x\}$ có thể không thuộc một biến cố nào, do đó có thể là tập rỗng (ứng với xác suất là $0$).
 
@@ -401,8 +386,7 @@ $$\begin{equation}
 
 **Tính chất 1.** Hàm phân phối $F(x)$ không giảm trên mọi đoạn thẳng.
 
-```{admonition} **Chứng minh.**
-:class: danger
+````{prf:proof}
 Đặt $x_2 > x_1$. Ta thấy rằng
 
 $$\{ \xi \leqslant x_2 \} = \{ \xi \leqslant x_1 \} + \{ x_1 < \xi \leqslant x_2 \},$$
@@ -412,7 +396,7 @@ Do đó nếu ta lấy xác suất thì cũng có
 $$P(\xi \leqslant x_2) = P(\xi \leqslant x_1) + P(x_1 < \xi \leqslant x_2)$$
 
 Xác suất luôn không âm, hay $P(x_1 < \xi \leqslant x_2) \geqslant 0$, suy ra $P(\xi \leqslant x_2) \geqslant P(\xi \leqslant x_1)$, hay $F(x_2) \geqslant F(x_1)$.
-```
+````
 
 **Tính chất 2.** $\displaystyle{\lim_{x \to -\infty} F(x) = 0}$.
 
@@ -444,13 +428,13 @@ Các biến ngẫu nhiên xung khắc nhau (vì $\xi$ không thể nhận hai gi
 
 $$1 = P(\Omega) = P(\xi = a_1) + P(\xi = a_2) + \ldots = p_1 + p_2 + \ldots$$
 
-```{admonition} **Định nghĩa.** (Phân bố Bernoulli)
+````{prf:definition} Phân bố Bernoulli
 Phân bố xác suất cho không gian sinh bởi đúng một sự kiện $A$ và phủ định của nó $\bar{A}$, hay $\Omega = \{ A, \bar{A} \}$. Nếu xác suất xảy ra sự kiện $A$ là $p$ thì xác suất xảy ra $\bar{A}$ là $1-p$.
-```
+````
 
 Phân bố Bernoulli được đặt tên theo nhà toán học Jacob Bernoulli (1654-1705).
 
-```{admonition} **Định nghĩa.** (Phân phối nhị thức)
+````{prf:definition} Phân phối nhị thức
 Biến ngẫu nhiên $\xi$ được gọi là có **phân phối nhị thức** với tham số $p$, $n$, với $p \in [0, 1]$ và $n$ là số tự nhiên, nếu $\xi$ nhận các giá trị $0, 1, \ldots, n$ và
 
 $$\begin{equation}
@@ -458,10 +442,9 @@ $$\begin{equation}
 \end{equation}$$
 
 Ở đây $q = 1 - p$.
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Một bài kiểm tra có 100 câu hỏi trắc nghiệm bốn đáp án. Xác suất chọn ngẫu nhiên đúng đáp án của mỗi câu hỏi thì giống nhau và bằng $\dfrac{1}{4}$.
 
 Ở đây xác suất chọn ngẫu nhiên đúng đáp án của một câu hỏi bất kì là $p = \dfrac{1}{4}$, và số lượng câu hỏi là $n = 100$.
@@ -471,32 +454,31 @@ Gọi $\xi$ là biến ngẫu nhiên số câu hỏi trả lời đúng. Khi đ�
 Do đó bài toán này có phân phối nhị nhức và
 
 $$P(\xi = k) = C^k_{100} \left(\dfrac{1}{4}\right)^k \left(\dfrac{3}{4}\right)^{100-k}$$ 
-```
+````
 
-```{admonition} **Định nghĩa.** (Phân bố xác suất đều)
+````{prf:definition} Phân bố xác suất đều
 Phân bố xác suất $P$ trên không gian xác suất hữu hạn với $N$ phần tử $\Omega = \{ A_1, \ldots, A_n \}$ được gọi là **phân bố xác suất đều** nếu như $P(A_1) = \ldots = P(A_n) = 1 / N$.
-```
+````
 
 Khái niệm phân bố đều không mở rộng được lên các không gian xác suất có số phần tử là vô hạn và đếm được vì $1$ chia vô cùng bằng $0$ mà tổng của chuỗi vô hạn số $0$ vẫn bằng $0$ chứ không bằng $1$.
 
-```{admonition} **Lưu ý.**
-:class: warning
+````{prf:remark}
 Phân bố xác suất đều có **tính đối xứng**, **cân bằng** hay **hoán vị được** của các sự kiện thành phần.
-```
+````
 
-```{admonition} **Định nghĩa.** (Phân phối Poisson)
+````{prf:definition} Phân phối Poisson
 Biến ngẫu nhiên $\xi$ được gọi là có **phân phối Poisson** với tham số $\lambda$, nếu $\xi$ nhận các giá trị $0, 1, \ldots, n$ và 
 
 $$\begin{equation}
     P(\xi = k) = \dfrac{\lambda^k \cdot e^{-\lambda}}{k!}, \quad k = 0, 1, \ldots, n
 \end{equation}$$
-```
+````
 
 Tham số $\lambda$ thể hiện số lần trung bình mà một sự kiện xảy ra trong một khoảng thời gian nhất định. Khi đó, nếu một biến ngẫu nhiên có số lần xuất hiện trung bình của một sự kiện trong thời gian $t$ thì nó có phân phối Poisson với tham số $\lambda t$, với $\lambda$ là số lần trung bình trong một đơn vị thời gian.
 
 ### Biến ngẫu nhiên liên tục
 
-```{admonition} **Định nghĩa.** (Biến ngẫu nhiên liên tục)
+````{prf:definition} Biến ngẫu nhiên liên tục
 Biến ngẫu nhiên $\xi$ được gọi là **liên tục**, nếu nó nhận giá trị tại mọi điểm thuộc một đoạn liên tục nào đó trên trục số, và tồn tại một hàm số không âm $p(x)$ sao cho với mọi đoạn $[a ,b]$ (hữu hạn hoặc vô hạn) ta có
 
 $$\begin{equation}
@@ -504,7 +486,7 @@ $$\begin{equation}
 \end{equation}$$
 
 Hàm $p(x)$ được gọi là **hàm mật độ** của biến ngẫu nhiên $\xi$.
-```
+````
 
 Tương tự biến ngẫu nhiên rời rạc, $p(x) \geqslant 0$ với mọi $x \in \mathbb{R}$ và khi hai cận là vô cực thì biến ngẫu nhiên bao quát toàn bộ không gian mẫu. Nghĩa là
 
@@ -532,25 +514,23 @@ $$f(x) = \begin{cases}
         0 & \text{khi} \ x \neq x_i, \ \text{với mọi} \ i
 \end{cases}$$
 
-```{admonition} **Lưu ý.**
-:class: warning
+````{prf:remark}
 Ta có các lưu ý sau:
 - $p_i \geqslant 0$, $\sum p_i = 1$, $i = 1, 2, \ldots$
 - $\displaystyle{P(a < X \leqslant b) = \sum_{a < x_i \leqslant b} p_i}$
-```
+````
 
 ### Hàm mật độ của biến ngẫu nhiên liên tục
 
-```{admonition} **Định nghĩa.**
+````{prf:definition}
 Hàm số $f: \mathbb{R} \mapsto \mathbb{R}$ được gọi là **hàm mật độ** của biến ngẫu nhiên liên tục $X$ nếu:
 
 $$P(a \leqslant X \leqslant b) = \displaystyle{\int\limits_a^b f(x)\,dx}, \forall a, b \in \mathbb{R}$$
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Với mọi $x \in \mathbb{R}$, $f(x) \geqslant 0$ và $\displaystyle{\int\limits_{-\infty}^{+\infty}f(x)\,dx = 1}$.
-```
+````
 
 **Ý nghĩa hình học.** Xác suất của biến ngẫu nhiên $X$ nhận giá trị trong $[a, b]$ bằng diện tích hình thang cong giới hạn bởi $x=a$, $x=b$, $y=f(x)$ và $Ox$.
 
