@@ -16,4 +16,8 @@ parts:
     numbered: true
     chapters:
     - file: discrete-mathematics/group.md
+  - caption: Lý thuyết số
+    numbered: true
+    chapters:
+    - file: discrete-mathematics/number-theory.md
 
