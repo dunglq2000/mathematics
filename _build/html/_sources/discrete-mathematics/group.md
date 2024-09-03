@@ -28,30 +28,28 @@
 
 ### Nhóm và nhóm con
 
-```{admonition} **Định nghĩa.** (Group, Nhóm)
+````{prf:definition} Group, Nhóm
 Một tập hợp $G$ và toán tử hai ngôi $\star$ trên $G$ tạo thành một **nhóm** nếu:
 
 1. Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$ thì $g \star e = e \star g = g$. Khi đó $e$ được gọi là **phần tử đơn vị** của $G$;
 2. Với mọi $g \in G$, tồn tại $g' \in G$ sao cho $g \star g' = g' \star g = e$. Khi đó $g'$ được gọi là **phần tử nghịch đảo** của $g$;
 3. Tính kết hợp: với mọi $a, b, c \in G$ thì $a \star (b \star c) = (a \star b) \star c$.
-```
+````
 
-```{admonition} **Định nghĩa.** (Abelian Group, Nhóm Abel)
+````{prf:definition} Abelian Group, Nhóm Abel
 Nếu nhóm $G$ có thêm tính giao hoán, tức là với mọi $a, b \in G$ thì $a \star b = b \star a$ thì $G$ gọi là **nhóm giao hoán** hay **nhóm Abel**.
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét tập hợp số nguyên $\mathbb{Z}$ và phép cộng hai số nguyên.
 1. Phần tử đơn vị là 0 vì với mọi $a \in \mathbb{Z}$ thì $a + 0 = 0 + a = a$;
 2. Với mọi $a \in \mathbb{Z}$, phần tử nghịch đảo là $-a$ vì $a + (-a) = (-a) + a = 0$;
 3. Phép cộng số nguyên có tính kết hợp do đó thỏa mãn điều kiện về tính kết hợp.
 
 Như vậy $(\mathbb{Z}, +)$ tạo thành nhóm. Lưu ý do phép cộng hai số nguyên có tính giao hoán nên đây cũng là nhóm Abel.
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét tập hợp số hữu tỉ khác 0 $\mathbb{Q}^*$ và phép nhân hai số hữu tỉ. Ta thấy do $a, b \in \mathbb{Q}^*$ nên tích $a \cdot b$ cũng khác 0, do đó cũng thuộc $\mathbb{Q}^*$.
 
 1. Phần tử đơn vị là 1 vì với mọi $a \in \mathbb{Q}^*$ thì $a \cdot 1 = 1 \cdot a = a$;
@@ -59,18 +57,17 @@ Xét tập hợp số hữu tỉ khác 0 $\mathbb{Q}^*$ và phép nhân hai số
 3. Phép nhân hai số hữu tỉ có tính kết hợp do đó thỏa mãn điều kiện về tính kết hợp.
 
 Tương tự như nhóm $(\mathbb{Z, +})$, nhóm $(\mathbb{Q}^*, \cdot)$ cũng là nhóm Abel.
-```
+````
 
 ### Nhóm con
 
-```{admonition} **Định nghĩa.** (Subgroup, Nhóm con)
+````{prf:definition} Subgroup, Nhóm con
 Cho nhóm $(G, \star)$. Tập hợp $H \subset G$ được gọi là **nhóm con** của $G$ nếu với mọi $a, b \in H$ thì $a \star b \in H$
-```
+````
  
 Nghĩa là toán tử $\star$ đóng với các phần tử trong $H$.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét nhóm $(\mathbb{Z}, +)$ như trên. Ta xét tập con gồm các số chẵn của nó
 
 $$2\mathbb{Z} = \{ \ldots, -4, -2, 0, 2, 4, \ldots \}$$
@@ -80,11 +77,11 @@ Ta thấy rằng tổng hai số chẵn vẫn là số chẵn, nghĩa là phép 
 Do đó $(2\mathbb{Z}, +)$ là nhóm con của $(\mathbb{Z}, +)$.
 
 Tổng quát, mọi tập hợp có dạng $n \mathbb{Z}$ đều là nhóm con của $(\mathbb{Z}, +)$.
-```
+````
 
 ### Coset
 
-```{admonition} **Định nghĩa.** (Coset, lớp kề)
+````{prf:definition} Coset, lớp kề
 Cho nhóm $G$ và nhóm con $H$ của $G$.
 
 Coset trái của $H$ đối với phần tử $g \in G$ là tập hợp
@@ -94,7 +91,7 @@ $$gH = \{gh : h \in H \}$$
 Tương tự, coset phải là tập hợp
 
 $$Hg = \{hg : h \in H \}$$
-```
+````
 
 Từ đây nếu không nói gì thêm ta ngầm hiểu là coset trái.
 
@@ -111,13 +108,12 @@ $$1 + 2\mathbb{Z} = \{\ldots, -3, -1, 1, 3, \ldots \}$$
 
 Rõ ràng hai coset trên rời nhau.
 
-```{admonition} **Lưu ý.**
-:class: important
+````{prf:remark}
 Hai coset bất kì hoặc rời nhau, hoặc trùng nhau.
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Nếu hai coset rời nhau thì không có gì phải nói. Ta chứng minh trường hợp còn lại.
 
 Giả sử $g_1 H \cap g_2 H \neq \emptyset$. Như vậy tồn tại $h_1, h_2 \in H$ mà $g_1 h_1 = g_2 h_2$.
@@ -131,17 +127,17 @@ Từ đó $g_1 H \subseteq g_2 H$. Tương tự ta cũng có $g_2 H \subseteq g_
 
 ### Normal Subgroup
 
-```{admonition} **Định nghĩa.** (Normal Subgroup, nhóm con chuẩn tắc)
+````{prf:definition} Normal Subgroup, nhóm con chuẩn tắc
 Nhóm con $H$ của $G$ được gọi là **normal subgroup** nếu với mọi $g \in G$ ta có coset trái trùng với coset phải.
 
 $$\begin{equation*}
     gH = Hg \quad \text{ với mọi } g \in G
 \end{equation*}$$
-```
+````
 
 Nếu $H$ là normal subgroup của $G$ ta ký hiệu $H \triangleleft G$. Khi đó, với mọi $a, b \in G$ thì $(a H) (b H) = (ab) H$.
 
-```{admonition} **Định nghĩa.** (Quotient Group, nhóm thương)
+````{prf:definition} Quotient Group, nhóm thương
 Với nhóm $G$ và normal subgroup của nó là $H$.
 
 Quotient Group được ký hiệu là $G / H$ và được định nghĩa là tập hợp các coset tương ứng với normal subgroup $H$.
@@ -149,15 +145,14 @@ Quotient Group được ký hiệu là $G / H$ và được định nghĩa là t
 $$G / H = \{gH : g \in H \}$$
 
 Ta thấy rằng điều này chỉ xảy ra nếu $H$ là normal subgroup.
-```
+````
 
 Quotient Group còn được gọi là Factor Group - *nhóm nhân tử*.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Với nhóm $\mathbb{Z}$ và normal subgroup của nó là $2\mathbb{Z}$.
 Ta thấy $\mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z}\}$
-```
+````
 
 ## Nhóm hoán vị
 
@@ -204,8 +199,7 @@ $$\begin{equation*}
 
 Nhóm $\mathcal{S}_n$ và toán tử như trên tạo thành một nhóm và được gọi là **nhóm hoán vị**.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét nhóm hoán vị $\mathcal{S}_5$. 
 
 Gọi $x = \begin{pmatrix}
@@ -226,15 +220,13 @@ $$\begin{align*}
 Như vậy $z = x \star y = \begin{pmatrix}
     1 & 2 & 3 & 4 & 5 \\ 5 & 4 & 2 & 1 & 3
 \end{pmatrix}$.
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Trong một hoán vị, khi biểu diễn trên hai hàng thì thứ tự viết không quan trọng, miễn là đảm bảo $i$ tương ứng với $\sigma(i)$ trên từng cột.
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét hoán vị $\sigma = \begin{pmatrix}
     1 & 2 & 3 & 4 & 5 \\ 4 & 3 & 1 & 2 & 5
 \end{pmatrix}$ thuộc $\mathcal{S}_5$.
@@ -253,7 +245,7 @@ $$\begin{equation*}
         1 & 2 & 5 & 4 & 3
     \end{pmatrix}
 \end{equation*}$$
-```
+````
 
 ### Chu trình độc lập
 
@@ -263,8 +255,7 @@ Khi đó tồn tại các tập $\{ i_1, i_2, \ldots, i_k \} \subset \{1, 2, \ld
 sao cho $\sigma(i_1) = i_2$, $\sigma(i_2) = i_3$, ..., $\sigma(i_{k-1})
 = \sigma(i_k)$ và $\sigma(i_k) = i_1$.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét $\mathcal{S}_5$ và hoán vị $\sigma = \begin{pmatrix}
     1 & 2 & 3 & 4 & 5 \\ 5 & 1 & 4 & 3 & 2
 \end{pmatrix}$. 
@@ -277,24 +268,21 @@ có thêm chu trình $3 \to 4 \to 3$.
 
 Hai chu trình trên không chứa phần tử chung nên chúng được gọi là
 hai **chu trình độc lập**.
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Mọi hoán vị đều có thể viết được dưới dạng tích của các chu trình độc lập. **Chu trình có thể chứa một phần tử** ($\sigma(i) = i$).
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Hoán vị $\sigma = \begin{pmatrix}
     1 & 2 & 3 & 4 & 5 \\ 5 & 1 & 4 & 3 & 2
 \end{pmatrix}$ như trên thì ta có thể viết lại thành $\sigma = (1, 5, 2)(3, 4)$.
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Thứ tự của chu trình trong tích không quan trọng. Điều này dễ thấy vì các chu trình độc lập nhau, do đó dù viết trước hay sau thì hoán vị vẫn nằm trong chu trình đó.
-```
+````
 
 Để giải thích rõ hơn, chúng ta có thể xem mỗi chu trình độc lập như một hoán vị, trong đó các phần tử không thuộc chu trình đứng yên. 
 
@@ -327,22 +315,21 @@ $$\underbrace{\begin{pmatrix}
 
 ### Đồng cấu nhóm
 
-```{admonition} **Định nghĩa.** (Homomorphism, Đồng cấu nhóm)
+````{prf:definition} Homomorphism, Đồng cấu nhóm
 Xét hai nhóm $(G, \star)$ và $(H, *)$ và một ánh xạ $f: G \to H$.
 Ánh xạ $f$ được gọi là **đồng cấu** (hay **homomorphism**) nếu với mọi $g_1$, $g_2$ thuộc $G$ ta có $f(g_1 \star g_2) = f(g_1) * f(g_2)$.
-```
+````
 
 Do $g_1$, $g_2$ là các phần tử thuộc $G$ nên toán tử giữa chúng là $\star$. Trong khi đó $f(g_1)$, $f(g_2)$ là các phần tử thuộc $H$ nên toán tử giữa chúng là $*$.
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 1. Gọi $e_G$ là phần tử đơn vị của $G$ và $e_H$ là phần tử đơn
     vị của $H$. Khi đó $f(e_G) = e_H$
 2. Với mọi phần tử $g \in G$, nếu $g^{-1}$ là nghịch đảo của nó trong $G$ thì $f(g^{-1}) = f(g)^{-1}$
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 1. Nếu $e_G$ là phần tử đơn vị của $G$ thì với mọi $g \in G$ ta có $g \star e_G = e_G \star g = g$. Ta lấy $f$ cả ba vế và theo định nghĩa homomorphism thu được $f(g \star e_G) = f(e_G \star g) = f(g)$, suy ra $f(g) * f(e_G) = f(e_G) * f(g) = f(g)$. Đẳng thức trên đúng với mọi $g \in G$ nên đúng với mọi $f(g)$, suy ra $f(e_G)$ là phần tử đơn vị trong nhóm $(H, *)$ và do đó $f(e_G) = e_H$
 2. Từ việc tìm ra phần tử đơn vị, ta cũng chứng minh được tính chất nghịch đảo trên.
 ```
@@ -351,27 +338,27 @@ Do $g_1$, $g_2$ là các phần tử thuộc $G$ nên toán tử giữa chúng l
 
 Tương tự như ánh xạ, chúng ta có các loại homomorphism sau
 
-```{admonition} **Định nghĩa.** (Monomorphism, Đơn cấu)
+````{prf:definition} Monomorphism, Đơn cấu
 Ánh xạ được gọi là **đơn cấu** (hay **monomorphism**) nếu nó là ánh xạ one-to-one (đơn ánh). Nói cách khác, với mọi $g_1 \neq g_2$ và $g_1$, $g_2 \in G$, thì $f(g_1) \neq f(g_2)$
-```
+````
 
-```{admonition} **Định nghĩa.** (Epimorphism, Toàn cấu)
+````{prf:definition} Epimorphism, Toàn cấu
 Ánh xạ được gọi là **toàn cấu** (hay **epimorphism**) nếu nó là ánh xạ onto (toàn ánh). Nói cách khác, với mọi $h \in H$ thì tồn tại $g \in G$ mà $f(g) = h$.
-```
+````
 
-```{admonition} **Định nghĩa.** (Isomorphism, Đẳng cấu)
+````{prf:definition} Isomorphism, Đẳng cấu
 Ánh xạ được gọi là **đẳng cấu** (hay **isomorphism**) nếu nó là ánh xạ one-to-one và onto (song ánh). Nói cách khác, ánh xạ này vừa là đơn cấu, vừa là toàn cấu.
-```
+````
 
-```{admonition} **Định nghĩa.** (Automorphism, Tự đẳng cấu)
+````{prf:definition} Automorphism, Tự đẳng cấu
 Ánh xạ được gọi là **tự đẳng cấu** (hay **automorphism**) nếu nó là song ánh từ nó lên chính nó. Ta ký hiệu tự đồng cấu nhóm $G$ là $\mathrm{Aut}(G)$.
-```
+````
 
 ### Hạt nhân và ảnh
 
 Xét một homomorphism $f$ từ nhóm $(G, \star)$ tới nhóm $(H, *)$. Ta nói:
 
-```{admonition} **Định nghĩa.** (Kernel, Hạt nhân)
+````{prf:definition} Kernel, Hạt nhân
 **Hạt nhân** (hay **kernel**) của $f$ là tập hợp các phần tử của $G$ cho ảnh là $e_H$, ký hiệu là $\ker f$. Nói cách khác
 
 $$\begin{equation}
@@ -379,15 +366,14 @@ $$\begin{equation}
 \end{equation}$$
 
 Như vậy $\ker f$ là tập con của $G$.
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 $K = \ker f$ là normal subgroup của $G$.
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Để chứng minh, ta thấy rằng theo định nghĩa homomorphism, với $g_1, g_2 \in K$ thì $f(g_1) = f(g_2) = e_H$.
 
 Ta có $f(g_1 \star g_2) = f(g_1) * f(g_2) = e_H * e_H = e_H$. Như vậy $g_1 \star g_2 \in K$ nên $K$ là nhóm con của $G$.
@@ -403,7 +389,7 @@ f(g) * e_H * f(g^{-1}) = f(g) * f(g^{-1})$$
 mà theo tính chất của homomorphism thì $f(g^{-1}) = f(g)^{-1}$ nên $f(g \star k \star g^{-1}) = f(g) * f(g)^{-1} = e_H$ nên $g \star k \star g^{-1} \in K$ với mọi $g \in G$, với mọi $k \in K$. Do đó $g K g^{-1} = K$ và ta có điều phải chứng minh.
 ```
 
-```{admonition} **Định nghĩa.** (Image, Ảnh)
+````{prf:definition} Image, Ảnh
 **Ảnh** (hay **image**) của $f$ là tập hợp tất cả giá trị nhận được khi biến các phần tử thuộc $G$ thành phần tử thuộc $H$. Nói cách khác
 
 $$\begin{equation}
@@ -411,18 +397,17 @@ $$\begin{equation}
 \end{equation}$$
 
 Như vậy $\mathrm{im} f$ là tập con của $H$.
-```
+````
 
 Dựa trên hai khái niệm này, chúng ta có một định lý quan trọng trong lý
 thuyết nhóm là **Định lý thứ nhất về sự đẳng cấu** (First isomorphism theorem).
 
-```{admonition} **Định lí.** (First isomorphism theorem)
-:class: hint
+````{prf:theorem} First isomorphism theorem
 Với hai nhóm $(G, \star)$ và $(H, *)$. Xét homomorphism $f: G \to H$. Khi đó $\mathrm{im} f$ đẳng cấu (isomorphism) với nhóm thương $G / \ker f$.
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Gọi $G$, $H$ là hai nhóm và homomorphism $f: G \to H$.
 Đặt $K = \ker f$. Ta xét biến đổi
 
@@ -459,7 +444,7 @@ Kết luận, $\theta$ là song ánh. Định lý thứ nhất về sự đẳng
 
 ### Vành
 
-```{admonition} **Định nghĩa.** (Ring, Vành)
+````{prf:definition} Ring, Vành
 Cho tập hợp $R$, trên đó ta định nghĩa hai toán tử **cộng** và **nhân**.
 
 Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**) nếu
@@ -467,16 +452,16 @@ Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**) nếu
 1. $(R, +)$ là nhóm Abel.
 2. $(R, \times)$ có tính kết hợp với phép nhân. Với mọi $a, b, c \in R$ thì $a \times (b \times c) = (a \times b) \times c$.
 3. Tính phân phối của phép cộng và phép nhân. Với mọi $a, b, c \in R$ thì $(a + b) \times c = a \times c + b \times c$.
-```
+````
 
 Tóm lại, $(R, +, \times)$ là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.
 
 ```{admonition} **Lưu ý**.
 :class: warning
 Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này $(R, \times)$ gọi là **semigroup** (hay **nửa nhóm**).
-```
+````
 
-```{admonition} **Định nghĩa.** (Ring with identity, Vành với đơn vị) 
+````{prf:definition} Ring with identity, Vành với đơn vị
 Nếu có phần tử $1_R \neq 0_R \in R$ sao cho với mọi $r \in R$ ta đều có
 
 $$\begin{equation*}
@@ -484,7 +469,7 @@ $$\begin{equation*}
 \end{equation*}$$
 
 thì $1_R$ được gọi là **phần tử đơn vị** đối với phép nhân.
-```
+````
 
 Ta thường ký hiệu $0_R$ là phần tử đơn vị của phép cộng $(R, +)$ và gọi là **phần tử trung hòa**.
 
@@ -494,7 +479,7 @@ Ta ký hiệu $1_R$ là **phần tử đơn vị** đối với phép nhân $(R,
 
 Từ phần tử đơn vị đối với phép nhân ta có khái niệm **đặc số** (hay **số đặc trưng**, **characteristic**) của vành với đơn vị.
 
-```{admonition} **Định nghĩa.** (Characteristic, Đặc số)
+````{prf:definition} Characteristic, Đặc số
 Xét trường $R$ với phần tử đơn vị là $1$ và phần tử trung hòa là 0. Số dương $p$ nhỏ nhất sao cho
 
 $$\begin{equation*}
@@ -502,9 +487,9 @@ $$\begin{equation*}
 \end{equation*}$$
 
 được gọi là **đặc số** (hay **characteristic**) của $R$.
-```
+````
 
-```{admonition} **Định nghĩa.** (Commutative Ring, Vành giao hoán)
+````{prf:definition} Commutative Ring, Vành giao hoán
 Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi $a, b \in $ đều thỏa
 
 $$\begin{equation*}
@@ -512,27 +497,26 @@ $$\begin{equation*}
 \end{equation*}$$
 
 thì ta nói là vành giao hoán.
-```
+````
 
 ### Trường
 
-```{admonition} **Định nghĩa.** (Field, Trường)
+````{prf:definition} Field, Trường
 Cho tập hợp $F$ và hai toán tử hai ngôi trên $F$ là phép cộng $+$ và phép nhân $\times$. Khi đó $(F, +, \times)$ là **trường** (hay **field**) nếu
 
 1. $(F, +, \times)$ là vành giao hoán với đơn vị.
 2. Với mọi phần tử $f \neq 0_F$, tồn tại nghịch đảo $f^{-1}$ của $f$ đối với phép nhân, nghĩa là $f \times f^{-1} = f^{-1} \times f = 1_F$
-```
+````
 
 Nói cách khác, $(F, \times)$ là nhóm Abel. Trên trường ta thực hiện được bốn phép tính cộng, trừ, nhân, chia.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Các tập hợp sau với phép cộng và nhân là trường.
 
 1. Tập hợp số thực $\mathbb{R}$.
 2. Tập hợp các số phức $\mathbb{C}$.
 3. Tập hợp các số dạng $a + b \sqrt{2}$ với $a, b \in \mathbb{Q}$.
-```
+````
 
 Những trường trên được gọi là **trường vô hạn** vì có vô số phần tử.
 
@@ -545,6 +529,7 @@ Ngược lại, chúng ta cũng có các **trường hữu hạn**.
 Cho $p$ là số nguyên tố. Khi đó tập hợp các số dư khi chia cho $p$ cùng với phép cộng và nhân modulo $p$ tạo thành trường.
 
 ```{admonition} **Chứng minh.**
+:class: danger, dropdown
 Xét tập hợp các số dư khi chia cho $p$ là $S = \{0, 1, \ldots, p-2, p-1\}$.
 
 Ta thấy rằng với mọi $a, b \in S$ thì $a + b \pmod p$ và $a \cdot b \pmod p$ đều thuộc $S$.
@@ -583,13 +568,11 @@ Thêm nữa vành này có vô số phần tử. Ta cần một phương án đ�
 
 Với $p$ là số nguyên tố và $n$ là số nguyên dương. Mình xét các đa thức có bậc tối đa là $n-1$ với hệ số nằm trong tập hợp các số dư khi chia cho $p$. Như vậy mình có $p^n$ đa thức như vậy.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Với $p=3$ và $n=2$. Khi đó các đa thức có thể có là
 
 $$\{ 0, 1, 2, x, x+1, x+2, 2x, 2x+1, 2x+2 \}$$
-
-```
+````
 
 Tương tự với việc modulo cho một số nguyên tố, ở đây mình xét phép cộng và nhân trên modulo một đa thức tối giản (irreducible polynomial) có bậc $n$ (vì khi modulo một đa thức bậc bất kì cho đa thức bậc $n$ ta có đa thức bậc nhỏ hơn $n$). 
 
@@ -613,29 +596,28 @@ Ta thấy rằng bảng phép nhân đối xứng qua đường chéo chính. Đ
 
 ### Ideal
 
-```{admonition} **Định nghĩa.** (Ideal)
+````{prf:definition} Ideal
 Xét vành $(R, +, \times)$. Một tập con $I$ của $R$ được gọi là **ideal trái** nếu
 
 1. $(I, +)$ là nhóm con của $(R, +)$.
 2. Với mọi $r \in R$, với mọi $x \in I$ thì $rx \in I$.
-```
+````
 
 Ta định nghĩa tương tự với ideal phải, khi đó $xr \in I$. Từ đây về sau nếu không nói gì thêm nghĩa là mình xét ideal trái.
 
-```{admonition} **Định nghĩa.** (Principal Ideal, Ideal chính)
+````{prf:definition} Principal Ideal, Ideal chính
 Nếu $I = aR$ với $a$ là phần tử nào đó trong $R$ thì $I$ được gọi là **principal ideal**.
-```
+````
 
 Nói cách khác, nếu có một phần tử trong $R$ "sinh" ra được $I$ thì $I$ là principal.
 
-```{admonition} **Định nghĩa.** (Maximal Ideal, Ideal cực đại)
+````{prf:definition} Maximal Ideal, Ideal cực đại
 Nếu $I$ là một ideal của $R$ và không tồn tại tập con $I'$ mà $I \subset I' \subset R$ (tập con thực thụ) thì $I$ được gọi là **maximal ideal**.
-```
+````
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Xét vành số nguyên $\mathbb{Z}$. Khi đó mọi ideal của $\mathbb{Z}$ đều là principal.
-```
+````
 
 ```{admonition} **Chứng minh.**
 :class: danger, dropdown
@@ -652,9 +634,9 @@ Nói cách khác mọi phần tử $a \in I$ đều có dạng $qn$ với $q \in
 Vậy mọi ideal đều là principal.
 ```
 
-```{admonition} **Nhận xét.**
+````{prf:remark}
 Ideal $I$ của $\mathbb{Z}$ là maximal khi và chỉ khi $I = n\mathbb{Z}$ với $n$ là số nguyên tố.
-```
+````
 
 ```{admonition} **Chứng minh.**
 :class: danger, dropdown
@@ -663,10 +645,9 @@ Ta chứng minh chiều thuận, chiều ngược tương tự. Sử dụng ph�
 Khi đó $n \mathbb{Z} \subset n_1 \mathbb{Z} \subset \mathbb{Z}$, suy ra ideal không phải maximal. Ta có điều phải chứng minh.
 ```
 
-```{admonition} **Định lí.**
-:class: hint
+````{prf:theorem}
 Gọi $R$ là vành giao hoán với đơn vị. Khi đó, nếu $I$ là ideal của $R$ thì $R / I$ là trường khi và chỉ khi $I$ là maximal ideal.
-```
+````
 
 ```{admonition} **Chứng minh.**
 :class: danger, dropdown
@@ -679,10 +660,9 @@ Ta chứng minh điều kiện cần và điều kiện đủ.
 Khi đó tồn tại phần tử $a \in I'$ và $a \not\in I$ mà $a + I \neq 0$. Do đó $(a + I) (b + I) = 1 + I$ suy ra tồn tại $n \in I \subset I'$ sao cho $a b = 1 + n$. Do $a, b \in I'$ nên $1 \in I'$, từ đó $1 \in R$ nên $I'$ không phải maximal.
 ```
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét tập hợp $\mathbb{Z}$ là vành giao hoán với đơn vị. Khi đó nếu $n$ là số nguyên tố thì $n \mathbb{Z}$ là maximal ideal (đã chứng minh ở trên). Do đó tập $\mathbb{Z} / n\mathbb{Z}$ là trường hữu hạn modulo nguyên tố gồm các phần tử $\{ 0, 1, \ldots, p-1 \}$.
-```
+````
 
 ### Ring kernel và ring homomorphism
 
@@ -691,16 +671,16 @@ Xét vành $(R, +, \times)$. Khi đó:
 - với mọi $a \in R$, $a \times 0 = 0 \times a = 0$;
 - $(-a) \times b = - (a \times b)$.
 
-```{admonition} **Định nghĩa.** (Ring homomorphism)
+````{prf:definition} Ring homomorphism
 Xét hai vành là $(R_1, +, \times)$ và $(R_2, \boxplus, \otimes)$ và ánh xạ $f: \, R_1 \to R_2$.
 
 Ánh xạ $f$ được gọi là **homomorphism** trên hai vành nếu $f$ là homomorphism trên phép cộng và phép nhân.
 
 - với mọi $a, b \in R_1$, $f(a) \boxplus f(b) = f(a + b)$;
 - với mọi $a, b \in R_1$, $f(a) \otimes f(b) = f(a \times b)$.
-```
+````
 
-```{admonition} **Định nghĩa.** (Kernel, Hạt nhân)
+````{prf:definition} Kernel, Hạt nhân
 **Hạt nhân** (hay **kernel**) của $f$ là
 
 $$\begin{equation*}
@@ -708,15 +688,14 @@ $$\begin{equation*}
 \end{equation*}$$
 
 với $0_{2}$ là phần tử trung hòa của $R_2$.
-```
+````
 
-```{admonition} **Định lí.**
-:class: hint
+````{prf:theorem}
 $\ker f$ là một ideal của $R_1$.
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Ta có $f(0_1) = 0_2$ theo định nghĩa homomorphism. Do đó với mọi $a \in R_1$ và với mọi $b \in \ker f$ thì $f(a) \otimes f(b) = f(a) \otimes 0_2 = 0_2 = f(a \times b)$. 
 
 Do đó $a \times b \in \ker f$ nên suy ra $\ker f$ là ideal trái của $R_1$.
@@ -748,19 +727,17 @@ Khi đó hai tiên đề trên tương đương với:
 - identity: $e m = m$ với mọi $m \in M$;
 - compatibility: $g(hm) = (gh)m$ với mọi $m \in M$ và $g, h \in G$.
 
-```{admonition} **Định nghĩa.** (Stabilizer, nhóm con ổn đinh)
+````{prf:definition} Stabilizer, nhóm con ổn định
 Với phần tử $m \in M$ cho trước, tập hợp các phần tử $g \in G$ mà $gm = m$ được gọi là **stabilizer** của nhóm $G$. Ta ký hiệu
 
 $$G_m = \{ g \in G : gm = m \}$$
+````
 
-```
-
-```{admonition} **Định nghĩa.** (Orbit, quỹ đạo)
+````{prf:definition} Orbit, quỹ đạo
 **Orbit** của phần tử $m \in M$ là tập hợp
 
 $$G(m) = \{gm : g \in G\}$$
-
-```
+````
 
 ```{admonition} **Nhận xét.
 :class: important
@@ -768,7 +745,7 @@ Hai orbit của hai phần tử bất kì hoặc rời nhau, hoặc trùng nhau.
 ```
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Giả sử ta có $m_1, m_2 \in M$ mà $G(m_1) \cap G(m_2) \neq \emptyset$.
 
 Khi đó tồn tại $g_1, g_2 \in G$ để $g_1 m_1 = g_2 m_2$. Suy ra $m_1 = g_1^{-1} g_2 m_2$.
@@ -778,15 +755,13 @@ Mà mọi phần tử trong $G(m_1)$ có dạng $g m_1$ nên $g m_1 = g g_1^{-1}
 Chứng minh tương tự ta cũng có $G(m_2) \subseteq G(m_1)$ nên $G(m_1) \equiv G(m_2)$.
 ```
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Tập hợp $M$ là giao của các orbit rời nhau. Giả sử ta có $t$ orbit rời nhau $G(m_1), G(m_2), \ldots, G(m_t)$ thì
 
 $$M = G(m_1) \cup G(m_2) \cup \ldots \cup G(m_t)$$
-```
+````
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Cho nhóm $\mathcal{S}_3$ có 6 phần tử $(1)(2)(3)$, $(1)(2,3)$, $(2)(1,3)$, $(3)(1,2)$, $(1,2,3)$, $(1,3,2)$.
 
 Xét tập hợp $M = \{1, 2, 3\}$. Khi đó, xét từng hoán vị trên, ta có:
@@ -796,7 +771,7 @@ $$G_1 = \{ (1)(2)(3), (1)(2,3) \}$$
 và
 
 $$G(1) = \{ 1, 2, 3 \}$$
-```
+````
 
 Ta nhận thấy $G(1) = G(2) = G(3)$, và $\lvert G \rvert = 6 = \lvert G_1 \rvert \cdot \lvert G(1) \rvert$
 
@@ -808,13 +783,12 @@ Hai phần tử $m, n \in M$ được gọi là **có quan hệ với nhau dư�
 Ta ký hiệu là $m \tilde{G} n$.
 ```
 
-```{admonition} **Nhận xét.**
-:class: important
+````{prf:remark}
 Quan hệ được định nghĩa như trên là quan hệ tương đương.
-```
+````
 
 ```{admonition} **Chứng minh.**
-:class: danger
+:class: danger, dropdown
 Để chứng minh một quan hệ là tương đương, ta cần chứng minh tính phản xạ, đối xứng và bắc cầu.
 
 Đối với tính phản xạ, mọi vector đều có quan hệ với chính nó qua phần tử đơn vị $e \in G$.
@@ -1015,24 +989,23 @@ $$\begin{equation*}
     I_g (z_1, z_2, ,\ldots, z_n) = z_1^{t_1} z_2^{t_2} \ldots z_n^{t_n}
 \end{equation*}$$
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Xét hoán vị $(1,2,3)(4)(5)(6,7) \in \mathcal{S}_7$
 
 Ta có hai chu trình độ dài 1, một chu trình độ dài 2 và một chu trình độ dài 3 và không có chu trình độ dài 4, 5, 6, 7.
 
 Do đó chỉ số chu trình là $I_g (z_1, z_2, z_3) = z_1^2 z_2^1 z_3^1$.
-```
+````
 
-```{admonition} **Nhận xét.**
+````{prf:remark}
 Bất kì hoán vị nào thuộc $\mathcal{S}_n$ đều thỏa $1 \cdot t_1 + 2 \cdot t_2 + \ldots + n \cdot t_n = n$.
-```
+````
 
-```{admonition} **Định nghĩa.** (Cyclic index, chỉ số chu trình)
+````{prf:definition} Cyclic index, chỉ số chu trình
 **Chỉ số chu trình** của nhóm G là:
 
 $$P_G (z_1, z_2, \ldots, z_n) = \frac{1}{G}\sum_{g \in G} I_g (z_1, z_2, \ldots, z_n)$$
-```
+````
 
 Nhìn lại ví dụ về tứ diện bên trên, các đỉnh nằm trong cùng chu trình cần được tô cùng màu. Từ đó ta có chỉ số chu trình
 
@@ -1054,8 +1027,7 @@ $$R = \{r_1, r_2, \ldots, r_c \}$$
 
 Ta thay mỗi $z_i$ trong chỉ số chu trình bằng tổng $\displaystyle{\sum_{r \in R} r^i}$.
 
-```{admonition} **Ví dụ.**
-:class: caution
+````{prf:example}
 Giả sử ta tô màu bốn đỉnh tứ diện với hai màu $R = \{r_1, r_2\}$.
 
 Với $z_1$ ta thay bằng $r_1 + r_2$.
@@ -1116,7 +1088,7 @@ Nói cách khác:
 - có 1 lớp tương đương mà 2 đỉnh nhận màu $r_1$ và 2 đỉnh nhận màu $r_2$;
 - có 1 lớp tương đương mà 1 đỉnh nhận màu $r_1$ và 3 đỉnh nhận màu $r_2$;
 - có 1 lớp tương đương mà 4 đỉnh nhận màu $r_2$.
-```
+````
 
 Quay lại vấn đề tô bốn đỉnh tứ diện với ba màu xanh, đỏ, vàng. Tìm số cách tô hai đỉnh màu vàng, một đỉnh màu đỏ và một đỉnh màu xanh.
 

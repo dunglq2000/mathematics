@@ -34,3 +34,5 @@ html:
 sphinx:
   extra_extensions:
     - sphinx_proof
+
+language: "vi"
