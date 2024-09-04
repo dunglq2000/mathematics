@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Magma &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/magma';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Internet Olympiad 2023" href="../internet-olympiad/2023.html" />
+    <link rel="prev" title="Mật mã học (và những niềm đau)" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">4. Số học</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Mật mã học (và những niềm đau)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Magma</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/magma.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cryptography/magma.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Magma</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-schedule">Key schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-function">Round function</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="magma">
+<h1>Magma<a class="headerlink" href="#magma" title="Link to this heading">#</a></h1>
+<p>Hệ mật mã Magma được chính phủ Xô Viết chọn làm chuẩn mã hóa. Cũng giống như hệ mật mã DES, Magma sử dụng mô hình Feistel cho các vòng mã hóa, được định nghĩa trong GOST 34.12-2015, trước đây gọi là GOST 28147-89.</p>
+<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id7" title="М.А. Черепнев С.Б. Гашков, Э.А. Применко. Криптографические методы защиты информации. Академия, 2010. ISBN 978-5-7695-4962-5.">2</a>]</span>.</p>
+<p>Độ dài khóa là 256 bit. Độ dài khối là 64 bit. Magma biến đổi trên 32 vòng để cho ra ciphertext.</p>
+<p>Magma thực hiện biến đổi trên 32 vòng Feistel. Khối đầu vào 64 bit được chia thành 2 nửa trái phải, mỗi nửa 32 bit.</p>
+<section id="key-schedule">
+<h2>Key schedule<a class="headerlink" href="#key-schedule" title="Link to this heading">#</a></h2>
+<p>Khóa 256 bit được chia thành 8 cụm khóa con, mỗi khóa con 32 bit.</p>
+<p>Nếu ta ký hiệu 256 bit của khóa là <span class="math notranslate nohighlight">\(k_{0} k_{1} \ldots k_{254} k_{255}\)</span>
+thì ta có các khóa con là</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{k_0 \ldots k_{31}}_{K_0} \underbrace{k_{32} \ldots k_{63}}_{K_1} \ldots \underbrace{k_{224} \ldots k_{255}}_{K_7}\]</div>
+<p>Từ vòng 1 tới 24 sử dụng lần lượt các khóa <span class="math notranslate nohighlight">\(K_0\)</span>, <span class="math notranslate nohighlight">\(K_1\)</span>, …, <span class="math notranslate nohighlight">\(K_7\)</span> rồi lặp lại thứ tự đó.</p>
+<p>Từ vòng 25 tới 32 sử dụng theo thứ tự ngược lại, từ <span class="math notranslate nohighlight">\(K_7\)</span>, <span class="math notranslate nohighlight">\(K_6\)</span>, …, <span class="math notranslate nohighlight">\(K_0\)</span>.</p>
+<figure class="align-default" id="id2">
+<img alt="../_images/blocky.jpg" src="../_images/blocky.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Mô hình mã khối Magma</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="round-function">
+<h2>Round function<a class="headerlink" href="#round-function" title="Link to this heading">#</a></h2>
+<p>Như ta đã biết, trong mô hình Feistel, mỗi khối plaintext được chia thành 2 nửa trái phải <span class="math notranslate nohighlight">\((L_0, R_0)\)</span>. Sau đó ở mỗi vòng biến đổi thì</p>
+<div class="math notranslate nohighlight">
+\[L_{i+1} = R_i, \quad R_{i+1} = L_i \oplus f(R_i, K_i)\]</div>
+<p>với <span class="math notranslate nohighlight">\(i=0, 1, \ldots\)</span> và <span class="math notranslate nohighlight">\(K_i\)</span> là khóa con ở vòng <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Hàm <span class="math notranslate nohighlight">\(f\)</span> của Magma khá đơn giản, bao gồm 3 động tác là cộng modulo <span class="math notranslate nohighlight">\(2^{32}\)</span>, SBox và xoay 11 bit.</p>
+<p>Đối với việc cộng modulo <span class="math notranslate nohighlight">\(2^{32}\)</span>, ta xem block <span class="math notranslate nohighlight">\(R_i\)</span> và <span class="math notranslate nohighlight">\(K_i\)</span> như những số 32 bit, cộng chúng lại và modulo <span class="math notranslate nohighlight">\(2^{32}\)</span>. Nghĩa là
+<span class="math notranslate nohighlight">\((R_i + K_i) \bmod 2^{32}\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(T_i = (R_i + K_i) \bmod 2^{32}\)</span>. Như vậy <span class="math notranslate nohighlight">\(T_i\)</span> có 32 bit. Ta chia 32 bit này thành 8 cụm 4 bit. Ứng với mỗi cụm 4 bit chúng ta cho qua một hoán vị. Như vậy cần 8 hoán vị (SBox). SBox được sử dụng chung cho tất cả vòng.</p>
+<p>Theo wiki thì SBox có thể bí mật. Tuy nhiên việc mã hóa và giải mã cần sử dụng SBox giống nhau. Do đó thiết bị mã hóa và giải mã có cùng cơ chế pseudo-random để sinh ra SBox giống nhau.</p>
+<p>SBox được quy định theo tiêu chuẩn chính phủ Nga là</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sbox</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0x7</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0x5</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0x8</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Nếu <span class="math notranslate nohighlight">\(T_i\)</span> được viết dưới dạng 32 bit là <span class="math notranslate nohighlight">\(t_{31} t_{30} \ldots t_1 t_0\)</span>
+thì SBox tương ứng của nó là</p>
+<div class="math notranslate nohighlight">
+\[
+    \underbrace{t_{31} \ldots t_{28}}_{S_7}
+    \underbrace{t_{27} \ldots t_{24}}_{S_6}
+    \ldots
+    \underbrace{t_{7} \ldots t_{4}}_{S_1}
+    \underbrace{t_3 \ldots t_0}_{S_0}
+\]</div>
+<p>Nói cách khác, <span class="math notranslate nohighlight">\(t_{4i+3} t_{4i+2} t_{4i+1} t_{4i}\)</span> dùng <span class="math notranslate nohighlight">\(S_{7-i}\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, 2, \ldots, 7\)</span>.</p>
+<p>Cuối cùng, việc xoay trái 11 bit (rot11) chỉ đơn giản là đưa 11 bit đầu về cuối và đưa 21 bit cuối lên đầu.</p>
+<p>Để giải mã ta vẫn sử dụng round function như lúc mã hóa, chỉ cần viết với thứ tự ngược lại là được. Như vậy</p>
+<div class="math notranslate nohighlight">
+\[R_i = L_{i+1}, \quad L_i = R_{i+1} \oplus f(L_{i+1}, K_i)\]</div>
+<p>do <span class="math notranslate nohighlight">\(R_i = L_{i+1}\)</span>. Lưu ý rằng khóa con lúc này là 0 tới 7 cho 8 vòng đầu, và 7 về 0 (rồi lặp lại) cho 24 vòng sau.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cryptography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mật mã học (và những niềm đau)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../internet-olympiad/2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Internet Olympiad 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-schedule">Key schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-function">Round function</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

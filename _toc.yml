@@ -35,6 +35,11 @@ parts:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
       - file: discrete-mathematics/linear-feedback-shift-register.md
+  - caption: Mật mã học
+    chapters:
+    - file: cryptography/intro.md
+      sections:
+      - file: cryptography/magma.md
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
