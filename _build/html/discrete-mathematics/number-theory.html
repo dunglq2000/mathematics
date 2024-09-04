@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -487,7 +487,7 @@ document.write(`
 <p>Đặc biệt là sự tồn tại của cặp số <span class="math notranslate nohighlight">\(q\)</span> và <span class="math notranslate nohighlight">\(r\)</span> là duy nhất. Thật vậy, nếu ta giả sử tồn tại 2 cặp số <span class="math notranslate nohighlight">\((q_1, r_1)\)</span> và <span class="math notranslate nohighlight">\((q_2, r_2)\)</span>  đều thỏa đẳng thức trên, nghĩa là</p>
 <div class="math notranslate nohighlight">
 \[a = q_1 b + r_1, \quad a = q_2 b + r_2\]</div>
-<p>Trừ 2 đẳng thức vế theo vế ta có <span class="math notranslate nohighlight">\((q_1 - q_2) b + (r_1 - r_2) = 0\)</span>. Tương đương <span class="math notranslate nohighlight">\((r_2 - r_1) = (q_1 - q_2) b\)</span>, mà <span class="math notranslate nohighlight">\(0 \leqslant r_1, r_2 &lt; b\)</span> nên <span class="math notranslate nohighlight">\(-b &lt; r_2 - r_1 &lt; b\)</span>. Như vậy chỉ có thể xảy ra trường hợp <span class="math notranslate nohighlight">\(r_2 - r_1 = 0\)</span> hay <span class="math notranslate nohighlight">\(r_2 = r_1\)</span>, kéo theo <span class="math notranslate nohighlight">\(q_1 = q_2\)</span>.</p>
+<p>Trừ 2 đẳng thức vế theo vế ta có <span class="math notranslate nohighlight">\((q_1 - q_2) b + (r_1 - r_2) = 0\)</span>. Tương đương <span class="math notranslate nohighlight">\((r_2 - r_1) = (q_1 - q_2) b\)</span>, mà <span class="math notranslate nohighlight">\(0 \leqslant r_1, r_2 &lt; b\)</span> nên <span class="math notranslate nohighlight">\(-b &lt; r_2 - r_1 &lt; b\)</span>. Như vậy chỉ có thể xảy ra trường hợp <span class="math notranslate nohighlight">\(r_2 - r_1 = 0\)</span> (vì giá trị tuyệt đối của vế phải là bội của <span class="math notranslate nohighlight">\(b\)</span> nên sẽ lớn hơn <span class="math notranslate nohighlight">\(b\)</span>, còn vế trái lại có giá trị tuyệt đối nhỏ hơn <span class="math notranslate nohighlight">\(b\)</span>) hay <span class="math notranslate nohighlight">\(r_2 = r_1\)</span>, kéo theo <span class="math notranslate nohighlight">\(q_1 = q_2\)</span>.</p>
 </section>
 <section id="thuat-toan-euclid">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">3.1.2. </span>Thuật toán Euclid</a><a class="headerlink" href="#thuat-toan-euclid" title="Link to this heading">#</a></h3>
@@ -532,9 +532,20 @@ document.write(`
 <p class="admonition-title"><span class="caption-number">Example 3.1 </span></p>
 <section class="example-content" id="proof-content">
 <p>Giải phương trình <span class="math notranslate nohighlight">\(5x+3y = 1\)</span>.</p>
-<p>Ta có <span class="math notranslate nohighlight">\(y = \dfrac{1-5x}{3} = \dfrac{1-2x-3x}{3} = \dfrac{1-2x}{3} - x\)</span>. Như vậy nếu <span class="math notranslate nohighlight">\(y \in \mathbb{Z}\)</span> thì <span class="math notranslate nohighlight">\(\dfrac{1-2x}{3} \in \mathbb{Z}\)</span>, nghĩa là <span class="math notranslate nohighlight">\(1-2x\)</span> chia hết cho 3. Vậy <span class="math notranslate nohighlight">\(1-2x = 3k\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
-<p>Tiếp tục, <span class="math notranslate nohighlight">\(1-2x = 3k\)</span>, suy ra <span class="math notranslate nohighlight">\(x = \dfrac{1-3k}{2}  = \dfrac{1-k-2k}{2} = \dfrac{1-k}{2} - k\)</span>. Do <span class="math notranslate nohighlight">\(x\)</span> nguyên nên tương tự <span class="math notranslate nohighlight">\(\dfrac{1-k}{2}\)</span> cũng nguyên, hay <span class="math notranslate nohighlight">\(1-k = 2t\)</span>, tương đương với <span class="math notranslate nohighlight">\(k = 1-2t\)</span>.</p>
-<p>Thay ngược lại ta có <span class="math notranslate nohighlight">\(x = \dfrac{1-3k}{2} = \dfrac{1-3(1-2t)}{2} = {-1+3t}\)</span>. Tiếp tục thay vào để tìm <span class="math notranslate nohighlight">\(y\)</span> thì <span class="math notranslate nohighlight">\(y = \dfrac{1-5x}{3} = \dfrac{1-5(-1+3t)}{3} = 2 - 5t\)</span>.</p>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[y = \dfrac{1-5x}{3} = \dfrac{1-2x-3x}{3} = \dfrac{1-2x}{3} - x\]</div>
+<p>Như vậy nếu <span class="math notranslate nohighlight">\(y \in \mathbb{Z}\)</span> thì <span class="math notranslate nohighlight">\(\dfrac{1-2x}{3} \in \mathbb{Z}\)</span>, nghĩa là <span class="math notranslate nohighlight">\(1-2x\)</span> chia hết cho 3. Vậy <span class="math notranslate nohighlight">\(1-2x = 3k\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
+<p>Tiếp tục, <span class="math notranslate nohighlight">\(1-2x = 3k\)</span>, suy ra</p>
+<div class="math notranslate nohighlight">
+\[x = \dfrac{1-3k}{2} = \dfrac{1-k-2k}{2} = \dfrac{1-k}{2} - k\]</div>
+<p>Do <span class="math notranslate nohighlight">\(x\)</span> nguyên nên tương tự <span class="math notranslate nohighlight">\(\dfrac{1-k}{2}\)</span> cũng nguyên, hay <span class="math notranslate nohighlight">\(1-k = 2t\)</span>, tương đương với <span class="math notranslate nohighlight">\(k = 1-2t\)</span>.</p>
+<p>Thay ngược lại ta có</p>
+<div class="math notranslate nohighlight">
+\[x = \dfrac{1-3k}{2} = \dfrac{1-3(1-2t)}{2} = {-1+3t}\]</div>
+<p>Tiếp tục thay vào để tìm <span class="math notranslate nohighlight">\(y\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[y = \dfrac{1-5x}{3} = \dfrac{1-5(-1+3t)}{3} = 2 - 5t\]</div>
 <p>Như vậy nghiệm của phương trình là tất cả các nghiệm <span class="math notranslate nohighlight">\((x, y)\)</span> mà <span class="math notranslate nohighlight">\(x = -1+3t\)</span>, <span class="math notranslate nohighlight">\(y = 2-5t\)</span> với <span class="math notranslate nohighlight">\(t \in \mathbb{Z}\)</span>.</p>
 </section>
 </div><p>Ở đây chúng ta đã thực hiện phép chia có dư liên tiếp để tìm nghiệm. Nói cách khác ta đã thực hiện thuật toán Euclid ở bên trên để làm giảm độ phức tạp ở mỗi bước giải. Tổng quát ta có thuật toán Euclid mở rộng để tìm ước chung lớn nhất <span class="math notranslate nohighlight">\(\gcd(a, b)\)</span> của hai số <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, và <strong>một</strong> nghiệm của phương trình <span class="math notranslate nohighlight">\(ax + by = \gcd(a, b)\)</span>.</p>
@@ -551,8 +562,8 @@ document.write(`
 <li><p>While <span class="math notranslate nohighlight">\(r_1 \neq 0\)</span></p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(q \gets r_0 \;\text{div}\; r_1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(r_2 \gets r_0 - q * r_1\)</span>, <span class="math notranslate nohighlight">\(r_0 \gets r_1\)</span>, <span class="math notranslate nohighlight">\(r_1 \gets r_2\)</span>
-\State <span class="math notranslate nohighlight">\(x_2 \gets x_0 - q * x_1\)</span>, <span class="math notranslate nohighlight">\(x_0 \gets x_1\)</span>, <span class="math notranslate nohighlight">\(x_1 \gets x_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r_2 \gets r_0 - q * r_1\)</span>, <span class="math notranslate nohighlight">\(r_0 \gets r_1\)</span>, <span class="math notranslate nohighlight">\(r_1 \gets r_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_2 \gets x_0 - q * x_1\)</span>, <span class="math notranslate nohighlight">\(x_0 \gets x_1\)</span>, <span class="math notranslate nohighlight">\(x_1 \gets x_2\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(y_2 \gets y_0 - q * y_1\)</span>, <span class="math notranslate nohighlight">\(y_0 \gets y_1\)</span>, <span class="math notranslate nohighlight">\(y_1 \gets y_2\)</span></p></li>
 </ol>
 </li>
@@ -579,7 +590,7 @@ document.write(`
 <p>Tương đương với</p>
 <div class="math notranslate nohighlight">
 \[(a x_{i+1} + b y_{i+1}) q_i + (a x_{i+2} + b x_{i+2}) = r_i\]</div>
-<p>Mà <span class="math notranslate nohighlight">\(a x_{i+1} + b y_{i+1} = r_{i+1}\)</span> và <span class="math notranslate nohighlight">\(a x_{i+2} + b y_{i+2} = r_{i+2}\)</span>. Suy ra <span class="math notranslate nohighlight">\(r_{i+1} q_i + r_{i+2} = r_n\)</span>, đúng với thuật toán Euclid chuẩn ban đầu. Nghĩa là thuật toán hoạt động đúng. Bây giờ ta cần chọn <span class="math notranslate nohighlight">\((x_0, x_1)\)</span> và <span class="math notranslate nohighlight">\((y_0, y_1)\)</span> vì chúng ta đã đặt <span class="math notranslate nohighlight">\(r_0 = a\)</span> và <span class="math notranslate nohighlight">\(r_1 = b\)</span>. Ở bước thứ 0,</p>
+<p>Mà <span class="math notranslate nohighlight">\(a x_{i+1} + b y_{i+1} = r_{i+1}\)</span> và <span class="math notranslate nohighlight">\(a x_{i+2} + b y_{i+2} = r_{i+2}\)</span>. Suy ra <span class="math notranslate nohighlight">\(r_{i+1} q_i + r_{i+2} = r_i\)</span>, đúng với thuật toán Euclid chuẩn ban đầu. Nghĩa là thuật toán hoạt động đúng. Bây giờ ta cần chọn <span class="math notranslate nohighlight">\((x_0, x_1)\)</span> và <span class="math notranslate nohighlight">\((y_0, y_1)\)</span> vì chúng ta đã đặt <span class="math notranslate nohighlight">\(r_0 = a\)</span> và <span class="math notranslate nohighlight">\(r_1 = b\)</span>. Ở bước thứ 0,</p>
 <div class="math notranslate nohighlight">
 \[r_0 = a = a x_0 + b y_0\]</div>
 <p>và ở bước thứ 1,</p>
@@ -759,7 +770,9 @@ document.write(`
 <div class="proof theorem admonition" id="theorem-10">
 <p class="admonition-title"><span class="caption-number">Theorem 3.2 </span> (Định lý Fermat nhỏ)</p>
 <section class="theorem-content" id="proof-content">
-<p>Cho số nguyên tố <span class="math notranslate nohighlight">\(p\)</span>. Với mọi số nguyên <span class="math notranslate nohighlight">\(a\)</span> thì $<span class="math notranslate nohighlight">\(a^p \equiv a \pmod p\)</span>$</p>
+<p>Cho số nguyên tố <span class="math notranslate nohighlight">\(p\)</span>. Với mọi số nguyên <span class="math notranslate nohighlight">\(a\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[a^p \equiv a \pmod p\]</div>
 <p>Khi <span class="math notranslate nohighlight">\((a, p) = 1\)</span> thì</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
@@ -778,7 +791,7 @@ document.write(`
 <div class="proof definition admonition" id="definition-12">
 <p class="admonition-title"><span class="caption-number">Definition 3.5 </span> (Số chính phương modulo <span class="math notranslate nohighlight">\(p\)</span>)</p>
 <section class="definition-content" id="proof-content">
-<p>Xét số dương nguyên tố lẻ <span class="math notranslate nohighlight">\(p\)</span>. Số <span class="math notranslate nohighlight">\(a\)</span> được gọi là <strong>số chính phương modulo <span class="math notranslate nohighlight">\(p\)</span></strong> nếu <span class="math notranslate nohighlight">\((a, m) = 1\)</span> và tồn tại số <span class="math notranslate nohighlight">\(x\)</span> sao cho <span class="math notranslate nohighlight">\(x^2 = a \pmod p\)</span>.</p>
+<p>Xét số nguyên tố lẻ <span class="math notranslate nohighlight">\(p\)</span>. Số <span class="math notranslate nohighlight">\(a\)</span> được gọi là <strong>số chính phương modulo <span class="math notranslate nohighlight">\(p\)</span></strong> nếu <span class="math notranslate nohighlight">\((a, m) = 1\)</span> và tồn tại số <span class="math notranslate nohighlight">\(x\)</span> sao cho <span class="math notranslate nohighlight">\(x^2 = a \pmod p\)</span>.</p>
 <p>Nói cách khác phương trình đồng dư <span class="math notranslate nohighlight">\(x^2 \equiv a \pmod p\)</span> có nghiệm.</p>
 </section>
 </div><p>Chúng ta sử dụng kí hiệu Legendre (Legendre symbol) để thể hiện một số <span class="math notranslate nohighlight">\(a\)</span> có phải là số chính phương modulo nguyên tố <span class="math notranslate nohighlight">\(p\)</span> không.</p>
