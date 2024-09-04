@@ -100,7 +100,11 @@ $$\begin{equation}
 Do hàm boolean tuyến tính có tính chất là $f(\mathbf{0}) = 0$ nên chu kì tối đa có thể đạt được là $2^n - 1$. Ta có một vài định nghĩa sau để một LFSR đạt được chu kì tối đa.
 
 ````{prf:definition} Đa thức primitive
-Xét đa thức $P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$ thuộc $\mathrm{GF}(2^n)$. Ta đã biết trường $\mathrm{GF}(2^n)$ có $2^n - 1$ phần tử khác không. Đặt $p = 2^n - 1$. Đa thức $P(x)$ được gọi là **primitive** khi với mọi ước nguyên tố $q$ của $p$ thì:
+Xét đa thức
+
+$$P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$$$
+
+thuộc $\mathrm{GF}(2^n)$. Ta đã biết trường $\mathrm{GF}(2^n)$ có $2^n - 1$ phần tử khác không. Đặt $p = 2^n - 1$. Đa thức $P(x)$ được gọi là **primitive** khi với mọi ước nguyên tố $q$ của $p$ thì:
 
 $$\begin{equation*}
 	x^s \not\equiv 1 \bmod{P(x)}, \quad \text{với} \ s = \frac{p}{q} = \frac{2^n - 1}{q}
@@ -108,7 +112,11 @@ $$\begin{equation*}
 ````
 
 ````{prf:definition} Đa thức đặc trưng với chu kì cực đại
-Đa thức $P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$ được gọi là **đa thức đặc trưng với chu kì cực đại** nếu đa thức đó tối giản và là đa thức primitive. 
+Đa thức
+
+$$P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$$
+
+được gọi là **đa thức đặc trưng với chu kì cực đại** nếu đa thức đó tối giản và là đa thức primitive. 
 ````
 
 ````{prf:example}
@@ -118,7 +126,11 @@ Xét đa thức $f(x) = x^4 + x^3 + 1$. Ta có thể xác định xem đa thức
 
 Các đa thức tối giản bậc 1 là $x$ và $x+1$. Ta có thể kiểm chứng rằng $f(x)$ không chia hết cho bất kì đa thức nào ở trên. Tương tự, đa thức tối giản bậc 2 (trong $\mathrm{GF}(2^4)$) là $x^2 + x + 1$ và $f(x)$ cũng không chia hết cho đa thức này. Như vậy ta có thể kết luận rằng $f(x)$ là đa thức tối giản.
 
-Trong $\mathrm{GF}(2^4)$ có $2^4 - 1 = 15$ phần tử khác 0. Các ước nguyên tố của 15 là 3 và 5. Ta thấy rằng $x^3 \not\equiv 1$ và $x^5 = x \cdot x^4 = x \cdot (x^3 + 1) = x^4 + x = x^3 + x + 1 \not\equiv 1$. Như vậy $f(x)$ là đa thức primitive.
+Trong $\mathrm{GF}(2^4)$ có $2^4 - 1 = 15$ phần tử khác 0. Các ước nguyên tố của 15 là 3 và 5. Ta thấy rằng
+
+$$x^3 \not\equiv 1 \ \text{và} \ x^5 = x \cdot x^4 = x \cdot (x^3 + 1) = x^4 + x = x^3 + x + 1 \not\equiv 1.$$
+
+Như vậy $f(x)$ là đa thức primitive.
 
 Như vậy ta có thể kết luận rằng đa thức $f(x)$ sinh ra LFSR với chu kì tối đa.
 ````
@@ -165,13 +177,19 @@ với $i=0, 1, \ldots$.
 
 **Bước 0.** Đặt $P_0(x) = x^{n_0 + 1} \oplus P_{-1}(x)$ với $n_0$ là vị trí bit 1 đầu tiên và đặt $k_0 = \deg P_0(x) = n_0 + 1$.
 
-Ở mỗi bước từ đây trở đi, gọi $m$ là số sao cho $k_{-1} = k_0 = \ldots = k_{m-1} < k_{m} = k_{s+2} = \ldots$.
+Ở mỗi bước từ đây trở đi, gọi $m$ là số sao cho 
+
+$$k_{-1} = k_0 = \ldots = k_{m-1} < k_{m} = k_{s+2} = \ldots$$
 
 **Bước $n$.** Để tìm $P_n(x)$ ta tính $a = m - k_{m-1}$ và $b = n - k_{n-1}$.
 
-Nếu $a \geqslant b$ thì $P_n(x) = P_{n-1}(x) \oplus x^{a-b} P_{m-1}(x)$.
+1. Nếu $a \geqslant b$ thì 
 
-Nếu $a < b$ thì $P_n(x) = x^{b-a} P_{n-1}(x) \oplus P_{m-1}$.
+$$P_n(x) = P_{n-1}(x) \oplus x^{a-b} P_{m-1}(x).$$
+
+2. Nếu $a < b$ thì
+
+$$P_n(x) = x^{b-a} P_{n-1}(x) \oplus P_{m-1}.$$
 
 Trong quá trình tìm $P_n(x)$, khi nào bậc $k_n$ của $P_n(x)$ thỏa mãn điều kiện số $m$ thì ta cập nhật lại số $m$.
 

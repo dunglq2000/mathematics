@@ -66,11 +66,19 @@ $$\begin{equation}
 :class: danger, dropdown
 Để chứng minh nhận xét này, ta thấy rằng nếu $\mathbf{z} \neq \mathbf{0}$ thì có ít nhất một bit $z_i \neq 0$. 
 
-Ta chọn vector $\Delta = (0, \ldots, 0, 1, 0, \ldots, 0)$ với bit 1 nằm ở vị trí $i$. Khi đó với mọi vector $\mathbf{a} \in \mathbb{F}_2^n$ tồn tại duy nhất vector $\mathbf{a}' \in \mathbb{F}_2^n$ sao cho $\mathbf{a} \oplus \mathbf{a}' = \Delta$. 
+Ta chọn vector
+
+$$\Delta = (0, \ldots, 0, 1, 0, \ldots, 0)$$
+
+với bit 1 nằm ở vị trí $i$. Khi đó với mọi vector $\mathbf{a} \in \mathbb{F}_2^n$ tồn tại duy nhất vector $\mathbf{a}' \in \mathbb{F}_2^n$ sao cho $\mathbf{a} \oplus \mathbf{a}' = \Delta$. 
 
 Suy ra $\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \Delta, \mathbf{z} \rangle = 1$ vì $z_i \cdot 1 = 1$, các vị trí còn lại $z_j \cdot 0 = 0$. 
 
-Lý do ta chọn vector $\Delta$ như vậy là vì $\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \mathbf{a}, \mathbf{z} \rangle \oplus \langle \mathbf{a}', \mathbf{z} \rangle = 1$. Tương đương với $\langle \mathbf{a}, \mathbf{z} \rangle = 1 \oplus \langle \mathbf{a}', \mathbf{z} \rangle$. Do đó $\langle \mathbf{a}, \mathbf{z} \rangle$ và $\langle \mathbf{a}', \mathbf{z} \rangle$ là hai bit khác nhau, dẫn tới $(-1)^{\langle \mathbf{a}, \mathbf{z} \rangle}$ và $(-1)^{\langle \mathbf{a}', \mathbf{z} \rangle}$ là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có $2^n / 2$ cặp như vậy và tổng cuối cùng là 0.
+Lý do ta chọn vector $\Delta$ như vậy là vì
+
+$$\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \mathbf{a}, \mathbf{z} \rangle \oplus \langle \mathbf{a}', \mathbf{z} \rangle = 1.$$
+
+Tương đương với $\langle \mathbf{a}, \mathbf{z} \rangle = 1 \oplus \langle \mathbf{a}', \mathbf{z} \rangle$. Do đó $\langle \mathbf{a}, \mathbf{z} \rangle$ và $\langle \mathbf{a}', \mathbf{z} \rangle$ là hai bit khác nhau, dẫn tới $(-1)^{\langle \mathbf{a}, \mathbf{z} \rangle}$ và $(-1)^{\langle \mathbf{a}', \mathbf{z} \rangle}$ là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có $2^n / 2$ cặp như vậy và tổng cuối cùng là 0.
 
 Trong trường hợp $\mathbf{z} = \mathbf{0}$ thì $\langle \mathbf{a}, \mathbf{z} \rangle = \mathbf{0}$ với mọi $\mathbf{a} \in \mathbb{F}_2^n$. Do đó $(-1)^{\langle \mathbf{a}, \mathbf{z} \rangle} = (-1)^0 = 1$ với mọi vector $\mathbf{a}$. Hàm boolean $n$ biến có $2^n$ vector $\mathbf{a}$ nên tổng là $2^n \cdot 1 = 2^n$.
 ```
@@ -107,7 +115,11 @@ Xét $\mathbf{a} = (0, 0)$. Ta có:
 - Với $\mathbf{x} = (1, 0)$, $f(\mathbf{x}) = 0$, $\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 0 = 0$
 - Với $\mathbf{x} = (1, 1)$, $f(\mathbf{x}) = 1$, $\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 1 = 0$
 
-Suy ra $F_f (\mathbf{a}) = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0 + 1 \cdot (-1)^0 = 2$ khi $\mathbf{a} = (0, 0)$.
+Suy ra 
+
+$$F_f (\mathbf{a}) = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0 + 1 \cdot (-1)^0 = 2$$
+
+khi $\mathbf{a} = (0, 0)$.
 
 Tương tự, ta có các giá trị $F_f (\mathbf{a})$ sau:
 
@@ -155,7 +167,9 @@ $$\begin{equation*}
 	\end{cases}
 \end{equation*}$$
 
-Do đó trong các $\mathbf{y} \in \mathbb{F}_2^n$ thì chỉ có $\mathbf{y} = \mathbf{x}$ không bị triệt tiêu nên kết quả là $2^{-n} \cdot (-1)^{f(\mathbf{x})} \cdot 2^n = (-1)^{f(\mathbf{x})} = f^* (\mathbf{x})$.
+Do đó trong các $\mathbf{y} \in \mathbb{F}_2^n$ thì chỉ có $\mathbf{y} = \mathbf{x}$ không bị triệt tiêu nên kết quả là
+
+$$2^{-n} \cdot (-1)^{f(\mathbf{x})} \cdot 2^n = (-1)^{f(\mathbf{x})} = f^* (\mathbf{x}).$$
 ```
 
 Các hệ số Walsh liên hệ với nhau bởi công thức
@@ -197,7 +211,15 @@ $$\begin{align*}
 	W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = & \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} + 2 \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = & \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} [(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x})]
 \end{align*}$$
 
-Để ý rằng, nếu $f(\mathbf{x}) = 0$ thì $(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^0 + 2 \cdot 0 = 1$, còn nếu $f(\mathbf{x}) = 1$ thì $(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^1 + 2 \cdot 1 = 1$. Nói cách khác biểu thức trên trở thành
+Để ý rằng, nếu $f(\mathbf{x}) = 0$ thì
+
+$$(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^0 + 2 \cdot 0 = 1,$$
+
+còn nếu $f(\mathbf{x}) = 1$ thì
+
+$$(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^1 + 2 \cdot 1 = 1.$$
+
+Nói cách khác biểu thức trên trở thành
 
 $$W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}$$
 

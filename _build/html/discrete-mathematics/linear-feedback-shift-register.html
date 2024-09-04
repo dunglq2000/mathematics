@@ -525,7 +525,10 @@ document.write(`
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 5.12 </span> (Đa thức primitive)</p>
 <section class="definition-content" id="proof-content">
-<p>Xét đa thức <span class="math notranslate nohighlight">\(P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n\)</span> thuộc <span class="math notranslate nohighlight">\(\mathrm{GF}(2^n)\)</span>. Ta đã biết trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^n)\)</span> có <span class="math notranslate nohighlight">\(2^n - 1\)</span> phần tử khác không. Đặt <span class="math notranslate nohighlight">\(p = 2^n - 1\)</span>. Đa thức <span class="math notranslate nohighlight">\(P(x)\)</span> được gọi là <strong>primitive</strong> khi với mọi ước nguyên tố <span class="math notranslate nohighlight">\(q\)</span> của <span class="math notranslate nohighlight">\(p\)</span> thì:</p>
+<p>Xét đa thức</p>
+<div class="math notranslate nohighlight">
+\[P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$\]</div>
+<p>thuộc <span class="math notranslate nohighlight">\(\mathrm{GF}(2^n)\)</span>. Ta đã biết trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^n)\)</span> có <span class="math notranslate nohighlight">\(2^n - 1\)</span> phần tử khác không. Đặt <span class="math notranslate nohighlight">\(p = 2^n - 1\)</span>. Đa thức <span class="math notranslate nohighlight">\(P(x)\)</span> được gọi là <strong>primitive</strong> khi với mọi ước nguyên tố <span class="math notranslate nohighlight">\(q\)</span> của <span class="math notranslate nohighlight">\(p\)</span> thì:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
 	x^s \not\equiv 1 \bmod{P(x)}, \quad \text{với} \ s = \frac{p}{q} = \frac{2^n - 1}{q}
@@ -542,7 +545,10 @@ document.write(`
 <p>Xét đa thức <span class="math notranslate nohighlight">\(f(x) = x^4 + x^3 + 1\)</span>. Ta có thể xác định xem đa thức này có sinh ra LFSR với chu kì tối đa hay không mà không cần tìm đồ thị chuyển trạng thái của LFSR.</p>
 <p>Đầu tiên ta chứng minh <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức tối giản. Thật vậy, giả sử ngược lại, <span class="math notranslate nohighlight">\(f(x)\)</span> là tích của hai đa thức bậc nhỏ hơn 4. Hai trường hợp có thể xảy ra là <span class="math notranslate nohighlight">\(f(x)\)</span> chia hết cho đa thức tối giản bậc 1 hoặc bậc 2.</p>
 <p>Các đa thức tối giản bậc 1 là <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(x+1\)</span>. Ta có thể kiểm chứng rằng <span class="math notranslate nohighlight">\(f(x)\)</span> không chia hết cho bất kì đa thức nào ở trên. Tương tự, đa thức tối giản bậc 2 (trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^4)\)</span>) là <span class="math notranslate nohighlight">\(x^2 + x + 1\)</span> và <span class="math notranslate nohighlight">\(f(x)\)</span> cũng không chia hết cho đa thức này. Như vậy ta có thể kết luận rằng <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức tối giản.</p>
-<p>Trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^4)\)</span> có <span class="math notranslate nohighlight">\(2^4 - 1 = 15\)</span> phần tử khác 0. Các ước nguyên tố của 15 là 3 và 5. Ta thấy rằng <span class="math notranslate nohighlight">\(x^3 \not\equiv 1\)</span> và <span class="math notranslate nohighlight">\(x^5 = x \cdot x^4 = x \cdot (x^3 + 1) = x^4 + x = x^3 + x + 1 \not\equiv 1\)</span>. Như vậy <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức primitive.</p>
+<p>Trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^4)\)</span> có <span class="math notranslate nohighlight">\(2^4 - 1 = 15\)</span> phần tử khác 0. Các ước nguyên tố của 15 là 3 và 5. Ta thấy rằng</p>
+<div class="math notranslate nohighlight">
+\[x^3 \not\equiv 1 \ \text{và} \ x^5 = x \cdot x^4 = x \cdot (x^3 + 1) = x^4 + x = x^3 + x + 1 \not\equiv 1.\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức primitive.</p>
 <p>Như vậy ta có thể kết luận rằng đa thức <span class="math notranslate nohighlight">\(f(x)\)</span> sinh ra LFSR với chu kì tối đa.</p>
 </section>
 </div></section>
@@ -578,10 +584,20 @@ document.write(`
 <p>Đầu ra là đa thức đặc trưng bậc nhỏ nhất mà sinh ra toàn bộ dãy bit trên, bắt đầu từ các bit <span class="math notranslate nohighlight">\(u_0, u_1, \ldots\)</span> nhất định.</p>
 <p><strong>Bước -1.</strong> Gọi <span class="math notranslate nohighlight">\(n_0\)</span> là vị trí đầu tiên mà <span class="math notranslate nohighlight">\(u_{n_0} = 1\)</span> (các bit được đánh số từ 0). Khi đó đặt <span class="math notranslate nohighlight">\(P_{-1}(x) = 1\)</span> và <span class="math notranslate nohighlight">\(k_{-1} = 1\)</span>. Nếu <span class="math notranslate nohighlight">\(P_{-1}(x)\)</span> sinh ra toàn bộ dãy bit thì ta dừng thuật toán. Ngược lại thì tiếp tục bước 1.</p>
 <p><strong>Bước 0.</strong> Đặt <span class="math notranslate nohighlight">\(P_0(x) = x^{n_0 + 1} \oplus P_{-1}(x)\)</span> với <span class="math notranslate nohighlight">\(n_0\)</span> là vị trí bit 1 đầu tiên và đặt <span class="math notranslate nohighlight">\(k_0 = \deg P_0(x) = n_0 + 1\)</span>.</p>
-<p>Ở mỗi bước từ đây trở đi, gọi <span class="math notranslate nohighlight">\(m\)</span> là số sao cho <span class="math notranslate nohighlight">\(k_{-1} = k_0 = \ldots = k_{m-1} &lt; k_{m} = k_{s+2} = \ldots\)</span>.</p>
+<p>Ở mỗi bước từ đây trở đi, gọi <span class="math notranslate nohighlight">\(m\)</span> là số sao cho</p>
+<div class="math notranslate nohighlight">
+\[k_{-1} = k_0 = \ldots = k_{m-1} &lt; k_{m} = k_{s+2} = \ldots\]</div>
 <p><strong>Bước <span class="math notranslate nohighlight">\(n\)</span>.</strong> Để tìm <span class="math notranslate nohighlight">\(P_n(x)\)</span> ta tính <span class="math notranslate nohighlight">\(a = m - k_{m-1}\)</span> và <span class="math notranslate nohighlight">\(b = n - k_{n-1}\)</span>.</p>
-<p>Nếu <span class="math notranslate nohighlight">\(a \geqslant b\)</span> thì <span class="math notranslate nohighlight">\(P_n(x) = P_{n-1}(x) \oplus x^{a-b} P_{m-1}(x)\)</span>.</p>
-<p>Nếu <span class="math notranslate nohighlight">\(a &lt; b\)</span> thì <span class="math notranslate nohighlight">\(P_n(x) = x^{b-a} P_{n-1}(x) \oplus P_{m-1}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \geqslant b\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P_n(x) = P_{n-1}(x) \oplus x^{a-b} P_{m-1}(x).\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Nếu <span class="math notranslate nohighlight">\(a &lt; b\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[P_n(x) = x^{b-a} P_{n-1}(x) \oplus P_{m-1}.\]</div>
 <p>Trong quá trình tìm <span class="math notranslate nohighlight">\(P_n(x)\)</span>, khi nào bậc <span class="math notranslate nohighlight">\(k_n\)</span> của <span class="math notranslate nohighlight">\(P_n(x)\)</span> thỏa mãn điều kiện số <span class="math notranslate nohighlight">\(m\)</span> thì ta cập nhật lại số <span class="math notranslate nohighlight">\(m\)</span>.</p>
 <p>Ở mỗi bước, nếu <span class="math notranslate nohighlight">\(P_n(x)\)</span> sinh ra toàn bộ dãy bit thì ta dừng thuật toán.</p>
 </section>

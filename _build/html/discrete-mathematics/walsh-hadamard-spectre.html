@@ -507,9 +507,15 @@ document.write(`
 </div><div class="danger dropdown admonition">
 <p class="admonition-title"><strong>Chứng minh.</strong></p>
 <p>Để chứng minh nhận xét này, ta thấy rằng nếu <span class="math notranslate nohighlight">\(\mathbf{z} \neq \mathbf{0}\)</span> thì có ít nhất một bit <span class="math notranslate nohighlight">\(z_i \neq 0\)</span>.</p>
-<p>Ta chọn vector <span class="math notranslate nohighlight">\(\Delta = (0, \ldots, 0, 1, 0, \ldots, 0)\)</span> với bit 1 nằm ở vị trí <span class="math notranslate nohighlight">\(i\)</span>. Khi đó với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span> tồn tại duy nhất vector <span class="math notranslate nohighlight">\(\mathbf{a}' \in \mathbb{F}_2^n\)</span> sao cho <span class="math notranslate nohighlight">\(\mathbf{a} \oplus \mathbf{a}' = \Delta\)</span>.</p>
+<p>Ta chọn vector</p>
+<div class="math notranslate nohighlight">
+\[\Delta = (0, \ldots, 0, 1, 0, \ldots, 0)\]</div>
+<p>với bit 1 nằm ở vị trí <span class="math notranslate nohighlight">\(i\)</span>. Khi đó với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span> tồn tại duy nhất vector <span class="math notranslate nohighlight">\(\mathbf{a}' \in \mathbb{F}_2^n\)</span> sao cho <span class="math notranslate nohighlight">\(\mathbf{a} \oplus \mathbf{a}' = \Delta\)</span>.</p>
 <p>Suy ra <span class="math notranslate nohighlight">\(\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \Delta, \mathbf{z} \rangle = 1\)</span> vì <span class="math notranslate nohighlight">\(z_i \cdot 1 = 1\)</span>, các vị trí còn lại <span class="math notranslate nohighlight">\(z_j \cdot 0 = 0\)</span>.</p>
-<p>Lý do ta chọn vector <span class="math notranslate nohighlight">\(\Delta\)</span> như vậy là vì <span class="math notranslate nohighlight">\(\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \mathbf{a}, \mathbf{z} \rangle \oplus \langle \mathbf{a}', \mathbf{z} \rangle = 1\)</span>. Tương đương với <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle = 1 \oplus \langle \mathbf{a}', \mathbf{z} \rangle\)</span>. Do đó <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle\)</span> và <span class="math notranslate nohighlight">\(\langle \mathbf{a}', \mathbf{z} \rangle\)</span> là hai bit khác nhau, dẫn tới <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}, \mathbf{z} \rangle}\)</span> và <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}', \mathbf{z} \rangle}\)</span> là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có <span class="math notranslate nohighlight">\(2^n / 2\)</span> cặp như vậy và tổng cuối cùng là 0.</p>
+<p>Lý do ta chọn vector <span class="math notranslate nohighlight">\(\Delta\)</span> như vậy là vì</p>
+<div class="math notranslate nohighlight">
+\[\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \mathbf{a}, \mathbf{z} \rangle \oplus \langle \mathbf{a}', \mathbf{z} \rangle = 1.\]</div>
+<p>Tương đương với <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle = 1 \oplus \langle \mathbf{a}', \mathbf{z} \rangle\)</span>. Do đó <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle\)</span> và <span class="math notranslate nohighlight">\(\langle \mathbf{a}', \mathbf{z} \rangle\)</span> là hai bit khác nhau, dẫn tới <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}, \mathbf{z} \rangle}\)</span> và <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}', \mathbf{z} \rangle}\)</span> là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có <span class="math notranslate nohighlight">\(2^n / 2\)</span> cặp như vậy và tổng cuối cùng là 0.</p>
 <p>Trong trường hợp <span class="math notranslate nohighlight">\(\mathbf{z} = \mathbf{0}\)</span> thì <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle = \mathbf{0}\)</span> với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span>. Do đó <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}, \mathbf{z} \rangle} = (-1)^0 = 1\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>. Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến có <span class="math notranslate nohighlight">\(2^n\)</span> vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> nên tổng là <span class="math notranslate nohighlight">\(2^n \cdot 1 = 2^n\)</span>.</p>
 </div>
 <p>Nhận xét <a class="reference internal" href="#equation-fur-eq4">(5.4)</a> đã được chứng minh. Ta quay lại bài toán.</p>
@@ -541,7 +547,10 @@ document.write(`
 <li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (1, 0)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 0 = 0\)</span></p></li>
 <li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (1, 1)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 1 = 0\)</span></p></li>
 </ul>
-<p>Suy ra <span class="math notranslate nohighlight">\(F_f (\mathbf{a}) = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0 + 1 \cdot (-1)^0 = 2\)</span> khi <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 0)\)</span>.</p>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[F_f (\mathbf{a}) = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0 + 1 \cdot (-1)^0 = 2\]</div>
+<p>khi <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 0)\)</span>.</p>
 <p>Tương tự, ta có các giá trị <span class="math notranslate nohighlight">\(F_f (\mathbf{a})\)</span> sau:</p>
 <ul class="simple">
 <li><p>Với <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 1)\)</span>, <span class="math notranslate nohighlight">\(F_f (\mathbf{a}) = F_f (0, 1) = 0\)</span></p></li>
@@ -582,7 +591,9 @@ document.write(`
 		2^n, &amp; \quad \text{nếu } \mathbf{y} \oplus \mathbf{x} = \mathbf{0}
 	\end{cases}
 \end{equation*}\end{split}\]</div>
-<p>Do đó trong các <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{F}_2^n\)</span> thì chỉ có <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{x}\)</span> không bị triệt tiêu nên kết quả là <span class="math notranslate nohighlight">\(2^{-n} \cdot (-1)^{f(\mathbf{x})} \cdot 2^n = (-1)^{f(\mathbf{x})} = f^* (\mathbf{x})\)</span>.</p>
+<p>Do đó trong các <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{F}_2^n\)</span> thì chỉ có <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{x}\)</span> không bị triệt tiêu nên kết quả là</p>
+<div class="math notranslate nohighlight">
+\[2^{-n} \cdot (-1)^{f(\mathbf{x})} \cdot 2^n = (-1)^{f(\mathbf{x})} = f^* (\mathbf{x}).\]</div>
 </div>
 <p>Các hệ số Walsh liên hệ với nhau bởi công thức</p>
 <div class="math notranslate nohighlight">
@@ -621,7 +632,13 @@ document.write(`
 \[\begin{split}\begin{align*}
 	W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = &amp; \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} + 2 \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} [(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x})]
 \end{align*}\end{split}\]</div>
-<p>Để ý rằng, nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span> thì <span class="math notranslate nohighlight">\((-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^0 + 2 \cdot 0 = 1\)</span>, còn nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span> thì <span class="math notranslate nohighlight">\((-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^1 + 2 \cdot 1 = 1\)</span>. Nói cách khác biểu thức trên trở thành</p>
+<p>Để ý rằng, nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^0 + 2 \cdot 0 = 1,\]</div>
+<p>còn nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^1 + 2 \cdot 1 = 1.\]</div>
+<p>Nói cách khác biểu thức trên trở thành</p>
 <div class="math notranslate nohighlight">
 \[W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}\]</div>
 <p>Từ <a class="reference internal" href="#equation-fur-eq2">(5.2)</a> ta có</p>
