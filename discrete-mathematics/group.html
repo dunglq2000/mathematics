@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/group';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Số học" href="number-theory.html" />
     <link rel="prev" title="1. Xác suất thống kê" href="../probability/intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,6 +194,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Lý thuyết nhóm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="number-theory.html">3. Số học</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="boolean.html">4. Đại số boolean</a></li>
 </ul>
 
     </div>
@@ -941,11 +950,12 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 </ol>
 </section>
 </div><p>Tóm lại, <span class="math notranslate nohighlight">\((R, +, \times)\)</span> là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.</p>
-<div class="warning admonition">
-<p class="admonition-title"><strong>Lưu ý</strong>.</p>
+<div class="proof remark admonition" id="remark-29">
+<p class="admonition-title"><span class="caption-number">Remark 2.7 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này <span class="math notranslate nohighlight">\((R, \times)\)</span> gọi là <strong>semigroup</strong> (hay <strong>nửa nhóm</strong>).</p>
-</div>
-<div class="proof definition admonition" id="definition-29">
+</section>
+</div><div class="proof definition admonition" id="definition-30">
 <p class="admonition-title"><span class="caption-number">Definition 2.15 </span> (Ring with identity, Vành với đơn vị)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu có phần tử <span class="math notranslate nohighlight">\(1_R \neq 0_R \in R\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(r \in R\)</span> ta đều có</p>
@@ -959,7 +969,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p>Khi đó phần tử nghịch đảo của phép cộng gọi là <strong>phần tử đối</strong> và được ký hiệu là <span class="math notranslate nohighlight">\(-a\)</span>, chỉ phần tử đối của phần tử <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <p>Ta ký hiệu <span class="math notranslate nohighlight">\(1_R\)</span> là <strong>phần tử đơn vị</strong> đối với phép nhân <span class="math notranslate nohighlight">\((R, \times)\)</span>.</p>
 <p>Từ phần tử đơn vị đối với phép nhân ta có khái niệm <strong>đặc số</strong> (hay <strong>số đặc trưng</strong>, <strong>characteristic</strong>) của vành với đơn vị.</p>
-<div class="proof definition admonition" id="definition-30">
+<div class="proof definition admonition" id="definition-31">
 <p class="admonition-title"><span class="caption-number">Definition 2.16 </span> (Characteristic, Đặc số)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét trường <span class="math notranslate nohighlight">\(R\)</span> với phần tử đơn vị là <span class="math notranslate nohighlight">\(1\)</span> và phần tử trung hòa là 0. Số dương <span class="math notranslate nohighlight">\(p\)</span> nhỏ nhất sao cho</p>
@@ -969,7 +979,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 \end{equation*}\]</div>
 <p>được gọi là <strong>đặc số</strong> (hay <strong>characteristic</strong>) của <span class="math notranslate nohighlight">\(R\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-31">
+</div><div class="proof definition admonition" id="definition-32">
 <p class="admonition-title"><span class="caption-number">Definition 2.17 </span> (Commutative Ring, Vành giao hoán)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi <span class="math notranslate nohighlight">\(a, b \in \)</span> đều thỏa</p>
@@ -982,7 +992,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 </div></section>
 <section id="truong">
 <h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">2.4.2. </span>Trường</a><a class="headerlink" href="#truong" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-32">
+<div class="proof definition admonition" id="definition-33">
 <p class="admonition-title"><span class="caption-number">Definition 2.18 </span> (Field, Trường)</p>
 <section class="definition-content" id="proof-content">
 <p>Cho tập hợp <span class="math notranslate nohighlight">\(F\)</span> và hai toán tử hai ngôi trên <span class="math notranslate nohighlight">\(F\)</span> là phép cộng <span class="math notranslate nohighlight">\(+\)</span> và phép nhân <span class="math notranslate nohighlight">\(\times\)</span>. Khi đó <span class="math notranslate nohighlight">\((F, +, \times)\)</span> là <strong>trường</strong> (hay <strong>field</strong>) nếu</p>
@@ -992,7 +1002,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 </ol>
 </section>
 </div><p>Nói cách khác, <span class="math notranslate nohighlight">\((F, \times)\)</span> là nhóm Abel. Trên trường ta thực hiện được bốn phép tính cộng, trừ, nhân, chia.</p>
-<div class="proof example admonition" id="example-33">
+<div class="proof example admonition" id="example-34">
 <p class="admonition-title"><span class="caption-number">Example 2.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Các tập hợp sau với phép cộng và nhân là trường.</p>
@@ -1043,7 +1053,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p>Ta thấy rằng phép cộng và nhân hai đa thức tạo thành một vành giao hoán với đơn vị (đa thức <span class="math notranslate nohighlight">\(f(x) \equiv 1\)</span>).</p>
 <p>Thêm nữa vành này có vô số phần tử. Ta cần một phương án để số phần tử là hữu hạn, và đồng thời là trường.</p>
 <p>Với <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố và <span class="math notranslate nohighlight">\(n\)</span> là số nguyên dương. Mình xét các đa thức có bậc tối đa là <span class="math notranslate nohighlight">\(n-1\)</span> với hệ số nằm trong tập hợp các số dư khi chia cho <span class="math notranslate nohighlight">\(p\)</span>. Như vậy mình có <span class="math notranslate nohighlight">\(p^n\)</span> đa thức như vậy.</p>
-<div class="proof example admonition" id="example-34">
+<div class="proof example admonition" id="example-35">
 <p class="admonition-title"><span class="caption-number">Example 2.10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Với <span class="math notranslate nohighlight">\(p=3\)</span> và <span class="math notranslate nohighlight">\(n=2\)</span>. Khi đó các đa thức có thể có là</p>
@@ -1175,7 +1185,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 </section>
 <section id="ideal">
 <h3><a class="toc-backref" href="#id27" role="doc-backlink"><span class="section-number">2.4.4. </span>Ideal</a><a class="headerlink" href="#ideal" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-35">
+<div class="proof definition admonition" id="definition-36">
 <p class="admonition-title"><span class="caption-number">Definition 2.19 </span> (Ideal)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét vành <span class="math notranslate nohighlight">\((R, +, \times)\)</span>. Một tập con <span class="math notranslate nohighlight">\(I\)</span> của <span class="math notranslate nohighlight">\(R\)</span> được gọi là <strong>ideal trái</strong> nếu</p>
@@ -1185,19 +1195,19 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 </ol>
 </section>
 </div><p>Ta định nghĩa tương tự với ideal phải, khi đó <span class="math notranslate nohighlight">\(xr \in I\)</span>. Từ đây về sau nếu không nói gì thêm nghĩa là mình xét ideal trái.</p>
-<div class="proof definition admonition" id="definition-36">
+<div class="proof definition admonition" id="definition-37">
 <p class="admonition-title"><span class="caption-number">Definition 2.20 </span> (Principal Ideal, Ideal chính)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\(I = aR\)</span> với <span class="math notranslate nohighlight">\(a\)</span> là phần tử nào đó trong <span class="math notranslate nohighlight">\(R\)</span> thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>principal ideal</strong>.</p>
 </section>
 </div><p>Nói cách khác, nếu có một phần tử trong <span class="math notranslate nohighlight">\(R\)</span> “sinh” ra được <span class="math notranslate nohighlight">\(I\)</span> thì <span class="math notranslate nohighlight">\(I\)</span> là principal.</p>
-<div class="proof definition admonition" id="definition-37">
+<div class="proof definition admonition" id="definition-38">
 <p class="admonition-title"><span class="caption-number">Definition 2.21 </span> (Maximal Ideal, Ideal cực đại)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\(I\)</span> là một ideal của <span class="math notranslate nohighlight">\(R\)</span> và không tồn tại tập con <span class="math notranslate nohighlight">\(I'\)</span> mà <span class="math notranslate nohighlight">\(I \subset I' \subset R\)</span> (tập con thực thụ) thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>maximal ideal</strong>.</p>
 </section>
-</div><div class="proof remark admonition" id="remark-38">
-<p class="admonition-title"><span class="caption-number">Remark 2.7 </span></p>
+</div><div class="proof remark admonition" id="remark-39">
+<p class="admonition-title"><span class="caption-number">Remark 2.8 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Xét vành số nguyên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Khi đó mọi ideal của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> đều là principal.</p>
 </section>
@@ -1210,8 +1220,8 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p>Nói cách khác mọi phần tử <span class="math notranslate nohighlight">\(a \in I\)</span> đều có dạng <span class="math notranslate nohighlight">\(qn\)</span> với <span class="math notranslate nohighlight">\(q \in \mathbb{Z}\)</span>.</p>
 <p>Vậy mọi ideal đều là principal.</p>
 </div>
-<div class="proof remark admonition" id="remark-39">
-<p class="admonition-title"><span class="caption-number">Remark 2.8 </span></p>
+<div class="proof remark admonition" id="remark-40">
+<p class="admonition-title"><span class="caption-number">Remark 2.9 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Ideal <span class="math notranslate nohighlight">\(I\)</span> của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là maximal khi và chỉ khi <span class="math notranslate nohighlight">\(I = n\mathbb{Z}\)</span> với <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố.</p>
 </section>
@@ -1220,7 +1230,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p>Ta chứng minh chiều thuận, chiều ngược tương tự. Sử dụng phản chứng, ta giả sử <span class="math notranslate nohighlight">\(n\)</span> là hợp số. Khi đó <span class="math notranslate nohighlight">\(n = n_1 n_2\)</span> (<span class="math notranslate nohighlight">\(n_1 \geqslant n_2 &gt; 1\)</span>).</p>
 <p>Khi đó <span class="math notranslate nohighlight">\(n \mathbb{Z} \subset n_1 \mathbb{Z} \subset \mathbb{Z}\)</span>, suy ra ideal không phải maximal. Ta có điều phải chứng minh.</p>
 </div>
-<div class="proof theorem admonition" id="theorem-40">
+<div class="proof theorem admonition" id="theorem-41">
 <p class="admonition-title"><span class="caption-number">Theorem 2.2 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Gọi <span class="math notranslate nohighlight">\(R\)</span> là vành giao hoán với đơn vị. Khi đó, nếu <span class="math notranslate nohighlight">\(I\)</span> là ideal của <span class="math notranslate nohighlight">\(R\)</span> thì <span class="math notranslate nohighlight">\(R / I\)</span> là trường khi và chỉ khi <span class="math notranslate nohighlight">\(I\)</span> là maximal ideal.</p>
@@ -1232,7 +1242,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p><strong>Điều kiện đủ</strong>. Với <span class="math notranslate nohighlight">\(R / I\)</span> là trường. Ta giả sử <span class="math notranslate nohighlight">\(I\)</span> không là maximal ideal. Khi đó tồn tại <span class="math notranslate nohighlight">\(I'\)</span> sao cho <span class="math notranslate nohighlight">\(I \subset I' \subset R\)</span>.</p>
 <p>Khi đó tồn tại phần tử <span class="math notranslate nohighlight">\(a \in I'\)</span> và <span class="math notranslate nohighlight">\(a \not\in I\)</span> mà <span class="math notranslate nohighlight">\(a + I \neq 0\)</span>. Do đó <span class="math notranslate nohighlight">\((a + I) (b + I) = 1 + I\)</span> suy ra tồn tại <span class="math notranslate nohighlight">\(n \in I \subset I'\)</span> sao cho <span class="math notranslate nohighlight">\(a b = 1 + n\)</span>. Do <span class="math notranslate nohighlight">\(a, b \in I'\)</span> nên <span class="math notranslate nohighlight">\(1 \in I'\)</span>, từ đó <span class="math notranslate nohighlight">\(1 \in R\)</span> nên <span class="math notranslate nohighlight">\(I'\)</span> không phải maximal.</p>
 </div>
-<div class="proof example admonition" id="example-41">
+<div class="proof example admonition" id="example-42">
 <p class="admonition-title"><span class="caption-number">Example 2.11 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét tập hợp <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là vành giao hoán với đơn vị. Khi đó nếu <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố thì <span class="math notranslate nohighlight">\(n \mathbb{Z}\)</span> là maximal ideal (đã chứng minh ở trên). Do đó tập <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span> là trường hữu hạn modulo nguyên tố gồm các phần tử <span class="math notranslate nohighlight">\(\{ 0, 1, \ldots, p-1 \}\)</span>.</p>
@@ -1245,7 +1255,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <li><p>với mọi <span class="math notranslate nohighlight">\(a \in R\)</span>, <span class="math notranslate nohighlight">\(a \times 0 = 0 \times a = 0\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\((-a) \times b = - (a \times b)\)</span>.</p></li>
 </ul>
-<div class="proof definition admonition" id="definition-42">
+<div class="proof definition admonition" id="definition-43">
 <p class="admonition-title"><span class="caption-number">Definition 2.22 </span> (Ring homomorphism)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai vành là <span class="math notranslate nohighlight">\((R_1, +, \times)\)</span> và <span class="math notranslate nohighlight">\((R_2, \boxplus, \otimes)\)</span> và ánh xạ <span class="math notranslate nohighlight">\(f: \, R_1 \to R_2\)</span>.</p>
@@ -1255,7 +1265,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <li><p>với mọi <span class="math notranslate nohighlight">\(a, b \in R_1\)</span>, <span class="math notranslate nohighlight">\(f(a) \otimes f(b) = f(a \times b)\)</span>.</p></li>
 </ul>
 </section>
-</div><div class="proof definition admonition" id="definition-43">
+</div><div class="proof definition admonition" id="definition-44">
 <p class="admonition-title"><span class="caption-number">Definition 2.23 </span> (Kernel, Hạt nhân)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Hạt nhân</strong> (hay <strong>kernel</strong>) của <span class="math notranslate nohighlight">\(f\)</span> là</p>
@@ -1265,7 +1275,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 \end{equation*}\]</div>
 <p>với <span class="math notranslate nohighlight">\(0_{2}\)</span> là phần tử trung hòa của <span class="math notranslate nohighlight">\(R_2\)</span>.</p>
 </section>
-</div><div class="proof theorem admonition" id="theorem-44">
+</div><div class="proof theorem admonition" id="theorem-45">
 <p class="admonition-title"><span class="caption-number">Theorem 2.3 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\ker f\)</span> là một ideal của <span class="math notranslate nohighlight">\(R_1\)</span>.</p>
@@ -1298,39 +1308,40 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <li><p>identity: <span class="math notranslate nohighlight">\(e m = m\)</span> với mọi <span class="math notranslate nohighlight">\(m \in M\)</span>;</p></li>
 <li><p>compatibility: <span class="math notranslate nohighlight">\(g(hm) = (gh)m\)</span> với mọi <span class="math notranslate nohighlight">\(m \in M\)</span> và <span class="math notranslate nohighlight">\(g, h \in G\)</span>.</p></li>
 </ul>
-<div class="proof definition admonition" id="definition-45">
+<div class="proof definition admonition" id="definition-46">
 <p class="admonition-title"><span class="caption-number">Definition 2.24 </span> (Stabilizer, nhóm con ổn định)</p>
 <section class="definition-content" id="proof-content">
 <p>Với phần tử <span class="math notranslate nohighlight">\(m \in M\)</span> cho trước, tập hợp các phần tử <span class="math notranslate nohighlight">\(g \in G\)</span> mà <span class="math notranslate nohighlight">\(gm = m\)</span> được gọi là <strong>stabilizer</strong> của nhóm <span class="math notranslate nohighlight">\(G\)</span>. Ta ký hiệu</p>
 <div class="math notranslate nohighlight">
 \[G_m = \{ g \in G : gm = m \}\]</div>
 </section>
-</div><div class="proof definition admonition" id="definition-46">
+</div><div class="proof definition admonition" id="definition-47">
 <p class="admonition-title"><span class="caption-number">Definition 2.25 </span> (Orbit, quỹ đạo)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Orbit</strong> của phần tử <span class="math notranslate nohighlight">\(m \in M\)</span> là tập hợp</p>
 <div class="math notranslate nohighlight">
 \[G(m) = \{gm : g \in G\}\]</div>
 </section>
-</div><div class="important admonition">
-<p class="admonition-title">**Nhận xét.</p>
+</div><div class="proof remark admonition" id="remark-48">
+<p class="admonition-title"><span class="caption-number">Remark 2.10 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Hai orbit của hai phần tử bất kì hoặc rời nhau, hoặc trùng nhau.</p>
-</div>
-<div class="danger dropdown admonition">
+</section>
+</div><div class="danger dropdown admonition">
 <p class="admonition-title"><strong>Chứng minh.</strong></p>
 <p>Giả sử ta có <span class="math notranslate nohighlight">\(m_1, m_2 \in M\)</span> mà <span class="math notranslate nohighlight">\(G(m_1) \cap G(m_2) \neq \emptyset\)</span>.</p>
 <p>Khi đó tồn tại <span class="math notranslate nohighlight">\(g_1, g_2 \in G\)</span> để <span class="math notranslate nohighlight">\(g_1 m_1 = g_2 m_2\)</span>. Suy ra <span class="math notranslate nohighlight">\(m_1 = g_1^{-1} g_2 m_2\)</span>.</p>
 <p>Mà mọi phần tử trong <span class="math notranslate nohighlight">\(G(m_1)\)</span> có dạng <span class="math notranslate nohighlight">\(g m_1\)</span> nên <span class="math notranslate nohighlight">\(g m_1 = g g_1^{-1} g_2 m_2\)</span> nên <span class="math notranslate nohighlight">\(G(m_1) \subseteq G(m_2)\)</span>.</p>
 <p>Chứng minh tương tự ta cũng có <span class="math notranslate nohighlight">\(G(m_2) \subseteq G(m_1)\)</span> nên <span class="math notranslate nohighlight">\(G(m_1) \equiv G(m_2)\)</span>.</p>
 </div>
-<div class="proof remark admonition" id="remark-47">
-<p class="admonition-title"><span class="caption-number">Remark 2.9 </span></p>
+<div class="proof remark admonition" id="remark-49">
+<p class="admonition-title"><span class="caption-number">Remark 2.11 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Tập hợp <span class="math notranslate nohighlight">\(M\)</span> là giao của các orbit rời nhau. Giả sử ta có <span class="math notranslate nohighlight">\(t\)</span> orbit rời nhau <span class="math notranslate nohighlight">\(G(m_1), G(m_2), \ldots, G(m_t)\)</span> thì</p>
 <div class="math notranslate nohighlight">
 \[M = G(m_1) \cup G(m_2) \cup \ldots \cup G(m_t)\]</div>
 </section>
-</div><div class="proof example admonition" id="example-48">
+</div><div class="proof example admonition" id="example-50">
 <p class="admonition-title"><span class="caption-number">Example 2.12 </span></p>
 <section class="example-content" id="proof-content">
 <p>Cho nhóm <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> có 6 phần tử <span class="math notranslate nohighlight">\((1)(2)(3)\)</span>, <span class="math notranslate nohighlight">\((1)(2,3)\)</span>, <span class="math notranslate nohighlight">\((2)(1,3)\)</span>, <span class="math notranslate nohighlight">\((3)(1,2)\)</span>, <span class="math notranslate nohighlight">\((1,2,3)\)</span>, <span class="math notranslate nohighlight">\((1,3,2)\)</span>.</p>
@@ -1348,8 +1359,8 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
 <p>Hai phần tử <span class="math notranslate nohighlight">\(m, n \in M\)</span> được gọi là <strong>có quan hệ với nhau dưới tác động của nhóm <span class="math notranslate nohighlight">\(G\)</span></strong> nếu tồn tại phần tử <span class="math notranslate nohighlight">\(g \in G\)</span> sao cho <span class="math notranslate nohighlight">\(m = g n\)</span>.</p>
 <p>Ta ký hiệu là <span class="math notranslate nohighlight">\(m \tilde{G} n\)</span>.</p>
 </div>
-<div class="proof remark admonition" id="remark-49">
-<p class="admonition-title"><span class="caption-number">Remark 2.10 </span></p>
+<div class="proof remark admonition" id="remark-51">
+<p class="admonition-title"><span class="caption-number">Remark 2.12 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Quan hệ được định nghĩa như trên là quan hệ tương đương.</p>
 </section>
@@ -1531,19 +1542,19 @@ tô màu đỉnh 1 tùy ý, đỉnh 2-3-4 chung màu (cũng tùy ý).</p>
 \[\begin{equation*}
     I_g (z_1, z_2, ,\ldots, z_n) = z_1^{t_1} z_2^{t_2} \ldots z_n^{t_n}
 \end{equation*}\]</div>
-<div class="proof example admonition" id="example-50">
+<div class="proof example admonition" id="example-52">
 <p class="admonition-title"><span class="caption-number">Example 2.13 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hoán vị <span class="math notranslate nohighlight">\((1,2,3)(4)(5)(6,7) \in \mathcal{S}_7\)</span></p>
 <p>Ta có hai chu trình độ dài 1, một chu trình độ dài 2 và một chu trình độ dài 3 và không có chu trình độ dài 4, 5, 6, 7.</p>
 <p>Do đó chỉ số chu trình là <span class="math notranslate nohighlight">\(I_g (z_1, z_2, z_3) = z_1^2 z_2^1 z_3^1\)</span>.</p>
 </section>
-</div><div class="proof remark admonition" id="remark-51">
-<p class="admonition-title"><span class="caption-number">Remark 2.11 </span></p>
+</div><div class="proof remark admonition" id="remark-53">
+<p class="admonition-title"><span class="caption-number">Remark 2.13 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Bất kì hoán vị nào thuộc <span class="math notranslate nohighlight">\(\mathcal{S}_n\)</span> đều thỏa <span class="math notranslate nohighlight">\(1 \cdot t_1 + 2 \cdot t_2 + \ldots + n \cdot t_n = n\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-52">
+</div><div class="proof definition admonition" id="definition-54">
 <p class="admonition-title"><span class="caption-number">Definition 2.26 </span> (Cyclic index, chỉ số chu trình)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Chỉ số chu trình</strong> của nhóm G là:</p>
@@ -1563,7 +1574,7 @@ tô màu đỉnh 1 tùy ý, đỉnh 2-3-4 chung màu (cũng tùy ý).</p>
 \[R = \{r_1, r_2, \ldots, r_c \}\]</div>
 <p>Ở ví dụ trên thì <span class="math notranslate nohighlight">\(R = \{\text{đỏ}, \text{xanh}, \text{vàng}\}\)</span>.</p>
 <p>Ta thay mỗi <span class="math notranslate nohighlight">\(z_i\)</span> trong chỉ số chu trình bằng tổng <span class="math notranslate nohighlight">\(\displaystyle{\sum_{r \in R} r^i}\)</span>.</p>
-<div class="proof example admonition" id="example-53">
+<div class="proof example admonition" id="example-55">
 <p class="admonition-title"><span class="caption-number">Example 2.14 </span></p>
 <section class="example-content" id="proof-content">
 <p>Giả sử ta tô màu bốn đỉnh tứ diện với hai màu <span class="math notranslate nohighlight">\(R = \{r_1, r_2\}\)</span>.</p>
@@ -1663,6 +1674,15 @@ và hệ số trước mỗi toán hạng là số lớp tương đương tươn
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><span class="section-number">1. </span>Xác suất thống kê</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="number-theory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Số học</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -456,8 +456,7 @@ Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**) nếu
 
 Tóm lại, $(R, +, \times)$ là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.
 
-```{admonition} **Lưu ý**.
-:class: warning
+````{prf:remark}
 Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này $(R, \times)$ gọi là **semigroup** (hay **nửa nhóm**).
 ````
 
@@ -739,10 +738,9 @@ $$G_m = \{ g \in G : gm = m \}$$
 $$G(m) = \{gm : g \in G\}$$
 ````
 
-```{admonition} **Nhận xét.
-:class: important
+````{prf:remark}
 Hai orbit của hai phần tử bất kì hoặc rời nhau, hoặc trùng nhau.
-```
+````
 
 ```{admonition} **Chứng minh.**
 :class: danger, dropdown
