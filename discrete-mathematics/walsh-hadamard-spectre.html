@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/walsh-hadamard-spectre';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.3. Linear Feedback Shift Register" href="linear-feedback-shift-register.html" />
+    <link rel="prev" title="5.1. Hàm boolean" href="boolean-function.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="number-theory.html">4. Số học</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">5. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/walsh-hadamard-spectre.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/discrete-mathematics/walsh-hadamard-spectre.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Trọng số, phổ Furier, phổ Walsh, Hamming distance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trong-so-cua-ham-boolean">5.2.1. Trọng số của hàm boolean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier">5.2.2. Biến đổi Fourier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-walsh-hadamard">5.2.3. Biến đổi Walsh-Hadamard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">5.2.4. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#khoang-cach-hamming">5.2.5. Khoảng cách Hamming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">5.2.6. Hàm Bent</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="trong-so-pho-furier-pho-walsh-hamming-distance">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">5.2. </span>Trọng số, phổ Furier, phổ Walsh, Hamming distance</a><a class="headerlink" href="#trong-so-pho-furier-pho-walsh-hamming-distance" title="Link to this heading">#</a></h1>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#trong-so-pho-furier-pho-walsh-hamming-distance" id="id1">Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></p>
+<ul>
+<li><p><a class="reference internal" href="#trong-so-cua-ham-boolean" id="id2">Trọng số của hàm boolean</a></p></li>
+<li><p><a class="reference internal" href="#bien-doi-fourier" id="id3">Biến đổi Fourier</a></p></li>
+<li><p><a class="reference internal" href="#bien-doi-walsh-hadamard" id="id4">Biến đổi Walsh-Hadamard</a></p></li>
+<li><p><a class="reference internal" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" id="id5">Liên hệ giữa hệ số Fourier và hệ số Walsh</a></p></li>
+<li><p><a class="reference internal" href="#khoang-cach-hamming" id="id6">Khoảng cách Hamming</a></p></li>
+<li><p><a class="reference internal" href="#ham-bent" id="id7">Hàm Bent</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<p>Ở phần này ký hiệu vector không <span class="math notranslate nohighlight">\(\mathbf{0} = (0, \ldots, 0)\)</span>, vector một <span class="math notranslate nohighlight">\(\mathbf{1} = (1, \ldots, 1)\)</span>.</p>
+<section id="trong-so-cua-ham-boolean">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">5.2.1. </span>Trọng số của hàm boolean</a><a class="headerlink" href="#trong-so-cua-ham-boolean" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 5.6 </span> (Trọng số hàm boolean)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Trọng số</strong> (hay <strong>weight</strong>, <strong>вес</strong>) của hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> là số lượng giá trị khác <span class="math notranslate nohighlight">\(0\)</span> của hàm <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Ký hiệu là <span class="math notranslate nohighlight">\(\mathrm{wt}(f)\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 5.6 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 0, 1)\)</span> có trọng số <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = 2\)</span>.</p>
+<p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)\)</span> có trọng số <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = 5\)</span>.</p>
+</section>
+</div><p>Một số tính chất của trọng số:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leqslant \mathrm{wt}(f) \leqslant 2^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{wt}(f \oplus \mathbf{1}) = 2^n - \mathrm{wt}(f)\)</span></p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(h\)</span> cũng là một hàm boolean từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\mathrm{wt}(f \oplus h) = \mathrm{wt}(f) + \mathrm{wt}(h) - 2 \mathrm{wt}(fh)\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Giá trị <span class="math notranslate nohighlight">\(\mathrm{wt}(f)\)</span> nhận giá trị lẻ khi và chỉ khi <span class="math notranslate nohighlight">\(\deg(f) = n\)</span>.</p></li>
+</ol>
+</section>
+<section id="bien-doi-fourier">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">5.2.2. </span>Biến đổi Fourier</a><a class="headerlink" href="#bien-doi-fourier" title="Link to this heading">#</a></h2>
+<p>Với mỗi vector <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, \ldots, a_n) \in \mathbb{F}_2^n\)</span>, ta ký hiệu <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle\)</span> là hàm sau:</p>
+<div class="math notranslate nohighlight" id="equation-fur-eq1">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-fur-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
+	\langle \mathbf{a}, \mathbf{x} \rangle = a_1 x_1 \oplus a_2 x_2 \oplus \ldots \oplus a_n x_n
+\end{equation}\]</div>
+<p>Mỗi hàm boolean <span class="math notranslate nohighlight">\(f(\mathbf{x}) = f(x_1, x_2, \ldots, x_n)\)</span> sẽ được biểu diễn dưới dạng duy nhất với</p>
+<div class="math notranslate nohighlight" id="equation-fur-eq2">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-fur-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
+	f(\mathbf{x}) = 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} F_f (\mathbf{a}) \cdot (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}
+\end{equation}\]</div>
+<p>Trong đó</p>
+<div class="math notranslate nohighlight" id="equation-fur-eq3">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-fur-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
+	F_f (\mathbf{a}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) \cdot (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}
+\end{equation}\]</div>
+<p>Khi đó, tập hợp <span class="math notranslate nohighlight">\(\{F_f (\mathbf{a}), \mathbf{a} \in \mathbb{F}_2^n \}\)</span> được gọi là <strong>phổ Fourier</strong> (hay <strong>spectre Fourier</strong>) của hàm boolean <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 5.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Đầu tiên ta có nhận xét rằng, với vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> cố định thì</p>
+<div class="math notranslate nohighlight" id="equation-fur-eq4">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-fur-eq4" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
+    \sum_{\mathbf{a} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{z} \rangle} = \begin{cases}
+        0, \quad &amp; \text{nếu } \mathbf{z} \neq \mathbf{0} \\
+        2^n, \quad &amp; \text{nếu } \mathbf{z} = \mathbf{0}
+    \end{cases}
+\end{equation}\end{split}\]</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Để chứng minh nhận xét này, ta thấy rằng nếu <span class="math notranslate nohighlight">\(\mathbf{z} \neq \mathbf{0}\)</span> thì có ít nhất một bit <span class="math notranslate nohighlight">\(z_i \neq 0\)</span>.</p>
+<p>Ta chọn vector</p>
+<div class="math notranslate nohighlight">
+\[\Delta = (0, \ldots, 0, 1, 0, \ldots, 0)\]</div>
+<p>với bit 1 nằm ở vị trí <span class="math notranslate nohighlight">\(i\)</span>. Khi đó với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span> tồn tại duy nhất vector <span class="math notranslate nohighlight">\(\mathbf{a}' \in \mathbb{F}_2^n\)</span> sao cho <span class="math notranslate nohighlight">\(\mathbf{a} \oplus \mathbf{a}' = \Delta\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \Delta, \mathbf{z} \rangle = 1\)</span> vì <span class="math notranslate nohighlight">\(z_i \cdot 1 = 1\)</span>, các vị trí còn lại <span class="math notranslate nohighlight">\(z_j \cdot 0 = 0\)</span>.</p>
+<p>Lý do ta chọn vector <span class="math notranslate nohighlight">\(\Delta\)</span> như vậy là vì</p>
+<div class="math notranslate nohighlight">
+\[\langle \mathbf{a} \oplus \mathbf{a}', \mathbf{z} \rangle = \langle \mathbf{a}, \mathbf{z} \rangle \oplus \langle \mathbf{a}', \mathbf{z} \rangle = 1.\]</div>
+<p>Tương đương với <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle = 1 \oplus \langle \mathbf{a}', \mathbf{z} \rangle\)</span>. Do đó <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle\)</span> và <span class="math notranslate nohighlight">\(\langle \mathbf{a}', \mathbf{z} \rangle\)</span> là hai bit khác nhau, dẫn tới <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}, \mathbf{z} \rangle}\)</span> và <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}', \mathbf{z} \rangle}\)</span> là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có <span class="math notranslate nohighlight">\(2^n / 2\)</span> cặp như vậy và tổng cuối cùng là 0.</p>
+<p>Trong trường hợp <span class="math notranslate nohighlight">\(\mathbf{z} = \mathbf{0}\)</span> thì <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{z} \rangle = \mathbf{0}\)</span> với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span>. Do đó <span class="math notranslate nohighlight">\((-1)^{\langle \mathbf{a}, \mathbf{z} \rangle} = (-1)^0 = 1\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>. Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến có <span class="math notranslate nohighlight">\(2^n\)</span> vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> nên tổng là <span class="math notranslate nohighlight">\(2^n \cdot 1 = 2^n\)</span>.</p>
+</div>
+<p>Nhận xét <a class="reference internal" href="#equation-fur-eq4">(5.4)</a> đã được chứng minh. Ta quay lại bài toán.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Với mọi vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span>, ta khai triển từ vế phải của <a class="reference internal" href="#equation-fur-eq2">(5.2)</a> và từ <a class="reference internal" href="#equation-fur-eq3">(5.3)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} F_f (\mathbf{a}) \cdot (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} \biggl( \sum_{\mathbf{y} \in \mathbb{F}_2^n} f(\mathbf{y}) \cdot (-1)^{\langle \mathbf{a}, \mathbf{y} \rangle} \biggr) \cdot (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; 2^{-n} \sum_{\mathbf{y} \in \mathbb{F}_2^n} f(\mathbf{y}) \sum_{\mathbf{a} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{y} \oplus \mathbf{x} \rangle}
+\end{align*}\end{split}\]</div>
+<p>Theo <a class="reference internal" href="#equation-fur-eq4">(5.4)</a>, nếu ta coi <span class="math notranslate nohighlight">\(\mathbf{y} \oplus \mathbf{x} = \mathbf{z}\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \sum_{\mathbf{a} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{y} \oplus \mathbf{x} \rangle} = \begin{cases}
+        0, \quad &amp; \text{nếu } \mathbf{y} \oplus \mathbf{x} \neq \mathbf{0} \\
+        2^n, \quad &amp; \text{nếu } \mathbf{y} \oplus \mathbf{x} = \mathbf{0}
+    \end{cases}
+\end{equation*}\end{split}\]</div>
+<p>Nghĩa là trong tổng trên thì chỉ có <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> thỏa <span class="math notranslate nohighlight">\(\mathbf{y} \oplus \mathbf{x} = \mathbf{0}\)</span> thì <span class="math notranslate nohighlight">\(f(\mathbf{y})\)</span> không bị triệt tiêu. Nói cách khác là <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{x}\)</span> và do đó tổng trên còn lại <span class="math notranslate nohighlight">\(2^{-n} (f(\mathbf{x}) \cdot 2^n) = f(\mathbf{x})\)</span> và ta có điều phải chứng minh.</p>
+</div>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 5.7 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x_1, x_2) = (1, 0, 0, 1)\)</span>.</p>
+<p>Xét <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 0)\)</span>. Ta có:</p>
+<ul class="simple">
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (0, 0)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 0 + 0 \cdot 0 = 0\)</span>.</p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (0, 1)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 0 + 0 \cdot 1 = 0\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (1, 0)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 0 = 0\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{x} = (1, 1)\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span>, <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0 \cdot 1 + 0 \cdot 1 = 0\)</span></p></li>
+</ul>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[F_f (\mathbf{a}) = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0 + 1 \cdot (-1)^0 = 2\]</div>
+<p>khi <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 0)\)</span>.</p>
+<p>Tương tự, ta có các giá trị <span class="math notranslate nohighlight">\(F_f (\mathbf{a})\)</span> sau:</p>
+<ul class="simple">
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{a} = (0, 1)\)</span>, <span class="math notranslate nohighlight">\(F_f (\mathbf{a}) = F_f (0, 1) = 0\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{a} = (1, 0)\)</span>, <span class="math notranslate nohighlight">\(F_f (\mathbf{a}) = F_f (1, 0) = 0\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(\mathbf{a} = (1, 1)\)</span>, <span class="math notranslate nohighlight">\(F_f (\mathbf{a}) = F_f (1, 1) = 2\)</span></p></li>
+</ul>
+<p>Bây giờ ta đã có đủ <span class="math notranslate nohighlight">\(F_f(\mathbf{a})\)</span> với <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^2\)</span> nên ta có thể kiểm chứng với mọi <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^2\)</span> thỏa công thức <a class="reference internal" href="#equation-fur-eq2">(5.2)</a>.</p>
+</section>
+</div></section>
+<section id="bien-doi-walsh-hadamard">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">5.2.3. </span>Biến đổi Walsh-Hadamard</a><a class="headerlink" href="#bien-doi-walsh-hadamard" title="Link to this heading">#</a></h2>
+<p>Với mỗi hàm boolean <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n) = f(\mathbf{x})\)</span> ta định nghĩa một hàm tương ứng như sau:</p>
+<div class="math notranslate nohighlight">
+\[f^*(\mathbf{x}) = (-1)^{f(\mathbf{x})}\]</div>
+<p>Ta định nghĩa <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle\)</span> như trên, khi đó hàm <span class="math notranslate nohighlight">\(f^*(\mathbf{x})\)</span> sẽ có dạng</p>
+<div class="math notranslate nohighlight" id="equation-walsh-eq1">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-walsh-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
+	f^*(\mathbf{x}) = 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} W_f (\mathbf{a}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}
+\end{equation}\]</div>
+<p>Trong đó</p>
+<div class="math notranslate nohighlight" id="equation-walsh-eq2">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-walsh-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
+	W_f (\mathbf{a}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle}
+\end{equation}\]</div>
+<p>Tập hợp <span class="math notranslate nohighlight">\(\{ W_f (\mathbf{a}), \mathbf{a} \in \mathbb{F}_2^n \}\)</span> được gọi là <strong>phổ Walsh</strong> (hay <strong>spectre Walsh</strong>) của hàm <span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span>. Các giá trị <span class="math notranslate nohighlight">\(W_f (\mathbf{a})\)</span> được gọi là hệ số Walsh.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Tương tự như trên, ta khai triển vế phải của <a class="reference internal" href="#equation-walsh-eq1">(5.5)</a> và thay <a class="reference internal" href="#equation-walsh-eq2">(5.6)</a> vào</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	&amp; 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} W_f (\mathbf{a}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; 2^{-n} \sum_{\mathbf{a} \in \mathbb{F}_2^n} \biggl( \sum_{\mathbf{y} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{y}) \oplus \langle \mathbf{a}, \mathbf{y} \rangle} \biggr) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; 2^{-n} \sum_{\mathbf{y} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{y})} \sum_{\mathbf{a} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{y} \oplus \mathbf{x} \rangle}
+\end{align*}\end{split}\]</div>
+<p>Cũng từ <a class="reference internal" href="#equation-fur-eq4">(5.4)</a>, tương tự như trên ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+	\sum_{\mathbf{a} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{y} \oplus \mathbf{x} \rangle} = \begin{cases}
+		0, &amp; \quad \text{nếu } \mathbf{y} \oplus \mathbf{x} \neq \mathbf{0} \\
+		2^n, &amp; \quad \text{nếu } \mathbf{y} \oplus \mathbf{x} = \mathbf{0}
+	\end{cases}
+\end{equation*}\end{split}\]</div>
+<p>Do đó trong các <span class="math notranslate nohighlight">\(\mathbf{y} \in \mathbb{F}_2^n\)</span> thì chỉ có <span class="math notranslate nohighlight">\(\mathbf{y} = \mathbf{x}\)</span> không bị triệt tiêu nên kết quả là</p>
+<div class="math notranslate nohighlight">
+\[2^{-n} \cdot (-1)^{f(\mathbf{x})} \cdot 2^n = (-1)^{f(\mathbf{x})} = f^* (\mathbf{x}).\]</div>
+</div>
+<p>Các hệ số Walsh liên hệ với nhau bởi công thức</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation}
+	\sum_{\mathbf{a} \in \mathbb{F}_2^n} W_f (\mathbf{a}) W_f (\mathbf{a} \oplus \mathbf{d}) = 
+	\begin{cases}
+		2^{2n}, &amp; \mathbf{d} = \mathbf{0} \\
+		0, &amp; \mathbf{d} \neq \mathbf{0}
+	\end{cases}
+\end{equation}\end{split}\]</div>
+<p>Trường hợp <span class="math notranslate nohighlight">\(\mathbf{d} = \mathbf{0}\)</span> được gọi là <strong>đẳng thức Parcel</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	\sum_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2 = 2^{2n}
+\end{equation}\]</div>
+</section>
+<section id="lien-he-giua-he-so-fourier-va-he-so-walsh">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">5.2.4. </span>Liên hệ giữa hệ số Fourier và hệ số Walsh</a><a class="headerlink" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" title="Link to this heading">#</a></h2>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 5.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Quan hệ giữa hệ số Fourier và hệ số Walsh là biểu thức sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	W_f (\mathbf{a}) = 2^n \Delta (\mathbf{a}) - 2 F_f (\mathbf{a})
+\end{equation}\]</div>
+<p>với <span class="math notranslate nohighlight">\(\Delta (\mathbf{a}) = \begin{cases}
+	1, \quad \text{nếu } \mathbf{a} = \mathbf{0} \\
+	0, \quad \text{nếu } \mathbf{a} \neq \mathbf{0}
+\end{cases}\)</span></p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = &amp; \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} + 2 \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} \\ = &amp; \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} [(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x})]
+\end{align*}\end{split}\]</div>
+<p>Để ý rằng, nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^0 + 2 \cdot 0 = 1,\]</div>
+<p>còn nếu <span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[(-1)^{f(\mathbf{x})} + 2 f(\mathbf{x}) = (-1)^1 + 2 \cdot 1 = 1.\]</div>
+<p>Nói cách khác biểu thức trên trở thành</p>
+<div class="math notranslate nohighlight">
+\[W_f (\mathbf{a}) + 2 F_f (\mathbf{a}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle}\]</div>
+<p>Từ <a class="reference internal" href="#equation-fur-eq2">(5.2)</a> ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum_{\mathbf{x} \in \mathbb{F}_2^n} (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} = \begin{cases}
+	0, \quad &amp;\text{nếu } \mathbf{a} \neq \mathbf{0} \\ 2^n, \quad &amp; \text{nếu } \mathbf{a} = \mathbf{0}
+\end{cases}\end{split}\]</div>
+<p>Như vậy nếu đặt <span class="math notranslate nohighlight">\(\Delta(\mathbf{a}) = \begin{cases}
+	1, \text{nếu } \mathbf{a} = \mathbf{0} \\ 0, \text{nếu } \mathbf{a} \neq \mathbf{0}
+\end{cases}\)</span> thì ta có điều phải chứng minh.</p>
+</div>
+<div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span class="caption-number">Remark 5.3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Khi <span class="math notranslate nohighlight">\(\mathbf{a} = \mathbf{0}\)</span> thì với mọi <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span> ta đều có <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = 0\)</span>. Do đó</p>
+<div class="math notranslate nohighlight">
+\[F_f (\mathbf{0}) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) (-1)^{\langle \mathbf{a}, \mathbf{x} \rangle} = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) (-1)^0 = \mathrm{wt}(f)\]</div>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight" id="equation-walsh-eq4">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-walsh-eq4" title="Link to this equation">#</a></span>\[\begin{equation}
+	W_f (\mathbf{0}) = 2^n - 2 wt(f) \Leftrightarrow wt(f) = 2^{n-1} - \frac{1}{2} W_f (\mathbf{0})
+\end{equation}\]</div>
+</section>
+</div></section>
+<section id="khoang-cach-hamming">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">5.2.5. </span>Khoảng cách Hamming</a><a class="headerlink" href="#khoang-cach-hamming" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 5.7 </span> (Khoảng cách Hamming giữa hai vector)</p>
+<section class="definition-content" id="proof-content">
+<p>Với hai vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, đặt</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	d (\mathbf{x}, \mathbf{y}) = \mathrm{wt} (\mathbf{x} \oplus \mathbf{y})
+\end{equation}\]</div>
+<p>là <strong>khoảng cách Hamming</strong> giữa hai vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. Trong đó <span class="math notranslate nohighlight">\(\mathrm{wt}(\mathbf{z})\)</span> là trọng số vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 5.8 </span> (Khoảng cách Hamming từ vector tới tập vector)</p>
+<section class="definition-content" id="proof-content">
+<p>Xét <span class="math notranslate nohighlight">\(M \subseteq \mathbb{F}_2^n\)</span>. Khi đó với mọi <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span>, ta nói khoảng cách từ <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> tới <span class="math notranslate nohighlight">\(M\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	d(\mathbf{x}, M) = \min_{\mathbf{y} \in M} d (\mathbf{x}, \mathbf{y})
+\end{equation}\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 5.9 </span> (Khoảng cách Hamming giữa hai hàm boolean)</p>
+<section class="definition-content" id="proof-content">
+<p>Xét hai hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến là <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n)\)</span>. Khi đó khoảng cách Hamming từ hàm <span class="math notranslate nohighlight">\(f\)</span> tới hàm <span class="math notranslate nohighlight">\(g\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) \oplus g(\mathbf{x})
+\end{equation}\]</div>
+</section>
+</div></section>
+<section id="ham-bent">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">5.2.6. </span>Hàm Bent</a><a class="headerlink" href="#ham-bent" title="Link to this heading">#</a></h2>
+<p>Ta ký hiệu <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> là tập hợp tất cả các hàm boolean affine với <span class="math notranslate nohighlight">\(n\)</span> biến. Nghĩa là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+	\mathcal{L} = \{ l_{a_0} (\mathbf{a}, \mathbf{x}) \, | \, a_0 \in \mathbb{F}_2, \mathbf{a} \in \mathbb{F}_2^n \}
+\end{equation}\]</div>
+<p>với <span class="math notranslate nohighlight">\(l_{a_0} (\mathbf{a}, \mathbf{x}) = a_0 \oplus a_1 x_1 \oplus \ldots \oplus a_n x_n\)</span>.</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 5.10 </span> (Nonlinearity của hàm boolean)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Nonlinearity</strong> của hàm boolean <span class="math notranslate nohighlight">\(f\)</span> bất kì được định nghĩa là khoảng cách Hamming từ <span class="math notranslate nohighlight">\(f\)</span> tới <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, hay nói cách khác <span class="math notranslate nohighlight">\(N_f = d(f, \mathcal{L})\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-10">
+<p class="admonition-title"><span class="caption-number">Remark 5.4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Xét hàm <span class="math notranslate nohighlight">\(f\)</span> với <span class="math notranslate nohighlight">\(n\)</span> biến và phổ Walsh tương ứng của hàm <span class="math notranslate nohighlight">\(f\)</span> là <span class="math notranslate nohighlight">\(\{ W_f (\mathbf{a}), \mathbf{a} \in \mathbb{F}_2^n \}\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight" id="equation-walsh-eq3">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-walsh-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
+	N_f = 2^{n-1} - \frac{1}{2} \max_{\mathbf{a} \in \mathbb{F}_2^n} \lvert W_f (\mathbf{a}) \rvert
+\end{equation}\]</div>
+</section>
+</div><div class="proof remark admonition" id="remark-11">
+<p class="admonition-title"><span class="caption-number">Remark 5.5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Từ đẳng thức Parcel ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	&amp; 2^n \cdot \bigl(\max_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2\bigr) \geqslant \sum_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2 = 2^{2n} \\ \Leftrightarrow &amp; \max_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2 \geqslant \frac{2^{2n}}{2^n} = 2^n \\ \Leftrightarrow &amp; \max_{\mathbf{a} \in \mathbb{F}_2^n} \lvert W_f (\mathbf{a}) \rvert \geqslant 2^{n/2}
+\end{align*}\end{split}\]</div>
+</section>
+</div><p>Từ nhận xét trên và từ định nghĩa nonlinearity ở trên ta có</p>
+<div class="math notranslate nohighlight">
+\[N_f \leqslant 2^{n-1} - \frac{1}{2} 2^{n / 2}\]</div>
+<p>Hàm <span class="math notranslate nohighlight">\(f\)</span> khiến dấu bằng xảy ra được gọi là <strong>hàm Bent</strong>. Điều kiện cần và đủ để hàm <span class="math notranslate nohighlight">\(f\)</span> có <span class="math notranslate nohighlight">\(n\)</span> biến là hàm Bent là khi <span class="math notranslate nohighlight">\(n = 2k\)</span>.</p>
+<p>Tính chất quan trọng của hàm Bent là với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[W_f (\mathbf{a}) = \pm 2^{n/2}\]</div>
+<div class="proof example admonition" id="example-12">
+<p class="admonition-title"><span class="caption-number">Example 5.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(n = 2\)</span>, hàm <span class="math notranslate nohighlight">\(f(x_1, x_2) = x_1 \oplus x_1 x_2\)</span> là hàm Bent. Ta có thể tính toán và thấy rằng <span class="math notranslate nohighlight">\(W_f (0, 0) = 2\)</span>, <span class="math notranslate nohighlight">\(W_f (0, 1) = -2\)</span>, <span class="math notranslate nohighlight">\(W_f (1, 0) = 2\)</span> và <span class="math notranslate nohighlight">\(W_f (1, 1) = 2\)</span>.</p>
+</section>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./discrete-mathematics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="boolean-function.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.1. </span>Hàm boolean</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linear-feedback-shift-register.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>Linear Feedback Shift Register</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trong-so-cua-ham-boolean">5.2.1. Trọng số của hàm boolean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier">5.2.2. Biến đổi Fourier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-walsh-hadamard">5.2.3. Biến đổi Walsh-Hadamard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">5.2.4. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#khoang-cach-hamming">5.2.5. Khoảng cách Hamming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">5.2.6. Hàm Bent</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

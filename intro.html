@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=564be945" />
   
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Internet Olympiad 2023" href="internet-olympiad/2023.html" />
+    <link rel="next" title="1. Đại cương về tập hợp" href="algebra/algebra.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,25 +184,41 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra/algebra.html">1. Đại cương về tập hợp</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">1. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">2. Xác suất thống kê</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/group.html">2. Lý thuyết nhóm</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">4. Số học</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/boolean.html">4. Đại số boolean</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
 </ul>
 
     </div>
@@ -423,33 +439,39 @@ document.write(`
 <section id="noi-dung">
 <h2>Nội dung<a class="headerlink" href="#noi-dung" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra/algebra.html">1. Đại cương về tập hợp</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">1. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">2. Xác suất thống kê</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/group.html">2. Lý thuyết nhóm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/group.html">3. Lý thuyết nhóm</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">4. Số học</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/boolean.html">4. Đại số boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/boolean.html">5. Đại số boolean</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
 </ul>
 </div>
 </section>
@@ -457,17 +479,25 @@ document.write(`
 <h2>Tài liệu tham khảo<a class="headerlink" href="#tai-lieu-tham-khao" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id1">
 <div role="list" class="citation-list">
-<div class="citation" id="id2" role="doc-biblioentry">
+<div class="citation" id="id6" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Nguyễn Tiến Dũng, Trần Thanh Nam, Nguyễn Chí Thức, and Hồ Thị Thảo Trang. <em>Toán học qua các câu chuyện về tập hợp</em>. Nhà xuất bản thế giới, 2023. ISBN 978-604-392-585-2.</p>
+</div>
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
 <p>Ю. В. Таранников. <em>Дискретная математика. Задачник</em>. Юрайт, 2016. ISBN 9785991662833.</p>
 </div>
 <div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
 <p>Н. Н. Токарева. <em>Нелинейные булевы функции</em>. LAP LAMBERT Academic Publishing, 2011. ISBN 978-3-8433-0904-2.</p>
 </div>
 <div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
 <p>Н. Н. Токарева. <em>Симметричная криптография. Краткий курс</em>. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<p>Виленкин Н. Я. <em>Рассказы о множествах</em>. МЦНМО, 2019. ISBN 978-5-4439-0986-8.</p>
 </div>
 </div>
 </div>
@@ -505,11 +535,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="internet-olympiad/2023.html"
+       href="algebra/algebra.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Internet Olympiad 2023</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Đại cương về tập hợp</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

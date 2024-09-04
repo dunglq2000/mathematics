@@ -22,7 +22,7 @@ Khi đó, $a$ gọi là số bị chia, $b$ gọi là số chia, $q$ là thươn
 
 $$a = q_1 b + r_1, \quad a = q_2 b + r_2$$
 
-Trừ 2 đẳng thức vế theo vế ta có $(q_1 - q_2) b + (r_1 - r_2) = 0$. Tương đương $(r_2 - r_1) = (q_1 - q_2) b$, mà $0 \leqslant r_1, r_2 < b$ nên $-b < r_2 - r_1 < b$. Như vậy chỉ có thể xảy ra trường hợp $r_2 - r_1 = 0$ hay $r_2 = r_1$, kéo theo $q_1 = q_2$.
+Trừ 2 đẳng thức vế theo vế ta có $(q_1 - q_2) b + (r_1 - r_2) = 0$. Tương đương $(r_2 - r_1) = (q_1 - q_2) b$, mà $0 \leqslant r_1, r_2 < b$ nên $-b < r_2 - r_1 < b$. Như vậy chỉ có thể xảy ra trường hợp $r_2 - r_1 = 0$ (vì giá trị tuyệt đối của vế phải là bội của $b$ nên sẽ lớn hơn $b$, còn vế trái lại có giá trị tuyệt đối nhỏ hơn $b$) hay $r_2 = r_1$, kéo theo $q_1 = q_2$.
 
 ### Thuật toán Euclid
 
@@ -70,11 +70,25 @@ với $x$, $y$ là các số nguyên.
 ````{prf:example}
 Giải phương trình $5x+3y = 1$.
 
-Ta có $y = \dfrac{1-5x}{3} = \dfrac{1-2x-3x}{3} = \dfrac{1-2x}{3} - x$. Như vậy nếu $y \in \mathbb{Z}$ thì $\dfrac{1-2x}{3} \in \mathbb{Z}$, nghĩa là $1-2x$ chia hết cho 3. Vậy $1-2x = 3k$ với $k \in \mathbb{Z}$.
+Ta có
 
-Tiếp tục, $1-2x = 3k$, suy ra $x = \dfrac{1-3k}{2}  = \dfrac{1-k-2k}{2} = \dfrac{1-k}{2} - k$. Do $x$ nguyên nên tương tự $\dfrac{1-k}{2}$ cũng nguyên, hay $1-k = 2t$, tương đương với $k = 1-2t$.
+$$y = \dfrac{1-5x}{3} = \dfrac{1-2x-3x}{3} = \dfrac{1-2x}{3} - x$$
 
-Thay ngược lại ta có $x = \dfrac{1-3k}{2} = \dfrac{1-3(1-2t)}{2} = {-1+3t}$. Tiếp tục thay vào để tìm $y$ thì $y = \dfrac{1-5x}{3} = \dfrac{1-5(-1+3t)}{3} = 2 - 5t$.
+Như vậy nếu $y \in \mathbb{Z}$ thì $\dfrac{1-2x}{3} \in \mathbb{Z}$, nghĩa là $1-2x$ chia hết cho 3. Vậy $1-2x = 3k$ với $k \in \mathbb{Z}$.
+
+Tiếp tục, $1-2x = 3k$, suy ra 
+
+$$x = \dfrac{1-3k}{2} = \dfrac{1-k-2k}{2} = \dfrac{1-k}{2} - k$$
+
+Do $x$ nguyên nên tương tự $\dfrac{1-k}{2}$ cũng nguyên, hay $1-k = 2t$, tương đương với $k = 1-2t$.
+
+Thay ngược lại ta có
+
+$$x = \dfrac{1-3k}{2} = \dfrac{1-3(1-2t)}{2} = {-1+3t}$$
+
+Tiếp tục thay vào để tìm $y$ thì 
+
+$$y = \dfrac{1-5x}{3} = \dfrac{1-5(-1+3t)}{3} = 2 - 5t$$
 
 Như vậy nghiệm của phương trình là tất cả các nghiệm $(x, y)$ mà $x = -1+3t$, $y = 2-5t$ với $t \in \mathbb{Z}$.
 ````
@@ -95,8 +109,8 @@ Như vậy nghiệm của phương trình là tất cả các nghiệm $(x, y)$ 
 
     1. $q \gets r_0 \;\text{div}\; r_1$
     2. $r_2 \gets r_0 - q * r_1$, $r_0 \gets r_1$, $r_1 \gets r_2$
-    \State $x_2 \gets x_0 - q * x_1$, $x_0 \gets x_1$, $x_1 \gets x_2$
-    3. $y_2 \gets y_0 - q * y_1$, $y_0 \gets y_1$, $y_1 \gets y_2$
+    3. $x_2 \gets x_0 - q * x_1$, $x_0 \gets x_1$, $x_1 \gets x_2$
+    4. $y_2 \gets y_0 - q * y_1$, $y_0 \gets y_1$, $y_1 \gets y_2$
 
 5. Return $r_0$, $x_0$, $y_0$
 ````
@@ -127,7 +141,7 @@ Tương đương với
 
 $$(a x_{i+1} + b y_{i+1}) q_i + (a x_{i+2} + b x_{i+2}) = r_i$$
 
-Mà $a x_{i+1} + b y_{i+1} = r_{i+1}$ và $a x_{i+2} + b y_{i+2} = r_{i+2}$. Suy ra $r_{i+1} q_i + r_{i+2} = r_n$, đúng với thuật toán Euclid chuẩn ban đầu. Nghĩa là thuật toán hoạt động đúng. Bây giờ ta cần chọn $(x_0, x_1)$ và $(y_0, y_1)$ vì chúng ta đã đặt $r_0 = a$ và $r_1 = b$. Ở bước thứ 0,
+Mà $a x_{i+1} + b y_{i+1} = r_{i+1}$ và $a x_{i+2} + b y_{i+2} = r_{i+2}$. Suy ra $r_{i+1} q_i + r_{i+2} = r_i$, đúng với thuật toán Euclid chuẩn ban đầu. Nghĩa là thuật toán hoạt động đúng. Bây giờ ta cần chọn $(x_0, x_1)$ và $(y_0, y_1)$ vì chúng ta đã đặt $r_0 = a$ và $r_1 = b$. Ở bước thứ 0,
 
 $$r_0 = a = a x_0 + b y_0$$
 
@@ -295,7 +309,9 @@ Ta có điều phải chứng minh.
 ### Định lý Fermat nhỏ
 
 ````{prf:theorem} Định lý Fermat nhỏ   
-Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì $$a^p \equiv a \pmod p$$
+Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì
+
+$$a^p \equiv a \pmod p$$
 
 Khi $(a, p) = 1$ thì
 
@@ -311,7 +327,7 @@ Khi $(a, p) = 1$ thì định lý Fermat là hệ quả trực tiếp từ đị
 ## Thặng dư chính phương
 
 ````{prf:definition} Số chính phương modulo $p$
-Xét số dương nguyên tố lẻ $p$. Số $a$ được gọi là **số chính phương modulo $p$** nếu $(a, m) = 1$ và tồn tại số $x$ sao cho $x^2 = a \pmod p$.
+Xét số nguyên tố lẻ $p$. Số $a$ được gọi là **số chính phương modulo $p$** nếu $(a, m) = 1$ và tồn tại số $x$ sao cho $x^2 = a \pmod p$.
 
 Nói cách khác phương trình đồng dư $x^2 \equiv a \pmod p$ có nghiệm.
 ````

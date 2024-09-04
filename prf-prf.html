@@ -31,9 +31,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=564be945" />
   
@@ -187,25 +187,41 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algebra/algebra.html">1. Đại cương về tập hợp</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">1. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="probability/intro.html">2. Xác suất thống kê</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/group.html">2. Lý thuyết nhóm</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/number-theory.html">4. Số học</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="discrete-mathematics/boolean.html">4. Đại số boolean</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
 </ul>
 
     </div>
@@ -360,7 +376,7 @@ document.write(`
 
    <div class="modindex-jumpbox">
    <a href="#cap-algorithm-2"><strong>algorithm-2</strong></a> | 
-   <a href="#cap-algorithm-28"><strong>algorithm-28</strong></a> | 
+   <a href="#cap-algorithm-5"><strong>algorithm-5</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
    <a href="#cap-definition-10"><strong>definition-10</strong></a> | 
@@ -372,89 +388,62 @@ document.write(`
    <a href="#cap-definition-16"><strong>definition-16</strong></a> | 
    <a href="#cap-definition-17"><strong>definition-17</strong></a> | 
    <a href="#cap-definition-18"><strong>definition-18</strong></a> | 
-   <a href="#cap-definition-19"><strong>definition-19</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
-   <a href="#cap-definition-20"><strong>definition-20</strong></a> | 
    <a href="#cap-definition-21"><strong>definition-21</strong></a> | 
    <a href="#cap-definition-22"><strong>definition-22</strong></a> | 
    <a href="#cap-definition-23"><strong>definition-23</strong></a> | 
    <a href="#cap-definition-24"><strong>definition-24</strong></a> | 
-   <a href="#cap-definition-25"><strong>definition-25</strong></a> | 
    <a href="#cap-definition-26"><strong>definition-26</strong></a> | 
    <a href="#cap-definition-28"><strong>definition-28</strong></a> | 
    <a href="#cap-definition-29"><strong>definition-29</strong></a> | 
    <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
-   <a href="#cap-definition-30"><strong>definition-30</strong></a> | 
    <a href="#cap-definition-31"><strong>definition-31</strong></a> | 
-   <a href="#cap-definition-32"><strong>definition-32</strong></a> | 
-   <a href="#cap-definition-33"><strong>definition-33</strong></a> | 
-   <a href="#cap-definition-36"><strong>definition-36</strong></a> | 
-   <a href="#cap-definition-37"><strong>definition-37</strong></a> | 
-   <a href="#cap-definition-38"><strong>definition-38</strong></a> | 
    <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
-   <a href="#cap-definition-43"><strong>definition-43</strong></a> | 
-   <a href="#cap-definition-44"><strong>definition-44</strong></a> | 
-   <a href="#cap-definition-46"><strong>definition-46</strong></a> | 
-   <a href="#cap-definition-47"><strong>definition-47</strong></a> | 
    <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
-   <a href="#cap-definition-54"><strong>definition-54</strong></a> | 
    <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
+   <a href="#cap-definition-7"><strong>definition-7</strong></a> | 
    <a href="#cap-definition-8"><strong>definition-8</strong></a> | 
    <a href="#cap-definition-9"><strong>definition-9</strong></a> | 
+   <a href="#cap-example-0"><strong>example-0</strong></a> | 
    <a href="#cap-example-1"><strong>example-1</strong></a> | 
    <a href="#cap-example-10"><strong>example-10</strong></a> | 
    <a href="#cap-example-11"><strong>example-11</strong></a> | 
-   <a href="#cap-example-13"><strong>example-13</strong></a> | 
+   <a href="#cap-example-12"><strong>example-12</strong></a> | 
    <a href="#cap-example-14"><strong>example-14</strong></a> | 
    <a href="#cap-example-16"><strong>example-16</strong></a> | 
    <a href="#cap-example-17"><strong>example-17</strong></a> | 
    <a href="#cap-example-19"><strong>example-19</strong></a> | 
    <a href="#cap-example-2"><strong>example-2</strong></a> | 
-   <a href="#cap-example-22"><strong>example-22</strong></a> | 
-   <a href="#cap-example-23"><strong>example-23</strong></a> | 
+   <a href="#cap-example-20"><strong>example-20</strong></a> | 
    <a href="#cap-example-25"><strong>example-25</strong></a> | 
-   <a href="#cap-example-27"><strong>example-27</strong></a> | 
-   <a href="#cap-example-29"><strong>example-29</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
-   <a href="#cap-example-34"><strong>example-34</strong></a> | 
-   <a href="#cap-example-35"><strong>example-35</strong></a> | 
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
-   <a href="#cap-example-42"><strong>example-42</strong></a> | 
    <a href="#cap-example-5"><strong>example-5</strong></a> | 
-   <a href="#cap-example-50"><strong>example-50</strong></a> | 
-   <a href="#cap-example-52"><strong>example-52</strong></a> | 
-   <a href="#cap-example-55"><strong>example-55</strong></a> | 
    <a href="#cap-example-6"><strong>example-6</strong></a> | 
    <a href="#cap-example-7"><strong>example-7</strong></a> | 
+   <a href="#cap-example-8"><strong>example-8</strong></a> | 
    <a href="#cap-example-9"><strong>example-9</strong></a> | 
+   <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
+   <a href="#cap-remark-10"><strong>remark-10</strong></a> | 
    <a href="#cap-remark-11"><strong>remark-11</strong></a> | 
    <a href="#cap-remark-12"><strong>remark-12</strong></a> | 
-   <a href="#cap-remark-14"><strong>remark-14</strong></a> | 
    <a href="#cap-remark-15"><strong>remark-15</strong></a> | 
-   <a href="#cap-remark-17"><strong>remark-17</strong></a> | 
-   <a href="#cap-remark-19"><strong>remark-19</strong></a> | 
-   <a href="#cap-remark-20"><strong>remark-20</strong></a> | 
+   <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
    <a href="#cap-remark-21"><strong>remark-21</strong></a> | 
-   <a href="#cap-remark-25"><strong>remark-25</strong></a> | 
    <a href="#cap-remark-27"><strong>remark-27</strong></a> | 
-   <a href="#cap-remark-29"><strong>remark-29</strong></a> | 
+   <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
    <a href="#cap-remark-30"><strong>remark-30</strong></a> | 
    <a href="#cap-remark-32"><strong>remark-32</strong></a> | 
-   <a href="#cap-remark-39"><strong>remark-39</strong></a> | 
-   <a href="#cap-remark-40"><strong>remark-40</strong></a> | 
-   <a href="#cap-remark-48"><strong>remark-48</strong></a> | 
-   <a href="#cap-remark-49"><strong>remark-49</strong></a> | 
-   <a href="#cap-remark-51"><strong>remark-51</strong></a> | 
-   <a href="#cap-remark-53"><strong>remark-53</strong></a> | 
+   <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
+   <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
    <a href="#cap-remark-6"><strong>remark-6</strong></a> | 
    <a href="#cap-remark-7"><strong>remark-7</strong></a> | 
    <a href="#cap-remark-8"><strong>remark-8</strong></a> | 
    <a href="#cap-theorem-10"><strong>theorem-10</strong></a> | 
+   <a href="#cap-theorem-13"><strong>theorem-13</strong></a> | 
+   <a href="#cap-theorem-17"><strong>theorem-17</strong></a> | 
    <a href="#cap-theorem-18"><strong>theorem-18</strong></a> | 
    <a href="#cap-theorem-20"><strong>theorem-20</strong></a> | 
-   <a href="#cap-theorem-27"><strong>theorem-27</strong></a> | 
-   <a href="#cap-theorem-41"><strong>theorem-41</strong></a> | 
-   <a href="#cap-theorem-45"><strong>theorem-45</strong></a> | 
    <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
    <a href="#cap-theorem-9"><strong>theorem-9</strong></a>
    </div>
@@ -469,12 +458,12 @@ document.write(`
        <a href="discrete-mathematics/number-theory.html#algorithm-2"><code class="xref">algorithm-2</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-algorithm-28"><td></td><td>
-       <strong>algorithm-28</strong></td><td></td></tr>
+     <tr class="cap" id="cap-algorithm-5"><td></td><td>
+       <strong>algorithm-5</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#algorithm-28"><code class="xref">algorithm-28</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="discrete-mathematics/linear-feedback-shift-register.html#algorithm-5"><code class="xref">algorithm-5</code></a> <em>(discrete-mathematics/linear-feedback-shift-register)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-0"><td></td><td>
@@ -490,7 +479,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#definition-1"><code class="xref">definition-1</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/linear-feedback-shift-register.html#definition-1"><code class="xref">definition-1</code></a> <em>(discrete-mathematics/linear-feedback-shift-register)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-10"><td></td><td>
@@ -498,7 +487,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#definition-10"><code class="xref">definition-10</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#definition-10"><code class="xref">definition-10</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-11"><td></td><td>
@@ -538,7 +527,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/number-theory.html#definition-15"><code class="xref">definition-15</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#definition-15"><code class="xref">definition-15</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-16"><td></td><td>
@@ -554,7 +543,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#definition-17"><code class="xref">definition-17</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="algebra/algebra.html#definition-17"><code class="xref">definition-17</code></a> <em>(algebra/algebra)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-18"><td></td><td>
@@ -562,15 +551,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#definition-18"><code class="xref">definition-18</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-19"><td></td><td>
-       <strong>definition-19</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#definition-19"><code class="xref">definition-19</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="algebra/algebra.html#definition-18"><code class="xref">definition-18</code></a> <em>(algebra/algebra)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-2"><td></td><td>
@@ -578,15 +559,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#definition-2"><code class="xref">definition-2</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-20"><td></td><td>
-       <strong>definition-20</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-20"><code class="xref">definition-20</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#definition-2"><code class="xref">definition-2</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-21"><td></td><td>
@@ -621,14 +594,6 @@ document.write(`
        <a href="probability/intro.html#definition-24"><code class="xref">definition-24</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-25"><td></td><td>
-       <strong>definition-25</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#definition-25"><code class="xref">definition-25</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-26"><td></td><td>
        <strong>definition-26</strong></td><td></td></tr>
      <tr>
@@ -661,14 +626,6 @@ document.write(`
        <a href="probability/intro.html#definition-3"><code class="xref">definition-3</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-30"><td></td><td>
-       <strong>definition-30</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-30"><code class="xref">definition-30</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-31"><td></td><td>
        <strong>definition-31</strong></td><td></td></tr>
      <tr>
@@ -677,84 +634,12 @@ document.write(`
        <a href="probability/intro.html#definition-31"><code class="xref">definition-31</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-32"><td></td><td>
-       <strong>definition-32</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-32"><code class="xref">definition-32</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-33"><td></td><td>
-       <strong>definition-33</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-33"><code class="xref">definition-33</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-36"><td></td><td>
-       <strong>definition-36</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-36"><code class="xref">definition-36</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-37"><td></td><td>
-       <strong>definition-37</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-37"><code class="xref">definition-37</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-38"><td></td><td>
-       <strong>definition-38</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-38"><code class="xref">definition-38</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-4"><td></td><td>
        <strong>definition-4</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/number-theory.html#definition-4"><code class="xref">definition-4</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-43"><td></td><td>
-       <strong>definition-43</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-43"><code class="xref">definition-43</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-44"><td></td><td>
-       <strong>definition-44</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-44"><code class="xref">definition-44</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-46"><td></td><td>
-       <strong>definition-46</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-46"><code class="xref">definition-46</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-47"><td></td><td>
-       <strong>definition-47</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-47"><code class="xref">definition-47</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#definition-4"><code class="xref">definition-4</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-5"><td></td><td>
@@ -762,15 +647,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/number-theory.html#definition-5"><code class="xref">definition-5</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-54"><td></td><td>
-       <strong>definition-54</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#definition-54"><code class="xref">definition-54</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#definition-5"><code class="xref">definition-5</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-6"><td></td><td>
@@ -778,7 +655,15 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#definition-6"><code class="xref">definition-6</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#definition-6"><code class="xref">definition-6</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-7"><td></td><td>
+       <strong>definition-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#definition-7"><code class="xref">definition-7</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-8"><td></td><td>
@@ -794,8 +679,16 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#definition-9"><code class="xref">definition-9</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#definition-9"><code class="xref">definition-9</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-0"><td></td><td>
+       <strong>example-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/symmetric-group.html#example-0"><code class="xref">example-0</code></a> <em>(discrete-mathematics/symmetric-group)</em></td><td>
+       <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-1"><td></td><td>
        <strong>example-1</strong></td><td></td></tr>
@@ -810,7 +703,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-10"><code class="xref">example-10</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/group-intro.html#example-10"><code class="xref">example-10</code></a> <em>(discrete-mathematics/group-intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-11"><td></td><td>
@@ -818,15 +711,15 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-11"><code class="xref">example-11</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="algebra/algebra.html#example-11"><code class="xref">example-11</code></a> <em>(algebra/algebra)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-13"><td></td><td>
-       <strong>example-13</strong></td><td></td></tr>
+     <tr class="cap" id="cap-example-12"><td></td><td>
+       <strong>example-12</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-13"><code class="xref">example-13</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#example-12"><code class="xref">example-12</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-14"><td></td><td>
@@ -834,7 +727,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-14"><code class="xref">example-14</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/ring-and-field.html#example-14"><code class="xref">example-14</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-16"><td></td><td>
@@ -869,20 +762,12 @@ document.write(`
        <a href="probability/intro.html#example-2"><code class="xref">example-2</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-22"><td></td><td>
-       <strong>example-22</strong></td><td></td></tr>
+     <tr class="cap" id="cap-example-20"><td></td><td>
+       <strong>example-20</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#example-22"><code class="xref">example-22</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-23"><td></td><td>
-       <strong>example-23</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#example-23"><code class="xref">example-23</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="algebra/algebra.html#example-20"><code class="xref">example-20</code></a> <em>(algebra/algebra)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-25"><td></td><td>
@@ -893,44 +778,12 @@ document.write(`
        <a href="probability/intro.html#example-25"><code class="xref">example-25</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-27"><td></td><td>
-       <strong>example-27</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#example-27"><code class="xref">example-27</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-29"><td></td><td>
-       <strong>example-29</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#example-29"><code class="xref">example-29</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-3"><td></td><td>
        <strong>example-3</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-3"><code class="xref">example-3</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-34"><td></td><td>
-       <strong>example-34</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-34"><code class="xref">example-34</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-35"><td></td><td>
-       <strong>example-35</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-35"><code class="xref">example-35</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#example-3"><code class="xref">example-3</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-4"><td></td><td>
@@ -941,44 +794,12 @@ document.write(`
        <a href="probability/intro.html#example-4"><code class="xref">example-4</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-42"><td></td><td>
-       <strong>example-42</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-42"><code class="xref">example-42</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-5"><td></td><td>
        <strong>example-5</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#example-5"><code class="xref">example-5</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-50"><td></td><td>
-       <strong>example-50</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-50"><code class="xref">example-50</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-52"><td></td><td>
-       <strong>example-52</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-52"><code class="xref">example-52</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-55"><td></td><td>
-       <strong>example-55</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#example-55"><code class="xref">example-55</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/symmetric-group.html#example-5"><code class="xref">example-5</code></a> <em>(discrete-mathematics/symmetric-group)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-6"><td></td><td>
@@ -997,20 +818,44 @@ document.write(`
        <a href="probability/intro.html#example-7"><code class="xref">example-7</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-8"><td></td><td>
+       <strong>example-8</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="algebra/algebra.html#example-8"><code class="xref">example-8</code></a> <em>(algebra/algebra)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-9"><td></td><td>
        <strong>example-9</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#example-9"><code class="xref">example-9</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="discrete-mathematics/group-action.html#example-9"><code class="xref">example-9</code></a> <em>(discrete-mathematics/group-action)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-1"><td></td><td>
+       <strong>remark-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/symmetric-group.html#remark-1"><code class="xref">remark-1</code></a> <em>(discrete-mathematics/symmetric-group)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-10"><td></td><td>
+       <strong>remark-10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-10"><code class="xref">remark-10</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
+       <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-11"><td></td><td>
        <strong>remark-11</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/number-theory.html#remark-11"><code class="xref">remark-11</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-11"><code class="xref">remark-11</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-12"><td></td><td>
@@ -1021,14 +866,6 @@ document.write(`
        <a href="probability/intro.html#remark-12"><code class="xref">remark-12</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-14"><td></td><td>
-       <strong>remark-14</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#remark-14"><code class="xref">remark-14</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-15"><td></td><td>
        <strong>remark-15</strong></td><td></td></tr>
      <tr>
@@ -1037,28 +874,12 @@ document.write(`
        <a href="probability/intro.html#remark-15"><code class="xref">remark-15</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-17"><td></td><td>
-       <strong>remark-17</strong></td><td></td></tr>
+     <tr class="cap" id="cap-remark-2"><td></td><td>
+       <strong>remark-2</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#remark-17"><code class="xref">remark-17</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-19"><td></td><td>
-       <strong>remark-19</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-19"><code class="xref">remark-19</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-20"><td></td><td>
-       <strong>remark-20</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/boolean.html#remark-20"><code class="xref">remark-20</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-2"><code class="xref">remark-2</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-21"><td></td><td>
@@ -1066,15 +887,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/boolean.html#remark-21"><code class="xref">remark-21</code></a> <em>(discrete-mathematics/boolean)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-25"><td></td><td>
-       <strong>remark-25</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-25"><code class="xref">remark-25</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="algebra/algebra.html#remark-21"><code class="xref">remark-21</code></a> <em>(algebra/algebra)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-27"><td></td><td>
@@ -1085,12 +898,12 @@ document.write(`
        <a href="probability/intro.html#remark-27"><code class="xref">remark-27</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-29"><td></td><td>
-       <strong>remark-29</strong></td><td></td></tr>
+     <tr class="cap" id="cap-remark-3"><td></td><td>
+       <strong>remark-3</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#remark-29"><code class="xref">remark-29</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/group-action.html#remark-3"><code class="xref">remark-3</code></a> <em>(discrete-mathematics/group-action)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-30"><td></td><td>
@@ -1109,52 +922,20 @@ document.write(`
        <a href="probability/intro.html#remark-32"><code class="xref">remark-32</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-39"><td></td><td>
-       <strong>remark-39</strong></td><td></td></tr>
+     <tr class="cap" id="cap-remark-4"><td></td><td>
+       <strong>remark-4</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#remark-39"><code class="xref">remark-39</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-4"><code class="xref">remark-4</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-40"><td></td><td>
-       <strong>remark-40</strong></td><td></td></tr>
+     <tr class="cap" id="cap-remark-5"><td></td><td>
+       <strong>remark-5</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/group.html#remark-40"><code class="xref">remark-40</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-48"><td></td><td>
-       <strong>remark-48</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-48"><code class="xref">remark-48</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-49"><td></td><td>
-       <strong>remark-49</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-49"><code class="xref">remark-49</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-51"><td></td><td>
-       <strong>remark-51</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-51"><code class="xref">remark-51</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-53"><td></td><td>
-       <strong>remark-53</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#remark-53"><code class="xref">remark-53</code></a> <em>(discrete-mathematics/group)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-5"><code class="xref">remark-5</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-6"><td></td><td>
@@ -1162,7 +943,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="discrete-mathematics/number-theory.html#remark-6"><code class="xref">remark-6</code></a> <em>(discrete-mathematics/number-theory)</em></td><td>
+       <a href="discrete-mathematics/symmetric-group.html#remark-6"><code class="xref">remark-6</code></a> <em>(discrete-mathematics/symmetric-group)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-7"><td></td><td>
@@ -1189,6 +970,22 @@ document.write(`
        <a href="probability/intro.html#theorem-10"><code class="xref">theorem-10</code></a> <em>(probability/intro)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-13"><td></td><td>
+       <strong>theorem-13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/ring-and-field.html#theorem-13"><code class="xref">theorem-13</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-17"><td></td><td>
+       <strong>theorem-17</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="discrete-mathematics/ring-and-field.html#theorem-17"><code class="xref">theorem-17</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-18"><td></td><td>
        <strong>theorem-18</strong></td><td></td></tr>
      <tr>
@@ -1203,30 +1000,6 @@ document.write(`
        <td></td>
        <td>
        <a href="probability/intro.html#theorem-20"><code class="xref">theorem-20</code></a> <em>(probability/intro)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-27"><td></td><td>
-       <strong>theorem-27</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#theorem-27"><code class="xref">theorem-27</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-41"><td></td><td>
-       <strong>theorem-41</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#theorem-41"><code class="xref">theorem-41</code></a> <em>(discrete-mathematics/group)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-45"><td></td><td>
-       <strong>theorem-45</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="discrete-mathematics/group.html#theorem-45"><code class="xref">theorem-45</code></a> <em>(discrete-mathematics/group)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-5"><td></td><td>
