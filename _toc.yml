@@ -16,6 +16,12 @@ parts:
     numbered: true
     chapters:
     - file: discrete-mathematics/group.md
+      sections:
+      - file: discrete-mathematics/group-intro.md
+      - file: discrete-mathematics/symmetric-group.md
+      - file: discrete-mathematics/group-homomorphism.md
+      - file: discrete-mathematics/ring-and-field.md
+      - file: discrete-mathematics/group-action.md
   - caption: Lý thuyết số
     numbered: true
     chapters:
