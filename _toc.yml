@@ -20,4 +20,8 @@ parts:
     numbered: true
     chapters:
     - file: discrete-mathematics/number-theory.md
+  - caption: Đại số boolean
+    numbered: true
+    chapters:
+    - file: discrete-mathematics/boolean.md
 
