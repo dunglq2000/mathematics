@@ -5,9 +5,6 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: Olympiad
-    chapters:
-    - file: internet-olympiad/2023.md
   - caption: Đại số
     numbered: true
     chapters:
@@ -38,4 +35,6 @@ parts:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
       - file: discrete-mathematics/linear-feedback-shift-register.md
-
+  - caption: Olympiad
+    chapters:
+    - file: internet-olympiad/2023.md

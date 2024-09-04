@@ -112,7 +112,11 @@ $$\begin{equation*}
 ````
 
 ````{prf:definition} Đa thức đặc trưng với chu kì cực đại
-Đa thức $P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$ được gọi là **đa thức đặc trưng với chu kì cực đại** nếu đa thức đó tối giản và là đa thức primitive. 
+Đa thức
+
+$$P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n$$
+
+được gọi là **đa thức đặc trưng với chu kì cực đại** nếu đa thức đó tối giản và là đa thức primitive. 
 ````
 
 ````{prf:example}
