@@ -1,0 +1,966 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Đại cương về tập hợp &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algebra/algebra';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Xác suất thống kê" href="../probability/intro.html" />
+    <link rel="prev" title="Internet Olympiad 2023" href="../internet-olympiad/2023.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết nhóm</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lý thuyết số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">4. Số học</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Falgebra/algebra.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/algebra/algebra.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Đại cương về tập hợp</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-hop">1.1. Tập hợp</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-dau-ve-tap-hop">1.1.1. Mở đầu về tập hợp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toan-tu-tren-tap-hop">1.1.2. Toán tử trên tập hợp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luc-luong-cua-tap-hop">1.2. Lực lượng của tập hợp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anh-xa">1.3. Ánh xạ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.1. Ánh xạ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so">1.3.2. Hàm số</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-bien-va-nghich-bien">1.3.3. Đồng biến và nghịch biến</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-thi-ham-so">1.3.4. Đồ thị hàm số</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-loai-ham-so">1.4. Một số loại hàm số</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-chan-va-ham-le">1.4.1. Hàm chẵn và hàm lẻ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-cong-tinh">1.4.2. Hàm cộng tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-nhan-tinh">1.4.3. Hàm nhân tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-tuan-hoan">1.4.4. Hàm tuần hoàn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-quy-nap-toan-hoc">1.5. Phép quy nạp toán học</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dai-cuong-ve-tap-hop">
+<h1><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">1. </span>Đại cương về tập hợp</a><a class="headerlink" href="#dai-cuong-ve-tap-hop" title="Link to this heading">#</a></h1>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#dai-cuong-ve-tap-hop" id="id8">Đại cương về tập hợp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tap-hop" id="id9">Tập hợp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mo-dau-ve-tap-hop" id="id10">Mở đầu về tập hợp</a></p></li>
+<li><p><a class="reference internal" href="#toan-tu-tren-tap-hop" id="id11">Toán tử trên tập hợp</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#luc-luong-cua-tap-hop" id="id12">Lực lượng của tập hợp</a></p></li>
+<li><p><a class="reference internal" href="#anh-xa" id="id13">Ánh xạ</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id14">Ánh xạ</a></p></li>
+<li><p><a class="reference internal" href="#ham-so" id="id15">Hàm số</a></p></li>
+<li><p><a class="reference internal" href="#dong-bien-va-nghich-bien" id="id16">Đồng biến và nghịch biến</a></p></li>
+<li><p><a class="reference internal" href="#do-thi-ham-so" id="id17">Đồ thị hàm số</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mot-so-loai-ham-so" id="id18">Một số loại hàm số</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ham-chan-va-ham-le" id="id19">Hàm chẵn và hàm lẻ</a></p></li>
+<li><p><a class="reference internal" href="#ham-cong-tinh" id="id20">Hàm cộng tính</a></p></li>
+<li><p><a class="reference internal" href="#ham-nhan-tinh" id="id21">Hàm nhân tính</a></p></li>
+<li><p><a class="reference internal" href="#ham-tuan-hoan" id="id22">Hàm tuần hoàn</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#phep-quy-nap-toan-hoc" id="id23">Phép quy nạp toán học</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<p>Tập hợp là khái niệm nền tảng, có mặt trong hầu khắp các ngả rẽ của toán học. Mình có dịp đọc quyển <em>Toán học qua các câu chuyện về tập hợp</em> của Tủ sách Sputnik <span id="id1">[<a class="reference internal" href="../intro.html#id6" title="Nguyễn Tiến Dũng, Trần Thanh Nam, Nguyễn Chí Thức, and Hồ Thị Thảo Trang. Toán học qua các câu chuyện về tập hợp. Nhà xuất bản thế giới, 2023. ISBN 978-604-392-585-2.">1</a>]</span>, dịch từ quyển <em>Рассказы о множествах</em> của Виленкин Н.Я. <span id="id2">[<a class="reference internal" href="../intro.html#id5" title="Виленкин Н. Я. Рассказы о множествах. МЦНМО, 2019. ISBN 978-5-4439-0986-8.">5</a>]</span> và thấy những câu chuyện rất thú vị. Nếu hứng thú các bạn có thể tìm đọc.</p>
+<section id="tap-hop">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">1.1. </span>Tập hợp</a><a class="headerlink" href="#tap-hop" title="Link to this heading">#</a></h2>
+<section id="mo-dau-ve-tap-hop">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">1.1.1. </span>Mở đầu về tập hợp</a><a class="headerlink" href="#mo-dau-ve-tap-hop" title="Link to this heading">#</a></h3>
+<p>Một <strong>tập hợp</strong> (<strong>set</strong>) bao gồm các phần tử khác nhau. Tập hợp là khái niệm cơ sở cho nhiều vấn đề của toán học. Tuy nhiên chúng ta lại không có một định nghĩa chặt chẽ về tập hợp mà chỉ có thể biểu diễn nó. Để biểu diễn tập hợp ta có hai cách.</p>
+<ol class="arabic simple">
+<li><p>Liệt kê. Ví dụ <span class="math notranslate nohighlight">\(A = \{ 1, 2, 3, 4 \}\)</span>, <span class="math notranslate nohighlight">\(B = \{ a, b , c \}\)</span></p></li>
+<li><p>Sử dụng tính chất đặc trưng. Ví dụ <span class="math notranslate nohighlight">\(A = \{ a \in \mathbb{N}^* : a &lt; 5 \}\)</span>.</p></li>
+</ol>
+<p>Ở đây hai cách biểu diễn tập hợp <span class="math notranslate nohighlight">\(A\)</span> là giống nhau.</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Tập hợp rỗng)</p>
+<section class="definition-content" id="proof-content">
+<p>Tập hợp rỗng không chứa phần tử nào, ký hiệu là <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Tập hợp con)</p>
+<section class="definition-content" id="proof-content">
+<p>Xét tập hợp <span class="math notranslate nohighlight">\(A\)</span>. Tập hợp <span class="math notranslate nohighlight">\(B\)</span> được gọi là <strong>tập hợp con</strong> của tập <span class="math notranslate nohighlight">\(A\)</span> nếu mọi phần tử của <span class="math notranslate nohighlight">\(B\)</span> đều nằm trong <span class="math notranslate nohighlight">\(A\)</span>. Nói cách khác với mọi <span class="math notranslate nohighlight">\(b \in B\)</span> thì <span class="math notranslate nohighlight">\(b \in A\)</span>. Ta ký hiệu <span class="math notranslate nohighlight">\(B \subset A\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 1.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Tập hợp rỗng là con của mọi tập hợp.</p>
+</section>
+</div><p>Dễ thấy rằng mọi tập hợp là tập hợp con của chính nó. Do đó tập con này được gọi là tập con tầm thường (trivial subset). Để ký hiệu một tập con có thể bằng tập chứa nó ta viết <span class="math notranslate nohighlight">\(B \subseteq A\)</span>. Trong trường hợp <span class="math notranslate nohighlight">\(B\)</span> là tập con của <span class="math notranslate nohighlight">\(A\)</span> nhưng không bằng <span class="math notranslate nohighlight">\(A\)</span> ta có thể viết <span class="math notranslate nohighlight">\(B \subsetneq A\)</span>.</p>
+</section>
+<section id="toan-tu-tren-tap-hop">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">1.1.2. </span>Toán tử trên tập hợp</a><a class="headerlink" href="#toan-tu-tren-tap-hop" title="Link to this heading">#</a></h3>
+<p>Chúng ta xem xét ba toán tử cơ bản trên tập hợp là <strong>giao</strong>, <strong>hợp</strong> và <strong>hiệu</strong> của hai tập hợp. Để biểu diễn các toán tử này ta có thể dùng biểu đồ Venn.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Giao của hai tập hợp)</p>
+<section class="definition-content" id="proof-content">
+<p>Giao của hai tập hợp <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> là tập hợp các phần tử thuộc cả <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    A \cap B = \{ x : x \in A \text{ và } x \in B \}
+\end{equation}\]</div>
+</section>
+</div><figure class="align-default" id="set1">
+<img alt="../_images/venn_diagram-1.jpg" src="../_images/venn_diagram-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Phép giao hai tập hợp</span><a class="headerlink" href="#set1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#set1"><span class="std std-numref">Fig. 1.1</span></a> là biểu đồ Venn tương ứng của phép giao hai tập hợp. Khi giao của hai tập hợp <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> là rỗng thì ta nói hai tập rời nhau. Ký hiệu <span class="math notranslate nohighlight">\(A \cap B = \emptyset\)</span>.</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Hợp của hai tập hợp)</p>
+<section class="definition-content" id="proof-content">
+<p>Hợp của hai tập hợp <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> là tập hợp các phần tử thuộc <span class="math notranslate nohighlight">\(A\)</span> hoặc <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    A \cup B = \{ x : x \in A \text{ hoặc } x \in B \}
+\end{equation}\]</div>
+</section>
+</div><p><a class="reference internal" href="#set2"><span class="std std-numref">Fig. 1.2</span></a> là biểu đồ Venn tương ứng của phép hợp hai tập hợp.</p>
+<figure class="align-default" id="set2">
+<img alt="../_images/venn_diagram-2.jpg" src="../_images/venn_diagram-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Phép hợp hai tập hợp</span><a class="headerlink" href="#set2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Hiệu của hai tập hợp)</p>
+<section class="definition-content" id="proof-content">
+<p>Hiệu (hay phần bù) của tập hợp <span class="math notranslate nohighlight">\(A\)</span> đối với tập hợp <span class="math notranslate nohighlight">\(B\)</span> là tập hợp các phần tử thuộc <span class="math notranslate nohighlight">\(A\)</span> nhưng không thuộc <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    A \backslash B = \{ x : x \in A \text{ và } x \not\in B \}
+\end{equation}\]</div>
+</section>
+</div><p><a class="reference internal" href="#set3"><span class="std std-numref">Fig. 1.3</span></a> là biểu đồ Venn tương ứng của hiệu hai tập hợp.</p>
+<figure class="align-default" id="set3">
+<img alt="../_images/venn_diagram-3.jpg" src="../_images/venn_diagram-3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Phép hiệu hai tập hợp</span><a class="headerlink" href="#set3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="luc-luong-cua-tap-hop">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">1.2. </span>Lực lượng của tập hợp</a><a class="headerlink" href="#luc-luong-cua-tap-hop" title="Link to this heading">#</a></h2>
+<p>Để chỉ số lượng phần tử của một tập hợp ta dùng khái niệm lực lượng của tập hợp.</p>
+<p>Ký hiệu lực lượng của tập hợp <span class="math notranslate nohighlight">\(A\)</span> là <span class="math notranslate nohighlight">\(\lvert A \rvert\)</span> hoặc <span class="math notranslate nohighlight">\(\# A\)</span>.</p>
+<p>Khi một tập hợp có vô số phần tử, ta gọi đó là tập vô hạn. Ngược lại ta gọi là tập hữu hạn.</p>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Các tập hợp số thông dụng <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> là các tập vô hạn.</p>
+<p>Tập hợp <span class="math notranslate nohighlight">\(A = \{ 1, 2, 3, 4, 5 \}\)</span> là tập hữu hạn có 5 phần tử. Ký hiệu <span class="math notranslate nohighlight">\(\lvert A \rvert = 5\)</span>.</p>
+</section>
+</div><p>Từ biểu đồ Venn chúng ta cũng có thể tìm được công thức tính lực lượng của tập <span class="math notranslate nohighlight">\(A \cup B\)</span>.</p>
+<figure class="align-default" id="set4">
+<img alt="../_images/venn_diagram-4.jpg" src="../_images/venn_diagram-4.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Nguyên lý bù trừ cho hai tập hợp</span><a class="headerlink" href="#set4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Dựa vào hình ta có thể suy ra công thức sau:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \lvert A \cup B \rvert = \lvert A \rvert + \lvert B \rvert - \lvert A \cap B \rvert
+\end{equation*}\]</div>
+</section>
+<section id="anh-xa">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">1.3. </span>Ánh xạ</a><a class="headerlink" href="#anh-xa" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">1.3.1. </span>Ánh xạ</a><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Cho hai tập hợp <span class="math notranslate nohighlight">\(X\)</span> và <span class="math notranslate nohighlight">\(Y\)</span>. Ánh xạ <span class="math notranslate nohighlight">\(f\)</span> biến một phần tử <span class="math notranslate nohighlight">\(x \in X\)</span> thành một và chỉ một phần tử <span class="math notranslate nohighlight">\(y \in Y\)</span>.</p>
+<p>Ta ký hiệu</p>
+<div class="math notranslate nohighlight">
+\[f: X \to Y, \; f(x) = y\]</div>
+<p>Khi đó, <span class="math notranslate nohighlight">\(X\)</span> được gọi là <strong>tập nguồn</strong> (hay <strong>domain</strong>) và <span class="math notranslate nohighlight">\(Y\)</span> là <strong>tập đích</strong> (hay <strong>image</strong>).</p>
+<p>Ánh xạ có ba loại:</p>
+<ol class="arabic simple">
+<li><p><strong>Đơn ánh</strong> (hay <strong>Injection</strong>): Hai phần tử khác nhau của tập nguồn cho hai ảnh khác nhau. Tức là với mọi <span class="math notranslate nohighlight">\(x_1, x_2 \in X\)</span> mà <span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>, thì <span class="math notranslate nohighlight">\(f(x_1) \neq f(x_2)\)</span></p></li>
+<li><p><strong>Toàn ánh</strong> (hay <strong>Surjection</strong>): Mọi phần tử <span class="math notranslate nohighlight">\(y \in Y\)</span> đều có ít nhất một phần tử <span class="math notranslate nohighlight">\(x \in X\)</span> mà <span class="math notranslate nohighlight">\(f(x) = y\)</span>. Nói cách khác với mỗi phần tử trong <span class="math notranslate nohighlight">\(Y\)</span> ta đều tìm được phần tử thuộc <span class="math notranslate nohighlight">\(X\)</span> biến thành nó</p></li>
+<li><p><strong>Song ánh</strong> (hay <strong>Bijection</strong>): Nếu ánh xạ đó vừa là đơn ánh, vừa là toàn ánh</p></li>
+</ol>
+<p>Dựa vào định nghĩa và hình vẽ, ta có thể rút ra kết luận như sau</p>
+<ol class="arabic simple">
+<li><p>Đối với đơn ánh, do mọi phần tử của <span class="math notranslate nohighlight">\(X\)</span> đều có ảnh ở <span class="math notranslate nohighlight">\(Y\)</span>, tuy nhiên có thể có phần tử ở <span class="math notranslate nohighlight">\(Y\)</span> không do phần tử nào của <span class="math notranslate nohighlight">\(X\)</span> biến thành (trong hình là 5). Do đó <span class="math notranslate nohighlight">\(\lvert X \rvert \leqslant \lvert Y \rvert\)</span>.</p></li>
+<li><p>Đối với toàn ánh, mọi phần tử của <span class="math notranslate nohighlight">\(Y\)</span> đều có nguồn gốc xuất xứ, tuy nhiên có thể có phần tử của <span class="math notranslate nohighlight">\(X\)</span> không biến thành <span class="math notranslate nohighlight">\(y\)</span> nào của <span class="math notranslate nohighlight">\(Y\)</span> (trong hình là <span class="math notranslate nohighlight">\(e\)</span>). Do đó <span class="math notranslate nohighlight">\(\lvert X \rvert \geqslant \lvert Y \rvert\)</span>.</p></li>
+<li><p>Đối với song ánh, do là kết hợp giữa đơn ánh và toàn ánh, khi đó dấu đẳng thức xảy ra, <span class="math notranslate nohighlight">\(\lvert X \rvert = \lvert Y \rvert\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="id4">
+<img alt="../_images/maps-1.jpg" src="../_images/maps-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Đơn ánh</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="../_images/maps-2.jpg" src="../_images/maps-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Toàn ánh</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="../_images/maps-3.jpg" src="../_images/maps-3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Song ánh</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ham-so">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">1.3.2. </span>Hàm số</a><a class="headerlink" href="#ham-so" title="Link to this heading">#</a></h3>
+<p>Khi hai tập nguồn và đích của ánh xạ là hai tập hợp số, ta có hàm số.</p>
+<div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> với <span class="math notranslate nohighlight">\(y = f(x) = x^3 + x + 1\)</span>. Ở đây <span class="math notranslate nohighlight">\(X \equiv \mathbb{R}\)</span> và <span class="math notranslate nohighlight">\(Y \equiv \mathbb{R}\)</span>.</p>
+</section>
+</div><p>Lưu ý rằng tập nguồn và đích không nhất thiết là tập hợp số cơ bản (<span class="math notranslate nohighlight">\(\mathbb{Q}, \mathbb{R}\)</span>) mà cũng có thể là tích Descartes của chúng.</p>
+<div class="proof example admonition" id="example-8">
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}\)</span> với <span class="math notranslate nohighlight">\(z = f(x, y) = x + y + xy\)</span>. Ở đây <span class="math notranslate nohighlight">\(X \equiv \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(Y \equiv \mathbb{R}\)</span> và <span class="math notranslate nohighlight">\(Z \equiv \mathbb{R}\)</span>.</p>
+</section>
+</div><p>Chúng ta còn một cách gọi khác cho đơn ánh, toàn ánh, song ánh trong tiếng Anh.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tiếng Việt</p></th>
+<th class="head"><p>Tiếng Anh</p></th>
+<th class="head"><p>Tiếng Anh kiểu 2 (?)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>đơn ánh</p></td>
+<td><p>injection</p></td>
+<td><p>one-to-one map</p></td>
+</tr>
+<tr class="row-odd"><td><p>toàn ánh</p></td>
+<td><p>surjection</p></td>
+<td><p>onto map</p></td>
+</tr>
+<tr class="row-even"><td><p>song ánh</p></td>
+<td><p>bijection</p></td>
+<td><p>one-to-one and onto map</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proof example admonition" id="example-9">
+<p class="admonition-title"><span class="caption-number">Example 1.4 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> cho bởi <span class="math notranslate nohighlight">\(y = f(x) = x^3\)</span> là song ánh.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Ta thấy nếu <span class="math notranslate nohighlight">\(f(x_1) = f(x_2)\)</span>, tương đương <span class="math notranslate nohighlight">\(x_1^3 = x_2^3\)</span> nên <span class="math notranslate nohighlight">\(x_1 = x_2\)</span>. Do đó <span class="math notranslate nohighlight">\(f\)</span> là đơn ánh.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(y = x^3 \in \mathbb{R}\)</span>, do căn bậc ba luôn tồn tại nên ta có <span class="math notranslate nohighlight">\(x = \sqrt[3]{y}\)</span>. Nghĩa là luôn tồn tại <span class="math notranslate nohighlight">\(x\)</span> để <span class="math notranslate nohighlight">\(f(x) = y\)</span> với mọi <span class="math notranslate nohighlight">\(y \in \mathbb{R}\)</span>. Do đó <span class="math notranslate nohighlight">\(f\)</span> là toàn ánh.</p>
+<p>Kết luận <span class="math notranslate nohighlight">\(f\)</span> là song ánh.</p>
+</div>
+</section>
+<section id="dong-bien-va-nghich-bien">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">1.3.3. </span>Đồng biến và nghịch biến</a><a class="headerlink" href="#dong-bien-va-nghich-bien" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Hàm số đồng biến)</p>
+<section class="definition-content" id="proof-content">
+<p>Xét hàm số <span class="math notranslate nohighlight">\(f(x)\)</span> xác định trên khoảng <span class="math notranslate nohighlight">\((a, b)\)</span>. Ta nói <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>đồng biến</strong> (<strong>tăng</strong>) trên <span class="math notranslate nohighlight">\((a, b)\)</span> nếu với mọi <span class="math notranslate nohighlight">\(x_1, x_2 \in (a, b)\)</span> mà <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span> ta có <span class="math notranslate nohighlight">\(f(x_1) &lt; f(x_2)\)</span>.</p>
+</section>
+</div><p>Tương tự <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>nghịch biến</strong> (<strong>giảm</strong>) trên <span class="math notranslate nohighlight">\((a, b)\)</span> nếu với mọi <span class="math notranslate nohighlight">\(x_1, x_2 \in (a, b)\)</span> mà <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span> ta có <span class="math notranslate nohighlight">\(f(x_1) &gt; f(x_2)\)</span>.</p>
+<p>Lưu ý ở các so sánh trên dấu bằng có thể xảy ra. Khi đó hàm số được gọi là tăng <strong>không nghiêm ngặt</strong> (hoặc giảm <strong>không nghiêm ngặt</strong>).</p>
+<p>Nếu hàm số đồng biến (hoặc nghịch biến) trên khoảng xác định nào đó thì ta nói hàm số đơn điệu trên khoảng đó.</p>
+<p>Đồ thị của hàm số khi đồng biến sẽ đi lên (theo chiều từ trái sang phải), và đi xuống nếu nghịch biến.</p>
+<div class="proof example admonition" id="example-11">
+<p class="admonition-title"><span class="caption-number">Example 1.5 </span></p>
+<section class="example-content" id="proof-content">
+<p>Khảo sát sự biến thiên của hàm số <span class="math notranslate nohighlight">\(f(x) = x^2 + 3\)</span>.</p>
+<p>Để khảo sát sự biến thiên, một cách làm đơn giản theo định nghĩa là ta xét <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span> và so sánh <span class="math notranslate nohighlight">\(f(x_1)\)</span> với <span class="math notranslate nohighlight">\(f(x_2)\)</span>.</p>
+<p>Ta có <span class="math notranslate nohighlight">\(f(x_1) - f(x_2) = x_1^2 + 3 - x_2^2 - 3 = (x_1 - x_2)(x_1 + x_2)\)</span></p>
+<p>Do <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>, nên với <span class="math notranslate nohighlight">\(x_1, x_2 &gt; 0\)</span> thì <span class="math notranslate nohighlight">\(x_1 + x_2 &gt; 0\)</span> và <span class="math notranslate nohighlight">\(x_1 - x_2 &lt; 0\)</span>. Suy ra <span class="math notranslate nohighlight">\(f(x_1) - f(x_2) &lt; 0\)</span> và từ đó <span class="math notranslate nohighlight">\(f(x_1) &lt; f(x_2)\)</span>. Như vậy <span class="math notranslate nohighlight">\(f(x)\)</span> đồng biến trên <span class="math notranslate nohighlight">\((0, +\infty)\)</span>.</p>
+<p>Tương tự, khi <span class="math notranslate nohighlight">\(x_1, x_2 &lt; 0\)</span> thì <span class="math notranslate nohighlight">\(x_1 + x_2 &lt; 0\)</span>. Khi đó <span class="math notranslate nohighlight">\(f(x_1) &gt; f(x_2)\)</span> nên <span class="math notranslate nohighlight">\(f(x)\)</span> nghịch biến trên <span class="math notranslate nohighlight">\((-\infty, 0)\)</span>.</p>
+</section>
+</div><p>Để thể hiện sự biến thiên của hàm số ta sử dụng bảng biến thiên.</p>
+<p>Đối với hàm số <span class="math notranslate nohighlight">\(y = x^2 + 3\)</span> ở trên bảng biến thiên có dạng:</p>
+<figure class="align-default" id="id7">
+<img alt="../_images/table_of_variation-1.jpg" src="../_images/table_of_variation-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Bảng biến thiên hàm số <span class="math notranslate nohighlight">\(y=x^2 + 3\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Ta đã chứng minh được hàm số nghịch biến trên <span class="math notranslate nohighlight">\((-\infty, 0)\)</span> và đồng biến trên <span class="math notranslate nohighlight">\((0, +\infty)\)</span>, giá trị <span class="math notranslate nohighlight">\(f(0) = 3\)</span> nên bảng biến thiên thể hiện sự tăng giảm trên các khoảng. Dựa vào bảng biến thiên ta có thể hình dung ra dạng của đồ thị hàm số.</p>
+</section>
+<section id="do-thi-ham-so">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">1.3.4. </span>Đồ thị hàm số</a><a class="headerlink" href="#do-thi-ham-so" title="Link to this heading">#</a></h3>
+<p>Để biểu diễn sự phụ thuộc của biến <span class="math notranslate nohighlight">\(y\)</span> theo biến <span class="math notranslate nohighlight">\(x\)</span>, hay nói cách khác là biểu diễn hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> ta có thể dùng đồ thị.</p>
+<p>Đồ thị được vẽ trên hệ tọa độ Descartes <span class="math notranslate nohighlight">\(Oxy\)</span>. Bảng biến thiên cho ta thấy tính đơn điệu trên các khoảng xác định, và đồ thị sẽ cho ta thấy rõ hơn độ “cong” của những đường cong.</p>
+<div class="proof example admonition" id="example-12">
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với hàm số <span class="math notranslate nohighlight">\(y = x^2 + 3\)</span> ở trên. Đồ thị hàm số có dạng như <a class="reference internal" href="#func1"><span class="std std-numref">Fig. 1.9</span></a>.</p>
+<p>Với hàm số <span class="math notranslate nohighlight">\(y = \dfrac{1}{x}\)</span>. Ta thấy rằng hàm số không xác định tại <span class="math notranslate nohighlight">\(x=0\)</span>. Khảo sát sự biến thiên như bên trên ta thấy hàm số nghịch biến ở hai khoảng xác định là <span class="math notranslate nohighlight">\((-\infty, 0)\)</span> và <span class="math notranslate nohighlight">\((0, +\infty)\)</span>. Đồ thị hàm số có dạng như <a class="reference internal" href="#func2"><span class="std std-numref">Fig. 1.10</span></a>.</p>
+</section>
+</div><figure class="align-default" id="func1">
+<img alt="../_images/table_of_variation-2.jpg" src="../_images/table_of_variation-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Đồ thị hàm số <span class="math notranslate nohighlight">\(y=x^2 + 3\)</span></span><a class="headerlink" href="#func1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="func2">
+<img alt="../_images/table_of_variation-3.jpg" src="../_images/table_of_variation-3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Đồ thị hàm số <span class="math notranslate nohighlight">\(y = \dfrac{1}{x}\)</span></span><a class="headerlink" href="#func2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Từ đồ thị của 2 hàm số trên ta thấy rằng mặc dù cùng là nghịch biến trên <span class="math notranslate nohighlight">\((-\infty, 0)\)</span> nhưng nghịch biến của <span class="math notranslate nohighlight">\(y=x^2+3\)</span> nhìn “nhẹ nhàng” hơn. Trong khi  đồ thị <span class="math notranslate nohighlight">\(y = \dfrac{1}{x}\)</span> thì ban đầu “nhẹ nhàng”, sau thì như “rơi tự do”.</p>
+</section>
+</section>
+<section id="mot-so-loai-ham-so">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">1.4. </span>Một số loại hàm số</a><a class="headerlink" href="#mot-so-loai-ham-so" title="Link to this heading">#</a></h2>
+<p>Một số hàm số có tính chất đặc biệt giúp chúng ta tiết kiệm công sức trong chứng minh, tính toán.</p>
+<section id="ham-chan-va-ham-le">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">1.4.1. </span>Hàm chẵn và hàm lẻ</a><a class="headerlink" href="#ham-chan-va-ham-le" title="Link to this heading">#</a></h3>
+<p>Xét hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> xác định trên miền <span class="math notranslate nohighlight">\(D\)</span> có tính đối xứng, nghĩa là với mỗi phần tử dương <span class="math notranslate nohighlight">\(x \in D\)</span> thì có phần tử âm <span class="math notranslate nohighlight">\(-x \in D\)</span> hoặc ngược lại. Khi đó</p>
+<div class="proof definition admonition" id="definition-13">
+<p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Hàm số chẵn)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> được gọi là <strong>hàm số chẵn</strong> nếu với mọi <span class="math notranslate nohighlight">\(x \in D\)</span> ta có <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span>.</p>
+</section>
+</div><p>Ví dụ như hàm số <span class="math notranslate nohighlight">\(y = x^2 + 3\)</span> ở trên là một hàm chẵn vì với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(x) = x^2 + 3 = (-x)^2 + 3 = f(-x)\)</span>. Dễ thấy rằng hàm chẵn đối xứng qua trục tung. Dựa vào tính chất này, trong lúc khảo sát hoặc tính toán đôi khi ta chỉ cần quan tâm một bên trục tung, bên kia tương tự.</p>
+<div class="proof definition admonition" id="definition-14">
+<p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Hàm số lẻ)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> được gọi là <strong>hàm số lẻ</strong> nếu với mọi <span class="math notranslate nohighlight">\(x \in D\)</span> ta có <span class="math notranslate nohighlight">\(f(-x) = -f(x)\)</span>.</p>
+</section>
+</div><p>Ví dụ như hàm số <span class="math notranslate nohighlight">\(y = \dfrac{1}{x}\)</span> ở trên là một hàm lẻ vì với mọi <span class="math notranslate nohighlight">\(x \in (-\infty, 0) \cup (0, +\infty)\)</span>, <span class="math notranslate nohighlight">\(f(-x) = \dfrac{1}{-x} = -\dfrac{1}{x} = -f(x)\)</span>. Dễ thấy rằng hàm lẻ đối xứng qua gốc tọa độ <span class="math notranslate nohighlight">\(O\)</span>.</p>
+</section>
+<section id="ham-cong-tinh">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink"><span class="section-number">1.4.2. </span>Hàm cộng tính</a><a class="headerlink" href="#ham-cong-tinh" title="Link to this heading">#</a></h3>
+<p>Xét hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> xác định trên miền <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<div class="proof definition admonition" id="definition-15">
+<p class="admonition-title"><span class="caption-number">Definition 1.9 </span> (Hàm cộng tính)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y = f(x)\)</span> được gọi là <strong>cộng tính</strong>nếu với mọi <span class="math notranslate nohighlight">\(x, y \in D\)</span> ta có <span class="math notranslate nohighlight">\(f(x+y) = f(x) + f(y)\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example-16">
+<p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y = 2x\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> là hàm cộng tính vì với mọi <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span>, ta có <span class="math notranslate nohighlight">\(f(x+y) = 2(x+y) = 2x + 2y = f(x) + f(y)\)</span>.</p>
+</section>
+</div></section>
+<section id="ham-nhan-tinh">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">1.4.3. </span>Hàm nhân tính</a><a class="headerlink" href="#ham-nhan-tinh" title="Link to this heading">#</a></h3>
+<p>Tương tự hàm cộng tính, ta định nghĩa hàm nhân tính.</p>
+<div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Hàm nhân tính)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y = f(x)\)</span> được gọi là <strong>nhân tính</strong> nếu với mọi <span class="math notranslate nohighlight">\(x, y \in D\)</span> ta có <span class="math notranslate nohighlight">\(f(xy) = f(x) \cdot f(y)\)</span>.</p>
+</section>
+</div><p>Hàm nhân tính quan trọng được sử dụng trong số học là hàm <span class="math notranslate nohighlight">\(\varphi\)</span> Euler về số lượng các số nguyên tố cùng nhau với số nguyên dương <span class="math notranslate nohighlight">\(n\)</span>. Nếu một hàm số học là nhân tính thì chúng ta chỉ cần quan tâm giá trị của hàm số đó tại các số nguyên tố là đủ.</p>
+</section>
+<section id="ham-tuan-hoan">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink"><span class="section-number">1.4.4. </span>Hàm tuần hoàn</a><a class="headerlink" href="#ham-tuan-hoan" title="Link to this heading">#</a></h3>
+<p>Xét hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> xác định trên miền <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<div class="proof definition admonition" id="definition-18">
+<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Hàm tuần hoàn)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y=f(x)\)</span> được gọi là <strong>tuần hoàn</strong> nếu tồn tại số <span class="math notranslate nohighlight">\(T\)</span> sao cho <span class="math notranslate nohighlight">\(f(x+T) = f(x)\)</span> với mọi <span class="math notranslate nohighlight">\(x \in D\)</span>.</p>
+</section>
+</div><p>Nói cách khác, hàm số sẽ lặp lại sau một đoạn nhất định.</p>
+<p>Số <span class="math notranslate nohighlight">\(T\)</span> nhỏ nhất thỏa mãn <span class="math notranslate nohighlight">\(f(x+T) = f(x)\)</span> được gọi là <strong>chu kỳ</strong> của hàm tuần hoàn. Vì sao lại là nhỏ nhất?</p>
+<p>Ta thấy rằng, nếu <span class="math notranslate nohighlight">\(f(x+T) = f(x)\)</span> với mọi <span class="math notranslate nohighlight">\(x \in D\)</span>, ta thay <span class="math notranslate nohighlight">\(x\)</span> bởi <span class="math notranslate nohighlight">\(x + T\)</span> thì thu được <span class="math notranslate nohighlight">\(f(x + T + T) = f(x+T)\)</span>, hay <span class="math notranslate nohighlight">\(f(x+2T) = f(x+T)\)</span>. Suy ra <span class="math notranslate nohighlight">\(f(x+2T) = f(x+T) = f(x)\)</span>. Như vậy thì sau <span class="math notranslate nohighlight">\(2T\)</span> hàm số cũng lặp lại đúng trạng thái đó. Tương tự cho <span class="math notranslate nohighlight">\(3T\)</span>, <span class="math notranslate nohighlight">\(4T\)</span>, …. Do đó số <span class="math notranslate nohighlight">\(T\)</span> nhỏ nhất thỏa mãn đẳng thức <span class="math notranslate nohighlight">\(f(x+T) = f(x)\)</span> sẽ là chu kỳ.</p>
+<div class="proof example admonition" id="example-19">
+<p class="admonition-title"><span class="caption-number">Example 1.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hàm số <span class="math notranslate nohighlight">\(y = \sin(x)\)</span> là hàm tuần hoàn với chu kỳ <span class="math notranslate nohighlight">\(T = 2\pi\)</span>. Do đó chúng ta chỉ cần khảo sát hàm số trong khoảng <span class="math notranslate nohighlight">\((-\pi, \pi)\)</span> thôi là đủ.</p>
+</section>
+</div></section>
+</section>
+<section id="phep-quy-nap-toan-hoc">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">1.5. </span>Phép quy nạp toán học</a><a class="headerlink" href="#phep-quy-nap-toan-hoc" title="Link to this heading">#</a></h2>
+<p>Giả sử ta muốn chứng minh một mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>. Phép quy nạp toán học hoạt động theo ba bước như sau:</p>
+<ol class="arabic simple">
+<li><p>Chứng minh mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n=1\)</span> (bước cơ sở)</p></li>
+<li><p>Giả sử mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span>. Đây gọi là giả thiết quy nạp</p></li>
+<li><p>Chứng minh mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = k+1\)</span> từ giả thiết quy nạp bên trên</p></li>
+</ol>
+<p>Như vậy phép quy nạp toán học hoạt động theo bậc thang. Từ giả thiết quy nạp mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = 1\)</span>, theo chứng minh ở bước (3) thì nó cũng đúng ở bước <span class="math notranslate nohighlight">\(n = 1+1 = 2\)</span>. Do <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n=2\)</span> nên cũng đúng ở <span class="math notranslate nohighlight">\(n=3\)</span>. Cứ tiếp tục như vậy <span class="math notranslate nohighlight">\(P\)</span> sẽ đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>. Đây là sự hiệu quả đáng kinh ngạc của phép quy nạp toán học.</p>
+<div class="proof example admonition" id="example-20">
+<p class="admonition-title"><span class="caption-number">Example 1.9 </span></p>
+<section class="example-content" id="proof-content">
+<p>Chứng minh công thức tổng quát cho tổng <span class="math notranslate nohighlight">\(1 + 2 + \ldots + n\)</span> là <span class="math notranslate nohighlight">\(\dfrac{n(n+1)}{2}\)</span>.</p>
+<p>Với <span class="math notranslate nohighlight">\(n = 1\)</span> thì <span class="math notranslate nohighlight">\(1 = \dfrac{1 (1 + 1)}{2}\)</span>. Như vậy công thức đúng cho <span class="math notranslate nohighlight">\(n = 1\)</span>. Đây là bước cơ sở.</p>
+<p>Giả sử mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span>. Nghĩa là <span class="math notranslate nohighlight">\(1 + 2 + \ldots + k = \dfrac{k(k+1)}{2}\)</span>. Đây là giả thiết quy nạp.</p>
+<p>Bây giờ ta cần chứng minh mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k+1\)</span>. Nghĩa là cần chứng minh</p>
+<div class="math notranslate nohighlight">
+\[1 + 2 + \ldots + k + (k+1) = \dfrac{(k+1)(k+2)}{2}\]</div>
+<p>Từ giả thiết quy nạp ta suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    1 + 2 + \ldots + k + (k+1) = &amp; \dfrac{k(k+1)}{2} + (k+1) \\ = &amp; \dfrac{k(k+1) + 2(k+1)}{2} \\ = &amp; \dfrac{(k+1)(k+2)}{2}
+\end{align*}\end{split}\]</div>
+<p>Vậy là ta đã có điều cần chứng minh, và công thức đã được chứng minh đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-21">
+<p class="admonition-title"><span class="caption-number">Remark 1.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Tùy thuộc bài toán, bước cơ sở có thể không phải <span class="math notranslate nohighlight">\(1\)</span> mà là một số nguyên dương nào đó khác.</p>
+</section>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./algebra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../internet-olympiad/2023.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Internet Olympiad 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../probability/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Xác suất thống kê</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-hop">1.1. Tập hợp</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-dau-ve-tap-hop">1.1.1. Mở đầu về tập hợp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toan-tu-tren-tap-hop">1.1.2. Toán tử trên tập hợp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#luc-luong-cua-tap-hop">1.2. Lực lượng của tập hợp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anh-xa">1.3. Ánh xạ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.3.1. Ánh xạ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so">1.3.2. Hàm số</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-bien-va-nghich-bien">1.3.3. Đồng biến và nghịch biến</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-thi-ham-so">1.3.4. Đồ thị hàm số</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-loai-ham-so">1.4. Một số loại hàm số</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-chan-va-ham-le">1.4.1. Hàm chẵn và hàm lẻ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-cong-tinh">1.4.2. Hàm cộng tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-nhan-tinh">1.4.3. Hàm nhân tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-tuan-hoan">1.4.4. Hàm tuần hoàn</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-quy-nap-toan-hoc">1.5. Phép quy nạp toán học</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
