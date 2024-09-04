@@ -30,4 +30,8 @@ parts:
     numbered: true
     chapters:
     - file: discrete-mathematics/boolean.md
+      sections:
+      - file: discrete-mathematics/boolean-function.md
+      - file: discrete-mathematics/walsh-hadamard-spectre.md
+      - file: discrete-mathematics/linear-feedback-shift-register.md
 
