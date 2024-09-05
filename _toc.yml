@@ -41,6 +41,12 @@ parts:
       sections:
       - file: cryptography/magma.md
       - file: cryptography/kuznyechik.md
+  - caption: Теоретико-числовые алгоритмы в криптографии
+    numbered: true
+    chapters:
+    - file: vasilenko/intro.md
+      sections:
+        - file: vasilenko/discrete-fourier-transform.md
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
