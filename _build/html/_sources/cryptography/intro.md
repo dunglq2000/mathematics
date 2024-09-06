@@ -6,7 +6,7 @@ Chương này nói về các loại mật mã.
 
 ### Bậc đại số cao
 
-Tham số $\deg f$ phải cao. Điều này đặc biệt quan trọng trong các stream cipher sửa dụng LFSR.
+Tham số $\deg f$ phải cao. Điều này đặc biệt quan trọng trong các stream cipher sử dụng LFSR.
 
 ### Nonlinearlity cao
 

@@ -13,7 +13,7 @@ parts:
     numbered: true
     chapters:
     - file: probability/intro.md
-  - caption: Lý thuyết nhóm
+  - caption: Toán rời rạc
     numbered: true
     chapters:
     - file: discrete-mathematics/group.md
@@ -23,13 +23,7 @@ parts:
       - file: discrete-mathematics/group-homomorphism.md
       - file: discrete-mathematics/ring-and-field.md
       - file: discrete-mathematics/group-action.md
-  - caption: Lý thuyết số
-    numbered: true
-    chapters:
     - file: discrete-mathematics/number-theory.md
-  - caption: Đại số boolean
-    numbered: true
-    chapters:
     - file: discrete-mathematics/boolean.md
       sections:
       - file: discrete-mathematics/boolean-function.md
