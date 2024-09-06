@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kuznyechik &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/kuznyechik';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
+    <link rel="prev" title="Magma" href="magma.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">4. Số học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Mật mã học (và những niềm đau)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="magma.html">Magma</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kuznyechik</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">6. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">6.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/kuznyechik.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cryptography/kuznyechik.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kuznyechik</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">So sánh Kuznyechik với AES</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kuznyechik">
+<h1>Kuznyechik<a class="headerlink" href="#kuznyechik" title="Link to this heading">#</a></h1>
+<p>Kuznyechik là một thuật toán mã hóa khối, đối xứng như AES. Kuznyechik tiếng Nga là Кузнечик, có nghĩa là châu chấu. Tuy nhiên trong văn bản quốc tế thì chúng ta giữ nguyên tên gọi
+là hệ mã Kuznyechik.</p>
+<p>Mã khối Kuznyechik biến đổi trên khối 128 bit, độ dài khóa là 256 bit, biến đổi trên 9 vòng. Kuznyechik sử dụng mô hình SPN tương tự như AES, trở thành chuẩn mã hóa của Nga và được định nghĩa trong GOST R 34.12-2015.</p>
+<p>Một điểm đặc biệt là quá trình biến đổi qua các vòng sử dụng mạng SPN, tuy nhiên thuật toán sinh khóa con cho các vòng sử dụng mô hình Feistel.</p>
+<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">11</a>]</span>.</p>
+<section id="ma-hoa">
+<h2>Mã hóa<a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h2>
+<p>Gọi <span class="math notranslate nohighlight">\(k_i\)</span> là khóa con của vòng thứ <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 9\)</span>. Ta có các động tác biến đổi sau:</p>
+<section id="phep-bien-doi-x">
+<h3>Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span><a class="headerlink" href="#phep-bien-doi-x" title="Link to this heading">#</a></h3>
+<p>Hàm <span class="math notranslate nohighlight">\(X: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span> biến đổi trên block 128 bit.</p>
+<p>Ta chia block đầu vào thành 16 cụm 8 bit, ký hiệu</p>
+<div class="math notranslate nohighlight">
+\[a = a_0 \Vert a_1 \Vert \ldots \Vert a_{14} \Vert a_{15}\]</div>
+<p>với ký tự <span class="math notranslate nohighlight">\(\Vert\)</span> chỉ việc nối các chuỗi bit (concatenate). Tương tự <span class="math notranslate nohighlight">\(k_i\)</span> cũng được chia thành 16 cụm 8 bit. Khi đó,</p>
+<div class="math notranslate nohighlight" id="equation-kuz-1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-kuz-1" title="Link to this equation">#</a></span>\[\begin{equation}
+    X(k_i, a) = k_{i, 0} \oplus a_0 \Vert 
+    k_{i, 1} \oplus a_1 \Vert \ldots \Vert k_{i, 14} \oplus a_{14}
+    \Vert k_{i, 15} \oplus a_{15}
+\end{equation}\]</div>
+<p>Nói cách khác, chúng ta xor 128 bit của khối đầu vào và 128 bit của khóa con <span class="math notranslate nohighlight">\(k_i\)</span>.</p>
+</section>
+<section id="phep-bien-doi-s">
+<h3>Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span><a class="headerlink" href="#phep-bien-doi-s" title="Link to this heading">#</a></h3>
+<p>Hàm <span class="math notranslate nohighlight">\(S: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
+<p>Block đầu vào tiếp tục được chia thành 16 cụm 8 bit. Mỗi cụm sẽ đi qua một bảng tra cứu SBox (gọi là bảng <span class="math notranslate nohighlight">\(\pi\)</span>). Sau đó ta nối các kết quả với nhau.</p>
+<div class="math notranslate nohighlight" id="equation-kuz-2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-kuz-2" title="Link to this equation">#</a></span>\[\begin{equation}
+    S(a) = \pi(a_0) \Vert \pi(a_1) \Vert \ldots \Vert \pi(a_{14})
+    \Vert \pi(a_{15})
+\end{equation}\]</div>
+<p>Bảng <span class="math notranslate nohighlight">\(\pi\)</span> được định nghĩa sẵn và không tuyến tính, nên đây là bước không tuyến tính của thuật toán.</p>
+</section>
+<section id="phep-bien-doi-l">
+<h3>Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#phep-bien-doi-l" title="Link to this heading">#</a></h3>
+<p>Hàm <span class="math notranslate nohighlight">\(L: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
+<p>Block đầu vào vẫn được chia thành 16 cụm 8 bit. Tuy nhiên ở đây mỗi cụm 8 bit biểu diễn một đa thức trong trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> với đa thức tối giản là <span class="math notranslate nohighlight">\(g(x) = x^8 + x^7 + x^6 + x + 1\)</span>. Những phép tính cộng và nhân sau đây cũng được thực hiện trên
+trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> này.</p>
+<div class="math notranslate nohighlight" id="equation-kuz-3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-kuz-3" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
+    \begin{split}
+    \lambda(a) &amp; = 148 a_{15} + 32 a_{14} + 133 a_{13} + 16 a_{12} \\
+            &amp; + 194 a_{11} + 192 a_{10} + a_9 + 251 a_8 \\
+            &amp; + a_7 + 192 a_6 + 194 a_5 + 16 a_4 \\
+            &amp; + 133 a_3 + 32 a_2 + 148 a_1 + a_0
+    \end{split}
+\end{equation}\end{split}\]</div>
+<p>Tiếp theo, ta định nghĩa hàm <span class="math notranslate nohighlight">\(\Lambda: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span> như sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    a = a_0 \Vert a_1 \Vert \ldots \Vert a_{14} \Vert a_{15}
+    \to a_1 \Vert a_2 \Vert \ldots \Vert a_{15} \Vert \lambda(a)
+    = \Lambda(a)
+\end{equation*}\]</div>
+<figure class="align-default" id="kuzfic-1">
+<img alt="../_images/funcLambda.jpg" src="../_images/funcLambda.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Hàm <span class="math notranslate nohighlight">\(\lambda\)</span></span><a class="headerlink" href="#kuzfic-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Lưu ý rằng sau khi tính toán trên hàm <span class="math notranslate nohighlight">\(\lambda\)</span>, đa thức trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> được chuyển trở lại thành cụm 8 bit sau đó mới nối vào dãy <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>, …, <span class="math notranslate nohighlight">\(a_{15}\)</span> như mô tả ở <a class="reference internal" href="#kuzfic-1"><span class="std std-numref">Fig. 2</span></a>.</p>
+<p>Cuối cùng, hàm <span class="math notranslate nohighlight">\(L\)</span> ban đầu là thực hiện hàm <span class="math notranslate nohighlight">\(\Lambda\)</span> 16 lần.</p>
+<div class="math notranslate nohighlight">
+\[L(a) = \underbrace{\Lambda(\ldots\Lambda(a)\ldots)}_{\text{16 lần}}\]</div>
+<p>Như vậy, phép biến đổi trên vòng thứ <span class="math notranslate nohighlight">\(i\)</span> với khóa con <span class="math notranslate nohighlight">\(k_i\)</span> là</p>
+<div class="math notranslate nohighlight" id="equation-kuz-4">
+<span class="eqno">(4)<a class="headerlink" href="#equation-kuz-4" title="Link to this equation">#</a></span>\[\begin{equation}
+    R(k_i, a) = L(S(X(a)))
+\end{equation}\]</div>
+<p>với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 8\)</span>.</p>
+<p>Ở vòng thứ 10 ta XOR với khóa con <span class="math notranslate nohighlight">\(k_9\)</span> nữa: <span class="math notranslate nohighlight">\(X(k_9, a)\)</span>.</p>
+</section>
+</section>
+<section id="thuat-toan-sinh-khoa-con">
+<h2>Thuật toán sinh khóa con<a class="headerlink" href="#thuat-toan-sinh-khoa-con" title="Link to this heading">#</a></h2>
+<p>Để sinh khóa con cho 10 lần XOR, thuật toán Kuznyechik dùng mô hình Feistel. Đầu tiên ta định nghĩa hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span>. Với <span class="math notranslate nohighlight">\(c\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128}\)</span> và <span class="math notranslate nohighlight">\(a = a_0 \Vert a_1\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span>. Hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span> biến phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128} \times \mathbb{F}_2^{256}\)</span> thành phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span> bằng đẳng thức</p>
+<div class="math notranslate nohighlight">
+\[F(c, a) = a_1 \Vert a_0 \oplus R(c, a_1)\]</div>
+<p>với hàm <span class="math notranslate nohighlight">\(R\)</span> được định nghĩa ở phương trình <a class="reference internal" href="#equation-kuz-4">(4)</a>.</p>
+<figure class="align-default" id="kuzfic-2">
+<img alt="../_images/funcF.jpg" src="../_images/funcF.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Biến đổi từ khóa <span class="math notranslate nohighlight">\(k_0 \Vert k_1\)</span> thành <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span></span><a class="headerlink" href="#kuzfic-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Với khóa đầu vào là <span class="math notranslate nohighlight">\(k \in \mathbb{F}_2^{256}\)</span>, mình ký hiệu ở dạng ghép 2 chuỗi 128 bit <span class="math notranslate nohighlight">\(k = k_0 \Vert k_1\)</span> với <span class="math notranslate nohighlight">\(k_0, k_1 \in \mathbb{F}_2^{128}\)</span> là những khóa con mở đầu. Khi đó các khóa con cho 10 phép XOR là <span class="math notranslate nohighlight">\(k_0\)</span>, <span class="math notranslate nohighlight">\(k_1\)</span>, …, <span class="math notranslate nohighlight">\(k_9\)</span>.</p>
+<p>Thuật toán sinh khóa con được sử dụng như sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    k_{2i+2} \Vert k_{2i+3} = F(c_{8i+7}, \ldots, F(c_{8i}, k_{2i} \Vert k_{2i+1}))
+\end{equation}\]</div>
+<p>với <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span>. Thuật toán có thể mô tả ở <a class="reference internal" href="#kuzfic-2"><span class="std std-numref">Fig. 3</span></a>.</p>
+<p>Theo đó, các số <span class="math notranslate nohighlight">\(c_0, c_1, \ldots, c_7\)</span> được sử dụng để sinh khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span> từ <span class="math notranslate nohighlight">\(k_0 \Vert k_1\)</span>. Tương tự, <span class="math notranslate nohighlight">\(c_8, c_9, \ldots, c_{15}\)</span> dược dùng để sinh khóa <span class="math notranslate nohighlight">\(k_4 \Vert k_5\)</span> từ khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span>. Các số <span class="math notranslate nohighlight">\(c_0\)</span>, <span class="math notranslate nohighlight">\(c_1\)</span>, …, <span class="math notranslate nohighlight">\(c_{31}\)</span> được định nghĩa trong tiêu chuẩn.</p>
+</section>
+<section id="so-sanh-kuznyechik-voi-aes">
+<h2>So sánh Kuznyechik với AES<a class="headerlink" href="#so-sanh-kuznyechik-voi-aes" title="Link to this heading">#</a></h2>
+<p>Điểm giống nhau là cả hai thuật toán đều có phần tuyến tính và phần không tuyến tính. Về phần tuyến tính, đối với AES là các động tác Shift Rows, Mix Columns và Add Round Key, còn đối với Kuznyechik là hàm <span class="math notranslate nohighlight">\(X\)</span> và <span class="math notranslate nohighlight">\(L\)</span> bên trên. Về phần không tuyến tính đều là việc sử dụng một bảng tra cứu SBox của riêng thuật toán đó.</p>
+<p>Điểm khác nhau đầu tiên là cách xây dựng ma trận tính toán. Nếu ta xem xét Shift Rows và Mix Columns dưới dạng phép nhân ma trận trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> thì ta thấy rằng ma trận chứa nhiều số 0 nhất có thể. Điều này giúp tăng tốc độ tính toán. Về phần Kuznyechik, phép tính ở hàm <span class="math notranslate nohighlight">\(\lambda\)</span> cũng thực hiện trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> nhưng không chứa bất kì số 0 nào. Điều này làm tăng độ phức tạp tính toán nhưng cũng làm tăng tính an toàn.</p>
+<p>Điểm khác nhau tiếp theo là việc sinh khóa con. AES sử dụng thuật toán sinh khóa con từng vòng từ toàn bộ 256 bit ban đầu. Trong khi Kuznyechik sử dụng mô hình Feistel, theo đó với 256 bit ban đầu được sử dụng cho 2 vòng đầu, cứ mỗi hai khóa con sẽ sinh ra hai khóa con tiếp theo. Như vậy thuật toán sinh khóa con ít phức tạp hơn AES (Kuznyechik cần 5 lần sinh khóa còn AES 14 lần).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cryptography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="magma.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Magma</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../vasilenko/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Теоретико-числовые алгоритмы в криптографии</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">So sánh Kuznyechik với AES</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
