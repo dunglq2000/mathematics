@@ -6,7 +6,7 @@ Chương này nói về các loại mật mã.
 
 ### Bậc đại số cao
 
-Tham số $\deg f$ phải cao. Điều này đặc biệt quan trọng trong các stream cipher sửa dụng LFSR.
+Tham số $\deg f$ phải cao. Điều này đặc biệt quan trọng trong các stream cipher sử dụng LFSR.
 
 ### Nonlinearlity cao
 
@@ -100,6 +100,8 @@ Ví dụ algebraic immune hàm $f(\mathbf{x}) = x_1 x_2 x_3 \oplus x_1$ bằng $
 4. Cho ví dụ hàm boolean $f$ với giá trị algebraic immune nhỏ nhất, nghĩa là $AI(f) = d$ với $d = 1, 2, \ldots, k$.
 
 ### Differentially $\delta$-uniform
+
+Khái niệm này lần đầu được định nghĩa trong {cite}`eurocrypt-1993-2628`.
 
 Hàm boolean vector $F : \mathbb{F}_2^n \to \mathbb{F}_2^n$ gọi là **differentially $\delta$-uniform** nếu với mọi vector $\mathbf{a}$ khác không và vector $\mathbf{b}$ bất kì thì phương trình
 
