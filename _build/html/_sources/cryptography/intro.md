@@ -101,6 +101,8 @@ Ví dụ algebraic immune hàm $f(\mathbf{x}) = x_1 x_2 x_3 \oplus x_1$ bằng $
 
 ### Differentially $\delta$-uniform
 
+Khái niệm này lần đầu được định nghĩa trong {cite}`eurocrypt-1993-2628`.
+
 Hàm boolean vector $F : \mathbb{F}_2^n \to \mathbb{F}_2^n$ gọi là **differentially $\delta$-uniform** nếu với mọi vector $\mathbf{a}$ khác không và vector $\mathbf{b}$ bất kì thì phương trình
 
 $$F(\mathbf{x}) \oplus F(\mathbf{x} \oplus \mathbf{a}) = \mathbf{b}$$
