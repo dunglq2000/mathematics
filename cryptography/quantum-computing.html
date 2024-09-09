@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Kuznyechik &#8212; Math Book</title>
+    <title>Quantum computing &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/kuznyechik';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/quantum-computing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quantum computing" href="quantum-computing.html" />
-    <link rel="prev" title="Magma" href="magma.html" />
+    <link rel="next" title="6. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
+    <link rel="prev" title="Kuznyechik" href="kuznyechik.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -211,12 +211,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Mật mã học (và những niềm đau)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Mật mã học (và những niềm đau)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="magma.html">Magma</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">Quantum computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quantum computing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -299,7 +299,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/kuznyechik.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/quantum-computing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +329,7 @@
       
       
       
-      <li><a href="../_sources/cryptography/kuznyechik.md" target="_blank"
+      <li><a href="../_sources/cryptography/quantum-computing.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -413,7 +413,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Kuznyechik</h1>
+    <h1>Quantum computing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,14 +423,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">Thuật toán sinh khóa con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">So sánh Kuznyechik với AES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">Qubit và toán tử quantum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">Qubit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">Các toán tử quantum thường gặp</a></li>
 </ul>
             </nav>
         </div>
@@ -442,108 +437,124 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="kuznyechik">
-<h1>Kuznyechik<a class="headerlink" href="#kuznyechik" title="Link to this heading">#</a></h1>
-<p>Kuznyechik là một thuật toán mã hóa khối, đối xứng như AES. Kuznyechik tiếng Nga là Кузнечик, có nghĩa là châu chấu. Tuy nhiên trong văn bản quốc tế thì chúng ta giữ nguyên tên gọi
-là hệ mã Kuznyechik.</p>
-<p>Mã khối Kuznyechik biến đổi trên khối 128 bit, độ dài khóa là 256 bit, biến đổi trên 9 vòng. Kuznyechik sử dụng mô hình SPN tương tự như AES, trở thành chuẩn mã hóa của Nga và được định nghĩa trong GOST R 34.12-2015.</p>
-<p>Một điểm đặc biệt là quá trình biến đổi qua các vòng sử dụng mạng SPN, tuy nhiên thuật toán sinh khóa con cho các vòng sử dụng mô hình Feistel.</p>
-<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">11</a>]</span>.</p>
-<section id="ma-hoa">
-<h2>Mã hóa<a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h2>
-<p>Gọi <span class="math notranslate nohighlight">\(k_i\)</span> là khóa con của vòng thứ <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 9\)</span>. Ta có các động tác biến đổi sau:</p>
-<section id="phep-bien-doi-x">
-<h3>Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span><a class="headerlink" href="#phep-bien-doi-x" title="Link to this heading">#</a></h3>
-<p>Hàm <span class="math notranslate nohighlight">\(X: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span> biến đổi trên block 128 bit.</p>
-<p>Ta chia block đầu vào thành 16 cụm 8 bit, ký hiệu</p>
-<div class="math notranslate nohighlight">
-\[a = a_0 \Vert a_1 \Vert \ldots \Vert a_{14} \Vert a_{15}\]</div>
-<p>với ký tự <span class="math notranslate nohighlight">\(\Vert\)</span> chỉ việc nối các chuỗi bit (concatenate). Tương tự <span class="math notranslate nohighlight">\(k_i\)</span> cũng được chia thành 16 cụm 8 bit. Khi đó,</p>
-<div class="math notranslate nohighlight" id="equation-kuz-1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-kuz-1" title="Link to this equation">#</a></span>\[\begin{equation}
-    X(k_i, a) = k_{i, 0} \oplus a_0 \Vert 
-    k_{i, 1} \oplus a_1 \Vert \ldots \Vert k_{i, 14} \oplus a_{14}
-    \Vert k_{i, 15} \oplus a_{15}
-\end{equation}\]</div>
-<p>Nói cách khác, chúng ta xor 128 bit của khối đầu vào và 128 bit của khóa con <span class="math notranslate nohighlight">\(k_i\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-computing">
+<h1>Quantum computing<a class="headerlink" href="#quantum-computing" title="Link to this heading">#</a></h1>
+<section id="qubit-va-toan-tu-quantum">
+<h2>Qubit và toán tử quantum<a class="headerlink" href="#qubit-va-toan-tu-quantum" title="Link to this heading">#</a></h2>
+<p>Trên máy tính hiện nay, đơn vị xử lý cơ bản là bit (0 hoặc 1). Trong máy tính lượng tử, đơn vị tính toán là qubit (quantum bit).</p>
 </section>
-<section id="phep-bien-doi-s">
-<h3>Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span><a class="headerlink" href="#phep-bien-doi-s" title="Link to this heading">#</a></h3>
-<p>Hàm <span class="math notranslate nohighlight">\(S: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
-<p>Block đầu vào tiếp tục được chia thành 16 cụm 8 bit. Mỗi cụm sẽ đi qua một bảng tra cứu SBox (gọi là bảng <span class="math notranslate nohighlight">\(\pi\)</span>). Sau đó ta nối các kết quả với nhau.</p>
-<div class="math notranslate nohighlight" id="equation-kuz-2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-kuz-2" title="Link to this equation">#</a></span>\[\begin{equation}
-    S(a) = \pi(a_0) \Vert \pi(a_1) \Vert \ldots \Vert \pi(a_{14})
-    \Vert \pi(a_{15})
-\end{equation}\]</div>
-<p>Bảng <span class="math notranslate nohighlight">\(\pi\)</span> được định nghĩa sẵn và không tuyến tính, nên đây là bước không tuyến tính của thuật toán.</p>
-</section>
-<section id="phep-bien-doi-l">
-<h3>Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#phep-bien-doi-l" title="Link to this heading">#</a></h3>
-<p>Hàm <span class="math notranslate nohighlight">\(L: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
-<p>Block đầu vào vẫn được chia thành 16 cụm 8 bit. Tuy nhiên ở đây mỗi cụm 8 bit biểu diễn một đa thức trong trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> với đa thức tối giản là <span class="math notranslate nohighlight">\(g(x) = x^8 + x^7 + x^6 + x + 1\)</span>. Những phép tính cộng và nhân sau đây cũng được thực hiện trên
-trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> này.</p>
-<div class="math notranslate nohighlight" id="equation-kuz-3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-kuz-3" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
-    \begin{split}
-    \lambda(a) &amp; = 148 a_{15} + 32 a_{14} + 133 a_{13} + 16 a_{12} \\
-            &amp; + 194 a_{11} + 192 a_{10} + a_9 + 251 a_8 \\
-            &amp; + a_7 + 192 a_6 + 194 a_5 + 16 a_4 \\
-            &amp; + 133 a_3 + 32 a_2 + 148 a_1 + a_0
-    \end{split}
-\end{equation}\end{split}\]</div>
-<p>Tiếp theo, ta định nghĩa hàm <span class="math notranslate nohighlight">\(\Lambda: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span> như sau</p>
+<section id="qubit">
+<h2>Qubit<a class="headerlink" href="#qubit" title="Link to this heading">#</a></h2>
+<p>Mỗi qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle\)</span> được biểu diễn dưới dạng tổ hợp tuyến tính của cơ sở gồm <span class="math notranslate nohighlight">\(\lvert 0 \rangle = (1, 0)\)</span> và <span class="math notranslate nohighlight">\(\lvert 1 \rangle = (0, 1)\)</span>. Khi đó qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span>. Ở đây <span class="math notranslate nohighlight">\(\alpha, \beta \in \mathbb{C}\)</span> (tập số phức).</p>
+<p>Tích của <span class="math notranslate nohighlight">\(n\)</span> qubit là các tổ hợp <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 1 \rangle\)</span>, …, <span class="math notranslate nohighlight">\(\lvert 1, 1, \ldots, 1 \rangle\)</span>. Ta cũng ký hiệu <span class="math notranslate nohighlight">\(\lvert 0 \rangle \otimes \lvert 1 \rangle = \lvert 01 \rangle\)</span>.</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert \Psi \rangle = \gamma \lvert 0 \rangle + \delta \lvert 1 \rangle\)</span> thì</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-    a = a_0 \Vert a_1 \Vert \ldots \Vert a_{14} \Vert a_{15}
-    \to a_1 \Vert a_2 \Vert \ldots \Vert a_{15} \Vert \lambda(a)
-    = \Lambda(a)
+    \lvert \psi \rangle \otimes \lvert \Psi \rangle = (\alpha \lvert 0 \rangle + \beta \lvert 1 \rangle) \otimes (\gamma \lvert 0 \rangle + \delta \lvert 1 \rangle) = \alpha \gamma \lvert 00 \rangle + \alpha \delta \lvert 0 1 \rangle + \beta \gamma \lvert 10 \rangle + \beta \delta \lvert 11 \rangle
 \end{equation*}\]</div>
-<figure class="align-default" id="kuzfic-1">
-<img alt="../_images/funcLambda.jpg" src="../_images/funcLambda.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Hàm <span class="math notranslate nohighlight">\(\lambda\)</span></span><a class="headerlink" href="#kuzfic-1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Lưu ý rằng sau khi tính toán trên hàm <span class="math notranslate nohighlight">\(\lambda\)</span>, đa thức trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> được chuyển trở lại thành cụm 8 bit sau đó mới nối vào dãy <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>, …, <span class="math notranslate nohighlight">\(a_{15}\)</span> như mô tả ở <a class="reference internal" href="#kuzfic-1"><span class="std std-numref">Fig. 2</span></a>.</p>
-<p>Cuối cùng, hàm <span class="math notranslate nohighlight">\(L\)</span> ban đầu là thực hiện hàm <span class="math notranslate nohighlight">\(\Lambda\)</span> 16 lần.</p>
-<div class="math notranslate nohighlight">
-\[L(a) = \underbrace{\Lambda(\ldots\Lambda(a)\ldots)}_{\text{16 lần}}\]</div>
-<p>Như vậy, phép biến đổi trên vòng thứ <span class="math notranslate nohighlight">\(i\)</span> với khóa con <span class="math notranslate nohighlight">\(k_i\)</span> là</p>
-<div class="math notranslate nohighlight" id="equation-kuz-4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-kuz-4" title="Link to this equation">#</a></span>\[\begin{equation}
-    R(k_i, a) = L(S(X(a)))
-\end{equation}\]</div>
-<p>với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 8\)</span>.</p>
-<p>Ở vòng thứ 10 ta XOR với khóa con <span class="math notranslate nohighlight">\(k_9\)</span> nữa: <span class="math notranslate nohighlight">\(X(k_9, a)\)</span>.</p>
 </section>
-</section>
-<section id="thuat-toan-sinh-khoa-con">
-<h2>Thuật toán sinh khóa con<a class="headerlink" href="#thuat-toan-sinh-khoa-con" title="Link to this heading">#</a></h2>
-<p>Để sinh khóa con cho 10 lần XOR, thuật toán Kuznyechik dùng mô hình Feistel. Đầu tiên ta định nghĩa hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span>. Với <span class="math notranslate nohighlight">\(c\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128}\)</span> và <span class="math notranslate nohighlight">\(a = a_0 \Vert a_1\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span>. Hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span> biến phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128} \times \mathbb{F}_2^{256}\)</span> thành phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span> bằng đẳng thức</p>
+</div><p>Tiếp theo là <strong>toán tử quantum</strong> và tương ứng với nó là các cổng (gate) trên mạch.</p>
+<p>Toán tử quantum tác động lên một qubit hoặc tích của nhiều qubit.</p>
+<p>Qubit có dạng <span class="math notranslate nohighlight">\(\lvert \psi \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span>. Ta có thể viết hệ số dưới dạng vector cột <span class="math notranslate nohighlight">\(\begin{pmatrix} a \\ b \end{pmatrix}\)</span>. Khi đó, toán tử quantum sẽ là một ma trận <span class="math notranslate nohighlight">\(2 \times 2\)</span> biến đổi vector trên thành vector mới <span class="math notranslate nohighlight">\(\begin{pmatrix} c \\ d \end{pmatrix}\)</span> tương ứng với qubit <span class="math notranslate nohighlight">\(\lvert \Psi \rangle = c \lvert 0 \rangle + d \lvert 1 \rangle\)</span>.</p>
+<p>Nói cách khác, đặt toán tử quantum là ma trận <span class="math notranslate nohighlight">\(\mathcal{U} = \begin{pmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{pmatrix}\)</span> thì ta có</p>
 <div class="math notranslate nohighlight">
-\[F(c, a) = a_1 \Vert a_0 \oplus R(c, a_1)\]</div>
-<p>với hàm <span class="math notranslate nohighlight">\(R\)</span> được định nghĩa ở phương trình <a class="reference internal" href="#equation-kuz-4">(4)</a>.</p>
-<figure class="align-default" id="kuzfic-2">
-<img alt="../_images/funcF.jpg" src="../_images/funcF.jpg" />
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Biến đổi từ khóa <span class="math notranslate nohighlight">\(k_0 \Vert k_1\)</span> thành <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span></span><a class="headerlink" href="#kuzfic-2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Với khóa đầu vào là <span class="math notranslate nohighlight">\(k \in \mathbb{F}_2^{256}\)</span>, mình ký hiệu ở dạng ghép 2 chuỗi 128 bit <span class="math notranslate nohighlight">\(k = k_0 \Vert k_1\)</span> với <span class="math notranslate nohighlight">\(k_0, k_1 \in \mathbb{F}_2^{128}\)</span> là những khóa con mở đầu. Khi đó các khóa con cho 10 phép XOR là <span class="math notranslate nohighlight">\(k_0\)</span>, <span class="math notranslate nohighlight">\(k_1\)</span>, …, <span class="math notranslate nohighlight">\(k_9\)</span>.</p>
-<p>Thuật toán sinh khóa con được sử dụng như sau</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
-    k_{2i+2} \Vert k_{2i+3} = F(c_{8i+7}, \ldots, F(c_{8i}, k_{2i} \Vert k_{2i+1}))
-\end{equation}\]</div>
-<p>với <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span>. Thuật toán có thể mô tả ở <a class="reference internal" href="#kuzfic-2"><span class="std std-numref">Fig. 3</span></a>.</p>
-<p>Theo đó, các số <span class="math notranslate nohighlight">\(c_0, c_1, \ldots, c_7\)</span> được sử dụng để sinh khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span> từ <span class="math notranslate nohighlight">\(k_0 \Vert k_1\)</span>. Tương tự, <span class="math notranslate nohighlight">\(c_8, c_9, \ldots, c_{15}\)</span> dược dùng để sinh khóa <span class="math notranslate nohighlight">\(k_4 \Vert k_5\)</span> từ khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span>. Các số <span class="math notranslate nohighlight">\(c_0\)</span>, <span class="math notranslate nohighlight">\(c_1\)</span>, …, <span class="math notranslate nohighlight">\(c_{31}\)</span> được định nghĩa trong tiêu chuẩn.</p>
+\[\begin{split}\begin{equation*}
+    \lvert \psi \rangle \to \lvert \Psi \rangle = \mathcal{U} \lvert \psi \rangle, \quad \begin{pmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{pmatrix} \cdot \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} c \\ d \end{pmatrix}
+\end{equation*}\end{split}\]</div>
 </section>
-<section id="so-sanh-kuznyechik-voi-aes">
-<h2>So sánh Kuznyechik với AES<a class="headerlink" href="#so-sanh-kuznyechik-voi-aes" title="Link to this heading">#</a></h2>
-<p>Điểm giống nhau là cả hai thuật toán đều có phần tuyến tính và phần không tuyến tính. Về phần tuyến tính, đối với AES là các động tác Shift Rows, Mix Columns và Add Round Key, còn đối với Kuznyechik là hàm <span class="math notranslate nohighlight">\(X\)</span> và <span class="math notranslate nohighlight">\(L\)</span> bên trên. Về phần không tuyến tính đều là việc sử dụng một bảng tra cứu SBox của riêng thuật toán đó.</p>
-<p>Điểm khác nhau đầu tiên là cách xây dựng ma trận tính toán. Nếu ta xem xét Shift Rows và Mix Columns dưới dạng phép nhân ma trận trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> thì ta thấy rằng ma trận chứa nhiều số 0 nhất có thể. Điều này giúp tăng tốc độ tính toán. Về phần Kuznyechik, phép tính ở hàm <span class="math notranslate nohighlight">\(\lambda\)</span> cũng thực hiện trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> nhưng không chứa bất kì số 0 nào. Điều này làm tăng độ phức tạp tính toán nhưng cũng làm tăng tính an toàn.</p>
-<p>Điểm khác nhau tiếp theo là việc sinh khóa con. AES sử dụng thuật toán sinh khóa con từng vòng từ toàn bộ 256 bit ban đầu. Trong khi Kuznyechik sử dụng mô hình Feistel, theo đó với 256 bit ban đầu được sử dụng cho 2 vòng đầu, cứ mỗi hai khóa con sẽ sinh ra hai khóa con tiếp theo. Như vậy thuật toán sinh khóa con ít phức tạp hơn AES (Kuznyechik cần 5 lần sinh khóa còn AES 14 lần).</p>
+<section id="cac-toan-tu-quantum-thuong-gap">
+<h2>Các toán tử quantum thường gặp<a class="headerlink" href="#cac-toan-tu-quantum-thuong-gap" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Toán tử đồng nhất)</p>
+<section class="definition-content" id="proof-content">
+<p>Toán tử đồng nhất identity giữ nguyên qubit đầu vào. Ma trận tương ứng là ma trận đơn vị <span class="math notranslate nohighlight">\(I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Toán tử NOT)</p>
+<section class="definition-content" id="proof-content">
+<p>Toán tử NOT có ma trận tương ứng là <span class="math notranslate nohighlight">\(\text{NOT} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>. Khi đó <span class="math notranslate nohighlight">\(\text{NOT} \lvert \psi \rangle = b \lvert 0 \rangle + a \lvert 1 \rangle\)</span> với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span>.</p>
+</section>
+</div><p>Khi qubit là <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span> hoặc <span class="math notranslate nohighlight">\(\lvert 1 \rangle\)</span>, tác dụng của toán tử NOT là phép XOR nên ta có <span class="math notranslate nohighlight">\(\text{NOT} \lvert x \rangle = \lvert x \oplus 1 \rangle\)</span>.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Toán tử Hadamard)</p>
+<section class="definition-content" id="proof-content">
+<p>Ma trận của toán tử Hadamard là <span class="math notranslate nohighlight">\(H = \dfrac{1}{\sqrt{2}} \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; - 1 \end{pmatrix}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span>, toán tử Hadamard tương ứng với phép nhân ma trận</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \dfrac{1}{\sqrt{2}} \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; - 1 \end{pmatrix} \cdot \begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} \dfrac{1}{\sqrt{2}} (a + b) \\ \dfrac{1}{\sqrt{2}} (a - b) \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Ta chuyển cột kết quả về lại dạng tổ hợp tuyến tính thì cổng Hadamard hoạt động trên qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span> cho kết quả là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    H \lvert \psi \rangle = H(a \lvert 0 \rangle + b \lvert 1 \rangle) = \dfrac{1}{\sqrt{2}} (a + b) \lvert 0 \rangle + \dfrac{1}{\sqrt{2}} (a - b) \lvert 1 \rangle
+\end{equation*}\]</div>
+</section>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\lvert \psi \rangle \equiv \lvert 0 \rangle\)</span> thì tương đương với <span class="math notranslate nohighlight">\(a = 1, b = 0\)</span>. Ta có <span class="math notranslate nohighlight">\(H \lvert 0 \rangle = \dfrac{\lvert 0 \rangle + \lvert 1 \rangle}{\sqrt{2}}\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert \psi \rangle \equiv \lvert 1 \rangle\)</span> thì tương đương với <span class="math notranslate nohighlight">\(a = 0, b = 1\)</span>. Ta có <span class="math notranslate nohighlight">\(H \lvert 1 \rangle = \dfrac{\lvert 0 \rangle - \lvert 1 \rangle}{\sqrt{2}}\)</span>.</p>
+<p>Tổng quát ta nhận thấy, với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span> thì <span class="math notranslate nohighlight">\(H \lvert x \rangle = \dfrac{\lvert 0 \rangle + (-1)^x \lvert 1 \rangle}{\sqrt{2}}\)</span>.</p>
+<p>Ta thấy rằng toán tử ngược của toán tử Hadamard là chính nó.</p>
+<p>Tiếp theo là toán tử thường được dùng nhất khi tính toán trên tích của nhiều qubit: toán tử control.</p>
+<p>Như đã xem xét ở trên, tích của <span class="math notranslate nohighlight">\(n\)</span> qubit sẽ có <span class="math notranslate nohighlight">\(2^n\)</span> phần tử tương ứng các bộ <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 1 \rangle\)</span>, … Do đó toán tử control sẽ là ma trận kích thước <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span>.</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Toán tử control)</p>
+<section class="definition-content" id="proof-content">
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{U} = \begin{pmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{pmatrix}\)</span> là toán tử tác động lên một qubit. Xét hai qubit là <span class="math notranslate nohighlight">\(\lvert x \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert y \rangle = c \lvert 0 \rangle + d \lvert 1 \rangle\)</span>. Ta có tích</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \lvert x \rangle \otimes \lvert y \rangle = ac \lvert 00 \rangle + ad \lvert 01 \rangle + bc \lvert 10 \rangle + bd \lvert 11 \rangle
+\end{equation*}\]</div>
+<p>Khi đó toán tử control có dạng ma trận là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    c \mathcal{U} = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; c_{11} &amp; c_{12} \\ 0 &amp; 0 &amp; c_{21} &amp; c_{22} \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Hay viết dưới dạng ma trận khối là <span class="math notranslate nohighlight">\(c \mathcal{U} = \begin{pmatrix} I &amp; \mathcal{O} \\ \mathcal{O} &amp; \mathcal{U} \end{pmatrix}\)</span>.</p>
+</section>
+</div><p>Ta cũng viết tích <span class="math notranslate nohighlight">\(\lvert x \rangle \otimes \lvert y \rangle\)</span> dưới dạng vector cột (4 phần tử). Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \mathcal{U} (\lvert x \rangle \otimes \lvert y \rangle) = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; c_{11} &amp; c_{12} \\ 0 &amp; 0 &amp; c_{21} &amp; c_{22} \end{pmatrix} \cdot \begin{pmatrix} ac \\ ad \\ bc \\ bd \end{pmatrix} = \begin{pmatrix} ac \\ ad \\ c_{11} \cdot bc + c_{12} \cdot bd \\ c_{21} \cdot bc + c_{22} \cdot bd \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Hai phần tử đầu của vector kết quả không thay đổi, còn phần sau có “một phần” là <span class="math notranslate nohighlight">\(\mathcal{U} \lvert y \rangle\)</span>. Khi viết lại kết quả dưới dạng qubit thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    ac \lvert 00 \rangle + ad \lvert 01 \rangle + (c_{11} \cdot bc + c_{12} \cdot bd) \lvert 10 \rangle + (c_{21} \cdot bc + c_{22} \cdot bd) \lvert 11 \rangle
+\end{equation*}\]</div>
+<p>Ta có một số nhận xét sau đây.</p>
+<div class="proof remark admonition" id="remark-6">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 0 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 1, b = 0\)</span> thì tích trên tương ứng với</p>
+<div class="math notranslate nohighlight">
+\[c \lvert 00 \rangle + d \lvert 01 \rangle + 0 \lvert 10 \rangle + 0 \lvert 11 \rangle = \lvert 0 \rangle \otimes (c \lvert 0 \rangle + d \lvert 1 \rangle) = \lvert x \rangle \otimes \lvert y \rangle\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 1 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 0, b = 1\)</span> thì tích trên tương ứng với</p>
+<div class="math notranslate nohighlight">
+\[0 \lvert 00 \rangle + 0 \lvert 01 \rangle + (c_{11} c + c_{12} d) \lvert 10 \rangle + (c_{21} c + c_{22} d) \lvert 11 \rangle = \lvert 1 \rangle \otimes ((c_{11} c + c_{12} d) \lvert 0 \rangle + (c_{21} c + c_{22} d) \lvert 1 \rangle) = \lvert 1 \rangle \otimes \mathcal{U} \lvert y \rangle = \lvert x \rangle \otimes \mathcal{U} \lvert y \rangle\]</div>
+</section>
+</div><p>Tổng kết lại, với <span class="math notranslate nohighlight">\(x \in \{ 0, 1\}\)</span> thì</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\(x = 0\)</span> thì <span class="math notranslate nohighlight">\(\lvert x \rangle \otimes \lvert y \rangle \to \lvert x \rangle \otimes \lvert y \rangle\)</span>.</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(x = 1\)</span> thì <span class="math notranslate nohighlight">\(\lvert x \rangle \otimes \lvert y \rangle \to \lvert x \rangle \otimes \mathcal{U} \lvert y \rangle\)</span>.</p></li>
+</ul>
+<p>Tùy vào <span class="math notranslate nohighlight">\(x\)</span> là 0 hay 1 mà toán tử quantum <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> sẽ bị bỏ qua hoặc xem xét. Ở đây qubit <span class="math notranslate nohighlight">\(\lvert x \rangle\)</span> đóng vai trò điều khiển nên đây được gọi là toán tử control.</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Toán tử control CNOT, Control NOT)</p>
+<section class="definition-content" id="proof-content">
+<p>Toán tử quantum CNOT có ma trận là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix} = \begin{pmatrix} I &amp; \mathcal{O} \\ \mathcal{O} &amp; \text{NOT} \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+</section>
+</div><p>Qubit <span class="math notranslate nohighlight">\(\lvert x \rangle\)</span> với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span> đóng vai trò control cho qubit <span class="math notranslate nohighlight">\(\lvert y \rangle\)</span>. Khi <span class="math notranslate nohighlight">\(x \equiv 0\)</span> thì <span class="math notranslate nohighlight">\(y\)</span> giữ nguyên, hay <span class="math notranslate nohighlight">\(\lvert y \oplus 0 \rangle = \lvert y \oplus x \rangle\)</span>. Khi <span class="math notranslate nohighlight">\(x \equiv 1\)</span> thì áp dụng cổng NOT bên trên, khi đó <span class="math notranslate nohighlight">\(y\)</span> biến đổi thành <span class="math notranslate nohighlight">\(y \oplus 1 = y \oplus x\)</span>.</p>
 </section>
 </section>
 
@@ -578,20 +589,20 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="magma.html"
+       href="kuznyechik.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Magma</p>
+        <p class="prev-next-title">Kuznyechik</p>
       </div>
     </a>
     <a class="right-next"
-       href="quantum-computing.html"
+       href="../vasilenko/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Quantum computing</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Теоретико-числовые алгоритмы в криптографии</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -611,14 +622,9 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">Thuật toán sinh khóa con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">So sánh Kuznyechik với AES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">Qubit và toán tử quantum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">Qubit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">Các toán tử quantum thường gặp</a></li>
 </ul>
   </nav></div>
 
