@@ -529,15 +529,23 @@ document.write(`
     ac \lvert 00 \rangle + ad \lvert 01 \rangle + (c_{11} \cdot bc + c_{12} \cdot bd) \lvert 10 \rangle + (c_{21} \cdot bc + c_{22} \cdot bd) \lvert 11 \rangle
 \end{equation*}\]</div>
 <p>Ta có một số nhận xét sau đây.</p>
-<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 0 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 1, b = 0\)</span> thì tích trên tương ứng với <span class="math notranslate nohighlight">\(c \lvert 00 \rangle + d \lvert 01 \rangle + 0 \lvert 10 \rangle + 0 \lvert 11 \rangle = \lvert 0 \rangle \otimes (c \lvert 0 \rangle + d \lvert 1 \rangle) = \lvert x \rangle \otimes \lvert y \rangle\)</span>.</p>
-<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 1 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 0, b = 1\)</span> thì tích trên tương ứng với <span class="math notranslate nohighlight">\(0 \lvert 00 \rangle + 0 \lvert 01 \rangle + (c_{11} c + c_{12} d) \lvert 10 \rangle + (c_{21} c + c_{22} d) \lvert 11 \rangle = \lvert 1 \rangle \otimes ((c_{11} c + c_{12} d) \lvert 0 \rangle + (c_{21} c + c_{22} d) \lvert 1 \rangle) = \lvert 1 \rangle \otimes \mathcal{U} \lvert y \rangle = \lvert x \rangle \otimes \mathcal{U} \lvert y \rangle\)</span>.</p>
-<p>Tổng kết lại, với <span class="math notranslate nohighlight">\(x \in \{ 0, 1\}\)</span> thì</p>
+<div class="proof remark admonition" id="remark-6">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 0 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 1, b = 0\)</span> thì tích trên tương ứng với</p>
+<div class="math notranslate nohighlight">
+\[c \lvert 00 \rangle + d \lvert 01 \rangle + 0 \lvert 10 \rangle + 0 \lvert 11 \rangle = \lvert 0 \rangle \otimes (c \lvert 0 \rangle + d \lvert 1 \rangle) = \lvert x \rangle \otimes \lvert y \rangle\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 1 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 0, b = 1\)</span> thì tích trên tương ứng với</p>
+<div class="math notranslate nohighlight">
+\[0 \lvert 00 \rangle + 0 \lvert 01 \rangle + (c_{11} c + c_{12} d) \lvert 10 \rangle + (c_{21} c + c_{22} d) \lvert 11 \rangle = \lvert 1 \rangle \otimes ((c_{11} c + c_{12} d) \lvert 0 \rangle + (c_{21} c + c_{22} d) \lvert 1 \rangle) = \lvert 1 \rangle \otimes \mathcal{U} \lvert y \rangle = \lvert x \rangle \otimes \mathcal{U} \lvert y \rangle\]</div>
+</section>
+</div><p>Tổng kết lại, với <span class="math notranslate nohighlight">\(x \in \{ 0, 1\}\)</span> thì</p>
 <ul class="simple">
 <li><p>nếu <span class="math notranslate nohighlight">\(x = 0\)</span> thì <span class="math notranslate nohighlight">\(\lvert x \rangle \otimes \lvert y \rangle \to \lvert x \rangle \otimes \lvert y \rangle\)</span>.</p></li>
 <li><p>nếu <span class="math notranslate nohighlight">\(x = 1\)</span> thì <span class="math notranslate nohighlight">\(\lvert x \rangle \otimes \lvert y \rangle \to \lvert x \rangle \otimes \mathcal{U} \lvert y \rangle\)</span>.</p></li>
 </ul>
 <p>Tùy vào <span class="math notranslate nohighlight">\(x\)</span> là 0 hay 1 mà toán tử quantum <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> sẽ bị bỏ qua hoặc xem xét. Ở đây qubit <span class="math notranslate nohighlight">\(\lvert x \rangle\)</span> đóng vai trò điều khiển nên đây được gọi là toán tử control.</p>
-<div class="proof definition admonition" id="definition-6">
+<div class="proof definition admonition" id="definition-7">
 <p class="admonition-title"><span class="caption-number">Definition 5 </span> (Toán tử control CNOT, Control NOT)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử quantum CNOT có ma trận là</p>
