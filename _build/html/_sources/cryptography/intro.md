@@ -28,7 +28,7 @@ $$d(f, l_{\mathbf{a}, 1} (\mathbf{x})) = 2^{n-1} + \frac{1}{2} W_f (\mathbf{a})$
 
 2. Chứng minh rằng nonlinearlity của hàm boolean $f$ bất kì được tính bởi công thức
 
-$$N_f = 2^{n-1} - \frac{1}{2} \max_\mathbf{y} \lvert W_f \mathbf{y} \rvert$$
+$$N_f = 2^{n-1} - \frac{1}{2} \max_\mathbf{y} \lvert W_f (\mathbf{y}) \rvert$$
 
 3. Chứng minh rằng hàm boolean $f$ là hàm bent khi và chỉ khi $W_f(\mathbf{y}) = \pm 2^{n/2}$ với mọi vector $\mathbf{y}$.
 
@@ -44,7 +44,7 @@ Tính cân bằng và nonlinearlity là hai tính chất đối nghịch nhau. C
 
 ### $r$-resillient
 
-Đặt $r$ là số nguyên không âm nhỏ hơn $n$. Hàm boolean $f$ với $n$ biến được gọi là **$r$-resillient** (hay **$r$-устойчиой**) nếu với mọi hàm con mà nhận được từ việc cố định $r$ biến thì đều là hàm cân bằng.
+Đặt $r$ là số nguyên không âm nhỏ hơn $n$. Hàm boolean $f$ với $n$ biến được gọi là **$r$-resillient** (hay **$r$-устойчивой**) nếu với mọi hàm con mà nhận được từ việc cố định $r$ biến thì đều là hàm cân bằng.
 
 Hàm boolean này có độ an toàn cao hơn so với hàm cân bằng, giúp chống lại cách tấn công correlation cryptanalysis.
 
