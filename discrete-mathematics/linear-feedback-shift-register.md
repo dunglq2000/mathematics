@@ -90,7 +90,7 @@ Xét hàm boolean tuyến tính
 
 $$f(x_0, x_1, \ldots, x_{n-1}) = a_0 x_0 \oplus a_1 x_1 \oplus \ldots \oplus a_{n-1} x_{n-1}$$
 
-Khi đó đa thức đặc trưng tương ứng với hàm $f$ là đa thức trong $\mathrm{GF}(2^n)$
+Khi đó đa thức đặc trưng tương ứng với hàm $f$ là đa thức có hệ số trong $\mathrm{GF}(2)$
 
 $$\begin{equation}
 	P(x) = a_0 + a_1 x + \ldots + a_{n-1} x^{n-1} + x^n
