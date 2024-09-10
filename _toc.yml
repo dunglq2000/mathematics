@@ -49,3 +49,4 @@ parts:
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
+    - file: cryptofox/2024.md
