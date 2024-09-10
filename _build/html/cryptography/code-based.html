@@ -1,0 +1,1216 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>11. Code-based cryptography &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/code-based';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
+    <link rel="prev" title="10. Lattice-based cryptography" href="lattice-based.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">4. Số học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">6. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="block-cipher.html">7. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="magma.html">7.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">7.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Code-based cryptography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">12.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/code-based.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cryptography/code-based.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Code-based cryptography</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">11.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-decode-tong-quat">11.2. Bài toán decode tổng quát</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuyen-tinh-linear-code">11.3. Mã tuyến tính (Linear code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tran-sinh">11.3.1. Ma trận sinh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coder">11.3.2. Coder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tran-kiem-tra">11.3.3. Ma trận kiểm tra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuyen-tinh">11.3.4. Mã tuyến tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-code-ma-doi-ngau-va-kiem-tra-chan-le-check-parity">11.3.5. Dual code (mã đối ngẫu) và kiểm tra chẵn lẻ (check-parity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-decode-tren-ma-tuyen-tinh">11.4. Bài toán decode trên mã tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-pho-trong-so-cua-ma-tuyen-tinh">11.5. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong-xay-dung-cac-he-mat-ma-dua-tren-ma-sua-sai">11.6. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-tuong-duong-cac-ma-tuyen-tinh">11.7. Bài toán tương đương các mã tuyến tính</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoan-vi-va-tac-dong-cua-chung-len-tap-hop">11.7.1. Hoán vị và tác động của chúng lên tập hợp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuong-duong-va-nhom-cac-automorphism-cua-ma-tuyen-tinh">11.7.2. Mã tương đương và nhóm các automorphism của mã tuyến tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-cac-automorphism-cua-code">11.7.3. Nhóm các automorphism của code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-ve-tinh-tuong-duong-giua-cac-ma-tuyen-tinh-nhi-phan">11.7.4. Bài toán về tính tương đương giữa các mã tuyến tính nhị phân</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinh-li-ve-polynomial-time-reduction-cua-bai-toan-dang-cau-do-thi-den-bai-toan-su-tuong-duong-cua-ma">11.7.5. Định lí về polynomial-time reduction của bài toán đẳng cấu đồ thị đến bài toán sự tương đương của mã</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-he-mat-ma-khoa-cong-khai-dua-tren-ly-thuyet-ma">11.8. Các hệ mật mã khóa công khai dựa trên lý thuyết mã</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-mat-ma-mceliece">11.8.1. Hệ mật mã McEliece</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong-xay-dung">11.8.1.1. Ý tưởng xây dựng</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tham-so">11.8.1.2. Tham số</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-gen">11.8.1.3. Thuật toán sinh khóa (Gen)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-ma-hoa-enc">11.8.1.4. Thuật toán mã hóa (Enc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-giai-ma-dec">11.8.1.5. Thuật toán giải mã (Dec)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-mat-ma-niederreiter">11.8.2. Hệ mật mã Niederreiter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.8.2.1. Tham số</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.8.2.2. Thuật toán sinh khóa (Gen)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.8.2.3. Thuật toán mã hóa (Enc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.8.2.4. Thuật toán giải mã (Dec)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="code-based-cryptography">
+<h1><span class="section-number">11. </span>Code-based cryptography<a class="headerlink" href="#code-based-cryptography" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 11.1 </span> (Block code)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Block code</strong> <span class="math notranslate nohighlight">\((n)_q\)</span> (error-correcting code) là tập hợp <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> bất kì chứa các vector độ dài <span class="math notranslate nohighlight">\(n\)</span> trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 11.2 </span> (Codeword)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Codeword</strong> (từ mã) là bất kì vector nào trong block code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 11.3 </span> (Lực lượng của code)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Lực lượng</strong> (hay <strong>cardinality</strong>) <span class="math notranslate nohighlight">\(M\)</span> của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là số lượng codeword trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>. Kí hiệu <span class="math notranslate nohighlight">\(M = \lvert C \rvert\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 11.4 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Block code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span> có độ dài <span class="math notranslate nohighlight">\(n\)</span> và có lực lượng <span class="math notranslate nohighlight">\(M\)</span> được gọi là <span class="math notranslate nohighlight">\((n, M)_q\)</span> code.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 11.5 </span> (Độ dài của code)</p>
+<section class="definition-content" id="proof-content">
+<p>Độ dài của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là số <span class="math notranslate nohighlight">\(n\)</span> chỉ độ dài mỗi codeword (độ dài vector).</p>
+</section>
+</div><div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 11.6 </span> (Khoảng cách tối thiểu)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Khoảng cách tối thiểu</strong> (hay <strong>minimum distance</strong>) của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là số <span class="math notranslate nohighlight">\(d\)</span> chỉ khoảng cách Hamming nhỏ nhất giữa hai codeword trong code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[d = \min_{u, v \in \mathcal{C}, u \neq v} \rho(u, v) = \min_{u, v \in \mathcal{C}, u \neq v} \mathrm{wt}(u - v).\]</div>
+</section>
+</div><p>Nhắc lại, khoảng cách Hamming của một vector là số phần tử khác <span class="math notranslate nohighlight">\(0\)</span> trong vector đó:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{wt}(x_1, x_2, \ldots, x_n) = \#\{ x_i \mid x_i \neq 0 \}.\]</div>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 11.7 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Block code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span> với độ dài <span class="math notranslate nohighlight">\(n\)</span>, lực lượng <span class="math notranslate nohighlight">\(M\)</span> và có khoảng cách tối thiểu <span class="math notranslate nohighlight">\(d\)</span> được gọi là <span class="math notranslate nohighlight">\((n, M, d)_q\)</span> code.</p>
+</section>
+</div><p>Thông tin ban đầu có thể được chia thành các đoạn độ dài <span class="math notranslate nohighlight">\(k\)</span> và mỗi đoạn như vậy được encode thành một đoạn độ dài <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Cụ thể hơn, <strong>hàm encode</strong> biến đổi một thông điệp <span class="math notranslate nohighlight">\(a\)</span> độ dài <span class="math notranslate nohighlight">\(k\)</span> thành codeword <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> với độ dài <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\varphi: V_k(q) \to \mathcal{C}, \quad \varphi(a) = c.\]</div>
+<p>Ánh xạ <span class="math notranslate nohighlight">\(\varphi\)</span> cần là đơn ánh (one-to-one) vì chúng ta không muốn hai thông điệp độ dài <span class="math notranslate nohighlight">\(k\)</span> cùng encode ra một codeword độ dài <span class="math notranslate nohighlight">\(n\)</span>  (khi decode chúng ta không biết sẽ ra thông điệp nào).</p>
+<div class="proof lemma admonition" id="lemma-7">
+<p class="admonition-title"><span class="caption-number">Lemma 11.1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Để <span class="math notranslate nohighlight">\((n, M)_q\)</span> code có thể encode được các thông điệp độ dài <span class="math notranslate nohighlight">\(k\)</span> thì điều kiện cần và đủ để tồn tại ánh xạ <span class="math notranslate nohighlight">\(\varphi\)</span> như trên là <span class="math notranslate nohighlight">\(k \leqslant \lfloor \log_q M \rfloor\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 11.8 </span> (Спектр весов)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Phổ trọng số</strong> (hay <strong>спектр весов</strong>) của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là một vector các số nguyên không âm <span class="math notranslate nohighlight">\((A_0, A_1, \ldots, A_n) \in \mathbb{Z}^{n+1}_{\geqslant 0}\)</span> với <span class="math notranslate nohighlight">\(A_i\)</span> là số lượng vector có trọng số Hamming bằng <span class="math notranslate nohighlight">\(i\)</span> trong code.</p>
+</section>
+</div></section>
+<section id="bai-toan-decode-tong-quat">
+<h2><span class="section-number">11.2. </span>Bài toán decode tổng quát<a class="headerlink" href="#bai-toan-decode-tong-quat" title="Link to this heading">#</a></h2>
+<p>Khi vector <span class="math notranslate nohighlight">\(x\)</span> được truyền qua kênh truyền, không gì đảm bảo chúng ta sẽ nhận được chính xác <span class="math notranslate nohighlight">\(x\)</span> ở bên nhận, mà có thể là <span class="math notranslate nohighlight">\(y\)</span> nào đó.</p>
+<p>Các codeword nằm trong một block code nào đó là tập con của <span class="math notranslate nohighlight">\(V_n(q)\)</span>, trong khi ở bên nhận có thể là một vector bất kỳ trong <span class="math notranslate nohighlight">\(V_n(q)\)</span>. Bài toán decode đặt ra câu hỏi, làm sao biết được vector <span class="math notranslate nohighlight">\(y\)</span> sẽ được decode thành vector nào trong block code.</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 11.9 </span> (Bài toán decode)</p>
+<section class="definition-content" id="proof-content">
+<p>Bài toán decode của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là bài toán cho trước vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ta tìm codeword <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> của code <span class="math notranslate nohighlight">\((n)_q\)</span> sao cho <span class="math notranslate nohighlight">\(\displaystyle{\rho_H (c,y) = \min_{c' \in \mathcal{C}} \rho_H (c', y)}\)</span> với <span class="math notranslate nohighlight">\(\rho_H\)</span> là khoảng cách Hamming.</p>
+<p><strong>Input:</strong> vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span> nhận được từ kênh truyền; <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là <span class="math notranslate nohighlight">\((n)_q\)</span> code.</p>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> là codeword sao cho <span class="math notranslate nohighlight">\(\displaystyle{\rho_H (c, y) = \min_{c' \in \mathcal{C}} \rho_H(c', y)}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 11.10 </span> (Bài toán decode)</p>
+<section class="definition-content" id="proof-content">
+<p>Bài toán decode của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là bài toán cho trước vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ta tìm codeword <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> của code <span class="math notranslate nohighlight">\((n)_q\)</span> sao cho <span class="math notranslate nohighlight">\(\displaystyle{\mathrm{wt}(y - c) = \min_{c' \in \mathcal{C}} \mathrm{wt}(y - c')}\)</span> với <span class="math notranslate nohighlight">\(\mathrm{wt}\)</span> là trọng số Hamming.</p>
+<p><strong>Input:</strong> vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span> là vector nhận được từ kênh truyền; <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là <span class="math notranslate nohighlight">\((n)_q\)</span> code.</p>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> là codeword sao cho <span class="math notranslate nohighlight">\(\displaystyle{\mathrm{wt}(y - c) = \min_{c' \in \mathcal{C}} \mathrm{wt} (y - c')}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 11.11 </span> (Bài toán decode)</p>
+<section class="definition-content" id="proof-content">
+<p>Bài toán decode của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là bài toán cho trước vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ta tìm vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> sao cho <span class="math notranslate nohighlight">\(y - e \in \mathcal{C}\)</span>, nghĩa là <span class="math notranslate nohighlight">\(y - e\)</span> là codeword, và vector <span class="math notranslate nohighlight">\(e\)</span> có trọng số Hamming nhỏ nhất <span class="math notranslate nohighlight">\(\mathrm{wt}(e) \to \min\)</span>.</p>
+<p><strong>Input:</strong> vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span> là vector nhận được từ kênh truyền; <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là <span class="math notranslate nohighlight">\((n)_q\)</span> code.</p>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> sao cho <span class="math notranslate nohighlight">\(y - e \in \mathcal{C}\)</span>, nghĩa là <span class="math notranslate nohighlight">\(y - e\)</span> là codeword, và vector <span class="math notranslate nohighlight">\(e\)</span> có trọng số Hamming nhỏ nhất <span class="math notranslate nohighlight">\(\mathrm{wt}(e) \to \min\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-12">
+<p class="admonition-title"><span class="caption-number">Remark 11.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Các định nghĩa về bài toán decode ở trên tương đương nhau.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-13">
+<p class="admonition-title"><span class="caption-number">Definition 11.12 </span> (Decoder)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Decoder</strong> của code <span class="math notranslate nohighlight">\((n)_q\)</span> <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là thuật toán mà với vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span> cho trước, tìm được codeword <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> sao cho vector <span class="math notranslate nohighlight">\(e = y - c\)</span> có trọng số Hamming nhỏ nhất có thể, nghĩa là <span class="math notranslate nohighlight">\(\displaystyle{c = \underset{u \in \mathcal{C}}{\operatorname{argmin}} \mathrm{wt}(y - u)}\)</span>. Decoder của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> sẽ giải bài toán decode trên code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div></section>
+<section id="ma-tuyen-tinh-linear-code">
+<h2><span class="section-number">11.3. </span>Mã tuyến tính (Linear code)<a class="headerlink" href="#ma-tuyen-tinh-linear-code" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-14">
+<p class="admonition-title"><span class="caption-number">Definition 11.13 </span> (Mã tuyến tính, Linear code)</p>
+<section class="definition-content" id="proof-content">
+<p>Block code <span class="math notranslate nohighlight">\((n)_q\)</span> <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> được gọi là <strong>tuyến tính</strong> (hay <strong>linear</strong>) nếu với mọi <span class="math notranslate nohighlight">\(a, b \in \mathbb{F}_2\)</span> và với mọi codeword <span class="math notranslate nohighlight">\(x, y \in \mathcal{C}\)</span> thì vector <span class="math notranslate nohighlight">\(a \cdot x + b \cdot y\)</span> cũng là codeword thuộc <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div><p>Ta kí hiệu mã tuyến tính là <span class="math notranslate nohighlight">\([n]_q\)</span>. Có thể thấy blockcode <span class="math notranslate nohighlight">\([n]_q\)</span> là không gian vector con của <span class="math notranslate nohighlight">\(V_n(q)\)</span>.</p>
+<div class="proof definition admonition" id="definition-15">
+<p class="admonition-title"><span class="caption-number">Definition 11.14 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Đối với code <span class="math notranslate nohighlight">\([n]_q\)</span> thì số <span class="math notranslate nohighlight">\(n\)</span> được gọi là <strong>độ dài</strong> của code.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 11.15 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Số chiều</strong> của code <span class="math notranslate nohighlight">\([n]_q\)</span> là số <span class="math notranslate nohighlight">\(k\)</span> bằng với số chiều của không gian vector con <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> của <span class="math notranslate nohighlight">\(V_n(q)\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 11.16 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Mã tuyến tính <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> có độ dài <span class="math notranslate nohighlight">\(n\)</span> và số chiều <span class="math notranslate nohighlight">\(k\)</span> được gọi là <span class="math notranslate nohighlight">\([n, k]_q\)</span> code.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-18">
+<p class="admonition-title"><span class="caption-number">Definition 11.17 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Tốc độ truyền</strong> của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code là số <span class="math notranslate nohighlight">\(R = \dfrac{k}{n}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-19">
+<p class="admonition-title"><span class="caption-number">Definition 11.18 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Redundancy</strong> (hay <strong>избыточность</strong>) của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code là số <span class="math notranslate nohighlight">\(r = n - k\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-20">
+<p class="admonition-title"><span class="caption-number">Definition 11.19 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Khoảng cách nhỏ nhất</strong> của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là số <span class="math notranslate nohighlight">\(d\)</span> bằng với trọng số Hamming nhỏ nhất của các codeword trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span></p>
+<div class="math notranslate nohighlight">
+\[d = \min_{u \in \mathcal{C}, u \neq 0} \mathrm{wt}(u)\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-21">
+<p class="admonition-title"><span class="caption-number">Definition 11.20 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với khoảng cách nhỏ nhất <span class="math notranslate nohighlight">\(d\)</span> được gọi là <span class="math notranslate nohighlight">\([n, k, d]_q\)</span> code.</p>
+</section>
+</div><section id="ma-tran-sinh">
+<h3><span class="section-number">11.3.1. </span>Ma trận sinh<a class="headerlink" href="#ma-tran-sinh" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-22">
+<p class="admonition-title"><span class="caption-number">Definition 11.21 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Ma trận <span class="math notranslate nohighlight">\(G\)</span> được gọi là <strong>ma trận sinh</strong> (hay <strong>порождающая матрица</strong>) của code <span class="math notranslate nohighlight">\(C\)</span> nếu nó chứa các vector trong cơ sở của không gian vector con <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là <span class="math notranslate nohighlight">\([n, k]_q\)</span> code thì <span class="math notranslate nohighlight">\(G\)</span> là ma trận kích thước <span class="math notranslate nohighlight">\(k \times n\)</span>.</p>
+<div class="proof remark admonition" id="remark-23">
+<p class="admonition-title"><span class="caption-number">Remark 11.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(G\)</span> là ma trận sinh của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code thì</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{C} = \{ a \cdot G \mid a \in V_k(q) \}\]</div>
+</section>
+</div><p>Ở đây ta nói ma trận <span class="math notranslate nohighlight">\(G\)</span> sinh ra code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+<p>Theo kiến thức đại số tuyến tính, nếu <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span> kích thước <span class="math notranslate nohighlight">\(k \times k\)</span> cùng sinh ra một code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> thì tồn tại ma trận nghịch đảo <span class="math notranslate nohighlight">\(A\)</span> kích thước <span class="math notranslate nohighlight">\(k \times k\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span> sao cho <span class="math notranslate nohighlight">\(A G_1 = G_2\)</span>.</p>
+</section>
+<section id="coder">
+<h3><span class="section-number">11.3.2. </span>Coder<a class="headerlink" href="#coder" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-24">
+<p class="admonition-title"><span class="caption-number">Definition 11.22 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Coder</strong> <span class="math notranslate nohighlight">\(\varphi : V_k(q) \to V_n(q)\)</span> cho <span class="math notranslate nohighlight">\([n, k]_q\)</span> code xác định bởi ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> theo nghĩa:</p>
+<div class="math notranslate nohighlight">
+\[\varphi((a_1, \ldots, a_k)) = (a_1, \ldots, a_k) \cdot G\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-25">
+<p class="admonition-title"><span class="caption-number">Definition 11.23 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Ma trận <span class="math notranslate nohighlight">\(G\)</span> kích thước <span class="math notranslate nohighlight">\(k \times n\)</span> được gọi là <strong>systematic</strong> nếu nó có dạng:</p>
+<div class="math notranslate nohighlight">
+\[G = (I_k \Vert G_0)\]</div>
+<p>với <span class="math notranslate nohighlight">\(I_k\)</span> là ma trận đơn vị <span class="math notranslate nohighlight">\(k \times k\)</span> và <span class="math notranslate nohighlight">\(G_0\)</span> là ma trận cỡ <span class="math notranslate nohighlight">\((k \times (n - k))\)</span> nào đó.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-26">
+<p class="admonition-title"><span class="caption-number">Definition 11.24 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Code được gọi là <strong>systematic</strong> nếu nó có ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> là systematic.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-27">
+<p class="admonition-title"><span class="caption-number">Definition 11.25 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Coder <span class="math notranslate nohighlight">\(\varphi_G\)</span> của systematic code <span class="math notranslate nohighlight">\([n, k]_q\)</span>, xác định bởi ma trận sinh systematic <span class="math notranslate nohighlight">\(G = (I_k \Vert G)\)</span>, được gọi là <strong>systematic</strong>.</p>
+</section>
+</div><p>Khi đó với mọi thông điệp <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_k) \in V_k(q)\)</span> thì coder thực hiện:</p>
+<div class="math notranslate nohighlight">
+\[a = (a_1, \ldots, a_n) \xrightarrow{\varphi} (a_1, \ldots, a_k, a \cdot G_0)\]</div>
+<p>Lưu ý rằng không phải code nào cũng là systematic và do đó không tồn tại systematic coder.</p>
+<div class="proof definition admonition" id="definition-28">
+<p class="admonition-title"><span class="caption-number">Definition 11.26 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Ta đánh số tọa độ các codeword trong <span class="math notranslate nohighlight">\([n, k]_q\)</span> code từ <span class="math notranslate nohighlight">\(1\)</span> tới <span class="math notranslate nohighlight">\(n\)</span>. <strong>Tập thông tin</strong> (hay <strong>information set</strong>, <strong>информационное множество</strong>) <span class="math notranslate nohighlight">\(\mathcal{I}\)</span> của code <span class="math notranslate nohighlight">\([n, k]_q\)</span> là tập con của tập đánh số tọa độ, nghĩa là <span class="math notranslate nohighlight">\(\mathcal{I} \subseteq \{ 1, \ldots, n \}\)</span>, sao cho <span class="math notranslate nohighlight">\(\lvert \mathcal{I} \rvert = k\)</span> và ma trận con <span class="math notranslate nohighlight">\(G_k\)</span> kích thước <span class="math notranslate nohighlight">\(k \times k\)</span> của ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> thì khả nghịch.</p>
+</section>
+</div></section>
+<section id="ma-tran-kiem-tra">
+<h3><span class="section-number">11.3.3. </span>Ma trận kiểm tra<a class="headerlink" href="#ma-tran-kiem-tra" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-29">
+<p class="admonition-title"><span class="caption-number">Definition 11.27 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là nhân của ma trận <span class="math notranslate nohighlight">\(H\)</span>, tức là</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{C} = \ker(H) = \{ v \in \mathcal{C}: H v^\top = 0 \}\]</div>
+<p>thì ta nói <span class="math notranslate nohighlight">\(H\)</span> là <strong>ma trận kiểm tra chẵn lẻ</strong> (hay <strong>parity-check matrix</strong>).</p>
+</section>
+</div><p>Ta có thể thấy <span class="math notranslate nohighlight">\(G H^\top = 0\)</span>.</p>
+<div class="proof definition admonition" id="definition-30">
+<p class="admonition-title"><span class="caption-number">Definition 11.28 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Syndrome</strong> <span class="math notranslate nohighlight">\(S_H(y)\)</span> của vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span> tương ứng với ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là vector cột <span class="math notranslate nohighlight">\(S_H(y) = H \cdot y^\top\)</span>. Khi đó <span class="math notranslate nohighlight">\(S_H(y)\)</span> có độ dài <span class="math notranslate nohighlight">\(r = n - k\)</span> - chính là redundancy ở trên.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-31">
+<p class="admonition-title"><span class="caption-number">Remark 11.3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(H_1\)</span> và <span class="math notranslate nohighlight">\(H_2\)</span> là hai ma trận parity-check của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> thì <span class="math notranslate nohighlight">\(S_{H_1}(y) = A \cdot S_{H_2}(y)\)</span> với <span class="math notranslate nohighlight">\(A\)</span> là ma trận khả nghịch thỏa mãn <span class="math notranslate nohighlight">\(H_2 = A \cdot H_1\)</span>.</p>
+</section>
+</div></section>
+<section id="ma-tuyen-tinh">
+<h3><span class="section-number">11.3.4. </span>Mã tuyến tính<a class="headerlink" href="#ma-tuyen-tinh" title="Link to this heading">#</a></h3>
+<p>Do <span class="math notranslate nohighlight">\([n]_q\)</span> code cũng là <span class="math notranslate nohighlight">\((n)_q\)</span> code nên ta cũng có định nghĩa phổ trọng số như <span class="math notranslate nohighlight">\((n)_q\)</span>:</p>
+<div class="proof definition admonition" id="definition-32">
+<p class="admonition-title"><span class="caption-number">Definition 11.29 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Спектр весов</strong> của <span class="math notranslate nohighlight">\([n]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là vector <span class="math notranslate nohighlight">\((A_0, A_1, \ldots, A_n) \in \mathbb{Z}^{n+1}_{\geqslant 0}\)</span> với <span class="math notranslate nohighlight">\(A_i \geqslant 0\)</span> là số lượng vector có trọng số bằng <span class="math notranslate nohighlight">\(i\)</span> trong code.</p>
+</section>
+</div></section>
+<section id="dual-code-ma-doi-ngau-va-kiem-tra-chan-le-check-parity">
+<h3><span class="section-number">11.3.5. </span>Dual code (mã đối ngẫu) và kiểm tra chẵn lẻ (check-parity)<a class="headerlink" href="#dual-code-ma-doi-ngau-va-kiem-tra-chan-le-check-parity" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-33">
+<p class="admonition-title"><span class="caption-number">Definition 11.30 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Mã đối ngẫu</strong> (hay <strong>dual code</strong>, <strong>дуальный код</strong>) của mã tuyến tính <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là code <span class="math notranslate nohighlight">\(\mathcal{C}^\top\)</span> được sinh bởi parity-check matrix <span class="math notranslate nohighlight">\(H\)</span> của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-34">
+<p class="admonition-title"><span class="caption-number">Remark 11.4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Mã đối ngẫu với <span class="math notranslate nohighlight">\([n, k]_q\)</span> code là <span class="math notranslate nohighlight">\([n, n-k]_q\)</span> code.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-35">
+<p class="admonition-title"><span class="caption-number">Remark 11.5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Với mọi mã <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> ta có <span class="math notranslate nohighlight">\((\mathcal{C}^\top)^\top = C\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-36">
+<p class="admonition-title"><span class="caption-number">Remark 11.6 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Với mọi <span class="math notranslate nohighlight">\([n]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> thì ta có đẳng thức:</p>
+<div class="math notranslate nohighlight">
+\[(\mathcal{C} + \mathcal{B})^\top = \mathcal{C}^\top \cap \mathcal{B}^\top.\]</div>
+<p>Trong đó <span class="math notranslate nohighlight">\(\mathcal{C} + \mathcal{B} = \{ u + v : u \in \mathcal{C}, v \in \mathcal{B} \}\)</span> - tổng của hai code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{B}\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-37">
+<p class="admonition-title"><span class="caption-number">Definition 11.31 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Với các vector <span class="math notranslate nohighlight">\(x = (x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(y = (y_1, \ldots, y_n)\)</span> trong <span class="math notranslate nohighlight">\(V_n(q)\)</span> ta định nghĩa <strong>tích vô hướng</strong> (hay <strong>inner product</strong>, <strong>dot product</strong>, <strong>скалярное произведение</strong>) của hai vector là:</p>
+<div class="math notranslate nohighlight">
+\[\langle x, y \rangle = x_1 y_1 + \ldots + x_n y_n \in \mathbb{F}_q\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-38">
+<p class="admonition-title"><span class="caption-number">Definition 11.32 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Vector <span class="math notranslate nohighlight">\(h \in V_n(q)\)</span> được gọi là <strong>parity-check</strong> (hay <strong>проверка на чётность</strong>) của <span class="math notranslate nohighlight">\([n]_q\)</span> code nếu với mọi <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span> ta có <span class="math notranslate nohighlight">\(\langle c, h \rangle = 0\)</span>, nói cách khác vector <span class="math notranslate nohighlight">\(h\)</span> trực giao với mọi vector <span class="math notranslate nohighlight">\(c \in \mathcal{C}\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-39">
+<p class="admonition-title"><span class="caption-number">Remark 11.7 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Mã đối ngẫu <span class="math notranslate nohighlight">\(\mathcal{C}^\top\)</span> trùng với tập tất cả parity-check vector của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div></section>
+</section>
+<section id="bai-toan-decode-tren-ma-tuyen-tinh">
+<h2><span class="section-number">11.4. </span>Bài toán decode trên mã tuyến tính<a class="headerlink" href="#bai-toan-decode-tren-ma-tuyen-tinh" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-40">
+<p class="admonition-title"><span class="caption-number">Definition 11.33 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán decode trên mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> trong điều kiện kênh truyền có <span class="math notranslate nohighlight">\(t\)</span> lỗi</strong> là bài toán cho trước vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ta tìm vector <span class="math notranslate nohighlight">\(m \in V_k(q)\)</span> sao cho vector <span class="math notranslate nohighlight">\(e = y - m G\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Input:</strong> vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> cỡ <span class="math notranslate nohighlight">\(k \times n\)</span>, số tự nhiên <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span>.</p>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(m \in V_k(q)\)</span> sao cho vector <span class="math notranslate nohighlight">\(e = y - m G\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-41">
+<p class="admonition-title"><span class="caption-number">Definition 11.34 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán decode trên mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> trong điều kiện kênh truyền có <span class="math notranslate nohighlight">\(t\)</span> lỗi</strong> là bài toán cho trước vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ta tìm vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> sao cho <span class="math notranslate nohighlight">\(e H^\top = y H^\top\)</span> và vector <span class="math notranslate nohighlight">\(e\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) = t\)</span>.</p>
+<p><strong>Input:</strong> vector <span class="math notranslate nohighlight">\(y \in V_n(q)\)</span>, ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> cỡ <span class="math notranslate nohighlight">\((n - k) \times n\)</span> và số tự nhiên <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span>.</p>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) = t\)</span>, sao cho <span class="math notranslate nohighlight">\(e H^\top = y H^\top\)</span>.</p>
+</section>
+</div><p>Từ các bài toán decode mã tuyến tính liên hệ với bài toán decode syndrome code.</p>
+<div class="proof definition admonition" id="definition-42">
+<p class="admonition-title"><span class="caption-number">Definition 11.35 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán tối ưu</strong> (hay <strong>bài toán tổng quát</strong>) của syndrome decode <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> là bài toán cho trước vector <span class="math notranslate nohighlight">\(s \in V_n(q)\)</span>, ta tìm vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> sao cho <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span> và vector <span class="math notranslate nohighlight">\(e\)</span> có trọng số Hamming nhỏ nhất có thể, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) \to \min\)</span>.</p>
+<p><strong>Input:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s \in V_n(q)\)</span> - syndrome</p></li>
+<li><p><span class="math notranslate nohighlight">\(H\)</span> là ma trận parity-check cỡ <span class="math notranslate nohighlight">\((n - k) \times n\)</span> của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span></p></li>
+</ul>
+<p><strong>Output:</strong></p>
+<ul class="simple">
+<li><p>vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> thỏa mãn <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span> và vector <span class="math notranslate nohighlight">\(e\)</span> có trọng số Hamming nhỏ nhất có thể, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) \to \min\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-43">
+<p class="admonition-title"><span class="caption-number">Definition 11.36 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán tìm kiếm syndrome decode</strong> <span class="math notranslate nohighlight">\(sSD(H, s, t)\)</span> là bài toán tìm kiếm theo vector <span class="math notranslate nohighlight">\(s \in V_r(q)\)</span> vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) = t\)</span> và <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span>.</p>
+<p><strong>Input:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H\)</span> là ma trận cỡ <span class="math notranslate nohighlight">\(r \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s \in V_r(q)\)</span> là syndrome</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> là trọng số Hamming</p></li>
+</ul>
+<p><strong>Output:</strong> vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>, hay <span class="math notranslate nohighlight">\(\mathrm{wt}(e) = t\)</span>, và <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-44">
+<p class="admonition-title"><span class="caption-number">Definition 11.37 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán nhận dạng syndrome decode</strong> (hay <strong>распознавательная задача синдромного декодирования</strong>) hay đơn giản là <strong>bài toán syndrome decode</strong> (hay <strong>задача синдромного декодирования</strong>) <span class="math notranslate nohighlight">\(SD(H, s, t)\)</span> là bài toán xác định theo syndrome <span class="math notranslate nohighlight">\(s \in V_r(q)\)</span> xem có tồn tại hay không vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span> và thỏa mãn <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span>.</p>
+<p><strong>Input:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H\)</span> là ma trận cỡ <span class="math notranslate nohighlight">\(r \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(s \in V_r(q)\)</span> là syndrome</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> là trọng số Hamming</p></li>
+</ul>
+<p><strong>Output:</strong> có tồn tại hay không vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming <span class="math notranslate nohighlight">\(\mathrm{wt} (e) = t\)</span> và thỏa <span class="math notranslate nohighlight">\(H e^\top = s^\top\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-45">
+<p class="admonition-title"><span class="caption-number">Theorem 11.1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>(Theo <span id="id1">[<a class="reference internal" href="../intro.html#id16" title="E. Berlekamp, R. McEliece, and H. van Tilborg. On the inherent intractability of certain coding problems (corresp.). IEEE Transactions on Information Theory, 24(3):384-386, 1978. doi:10.1109/TIT.1978.1055873.">14</a>]</span>) Bài toán nhận dạng syndrome code <span class="math notranslate nohighlight">\(SD(H, s, t)\)</span> là NP-complete.</p>
+</section>
+</div></section>
+<section id="bai-toan-pho-trong-so-cua-ma-tuyen-tinh">
+<h2><span class="section-number">11.5. </span>Bài toán phổ trọng số của mã tuyến tính<a class="headerlink" href="#bai-toan-pho-trong-so-cua-ma-tuyen-tinh" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-46">
+<p class="admonition-title"><span class="caption-number">Definition 11.38 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán về phổ trọng số của mã tuyến tính</strong> (hay <strong>Задача о спектре весов линейного кода</strong>) <span class="math notranslate nohighlight">\(WS(H, t)\)</span> là bài toán nhận dạng trong code, với ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span>, có tồn tại hay không vector <span class="math notranslate nohighlight">\(c \in V_n(q)\)</span> có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span> và thỏa mãn <span class="math notranslate nohighlight">\(H c^\top = 0\)</span>.</p>
+</section>
+</div><div class="proof theorem admonition" id="theorem-47">
+<p class="admonition-title"><span class="caption-number">Theorem 11.2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>(theo <span id="id2">[<a class="reference internal" href="../intro.html#id16" title="E. Berlekamp, R. McEliece, and H. van Tilborg. On the inherent intractability of certain coding problems (corresp.). IEEE Transactions on Information Theory, 24(3):384-386, 1978. doi:10.1109/TIT.1978.1055873.">14</a>]</span>) Bài toán về phổ trọng số là NP-complete.</p>
+</section>
+</div></section>
+<section id="y-tuong-xay-dung-cac-he-mat-ma-dua-tren-ma-sua-sai">
+<h2><span class="section-number">11.6. </span>Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai<a class="headerlink" href="#y-tuong-xay-dung-cac-he-mat-ma-dua-tren-ma-sua-sai" title="Link to this heading">#</a></h2>
+<p>Đặt <span class="math notranslate nohighlight">\(G\)</span> là ma trận sinh của mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> có thể sửa <span class="math notranslate nohighlight">\(t\)</span> lỗi.</p>
+<p>Nếu code với ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> không có các cấu trúc đại số hoặc tổ hợp thì theo định lí trên về độ khó NP của bài toán nhận dạng syndrome decode, bài toán decode mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> là rất khó.</p>
+<p>Khi đó nếu mã hóa thông điệp <span class="math notranslate nohighlight">\(m\)</span> có thể thực hiện qua việc: <span class="math notranslate nohighlight">\(m \to c = m G + e\)</span>, <span class="math notranslate nohighlight">\(\mathrm{wt}(e) = t\)</span>, <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span>.</p>
+<p>Khi đó, cho trước vector <span class="math notranslate nohighlight">\(c\)</span>, việc tìm một vector <span class="math notranslate nohighlight">\(m\)</span> là bài toán decode trên mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận sinh <span class="math notranslate nohighlight">\(G\)</span>, không có các cấu trúc đại số hoặc tổ hợp. Suy ra việc phá mã rất khó.</p>
+<p>Vấn đề là ở phía bên việc tìm lại <span class="math notranslate nohighlight">\(m\)</span> từ <span class="math notranslate nohighlight">\(c\)</span> rất khó nên cần một phương án để decrypt lại thông điệp ban đầu.</p>
+</section>
+<section id="bai-toan-tuong-duong-cac-ma-tuyen-tinh">
+<h2><span class="section-number">11.7. </span>Bài toán tương đương các mã tuyến tính<a class="headerlink" href="#bai-toan-tuong-duong-cac-ma-tuyen-tinh" title="Link to this heading">#</a></h2>
+<section id="hoan-vi-va-tac-dong-cua-chung-len-tap-hop">
+<h3><span class="section-number">11.7.1. </span>Hoán vị và tác động của chúng lên tập hợp<a class="headerlink" href="#hoan-vi-va-tac-dong-cua-chung-len-tap-hop" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-48">
+<p class="admonition-title"><span class="caption-number">Definition 11.39 </span> ((Hoán vị))</p>
+<section class="definition-content" id="proof-content">
+<p>Xét <span class="math notranslate nohighlight">\(N\)</span> là tập hợp có <span class="math notranslate nohighlight">\(n\)</span> phần tử. Khi đó một <strong>hoán vị</strong> (hay <strong>permutation</strong>, <strong>постановка</strong>) <span class="math notranslate nohighlight">\(\sigma: N \to N\)</span> là một song ánh từ <span class="math notranslate nohighlight">\(N\)</span> tới <span class="math notranslate nohighlight">\(N\)</span>. Tập hợp tất cả hoán vị trên tập <span class="math notranslate nohighlight">\(N\)</span> được kí hiệu là <span class="math notranslate nohighlight">\(\mathcal{S}_N\)</span>. Nếu <span class="math notranslate nohighlight">\(N = \{ 1, 2, \ldots, n \}\)</span> thì ta có thể viết <span class="math notranslate nohighlight">\(\mathcal{S}_N = \mathcal{S}_n\)</span>.</p>
+</section>
+</div><p>Đặt <span class="math notranslate nohighlight">\(\sigma \in \mathcal{S}_n\)</span> là một hoán vị trên tập <span class="math notranslate nohighlight">\(\{ 1, \ldots, n \}\)</span>. Khi đó ta định nghĩa tác động của hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> lên vector <span class="math notranslate nohighlight">\(x \in V_n(q)\)</span>. Giả sử vector <span class="math notranslate nohighlight">\(x = (x_1, \ldots, x_n) \in V_n(q)\)</span>, ta định nghĩa tác động của hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> lên vector <span class="math notranslate nohighlight">\(x\)</span> như sau:</p>
+<div class="math notranslate nohighlight">
+\[x^\sigma = (x_{\sigma(1)}, x_{\sigma(2)}, \ldots, x_{\sigma(n)})\]</div>
+<p>Có thể thấy tác động của <span class="math notranslate nohighlight">\(\sigma\)</span> lên <span class="math notranslate nohighlight">\(V_n(q)\)</span> là tuyến tính, nghĩa là với mọi <span class="math notranslate nohighlight">\(\alpha, \beta \in \mathbb{F}_q\)</span> và với mọi vector <span class="math notranslate nohighlight">\(x, y \in V_n(q)\)</span> ta có:</p>
+<div class="math notranslate nohighlight">
+\[(\alpha \cdot x + \beta \cdot y)^\sigma = \alpha \cdot x^\sigma + \beta \cdot y^\sigma\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(U \subseteq V_n(q)\)</span> thì kí hiệu <span class="math notranslate nohighlight">\(U^\sigma\)</span> là tác động của hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> lên mỗi vector trong <span class="math notranslate nohighlight">\(U\)</span>, nghĩa là <span class="math notranslate nohighlight">\(U^\sigma = \{ x^\sigma \mid x \in U \}\)</span>.</p>
+<p>Do tính tuyến tính của tác động từ <span class="math notranslate nohighlight">\(\mathcal{S}_n\)</span> lên <span class="math notranslate nohighlight">\(V_n(q)\)</span>, nếu <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là <span class="math notranslate nohighlight">\([n, k, d]_q\)</span> code thì <span class="math notranslate nohighlight">\(\mathcal{C}^\sigma\)</span> cũng là <span class="math notranslate nohighlight">\([n, k, d]_q\)</span> code.</p>
+<p>Mỗi hoán vị <span class="math notranslate nohighlight">\(\sigma \in \mathcal{S}_n\)</span> có thể được viết thành dạng ma trận <span class="math notranslate nohighlight">\(n \times n\)</span> là <span class="math notranslate nohighlight">\(P_\sigma = (p_{ij})\)</span>. Khi đó phần tử <span class="math notranslate nohighlight">\(p_{ij} = 1\)</span> nếu <span class="math notranslate nohighlight">\(\sigma(j) = i\)</span>, các vị trí còn lại bằng <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<div class="proof example admonition" id="example-49">
+<p class="admonition-title"><span class="caption-number">Example 11.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với hoán vị <span class="math notranslate nohighlight">\(\sigma = \begin{pmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\ 4 &amp; 1 &amp; 5 &amp; 3 &amp; 2 \end{pmatrix}\)</span> thì ma trận tương ứng là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_\sigma = \begin{pmatrix}
+    0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+    0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+    1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+\end{pmatrix}\end{split}\]</div>
+<p>Khi đó tác động của <span class="math notranslate nohighlight">\(\sigma\)</span> lên vector <span class="math notranslate nohighlight">\(x\)</span> là <span class="math notranslate nohighlight">\(x^\sigma = x \cdot P_\sigma\)</span>.</p>
+<p>Như vậy, với mọi vector <span class="math notranslate nohighlight">\(x = (x_1, x_2, x_3, x_4, x_5)\)</span>, dưới tác động của <span class="math notranslate nohighlight">\(\sigma\)</span> bên trên ta có:</p>
+<div class="math notranslate nohighlight">
+\[x^\sigma = (x_{\sigma(1)}, x_{\sigma(2)}, x_{\sigma(3)}, x_{\sigma(4)}, x_{\sigma(5)}) = (x_4, x_1, x_5, x_3, x_2)\]</div>
+<p>Ta cũng thấy phép nhân vector <span class="math notranslate nohighlight">\(x\)</span> với ma trận <span class="math notranslate nohighlight">\(P_\sigma\)</span> cho kết quả:</p>
+<div class="math notranslate nohighlight">
+\[x \cdot P_\sigma = (x_4, x_1, x_5, x_3, x_2)\]</div>
+</section>
+</div></section>
+<section id="ma-tuong-duong-va-nhom-cac-automorphism-cua-ma-tuyen-tinh">
+<h3><span class="section-number">11.7.2. </span>Mã tương đương và nhóm các automorphism của mã tuyến tính<a class="headerlink" href="#ma-tuong-duong-va-nhom-cac-automorphism-cua-ma-tuyen-tinh" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-50">
+<p class="admonition-title"><span class="caption-number">Definition 11.40 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Hai <span class="math notranslate nohighlight">\([n]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}_1\)</span> và <span class="math notranslate nohighlight">\(\mathcal{C}_2\)</span> được gọi là <strong>tương đương</strong> (hay <strong>tương đương hoán vị</strong>, <strong>перестановочно эквивалентные</strong>) nếu tồn tại một hoán vị <span class="math notranslate nohighlight">\(\sigma \in \mathcal{S}_n\)</span> sao cho <span class="math notranslate nohighlight">\(\mathcal{C}_1 = \mathcal{C}_2^\sigma\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-51">
+<p class="admonition-title"><span class="caption-number">Definition 11.41 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Hai ma trận <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span> kích thước <span class="math notranslate nohighlight">\(k \times n\)</span> gọi là <strong>tương đương hoán vị</strong> nếu tồn tại ma trận <span class="math notranslate nohighlight">\(M\)</span> cỡ <span class="math notranslate nohighlight">\(k \times k\)</span> và hoán vị <span class="math notranslate nohighlight">\(\sigma \in \mathcal{S}_n\)</span> sao cho <span class="math notranslate nohighlight">\(M \cdot G_1 = G_2 \cdot \sigma\)</span>.</p>
+</section>
+</div></section>
+<section id="nhom-cac-automorphism-cua-code">
+<h3><span class="section-number">11.7.3. </span>Nhóm các automorphism của code<a class="headerlink" href="#nhom-cac-automorphism-cua-code" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-52">
+<p class="admonition-title"><span class="caption-number">Definition 11.42 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Automorphism</strong> của <span class="math notranslate nohighlight">\((n)_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> sao cho <span class="math notranslate nohighlight">\(\mathcal{C} = \mathcal{C}^\sigma\)</span>. Tập hợp tất cả automorphism của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> được kí hiệu là nhóm <span class="math notranslate nohighlight">\(PAut(\mathcal{C})\)</span> và được gọi là <strong>nhóm automorphism hoán vị</strong> hoặc đơn giản hơn là <strong>nhóm automorphism</strong> của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+</section>
+</div></section>
+<section id="bai-toan-ve-tinh-tuong-duong-giua-cac-ma-tuyen-tinh-nhi-phan">
+<h3><span class="section-number">11.7.4. </span>Bài toán về tính tương đương giữa các mã tuyến tính nhị phân<a class="headerlink" href="#bai-toan-ve-tinh-tuong-duong-giua-cac-ma-tuyen-tinh-nhi-phan" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-53">
+<p class="admonition-title"><span class="caption-number">Definition 11.43 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Bài toán về tính tương đương giữa các mã tuyến tuyến tính</strong> là bài toán nhận dạng tính chất tương đương giữa hai mã tuyến tính <span class="math notranslate nohighlight">\([n]_q\)</span> <span class="math notranslate nohighlight">\(\mathcal{C}_1\)</span> và <span class="math notranslate nohighlight">\(\mathcal{C}_2\)</span> với ma trận sinh tương ứng là <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span>.</p>
+<p><strong>Input:</strong> hai ma trận <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span> cỡ <span class="math notranslate nohighlight">\(k \times n\)</span>.</p>
+<p><strong>Output:</strong> hai ma trận <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span> có tương đương hoán vị hay không.</p>
+</section>
+</div><p>Sau đây chúng ta xem xét code nhị phân, tức <span class="math notranslate nohighlight">\(q = 2\)</span>.</p>
+<div class="proof definition dropdown admonition" id="definition-54">
+<p class="admonition-title"><span class="caption-number">Definition 11.44 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Interactive proof</strong> cho ngôn ngữ <span class="math notranslate nohighlight">\(L \subseteq \{ 0, 1 \}^\star\)</span> là cặp thuật toán (máy Turing) <span class="math notranslate nohighlight">\((\mathcal{P}, \mathcal{V})\)</span> thỏa mãn các điều kiện sau:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}\)</span> (<strong>prover</strong>) là bất kì máy Turing nào có tape riêng.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}\)</span> (<strong>verifier</strong>) là máy Turing xác suất đa thức có tape riêng.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> có chung tape, nói cách khác là <strong>tương tác</strong> (hay <strong>interactive</strong>).</p></li>
+<li><ol class="arabic simple" start="5">
+<li><ol class="arabic simple" start="6">
+<li><ol class="arabic simple" start="7">
+<li><p>Các điều kiện sẽ được nói sau.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+</div><div class="proof algorithm dropdown admonition" id="algorithm-55">
+<p class="admonition-title"><span class="caption-number">Algorithm 11.1 </span> (Interactive proof (Интерактивное доказательство) cho ngôn ngữ <span class="math notranslate nohighlight">\(cLEC\)</span>)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> ma trận <span class="math notranslate nohighlight">\(G_1\)</span> và <span class="math notranslate nohighlight">\(G_2\)</span> cỡ <span class="math notranslate nohighlight">\(k \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span></p>
+<p><strong>Output:</strong> hoặc <span class="math notranslate nohighlight">\(G_1 \not\sim G_2\)</span> , hoặc <span class="math notranslate nohighlight">\(G_1 \sim G_2\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(m \gets 2n \cdot k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}\)</span> chọn ngẫu nhiên (theo phân bố đều) <span class="math notranslate nohighlight">\(m\)</span> số <span class="math notranslate nohighlight">\(i_l \in \{ 1, 2 \}\)</span> với <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}\)</span> chọn ngẫu nhiên (theo phân bố đều) các ma trận khả nghịch <span class="math notranslate nohighlight">\(M_l\)</span> cỡ <span class="math notranslate nohighlight">\(k \times k\)</span> với <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span> và các hoán vị <span class="math notranslate nohighlight">\(\sigma_l \in \mathcal{S}_n\)</span> với <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}\)</span> tính <span class="math notranslate nohighlight">\(F_l = M_l G_{i_l} \sigma_l\)</span> với <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V} \to \mathcal{P} : (F_1, \ldots, F_m)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P}\)</span>: với mỗi ma trận <span class="math notranslate nohighlight">\(F_l\)</span>, <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span>, tính ma trận <span class="math notranslate nohighlight">\(G_{j_l}\)</span> với <span class="math notranslate nohighlight">\(j_l \in \{ 1, 2 \}\)</span> mà tương đương với <span class="math notranslate nohighlight">\(F_l\)</span>. Nếu không thể tính được thì verifier chọn ngẫu nhiên <span class="math notranslate nohighlight">\(j_l \in \{ 1, 2 \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{P} \to \mathcal{V} : (j_1, \ldots, j_m)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}\)</span>: nếu với mọi <span class="math notranslate nohighlight">\(l = 1, \ldots, m\)</span> thỏa đẳng thức <span class="math notranslate nohighlight">\(i_l = j_l\)</span> thì verifier trả về kết quả <span class="math notranslate nohighlight">\(G_1 \not\sim G_2\)</span>. Trường hợp ngược lại trả về <span class="math notranslate nohighlight">\(G_1 \sim G_2\)</span></p></li>
+</ol>
+</section>
+</div></section>
+<section id="dinh-li-ve-polynomial-time-reduction-cua-bai-toan-dang-cau-do-thi-den-bai-toan-su-tuong-duong-cua-ma">
+<h3><span class="section-number">11.7.5. </span>Định lí về polynomial-time reduction của bài toán đẳng cấu đồ thị đến bài toán sự tương đương của mã<a class="headerlink" href="#dinh-li-ve-polynomial-time-reduction-cua-bai-toan-dang-cau-do-thi-den-bai-toan-su-tuong-duong-cua-ma" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-56">
+<p class="admonition-title"><span class="caption-number">Definition 11.45 </span></p>
+<section class="definition-content" id="proof-content">
+<p><strong>Ma trận kề</strong> (hay <strong>матрица инцидентности</strong>) là ma trận nhị phân <span class="math notranslate nohighlight">\(D = (d_{ev})\)</span> cỡ <span class="math notranslate nohighlight">\(\lvert E \rvert \times \lvert V \rvert\)</span>, với <span class="math notranslate nohighlight">\(d_{ev} = 1\)</span> nếu <span class="math notranslate nohighlight">\(e = (u, v)\)</span> với <span class="math notranslate nohighlight">\(v\)</span> nào đó thuộc <span class="math notranslate nohighlight">\(V\)</span>, nghĩa là <span class="math notranslate nohighlight">\(d_{ev} = 1\)</span> khi và chỉ khi trên đồ thị có cạnh <span class="math notranslate nohighlight">\(e\)</span> xuất phát từ đỉnh <span class="math notranslate nohighlight">\(v\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-57">
+<p class="admonition-title"><span class="caption-number">Definition 11.46 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Hai đồ thị <span class="math notranslate nohighlight">\((E_1, V_1)\)</span> và <span class="math notranslate nohighlight">\((E_2, V_2)\)</span> được gọi là <strong>đẳng cấu</strong> (hay <strong>isomorphism</strong>) nếu tồn tại song ánh <span class="math notranslate nohighlight">\(\varphi : V_1 \to V_2\)</span> sao cho với mọi cặp đỉnh <span class="math notranslate nohighlight">\((u, v) \in E_1\)</span> thì cặp <span class="math notranslate nohighlight">\((\varphi(u), \varphi(v)) \in E_2\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-58">
+<p class="admonition-title"><span class="caption-number">Definition 11.47 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Bài toán xác định hai đồ thị, xác định bởi ma trận kề, có đẳng cấu với nhau hay không.</p>
+<p><strong>Input:</strong> hai ma trận nhị phân <span class="math notranslate nohighlight">\(D_1\)</span> và <span class="math notranslate nohighlight">\(D_2\)</span> cỡ <span class="math notranslate nohighlight">\(k \times n\)</span>.</p>
+<p><strong>Output:</strong> có tồn tại hay không các hoán vị <span class="math notranslate nohighlight">\(\gamma \in \mathcal{S}_k\)</span> và <span class="math notranslate nohighlight">\(\sigma \in \mathcal{S}_n\)</span> sao cho <span class="math notranslate nohighlight">\(D_1 = \gamma \cdot D_2 \cdot \sigma\)</span>.</p>
+</section>
+</div></section>
+</section>
+<section id="cac-he-mat-ma-khoa-cong-khai-dua-tren-ly-thuyet-ma">
+<h2><span class="section-number">11.8. </span>Các hệ mật mã khóa công khai dựa trên lý thuyết mã<a class="headerlink" href="#cac-he-mat-ma-khoa-cong-khai-dua-tren-ly-thuyet-ma" title="Link to this heading">#</a></h2>
+<section id="he-mat-ma-mceliece">
+<h3><span class="section-number">11.8.1. </span>Hệ mật mã McEliece<a class="headerlink" href="#he-mat-ma-mceliece" title="Link to this heading">#</a></h3>
+<p>Hệ mật mã McEliece được phát triển bởi R.J. Mceliece vào năm 1978 trong <span id="id3">[<a class="reference internal" href="../intro.html#id17" title="Robert J. McEliece. A public key cryptosystem based on algebraic coding theory. DSN Progress Report 42-44, 1978.">15</a>]</span>.</p>
+<section id="y-tuong-xay-dung">
+<h4><span class="section-number">11.8.1.1. </span>Ý tưởng xây dựng<a class="headerlink" href="#y-tuong-xay-dung" title="Link to this heading">#</a></h4>
+<p>Đặt <span class="math notranslate nohighlight">\(G\)</span> là ma trận sinh của mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> nào đó, sửa được <span class="math notranslate nohighlight">\(t\)</span> lỗi.</p>
+</section>
+<section id="tham-so">
+<h4><span class="section-number">11.8.1.2. </span>Tham số<a class="headerlink" href="#tham-so" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{C} = \{ \mathcal{C}_\lambda \}_{\lambda \in \Lambda}\)</span> là một họ các mã tuyến tính trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span> sao cho với mỗi code <span class="math notranslate nohighlight">\(C \in \mathcal{C}\)</span> có một thuật toán decode hiệu quả là <span class="math notranslate nohighlight">\(Decode\)</span> sửa được <span class="math notranslate nohighlight">\(t\)</span> lỗi. Ở đây <span class="math notranslate nohighlight">\(\Lambda \subseteq \{ 0, 1 \}^\star\)</span> là tập các giá trị của tham số code trong họ.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Sample(1^\lambda)\)</span> là thuật toán xác suất hiệu quả và детерминированный, sao cho với giá trị tham số <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span> cho ra ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> của code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>, số lượng lỗi <span class="math notranslate nohighlight">\(t\)</span> và thuật toán <span class="math notranslate nohighlight">\(Decode\)</span>, giải được bài toán decode trên mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận sinh <span class="math notranslate nohighlight">\(G\)</span> và kênh truyền có <span class="math notranslate nohighlight">\(t\)</span> lỗi. Kí hiệu <span class="math notranslate nohighlight">\(\mathcal{G} = \{ G_\lambda \}_{\lambda \in \Lambda}\)</span> là tập tất cả ma trận sinh cho ra thuật toán <span class="math notranslate nohighlight">\(Sample(1^\lambda)\)</span> cho mọi trường hợp tham số <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>.</p></li>
+</ul>
+</section>
+<section id="thuat-toan-sinh-khoa-gen">
+<h4><span class="section-number">11.8.1.3. </span>Thuật toán sinh khóa (Gen)<a class="headerlink" href="#thuat-toan-sinh-khoa-gen" title="Link to this heading">#</a></h4>
+<p>Private key gồm:</p>
+<ol class="arabic simple">
+<li><p>Ma trận <span class="math notranslate nohighlight">\(M \in \mathrm{GL}_q(k)\)</span> không suy biến cỡ <span class="math notranslate nohighlight">\(k \times k\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(G \in V_{k \times n}(q)\)</span> là ma trận sinh của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P \in \mathcal{S}_n\)</span> là hoán vị trên tập <span class="math notranslate nohighlight">\(\{ 1, \ldots, n \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Decode\)</span> là thuật toán decode trên mã <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> là số lỗi được sửa bởi thuật toán <span class="math notranslate nohighlight">\(Decode\)</span></p></li>
+</ol>
+<p>Public key gồm:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(G_{pub} = M \cdot G \cdot P \in V_{k \times n}(q)\)</span> là ma trận sinh của code tương đương với code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> là số lỗi được decode bởi <span class="math notranslate nohighlight">\(Decode\)</span></p></li>
+</ol>
+</section>
+<section id="thuat-toan-ma-hoa-enc">
+<h4><span class="section-number">11.8.1.4. </span>Thuật toán mã hóa (Enc)<a class="headerlink" href="#thuat-toan-ma-hoa-enc" title="Link to this heading">#</a></h4>
+<p>Thuật toán mã hóa nhận đầu vào là thông điệp <span class="math notranslate nohighlight">\(m \in V_k(q)\)</span> và trả về ciphertext <span class="math notranslate nohighlight">\(c \in V_n(q)\)</span>.</p>
+<p>Để mã hóa, chọn ngẫu nhiên vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> độ dài <span class="math notranslate nohighlight">\(n\)</span> và có trọng số Hamming bằng <span class="math notranslate nohighlight">\(t\)</span>. Khi đó ta tính ciphertext:</p>
+<div class="math notranslate nohighlight">
+\[c = m \cdot G_{pub} + e\]</div>
+</section>
+<section id="thuat-toan-giai-ma-dec">
+<h4><span class="section-number">11.8.1.5. </span>Thuật toán giải mã (Dec)<a class="headerlink" href="#thuat-toan-giai-ma-dec" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Tính <span class="math notranslate nohighlight">\(b \gets c \cdot P^{-1}\)</span></p></li>
+<li><p>Tính <span class="math notranslate nohighlight">\(u \gets Decode(b)\)</span></p></li>
+<li><p>Tính <span class="math notranslate nohighlight">\(m \gets u \cdot M^{-1}\)</span></p></li>
+</ol>
+<p>Khi đó <span class="math notranslate nohighlight">\(m\)</span> là plaintext ban đầu.</p>
+</section>
+</section>
+<section id="he-mat-ma-niederreiter">
+<h3><span class="section-number">11.8.2. </span>Hệ mật mã Niederreiter<a class="headerlink" href="#he-mat-ma-niederreiter" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4><span class="section-number">11.8.2.1. </span>Tham số<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{C} = \{ \mathcal{C}_\lambda \}_{\lambda \in \Lambda}\)</span> là một họ các mã tuyến tính trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span> sao cho với mỗi code <span class="math notranslate nohighlight">\(C \in \mathcal{C}\)</span> có một thuật toán decode hiệu quả là <span class="math notranslate nohighlight">\(Decode\)</span> sửa được <span class="math notranslate nohighlight">\(t\)</span> lỗi. Ở đây <span class="math notranslate nohighlight">\(\Lambda \subseteq \{ 0, 1 \}^\star\)</span> là tập các giá trị của tham số code trong họ.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Sample(1^\lambda)\)</span> là thuật toán xác suất hiệu quả và детерминированный, sao cho với giá trị tham số <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span> cho ra ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> của code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>, số lượng lỗi <span class="math notranslate nohighlight">\(t\)</span> và thuật toán <span class="math notranslate nohighlight">\(SDecode\)</span>, giải được bài toán syndrome decode trên mã tuyến tính <span class="math notranslate nohighlight">\([n, k]_q\)</span> với ma trận parity-check <span class="math notranslate nohighlight">\(H\)</span> và kênh truyền có <span class="math notranslate nohighlight">\(t\)</span> lỗi. Kí hiệu <span class="math notranslate nohighlight">\(\mathcal{H} = \{ H_\lambda \}_{\lambda \in \Lambda}\)</span> là tập tất cả ma trận parity-check cho ra thuật toán <span class="math notranslate nohighlight">\(Sample(1^\lambda)\)</span> cho mọi trường hợp tham số <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h4><span class="section-number">11.8.2.2. </span>Thuật toán sinh khóa (Gen)<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Private key gồm:</p>
+<ol class="arabic simple">
+<li><p>Ma trận <span class="math notranslate nohighlight">\(M \in \mathrm{GL}_q(r)\)</span> cỡ <span class="math notranslate nohighlight">\(r \times r\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_q\)</span>, với <span class="math notranslate nohighlight">\(r = n - k\)</span> là số kí tự kiểm tra của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H \in V_{r \times n}(q)\)</span> là ma trận parity-check của <span class="math notranslate nohighlight">\([n, k]_q\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P \in \mathcal{S}_n\)</span> là hoán vị trên <span class="math notranslate nohighlight">\(\{ 1, \ldots, n \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(SDecode\)</span> là thuật toán syndrome decode trên code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> là số lượng lỗi có thể sửa bởi <span class="math notranslate nohighlight">\(SDecode\)</span>.</p></li>
+</ol>
+<p>Public key gồm:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(H_{pub} = M \cdot H \cdot P \in V_{k \times n}(q)\)</span> là ma trận parity-check của code mới tương đương với code <span class="math notranslate nohighlight">\(\mathcal{C}_\lambda\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> là số lượng lỗi có thể sửa bởi <span class="math notranslate nohighlight">\(SDecode\)</span>.</p></li>
+</ol>
+</section>
+<section id="id6">
+<h4><span class="section-number">11.8.2.3. </span>Thuật toán mã hóa (Enc)<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Plaintext được biểu diễn thành vector <span class="math notranslate nohighlight">\(m \in V_l(q)\)</span> với <span class="math notranslate nohighlight">\(l = \lfloor \log_q ((q - 1)^t \binom{n}{t}) \rfloor\)</span>. Ciphertext là vector <span class="math notranslate nohighlight">\(c \in V_r(q)\)</span>.</p>
+<p>Ta cần ánh xạ <span class="math notranslate nohighlight">\(\varphi_{n, t, q} : V_l(q) \to V_n(q)\)</span> là đơn ánh, với mỗi <span class="math notranslate nohighlight">\(m \in V_l(q)\)</span> cho ra vector <span class="math notranslate nohighlight">\(e \in V_n(q)\)</span> có trọng số Hamming là <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(e \gets \varphi_{n, t, q}(m)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c \gets e \cdot H_{pub}^\top\)</span></p></li>
+</ol>
+</section>
+<section id="id7">
+<h4><span class="section-number">11.8.2.4. </span>Thuật toán giải mã (Dec)<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Đẻ giải mã ta cần ánh xạ <span class="math notranslate nohighlight">\(\varphi_{n, t, q}^{-1}\)</span> là ánh xạ ngược của <span class="math notranslate nohighlight">\(\varphi_{n, t, q}\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(s \gets M^{-1} c^\top\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e \gets SDecode(c)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e \gets e \cdot P\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \gets \varphi^{-1}_{n, t, q}(e)\)</span></p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cryptography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lattice-based.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Lattice-based cryptography</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../vasilenko/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Теоретико-числовые алгоритмы в криптографии</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">11.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-decode-tong-quat">11.2. Bài toán decode tổng quát</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuyen-tinh-linear-code">11.3. Mã tuyến tính (Linear code)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tran-sinh">11.3.1. Ma trận sinh</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coder">11.3.2. Coder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tran-kiem-tra">11.3.3. Ma trận kiểm tra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuyen-tinh">11.3.4. Mã tuyến tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dual-code-ma-doi-ngau-va-kiem-tra-chan-le-check-parity">11.3.5. Dual code (mã đối ngẫu) và kiểm tra chẵn lẻ (check-parity)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-decode-tren-ma-tuyen-tinh">11.4. Bài toán decode trên mã tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-pho-trong-so-cua-ma-tuyen-tinh">11.5. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong-xay-dung-cac-he-mat-ma-dua-tren-ma-sua-sai">11.6. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-tuong-duong-cac-ma-tuyen-tinh">11.7. Bài toán tương đương các mã tuyến tính</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoan-vi-va-tac-dong-cua-chung-len-tap-hop">11.7.1. Hoán vị và tác động của chúng lên tập hợp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-tuong-duong-va-nhom-cac-automorphism-cua-ma-tuyen-tinh">11.7.2. Mã tương đương và nhóm các automorphism của mã tuyến tính</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-cac-automorphism-cua-code">11.7.3. Nhóm các automorphism của code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-toan-ve-tinh-tuong-duong-giua-cac-ma-tuyen-tinh-nhi-phan">11.7.4. Bài toán về tính tương đương giữa các mã tuyến tính nhị phân</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinh-li-ve-polynomial-time-reduction-cua-bai-toan-dang-cau-do-thi-den-bai-toan-su-tuong-duong-cua-ma">11.7.5. Định lí về polynomial-time reduction của bài toán đẳng cấu đồ thị đến bài toán sự tương đương của mã</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-he-mat-ma-khoa-cong-khai-dua-tren-ly-thuyet-ma">11.8. Các hệ mật mã khóa công khai dựa trên lý thuyết mã</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-mat-ma-mceliece">11.8.1. Hệ mật mã McEliece</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong-xay-dung">11.8.1.1. Ý tưởng xây dựng</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tham-so">11.8.1.2. Tham số</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-gen">11.8.1.3. Thuật toán sinh khóa (Gen)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-ma-hoa-enc">11.8.1.4. Thuật toán mã hóa (Enc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-giai-ma-dec">11.8.1.5. Thuật toán giải mã (Dec)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#he-mat-ma-niederreiter">11.8.2. Hệ mật mã Niederreiter</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.8.2.1. Tham số</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">11.8.2.2. Thuật toán sinh khóa (Gen)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">11.8.2.3. Thuật toán mã hóa (Enc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">11.8.2.4. Thuật toán giải mã (Dec)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
