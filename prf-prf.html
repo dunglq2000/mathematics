@@ -221,19 +221,22 @@
 <li class="toctree-l2"><a class="reference internal" href="cryptography/kuznyechik.html">7.2. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">8. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">9. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/code-based.html">11. Code-based cryptography</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="vasilenko/intro.html">10. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="vasilenko/discrete-fourier-transform.html">10.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="vasilenko/discrete-fourier-transform.html">12.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
 
     </div>
@@ -389,6 +392,7 @@ document.write(`
    <div class="modindex-jumpbox">
    <a href="#cap-algorithm-2"><strong>algorithm-2</strong></a> | 
    <a href="#cap-algorithm-5"><strong>algorithm-5</strong></a> | 
+   <a href="#cap-algorithm-55"><strong>algorithm-55</strong></a> | 
    <a href="#cap-algorithm-8"><strong>algorithm-8</strong></a> | 
    <a href="#cap-corollary-6"><strong>corollary-6</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
@@ -402,18 +406,42 @@ document.write(`
    <a href="#cap-definition-16"><strong>definition-16</strong></a> | 
    <a href="#cap-definition-17"><strong>definition-17</strong></a> | 
    <a href="#cap-definition-18"><strong>definition-18</strong></a> | 
+   <a href="#cap-definition-19"><strong>definition-19</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-definition-20"><strong>definition-20</strong></a> | 
    <a href="#cap-definition-21"><strong>definition-21</strong></a> | 
    <a href="#cap-definition-22"><strong>definition-22</strong></a> | 
    <a href="#cap-definition-23"><strong>definition-23</strong></a> | 
    <a href="#cap-definition-24"><strong>definition-24</strong></a> | 
+   <a href="#cap-definition-25"><strong>definition-25</strong></a> | 
    <a href="#cap-definition-26"><strong>definition-26</strong></a> | 
+   <a href="#cap-definition-27"><strong>definition-27</strong></a> | 
    <a href="#cap-definition-28"><strong>definition-28</strong></a> | 
    <a href="#cap-definition-29"><strong>definition-29</strong></a> | 
    <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
+   <a href="#cap-definition-30"><strong>definition-30</strong></a> | 
    <a href="#cap-definition-31"><strong>definition-31</strong></a> | 
+   <a href="#cap-definition-32"><strong>definition-32</strong></a> | 
+   <a href="#cap-definition-33"><strong>definition-33</strong></a> | 
+   <a href="#cap-definition-37"><strong>definition-37</strong></a> | 
+   <a href="#cap-definition-38"><strong>definition-38</strong></a> | 
    <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
+   <a href="#cap-definition-40"><strong>definition-40</strong></a> | 
+   <a href="#cap-definition-41"><strong>definition-41</strong></a> | 
+   <a href="#cap-definition-42"><strong>definition-42</strong></a> | 
+   <a href="#cap-definition-43"><strong>definition-43</strong></a> | 
+   <a href="#cap-definition-44"><strong>definition-44</strong></a> | 
+   <a href="#cap-definition-46"><strong>definition-46</strong></a> | 
+   <a href="#cap-definition-48"><strong>definition-48</strong></a> | 
    <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
+   <a href="#cap-definition-50"><strong>definition-50</strong></a> | 
+   <a href="#cap-definition-51"><strong>definition-51</strong></a> | 
+   <a href="#cap-definition-52"><strong>definition-52</strong></a> | 
+   <a href="#cap-definition-53"><strong>definition-53</strong></a> | 
+   <a href="#cap-definition-54"><strong>definition-54</strong></a> | 
+   <a href="#cap-definition-56"><strong>definition-56</strong></a> | 
+   <a href="#cap-definition-57"><strong>definition-57</strong></a> | 
+   <a href="#cap-definition-58"><strong>definition-58</strong></a> | 
    <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
    <a href="#cap-definition-7"><strong>definition-7</strong></a> | 
    <a href="#cap-definition-8"><strong>definition-8</strong></a> | 
@@ -432,6 +460,7 @@ document.write(`
    <a href="#cap-example-25"><strong>example-25</strong></a> | 
    <a href="#cap-example-3"><strong>example-3</strong></a> | 
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
+   <a href="#cap-example-49"><strong>example-49</strong></a> | 
    <a href="#cap-example-5"><strong>example-5</strong></a> | 
    <a href="#cap-example-6"><strong>example-6</strong></a> | 
    <a href="#cap-example-7"><strong>example-7</strong></a> | 
@@ -441,6 +470,7 @@ document.write(`
    <a href="#cap-lemma-10"><strong>lemma-10</strong></a> | 
    <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
    <a href="#cap-lemma-4"><strong>lemma-4</strong></a> | 
+   <a href="#cap-lemma-7"><strong>lemma-7</strong></a> | 
    <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
    <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
    <a href="#cap-remark-10"><strong>remark-10</strong></a> | 
@@ -449,10 +479,16 @@ document.write(`
    <a href="#cap-remark-15"><strong>remark-15</strong></a> | 
    <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
    <a href="#cap-remark-21"><strong>remark-21</strong></a> | 
+   <a href="#cap-remark-23"><strong>remark-23</strong></a> | 
    <a href="#cap-remark-27"><strong>remark-27</strong></a> | 
    <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
    <a href="#cap-remark-30"><strong>remark-30</strong></a> | 
+   <a href="#cap-remark-31"><strong>remark-31</strong></a> | 
    <a href="#cap-remark-32"><strong>remark-32</strong></a> | 
+   <a href="#cap-remark-34"><strong>remark-34</strong></a> | 
+   <a href="#cap-remark-35"><strong>remark-35</strong></a> | 
+   <a href="#cap-remark-36"><strong>remark-36</strong></a> | 
+   <a href="#cap-remark-39"><strong>remark-39</strong></a> | 
    <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
    <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
    <a href="#cap-remark-6"><strong>remark-6</strong></a> | 
@@ -465,6 +501,8 @@ document.write(`
    <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
    <a href="#cap-theorem-20"><strong>theorem-20</strong></a> | 
    <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
+   <a href="#cap-theorem-45"><strong>theorem-45</strong></a> | 
+   <a href="#cap-theorem-47"><strong>theorem-47</strong></a> | 
    <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
    <a href="#cap-theorem-7"><strong>theorem-7</strong></a> | 
    <a href="#cap-theorem-9"><strong>theorem-9</strong></a>
@@ -486,6 +524,14 @@ document.write(`
        <td></td>
        <td>
        <a href="discrete-mathematics/linear-feedback-shift-register.html#algorithm-5"><code class="xref">algorithm-5</code></a> <em>(discrete-mathematics/linear-feedback-shift-register)</em></td><td>
+       <em>algorithm</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-algorithm-55"><td></td><td>
+       <strong>algorithm-55</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#algorithm-55"><code class="xref">algorithm-55</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-algorithm-8"><td></td><td>
@@ -581,7 +627,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-17"><code class="xref">definition-17</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="cryptography/code-based.html#definition-17"><code class="xref">definition-17</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-18"><td></td><td>
@@ -589,7 +635,15 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-18"><code class="xref">definition-18</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="cryptography/code-based.html#definition-18"><code class="xref">definition-18</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-19"><td></td><td>
+       <strong>definition-19</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-19"><code class="xref">definition-19</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-2"><td></td><td>
@@ -598,6 +652,14 @@ document.write(`
        <td></td>
        <td>
        <a href="discrete-mathematics/ring-and-field.html#definition-2"><code class="xref">definition-2</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-20"><td></td><td>
+       <strong>definition-20</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-20"><code class="xref">definition-20</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-21"><td></td><td>
@@ -632,12 +694,28 @@ document.write(`
        <a href="probability/intro.html#definition-24"><code class="xref">definition-24</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-25"><td></td><td>
+       <strong>definition-25</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-25"><code class="xref">definition-25</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-26"><td></td><td>
        <strong>definition-26</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="probability/intro.html#definition-26"><code class="xref">definition-26</code></a> <em>(probability/intro)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-27"><td></td><td>
+       <strong>definition-27</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-27"><code class="xref">definition-27</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-28"><td></td><td>
@@ -664,12 +742,52 @@ document.write(`
        <a href="probability/intro.html#definition-3"><code class="xref">definition-3</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-30"><td></td><td>
+       <strong>definition-30</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-30"><code class="xref">definition-30</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-31"><td></td><td>
        <strong>definition-31</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="probability/intro.html#definition-31"><code class="xref">definition-31</code></a> <em>(probability/intro)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-32"><td></td><td>
+       <strong>definition-32</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-32"><code class="xref">definition-32</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-33"><td></td><td>
+       <strong>definition-33</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-33"><code class="xref">definition-33</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-37"><td></td><td>
+       <strong>definition-37</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-37"><code class="xref">definition-37</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-38"><td></td><td>
+       <strong>definition-38</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-38"><code class="xref">definition-38</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-4"><td></td><td>
@@ -680,12 +798,132 @@ document.write(`
        <a href="discrete-mathematics/ring-and-field.html#definition-4"><code class="xref">definition-4</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-40"><td></td><td>
+       <strong>definition-40</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-40"><code class="xref">definition-40</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-41"><td></td><td>
+       <strong>definition-41</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-41"><code class="xref">definition-41</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-42"><td></td><td>
+       <strong>definition-42</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-42"><code class="xref">definition-42</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-43"><td></td><td>
+       <strong>definition-43</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-43"><code class="xref">definition-43</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-44"><td></td><td>
+       <strong>definition-44</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-44"><code class="xref">definition-44</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-46"><td></td><td>
+       <strong>definition-46</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-46"><code class="xref">definition-46</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-48"><td></td><td>
+       <strong>definition-48</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-48"><code class="xref">definition-48</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-5"><td></td><td>
        <strong>definition-5</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="discrete-mathematics/ring-and-field.html#definition-5"><code class="xref">definition-5</code></a> <em>(discrete-mathematics/ring-and-field)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-50"><td></td><td>
+       <strong>definition-50</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-50"><code class="xref">definition-50</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-51"><td></td><td>
+       <strong>definition-51</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-51"><code class="xref">definition-51</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-52"><td></td><td>
+       <strong>definition-52</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-52"><code class="xref">definition-52</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-53"><td></td><td>
+       <strong>definition-53</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-53"><code class="xref">definition-53</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-54"><td></td><td>
+       <strong>definition-54</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-54"><code class="xref">definition-54</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-56"><td></td><td>
+       <strong>definition-56</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-56"><code class="xref">definition-56</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-57"><td></td><td>
+       <strong>definition-57</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-57"><code class="xref">definition-57</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-58"><td></td><td>
+       <strong>definition-58</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#definition-58"><code class="xref">definition-58</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-6"><td></td><td>
@@ -832,6 +1070,14 @@ document.write(`
        <a href="probability/intro.html#example-4"><code class="xref">example-4</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-49"><td></td><td>
+       <strong>example-49</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#example-49"><code class="xref">example-49</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-5"><td></td><td>
        <strong>example-5</strong></td><td></td></tr>
      <tr>
@@ -904,6 +1150,14 @@ document.write(`
        <a href="vasilenko/discrete-fourier-transform.html#lemma-4"><code class="xref">lemma-4</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-lemma-7"><td></td><td>
+       <strong>lemma-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#lemma-7"><code class="xref">lemma-7</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-0"><td></td><td>
        <strong>remark-0</strong></td><td></td></tr>
      <tr>
@@ -968,6 +1222,14 @@ document.write(`
        <a href="algebra/algebra.html#remark-21"><code class="xref">remark-21</code></a> <em>(algebra/algebra)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-23"><td></td><td>
+       <strong>remark-23</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-23"><code class="xref">remark-23</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-27"><td></td><td>
        <strong>remark-27</strong></td><td></td></tr>
      <tr>
@@ -992,12 +1254,52 @@ document.write(`
        <a href="probability/intro.html#remark-30"><code class="xref">remark-30</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-31"><td></td><td>
+       <strong>remark-31</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-31"><code class="xref">remark-31</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-32"><td></td><td>
        <strong>remark-32</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="probability/intro.html#remark-32"><code class="xref">remark-32</code></a> <em>(probability/intro)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-34"><td></td><td>
+       <strong>remark-34</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-34"><code class="xref">remark-34</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-35"><td></td><td>
+       <strong>remark-35</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-35"><code class="xref">remark-35</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-36"><td></td><td>
+       <strong>remark-36</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-36"><code class="xref">remark-36</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-39"><td></td><td>
+       <strong>remark-39</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#remark-39"><code class="xref">remark-39</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-4"><td></td><td>
@@ -1094,6 +1396,22 @@ document.write(`
        <td></td>
        <td>
        <a href="vasilenko/discrete-fourier-transform.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-45"><td></td><td>
+       <strong>theorem-45</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#theorem-45"><code class="xref">theorem-45</code></a> <em>(cryptography/code-based)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-47"><td></td><td>
+       <strong>theorem-47</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="cryptography/code-based.html#theorem-47"><code class="xref">theorem-47</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-5"><td></td><td>

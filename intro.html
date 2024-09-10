@@ -218,19 +218,22 @@
 <li class="toctree-l2"><a class="reference internal" href="cryptography/kuznyechik.html">7.2. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">8. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">9. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/code-based.html">11. Code-based cryptography</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="vasilenko/intro.html">10. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="vasilenko/discrete-fourier-transform.html">10.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="vasilenko/discrete-fourier-transform.html">12.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
 
     </div>
@@ -475,20 +478,23 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cryptography/intro.html">6. Đại số boolean và mật mã học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cryptography/block-cipher.html">7. Block cipher</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">8. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">9. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptography/code-based.html">11. Code-based cryptography</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="vasilenko/intro.html">10. Теоретико-числовые алгоритмы в криптографии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
 </div>
 </section>
@@ -548,8 +554,16 @@ document.write(`
 <span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
 <p>Steven D Galbraith. <em>Mathematics of Public Key Cryptography</em>. Cambridge University, 2018.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
+<div class="citation" id="id16" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
+<p>E. Berlekamp, R. McEliece, and H. van Tilborg. On the inherent intractability of certain coding problems (corresp.). <em>IEEE Transactions on Information Theory</em>, 24(3):384–386, 1978. <a class="reference external" href="https://doi.org/10.1109/TIT.1978.1055873">doi:10.1109/TIT.1978.1055873</a>.</p>
+</div>
+<div class="citation" id="id17" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
+<p>Robert J. McEliece. A public key cryptosystem based on algebraic coding theory. <em>DSN Progress Report 42-44</em>, 1978.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
 <p>Василенко О. Н. <em>Теоретико-числовые алгоритмы в криптографии</em>. МЦНМО, 2003.</p>
 </div>
 </div>

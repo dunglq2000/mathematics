@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8. Phá mã vi sai trên TinyDES &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/differential-attack/tinydes';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9. Quantum computing" href="../quantum-computing.html" />
+    <link rel="prev" title="7.2. Kuznyechik" href="../kuznyechik.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">4. Số học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">6. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../block-cipher.html">7. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../magma.html">7.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kuznyechik.html">7.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-based.html">11. Code-based cryptography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">12.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/differential-attack/tinydes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/cryptography/differential-attack/tinydes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Phá mã vi sai trên TinyDES</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">8.1. Mô tả TinyDES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">8.2.1. Phép XOR key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">8.2.2. Phép PBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">8.2.3. Phép Expand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">8.2.4. Phép SBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">8.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">8.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">8.3.1. Chosen plaintext phần một</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">8.3.2. Chosen plaintext phần hai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">8.3.3. Final attack</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pha-ma-vi-sai-tren-tinydes">
+<h1><span class="section-number">8. </span>Phá mã vi sai trên TinyDES<a class="headerlink" href="#pha-ma-vi-sai-tren-tinydes" title="Link to this heading">#</a></h1>
+<p>Phá mã vi sai (differential cryptanalysis) đã làm chuẩn mã hóa DES không còn đủ an toàn.</p>
+<p>Trong các chuẩn mã hóa hiện đại về sau, khả năng kháng phá mã vi sai và phá mã tuyến tính trở thành tiêu chuẩn đánh giá độ an toàn của thuật toán mã hóa.</p>
+<section id="mo-ta-tinydes">
+<h2><span class="section-number">8.1. </span>Mô tả TinyDES<a class="headerlink" href="#mo-ta-tinydes" title="Link to this heading">#</a></h2>
+<p>TinyDES là một phiên bản thu nhỏ của chuẩn mã hóa DES. TinyDES là mã hóa khối theo mô hình Feistel, kích thước khối là <span class="math notranslate nohighlight">\(8\)</span> bit, kích thước khóa cũng là <span class="math notranslate nohighlight">\(8\)</span> bit. Mỗi vòng khóa con có độ dài <span class="math notranslate nohighlight">\(6\)</span> bit.</p>
+<figure class="align-default" id="id2">
+<img alt="../../_images/blocky.jpg" src="../../_images/blocky.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">Một vòng TinyDES</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Mã TinyDES khá đơn giản. Theo mô hình Feistel, khối đầu vào <span class="math notranslate nohighlight">\(8\)</span> bit được chia thành hai nửa trái phải <span class="math notranslate nohighlight">\(4\)</span> bit. Nửa phải sẽ đi qua các hàm Expand, SBox và PBox, sau đó XOR với nửa trái để được nửa phải mới. Còn nửa trái mới là nửa phải cũ. Tóm lại
+công thức mô hình Feistel là:</p>
+<div class="math notranslate nohighlight">
+\[L_{i+1} = R_i, \quad R_{i+1} = L_i \oplus F(R_i, K_{i+1})\]</div>
+<p>với <span class="math notranslate nohighlight">\(i = 1, 2, 3\)</span> tương ứng <span class="math notranslate nohighlight">\(3\)</span> vòng với đầu vào của khối là <span class="math notranslate nohighlight">\((L_0, R_0)\)</span>.</p>
+<p>Chúng ta cần các động tác sau:</p>
+<ol class="arabic simple">
+<li><p>Expand: mở rộng và hoán vị <span class="math notranslate nohighlight">\(R_i\)</span> từ <span class="math notranslate nohighlight">\(4\)</span> bit lên <span class="math notranslate nohighlight">\(6\)</span> bit. Giả sử <span class="math notranslate nohighlight">\(4\)</span> bit của <span class="math notranslate nohighlight">\(R_i\)</span> là <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3\)</span> thì kết quả sau khi Expand là <span class="math notranslate nohighlight">\(b_2 b_3 b_1 b_2 b_1 b_0\)</span>.</p></li>
+<li><p>SBox: gọi <span class="math notranslate nohighlight">\(6\)</span> bit đầu vào là <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3 b_4 b_5\)</span>. Khi đó ta tra cứu theo bảng SBox với <span class="math notranslate nohighlight">\(b_0 b_5\)</span> chỉ số <strong>hàng</strong>, <span class="math notranslate nohighlight">\(b_1 b_2 b_3 b_4\)</span> chỉ số <strong>cột</strong>. Nói cách khác bảng SBox có <span class="math notranslate nohighlight">\(4\)</span> hàng, <span class="math notranslate nohighlight">\(16\)</span> cột. Kết quả của SBox là một số <span class="math notranslate nohighlight">\(4\)</span> bit.</p></li>
+<li><p>PBox: là hàm hoán vị <span class="math notranslate nohighlight">\(4\)</span> bit <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3\)</span> thành <span class="math notranslate nohighlight">\(b_2 b_0 b_3 b_1\)</span>.</p></li>
+</ol>
+<p>Như vậy, hàm <span class="math notranslate nohighlight">\(F\)</span> của mô hình Feistel đối với mã TinyDES là:</p>
+<div class="math notranslate nohighlight">
+\[F(R_i, K_i) = \text{PBox}(\text{SBox}(\text{Expand}(R_i) \oplus K_{i+1}))\]</div>
+<p>Để sinh khóa con cho 3 vòng, khóa ban đầu được chia thành hai nửa trái phải lần lượt là <span class="math notranslate nohighlight">\(KL_0\)</span> và <span class="math notranslate nohighlight">\(KR_0\)</span>. TinyDES thực hiện như sau:</p>
+<ol class="arabic simple">
+<li><p>Vòng 1: <span class="math notranslate nohighlight">\(KL_0\)</span> và <span class="math notranslate nohighlight">\(KR_0\)</span> được dịch vòng trái 1 bit để được <span class="math notranslate nohighlight">\(KL_1\)</span> và <span class="math notranslate nohighlight">\(KR_1\)</span>;</p></li>
+<li><p>Vòng 2: <span class="math notranslate nohighlight">\(KL_1\)</span> và <span class="math notranslate nohighlight">\(KR_1\)</span> được dịch vòng trái 2 bit để được <span class="math notranslate nohighlight">\(KL_2\)</span> và <span class="math notranslate nohighlight">\(KR_2\)</span>;</p></li>
+<li><p>Vòng 3: <span class="math notranslate nohighlight">\(KL_2\)</span> và <span class="math notranslate nohighlight">\(KR_2\)</span> được dịch vòng trái 1 bit để được <span class="math notranslate nohighlight">\(KL_3\)</span> và <span class="math notranslate nohighlight">\(KR_3\)</span>.</p></li>
+</ol>
+<p>Khi đó, khóa <span class="math notranslate nohighlight">\(K_i\)</span> ở vòng thứ <span class="math notranslate nohighlight">\(i\)</span> (với <span class="math notranslate nohighlight">\(i = 1, 2, 3\)</span>) là hoán vị và nén 8 bit của <span class="math notranslate nohighlight">\(KL_i\)</span> và <span class="math notranslate nohighlight">\(KR_i\)</span> lại thành 6 bit. Đặt 8 bit khi ghép <span class="math notranslate nohighlight">\(KL_i \Vert KR_i\)</span> là <span class="math notranslate nohighlight">\(k_0 k_1 k_2 k_3 k_4 k_5 k_6 k_7\)</span>, kết quả là 6 bit <span class="math notranslate nohighlight">\(k_5 k_1 k_3 k_2 k_7 k_0\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tindeys.py</span>
+
+<span class="n">sbox</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span>
+    <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span>
+    <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0xD</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span>
+    <span class="mh">0xF</span><span class="p">,</span> <span class="mh">0xC</span><span class="p">,</span> <span class="mh">0x8</span><span class="p">,</span> <span class="mh">0x2</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x9</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x7</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">,</span> <span class="mh">0xB</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xE</span><span class="p">,</span> <span class="mh">0xA</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x6</span><span class="p">,</span> <span class="mh">0xD</span>
+<span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">Xor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span>
+
+
+<span class="k">def</span> <span class="nf">Expand</span><span class="p">(</span><span class="n">R</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">SBox</span><span class="p">(</span><span class="n">R</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">5</span><span class="p">]])),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">col</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#eturn list(map(int, bin(sbox[row*16 + col])[2:].zfill(4)))</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">sbox</span><span class="p">[</span><span class="n">row</span><span class="o">*</span><span class="mi">16</span> <span class="o">+</span> <span class="n">col</span><span class="p">],</span> <span class="s2">&quot;04b&quot;</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">PBox</span><span class="p">(</span><span class="n">R</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">PBox_inv</span><span class="p">(</span><span class="n">R</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">Compress</span><span class="p">(</span><span class="n">K</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">round</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">K</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">K</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="nb">round</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">round</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">left</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">right</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">round</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="n">left</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="n">right</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">Ki</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+    <span class="k">return</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="p">[</span><span class="n">Ki</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">Ki</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Ki</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">Ki</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Ki</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">Ki</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+
+<span class="k">def</span> <span class="nf">encrypt_block</span><span class="p">(</span><span class="n">plaintext</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">key</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">key</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">Compress</span><span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">plaintext</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">,</span> <span class="n">Xor</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">PBox</span><span class="p">(</span><span class="n">SBox</span><span class="p">(</span><span class="n">Xor</span><span class="p">(</span><span class="n">Expand</span><span class="p">(</span><span class="n">right</span><span class="p">),</span> <span class="n">keys</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))))</span>
+    
+    <span class="k">return</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+
+<span class="c1">#print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">8.2. </span>Phá mã vi sai trên TinyDES<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Giả sử <span class="math notranslate nohighlight">\(X_1\)</span> và <span class="math notranslate nohighlight">\(X_2\)</span> là hai khối input có cùng số bit.</p>
+<p>Ta định nghĩa vi sai của <span class="math notranslate nohighlight">\(X_1\)</span> và <span class="math notranslate nohighlight">\(X_2\)</span> là <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span>.</p>
+<p>Xét các phép biến đổi trong TinyDES</p>
+<section id="phep-xor-key">
+<h3><span class="section-number">8.2.1. </span>Phép XOR key<a class="headerlink" href="#phep-xor-key" title="Link to this heading">#</a></h3>
+<p>Gọi <span class="math notranslate nohighlight">\(K\)</span> là khóa con ở vòng nào đó trong thuật toán. Khi đó nếu đặt  <span class="math notranslate nohighlight">\(Y_1 = X_1 \oplus K\)</span> và <span class="math notranslate nohighlight">\(Y_2 = X_2 \oplus K\)</span> thì vi sai của output là <span class="math notranslate nohighlight">\(Y = Y_1 \oplus Y_2 = X_1 \oplus X_2\)</span>. Như vậy <span class="math notranslate nohighlight">\(K\)</span> không tác động lên vi sai và đây là tính chất quan trọng để chúng ta phá mã vi sai.</p>
+</section>
+<section id="phep-pbox">
+<h3><span class="section-number">8.2.2. </span>Phép PBox<a class="headerlink" href="#phep-pbox" title="Link to this heading">#</a></h3>
+<p>Phép PBox bảo toàn số bit (hoán vị 4 bit thành 4 bit) và cách xây dựng hoán vị là một biến đổi tuyến tính. Việc hoán vị 4 bit <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3\)</span> thành <span class="math notranslate nohighlight">\(b_2 b_0 b_3 b_1\)</span> tương đương với phép nhân ma trận</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 1 &amp; 0 \\
+        1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 \\
+        0 &amp; 1 &amp; 0 &amp; 0
+    \end{pmatrix} \cdot
+    \begin{pmatrix}
+        b_0 \\ b_1 \\ b_2 \\ b_3
+    \end{pmatrix} =
+    \begin{pmatrix}
+        b_2 \\ b_0 \\ b_3 \\ b_1
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Do đó nếu đặt <span class="math notranslate nohighlight">\(Y_1 = \text{PBox}(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = \text{PBox} (X_2)\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[Y_1 \oplus Y_2 = \text{PBox}(X_1) \oplus \text{PBox}(X_2) = \text{PBox} (X_1 \oplus X_2)\]</div>
+<p>Như vậy nếu vi sai input là cố định thì vi sai output cũng cố định do tính tuyến tính.</p>
+</section>
+<section id="phep-expand">
+<h3><span class="section-number">8.2.3. </span>Phép Expand<a class="headerlink" href="#phep-expand" title="Link to this heading">#</a></h3>
+<p>Tương tự, phép Expand cũng là biến đổi tuyến tính và nếu đặt <span class="math notranslate nohighlight">\(Y_1 = \text{Expand}(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = \text{Expand}(X_2)\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[Y_1 \oplus Y_2 = \text{Expand}(X_1) \oplus \text{Expand}(X_2) = \text{Expand}(X_1 \oplus X_2)\]</div>
+<p>Cũng tương tự, nếu vi sai input là cố định thì vi sai output cũng cố định.</p>
+</section>
+<section id="phep-sbox">
+<h3><span class="section-number">8.2.4. </span>Phép SBox<a class="headerlink" href="#phep-sbox" title="Link to this heading">#</a></h3>
+<p>Phép SBox là một biến đổi không tuyến tính với input 6 bit và output 4 bit.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(Y_1 = \text{SBox}(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = \text{SBox}(X_2)\)</span>.</p>
+<p>Với mỗi <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span> cố định thì cứ một giá trị <span class="math notranslate nohighlight">\(X_1\)</span> sẽ có duy nhất một giá trị <span class="math notranslate nohighlight">\(X_2\)</span> cho ra vi sai <span class="math notranslate nohighlight">\(X\)</span>. Tuy nhiên vi sai output <span class="math notranslate nohighlight">\(Y_1 \oplus Y_2\)</span> phân bố không đều nhau.</p>
+<p>Thực hiện bruteforce đơn giản trên SBox với vi sai input <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span> có 6 bit, ta tìm được sự phân bố vi sai output <span class="math notranslate nohighlight">\(Y = Y_1 \oplus Y_2\)</span>.</p>
+<p>Chúng ta mong muốn rằng trên một hàng có càng ít phần tử khác <span class="math notranslate nohighlight">\(0\)</span> càng tốt.  Từ đó sự phân bố xác suất sẽ dễ kiểm soát hơn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># check_sbox.py</span>
+
+<span class="kn">import</span> <span class="nn">tinydes</span>
+
+
+<span class="k">def</span> <span class="nf">int_to_vec6</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;06b&quot;</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">int_to_vec8</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">vec_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">v</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="c1"># Know about distribution of differential input-output</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">int_to_vec6</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">16</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">X1</span> <span class="o">=</span> <span class="n">int_to_vec6</span><span class="p">(</span><span class="n">__</span><span class="p">)</span>
+        <span class="n">X2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X1</span><span class="p">)</span>
+        <span class="n">Y1</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">SBox</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
+        <span class="n">Y2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">SBox</span><span class="p">(</span><span class="n">X2</span><span class="p">)</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">Y1</span><span class="p">,</span> <span class="n">Y2</span><span class="p">)</span>
+        <span class="n">row</span><span class="p">[</span><span class="n">vec_to_int</span><span class="p">(</span><span class="n">Y</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">dist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dist</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Row = </span><span class="si">{</span><span class="n">row</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Row </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> has </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1"> zero elements&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Element that has maximal probability is </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">row</span><span class="p">))</span><span class="si">}</span><span class="s1"> with prob </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">row</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Sau khi xem bảng phân phối vi sai input và output ta có thể thấy được rằng</p>
+<ol class="arabic simple">
+<li><p>Nếu vi sai input <span class="math notranslate nohighlight">\(X = 0\)</span> thì chắc chắn vi sai output <span class="math notranslate nohighlight">\(Y = 0\)</span>.</p></li>
+<li><p>Nếu vi sai input <span class="math notranslate nohighlight">\(X = 16\)</span> thì có <span class="math notranslate nohighlight">\(9\)</span> vi sai output <span class="math notranslate nohighlight">\(Y\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Nếu vi sai input <span class="math notranslate nohighlight">\(X = 52\)</span> thì có <span class="math notranslate nohighlight">\(8\)</span> vi sai output <span class="math notranslate nohighlight">\(Y\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+</ol>
+<p>Dựa trên nhận xét này, chúng ta sẽ tấn công trên các <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> mà <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2 \in \{ 16, 52 \}\)</span>.</p>
+<p>Xét hai hàng 16 và 52, ta thấy rằng:</p>
+<ol class="arabic simple">
+<li><p>Nếu vi sai input <span class="math notranslate nohighlight">\(X = 16\)</span> thì vi sai output <span class="math notranslate nohighlight">\(Y = 7\)</span> là cao nhất với xác suất <span class="math notranslate nohighlight">\(14/64\)</span>.</p></li>
+<li><p>Nếu vi sai input <span class="math notranslate nohighlight">\(X = 52\)</span> thì vi sai output <span class="math notranslate nohighlight">\(Y = 2\)</span> là cao nhất với xác suất <span class="math notranslate nohighlight">\(16/64\)</span>.</p></li>
+</ol>
+</section>
+<section id="ham-f">
+<h3><span class="section-number">8.2.5. </span>Hàm <span class="math notranslate nohighlight">\(F\)</span><a class="headerlink" href="#ham-f" title="Link to this heading">#</a></h3>
+<p>Như vậy, phép XOR key, phép PBox và phép Expand cho xác suất đều nhau với các cặp vi sai <span class="math notranslate nohighlight">\((X, Y)\)</span>. Trong khi đó thì SBox lại cho xác suất các cặp vi sai <span class="math notranslate nohighlight">\((X, Y)\)</span> không đều nhau.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(Y_1 = F(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = F(X_2)\)</span>. Đi từ trong ra ngoài (<span class="math notranslate nohighlight">\(\text{Expand}\)</span>, tới <span class="math notranslate nohighlight">\(\text{SBox}\)</span>, tới <span class="math notranslate nohighlight">\(\text{PBox}\)</span> và cuối cùng là <span class="math notranslate nohighlight">\(F\)</span>) ta thấy rằng:</p>
+<ul class="simple">
+<li><p>Vi sai input của hàm <span class="math notranslate nohighlight">\(F\)</span> chính là vi sai input của Expand.</p></li>
+<li><p>Vi sai output của Expand là vi sai input của SBox (không phụ thuộc vào khóa).</p></li>
+<li><p>Vi sai output của SBox là vi sai input của PBox.</p></li>
+<li><p>Vi sai output của PBox là vi sai output của hàm <span class="math notranslate nohighlight">\(F\)</span>.</p></li>
+</ul>
+<p>Ta có thể đưa ra nhận xét về xác suất vi sai output <span class="math notranslate nohighlight">\(Y = Y_1 \oplus Y_2\)</span> từ vi sai <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span> như sau:</p>
+<ol class="arabic simple">
+<li><p>Nếu vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 0 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của Expand là 0 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>vi sai output của SBox chắc chắn là <span class="math notranslate nohighlight">\(0\)</span></strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của PBox chắc chắn là 0 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của hàm <span class="math notranslate nohighlight">\(F\)</span> chắc chắn là 0.</p></li>
+<li><p>Nếu vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 1 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của Expand là 16 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>vi sai output của SBox là <span class="math notranslate nohighlight">\(7\)</span> với xác suất <span class="math notranslate nohighlight">\(14/64\)</span></strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của PBox là 11 với xác suất là <span class="math notranslate nohighlight">\(14/64\)</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> hàm <span class="math notranslate nohighlight">\(F\)</span> là 11 với xác suất <span class="math notranslate nohighlight">\(14/64=7/32\)</span>.</p></li>
+<li><p>Nếu vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 3 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của Expand là 52 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>vi sai output của SBox là <span class="math notranslate nohighlight">\(2\)</span> với xác suất <span class="math notranslate nohighlight">\(16/64\)</span></strong> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> vi sai output của PBox là 8 với xác suất <span class="math notranslate nohighlight">\(16/64\)</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> hàm <span class="math notranslate nohighlight">\(F\)</span> là 8 với xác suất <span class="math notranslate nohighlight">\(16/64 = 1/4\)</span>.</p></li>
+</ol>
+<p>Nói chung, chúng ta chọn output của <span class="math notranslate nohighlight">\(\text{Expand}\)</span> (input cho <span class="math notranslate nohighlight">\(\text{SBox}\)</span>) giống với xác suất cao nhất với phân tích <span class="math notranslate nohighlight">\(\text{SBox}\)</span> ở trên kia.</p>
+</section>
+</section>
+<section id="chosen-plaintext">
+<h2><span class="section-number">8.3. </span>Chosen plaintext<a class="headerlink" href="#chosen-plaintext" title="Link to this heading">#</a></h2>
+<p>Differential attack là một dạng chosen plaintext, trong đó chúng ta tận dụng các xác suất ở trên.</p>
+<section id="chosen-plaintext-phan-mot">
+<h3><span class="section-number">8.3.1. </span>Chosen plaintext phần một<a class="headerlink" href="#chosen-plaintext-phan-mot" title="Link to this heading">#</a></h3>
+<p>Do tính chất vi sai, chúng ta sẽ mong muốn tìm những cặp (plaintext, ciphertext) <span class="math notranslate nohighlight">\((P_1, C_1)\)</span> và <span class="math notranslate nohighlight">\((P_2, C_2)\)</span> nào đó mà vi sai input <span class="math notranslate nohighlight">\(P_1 \oplus P_2\)</span> và vi sai output <span class="math notranslate nohighlight">\(C_1 \oplus C_2\)</span> có thể tối ưu xác suất trên.</p>
+<p>Giả sử chúng ta xét trường hợp 3 ở trên, khi vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 3 thì vi sai output của <span class="math notranslate nohighlight">\(F\)</span> là 8 với xác suất <span class="math notranslate nohighlight">\(1/4\)</span>. Đây là xác suất lớn nhất nên ta mong muốn trong 3 vòng của TinyDES sẽ tận dụng được càng nhiều càng tốt.</p>
+<p>Chúng ta đi từ dưới lên. Đặt</p>
+<div class="math notranslate nohighlight">
+\[L_3 = R_2, \quad R_3 = L_2 \oplus F(R_2, K_3)\]</div>
+<p>và</p>
+<div class="math notranslate nohighlight">
+\[L_3' = R_2', \quad R_3' = L_2' \oplus F(R_2', K_3)\]</div>
+<p>Chọn <span class="math notranslate nohighlight">\(R_2 \oplus R_2' = 3\)</span> thì <span class="math notranslate nohighlight">\(F(R_2, K_3) \oplus F(R_2', K_3) = 8\)</span> với xác suất <span class="math notranslate nohighlight">\(1/4\)</span>. Vì là bước cuối nên ta hy vọng ciphertext cuối cùng sẽ càng ít phức tạp càng tốt. Do đó có thể lựa chọn <span class="math notranslate nohighlight">\(L_2 = L_2' = 0\)</span> để bảo toàn vi sai sau khi vòng 3 kết thúc.</p>
+<p><strong>Ở vòng 3, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(3\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(8\)</span> là <span class="math notranslate nohighlight">\(1/4\)</span>.</strong></p>
+<p>Tiếp theo, đặt:</p>
+<div class="math notranslate nohighlight">
+\[L_2 = R_1, \quad R_2 = L_1 \oplus F(R_1, K_2),\]</div>
+<p>và</p>
+<div class="math notranslate nohighlight">
+\[L_2' = R_1', \quad R_2' = L_1' \oplus F(R_1', K_2)\]</div>
+<p>Do <span class="math notranslate nohighlight">\(L_2 = R_1\)</span> nên <span class="math notranslate nohighlight">\(R_1 = 0\)</span>. Tương tự <span class="math notranslate nohighlight">\(R_1' = L_2' = 0\)</span>. Điều đáng chú ý là <span class="math notranslate nohighlight">\(R_1 \oplus R_1' = 0\)</span>, nghĩa là vi sai input bằng 0, nên vi sai output <span class="math notranslate nohighlight">\(F(R_1, K_2) \oplus F(R_1', K_2)\)</span> chắc chắn bằng 0 (xác suất bằng 1).</p>
+<p><strong>Ở vòng 2, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(0\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(0\)</span> là <span class="math notranslate nohighlight">\(1\)</span>.</strong></p>
+<p>Ta lại có</p>
+<div class="math notranslate nohighlight">
+\[R_2 \oplus R_2' = 3 = L_1 \oplus F(R_1, K_2) \oplus L_1' \oplus F(R_1', K_2) = L_1 \oplus L_1'\]</div>
+<p>do vi sai output hàm <span class="math notranslate nohighlight">\(F\)</span> chắc chắn bằng 0. Do đó <span class="math notranslate nohighlight">\(L_1 \oplus L_1' = 3\)</span>.</p>
+<p>Tuy nhiên, <span class="math notranslate nohighlight">\(L_1 = R_0\)</span> và <span class="math notranslate nohighlight">\(L_1' = R_0'\)</span> nên <span class="math notranslate nohighlight">\(L_1 \oplus L_1' = R_0 \oplus R_0' = 3\)</span>. Do đó vi sai output của hàm <span class="math notranslate nohighlight">\(F\)</span> là <span class="math notranslate nohighlight">\(F(R_0, K_1) \oplus F(R_0', K_1) = 8\)</span> có xác suất <span class="math notranslate nohighlight">\(1/4\)</span>.</p>
+<p><strong>Ở vòng 1, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(3\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(8\)</span> là <span class="math notranslate nohighlight">\(1/4\)</span>.</strong></p>
+<p>Cuối cùng,</p>
+<div class="math notranslate nohighlight">
+\[R_1 \oplus R_1' = L_0 \oplus F(R_0, K_1) \oplus L_0' \oplus F(R_0', K_1) = L_0 \oplus L_0' \oplus 8\]</div>
+<p>mà ta nhớ lại ở trên <span class="math notranslate nohighlight">\(R_1 \oplus R_1' = 0\)</span> nên suy ra <span class="math notranslate nohighlight">\(L_0 \oplus L_0' = 8\)</span>.</p>
+<p>Tổng kết lại, ta chọn vi sai input <span class="math notranslate nohighlight">\((L, R) = (8, 3)\)</span> thì xác suất để vi sai output bằng <span class="math notranslate nohighlight">\((3, 8)\)</span> là <span class="math notranslate nohighlight">\((1/4) \times 1 \times (1/4) = 1/16\)</span>. Đây là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.</p>
+</section>
+<section id="chosen-plaintext-phan-hai">
+<h3><span class="section-number">8.3.2. </span>Chosen plaintext phần hai<a class="headerlink" href="#chosen-plaintext-phan-hai" title="Link to this heading">#</a></h3>
+<p>Tương tự, chúng ta xét trường hợp 2 ở trên, khi vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 1 thì vi sai output của <span class="math notranslate nohighlight">\(F\)</span> là 11 với xác suất <span class="math notranslate nohighlight">\(7/32\)</span>. Ta cũng mong muốn sau 3 vòng của TinyDES sẽ tận dụng được càng nhiều càng tốt.</p>
+<p>Chúng ta lại đi dưới lên. Đặt</p>
+<div class="math notranslate nohighlight">
+\[L_3 = R_2, \quad R_3 = L_2 \oplus F(R_2, K_3)\]</div>
+<p>và</p>
+<div class="math notranslate nohighlight">
+\[L_3' = R_2', \quad R_3' = L_2' \oplus F(R_2', K_3)\]</div>
+<p>Chọn <span class="math notranslate nohighlight">\(R_2 \oplus R_2' = 1\)</span> thì <span class="math notranslate nohighlight">\(F(R_2, K_3) \oplus F(R_2', K_3) = 11\)</span> với xác suất <span class="math notranslate nohighlight">\(7/32\)</span>. Vì là bước cuối cùng nên ta cũng hy vọng ciphertext sẽ càng ít phức tạp càng tốt. Do đó ta chọn <span class="math notranslate nohighlight">\(L_2 = L_2' = 0\)</span>.</p>
+<p><strong>Ở vòng 3, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(1\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(11\)</span> là <span class="math notranslate nohighlight">\(7/32\)</span>.</strong></p>
+<p>Tiếp theo, đặt</p>
+<div class="math notranslate nohighlight">
+\[L_2 = R_1, \quad R_2 = L_1 \oplus F(R_1, K_2)\]</div>
+<p>và</p>
+<div class="math notranslate nohighlight">
+\[L_2' = R_1', \quad R_2' = L_1' \oplus F(R_1', K_2)\]</div>
+<p>Do <span class="math notranslate nohighlight">\(L_2 = R_1\)</span> nên <span class="math notranslate nohighlight">\(R_1 = 0\)</span>. Tương tự <span class="math notranslate nohighlight">\(R_1' = 0\)</span>. Suy ra <span class="math notranslate nohighlight">\(R_1 \oplus R_1' = 0\)</span> và vi sai output <span class="math notranslate nohighlight">\(F(R_1, K_2) \oplus F(R_1', K_2) = 0\)</span> với xác suất bằng 1 (chắc chắn xảy ra).</p>
+<p><strong>Ở vòng 2, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(0\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(0\)</span> là <span class="math notranslate nohighlight">\(1\)</span>.</strong></p>
+<p>Ta lại có:</p>
+<div class="math notranslate nohighlight">
+\[R_2 \oplus R_2' = L_1 \oplus F(R_1, K_2) \oplus L_1' \oplus F(R_1', K_2) = L_1 \oplus L_1'\]</div>
+<p>do vi sai output của hàm <span class="math notranslate nohighlight">\(F\)</span> chắc chắn bằng 0. Do đó <span class="math notranslate nohighlight">\(L_1 \oplus L_1' = 1\)</span>.</p>
+<p>Tuy nhiên <span class="math notranslate nohighlight">\(L_1 = R_0\)</span> và <span class="math notranslate nohighlight">\(L_1' = R_0'\)</span> nên <span class="math notranslate nohighlight">\(R_0 \oplus R_0' = L_1 \oplus L_1' = 1\)</span>. Do đó vi sai output của hàm <span class="math notranslate nohighlight">\(F\)</span> ở vòng 1 là <span class="math notranslate nohighlight">\(F(R_0, K_1) \oplus F(R_0', K_1) = 11\)</span> với xác suất <span class="math notranslate nohighlight">\(7/32\)</span>.</p>
+<p><strong>Ở vòng 1, xác suất để vi sai input bằng <span class="math notranslate nohighlight">\(1\)</span> và vi sai output bằng <span class="math notranslate nohighlight">\(11\)</span> là <span class="math notranslate nohighlight">\(7/32\)</span>.</strong></p>
+<p>Cuối cùng, do</p>
+<div class="math notranslate nohighlight">
+\[R_1 \oplus R_1' = L_0 \oplus F(R_0, K_1 \oplus L_0' \oplus F(R_0', K_1))\]</div>
+<p>mà <span class="math notranslate nohighlight">\(R_1 \oplus R_1' = 0\)</span> và <span class="math notranslate nohighlight">\(F(R_0, K_1) \oplus F(R_0', K_1) = 11\)</span> nên <span class="math notranslate nohighlight">\(L_0 \oplus L_0' = 11\)</span>.</p>
+<p>Tổng kết lại, ta chọn vi sai input <span class="math notranslate nohighlight">\((L, R) = (11, 1)\)</span> thì xác suất để vi sai output bằng <span class="math notranslate nohighlight">\((1, 11)\)</span> là <span class="math notranslate nohighlight">\((7/32) \times 1 \times (7/32) \approx 0.048\)</span>. Đây cũng là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.</p>
+</section>
+<section id="final-attack">
+<h3><span class="section-number">8.3.3. </span>Final attack<a class="headerlink" href="#final-attack" title="Link to this heading">#</a></h3>
+<p>Như vậy, đối với TinyDES chúng ta phá mã vi sai như sau:</p>
+<ol class="arabic simple">
+<li><p>Tìm một số lượng cặp plaintext, ciphertext <span class="math notranslate nohighlight">\((P_1, C_1)\)</span>, <span class="math notranslate nohighlight">\((P_2, C_2)\)</span>, … cho tới khi tìm được <span class="math notranslate nohighlight">\(P_i \oplus P_j = 0x83\)</span> và <span class="math notranslate nohighlight">\(C_i \oplus C_j = 0x38\)</span>.</p></li>
+<li><p>Tìm một số lượng cặp plaintext, ciphertext <span class="math notranslate nohighlight">\((P_1', C_1')\)</span>, <span class="math notranslate nohighlight">\((P_2', C_2')\)</span>, … cho tới khi tìm được <span class="math notranslate nohighlight">\(P_i' \oplus P_j' = 0xB1\)</span> và <span class="math notranslate nohighlight">\(C_i' \oplus C_j' = 0x1B\)</span>.</p></li>
+</ol>
+<p>Sau khi đã tìm được một số lượng cặp plaintext, ciphertext thỏa vi sai trên, nhớ lại hàm <span class="math notranslate nohighlight">\(F\)</span> ở vòng 3, do <span class="math notranslate nohighlight">\(L_3 = R_2\)</span> và <span class="math notranslate nohighlight">\(R_3 = L_2 \oplus F(R_2, K_3) = L_2 \oplus F(L_3, K_3) = F(L_3, K_3)\)</span> (ta chọn <span class="math notranslate nohighlight">\(L_2 = 0\)</span> ở trên), dễ thấy rằng chúng ta có thể tìm được các <span class="math notranslate nohighlight">\(K_3\)</span> thỏa mãn hàm <span class="math notranslate nohighlight">\(F\)</span> ở vòng 3.</p>
+<p>Để làm điều đó thì ta tính <span class="math notranslate nohighlight">\(O = \text{Expand}(L_3)\)</span>, và do <span class="math notranslate nohighlight">\(\text{SBox}(O \oplus K_3) = \text{PBox}^{-1}(R_3)\)</span> cũng tính được nên có thể tìm các giá trị <span class="math notranslate nohighlight">\(O \oplus K_3\)</span> mà khi đi qua <span class="math notranslate nohighlight">\(\text{SBox}\)</span> cho kết quả bằng <span class="math notranslate nohighlight">\(\text{PBox}^{-1}(R_3)\)</span>. Sau đó XOR lại cho <span class="math notranslate nohighlight">\(O\)</span> thì sẽ tìm được các giá trị có thể của <span class="math notranslate nohighlight">\(K_3\)</span>. Lưu ý rằng <span class="math notranslate nohighlight">\(\text{SBox}\)</span> làm giảm 6 bit còn 4 bit nên sẽ có nhiều giá trị khác nhau cho cùng giá trị <span class="math notranslate nohighlight">\(\text{SBox}\)</span>.</p>
+<p>Thực hiện trên hai trường hợp vi sai input-output là <span class="math notranslate nohighlight">\((0x83, 0x38)\)</span> và <span class="math notranslate nohighlight">\((0xB1, 0x1B)\)</span> ta có tập các giá trị có thể xảy ra của <span class="math notranslate nohighlight">\(K_3\)</span>.</p>
+<p>Theo thuật toán sinh khóa con thì với khóa <span class="math notranslate nohighlight">\(K\)</span> 8 bit ban đầu, đặt là <span class="math notranslate nohighlight">\(k_0 k_1 k_2 k_3 k_4 k_5 k_6 k_7\)</span>, thì khóa con <span class="math notranslate nohighlight">\(K_3\)</span> là <span class="math notranslate nohighlight">\(k_5 k_1 k_3 k_2 k_7 k_0\)</span>. Trong <span class="math notranslate nohighlight">\(K_3\)</span> không có <span class="math notranslate nohighlight">\(k_4\)</span> và <span class="math notranslate nohighlight">\(k_6\)</span> nên chúng ta sẽ bruteforce hai bit này tới khi tìm được đúng khóa <span class="math notranslate nohighlight">\(K\)</span> mà tương ứng với cặp <span class="math notranslate nohighlight">\((P_i, C_i)\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># find_key.py</span>
+
+<span class="kn">import</span> <span class="nn">tinydes</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+
+
+<span class="k">def</span> <span class="nf">int_to_vec6</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;06b&quot;</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">int_to_vec8</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">vec_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">v</span><span class="p">)),</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">recover_key</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span><span class="p">[</span><span class="mi">4</span><span class="p">]]</span>
+
+
+<span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">ptx</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ctx</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">pt</span><span class="p">,</span> <span class="n">ct</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">K3</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">int_to_vec8</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="n">pt_</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">int_to_vec8</span><span class="p">(</span><span class="mh">0x83</span><span class="p">),</span> <span class="n">pt</span><span class="p">)</span>
+    <span class="n">ct_</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">pt_</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">ct_</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="mh">0x38</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">))):</span>
+        <span class="n">ptx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt_</span><span class="p">)</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ct_</span><span class="p">)</span>
+        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">pt_</span><span class="p">))</span>
+        <span class="k">break</span>
+
+<span class="k">for</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+    <span class="n">o1</span><span class="p">,</span> <span class="n">o2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">PBox_inv</span><span class="p">(</span><span class="n">pt1</span><span class="p">[</span><span class="mi">4</span><span class="p">:]),</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">PBox_inv</span><span class="p">(</span><span class="n">pt2</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+    <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Expand</span><span class="p">(</span><span class="n">pt1</span><span class="p">[:</span><span class="mi">4</span><span class="p">]),</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Expand</span><span class="p">(</span><span class="n">pt2</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">vec_to_int</span><span class="p">(</span><span class="n">o1</span><span class="p">):</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">16</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s2">&quot;04b&quot;</span><span class="p">)))</span> <span class="o">+</span> <span class="p">[</span><span class="n">row</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="n">K3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">vec_to_int</span><span class="p">(</span><span class="n">o2</span><span class="p">):</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">16</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s2">&quot;04b&quot;</span><span class="p">)))</span> <span class="o">+</span> <span class="p">[</span><span class="n">row</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="n">K3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">q2</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
+
+<span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">int_to_vec8</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="n">pt_</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">int_to_vec8</span><span class="p">(</span><span class="mh">0xb1</span><span class="p">),</span> <span class="n">pt</span><span class="p">)</span>
+    <span class="n">ct_</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">pt_</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">ct_</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="mh">0x1b</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">))):</span>
+        <span class="n">ptx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pt_</span><span class="p">)</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ct_</span><span class="p">)</span>
+        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pt</span><span class="p">,</span> <span class="n">pt_</span><span class="p">))</span>
+        <span class="k">break</span>
+
+<span class="k">for</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+    <span class="n">o1</span><span class="p">,</span> <span class="n">o2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">PBox_inv</span><span class="p">(</span><span class="n">pt1</span><span class="p">[</span><span class="mi">4</span><span class="p">:]),</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">PBox_inv</span><span class="p">(</span><span class="n">pt2</span><span class="p">[</span><span class="mi">4</span><span class="p">:])</span>
+    <span class="n">q1</span><span class="p">,</span> <span class="n">q2</span> <span class="o">=</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Expand</span><span class="p">(</span><span class="n">pt1</span><span class="p">[:</span><span class="mi">4</span><span class="p">]),</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">Expand</span><span class="p">(</span><span class="n">pt2</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">vec_to_int</span><span class="p">(</span><span class="n">o1</span><span class="p">):</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">16</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s2">&quot;04b&quot;</span><span class="p">)))</span> <span class="o">+</span> <span class="p">[</span><span class="n">row</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="n">K3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">sbox</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">vec_to_int</span><span class="p">(</span><span class="n">o2</span><span class="p">):</span>
+            <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">16</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="s2">&quot;04b&quot;</span><span class="p">)))</span> <span class="o">+</span> <span class="p">[</span><span class="n">row</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
+            <span class="n">K3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tinydes</span><span class="o">.</span><span class="n">Xor</span><span class="p">(</span><span class="n">q2</span><span class="p">,</span> <span class="n">idx</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">k3</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">([</span><span class="n">vec_to_int</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">K3</span><span class="p">]):</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">recover_key</span><span class="p">(</span><span class="n">int_to_vec6</span><span class="p">(</span><span class="n">k3</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">k4</span><span class="p">,</span> <span class="n">k6</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">k</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">k4</span><span class="p">,</span> <span class="n">k6</span>
+        <span class="k">if</span> <span class="n">tinydes</span><span class="o">.</span><span class="n">encrypt_block</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">==</span> <span class="n">ct</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recover key: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cryptography\differential-attack"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../kuznyechik.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Kuznyechik</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../quantum-computing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Quantum computing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">8.1. Mô tả TinyDES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">8.2.1. Phép XOR key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">8.2.2. Phép PBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">8.2.3. Phép Expand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">8.2.4. Phép SBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">8.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">8.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">8.3.1. Chosen plaintext phần một</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">8.3.2. Chosen plaintext phần hai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">8.3.3. Final attack</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
