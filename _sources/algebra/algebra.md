@@ -272,7 +272,7 @@ Ví dụ như hàm số $y = \dfrac{1}{x}$ ở trên là một hàm lẻ vì v�
 Xét hàm số $y=f(x)$ xác định trên miền $D$. 
 
 ````{prf:definition} Hàm cộng tính
-Hàm số $y = f(x)$ được gọi là **cộng tính**nếu với mọi $x, y \in D$ ta có $f(x+y) = f(x) + f(y)$.
+Hàm số $y = f(x)$ được gọi là **cộng tính** nếu với mọi $x, y \in D$ mà $x + y \in D$, ta có $f(x+y) = f(x) + f(y)$.
 ````
 
 ````{prf:example}
