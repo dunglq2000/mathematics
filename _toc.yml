@@ -29,9 +29,11 @@ parts:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
       - file: discrete-mathematics/linear-feedback-shift-register.md
-  - caption: Mật mã học
+  - caption: Mật mã học (và những niềm đau)
+    numbered: true
     chapters:
     - file: cryptography/intro.md
+    - file: cryptography/block-cipher.md
       sections:
       - file: cryptography/magma.md
       - file: cryptography/kuznyechik.md

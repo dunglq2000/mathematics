@@ -1,6 +1,4 @@
-# Mật mã học (và những niềm đau)
-
-Chương này nói về các loại mật mã.
+# Đại số boolean và mật mã học
 
 ## Các tính chất mật mã của hàm boolean
 
