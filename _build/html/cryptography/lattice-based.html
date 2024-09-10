@@ -1,0 +1,1060 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lattice-based cryptography &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/lattice-based';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
+    <link rel="prev" title="Quantum computing" href="quantum-computing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">2. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">3. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">3.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">3.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">3.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">3.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">3.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">4. Số học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Mật mã học (và những niềm đau)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="magma.html">Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">Quantum computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lattice-based cryptography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">6. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">6.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/lattice-based.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/cryptography/lattice-based.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lattice-based cryptography</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-bai-toan-kho">Các bài toán khó</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-vectors-trong-lattice">Short vectors trong lattice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-babai">Thuật toán Babai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lattice-reduction">Lattice reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-lattice-reduction">Gaussian lattice reduction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heuristic">Heuristic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-thuat-toan-lattice-based">Các thuật toán lattice-based</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congruential-public-key-cryptosystem">Congruential public key cryptosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tao-khoa">Tạo khóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#encryption">Encryption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decryption">Decryption</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ntru-hrss">NTRU-HRSS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-tham-so-cho-ntru">Các tham số cho NTRU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tạo khóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#giai-ma">Giải mã</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-coppersmith">Phương pháp Coppersmith</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong">Ý tưởng</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-thuat-toan">Cải tiến thuật toán</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-don-gian">Dạng đơn giản</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-nang-cao">Dạng nâng cao</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lattice-based-cryptography">
+<h1>Lattice-based cryptography<a class="headerlink" href="#lattice-based-cryptography" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><strong>Ký hiệu</strong>. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ <span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{y}, \mathbf{v}\)</span>. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ <span class="math notranslate nohighlight">\(\mathbf{A}, \mathbf{B}\)</span>.</p>
+<p>Nói cách khác, lattice là không gian vector được sinh bởi tổ hợp tuyến tính với hệ số nguyên.</p>
+<p>Tập các vector <span class="math notranslate nohighlight">\(\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}\)</span> được gọi là <strong>tập sinh</strong> hay <strong>cơ sở</strong> (basis, базис) của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+<p>Số lượng vector trong cơ sở được gọi là <strong>số chiều</strong> của lattice và kí hiệu là <span class="math notranslate nohighlight">\(d = \dim(\mathcal{L})\)</span>.</p>
+<p>Lattice được gọi là <strong>full-rank</strong> nếu <span class="math notranslate nohighlight">\(\dim(\mathcal{L}) = n\)</span>.</p>
+<p>Xét ma trận <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> có các hàng là các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1, \ldots, \mathbf{v}_d\)</span>, nghĩa là <span class="math notranslate nohighlight">\(\mathbf{V} \in \mathbb{R}^{d \times n}\)</span>.</p>
+<p>Nếu lattice full-rank thì <span class="math notranslate nohighlight">\(\det(\mathcal{L}) = \det(\mathbf{V})\)</span>.</p>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Cơ sở của một lưới không là duy nhất nhưng số lượng vector trong mỗi cơ sở là như nhau và bằng số chiều của lattice.</p>
+</section>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> là hai ma trận cơ sở của cùng lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> thì tồn tại ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> với hệ số nguyên (tức <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathbb{Z}^{d \times d}\)</span>) có định thức bằng <span class="math notranslate nohighlight">\(1\)</span> sao cho <span class="math notranslate nohighlight">\(\mathbf{W} = \mathbf{A} \cdot \mathbf{V}\)</span>. Chúng ta có thể dễ dàng chứng minh điều này khi biểu diễn các vector trong <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> thành tổ hợp tuyến tính các vector trong <span class="math notranslate nohighlight">\(\mathbf{V}\)</span>.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}\)</span> là một cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Tương tự, <span class="math notranslate nohighlight">\(\{ \mathbf{w}_1, \mathbf{w}_2, \ldots, \mathbf{w}_d \}\)</span> là một cơ sở khác của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+<p>Ta có thể viết mỗi <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> là tổ hợp tuyến tính của các vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> như sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	\mathbf{w}_1 &amp; = a_{11} \mathbf{v}_1 + a_{12} \mathbf{v}_2 + \ldots + a_{1d} \mathbf{v}_d \\
+	\mathbf{w}_2 &amp; = a_{21} \mathbf{v}_1 + a_{22} \mathbf{v}_2 + \ldots + a_{2d} \mathbf{v}_d \\
+	\vdots &amp; \\
+	\mathbf{w}_d &amp; = a_{d1} \mathbf{v}_1 + a_{d2} \mathbf{v}_2 + \ldots + a_{dd} \mathbf{v}_d
+\end{align*}\end{split}\]</div>
+<p>Khi đó, nếu viết các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> thì biểu diễn trên tương đương với:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+	\mathbf{W} = \begin{pmatrix}
+		a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1d} \\
+		a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2d} \\
+		\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+		a_{d1} &amp; a_{d2} &amp; \cdots &amp; a_{dd}
+	\end{pmatrix} \cdot \mathbf{V}
+\end{equation*}\end{split}\]</div>
+<p>Đặt</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+	\mathbf{A} = \begin{pmatrix}
+		a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1d} \\
+		a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2d} \\
+		\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+		a_{d1} &amp; a_{d2} &amp; \cdots &amp; a_{dd}
+	\end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Do <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> là các cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> nên nếu các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> có thể biểu diễn qua các vector <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> thì ngược lại, các vector <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> cũng có thể được biểu diễn qua các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span>. Suy ra ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> là ma trận khả nghịch. Do <span class="math notranslate nohighlight">\(a_{ij} \in \mathbb{Z}\)</span> theo định nghĩa lattice, <span class="math notranslate nohighlight">\(\det(\mathbf{A}) \in \mathbb{Z}\)</span>.</p>
+<p>Hơn nữa, vì:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+	I = \mathbf{A} \cdot \mathbf{A}^{-1} \Rightarrow 1 = \det (\mathbf{A}) \cdot \det (\mathbf{A}^{-1})
+\end{equation*}\]</div>
+<p>nên <span class="math notranslate nohighlight">\(\det(\mathbf{A}) = \pm 1\)</span>.</p>
+<p>Mỗi lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> có một lattice đối ngẫu (dual lattice), kí hiệu là</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^* = \{ \mathbf{w} \in \mathbb{R}^n : \langle \mathbf{w}, \mathbf{x} \rangle \in \mathbb{Z} \ \text{với mọi} \ \mathbf{x} \in \mathcal{L} \}\]</div>
+<p>Trong mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> với hai vector <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> không cùng phương thì fundamental domain là hình bình hành tạo bởi hai vector đó.</p>
+<div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với số chiều là <span class="math notranslate nohighlight">\(n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó mọi vetor <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> đều có thể viết dưới dạng</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{w} = \mathbf{t} + \mathbf{v}\]</div>
+<p>với <span class="math notranslate nohighlight">\(\mathbf{t}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+</section>
+</div><p>Một cách tương đương, hợp của các fundamental domains</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \mathcal{F} + \mathbf{v} = \{ \mathbf{t} + \mathbf{v} : \mathbf{t} \in \mathcal{F} \}
+\end{equation*}\]</div>
+<p>với <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> là các vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, sẽ cover hết <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Để chứng minh nhận xét trên, giả sử <span class="math notranslate nohighlight">\(\{ \mathbf{v}_i : 1 \leqslant i \leqslant n \}\)</span> là cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó các <span class="math notranslate nohighlight">\(\mathbf{v}_i\)</span> độc lập tuyến tính nên cũng là cơ sở của <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<p>Ta viết các vector <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> dưới dạng tổ hợp tuyến tính của <span class="math notranslate nohighlight">\(\mathbf{v}_i\)</span> và tách hệ số trước mỗi vector thành phần nguyên và phần lẻ. Phần nguyên cho vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> và phần lẻ cho vector trong <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p>
+<p>Để chứng minh tính duy nhất của tổ hợp, xét hai cách biểu diễn khác nhau của <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và chứng minh hai cách đó là một.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Bất đẳng thức Hadamard)</p>
+<section class="theorem-content" id="proof-content">
+<p>Cho lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, lấy cơ sở bất kỳ của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> là các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain cho <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    \det L = \text{Vol} (\mathcal{F}) \leqslant \lVert \mathbf{v}_1 \rVert \cdot \lVert \mathbf{v}_2 \rVert \cdots \lVert \mathbf{v}_n \rVert
+\end{equation}\]</div>
+</section>
+</div><p>Cơ sở càng gần với trực giao thì bất đẳng thức Hadamard trên càng trở thành đẳng thức.</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Đa thức cyclotomic)</p>
+<section class="definition-content" id="proof-content">
+<p>Với mỗi số nguyên dương <span class="math notranslate nohighlight">\(N\)</span>, đa thức cyclotomic thứ <span class="math notranslate nohighlight">\(N\)</span> là đa thức tối giản (bất khả quy) <span class="math notranslate nohighlight">\(\Phi_N\)</span> duy nhất trong <span class="math notranslate nohighlight">\(\mathbb{Z}[x]\)</span> mà chia hết <span class="math notranslate nohighlight">\(x^N - 1\)</span> nhưng không chia hết <span class="math notranslate nohighlight">\(x^k - 1\)</span> với <span class="math notranslate nohighlight">\(k &lt; N\)</span> bất kì.</p>
+</section>
+</div><p>Ví dụ, <span class="math notranslate nohighlight">\(x^3 - 1 = (x - 1)(x^2 + x + 1)\)</span> thì ta có <span class="math notranslate nohighlight">\(\Phi_3 = x^2 + x + 1\)</span> vì <span class="math notranslate nohighlight">\((x^2 - 1) \not\vert (x^2 + x + 1)\)</span> và <span class="math notranslate nohighlight">\((x - 1) \not\vert (x^2 + x + 1)\)</span>.</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(d\)</span> là số nguyên tố thì <span class="math notranslate nohighlight">\(\Phi_d = 1 + x + x^2 + \ldots + x^{d-1}\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span class="caption-number">Remark 6 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Các đa thức tối giản không chỉ đối với <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> mà còn đối với <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span>. Ta cũng có thể chứng minh được rằng:</p>
+<div class="math notranslate nohighlight">
+\[x^N - 1 = \prod_{d \mid N} \Phi_d(x)\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\lambda_i(\mathcal{L})\)</span> là <span class="math notranslate nohighlight">\(\lambda\)</span> nhỏ nhất sao cho <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> chứa ít nhất <span class="math notranslate nohighlight">\(i\)</span> vector độc lập của chuẩn Euclid (Euclidean norm) tại hầu hết <span class="math notranslate nohighlight">\(\lambda\)</span>. Cụ thể <span class="math notranslate nohighlight">\(\lambda_1(\mathcal{L})\)</span> là độ dài vector khác không ngắn nhất trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+</section>
+</div></section>
+<section id="cac-bai-toan-kho">
+<h2>Các bài toán khó<a class="headerlink" href="#cac-bai-toan-kho" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-toan-1-bai-toan-nhom-con-an-hidden-group-problem-hgp admonition">
+<p class="admonition-title"><strong>Bài toán 1.</strong> (Bài toán nhóm con ẩn, Hidden Group Problem - HGP).</p>
+<p>Cho một nhóm <span class="math notranslate nohighlight">\(G\)</span> và một hàm <span class="math notranslate nohighlight">\(f\)</span> trên <span class="math notranslate nohighlight">\(G\)</span> là hằng số và phân biệt trên các coset của nhóm con <span class="math notranslate nohighlight">\(H\)</span> nào đó chưa biết của <span class="math notranslate nohighlight">\(G\)</span>. Hãy tìm một tập các phần tử sinh của <span class="math notranslate nohighlight">\(H\)</span>.</p>
+</div>
+<div class="admonition-bai-toan-2-bai-toan-vector-ngan-nhat-shortest-vector-problem-svp admonition">
+<p class="admonition-title"><strong>Bài toán 2.</strong> (Bài toán vector ngắn nhất, Shortest Vector Problem - SVP)</p>
+<p>Cho một cơ sở tùy ý <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Hãy tìm một vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{L}\)</span> khác không với <span class="math notranslate nohighlight">\(\lVert \mathbf{x} \rVert \leqslant \gamma(m) \cdot \lambda_1(\mathcal{L})\)</span>.</p>
+</div>
+<div class="admonition-bai-toan-3-bai-toan-learning-with-error-lwe-problem admonition">
+<p class="admonition-title"><strong>Bài toán 3.</strong> (Bài toán Learning With Error, LWE Problem)</p>
+<p>Cho <span class="math notranslate nohighlight">\(n, m, q &gt; 0\)</span> là các số nguyên và <span class="math notranslate nohighlight">\(\chi\)</span> là một phân bố trên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Với <span class="math notranslate nohighlight">\(\mathbf{s} \xleftarrow{\chi} \mathbb{Z}_n\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span> là phân bố lấy các mẫu <span class="math notranslate nohighlight">\(\mathbf{a} \xleftarrow{\$} \mathbb{Z}_q^n\)</span> và <span class="math notranslate nohighlight">\(e \xleftarrow{\chi} \mathbb{Z}\)</span>. Kết quả trả về <span class="math notranslate nohighlight">\((\mathbf{a}, \langle \mathbf{a}, \mathbf{s} \rangle + e) \in \mathbb{Z}_q^n \times \mathbb{Z}_q\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Với <span class="math notranslate nohighlight">\(n, p \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập từ phân bố <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span>, bài toán LWE tìm kiếm là tìm <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> (search LWE problem).</p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(n, q \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập <span class="math notranslate nohighlight">\((\mathbf{a}_i, b_i)\)</span>, bài toán LWE quyết định (decisional LWE problem) là phân biệt với <span class="math notranslate nohighlight">\(i = 1, \ldots, m\)</span> thì <span class="math notranslate nohighlight">\((\mathbf{a}_i, b_i)\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay thuộc <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span>. Nói cách khác là được lấy mẫu ngẫu nhiên theo <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay theo phân bố <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.</p></li>
+</ol>
+</div>
+<p>Thông thường chúng ta coi vector <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> là secret và <span class="math notranslate nohighlight">\(e\)</span> là lỗi (error) của LWE.</p>
+<p>Chúng ta nói rằng bài toán LWE quyết định <span class="math notranslate nohighlight">\(\text{LWE}_{n, m, q, \chi}\)</span> là <span class="math notranslate nohighlight">\((t, \varepsilon)\)</span>-hard nếu đối với bất kì thuật toán <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> nào chạy trong thời gian <span class="math notranslate nohighlight">\(t\)</span>, nó đảm bảo rằng:</p>
+<div class="math notranslate nohighlight">
+\[\left| \mathrm{Pr}\left[ \mathcal{A}^{\mathcal{D}_{\mathbf{s}, \chi}}(\cdot) = 1 \right] - \mathrm{Pr} \left[ \mathcal{A}^{\mathcal{U}(\mathbb{Z}_q^n \times \mathbb{Z}_q)} (\cdot) = 1 \right] \right| \leqslant \varepsilon\]</div>
+<div class="admonition-bai-toan-4-bai-toan-ring-lwe-r-lwe admonition">
+<p class="admonition-title"><strong>Bài toán 4.</strong> (Bài toán Ring-LWE, R-LWE)</p>
+<p>Cho <span class="math notranslate nohighlight">\(n, q &gt; 0\)</span> là các số nguyên và <span class="math notranslate nohighlight">\(\chi\)</span> là phân bố trên <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Với <span class="math notranslate nohighlight">\(s \xleftarrow{\$} \mathcal{R}\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\mathcal{D}_{s, \chi}\)</span> là phân bố lấy các mẫu <span class="math notranslate nohighlight">\(a \xleftarrow{\$} \mathcal{R}_q\)</span> và <span class="math notranslate nohighlight">\(e \xleftarrow{\chi} \mathcal{R}\)</span>. Kết quả trả về <span class="math notranslate nohighlight">\((a, a s + e) \in \mathcal{R}_q \times \mathcal{R}_q\)</span>.</p>
+<p>Tương tự:</p>
+<ol class="arabic simple">
+<li><p>Bài toán R-LWE tìm kiếm (search ring-LWE problem) là tìm <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>Bài toán R-LWE quyết định (decisional ring-LWE problem) là phân biệt <span class="math notranslate nohighlight">\((a_i, b_i) \xleftarrow{\$} \mathcal{R}_q \times \mathcal{R}_q\)</span> hay <span class="math notranslate nohighlight">\((a_i, b_i) \gets \mathcal{D}_{s, \chi}\)</span>.</p></li>
+</ol>
+</div>
+<section id="short-vectors-trong-lattice">
+<h3>Short vectors trong lattice<a class="headerlink" href="#short-vectors-trong-lattice" title="Link to this heading">#</a></h3>
+<p>Các bài toán liên quan tới lattice mà chúng ta cần quan tâm để xây dựng các thuật toán mã hóa lattice-based.</p>
+<ol class="arabic simple">
+<li><p><strong>Shortest Vector Problem</strong> (hay <strong>SVP</strong>): Tìm vector khác không có độ dài ngắn nhất trong lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, nghĩa là tìm vector <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> mà <span class="math notranslate nohighlight">\(\lVert v \rVert\)</span> nhỏ nhất;</p></li>
+<li><p><strong>Closest Vector Problem</strong> (hay <strong>CVP</strong>): Cho trước vector <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> mà không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, tìm vector <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> nhất, nghĩa là tìm <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> sao cho <span class="math notranslate nohighlight">\(\lVert \mathbf{w} - \mathbf{v} \rVert\)</span> nhỏ nhất.</p></li>
+</ol>
+</section>
+<section id="thuat-toan-babai">
+<h3>Thuật toán Babai<a class="headerlink" href="#thuat-toan-babai" title="Link to this heading">#</a></h3>
+<p>Thuật toán này giúp tìm một cơ sở “đủ tốt” để giải <strong>apprCVP</strong>.</p>
+<div class="proof theorem admonition" id="theorem-7">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Thuật toán Babai tìm Closest Vertex)</p>
+<section class="theorem-content" id="proof-content">
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với cơ sở là <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> là vector bất kỳ.</p>
+<p>Nếu các vector trong cơ sở trực giao nhau thì thuật toán Babai sẽ giải được <strong>CVP</strong>.</p>
+<p>Nếu các vector trong cơ sở gần như trực giao thì thuật toán Babai sẽ giải được <strong>apprCVP</strong>.</p>
+<p>Ngược lại, nếu các vector trong cơ sở không trực giao (nhiều) thì kết quả thuật toán trả về sẽ xa hơn vector gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.</p>
+</section>
+</div><div class="proof algorithm admonition" id="algorithm-8">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Babai’s Closest Vertex Algorithm)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Biểu diễn <span class="math notranslate nohighlight">\(\mathbf{w} = t_1 \mathbf{v}_1 + t_2 \mathbf{v}_2 + \ldots + t_n \mathbf{v}_n\)</span> với <span class="math notranslate nohighlight">\(t_1, \ldots, t_n \in \mathbb{R}\)</span>.</p></li>
+<li><p>Đặt <span class="math notranslate nohighlight">\(a_i = \lfloor t_i \rceil\)</span> với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>.</p></li>
+<li><p>Trả về vector <span class="math notranslate nohighlight">\(\mathbf{v} = a_1 \mathbf{v}_1 + a_2 \mathbf{v}_2 + \ldots + a_n \mathbf{v}_n\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Mình có thể thấy rằng thuật toán Babai làm tròn hệ số để đưa trả về vector gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.</p>
+</section>
+<section id="lattice-reduction">
+<h3>Lattice reduction<a class="headerlink" href="#lattice-reduction" title="Link to this heading">#</a></h3>
+<p>Mục tiêu của việc giải các bài toán <strong>SVP</strong> hay <strong>CVP</strong> (hay các biến thể của chúng) là tìm vector ngắn trong lattice.</p>
+<p>Đối với lattice 2 chiều chúng ta có thuật toán Gauss reduction rất hữu dụng.</p>
+</section>
+<section id="gaussian-lattice-reduction">
+<h3>Gaussian lattice reduction<a class="headerlink" href="#gaussian-lattice-reduction" title="Link to this heading">#</a></h3>
+<p>Giả sử ta có <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> là lattice 2 chiều với cơ sở là <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p>
+<p>Ta có thể đổi chỗ <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> nếu cần thiết để luôn đảm bảo <span class="math notranslate nohighlight">\(\lVert \mathbf{v}_1 \rVert &lt; \lVert \mathbf{v}_2 \rVert\)</span>.</p>
+<p>Để làm nhỏ <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> ta có thể trừ đi một bội số của <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>. Nếu ta sử dụng cách giống như thuật toán trực giao Gram-Schmidt thì</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v}_2^* = \mathbf{v}_2 - \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \mathbf{v}_1\]</div>
+<p>Khi đó <span class="math notranslate nohighlight">\(\mathbf{v}_2^*\)</span> sẽ trực giao với <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>. Tuy nhiên vector này không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> vì hệ số <span class="math notranslate nohighlight">\(\dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2}\)</span> có thể không phải số nguyên. Để khắc phục ta chỉ việc lấy phần nguyên của hệ số này. Nghĩa là ta thay <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> bằng vector</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v}_2 - m \mathbf{v}_1 \quad \text{với}\ m = \left\lfloor \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \right\rceil\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> vẫn lớn hơn <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> thì ta dừng thuật toán. Ngược lại ta đảo vị trí <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> rồi lặp lại bước trên. Thuật toán như sau</p>
+<div class="proof theorem admonition" id="theorem-9">
+<p class="admonition-title"><span class="caption-number">Theorem 3 </span> (Gaussian lattice reduction)</p>
+<section class="theorem-content" id="proof-content">
+<p><strong>Input::</strong> Lattice 2 chiều <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> với cơ sở <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span></p>
+<p><strong>Output:</strong> Cơ sở mới <span class="math notranslate nohighlight">\(\mathbf{v}_1^*\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2^*\)</span> gần như trực giao nhau</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(\lVert \mathbf{v}_2 \rVert &lt; \lVert \mathbf{v}_1 \rVert\)</span> thì ta đổi chỗ <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p></li>
+<li><p>Tính <span class="math notranslate nohighlight">\(m = \left\lfloor \mathbf{v}_1 \cdot \mathbf{v}_2 / \lVert \mathbf{v}_1 \rVert^2 \right\rceil\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(m = 0\)</span> thì trả về cơ sở gồm <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p></li>
+<li><p>Thay <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> bởi <span class="math notranslate nohighlight">\(\mathbf{v}_2 - m \mathbf{v}_1\)</span>.</p></li>
+</ol>
+</section>
+</div></section>
+</section>
+<section id="heuristic">
+<h2>Heuristic<a class="headerlink" href="#heuristic" title="Link to this heading">#</a></h2>
+<p>Hai phương pháp heuristic thường được dùng là Gaussian Heuristic (GH) và Geometric Series Assumption (GSA).</p>
+<p>GH la một ước lượng của <span class="math notranslate nohighlight">\(\lambda_1(\mathcal{L})\)</span> - mật độ của các điểm là <span class="math notranslate nohighlight">\(1 / \det(\mathcal{L})\)</span>, vì vậy trong một quả cầu có bán kính <span class="math notranslate nohighlight">\(r\)</span> thì ta mong đợi sẽ có <span class="math notranslate nohighlight">\(v_n \cdot r^n / \det(\mathcal{L})\)</span> điểm trong lattice, trong đó <span class="math notranslate nohighlight">\(v_n\)</span> là thể tích của quả cầu đơn vị <span class="math notranslate nohighlight">\(n\)</span> chiều.</p>
+<p>Cụ thể, điều này đưa ra ước lượng cho <span class="math notranslate nohighlight">\(\lambda_1\)</span> thông qua <span class="math notranslate nohighlight">\(v_n \cdot \lambda_1^n / \det(\mathcal{L}) \approx 1\)</span>, nghĩa là <span class="math notranslate nohighlight">\(\lambda_1 = (\det(\mathcal{L}) / v_1)^{1/n}\)</span>.</p>
+<p>Vì thể tích quả cầu đơn vị là:</p>
+<div class="math notranslate nohighlight">
+\[v_n \approx \dfrac{1}{\sqrt{n \pi}} \left( \dfrac{2 \pi e}{n} \right)^{n/2}\]</div>
+<p>GH suy ra:</p>
+<div class="math notranslate nohighlight">
+\[\lambda_1 \approx \det(\mathcal{L})^{1/n} \sqrt{\dfrac{n}{2 \pi e}}\]</div>
+</section>
+<section id="cac-thuat-toan-lattice-based">
+<h2>Các thuật toán lattice-based<a class="headerlink" href="#cac-thuat-toan-lattice-based" title="Link to this heading">#</a></h2>
+<section id="congruential-public-key-cryptosystem">
+<h3>Congruential public key cryptosystem<a class="headerlink" href="#congruential-public-key-cryptosystem" title="Link to this heading">#</a></h3>
+<p>Thuật toán này có thể xem chi trong <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">12</a>]</span>.</p>
+<section id="tao-khoa">
+<h4>Tạo khóa<a class="headerlink" href="#tao-khoa" title="Link to this heading">#</a></h4>
+<p>Trong thuật toán này, ta chọn số nguyên tố <span class="math notranslate nohighlight">\(q\)</span> làm public parameter.</p>
+<p>Sau đó chọn hai số <span class="math notranslate nohighlight">\(f\)</span> và <span class="math notranslate nohighlight">\(g\)</span> làm private key. Hai số này phải thỏa mãn các điều kiện</p>
+<div class="math notranslate nohighlight">
+\[f &lt; \sqrt{q/2}, \quad \sqrt{q/4} &lt; g &lt; \sqrt{q/2}, \quad \gcd(f, qg) = 1\]</div>
+<p>Tính <span class="math notranslate nohighlight">\(h = f^{-1} g \pmod q\)</span>. Khi đó public key là <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</section>
+<section id="encryption">
+<h4>Encryption<a class="headerlink" href="#encryption" title="Link to this heading">#</a></h4>
+<p>Để encrypt message <span class="math notranslate nohighlight">\(m\)</span> với số random <span class="math notranslate nohighlight">\(r\)</span> thỏa mãn</p>
+<div class="math notranslate nohighlight">
+\[0 &lt; m &lt; \sqrt{q/4}, \quad 0 &lt; r &lt; \sqrt{q/2}\]</div>
+<p>Ta tính <span class="math notranslate nohighlight">\(e = rh + m \pmod q\)</span> là ciphertext với <span class="math notranslate nohighlight">\(0 &lt; e &lt; q\)</span>.</p>
+</section>
+<section id="decryption">
+<h4>Decryption<a class="headerlink" href="#decryption" title="Link to this heading">#</a></h4>
+<p>Để decrypt ciphertext <span class="math notranslate nohighlight">\(e\)</span> ta tính</p>
+<div class="math notranslate nohighlight">
+\[a = fe \pmod q, \quad b = f^{-1} a \pmod g\]</div>
+<p>Lưu ý <span class="math notranslate nohighlight">\(f^{-1}\)</span> là nghịch đảo modulo <span class="math notranslate nohighlight">\(g\)</span>. Khi đó <span class="math notranslate nohighlight">\(b \equiv m\)</span> là message ban đầu.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Để chứng minh rằng số <span class="math notranslate nohighlight">\(b\)</span> sau khi tính toán bằng chính xác <span class="math notranslate nohighlight">\(m\)</span> ban đầu ta cần xem xét điều kiện của private key và public key.</p>
+<p>Đầu tiên ta có</p>
+<div class="math notranslate nohighlight">
+\[a \equiv fe \equiv f(rh + m) = f(r f^{-1} g + m) = rg + fm \pmod q\]</div>
+<p>Từ điều kiện của <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(r\)</span> và <span class="math notranslate nohighlight">\(m\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[rg + fm &lt; \sqrt{\dfrac{q}{2}} \cdot \sqrt{\dfrac{q}{2}} + \sqrt{\dfrac{q}{2}} \cdot \sqrt{\dfrac{q}{4}} &lt; q\]</div>
+<p>Nói cách khác <span class="math notranslate nohighlight">\(rg + fm\)</span> giữ nguyên giá trị trong phép modulo <span class="math notranslate nohighlight">\(q\)</span>, hay <span class="math notranslate nohighlight">\(a \equiv rg + fm\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(b = f^{-1} a = f^{-1} (rg + fm) = m \pmod g\)</span> (giá trị <span class="math notranslate nohighlight">\(a\)</span> không thay đổi khi chuyển từ modulo <span class="math notranslate nohighlight">\(q\)</span> sang modulo <span class="math notranslate nohighlight">\(g\)</span>). Do <span class="math notranslate nohighlight">\(0 &lt; m &lt; \sqrt{q/4}\)</span> và <span class="math notranslate nohighlight">\(\sqrt{q/4} &lt; g &lt; \sqrt{q/2}\)</span> nên <span class="math notranslate nohighlight">\(m &lt; g\)</span>. Nói cách khác <span class="math notranslate nohighlight">\(b\)</span> bằng đúng <span class="math notranslate nohighlight">\(m\)</span> ban đầu.</p>
+</div>
+<p>Để tấn công hệ mật mã này ta xây dựng lattice. Để ý rằng <span class="math notranslate nohighlight">\(h = f^{-1} g \pmod q\)</span>, hay <span class="math notranslate nohighlight">\(fh + kq = g\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
+<p>Ta thấy rằng <span class="math notranslate nohighlight">\(f \cdot (h, 1) + k \cdot (q, 0) = (g, f)\)</span>. Như vậy lattice gồm hai vector <span class="math notranslate nohighlight">\((h, 1)\)</span> và <span class="math notranslate nohighlight">\((q, 0)\)</span>. Thuật toán tối giản Gauss sẽ hoạt động trong trường hợp này (số chiều bằng 2).</p>
+</section>
+</section>
+<section id="ntru-hrss">
+<h3>NTRU-HRSS<a class="headerlink" href="#ntru-hrss" title="Link to this heading">#</a></h3>
+<p>Hệ mật mã NTRU-HRSS được nộp vòng 1 của dự án NIST PQC. Ở vòng 2, NTRU-HRSS hợp nhất với NTRUEncrypt trở thành NTRU.</p>
+<section id="cac-tham-so-cho-ntru">
+<h4>Các tham số cho NTRU<a class="headerlink" href="#cac-tham-so-cho-ntru" title="Link to this heading">#</a></h4>
+<p>NTRU hoạt động trên các vành thương (quotient ring) là <span class="math notranslate nohighlight">\(\mathbb{Z}[x] / (p, x^n - 1)\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}[x] / (q, x^n - 1)\)</span>. Trong đó <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span> và <span class="math notranslate nohighlight">\(n\)</span> là các số nguyên tố khác nhau.</p>
+<p>Ta có thể kí hiệu hai vành trên là <span class="math notranslate nohighlight">\(\mathcal{R}_p\)</span> và <span class="math notranslate nohighlight">\(\mathcal{R}_q\)</span> để đa thức bất khả quy <span class="math notranslate nohighlight">\(x^n - 1\)</span> là ẩn (implicit).</p>
+<p>Đối với NTRU-HRSS cần thêm các vành con của <span class="math notranslate nohighlight">\(\mathcal{R}_p\)</span> và <span class="math notranslate nohighlight">\(\mathcal{R}_q\)</span> mà xác định bằng việc dùng đa thức cyclotomic. Ký hiệu đa thức cyclotomic thứ <span class="math notranslate nohighlight">\(d\)</span> là <span class="math notranslate nohighlight">\(\Phi_d\)</span>. Nhận xét bên trên: <span class="math notranslate nohighlight">\(\Phi_1 = x - 1\)</span> và nếu <span class="math notranslate nohighlight">\(d\)</span> là số nguyên tố thì <span class="math notranslate nohighlight">\(\Phi_d = 1 + x + \ldots + x^{d-1}\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\mathcal{S}_p = \mathbb{Z}[x] / (p, \Phi_n)\)</span> và <span class="math notranslate nohighlight">\(\mathcal{S}_q = \mathbb{Z}[x] / (q, \Phi_n)\)</span> với <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(q\)</span> và <span class="math notranslate nohighlight">\(n\)</span> là các số nguyên tố như trên.</p>
+<p>Khi <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố thì <span class="math notranslate nohighlight">\(x^n - 1 = \Phi_1 \Phi_n\)</span> và do đó <span class="math notranslate nohighlight">\(\mathcal{R}_p \cong \mathbb{Z}[x] / (p, \Phi_1) \times \mathcal{S}_p\)</span> và <span class="math notranslate nohighlight">\(\mathcal{R}_q \cong \mathbb{Z}[x] / (q, \Phi_1) \times \mathcal{S}_q\)</span>.</p>
+<p>Thông thường ta chọn <span class="math notranslate nohighlight">\(p = 3\)</span> và <span class="math notranslate nohighlight">\(n = 701\)</span>. Việc chọn <span class="math notranslate nohighlight">\(n\)</span> như vậy được (nhiều) người khẳng định là an toàn. Ở dưới ta viết <span class="math notranslate nohighlight">\(3\)</span> thay vì <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</section>
+<section id="id2">
+<h4>Tạo khóa<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Đối với NTRU-HRSS-PKE, private key là một phần tử khác không <span class="math notranslate nohighlight">\(f \in \mathcal{S}_3\)</span>.</p>
+<p>Từ <span class="math notranslate nohighlight">\(f\)</span> ta tính public key <span class="math notranslate nohighlight">\(h = \Phi_1 \cdot g \cdot f^{-1} \in \mathcal{R}_q\)</span> với một số <span class="math notranslate nohighlight">\(g \in \mathcal{S}_3\)</span>. Điều này đòi hỏi <span class="math notranslate nohighlight">\(f\)</span> khả nghịch trong <span class="math notranslate nohighlight">\(\mathcal{R}_q\)</span>.</p>
+<p>Để hỗ trợ giải mã ta cần nghịch đảo của <span class="math notranslate nohighlight">\(f\)</span> trong <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span>. Để tránh nhầm lẫn, ta gọi nghịch đảo của <span class="math notranslate nohighlight">\(f\)</span> trong <span class="math notranslate nohighlight">\(\mathcal{R}_q\)</span> và <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> tương ứng là là <span class="math notranslate nohighlight">\(f^{-1}_q\)</span> và <span class="math notranslate nohighlight">\(f^{-1}_3\)</span>.</p>
+<p>Theo cấu trúc thì <span class="math notranslate nohighlight">\(f\)</span> khả nghịch trong cả <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> và <span class="math notranslate nohighlight">\(\mathcal{S}_q\)</span>.</p>
+<p>Thay vì lấy <span class="math notranslate nohighlight">\(f\)</span> và <span class="math notranslate nohighlight">\(g\)</span> trực tiếp từ <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> thì ta lấy từ tập con:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{T}^+ = \{ v \in \mathcal{S}_3 : \langle xv, v \rangle \geqslant 0 \}\]</div>
+<p>Thuật toán sinh khóa gồm các bước:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f \gets \mathcal{T}^+\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{-1}_3 \gets f^{-1} \in \mathcal{S}_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f^{-1}_q \gets f^{-1} \in \mathcal{S}_q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g \gets \mathcal{T}^+\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h = \Phi_1 \cdot g \cdot f^{-1} \in \mathcal{R}_q\)</span></p></li>
+<li><p>Trả về <span class="math notranslate nohighlight">\(\text{pk} = h\)</span>, <span class="math notranslate nohighlight">\(\text{sk} = (f, f^{-1}_3)\)</span>.</p></li>
+</ol>
+</section>
+<section id="ma-hoa">
+<h4>Mã hóa<a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h4>
+<p>Gọi <span class="math notranslate nohighlight">\(m \in \mathcal{S}_3\)</span> là encode của thông điệp và <span class="math notranslate nohighlight">\(r \in \mathcal{S}_3\)</span> được chọn ngẫu nhiên.</p>
+<p>Input: <span class="math notranslate nohighlight">\((m, h = \text{pk})\)</span>.</p>
+<p>Output: ciphertext <span class="math notranslate nohighlight">\(e\)</span> được tính:</p>
+<div class="math notranslate nohighlight">
+\[e \gets p \cdot r \cdot h + [m]_3 \in \mathcal{R}_q\]</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(p = 3\)</span> là số nguyên tố bên trên.</p>
+</section>
+<section id="giai-ma">
+<h4>Giải mã<a class="headerlink" href="#giai-ma" title="Link to this heading">#</a></h4>
+<p>Input: <span class="math notranslate nohighlight">\((e, (f, f^{-1}_3))\)</span> và hai vành <span class="math notranslate nohighlight">\((\mathcal{R}_q, \mathcal{S}_3)\)</span>.</p>
+<p>Output: plaintext <span class="math notranslate nohighlight">\(m'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[m' \gets [e \cdot f]_q \cdot f^{-1}_3 \in \mathcal{S}_3\]</div>
+<p>Ở đây kí hiệu <span class="math notranslate nohighlight">\([e \cdot f]_q\)</span> nghĩa là phép tính diễn ra trong vành <span class="math notranslate nohighlight">\(\mathcal{R}_q\)</span>. Tương tự ở trên <span class="math notranslate nohighlight">\([m]_3\)</span> là encode của thông điệp <span class="math notranslate nohighlight">\(m\)</span> trong <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="phuong-phap-coppersmith">
+<h2>Phương pháp Coppersmith<a class="headerlink" href="#phuong-phap-coppersmith" title="Link to this heading">#</a></h2>
+<p>Phương pháp Coppersmith được dùng để tìm nghiệm nhỏ của đa thức trên modulo. Phần này mình tham khảo chính từ <span id="id3">[<a class="reference internal" href="../intro.html#id15" title="Steven D Galbraith. Mathematics of Public Key Cryptography. Cambridge University, 2018.">13</a>]</span>.</p>
+<section id="y-tuong">
+<h3>Ý tưởng<a class="headerlink" href="#y-tuong" title="Link to this heading">#</a></h3>
+<p>Giả sử ta có phương trình <span class="math notranslate nohighlight">\(F(x) \equiv 0 \bmod M\)</span>​. Với số <span class="math notranslate nohighlight">\(X\)</span>​ cố định cho trước, phương pháp Coppersmith cho phép tìm nghiệm <span class="math notranslate nohighlight">\(x_0\)</span> nhỏ thỏa mãn <span class="math notranslate nohighlight">\(\lvert x_0 \rvert \leqslant X\)</span>​.</p>
+<p>Ý tưởng của phương pháp này là thay vì tìm nghiệm <span class="math notranslate nohighlight">\(x_0\)</span> của <span class="math notranslate nohighlight">\(F(x)\)</span>​ trên modulo <span class="math notranslate nohighlight">\(M\)</span>​, chúng ta sẽ mở rộng lên, tìm một hàm <span class="math notranslate nohighlight">\(G(x)\)</span>​ nào đó mà có nghiệm <span class="math notranslate nohighlight">\(x_0\)</span>​ trên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>​.</p>
+<p>Đơn giản nhất là <span class="math notranslate nohighlight">\(G(x) = k \cdot F(x) + M \cdot g(x)\)</span>​, <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span> và <span class="math notranslate nohighlight">\(\deg g(x) \leqslant \deg F(x)\)</span>. Rõ ràng khi modulo hai vế cho <span class="math notranslate nohighlight">\(M\)</span>​ thì <span class="math notranslate nohighlight">\(G(x_0) = F(x_0) = 0 \bmod M\)</span>.</p>
+<p>Phương pháp này giúp tìm nghiệm của một đa thức bậc nhỏ modulo <span class="math notranslate nohighlight">\(M\)</span>​. Do đó giả sử đặt:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = a_0 + a_1 x + \cdots + a_d x^d\]</div>
+<p>​
+với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.</p>
+<p>Lúc này chúng ta sẽ tìm hàm <span class="math notranslate nohighlight">\(G(x)\)</span>​ trên với hệ số nhỏ.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(g(x) = b_0 + b_1 x + \cdots + b_d x^d\)</span> với <span class="math notranslate nohighlight">\(b_i \in \mathbb{Z}\)</span>.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(G(x) = (k \cdot a_0 + M \cdot b_0) + (k \cdot a_1 + M \cdot b_1) x + \cdots + (k \cdot a_d + M \cdot b_d) x^d\)</span>.</p>
+<p>Ta mong muốn các hệ số <span class="math notranslate nohighlight">\(k \cdot a_0 + M \cdot b_0\)</span>​, <span class="math notranslate nohighlight">\(k \cdot a_1 + M \cdot b_1\)</span>​, <span class="math notranslate nohighlight">\(\cdots\)</span>​, <span class="math notranslate nohighlight">\(k \cdot a_d + M \cdot b_d\)</span> nhỏ so với <span class="math notranslate nohighlight">\(M\)</span>​.</p>
+<p>Do đó với số <span class="math notranslate nohighlight">\(X\)</span>​ cho trước, nếu ta xây lattice (<span class="math notranslate nohighlight">\(d+2\)</span> vector) sau:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\begin{array}{cccccccc}
+		\mathbf{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+		\mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+		\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+		\mathbf{v}_d &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; MX^d \\
+		\mathbf{v}_{d+1} &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; a_d X^d
+	\end{array}
+\end{split}\]</div>
+<p>Khi đó hệ số của mỗi dòng từ <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span>​ tới <span class="math notranslate nohighlight">\(\mathbf{v}_d\)</span>​ là <span class="math notranslate nohighlight">\(b_0\)</span>​ tới <span class="math notranslate nohighlight">\(b_d\)</span>​. Còn hệ số của <span class="math notranslate nohighlight">\(\mathbf{v}_{d+1}\)</span>​ là <span class="math notranslate nohighlight">\(k\)</span>​.</p>
+<p>Tuy nhiên chúng ta thường sẽ biến đổi để đa thức trở thành monic (<span class="math notranslate nohighlight">\(a_d = 1\)</span>​). Khi đó chúng ta bỏ đi <span class="math notranslate nohighlight">\(v_d\)</span>​ và còn <span class="math notranslate nohighlight">\(d+1\)</span>​ vector trong lattice.</p>
+</section>
+<section id="cai-tien-thuat-toan">
+<h3>Cải tiến thuật toán<a class="headerlink" href="#cai-tien-thuat-toan" title="Link to this heading">#</a></h3>
+<section id="dang-don-gian">
+<h4>Dạng đơn giản<a class="headerlink" href="#dang-don-gian" title="Link to this heading">#</a></h4>
+<p>Giả sử <span class="math notranslate nohighlight">\(k(x)\)</span>​ có bậc là <span class="math notranslate nohighlight">\(h\)</span>​. Đặt <span class="math notranslate nohighlight">\(k(x) = c_0 + c_1 x + \cdots + c_h x^h\)</span>​.</p>
+<p>Khi đó:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	G(x) = &amp; k(x) \cdot F(x) + M \cdot g(x) \\
+	= &amp; (c_0 + c_1 x + \cdots c_h x^h) \cdot (a_0 + a_1 x + \cdots + x^d) + M \cdot (b_0 + b_1 x + \cdots + b_d x^d) \\
+	= &amp; c_0 \cdot F(x) + c_1 \cdot xF(x) + \cdots c_h \cdot x^h F(x) + M \cdot (b_0 + b_1 x + \cdots b_d x^d)
+\end{align*}\end{split}\]</div>
+<p>Lúc này mỗi đại lượng <span class="math notranslate nohighlight">\(F(x)\)</span>​, <span class="math notranslate nohighlight">\(xF(x)\)</span>​, …​, <span class="math notranslate nohighlight">\(x^h F(x)\)</span>​ sẽ khiến hệ số của <span class="math notranslate nohighlight">\(F(x)\)</span>​ ban đầu tăng bậc. Nói cách khác hệ số <span class="math notranslate nohighlight">\(a_i\)</span> của <span class="math notranslate nohighlight">\(x^i\)</span>​ trong <span class="math notranslate nohighlight">\(F(x)\)</span>​ sẽ là hệ số của <span class="math notranslate nohighlight">\(x^{i+j}\)</span>​ trong <span class="math notranslate nohighlight">\(x^j F(x)\)</span>​.</p>
+<p>Sách giáo khoa nói rằng nếu mình chọn <span class="math notranslate nohighlight">\(h=d-1\)</span>​ thì phương pháp Coppersmith sẽ cho ra kết quả nếu <span class="math notranslate nohighlight">\(X\)</span>​ được chọn thỏa <span class="math notranslate nohighlight">\(X \approx M^{1/(2d-1)}\)</span>.</p>
+<p>Tương tự, mình sẽ có các vector trong lattice như sau:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccccccccccc}
+    \mathbf{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\​
+    \mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    \mathbf{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; MX^{d-1} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+    \mathbf{v}_d &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; X^d &amp; 0 &amp; 0 &amp; \cdots
+\end{array}
+\end{split}\]</div>
+<p>Sau đó thêm các vector khi shift vào, tương ứng với <span class="math notranslate nohighlight">\(xF(x)\)</span>​, <span class="math notranslate nohighlight">\(x^2 F(x)\)</span>​, …​</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cccccccccccc}
+    \mathbf{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; a_0 X &amp; a_1 X^2 &amp; a_2 X^3 &amp; \cdots &amp; a_{d-1} X^d &amp; a_d X^{d+1} &amp; 0 &amp; 0 &amp; \cdots \\
+    \mathbf{v}_{d+2} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; a_0 X^2 &amp; a_1 X^3 &amp; \cdots &amp; a_{d-2} X^d &amp; a_{d-1} X^{d+1} &amp; a_d X^{d+2} &amp; 0 &amp; \cdots
+\end{array}
+\end{split}\]</div>
+<p>Tuy nhiên vấn đề ở đây là bound của nghiệm bị thu hẹp lại. Ban nãy mình nói rằng nếu chọn <span class="math notranslate nohighlight">\(h=d-1\)</span>​ thì nghiệm cho kết quả nếu <span class="math notranslate nohighlight">\(X \approx M^{1/(2d-1)}\)</span>​. Ở đây <span class="math notranslate nohighlight">\(M = 10001\)</span>​ nên <span class="math notranslate nohighlight">\(X \approx 4\)</span>​. Trong khi ở bài viết trước thì <span class="math notranslate nohighlight">\(X = 10\)</span>​. Do đó có thể thấy việc mở rộng này đôi khi kém hiệu quả tùy thuộc vào <span class="math notranslate nohighlight">\(h\)</span>​.</p>
+</section>
+<section id="dang-nang-cao">
+<h4>Dạng nâng cao<a class="headerlink" href="#dang-nang-cao" title="Link to this heading">#</a></h4>
+<p>Coppersmith đã đề xuất ý tưởng như sau:</p>
+<div class="proof lemma admonition" id="lemma-10">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Coppersmith)</p>
+<section class="lemma-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(0 &lt; \epsilon &lt; \min \{0,18; 1/d\}\)</span>. Đặt <span class="math notranslate nohighlight">\(F(x)\)</span>​ là đa thức monic bậc <span class="math notranslate nohighlight">\(d\)</span>​ có một hoặc nhiều nghiệm <span class="math notranslate nohighlight">\(x_0\)</span>​ trên modulo <span class="math notranslate nohighlight">\(M\)</span>​ sao cho <span class="math notranslate nohighlight">\(\lvert x_0 \rvert \leqslant \frac{1}{2} M^{1/d-\epsilon}\)</span>. Khi đó <span class="math notranslate nohighlight">\(x_0\)</span>​ có thể tính với thời gian đa thức giới hạn bởi <span class="math notranslate nohighlight">\(d\)</span>​, <span class="math notranslate nohighlight">\(1/\epsilon\)</span>​ và <span class="math notranslate nohighlight">\(\log(M)\)</span>.</p>
+</section>
+</div><p>Để chứng minh bổ đề này thì Coppersmith đã xây dựng một hệ lattice để tính toán và cũng là cách xây dựng lattice sẽ đề cập tới đây.</p>
+<p>Chúng ta biết rằng <span class="math notranslate nohighlight">\(x_0\)</span>​ là nghiệm của đa thức <span class="math notranslate nohighlight">\(F(x) \equiv 0 \bmod M\)</span>​. Do đó ta suy ra <span class="math notranslate nohighlight">\(F(x_0)^k \equiv 0 \bmod M^k\)</span>​.</p>
+<p>Từ nhận xét này, mình mở rộng phần cơ bản lên tìm nghiệm trong modulo <span class="math notranslate nohighlight">\(M^{h-1}\)</span>​ với <span class="math notranslate nohighlight">\(h\)</span> là một số được chọn trước.</p>
+<p>Với <span class="math notranslate nohighlight">\(k(x) = c_0 + c_1 x + \cdots + c_{d-1} x^{d-1}\)</span> biểu diễn việc shift thành <span class="math notranslate nohighlight">\(F(x)\)</span>, <span class="math notranslate nohighlight">\(xF(x)\)</span>​, <span class="math notranslate nohighlight">\(x^2 F(x)\)</span>, …, <span class="math notranslate nohighlight">\(x^{d-1} F(x)\)</span>​.</p>
+<p>Ta xét <span class="math notranslate nohighlight">\(h\)</span>​ đa thức sau:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccc}
+    M^{h-1} F(x)^0 k(x) &amp; \equiv &amp; 0 \bmod M^{h-1} \\
+    M^{h-2} F(x)^1 k(x) &amp; \equiv &amp; 0 \bmod M^{h-1} \\
+    \cdots &amp; \ddots &amp; \cdots \\
+    M^0 F(x)^{h-1} k(x) &amp; \equiv &amp; 0 \bmod M^{h-1}
+\end{array}
+\end{split}\]</div>
+<p>Với mỗi đa thức <span class="math notranslate nohighlight">\(M^{h-1-j} F(x)^j\)</span>​ chúng ta có <span class="math notranslate nohighlight">\(d\)</span>​ lần shift tương ứng với từng hệ số của <span class="math notranslate nohighlight">\(k(x)\)</span>​. Cụ thể là <span class="math notranslate nohighlight">\(M^{h-1-j}F(x)^j\)</span>​, <span class="math notranslate nohighlight">\(M^{h-1-j}F(x)^j x\)</span>​, <span class="math notranslate nohighlight">\(M^{h-1-j}F(x)^j x^2\)</span>​, …, <span class="math notranslate nohighlight">\(M^{h-1-j}F(x)^j x^{d-1}\)</span>​.</p>
+<p>Do đó có tất cả <span class="math notranslate nohighlight">\(dh\)</span>​ vector trong lattice. Số <span class="math notranslate nohighlight">\(h\)</span>​ thường được chọn sao cho <span class="math notranslate nohighlight">\(dh \approx \epsilon\)</span>. Và chặn nghiệm <span class="math notranslate nohighlight">\(X\)</span>​ có thể chọn là <span class="math notranslate nohighlight">\(\frac{1}{2}M^{1/d - \epsilon}\)</span>​ theo như bổ đề.</p>
+<p>Như vậy mình xây lattice như sau:</p>
+<ul class="simple">
+<li><p>Bước 1. Với <span class="math notranslate nohighlight">\(M^{h-1} F(x)^0\)</span>​ thì các vector sau lần lượt tương ứng với</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[M^{h-1} F(x)^0, M^{h-1} F(x)^0 x, \ldots, M^{h-1} F(x)^0 x^{d-1}\]</div>
+<p>Nói cách khác thì:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ccccccccc}
+    \mathbf{v}_0 &amp; \Leftarrow &amp; M^{h-1} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
+    \mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; M^{h-1} X &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    \mathbf{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M^{h-1} X^{d-1} &amp; 0 &amp; \cdots
+\end{array}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Bước 2. Với <span class="math notranslate nohighlight">\(M^{h-2} F(x)\)</span>​ thì các vector sau lần lượt tương ứng với</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[M^{h-2} F(x)^1, M^{h-2} F(x)^1 x, \ldots, M^{h-2} F(x)^1 x^{d-1}\]</div>
+<p>Nói cách khác thì:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cccccccccc}
+    \mathbf{v}_d &amp; \Leftarrow &amp; Ma_0 &amp; M a_1 X &amp; M a_2 X^2 &amp; \cdots &amp; M a_{d-1} X^{d-1} &amp; M X^d &amp; \cdots &amp; \cdots \\ 
+    \mathbf{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; Ma_0 X &amp; Ma_1 X^2 &amp; \cdots &amp; M a_{d-2} X^{d-1} &amp; M a_{d-1} X^d &amp; M X^{d+1} &amp; \cdots \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    \mathbf{v}_{2d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M a_0 X^{d-1} &amp; M a_1 X^d &amp; \cdots &amp; \cdots
+\end{array}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Bước thứ <span class="math notranslate nohighlight">\(j\)</span>. Cứ như vậy với <span class="math notranslate nohighlight">\(M^{h-1-j}F(x)^j\)</span>​.</p></li>
+</ul>
+<p>Chạy LLL trên lattice trên sẽ cho kết quả 😆</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./cryptography"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="quantum-computing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Quantum computing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../vasilenko/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Теоретико-числовые алгоритмы в криптографии</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-bai-toan-kho">Các bài toán khó</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#short-vectors-trong-lattice">Short vectors trong lattice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-babai">Thuật toán Babai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lattice-reduction">Lattice reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-lattice-reduction">Gaussian lattice reduction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heuristic">Heuristic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-thuat-toan-lattice-based">Các thuật toán lattice-based</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#congruential-public-key-cryptosystem">Congruential public key cryptosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tao-khoa">Tạo khóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#encryption">Encryption</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decryption">Decryption</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ntru-hrss">NTRU-HRSS</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-tham-so-cho-ntru">Các tham số cho NTRU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tạo khóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">Mã hóa</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#giai-ma">Giải mã</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-coppersmith">Phương pháp Coppersmith</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-tuong">Ý tưởng</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-thuat-toan">Cải tiến thuật toán</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-don-gian">Dạng đơn giản</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-nang-cao">Dạng nâng cao</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

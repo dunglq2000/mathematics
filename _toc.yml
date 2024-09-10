@@ -36,6 +36,7 @@ parts:
       - file: cryptography/magma.md
       - file: cryptography/kuznyechik.md
     - file: cryptography/quantum-computing.md
+    - file: cryptography/lattice-based.md
   - caption: Теоретико-числовые алгоритмы в криптографии
     numbered: true
     chapters:
