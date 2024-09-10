@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Quantum computing &#8212; Math Book</title>
+    <title>9. Quantum computing &#8212; Math Book</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/quantum-computing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Lattice-based cryptography" href="lattice-based.html" />
-    <link rel="prev" title="7.2. Kuznyechik" href="kuznyechik.html" />
+    <link rel="next" title="10. Lattice-based cryptography" href="lattice-based.html" />
+    <link rel="prev" title="8. Phá mã vi sai trên TinyDES" href="differential-attack/tinydes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,13 +217,14 @@
 <li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">7.2. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lattice-based.html">9. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lattice-based.html">10. Lattice-based cryptography</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">10. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">10.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">11. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">11.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -425,9 +426,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">8.1. Qubit và toán tử quantum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">8.2. Qubit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">8.3. Các toán tử quantum thường gặp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">9.1. Qubit và toán tử quantum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">9.2. Qubit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">9.3. Các toán tử quantum thường gặp</a></li>
 </ul>
             </nav>
         </div>
@@ -440,17 +441,17 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quantum-computing">
-<h1><span class="section-number">8. </span>Quantum computing<a class="headerlink" href="#quantum-computing" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Quantum computing<a class="headerlink" href="#quantum-computing" title="Link to this heading">#</a></h1>
 <section id="qubit-va-toan-tu-quantum">
-<h2><span class="section-number">8.1. </span>Qubit và toán tử quantum<a class="headerlink" href="#qubit-va-toan-tu-quantum" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span>Qubit và toán tử quantum<a class="headerlink" href="#qubit-va-toan-tu-quantum" title="Link to this heading">#</a></h2>
 <p>Trên máy tính hiện nay, đơn vị xử lý cơ bản là bit (0 hoặc 1). Trong máy tính lượng tử, đơn vị tính toán là qubit (quantum bit).</p>
 </section>
 <section id="qubit">
-<h2><span class="section-number">8.2. </span>Qubit<a class="headerlink" href="#qubit" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.2. </span>Qubit<a class="headerlink" href="#qubit" title="Link to this heading">#</a></h2>
 <p>Mỗi qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle\)</span> được biểu diễn dưới dạng tổ hợp tuyến tính của cơ sở gồm <span class="math notranslate nohighlight">\(\lvert 0 \rangle = (1, 0)\)</span> và <span class="math notranslate nohighlight">\(\lvert 1 \rangle = (0, 1)\)</span>. Khi đó qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span>. Ở đây <span class="math notranslate nohighlight">\(\alpha, \beta \in \mathbb{C}\)</span> (tập số phức).</p>
 <p>Tích của <span class="math notranslate nohighlight">\(n\)</span> qubit là các tổ hợp <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 1 \rangle\)</span>, …, <span class="math notranslate nohighlight">\(\lvert 1, 1, \ldots, 1 \rangle\)</span>. Ta cũng ký hiệu <span class="math notranslate nohighlight">\(\lvert 0 \rangle \otimes \lvert 1 \rangle = \lvert 01 \rangle\)</span>.</p>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 8.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 9.1 </span></p>
 <section class="example-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert \Psi \rangle = \gamma \lvert 0 \rangle + \delta \lvert 1 \rangle\)</span> thì</p>
 <div class="math notranslate nohighlight">
@@ -468,25 +469,25 @@ document.write(`
 \end{equation*}\end{split}\]</div>
 </section>
 <section id="cac-toan-tu-quantum-thuong-gap">
-<h2><span class="section-number">8.3. </span>Các toán tử quantum thường gặp<a class="headerlink" href="#cac-toan-tu-quantum-thuong-gap" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>Các toán tử quantum thường gặp<a class="headerlink" href="#cac-toan-tu-quantum-thuong-gap" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 8.1 </span> (Toán tử đồng nhất)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.1 </span> (Toán tử đồng nhất)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử đồng nhất identity giữ nguyên qubit đầu vào. Ma trận tương ứng là ma trận đơn vị <span class="math notranslate nohighlight">\(I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 8.2 </span> (Toán tử NOT)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.2 </span> (Toán tử NOT)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử NOT có ma trận tương ứng là <span class="math notranslate nohighlight">\(\text{NOT} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>. Khi đó <span class="math notranslate nohighlight">\(\text{NOT} \lvert \psi \rangle = b \lvert 0 \rangle + a \lvert 1 \rangle\)</span> với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span>.</p>
 </section>
 </div><p>Khi qubit là <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span> hoặc <span class="math notranslate nohighlight">\(\lvert 1 \rangle\)</span>, tác dụng của toán tử NOT là phép XOR nên ta có <span class="math notranslate nohighlight">\(\text{NOT} \lvert x \rangle = \lvert x \oplus 1 \rangle\)</span>.</p>
 <div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 8.3 </span> (Toán tử Hadamard)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.3 </span> (Toán tử Hadamard)</p>
 <section class="definition-content" id="proof-content">
 <p>Ma trận của toán tử Hadamard là <span class="math notranslate nohighlight">\(H = \dfrac{1}{\sqrt{2}} \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; - 1 \end{pmatrix}\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 8.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 9.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span>, toán tử Hadamard tương ứng với phép nhân ma trận</p>
 <div class="math notranslate nohighlight">
@@ -506,7 +507,7 @@ document.write(`
 <p>Tiếp theo là toán tử thường được dùng nhất khi tính toán trên tích của nhiều qubit: toán tử control.</p>
 <p>Như đã xem xét ở trên, tích của <span class="math notranslate nohighlight">\(n\)</span> qubit sẽ có <span class="math notranslate nohighlight">\(2^n\)</span> phần tử tương ứng các bộ <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 1 \rangle\)</span>, … Do đó toán tử control sẽ là ma trận kích thước <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span>.</p>
 <div class="proof definition admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 8.4 </span> (Toán tử control)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.4 </span> (Toán tử control)</p>
 <section class="definition-content" id="proof-content">
 <p>Gọi <span class="math notranslate nohighlight">\(\mathcal{U} = \begin{pmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{pmatrix}\)</span> là toán tử tác động lên một qubit. Xét hai qubit là <span class="math notranslate nohighlight">\(\lvert x \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert y \rangle = c \lvert 0 \rangle + d \lvert 1 \rangle\)</span>. Ta có tích</p>
 <div class="math notranslate nohighlight">
@@ -532,7 +533,7 @@ document.write(`
 \end{equation*}\]</div>
 <p>Ta có một số nhận xét sau đây.</p>
 <div class="proof remark admonition" id="remark-6">
-<p class="admonition-title"><span class="caption-number">Remark 8.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 9.1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\(\lvert x \rangle \equiv \lvert 0 \rangle\)</span>, tức là <span class="math notranslate nohighlight">\(a = 1, b = 0\)</span> thì tích trên tương ứng với</p>
 <div class="math notranslate nohighlight">
@@ -548,7 +549,7 @@ document.write(`
 </ul>
 <p>Tùy vào <span class="math notranslate nohighlight">\(x\)</span> là 0 hay 1 mà toán tử quantum <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> sẽ bị bỏ qua hoặc xem xét. Ở đây qubit <span class="math notranslate nohighlight">\(\lvert x \rangle\)</span> đóng vai trò điều khiển nên đây được gọi là toán tử control.</p>
 <div class="proof definition admonition" id="definition-7">
-<p class="admonition-title"><span class="caption-number">Definition 8.5 </span> (Toán tử control CNOT, Control NOT)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.5 </span> (Toán tử control CNOT, Control NOT)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử quantum CNOT có ma trận là</p>
 <div class="math notranslate nohighlight">
@@ -591,12 +592,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="kuznyechik.html"
+       href="differential-attack/tinydes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7.2. </span>Kuznyechik</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Phá mã vi sai trên TinyDES</p>
       </div>
     </a>
     <a class="right-next"
@@ -604,7 +605,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Lattice-based cryptography</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Lattice-based cryptography</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -624,9 +625,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">8.1. Qubit và toán tử quantum</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">8.2. Qubit</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">8.3. Các toán tử quantum thường gặp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit-va-toan-tu-quantum">9.1. Qubit và toán tử quantum</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qubit">9.2. Qubit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-toan-tu-quantum-thuong-gap">9.3. Các toán tử quantum thường gặp</a></li>
 </ul>
   </nav></div>
 

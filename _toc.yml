@@ -37,6 +37,7 @@ parts:
       sections:
       - file: cryptography/magma.md
       - file: cryptography/kuznyechik.md
+    - file: cryptography/differential-attack/tinydes.md
     - file: cryptography/quantum-computing.md
     - file: cryptography/lattice-based.md
   - caption: Теоретико-числовые алгоритмы в криптографии
