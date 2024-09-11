@@ -41,6 +41,7 @@ parts:
     - file: cryptography/quantum-computing.md
     - file: cryptography/lattice-based.md
     - file: cryptography/code-based.md
+    - file: cryptography/elliptic.md
   - caption: Теоретико-числовые алгоритмы в криптографии
     numbered: true
     chapters:

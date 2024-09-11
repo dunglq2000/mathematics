@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.1. Biến đổi Fourier rời rạc &#8212; Math Book</title>
+    <title>12. Đường cong elliptic &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'vasilenko/discrete-fourier-transform';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/elliptic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Internet Olympiad 2023" href="../internet-olympiad/2023.html" />
-    <link rel="prev" title="13. Теоретико-числовые алгоритмы в криптографии" href="intro.html" />
+    <link rel="next" title="13. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
+    <link rel="prev" title="11. Code-based cryptography" href="code-based.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,23 +210,23 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">6. Đại số boolean và mật mã học</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">7. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">7.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">7.2. Kuznyechik</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">6. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="block-cipher.html">7. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="magma.html">7.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">7.2. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">9. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">10. Lattice-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">11. Code-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">12. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="differential-attack/tinydes.html">8. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">9. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lattice-based.html">10. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-based.html">11. Code-based cryptography</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Đường cong elliptic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">13. Теоретико-числовые алгоритмы в криптографии</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1. Biến đổi Fourier rời rạc</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">13. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">13.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvasilenko/discrete-fourier-transform.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcryptography/elliptic.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="../_sources/vasilenko/discrete-fourier-transform.md" target="_blank"
+      <li><a href="../_sources/cryptography/elliptic.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biến đổi Fourier rời rạc</h1>
+    <h1>Đường cong elliptic</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,9 +429,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gioi-thieu">13.1.1. Giới thiệu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-toan-bien-doi-fourier">13.1.2. Tính toán biến đổi Fourier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier-va-phep-nhan-da-thuc">13.1.3. Biến đổi Fourier và phép nhân đa thức</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-dau-ve-duong-cong-elliptic">12.1. Mở đầu về đường cong elliptic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-cac-diem-tren-elliptic">12.2. Phép cộng các điểm trên elliptic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-hai-diem-khac-nhau">12.2.1. Phép cộng hai điểm khác nhau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-hai-diem-giong-nhau">12.2.2. Phép cộng hai điểm giống nhau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-ket">12.2.3. Tổng kết</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -443,71 +447,139 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="bien-doi-fourier-roi-rac">
-<h1><span class="section-number">13.1. </span>Biến đổi Fourier rời rạc<a class="headerlink" href="#bien-doi-fourier-roi-rac" title="Link to this heading">#</a></h1>
-<section id="gioi-thieu">
-<h2><span class="section-number">13.1.1. </span>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Link to this heading">#</a></h2>
-<p>Cho số <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(n = 2^t\)</span>. Đặt <span class="math notranslate nohighlight">\(R\)</span> là vành với đơn vị <span class="math notranslate nohighlight">\(1\)</span>. Vành <span class="math notranslate nohighlight">\(R\)</span> chứa phần tử <span class="math notranslate nohighlight">\(2^{-1}\)</span> là nghịch đảo của phần tử <span class="math notranslate nohighlight">\(2\)</span>. Biết rằng <span class="math notranslate nohighlight">\(R\)</span> cũng chứa phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là một nghiệm cố định nào đó của phương trình <span class="math notranslate nohighlight">\(x^n + 1 = 0\)</span>. Đặt <span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2\)</span>.</p>
-<div class="proof lemma admonition" id="lemma-0">
-<p class="admonition-title"><span class="caption-number">Lemma 13.1 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> sinh ra một nhóm vòng (cyclic group) từ nhóm nhân của vành <span class="math notranslate nohighlight">\(R\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="duong-cong-elliptic">
+<h1><span class="section-number">12. </span>Đường cong elliptic<a class="headerlink" href="#duong-cong-elliptic" title="Link to this heading">#</a></h1>
+<p>Đường cong elliptic (elliptic curve) rất nổi tiếng trong toán học. Đây là công cụ giúp các nhà toán học giải quyết bài toán lớn <strong>Định lý cuối cùng của Fermat</strong>. Trong mật mã học, đường cong elliptic là một trong những tiêu chuẩn bảo mật về mã hóa và chữ ký điện tử. Chương này khảo sát những đặc trưng cơ bản đường cong elliptic và ứng dụng trong mật mã học.</p>
+<section id="mo-dau-ve-duong-cong-elliptic">
+<h2><span class="section-number">12.1. </span>Mở đầu về đường cong elliptic<a class="headerlink" href="#mo-dau-ve-duong-cong-elliptic" title="Link to this heading">#</a></h2>
+<p>Đường cong elliptic là tập hợp các điểm <span class="math notranslate nohighlight">\((x, y)\)</span> trên mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> thỏa mãn phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 + ax + b\)</span>, với <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}\)</span> và <span class="math notranslate nohighlight">\(4a^3 + 27b^2 \neq 0\)</span>.</p>
+<p>Ví dụ với phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 + 8\)</span>, đồ thị được biểu diễn ở <a class="reference internal" href="#ecc-1"><span class="std std-numref">Fig. 12.1</span></a>.</p>
+<p>Ví dụ với phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 - x\)</span>, đồ thị được biểu diễn ở <a class="reference internal" href="#ecc-2"><span class="std std-numref">Fig. 12.2</span></a>.</p>
+<p>Hoặc đối với phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 - 3x + 3\)</span> thì đồ thị được biểu diễn ở <a class="reference internal" href="#ecc-3"><span class="std std-numref">Fig. 12.3</span></a>.</p>
+<p>Ta thấy rằng, đường cong elliptic đối xứng qua trục hoành.</p>
+<figure class="align-default" id="ecc-1">
+<img alt="../_images/ecc1.jpg" src="../_images/ecc1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 12.1 </span><span class="caption-text">Elliptic <span class="math notranslate nohighlight">\(y^2 = x^3 + 8\)</span></span><a class="headerlink" href="#ecc-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="ecc-2">
+<img alt="../_images/ecc2.jpg" src="../_images/ecc2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 12.2 </span><span class="caption-text">Elliptic <span class="math notranslate nohighlight">\(y^2 = x^3 - x\)</span></span><a class="headerlink" href="#ecc-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="ecc-3">
+<img alt="../_images/ecc3.jpg" src="../_images/ecc3.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 12.3 </span><span class="caption-text">Elliptic <span class="math notranslate nohighlight">\(y^2 = x^3 - 3x + 3\)</span></span><a class="headerlink" href="#ecc-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-</div><p>Gọi <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1}) \in R^n\)</span> là vector bất kì. Khi đó:</p>
+<section id="phep-cong-cac-diem-tren-elliptic">
+<h2><span class="section-number">12.2. </span>Phép cộng các điểm trên elliptic<a class="headerlink" href="#phep-cong-cac-diem-tren-elliptic" title="Link to this heading">#</a></h2>
+<p>Phương trình và đồ thị của đường cong elliptic đã được trình bày ở trên. Tuy nhiên chúng ta quan tâm tới mối liên hệ giữa các điểm trên elliptic, cụ thể là phép “cộng” 2 điểm.</p>
+<p>Ta thêm một điểm trừu tượng vào tập hợp các điểm trên đường cong
+elliptic và gọi là <strong>điểm vô cực</strong>. Điểm vô cực được ký hiệu là
+<span class="math notranslate nohighlight">\(\mathcal{O}\)</span>.</p>
+<p>Khi đó, với điểm <span class="math notranslate nohighlight">\(P=(x, y)\)</span> bất kì trên elliptic, điểm đối xứng của nó qua trục hoàng là <span class="math notranslate nohighlight">\(P'=(x,-y)\)</span> và ta định nghĩa <span class="math notranslate nohighlight">\(P + P'=\mathcal{O}\)</span>. Tiếp theo ta định nghĩa phép cộng hai điểm.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(P=(x_P, y_P)\)</span> và <span class="math notranslate nohighlight">\(Q=(x_Q, y_Q)\)</span> là hai điểm trên elliptic. Ta có hai trường hợp:</p>
 <ol class="arabic simple">
-<li><p><strong>Biến đổi Fourier loại 1</strong> của vector trên là vector <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> thuộc <span class="math notranslate nohighlight">\(R^n\)</span> xác định bởi đẳng thức:</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(P \neq Q\)</span>, ta vẽ đường thẳng đi qua <span class="math notranslate nohighlight">\(P\)</span> và <span class="math notranslate nohighlight">\(Q\)</span>. Đường thẳng này cắt elliptic tại điểm thứ ba là <span class="math notranslate nohighlight">\(S\)</span>. Ta lấy <span class="math notranslate nohighlight">\(R\)</span> đối xứng với <span class="math notranslate nohighlight">\(S\)</span> qua trục hoành. Khi đó <span class="math notranslate nohighlight">\(R\)</span> cũng nằm trên elliptic và <span class="math notranslate nohighlight">\(P + Q = R\)</span>;</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(P \equiv Q\)</span>, ta vẽ tiếp tuyến với elliptic tại điểm <span class="math notranslate nohighlight">\(P\)</span>. Tiếp tuyến này cắt elliptic tại điểm thứ hai là <span class="math notranslate nohighlight">\(S\)</span>. Tương tự ta lấy <span class="math notranslate nohighlight">\(R\)</span> đối xứng với <span class="math notranslate nohighlight">\(S\)</span> qua trục hoành. Khi đó <span class="math notranslate nohighlight">\(P + Q = 2P = R\)</span>.</p></li>
 </ol>
+<p>Khi đó, tập hợp các điểm trên elliptic cùng với điểm vô cực, và phép cộng hai điểm được định nghĩa như trên tạo thành một nhóm.</p>
+<p>Để chứng minh đây là nhóm, ta cần chuyển các khái niệm hình học kia sang đại số để tính toán và chứng minh.</p>
+<section id="phep-cong-hai-diem-khac-nhau">
+<h3><span class="section-number">12.2.1. </span>Phép cộng hai điểm khác nhau<a class="headerlink" href="#phep-cong-hai-diem-khac-nhau" title="Link to this heading">#</a></h3>
+<p>Đầu tiên ta thiết lập công thức phép cộng giữa hai điểm cho trường hợp <span class="math notranslate nohighlight">\(P \neq Q\)</span>. Giả sử <span class="math notranslate nohighlight">\(P = (x_P, y_P)\)</span> và <span class="math notranslate nohighlight">\(Q = (x_Q, y_Q)\)</span>.</p>
+<p>Phương trình đường thẳng đi qua <span class="math notranslate nohighlight">\(P\)</span> và <span class="math notranslate nohighlight">\(Q\)</span> là</p>
+<div class="math notranslate nohighlight" id="equation-eqecc-1">
+<span class="eqno">(12.1)<a class="headerlink" href="#equation-eqecc-1" title="Link to this equation">#</a></span>\[\begin{equation}
+    y = \frac{y_Q - y_P}{x_Q - x_P} (x - x_P) + y_P
+\end{equation}\]</div>
+<p>Thay <span class="math notranslate nohighlight">\(y\)</span> vào phương trình đường cong elliptic ta có</p>
+<div class="math notranslate nohighlight" id="equation-eqecc-2">
+<span class="eqno">(12.2)<a class="headerlink" href="#equation-eqecc-2" title="Link to this equation">#</a></span>\[\begin{equation}
+    \Big[\frac{y_Q - y_P}{x_Q - x_P} (x - x_P) + y_P\Big]^2 = x^3 + ax + b
+\end{equation}\]</div>
+<p>Đặt <span class="math notranslate nohighlight">\(k = \dfrac{y_Q - y_P}{x_Q - x_P}\)</span>. Khi đó phương trình tương đương với</p>
 <div class="math notranslate nohighlight">
-\[\hat f_i = \sum_{j=0}^{n-1} \zeta_n^{ij} f_j, \quad i = 0, 1, \ldots, n-1\]</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Biến đổi Fourier loại 2</strong> là vector <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\((\check f_1, \check f_3, \ldots, \check f_{2n-1})\)</span> thuộc <span class="math notranslate nohighlight">\(R^n\)</span> xác định bởi đẳng thức:</p></li>
+\[(k x - k x_P + y_P)^2 = x^3 + ax + b\]</div>
+<p>Khai triển và chuyển vế ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    x^3 - k^2 x^2 + \ldots = 0
+\end{equation}\]</div>
+<p>Ta chỉ cần quan tâm hệ số trước <span class="math notranslate nohighlight">\(x^2\)</span>. Bởi vì ta biết rằng đường thẳng <span class="math notranslate nohighlight">\(PQ\)</span> cắt elliptic tại 3 điểm <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(S\)</span>, nên phương trình bậc 3 này có 3 nghiệm phân biệt là <span class="math notranslate nohighlight">\(x_P\)</span>, <span class="math notranslate nohighlight">\(x_Q\)</span> và <span class="math notranslate nohighlight">\(x_S\)</span> nên theo theo định lý Vieta ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    x_P + x_Q + x_S = k^2
+\end{equation*}\]</div>
+<p>Như vậy ta có hoành độ điểm <span class="math notranslate nohighlight">\(S\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    x_S = k^2 - x_P - x_Q
+\end{equation}\]</div>
+<p>Thay <span class="math notranslate nohighlight">\(x_S\)</span> vào <a class="reference internal" href="#equation-eqecc-1">(12.1)</a>, ta có tung độ điểm <span class="math notranslate nohighlight">\(S\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    y_S = k(x_S - x_P) + y_P
+\end{equation}\]</div>
+<p>Mà <span class="math notranslate nohighlight">\(R\)</span> đối xứng với <span class="math notranslate nohighlight">\(S\)</span> qua trục hoành, như vậy <span class="math notranslate nohighlight">\(x_R = x_S\)</span> và <span class="math notranslate nohighlight">\(y_R = -y_S\)</span>. Như vậy kết quả của phép cộng là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    x_R &amp; = k^2 - x_P - x_Q \\
+    y_R &amp; = k(x_P - x_R) - y_P
+\end{align*}\end{split}\]</div>
+<p>với <span class="math notranslate nohighlight">\(k = \dfrac{y_Q - y_P}{x_Q - x_P}\)</span>.</p>
+</section>
+<section id="phep-cong-hai-diem-giong-nhau">
+<h3><span class="section-number">12.2.2. </span>Phép cộng hai điểm giống nhau<a class="headerlink" href="#phep-cong-hai-diem-giong-nhau" title="Link to this heading">#</a></h3>
+<p>Trong trường hợp hai điểm giống nhau, ta vẽ tiếp tuyến tiếp xúc với elliptic đi qua điểm đó. Giả sử ta muốn vẽ tiếp tuyến tại  điểm <span class="math notranslate nohighlight">\(P = (x_P, y_P)\)</span>, khi đó từ phương trình elliptic <span class="math notranslate nohighlight">\(y^2 = x^3 + ax + b\)</span> ta vi phân hai vế thu được</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    2y \,dy = (3x^2 + a) \,dx
+\end{equation}\]</div>
+<p>Ta biết rằng hệ số góc của đường tiếp tuyến là đạo hàm hàm số tại điểm đó, hay nói cách khác là <span class="math notranslate nohighlight">\(\,dy/\,dx\)</span>. Như vậy hệ số góc tiếp tuyến tại điểm <span class="math notranslate nohighlight">\(P\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    k = \frac{dy}{dx} = \frac{3 x_P^2 + a}{2y_P}
+\end{equation}\]</div>
+<p>và như vậy phương trình đường tiếp tuyến là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    y = k(x-x_P) + y_P
+\end{equation}\]</div>
+<p>Thực hiện tương tự như bên trên, ta có đường tiếp tuyến cắt elliptic tại hai điểm phân biệt, trong đó có một điểm tiếp xúc nên trong phương trình hoành độ giao điểm điểm tiếp xúc là nghiệm bội hai. Nói cách khác, theo định lý Vieta thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    x_P + x_P + x_S = k^2
+\end{equation*}\]</div>
+<p>Suy ra hoành độ điểm <span class="math notranslate nohighlight">\(S\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    x_S = k^2 - 2 x_P,
+\end{equation}\]</div>
+<p>và tung độ điểm <span class="math notranslate nohighlight">\(S\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    y_S = k(x_S - x_P) + y_P
+\end{equation}\]</div>
+<p>Cuối cùng, tọa độ điểm <span class="math notranslate nohighlight">\(R = P + P\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[x_R = k^2 - 2 x_P, \quad y_R = k(x_P - x_S) - y_P\]</div>
+</section>
+<section id="tong-ket">
+<h3><span class="section-number">12.2.3. </span>Tổng kết<a class="headerlink" href="#tong-ket" title="Link to this heading">#</a></h3>
+<p>Để cộng hai điểm <span class="math notranslate nohighlight">\(P=(x_P, y_P)\)</span> và <span class="math notranslate nohighlight">\(Q = (x_Q, y_Q)\)</span> ta có ba trường hợp sau:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_Q = x_P\)</span> và <span class="math notranslate nohighlight">\(y_Q = -y_P\)</span>, nói cách khác là đối xứng qua trục hoành, thì ta có <span class="math notranslate nohighlight">\(P + Q = \mathcal{O}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_P \neq x_Q\)</span>, đặt <span class="math notranslate nohighlight">\(k = \frac{y_Q - y_P}{x_Q - x_P}\)</span> thì tọa độ điểm <span class="math notranslate nohighlight">\(R = P + Q\)</span> là <span class="math notranslate nohighlight">\(x_R = k^2 - x_P - x_Q\)</span> và <span class="math notranslate nohighlight">\(y_R = k(x_P - x_R) - y_P\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_P = x_Q\)</span> và <span class="math notranslate nohighlight">\(y_P = y_Q\)</span>, khi hai điểm trùng nhau, đặt <span class="math notranslate nohighlight">\(k = \frac{3x_P^2 + a}{2y_P}\)</span>, thì tọa độ điểm <span class="math notranslate nohighlight">\(R = 2P\)</span> là <span class="math notranslate nohighlight">\(x_R = k^2 - 2x_P\)</span> và <span class="math notranslate nohighlight">\(y_R = k(x_P - x_R) - y_P\)</span></p></li>
 </ol>
-<div class="math notranslate nohighlight">
-\[\check f_i = \sum_{j=0}^{n-1} \zeta_{2n}^{ij}, \quad i = 1, 3, \ldots, 2n-1\]</div>
-<div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 13.1 </span></p>
-<section class="remark-content" id="proof-content">
-<p>Các phần tử <span class="math notranslate nohighlight">\(\hat f_i\)</span> là giá trị của đa thức <span class="math notranslate nohighlight">\(F(x) = \sum\limits_{j=0}^{n-1} f_j x^j \in R[x]\)</span> tại điểm <span class="math notranslate nohighlight">\(x = \zeta_n^i\)</span>, các phần tử <span class="math notranslate nohighlight">\(\check f_i\)</span> là giá trị của đa thức <span class="math notranslate nohighlight">\(F(x)\)</span> tại <span class="math notranslate nohighlight">\(x = \zeta_{2n}^i\)</span> khi <span class="math notranslate nohighlight">\(i\)</span> lẻ.</p>
 </section>
-</div><div class="proof lemma admonition" id="lemma-2">
-<p class="admonition-title"><span class="caption-number">Lemma 13.2 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Ta có các đẳng thức sau:</p>
-<div class="math notranslate nohighlight">
-\[f_i = n^{-1} \sum_{j=0}^{n-1} \hat f_j \zeta_n^{-ij}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}f_i = n^{-1} \sum_{\substack{1 \leqslant j \leqslant 2n-1 \\ j \ \text{lẻ}}} \check f_j \zeta_{2n}^{-ij}\end{split}\]</div>
-<p>với <span class="math notranslate nohighlight">\(n^{-1} = (2^{-1})^t \in R\)</span>.</p>
 </section>
-</div></section>
-<section id="tinh-toan-bien-doi-fourier">
-<h2><span class="section-number">13.1.2. </span>Tính toán biến đổi Fourier<a class="headerlink" href="#tinh-toan-bien-doi-fourier" title="Link to this heading">#</a></h2>
-<div class="proof theorem admonition" id="theorem-3">
-<p class="admonition-title"><span class="caption-number">Theorem 13.1 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> có thể được tính bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của phần tử <span class="math notranslate nohighlight">\(\zeta_n\)</span>.</p>
-<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\check f_1, \ldots, \check f_{2n-1})\)</span> có thể được tính bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span>.</p>
-<p>Nếu có <span class="math notranslate nohighlight">\((\hat f_i)\)</span> và <span class="math notranslate nohighlight">\((\check f_i)\)</span> thì có thể tính được vector <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1})\)</span> bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> và <span class="math notranslate nohighlight">\(n\)</span> phép nhân cho <span class="math notranslate nohighlight">\(n^{-1} \in R\)</span>.</p>
-</section>
-</div></section>
-<section id="bien-doi-fourier-va-phep-nhan-da-thuc">
-<h2><span class="section-number">13.1.3. </span>Biến đổi Fourier và phép nhân đa thức<a class="headerlink" href="#bien-doi-fourier-va-phep-nhan-da-thuc" title="Link to this heading">#</a></h2>
-<div class="proof lemma admonition" id="lemma-4">
-<p class="admonition-title"><span class="caption-number">Lemma 13.3 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Một phép nhân trong vành <span class="math notranslate nohighlight">\(R[x]/(x^{2^t} + 1)\)</span> có thể tính bởi <span class="math notranslate nohighlight">\(n=2^t\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(3nt\)</span> phép cộng trong <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(3nt\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span> cho lũy thừa <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> và <span class="math notranslate nohighlight">\(n\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span> cho <span class="math notranslate nohighlight">\(n^{-1}\)</span>.</p>
-</section>
-</div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 13.2 </span></p>
-<section class="remark-content" id="proof-content">
-<p>Bổ đề không áp dụng khi <span class="math notranslate nohighlight">\(R = \mathbb{Z}\)</span> và <span class="math notranslate nohighlight">\(R = \mathbb{Q}\)</span> vì hai vành này không có phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> (<span class="math notranslate nohighlight">\(n\)</span>-root của đơn vị).</p>
-</section>
-</div><div class="proof corollary admonition" id="corollary-6">
-<p class="admonition-title"><span class="caption-number">Corollary 13.1 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>Đặt <span class="math notranslate nohighlight">\(T\)</span> là vành giao hoán với đơn vị, <span class="math notranslate nohighlight">\(2^{-1} \in T\)</span>, <span class="math notranslate nohighlight">\(\zeta_{4n} = \zeta_{2^{t + 2}} \in T\)</span> là nghiệm phương trình <span class="math notranslate nohighlight">\(x^{2n} + 1 = 0\)</span>. Nếu <span class="math notranslate nohighlight">\(F(x), G(x) \in T[x]\)</span>, <span class="math notranslate nohighlight">\(\deg F(x) &lt; n\)</span>, <span class="math notranslate nohighlight">\(\deg G(x) &lt; n\)</span> thì tích <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span> có thể tính với <span class="math notranslate nohighlight">\(2n\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span> theo lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{4n}\)</span> và <span class="math notranslate nohighlight">\(2n\)</span> phép nhân cho <span class="math notranslate nohighlight">\((2^{-1})^{t+1}\)</span>.</p>
-</section>
-</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -523,7 +595,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./vasilenko"
+            path: "./cryptography"
         },
         predefinedOutput: true
     }
@@ -541,20 +613,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="code-based.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Теоретико-числовые алгоритмы в криптографии</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Code-based cryptography</p>
       </div>
     </a>
     <a class="right-next"
-       href="../internet-olympiad/2023.html"
+       href="../vasilenko/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Internet Olympiad 2023</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Теоретико-числовые алгоритмы в криптографии</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -574,9 +646,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gioi-thieu">13.1.1. Giới thiệu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-toan-bien-doi-fourier">13.1.2. Tính toán biến đổi Fourier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier-va-phep-nhan-da-thuc">13.1.3. Biến đổi Fourier và phép nhân đa thức</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-dau-ve-duong-cong-elliptic">12.1. Mở đầu về đường cong elliptic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-cac-diem-tren-elliptic">12.2. Phép cộng các điểm trên elliptic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-hai-diem-khac-nhau">12.2.1. Phép cộng hai điểm khác nhau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-cong-hai-diem-giong-nhau">12.2.2. Phép cộng hai điểm giống nhau</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-ket">12.2.3. Tổng kết</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
