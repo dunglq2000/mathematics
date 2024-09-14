@@ -51,4 +51,10 @@ parts:
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
+    - file: siberian-maths-contest/2023.md
     - file: cryptofox/2024.md
+  - caption: Review sách
+    chapters:
+    - file: book-review/intro.md
+      sections:
+        - file: book-review/thien-tai-va-so-phan.md
