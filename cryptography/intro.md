@@ -1,5 +1,9 @@
 # Đại số boolean và mật mã học
 
+```{contents}
+:depth: 3
+```
+
 ## Các tính chất mật mã của hàm boolean
 
 ### Bậc đại số cao

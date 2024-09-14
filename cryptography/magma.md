@@ -4,6 +4,9 @@ Hệ mật mã Magma được chính phủ Xô Viết chọn làm chuẩn mã h�
 
 Phần này tham khảo chính từ {cite}`Gashkov2010`.
 
+```{contents}
+```
+
 Độ dài khóa là 256 bit. Độ dài khối là 64 bit. Magma biến đổi trên 32 vòng để cho ra ciphertext.
 
 Magma thực hiện biến đổi trên 32 vòng Feistel. Khối đầu vào 64 bit được chia thành 2 nửa trái phải, mỗi nửa 32 bit.

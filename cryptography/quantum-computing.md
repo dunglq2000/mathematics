@@ -1,5 +1,9 @@
 # Quantum computing
 
+```{contents}
+:depth: 2
+```
+
 ## Qubit và toán tử quantum
 
 Trên máy tính hiện nay, đơn vị xử lý cơ bản là bit (0 hoặc 1). Trong máy tính lượng tử, đơn vị tính toán là qubit (quantum bit).

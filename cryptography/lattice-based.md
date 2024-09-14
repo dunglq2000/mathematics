@@ -1,5 +1,9 @@
 # Lattice-based cryptography
 
+```{contents}
+:depth: 2
+```
+
 ## Introduction
 
 **Ký hiệu**. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ $\mathbf{x}, \mathbf{y}, \mathbf{v}$. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ $\mathbf{A}, \mathbf{B}$.

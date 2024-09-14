@@ -4,6 +4,10 @@ Phá mã vi sai (differential cryptanalysis) đã làm chuẩn mã hóa DES khô
 
 Trong các chuẩn mã hóa hiện đại về sau, khả năng kháng phá mã vi sai và phá mã tuyến tính trở thành tiêu chuẩn đánh giá độ an toàn của thuật toán mã hóa.
 
+```{contents}
+:depth: 2
+```
+
 ## Mô tả TinyDES
 
 TinyDES là một phiên bản thu nhỏ của chuẩn mã hóa DES. TinyDES là mã hóa khối theo mô hình Feistel, kích thước khối là $8$ bit, kích thước khóa cũng là $8$ bit. Mỗi vòng khóa con có độ dài $6$ bit.

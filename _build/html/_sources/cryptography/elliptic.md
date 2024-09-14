@@ -2,6 +2,10 @@
 
 Đường cong elliptic (elliptic curve) rất nổi tiếng trong toán học. Đây là công cụ giúp các nhà toán học giải quyết bài toán lớn **Định lý cuối cùng của Fermat**. Trong mật mã học, đường cong elliptic là một trong những tiêu chuẩn bảo mật về mã hóa và chữ ký điện tử. Chương này khảo sát những đặc trưng cơ bản đường cong elliptic và ứng dụng trong mật mã học.
 
+```{contents}
+:depth: 2
+```
+
 ## Mở đầu về đường cong elliptic
 
 Đường cong elliptic là tập hợp các điểm $(x, y)$ trên mặt phẳng $Oxy$ thỏa mãn phương trình $y^2 = x^3 + ax + b$, với $a, b \in \mathbb{R}$ và $4a^3 + 27b^2 \neq 0$.

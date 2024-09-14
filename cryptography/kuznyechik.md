@@ -9,6 +9,10 @@ Một điểm đặc biệt là quá trình biến đổi qua các vòng sử d�
 
 Phần này tham khảo chính từ {cite}`Losi2018`.
 
+```{contents}
+:depth: 2
+```
+
 ### Mã hóa
 
 Gọi $k_i$ là khóa con của vòng thứ $i$, $i = 0, 1, \ldots, 9$. Ta có các động tác biến đổi sau:
