@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CryptoFox 2024" href="../cryptofox/2024.html" />
-    <link rel="prev" title="12.1. Biến đổi Fourier rời rạc" href="../vasilenko/discrete-fourier-transform.html" />
+    <link rel="prev" title="13.1. Biến đổi Fourier rời rạc" href="../vasilenko/discrete-fourier-transform.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,11 +221,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">9. Quantum computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">10. Lattice-based cryptography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">11. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">12. Đường cong elliptic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">12. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">12.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">13. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">13.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -429,14 +430,46 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-3">Vòng 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-6">Bài 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-7">Bài 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-8">Bài 8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-10">Bài 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-giai">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-6">Bài 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-7">Bài 7</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-8">Bài 8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-10">Bài 10</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Lời giải</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -456,8 +489,8 @@ document.write(`
 <h2>Vòng 3<a class="headerlink" href="#vong-3" title="Link to this heading">#</a></h2>
 <section id="bai-1">
 <h3>Bài 1<a class="headerlink" href="#bai-1" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="de-bai">
+<h4>Đề bài<a class="headerlink" href="#de-bai" title="Link to this heading">#</a></h4>
 <p>Ở công viên cho trò chơi, với 5 dollar chúng ta được chơi 3 lượt
 và được thưởng 1 viên kẹo. Nếu trả lại 2 lượt (không chơi) thì
 chúng ta được trả lại 3 dollar đồng thời thêm 1 viên kẹo nữa.
@@ -465,22 +498,22 @@ chúng ta được trả lại 3 dollar đồng thời thêm 1 viên kẹo nữa
 chỉ mang mỗi dollar. Kết thúc trò chơi, lượng dollar giảm
 nhưng đứa trẻ có 50 viên kẹo (không còn lượt chơi sót lại).
 Hỏi đứa trẻ đã dùng bao nhiêu dollar cho trò chơi.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="loi-giai">
+<h4>Lời giải<a class="headerlink" href="#loi-giai" title="Link to this heading">#</a></h4>
 <p>Đặt <span class="math notranslate nohighlight">\(x\)</span> là số dollar ban đầu đứa trẻ có, và <span class="math notranslate nohighlight">\(y\)</span> là số lượt 5 dollar mà đứa trẻ mua, tương đương <span class="math notranslate nohighlight">\(y\)</span> viên kẹo. Suy ra số lần chơi mà đứa trẻ bỏ lại 2 lượt là <span class="math notranslate nohighlight">\(50-y\)</span>.</p>
 <p>Nếu chơi hết 3 lượt thì đứa trẻ mất 5 dollar, nếu chơi 1 lượt (trả lại 2) thì đứa trẻ mất  <span class="math notranslate nohighlight">\(5-3=2\)</span> dollar. Theo giả thiết là không còn lượt chơi sót lại, như vậy số lần chơi hết 3 lượt phải bằng bù lại số lần bỏ 2 lượt.</p>
 <p>Nói cách khác <span class="math notranslate nohighlight">\(3y = 2(50-y)\)</span>. Vậy <span class="math notranslate nohighlight">\(y=20\)</span> và <span class="math notranslate nohighlight">\(50-y=30\)</span>. Nghĩa là số lần đứa trẻ trả lại 2 lượt chơi là <span class="math notranslate nohighlight">\(3 \cdot 30 = 90\)</span> dollar, và số tiền trả là <span class="math notranslate nohighlight">\(5 y = 100\)</span>. Như vậy để có 50 viên kẹo thì đứa trẻ cần <span class="math notranslate nohighlight">\(100 - 90 = 10\)</span> dollar.</p>
-</div>
+</section>
 </section>
 <section id="bai-2">
 <h3>Bài 2<a class="headerlink" href="#bai-2" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id1">
+<h4>Đề bài<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>Gọi <span class="math notranslate nohighlight">\(x_0\)</span> là cực tiểu địa phương của hàm số khả vi <span class="math notranslate nohighlight">\(f(x)\)</span> thỏa mãn <span class="math notranslate nohighlight">\(f'(x) = 1 - x f^2(x)\)</span> với mọi <span class="math notranslate nohighlight">\(x\)</span>. Hỏi có thể xác định nó là cực đại hay cực tiểu không?</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id2">
+<h4>Lời giải<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>Có thể. Do <span class="math notranslate nohighlight">\(x_0\)</span> là cực trị địa phương nên <span class="math notranslate nohighlight">\(f'(x_0) = 0\)</span>.
 Suy ra <span class="math notranslate nohighlight">\(f'(x_0) = 1 - x_0 f^2(x_0) = 0\)</span> và dễ thấy <span class="math notranslate nohighlight">\(x_0 = 0\)</span>
 không là nghiệm của phương trình. Vậy ta có <span class="math notranslate nohighlight">\(f^2(x_0) = \frac{1}{x_0} &gt; 0\)</span>.</p>
@@ -489,16 +522,16 @@ không là nghiệm của phương trình. Vậy ta có <span class="math notran
 <div class="math notranslate nohighlight">
 \[f''(x_0) = -f^2(x_0) - 2 x_0 \cdot f(x_0) f'(x_0) = -f^2(x_0) &lt; 0.\]</div>
 <p>Suy ra <span class="math notranslate nohighlight">\(x_0\)</span> là cực đại.</p>
-</div>
+</section>
 </section>
 <section id="bai-3">
 <h3>Bài 3<a class="headerlink" href="#bai-3" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id3">
+<h4>Đề bài<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <p>Có bao nhiêu cách xếp 4 phần tử của 4 loại gạch khác nhau lên bảng 4x4 ô vuông sao cho ở mỗi hàng và mỗi cột có đúng 4 viên gạch thuộc 4 loại khác nhau?</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id4">
+<h4>Lời giải<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>Ta cố định hàng đầu tiên của bảng là 1-2-3-4.</p>
 <p><img alt="Hình 1" src="../_images/2023-figures-1.jpg" /></p>
 <p>Tiếp theo ta bỏ các phần tử vào cột đầu theo thứ tự</p>
@@ -508,16 +541,16 @@ không là nghiệm của phương trình. Vậy ta có <span class="math notran
 <p>Ta thấy rằng các trường hợp 1, 2, 4 và 6 sẽ có cách xếp các phần tử còn lại vào thỏa mãn. Nhưng trường hợp 3 và 5 sẽ bị đụng độ và không xếp được. Như vậy có 4 cách xếp.</p>
 <p>Với mỗi cách xếp, ta có thể hoán vị 3 phần tử ở cột đầu tiên (hàng đầu cố định, hoán vị từ hàng 2 tới 4) nên ta có <span class="math notranslate nohighlight">\(3!\)</span> cách chọn. Với mỗi cách cố định hàng đầu ta có <span class="math notranslate nohighlight">\(4 \cdot 3!\)</span> cách chọn, và ta có <span class="math notranslate nohighlight">\(4!\)</span> cách xếp hàng đầu tiên.</p>
 <p>Như vậy kết quả là <span class="math notranslate nohighlight">\(4 \cdot 3! \cdot 4! = 576\)</span>.</p>
-</div>
+</section>
 </section>
 <section id="bai-5">
 <h3>Bài 5<a class="headerlink" href="#bai-5" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id5">
+<h4>Đề bài<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>Cho hàm <span class="math notranslate nohighlight">\(f(x)\)</span> thỏa mãn <span class="math notranslate nohighlight">\(f(x) + \dfrac{1}{2} \sin f(x) = x\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>. Tính tích phân <span class="math notranslate nohighlight">\(\displaystyle{\int\limits_{0}^{\pi} f(x) \,dx}\)</span>.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id6">
+<h4>Lời giải<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>Đặt <span class="math notranslate nohighlight">\(t = f(x)\)</span> thì <span class="math notranslate nohighlight">\(dt = f'(x)\,dx\)</span>. Sử dụng tích phân từng
 phần với <span class="math notranslate nohighlight">\(u = f(x)\)</span> và <span class="math notranslate nohighlight">\(dv = dx\)</span> ta có <span class="math notranslate nohighlight">\(du = f'(x)\,dx\)</span> và
 <span class="math notranslate nohighlight">\(v = x\)</span>, suy ra:</p>
@@ -537,21 +570,21 @@ Do đó <span class="math notranslate nohighlight">\(x f(x) \Big|^\pi_0 = \pi^2\
 \]</div>
 <p>Tóm lại <span class="math notranslate nohighlight">\(\displaystyle{\int\limits_{0}^{\pi}f(x)\,dx = \pi^2 - (\dfrac{\pi^2}{2} + 1)
 = \frac{\pi^2}{2} - 1}\)</span>.</p>
-</div>
+</section>
 </section>
 <section id="bai-6">
 <h3>Bài 6<a class="headerlink" href="#bai-6" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id7">
+<h4>Đề bài<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <p>Trong không gian cho tam giác vuông cân <span class="math notranslate nohighlight">\(ABC\)</span>.</p>
 <p>Gọi <span class="math notranslate nohighlight">\(A_1 B_1 C_1\)</span> là hình chiếu của tam giác <span class="math notranslate nohighlight">\(ABC\)</span> lên mặt phẳng nào đó (<span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(B_1\)</span>, <span class="math notranslate nohighlight">\(C_1\)</span>
 lần lượt là hình chiếu của <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> và <span class="math notranslate nohighlight">\(C\)</span> lên mặt phẳng đó).
 Biết rằng <span class="math notranslate nohighlight">\(A_1 B_1 C_1\)</span> cũng là tam giác vuông cân. Tìm mọi giá
 trị có thể của tỉ số giữa độ dài cạnh góc vuông <span class="math notranslate nohighlight">\(AB\)</span> và cạnh
 góc vuông <span class="math notranslate nohighlight">\(A_1 B_1\)</span>.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id8">
+<h4>Lời giải<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p>Không mất tính tổng quát, ta chọn <span class="math notranslate nohighlight">\(A_1\)</span> ở gốc tọa độ <span class="math notranslate nohighlight">\(Oxyz\)</span>,
 <span class="math notranslate nohighlight">\(B_1 = (1, 0, 0)\)</span> và <span class="math notranslate nohighlight">\(C_1 = (0, 1, 0)\)</span>. Khi đó <span class="math notranslate nohighlight">\(A_1\)</span> là hình
 chiếu của <span class="math notranslate nohighlight">\(A\)</span> lên mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> nên <span class="math notranslate nohighlight">\(A = (0, 0, 1)\)</span>. Tương
@@ -582,18 +615,18 @@ và <span class="math notranslate nohighlight">\(1 + (x-1)^2 = 1 + (y-1)^2\)</sp
 <p>nên tỉ số là
 <span class="math notranslate nohighlight">\(\dfrac{AB}{A_1 B_1} = \dfrac{1 + \sqrt{5}}{2}\)</span></p>
 <p>Như vậy có 2 đáp án thỏa mãn là 1 và <span class="math notranslate nohighlight">\(\dfrac{1 + \sqrt{5}}{2}\)</span>.</p>
-</div>
+</section>
 </section>
 <section id="bai-7">
 <h3>Bài 7<a class="headerlink" href="#bai-7" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id9">
+<h4>Đề bài<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>Cho hai ma trận vuông <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> sao cho <span class="math notranslate nohighlight">\(B^2 = 0\)</span> và
 <span class="math notranslate nohighlight">\(A^2 B + B A^2 = 2A^3\)</span>. Chứng minh rằng với mỗi ma trận
 <span class="math notranslate nohighlight">\(A\)</span> như vậy thì <span class="math notranslate nohighlight">\(A^{12} = 0\)</span>.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id10">
+<h4>Lời giải<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>Từ giả thiết <span class="math notranslate nohighlight">\(A^2 B + B A^2 = 2A^3\)</span>, nhân hai vế của phương
 trình cho <span class="math notranslate nohighlight">\(B\)</span> vào bên trái thì ta có <span class="math notranslate nohighlight">\(B A^2 B = 2BA^3\)</span>. Tương
 tự nếu nhân <span class="math notranslate nohighlight">\(B\)</span> vào bên phải thì <span class="math notranslate nohighlight">\(B A^2 B = 2A^3 B\)</span>. Như vậy
@@ -626,17 +659,17 @@ tự nếu nhân <span class="math notranslate nohighlight">\(B\)</span> vào b�
 <div class="math notranslate nohighlight">
 \[A^{12} = A^6 \cdot A^6 = A^5B \cdot BA^5 = 0.\]</div>
 <p>Ta có điều phải chứng minh.</p>
-</div>
+</section>
 </section>
 <section id="bai-8">
 <h3>Bài 8<a class="headerlink" href="#bai-8" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id11">
+<h4>Đề bài<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>Cho ba số dương <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> sao cho <span class="math notranslate nohighlight">\(\sin a \cdot \sin b \cdot \sin c = \dfrac{3}{\pi} \cdot abc\)</span>. Chứng minh rằng
 <span class="math notranslate nohighlight">\(a + b + c &gt; \dfrac{\pi}{6}\)</span>.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id12">
+<h4>Lời giải<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>Do <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> dương nên ta có thể chia 2 vế cho <span class="math notranslate nohighlight">\(abc\)</span> và có
 <span class="math notranslate nohighlight">\(\dfrac{\sin a}{a} \cdot \dfrac{\sin b}{b} \cdot \dfrac{\sin c}{c} = \dfrac{3}{\pi}\)</span>.</p>
 <p>Xét hàm <span class="math notranslate nohighlight">\(f(x) = \ln \left(\dfrac{\sin x}{x}\right)\)</span>. Do <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> dương nên vế trái cũng dương, do đó ta chỉ cần xét các số trong khoảng <span class="math notranslate nohighlight">\(\left(0, \frac{\pi}{2}\right)\)</span> là đủ. Khi đó, đặt</p>
@@ -680,8 +713,7 @@ tồn tại số <span class="math notranslate nohighlight">\(\xi_1 \in (0, a)\)
 \[f(a+b) - f(b) = f'(\xi_2) \cdot (a + b - b) = f'(\xi_2) \cdot a.\]</div>
 <p>Do <span class="math notranslate nohighlight">\(\xi_1 &lt; \xi_2\)</span> và <span class="math notranslate nohighlight">\(f'(x)\)</span> nghịch biến nên <span class="math notranslate nohighlight">\(f'(\xi_1) &gt; f'(\xi_2)\)</span>.</p>
 <p>Suy ra</p>
-<div class="math notranslate nohighlight">
-\[f(a) - f(0) &gt; f(a+b) - f(b)$, hay $f(a) + f(b) &gt; f(a+b) + f(0).\]</div>
+<p><span class="math notranslate nohighlight">\(f(a) - f(0) &gt; f(a+b) - f(b)\)</span>, hay <span class="math notranslate nohighlight">\(f(a) + f(b) &gt; f(a+b) + f(0).\)</span></p>
 <p>Chứng minh tương tự ta cũng có</p>
 <div class="math notranslate nohighlight">
 \[f(a+b) + f(c) &gt; f(a+b+c) + f(0).\]</div>
@@ -690,20 +722,20 @@ tồn tại số <span class="math notranslate nohighlight">\(\xi_1 \in (0, a)\)
 \[f\left(\frac{\pi}{6}\right) = f(a) + f(b) + f(c) &gt; f(a+b) + f(0) + f(c) &gt; f(a+b+c) + f(0) + f(0) &gt; f(a + b + c)\]</div>
 <p>Do <span class="math notranslate nohighlight">\(f(x)\)</span> nghịch biến nên <span class="math notranslate nohighlight">\(a + b + c &gt; \dfrac{\pi}{6}\)</span> là điều
 cần chứng minh.</p>
-</div>
+</section>
 </section>
 <section id="bai-10">
 <h3>Bài 10<a class="headerlink" href="#bai-10" title="Link to this heading">#</a></h3>
-<div class="admonition-de admonition">
-<p class="admonition-title"><strong>Đề.</strong></p>
+<section id="id13">
+<h4>Đề bài<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>Cho đa thức với hệ số nguyên</p>
 <div class="math notranslate nohighlight">
 \[P_n(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0\]</div>
 <p>Biết rằng <span class="math notranslate nohighlight">\(a_n\)</span> là số lẻ, và <span class="math notranslate nohighlight">\(P_n(k)\)</span>, <span class="math notranslate nohighlight">\(P_n(k+1)\)</span> là các số
 lẻ với <span class="math notranslate nohighlight">\(k\)</span> nào đó. Chứng minh rằng đa thức không có nghiệm hữu tỷ.</p>
-</div>
-<div class="hint admonition">
-<p class="admonition-title"><strong>Lời giải.</strong></p>
+</section>
+<section id="id14">
+<h4>Lời giải<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>Giả sử đa thức có nghiệm hữu tỷ <span class="math notranslate nohighlight">\(\dfrac{p}{q}\)</span> với <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span>
 nguyên tố cùng nhau (phân số tối giản). Khi đó</p>
 <div class="math notranslate nohighlight">
@@ -724,7 +756,7 @@ cũng là một đa thức hệ số nguyên. Ta nhận thấy rằng</p>
 \[(2m_2 - 1) - (2m_1 - 1) = 2 (m_2 - m_1) = q.\]</div>
 <p>Như vậy <span class="math notranslate nohighlight">\(q\)</span> là số chẵn, tuy nhiên do <span class="math notranslate nohighlight">\(\dfrac{a_n}{q}\)</span> là số nguyên và <span class="math notranslate nohighlight">\(a_n\)</span> là số lẻ nên <span class="math notranslate nohighlight">\(q\)</span> phải là số lẻ, mâu thuẫn.</p>
 <p>Theo phản chứng, đa thức không có nghiệm hữu tỷ.</p>
-</div>
+</section>
 </section>
 </section>
 </section>
@@ -765,7 +797,7 @@ cũng là một đa thức hệ số nguyên. Ta nhận thấy rằng</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12.1. </span>Biến đổi Fourier rời rạc</p>
+        <p class="prev-next-title"><span class="section-number">13.1. </span>Biến đổi Fourier rời rạc</p>
       </div>
     </a>
     <a class="right-next"
@@ -794,14 +826,46 @@ cũng là một đa thức hệ số nguyên. Ta nhận thấy rằng</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-3">Vòng 3</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-6">Bài 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-7">Bài 7</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-8">Bài 8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-10">Bài 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-giai">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-6">Bài 6</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-7">Bài 7</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-8">Bài 8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-10">Bài 10</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Lời giải</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

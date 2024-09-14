@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.1. Biến đổi Fourier rời rạc &#8212; Math Book</title>
+    <title>Siberian Mathematical Contest 2023 &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,9 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'vasilenko/discrete-fourier-transform';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'siberian-maths-contest/2023';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Internet Olympiad 2023" href="../internet-olympiad/2023.html" />
-    <link rel="prev" title="13. Теоретико-числовые алгоритмы в криптографии" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -127,6 +125,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -224,9 +224,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">12. Đường cong elliptic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">13. Теоретико-числовые алгоритмы в криптографии</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1. Biến đổi Fourier rời rạc</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">13. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">13.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvasilenko/discrete-fourier-transform.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsiberian-maths-contest/2023.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="../_sources/vasilenko/discrete-fourier-transform.md" target="_blank"
+      <li><a href="../_sources/siberian-maths-contest/2023.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biến đổi Fourier rời rạc</h1>
+    <h1>Siberian Mathematical Contest 2023</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -429,9 +429,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gioi-thieu">13.1.1. Giới thiệu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-toan-bien-doi-fourier">13.1.2. Tính toán biến đổi Fourier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier-va-phep-nhan-da-thuc">13.1.3. Biến đổi Fourier và phép nhân đa thức</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-danh-cho-nam-nhat">Đề dành cho năm nhất</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-giai">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-4">Bài 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -443,71 +464,108 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="bien-doi-fourier-roi-rac">
-<h1><span class="section-number">13.1. </span>Biến đổi Fourier rời rạc<a class="headerlink" href="#bien-doi-fourier-roi-rac" title="Link to this heading">#</a></h1>
-<section id="gioi-thieu">
-<h2><span class="section-number">13.1.1. </span>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Link to this heading">#</a></h2>
-<p>Cho số <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(n = 2^t\)</span>. Đặt <span class="math notranslate nohighlight">\(R\)</span> là vành với đơn vị <span class="math notranslate nohighlight">\(1\)</span>. Vành <span class="math notranslate nohighlight">\(R\)</span> chứa phần tử <span class="math notranslate nohighlight">\(2^{-1}\)</span> là nghịch đảo của phần tử <span class="math notranslate nohighlight">\(2\)</span>. Biết rằng <span class="math notranslate nohighlight">\(R\)</span> cũng chứa phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là một nghiệm cố định nào đó của phương trình <span class="math notranslate nohighlight">\(x^n + 1 = 0\)</span>. Đặt <span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2\)</span>.</p>
-<div class="proof lemma admonition" id="lemma-0">
-<p class="admonition-title"><span class="caption-number">Lemma 13.1 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> sinh ra một nhóm vòng (cyclic group) từ nhóm nhân của vành <span class="math notranslate nohighlight">\(R\)</span>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="siberian-mathematical-contest-2023">
+<h1>Siberian Mathematical Contest 2023<a class="headerlink" href="#siberian-mathematical-contest-2023" title="Link to this heading">#</a></h1>
+<section id="de-danh-cho-nam-nhat">
+<h2>Đề dành cho năm nhất<a class="headerlink" href="#de-danh-cho-nam-nhat" title="Link to this heading">#</a></h2>
+<section id="bai-1">
+<h3>Bài 1<a class="headerlink" href="#bai-1" title="Link to this heading">#</a></h3>
+<section id="de-bai">
+<h4>Đề bài<a class="headerlink" href="#de-bai" title="Link to this heading">#</a></h4>
+<p>Tồn tại hay không một đa thức <span class="math notranslate nohighlight">\(p(x)\)</span> sao cho mọi hệ số khác không của nó không phải số nguyên, nhưng với hai số nguyên bất kì khác nhau <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> ta đều có <span class="math notranslate nohighlight">\(\dfrac{p(a) - p(b)}{b - a}\)</span> là số nguyên?</p>
 </section>
-</div><p>Gọi <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1}) \in R^n\)</span> là vector bất kì. Khi đó:</p>
-<ol class="arabic simple">
-<li><p><strong>Biến đổi Fourier loại 1</strong> của vector trên là vector <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> thuộc <span class="math notranslate nohighlight">\(R^n\)</span> xác định bởi đẳng thức:</p></li>
-</ol>
+<section id="loi-giai">
+<h4>Lời giải<a class="headerlink" href="#loi-giai" title="Link to this heading">#</a></h4>
+<p>Tồn tại, ví dụ như <span class="math notranslate nohighlight">\(p(x) = \dfrac{x^4 + x^2}{2}\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\hat f_i = \sum_{j=0}^{n-1} \zeta_n^{ij} f_j, \quad i = 0, 1, \ldots, n-1\]</div>
-<ol class="arabic simple" start="2">
-<li><p><strong>Biến đổi Fourier loại 2</strong> là vector <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\((\check f_1, \check f_3, \ldots, \check f_{2n-1})\)</span> thuộc <span class="math notranslate nohighlight">\(R^n\)</span> xác định bởi đẳng thức:</p></li>
-</ol>
+\[\frac{p(a) - p(b)}{a - b} = \cdots = \frac{(a + b)(a^2 + b^2 + 1)}{2}\]</div>
+<p>Vì <span class="math notranslate nohighlight">\(a+b\)</span> và <span class="math notranslate nohighlight">\(a^2 + b^2 + 1\)</span> khác tính chẵn lẻ nên tích trên luôn chia hết cho <span class="math notranslate nohighlight">\(2\)</span> và do đó là số nguyên.</p>
+</section>
+</section>
+<section id="bai-2">
+<h3>Bài 2<a class="headerlink" href="#bai-2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Đề bài<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Cho dãy <span class="math notranslate nohighlight">\(\{ a_n \}\)</span>, <span class="math notranslate nohighlight">\(n \geqslant 0\)</span> thỏa điều kiện <span class="math notranslate nohighlight">\(a_0 = 1\)</span>, <span class="math notranslate nohighlight">\(a_1 = \dfrac{1}{2}\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\check f_i = \sum_{j=0}^{n-1} \zeta_{2n}^{ij}, \quad i = 1, 3, \ldots, 2n-1\]</div>
-<div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 13.1 </span></p>
-<section class="remark-content" id="proof-content">
-<p>Các phần tử <span class="math notranslate nohighlight">\(\hat f_i\)</span> là giá trị của đa thức <span class="math notranslate nohighlight">\(F(x) = \sum\limits_{j=0}^{n-1} f_j x^j \in R[x]\)</span> tại điểm <span class="math notranslate nohighlight">\(x = \zeta_n^i\)</span>, các phần tử <span class="math notranslate nohighlight">\(\check f_i\)</span> là giá trị của đa thức <span class="math notranslate nohighlight">\(F(x)\)</span> tại <span class="math notranslate nohighlight">\(x = \zeta_{2n}^i\)</span> khi <span class="math notranslate nohighlight">\(i\)</span> lẻ.</p>
+\[a_n = \frac{n}{2} a_{n-1} + \frac{n(n-1)}{2} a_{n-2} + \frac{(-1)^n (1 - n)}{2(n+1)}\]</div>
+<p>Tìm <span class="math notranslate nohighlight">\(\lim\limits_{n \to \infty} \dfrac{a_n}{n!}\)</span>.</p>
 </section>
-</div><div class="proof lemma admonition" id="lemma-2">
-<p class="admonition-title"><span class="caption-number">Lemma 13.2 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Ta có các đẳng thức sau:</p>
+<section id="id2">
+<h4>Lời giải<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Từ quy nạp toán học có thể tìm được</p>
 <div class="math notranslate nohighlight">
-\[f_i = n^{-1} \sum_{j=0}^{n-1} \hat f_j \zeta_n^{-ij}\]</div>
+\[a_n = n a_{n-1} + \frac{(-1)^n}{n+1}\]</div>
+<p>Từ đó,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}f_i = n^{-1} \sum_{\substack{1 \leqslant j \leqslant 2n-1 \\ j \ \text{lẻ}}} \check f_j \zeta_{2n}^{-ij}\end{split}\]</div>
-<p>với <span class="math notranslate nohighlight">\(n^{-1} = (2^{-1})^t \in R\)</span>.</p>
+\[\begin{split}\begin{align*}
+    a_n &amp; = n \left( (n-1) a_{n-2} + \frac{(-1)^{n-1}}{n} \right) + \frac{(-1)^n}{n+1} \\
+    &amp; = n (n-1) a_{n-2} + (-1)^{n-1} + \frac{(-1)^n}{n+1} \\
+    &amp; = \ldots \\
+    &amp; = n! a_0 - \frac{n!}{2!} + \frac{(-1)^2 n!}{3!} + \frac{(-1)^3 n!}{4!} + \cdots + \frac{(-1)^{n-1} n!}{n!} + \frac{(-1)^n n!}{n!} 
+\end{align*}\end{split}\]</div>
+<p>Nói cách khác,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \frac{a_n}{n!} &amp; = a_0 + \frac{(-1)^1}{2!} + \frac{(-1)^2}{3!} + \frac{(-1)^3}{4!} + \cdots + \frac{(-1)^{n-1}}{n!} + \frac{(-1)^n}{n!} \\
+    &amp; = \sum_{k=0}^n \frac{(-1)^k}{(k+1)!} = 1 - \sum_{k=0}^{n+1} \frac{(-1)^k}{k!} \to 1 - \frac{1}{e}
+\end{align*}\end{split}\]</div>
 </section>
-</div></section>
-<section id="tinh-toan-bien-doi-fourier">
-<h2><span class="section-number">13.1.2. </span>Tính toán biến đổi Fourier<a class="headerlink" href="#tinh-toan-bien-doi-fourier" title="Link to this heading">#</a></h2>
-<div class="proof theorem admonition" id="theorem-3">
-<p class="admonition-title"><span class="caption-number">Theorem 13.1 </span></p>
-<section class="theorem-content" id="proof-content">
-<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> có thể được tính bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của phần tử <span class="math notranslate nohighlight">\(\zeta_n\)</span>.</p>
-<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\check f_1, \ldots, \check f_{2n-1})\)</span> có thể được tính bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span>.</p>
-<p>Nếu có <span class="math notranslate nohighlight">\((\hat f_i)\)</span> và <span class="math notranslate nohighlight">\((\check f_i)\)</span> thì có thể tính được vector <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1})\)</span> bằng <span class="math notranslate nohighlight">\(nt\)</span> phép cộng trên vành <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(nt\)</span> phép nhân trên vành <span class="math notranslate nohighlight">\(R\)</span> theo lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> và <span class="math notranslate nohighlight">\(n\)</span> phép nhân cho <span class="math notranslate nohighlight">\(n^{-1} \in R\)</span>.</p>
 </section>
-</div></section>
-<section id="bien-doi-fourier-va-phep-nhan-da-thuc">
-<h2><span class="section-number">13.1.3. </span>Biến đổi Fourier và phép nhân đa thức<a class="headerlink" href="#bien-doi-fourier-va-phep-nhan-da-thuc" title="Link to this heading">#</a></h2>
-<div class="proof lemma admonition" id="lemma-4">
-<p class="admonition-title"><span class="caption-number">Lemma 13.3 </span></p>
-<section class="lemma-content" id="proof-content">
-<p>Một phép nhân trong vành <span class="math notranslate nohighlight">\(R[x]/(x^{2^t} + 1)\)</span> có thể tính bởi <span class="math notranslate nohighlight">\(n=2^t\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(3nt\)</span> phép cộng trong <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(3nt\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span> cho lũy thừa <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> và <span class="math notranslate nohighlight">\(n\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span> cho <span class="math notranslate nohighlight">\(n^{-1}\)</span>.</p>
+<section id="bai-3">
+<h3>Bài 3<a class="headerlink" href="#bai-3" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>Đề bài<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Cho hàm đơn điệu liên tục tăng nghiêm ngặt <span class="math notranslate nohighlight">\(f(x)\)</span> xác định trên nửa khoảng <span class="math notranslate nohighlight">\([0, +\infty)\)</span> và thỏa <span class="math notranslate nohighlight">\(f(0) = 0\)</span>. Đặt <span class="math notranslate nohighlight">\(g(x)\)</span> là hàm ngược của <span class="math notranslate nohighlight">\(f(x)\)</span>. Chứng minh rằng, với mọi số nguyên <span class="math notranslate nohighlight">\(m, n\)</span> thì bất đẳng thức sau thỏa mãn:</p>
+<div class="math notranslate nohighlight">
+\[m n \leqslant \sum_{k=0}^m [f(k)] + \sum_{s=0}^n [g(s)]\]</div>
 </section>
-</div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 13.2 </span></p>
-<section class="remark-content" id="proof-content">
-<p>Bổ đề không áp dụng khi <span class="math notranslate nohighlight">\(R = \mathbb{Z}\)</span> và <span class="math notranslate nohighlight">\(R = \mathbb{Q}\)</span> vì hai vành này không có phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> (<span class="math notranslate nohighlight">\(n\)</span>-root của đơn vị).</p>
+<section id="id4">
+<h4>Lời giải<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Giả sử, <span class="math notranslate nohighlight">\([f(m)] \geqslant n\)</span>. Đặt <span class="math notranslate nohighlight">\([f(s)] = l_s\)</span>. Theo tính đơn điệu thì <span class="math notranslate nohighlight">\(l_s \leqslant f(s) &lt; l_{s+1}\)</span>. Do <span class="math notranslate nohighlight">\(f(x)\)</span> liên tục và đơn điệu tăng nghiêm ngặt nên <span class="math notranslate nohighlight">\(g(x)\)</span> cũng liên tục và đơn điệu.</p>
+<div class="math notranslate nohighlight">
+\[\sum_{k=0}^m [f(k)] = l_1 + l_2 + \cdots + l_m;\]</div>
+<div class="math notranslate nohighlight">
+\[\sum_{s=0}^n [g(s)] = 1 (l_2 - l_1) + 2(l_3 - l_2) + 3 (l_4 - l_3) + \cdots + p(n - l_p)\]</div>
+<p>với <span class="math notranslate nohighlight">\(p\)</span> nào đó mà <span class="math notranslate nohighlight">\(l_p &lt; n \leqslant l_{p+1}\)</span>. Từ đây ta có</p>
+<div class="math notranslate nohighlight">
+\[l_1 + l_2 + \cdots + l_p + 1 (l_2 - l_1) + 2 (l_3 - l_2) + \cdots + (p-1) (l_p - l_{p-1}) = p l_p\]</div>
+<p>Vì <span class="math notranslate nohighlight">\(l_{p+1}, l_{p+2}, \ldots, l_m &gt; n\)</span> nên</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\sum_{k=0}^m [f(k)] + \sum_{s=0}^n [g(s)] &amp; = p l_p + p(n - l_p) + l_{p+1} + l_{p+2} + \cdots + l_m \\
+&amp; = pn + l_{p+1} + l_{p+2} + \cdots + l_m &gt; pn + (m - p) n = mn.
+\end{align*}\end{split}\]</div>
+<p>Chứng minh tương tự cho <span class="math notranslate nohighlight">\([f(m)] &lt; n\)</span> (thay <span class="math notranslate nohighlight">\(f(x)\)</span> thành <span class="math notranslate nohighlight">\(g(x)\)</span>).</p>
 </section>
-</div><div class="proof corollary admonition" id="corollary-6">
-<p class="admonition-title"><span class="caption-number">Corollary 13.1 </span></p>
-<section class="corollary-content" id="proof-content">
-<p>Đặt <span class="math notranslate nohighlight">\(T\)</span> là vành giao hoán với đơn vị, <span class="math notranslate nohighlight">\(2^{-1} \in T\)</span>, <span class="math notranslate nohighlight">\(\zeta_{4n} = \zeta_{2^{t + 2}} \in T\)</span> là nghiệm phương trình <span class="math notranslate nohighlight">\(x^{2n} + 1 = 0\)</span>. Nếu <span class="math notranslate nohighlight">\(F(x), G(x) \in T[x]\)</span>, <span class="math notranslate nohighlight">\(\deg F(x) &lt; n\)</span>, <span class="math notranslate nohighlight">\(\deg G(x) &lt; n\)</span> thì tích <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span> có thể tính với <span class="math notranslate nohighlight">\(2n\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span> theo lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{4n}\)</span> và <span class="math notranslate nohighlight">\(2n\)</span> phép nhân cho <span class="math notranslate nohighlight">\((2^{-1})^{t+1}\)</span>.</p>
 </section>
-</div></section>
+<section id="bai-4">
+<h3>Bài 4<a class="headerlink" href="#bai-4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>Đề bài<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Cho đa thức với hệ số nguyên</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^{2m} + x^{m+2} - 4 x^m + x^{m-n} + 1\]</div>
+<p>với <span class="math notranslate nohighlight">\(m &gt; n\)</span> là hai số tự nhiên nguyên tố cùng nhau. Tìm ước chung lớn nhất giữa <span class="math notranslate nohighlight">\(f(x)\)</span> và <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
+</section>
+<section id="id6">
+<h4>Lời giải<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Ta thấy rằng <span class="math notranslate nohighlight">\(x=1\)</span> là nghiệm bậc hai của <span class="math notranslate nohighlight">\(f(x)\)</span>. Ta sẽ chứng minh rằng <span class="math notranslate nohighlight">\(f(x)\)</span> và <span class="math notranslate nohighlight">\(f'(x)\)</span> không có nghiệm tổng quát (nghiệm phức) nào khác. Giả sử có nghiệm <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[z^m + z^{-m} + z^n + z^{-n} = 4, m(z^m - z^{-m}) + n(z^n - z^{-n}) = 0\]</div>
+<p>Đặt <span class="math notranslate nohighlight">\(u = z^m\)</span> và <span class="math notranslate nohighlight">\(v = z^n\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[u + u^{-1} + v + v^{-1} = 4, m (u - u^{-1}) + n (v - v^{-1}) = 0\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(u\)</span> và <span class="math notranslate nohighlight">\(v\)</span> bằng <span class="math notranslate nohighlight">\(1\)</span> thì <span class="math notranslate nohighlight">\(z = 1\)</span> vì <span class="math notranslate nohighlight">\((m, n) = 1\)</span>. Nếu <span class="math notranslate nohighlight">\(u \neq 1\)</span> và <span class="math notranslate nohighlight">\(v \neq 1\)</span> thì ta nghiệm của hệ phương trình là <span class="math notranslate nohighlight">\((u, v) \in \{ (u_0, v_0), (u_0^{-1}, v_0^{-1}) \}\)</span> với</p>
+<div class="math notranslate nohighlight">
+\[u_0 = - \frac{m^2 + 3n^2 + 2n \sqrt{2(m^2 + n^2)}}{m^2 - n^2}, v_0 = \frac{3m^2 + n^2 + 2m \sqrt{2 (m^2 + n^2)}}{m^2 - n^2}\]</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(u_0\)</span> và <span class="math notranslate nohighlight">\(v_0\)</span> là các số thực và thỏa mãn đẳng thức <span class="math notranslate nohighlight">\(u_0^n = v_0^m\)</span>. Nhưng vì <span class="math notranslate nohighlight">\(1 &lt; \lvert u_0 \rvert &lt; v_0\)</span> nên khi <span class="math notranslate nohighlight">\(m &gt; n\)</span> các đẳng thức trên không đúng.</p>
+</section>
+</section>
+<section id="bai-5">
+<h3>Bài 5<a class="headerlink" href="#bai-5" title="Link to this heading">#</a></h3>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -523,7 +581,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./vasilenko"
+            path: "./siberian-maths-contest"
         },
         predefinedOutput: true
     }
@@ -540,24 +598,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Теоретико-числовые алгоритмы в криптографии</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../internet-olympiad/2023.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Internet Olympiad 2023</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -574,9 +614,30 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gioi-thieu">13.1.1. Giới thiệu</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-toan-bien-doi-fourier">13.1.2. Tính toán biến đổi Fourier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier-va-phep-nhan-da-thuc">13.1.3. Biến đổi Fourier và phép nhân đa thức</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-danh-cho-nam-nhat">Đề dành cho năm nhất</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-giai">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-3">Bài 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-4">Bài 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Lời giải</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-5">Bài 5</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
