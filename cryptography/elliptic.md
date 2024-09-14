@@ -151,5 +151,5 @@ $$x_R = k^2 - 2 x_P, \quad y_R = k(x_P - x_S) - y_P$$
 Để cộng hai điểm $P=(x_P, y_P)$ và $Q = (x_Q, y_Q)$ ta có ba trường hợp sau:
 
 1. $x_Q = x_P$ và $y_Q = -y_P$, nói cách khác là đối xứng qua trục hoành, thì ta có $P + Q = \mathcal{O}$
-2. $x_P \neq x_Q$, đặt $k = \frac{y_Q - y_P}{x_Q - x_P}$ thì tọa độ điểm $R = P + Q$ là $x_R = k^2 - x_P - x_Q$ và $y_R = k(x_P - x_R) - y_P$
-3. $x_P = x_Q$ và $y_P = y_Q$, khi hai điểm trùng nhau, đặt $k = \frac{3x_P^2 + a}{2y_P}$, thì tọa độ điểm $R = 2P$ là $x_R = k^2 - 2x_P$ và $y_R = k(x_P - x_R) - y_P$
+2. $x_P \neq x_Q$, đặt $k = \dfrac{y_Q - y_P}{x_Q - x_P}$ thì tọa độ điểm $R = P + Q$ là $x_R = k^2 - x_P - x_Q$ và $y_R = k(x_P - x_R) - y_P$
+3. $x_P = x_Q$ và $y_P = y_Q$, khi hai điểm trùng nhau, đặt $k = \dfrac{3x_P^2 + a}{2y_P}$, thì tọa độ điểm $R = 2P$ là $x_R = k^2 - 2x_P$ và $y_R = k(x_P - x_R) - y_P$
