@@ -10,5 +10,4 @@ Như lời tựa của tiến sĩ Nguyễn Xuân Xanh:
 
 Quyển sách bao gồm 6 chương, lần lượt kể về Cauchy, Galois, Abel, Cantor, giải thưởng Fields, và Grothendieck.
 
-Đối với Cauchy, đó là nhà toán học bảo hoàng, tin tưởng vào nền quân chủ cũng như giáo hội, không ngần ngại đối nghịch với Viện Hàn lâm Pháp về cả quan điểm chính trị lẫn niềm tin toán học. Cũng vì lý do này mà sự nghiệp của ông có nhiều sóng gió. Tuy nhiên ông vẫn nghiên cứu đều đặn và công bố nhiều tác phẩm quan trọng. Trong đó đặc biệt có định nghĩa chặt chẽ của giới hạn mà ngày nay chúng ta học và gọi là ngôn ngữ $\delta-\varepsilon$.
 
