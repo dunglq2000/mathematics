@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12. Phá mã vi sai trên TinyDES &#8212; Math Book</title>
+    <title>13. Phá mã vi sai trên TinyDES &#8212; Math Book</title>
   
   
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/differential-attack/tinydes';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13. Quantum computing" href="../quantum-computing.html" />
-    <link rel="prev" title="11.2. Kuznyechik" href="../kuznyechik.html" />
+    <link rel="next" title="14. Quantum computing" href="../quantum-computing.html" />
+    <link rel="prev" title="12.2. Kuznyechik" href="../kuznyechik.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -221,26 +221,27 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">9. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">10. Ba đường Conic</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">10. Đại số boolean và mật mã học</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../block-cipher.html">11. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../magma.html">11.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../kuznyechik.html">11.2. Kuznyechik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">11. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../block-cipher.html">12. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../magma.html">12.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kuznyechik.html">12.2. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Phá mã vi sai trên TinyDES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quantum-computing.html">13. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lattice-based.html">14. Lattice-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-based.html">15. Code-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elliptic.html">16. Đường cong elliptic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-logarithm.html">17. Discrete logarithm</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quantum-computing.html">14. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lattice-based.html">15. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-based.html">16. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elliptic.html">17. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-logarithm.html">18. Discrete logarithm</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">18. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">18.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">19. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">19.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -451,19 +452,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">12.1. Mô tả TinyDES</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">12.2.1. Phép XOR key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">12.2.2. Phép PBox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">12.2.3. Phép Expand</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">12.2.4. Phép SBox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">12.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">13.1. Mô tả TinyDES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">13.2.1. Phép XOR key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">13.2.2. Phép PBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">13.2.3. Phép Expand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">13.2.4. Phép SBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">13.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">12.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">12.3.1. Chosen plaintext phần một</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">12.3.2. Chosen plaintext phần hai</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">12.3.3. Final attack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">13.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">13.3.1. Chosen plaintext phần một</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">13.3.2. Chosen plaintext phần hai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">13.3.3. Final attack</a></li>
 </ul>
 </li>
 </ul>
@@ -478,7 +479,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pha-ma-vi-sai-tren-tinydes">
-<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">12. </span>Phá mã vi sai trên TinyDES</a><a class="headerlink" href="#pha-ma-vi-sai-tren-tinydes" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">13. </span>Phá mã vi sai trên TinyDES</a><a class="headerlink" href="#pha-ma-vi-sai-tren-tinydes" title="Link to this heading">#</a></h1>
 <p>Phá mã vi sai (differential cryptanalysis) đã làm chuẩn mã hóa DES không còn đủ an toàn.</p>
 <p>Trong các chuẩn mã hóa hiện đại về sau, khả năng kháng phá mã vi sai và phá mã tuyến tính trở thành tiêu chuẩn đánh giá độ an toàn của thuật toán mã hóa.</p>
 <nav class="contents" id="contents">
@@ -494,12 +495,12 @@ document.write(`
 </ul>
 </nav>
 <section id="mo-ta-tinydes">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">12.1. </span>Mô tả TinyDES</a><a class="headerlink" href="#mo-ta-tinydes" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">13.1. </span>Mô tả TinyDES</a><a class="headerlink" href="#mo-ta-tinydes" title="Link to this heading">#</a></h2>
 <p>TinyDES là một phiên bản thu nhỏ của chuẩn mã hóa DES. TinyDES là mã hóa khối theo mô hình Feistel, kích thước khối là <span class="math notranslate nohighlight">\(8\)</span> bit, kích thước khóa cũng là <span class="math notranslate nohighlight">\(8\)</span> bit. Mỗi vòng khóa con có độ dài <span class="math notranslate nohighlight">\(6\)</span> bit.</p>
 <figure class="align-default" id="id2">
 <img alt="../../_images/blocky.jpg" src="../../_images/blocky.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 12.1 </span><span class="caption-text">Một vòng TinyDES</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13.1 </span><span class="caption-text">Một vòng TinyDES</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Mã TinyDES khá đơn giản. Theo mô hình Feistel, khối đầu vào <span class="math notranslate nohighlight">\(8\)</span> bit được chia thành hai nửa trái phải <span class="math notranslate nohighlight">\(4\)</span> bit. Nửa phải sẽ đi qua các hàm Expand, SBox và PBox, sau đó XOR với nửa trái để được nửa phải mới. Còn nửa trái mới là nửa phải cũ. Tóm lại
@@ -587,16 +588,16 @@ công thức mô hình Feistel là:</p>
 </div>
 </section>
 <section id="id1">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">12.2. </span>Phá mã vi sai trên TinyDES</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">13.2. </span>Phá mã vi sai trên TinyDES</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Giả sử <span class="math notranslate nohighlight">\(X_1\)</span> và <span class="math notranslate nohighlight">\(X_2\)</span> là hai khối input có cùng số bit.</p>
 <p>Ta định nghĩa vi sai của <span class="math notranslate nohighlight">\(X_1\)</span> và <span class="math notranslate nohighlight">\(X_2\)</span> là <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span>.</p>
 <p>Xét các phép biến đổi trong TinyDES</p>
 <section id="phep-xor-key">
-<h3><span class="section-number">12.2.1. </span>Phép XOR key<a class="headerlink" href="#phep-xor-key" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.1. </span>Phép XOR key<a class="headerlink" href="#phep-xor-key" title="Link to this heading">#</a></h3>
 <p>Gọi <span class="math notranslate nohighlight">\(K\)</span> là khóa con ở vòng nào đó trong thuật toán. Khi đó nếu đặt  <span class="math notranslate nohighlight">\(Y_1 = X_1 \oplus K\)</span> và <span class="math notranslate nohighlight">\(Y_2 = X_2 \oplus K\)</span> thì vi sai của output là <span class="math notranslate nohighlight">\(Y = Y_1 \oplus Y_2 = X_1 \oplus X_2\)</span>. Như vậy <span class="math notranslate nohighlight">\(K\)</span> không tác động lên vi sai và đây là tính chất quan trọng để chúng ta phá mã vi sai.</p>
 </section>
 <section id="phep-pbox">
-<h3><span class="section-number">12.2.2. </span>Phép PBox<a class="headerlink" href="#phep-pbox" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.2. </span>Phép PBox<a class="headerlink" href="#phep-pbox" title="Link to this heading">#</a></h3>
 <p>Phép PBox bảo toàn số bit (hoán vị 4 bit thành 4 bit) và cách xây dựng hoán vị là một biến đổi tuyến tính. Việc hoán vị 4 bit <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3\)</span> thành <span class="math notranslate nohighlight">\(b_2 b_0 b_3 b_1\)</span> tương đương với phép nhân ma trận</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
@@ -619,14 +620,14 @@ công thức mô hình Feistel là:</p>
 <p>Như vậy nếu vi sai input là cố định thì vi sai output cũng cố định do tính tuyến tính.</p>
 </section>
 <section id="phep-expand">
-<h3><span class="section-number">12.2.3. </span>Phép Expand<a class="headerlink" href="#phep-expand" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.3. </span>Phép Expand<a class="headerlink" href="#phep-expand" title="Link to this heading">#</a></h3>
 <p>Tương tự, phép Expand cũng là biến đổi tuyến tính và nếu đặt <span class="math notranslate nohighlight">\(Y_1 = \text{Expand}(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = \text{Expand}(X_2)\)</span> thì</p>
 <div class="math notranslate nohighlight">
 \[Y_1 \oplus Y_2 = \text{Expand}(X_1) \oplus \text{Expand}(X_2) = \text{Expand}(X_1 \oplus X_2)\]</div>
 <p>Cũng tương tự, nếu vi sai input là cố định thì vi sai output cũng cố định.</p>
 </section>
 <section id="phep-sbox">
-<h3><span class="section-number">12.2.4. </span>Phép SBox<a class="headerlink" href="#phep-sbox" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.4. </span>Phép SBox<a class="headerlink" href="#phep-sbox" title="Link to this heading">#</a></h3>
 <p>Phép SBox là một biến đổi không tuyến tính với input 6 bit và output 4 bit.</p>
 <p>Đặt <span class="math notranslate nohighlight">\(Y_1 = \text{SBox}(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = \text{SBox}(X_2)\)</span>.</p>
 <p>Với mỗi <span class="math notranslate nohighlight">\(X = X_1 \oplus X_2\)</span> cố định thì cứ một giá trị <span class="math notranslate nohighlight">\(X_1\)</span> sẽ có duy nhất một giá trị <span class="math notranslate nohighlight">\(X_2\)</span> cho ra vi sai <span class="math notranslate nohighlight">\(X\)</span>. Tuy nhiên vi sai output <span class="math notranslate nohighlight">\(Y_1 \oplus Y_2\)</span> phân bố không đều nhau.</p>
@@ -684,7 +685,7 @@ công thức mô hình Feistel là:</p>
 </ol>
 </section>
 <section id="ham-f">
-<h3><span class="section-number">12.2.5. </span>Hàm <span class="math notranslate nohighlight">\(F\)</span><a class="headerlink" href="#ham-f" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.5. </span>Hàm <span class="math notranslate nohighlight">\(F\)</span><a class="headerlink" href="#ham-f" title="Link to this heading">#</a></h3>
 <p>Như vậy, phép XOR key, phép PBox và phép Expand cho xác suất đều nhau với các cặp vi sai <span class="math notranslate nohighlight">\((X, Y)\)</span>. Trong khi đó thì SBox lại cho xác suất các cặp vi sai <span class="math notranslate nohighlight">\((X, Y)\)</span> không đều nhau.</p>
 <p>Đặt <span class="math notranslate nohighlight">\(Y_1 = F(X_1)\)</span> và <span class="math notranslate nohighlight">\(Y_2 = F(X_2)\)</span>. Đi từ trong ra ngoài (<span class="math notranslate nohighlight">\(\text{Expand}\)</span>, tới <span class="math notranslate nohighlight">\(\text{SBox}\)</span>, tới <span class="math notranslate nohighlight">\(\text{PBox}\)</span> và cuối cùng là <span class="math notranslate nohighlight">\(F\)</span>) ta thấy rằng:</p>
 <ul class="simple">
@@ -703,10 +704,10 @@ công thức mô hình Feistel là:</p>
 </section>
 </section>
 <section id="chosen-plaintext">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">12.3. </span>Chosen plaintext</a><a class="headerlink" href="#chosen-plaintext" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">13.3. </span>Chosen plaintext</a><a class="headerlink" href="#chosen-plaintext" title="Link to this heading">#</a></h2>
 <p>Differential attack là một dạng chosen plaintext, trong đó chúng ta tận dụng các xác suất ở trên.</p>
 <section id="chosen-plaintext-phan-mot">
-<h3><span class="section-number">12.3.1. </span>Chosen plaintext phần một<a class="headerlink" href="#chosen-plaintext-phan-mot" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.1. </span>Chosen plaintext phần một<a class="headerlink" href="#chosen-plaintext-phan-mot" title="Link to this heading">#</a></h3>
 <p>Do tính chất vi sai, chúng ta sẽ mong muốn tìm những cặp (plaintext, ciphertext) <span class="math notranslate nohighlight">\((P_1, C_1)\)</span> và <span class="math notranslate nohighlight">\((P_2, C_2)\)</span> nào đó mà vi sai input <span class="math notranslate nohighlight">\(P_1 \oplus P_2\)</span> và vi sai output <span class="math notranslate nohighlight">\(C_1 \oplus C_2\)</span> có thể tối ưu xác suất trên.</p>
 <p>Giả sử chúng ta xét trường hợp 3 ở trên, khi vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 3 thì vi sai output của <span class="math notranslate nohighlight">\(F\)</span> là 8 với xác suất <span class="math notranslate nohighlight">\(1/4\)</span>. Đây là xác suất lớn nhất nên ta mong muốn trong 3 vòng của TinyDES sẽ tận dụng được càng nhiều càng tốt.</p>
 <p>Chúng ta đi từ dưới lên. Đặt</p>
@@ -738,7 +739,7 @@ công thức mô hình Feistel là:</p>
 <p>Tổng kết lại, ta chọn vi sai input <span class="math notranslate nohighlight">\((L, R) = (8, 3)\)</span> thì xác suất để vi sai output bằng <span class="math notranslate nohighlight">\((3, 8)\)</span> là <span class="math notranslate nohighlight">\((1/4) \times 1 \times (1/4) = 1/16\)</span>. Đây là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.</p>
 </section>
 <section id="chosen-plaintext-phan-hai">
-<h3><span class="section-number">12.3.2. </span>Chosen plaintext phần hai<a class="headerlink" href="#chosen-plaintext-phan-hai" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.2. </span>Chosen plaintext phần hai<a class="headerlink" href="#chosen-plaintext-phan-hai" title="Link to this heading">#</a></h3>
 <p>Tương tự, chúng ta xét trường hợp 2 ở trên, khi vi sai input của <span class="math notranslate nohighlight">\(F\)</span> là 1 thì vi sai output của <span class="math notranslate nohighlight">\(F\)</span> là 11 với xác suất <span class="math notranslate nohighlight">\(7/32\)</span>. Ta cũng mong muốn sau 3 vòng của TinyDES sẽ tận dụng được càng nhiều càng tốt.</p>
 <p>Chúng ta lại đi dưới lên. Đặt</p>
 <div class="math notranslate nohighlight">
@@ -769,7 +770,7 @@ công thức mô hình Feistel là:</p>
 <p>Tổng kết lại, ta chọn vi sai input <span class="math notranslate nohighlight">\((L, R) = (11, 1)\)</span> thì xác suất để vi sai output bằng <span class="math notranslate nohighlight">\((1, 11)\)</span> là <span class="math notranslate nohighlight">\((7/32) \times 1 \times (7/32) \approx 0.048\)</span>. Đây cũng là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.</p>
 </section>
 <section id="final-attack">
-<h3><span class="section-number">12.3.3. </span>Final attack<a class="headerlink" href="#final-attack" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.3. </span>Final attack<a class="headerlink" href="#final-attack" title="Link to this heading">#</a></h3>
 <p>Như vậy, đối với TinyDES chúng ta phá mã vi sai như sau:</p>
 <ol class="arabic simple">
 <li><p>Tìm một số lượng cặp plaintext, ciphertext <span class="math notranslate nohighlight">\((P_1, C_1)\)</span>, <span class="math notranslate nohighlight">\((P_2, C_2)\)</span>, … cho tới khi tìm được <span class="math notranslate nohighlight">\(P_i \oplus P_j = 0x83\)</span> và <span class="math notranslate nohighlight">\(C_i \oplus C_j = 0x38\)</span>.</p></li>
@@ -909,7 +910,7 @@ công thức mô hình Feistel là:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11.2. </span>Kuznyechik</p>
+        <p class="prev-next-title"><span class="section-number">12.2. </span>Kuznyechik</p>
       </div>
     </a>
     <a class="right-next"
@@ -917,7 +918,7 @@ công thức mô hình Feistel là:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Quantum computing</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Quantum computing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -937,19 +938,19 @@ công thức mô hình Feistel là:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">12.1. Mô tả TinyDES</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">12.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">12.2.1. Phép XOR key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">12.2.2. Phép PBox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">12.2.3. Phép Expand</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">12.2.4. Phép SBox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">12.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mo-ta-tinydes">13.1. Mô tả TinyDES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">13.2. Phá mã vi sai trên TinyDES</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-xor-key">13.2.1. Phép XOR key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-pbox">13.2.2. Phép PBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-expand">13.2.3. Phép Expand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-sbox">13.2.4. Phép SBox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-f">13.2.5. Hàm <span class="math notranslate nohighlight">\(F\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">12.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">12.3.1. Chosen plaintext phần một</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">12.3.2. Chosen plaintext phần hai</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">12.3.3. Final attack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext">13.3. Chosen plaintext</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-mot">13.3.1. Chosen plaintext phần một</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chosen-plaintext-phan-hai">13.3.2. Chosen plaintext phần hai</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-attack">13.3.3. Final attack</a></li>
 </ul>
 </li>
 </ul>
