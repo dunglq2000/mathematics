@@ -9,6 +9,10 @@ parts:
     numbered: true
     chapters:
     - file: algebra/algebra.md
+  - caption: Đại số tuyến tính
+    numbered: true
+    chapters:
+    - file: linalg/intro.md
   - caption: Xác suất
     numbered: true
     chapters:
