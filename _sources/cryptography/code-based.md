@@ -1,5 +1,9 @@
 # Code-based cryptography
 
+```{contents}
+:depth: 2
+```
+
 ## Introduction
 
 ````{prf:definition} Block code

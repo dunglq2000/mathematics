@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -456,10 +456,21 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="duong-cong-elliptic">
-<h1><span class="section-number">12. </span>Đường cong elliptic<a class="headerlink" href="#duong-cong-elliptic" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">12. </span>Đường cong elliptic</a><a class="headerlink" href="#duong-cong-elliptic" title="Link to this heading">#</a></h1>
 <p>Đường cong elliptic (elliptic curve) rất nổi tiếng trong toán học. Đây là công cụ giúp các nhà toán học giải quyết bài toán lớn <strong>Định lý cuối cùng của Fermat</strong>. Trong mật mã học, đường cong elliptic là một trong những tiêu chuẩn bảo mật về mã hóa và chữ ký điện tử. Chương này khảo sát những đặc trưng cơ bản đường cong elliptic và ứng dụng trong mật mã học.</p>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#duong-cong-elliptic" id="id1">Đường cong elliptic</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mo-dau-ve-duong-cong-elliptic" id="id2">Mở đầu về đường cong elliptic</a></p></li>
+<li><p><a class="reference internal" href="#phep-cong-cac-diem-tren-elliptic" id="id3">Phép cộng các điểm trên elliptic</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
 <section id="mo-dau-ve-duong-cong-elliptic">
-<h2><span class="section-number">12.1. </span>Mở đầu về đường cong elliptic<a class="headerlink" href="#mo-dau-ve-duong-cong-elliptic" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">12.1. </span>Mở đầu về đường cong elliptic</a><a class="headerlink" href="#mo-dau-ve-duong-cong-elliptic" title="Link to this heading">#</a></h2>
 <p>Đường cong elliptic là tập hợp các điểm <span class="math notranslate nohighlight">\((x, y)\)</span> trên mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> thỏa mãn phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 + ax + b\)</span>, với <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}\)</span> và <span class="math notranslate nohighlight">\(4a^3 + 27b^2 \neq 0\)</span>.</p>
 <p>Ví dụ với phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 + 8\)</span>, đồ thị được biểu diễn ở <a class="reference internal" href="#ecc-1"><span class="std std-numref">Fig. 12.1</span></a>.</p>
 <p>Ví dụ với phương trình <span class="math notranslate nohighlight">\(y^2 = x^3 - x\)</span>, đồ thị được biểu diễn ở <a class="reference internal" href="#ecc-2"><span class="std std-numref">Fig. 12.2</span></a>.</p>
@@ -485,7 +496,7 @@ document.write(`
 </figure>
 </section>
 <section id="phep-cong-cac-diem-tren-elliptic">
-<h2><span class="section-number">12.2. </span>Phép cộng các điểm trên elliptic<a class="headerlink" href="#phep-cong-cac-diem-tren-elliptic" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">12.2. </span>Phép cộng các điểm trên elliptic</a><a class="headerlink" href="#phep-cong-cac-diem-tren-elliptic" title="Link to this heading">#</a></h2>
 <p>Phương trình và đồ thị của đường cong elliptic đã được trình bày ở trên. Tuy nhiên chúng ta quan tâm tới mối liên hệ giữa các điểm trên elliptic, cụ thể là phép “cộng” 2 điểm.</p>
 <p>Ta thêm một điểm trừu tượng vào tập hợp các điểm trên đường cong
 elliptic và gọi là <strong>điểm vô cực</strong>. Điểm vô cực được ký hiệu là
