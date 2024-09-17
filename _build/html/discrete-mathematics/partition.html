@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Đại số boolean &#8212; Math Book</title>
+    <title>7. Phân hoạch &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/partition';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8.1. Hàm boolean" href="boolean-function.html" />
-    <link rel="prev" title="7. Phân hoạch" href="partition.html" />
+    <link rel="next" title="8. Đại số boolean" href="boolean.html" />
+    <link rel="prev" title="6. Quan hệ hai ngôi" href="binary-relation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,8 +210,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="number-theory.html">5. Số học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary-relation.html">6. Quan hệ hai ngôi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="partition.html">7. Phân hoạch</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="boolean.html">8. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="boolean-function.html">8.1. Hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">8.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear-feedback-shift-register.html">8.3. Linear Feedback Shift Register</a></li>
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/boolean.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/partition.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +353,7 @@
       
       
       
-      <li><a href="../_sources/discrete-mathematics/boolean.md" target="_blank"
+      <li><a href="../_sources/discrete-mathematics/partition.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +424,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -435,11 +437,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Đại số boolean</h1>
+    <h1>Phân hoạch</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling">7.1. Số Stirling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling-loai-1">7.1.1. Số Stirling loại 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling-loai-2">7.1.2. Số Stirling loại 2</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -449,18 +463,90 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dai-so-boolean">
-<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">8. </span>Đại số boolean</a><a class="headerlink" href="#dai-so-boolean" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="phan-hoach">
+<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">7. </span>Phân hoạch</a><a class="headerlink" href="#phan-hoach" title="Link to this heading">#</a></h1>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#dai-so-boolean" id="id3">Đại số boolean</a></p></li>
+<li><p><a class="reference internal" href="#phan-hoach" id="id1">Phân hoạch</a></p>
+<ul>
+<li><p><a class="reference internal" href="#so-stirling" id="id2">Số Stirling</a></p></li>
+</ul>
+</li>
 </ul>
 </nav>
-<p>Boolean (hay luận lý) chỉ giá trị đúng hoặc sai của mệnh đề nào đó.</p>
-<p>Theo cách hiểu cơ bản, boolean gồm hai giá trị 0 hoặc 1 (sai hoặc đúng). Chương này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">4</a>]</span> và <span id="id2">[<a class="reference internal" href="../intro.html#id4" title="Н. Н. Токарева. Нелинейные булевы функции. LAP LAMBERT Academic Publishing, 2011. ISBN 978-3-8433-0904-2.">5</a>]</span>.</p>
-<div class="toctree-wrapper compound">
+<section id="so-stirling">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">7.1. </span>Số Stirling</a><a class="headerlink" href="#so-stirling" title="Link to this heading">#</a></h2>
+<section id="so-stirling-loai-1">
+<h3><span class="section-number">7.1.1. </span>Số Stirling loại 1<a class="headerlink" href="#so-stirling-loai-1" title="Link to this heading">#</a></h3>
+<p>Xét tập các hoán vị trên tập hữu hạn <span class="math notranslate nohighlight">\(n\)</span> phần tử. Số hoán vị chứa <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập là số Stirling loại 1, ký hiệu là <span class="math notranslate nohighlight">\(\mathcal{S}_n^{(k)}\)</span>.</p>
+<p>Các bước khởi đầu là <span class="math notranslate nohighlight">\(\mathcal{S}_0^{(0)} = 1\)</span> (có đúng một cách chia tập 0 phần tử vào 0 chu trình), <span class="math notranslate nohighlight">\(\mathcal{S}_n^{(0)} = \mathcal{S}_0^{(n)} = 0\)</span> (không có cách nào chia tập <span class="math notranslate nohighlight">\(n\)</span> phần tử vào 0 chu trình và chia tập 0 phần tử vào <span class="math notranslate nohighlight">\(n\)</span> chu trình).</p>
+<p>Công thức đệ quy của số Stirling là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    \mathcal{S}_{n+1}^{(k)} = n \cdot \mathcal{S}_n^{(k)} + \mathcal{S}_{n}^{(k-1)}
+\end{equation}\]</div>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Giả sử tập có <span class="math notranslate nohighlight">\(n+1\)</span> phần tử là <span class="math notranslate nohighlight">\(A = \{ 1, 2, \ldots, n, n+1\}\)</span>. Khi đó để phân hoạch <span class="math notranslate nohighlight">\(n+1\)</span> phần tử này vào <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập thì có hai trường hợp:</p>
+<ol class="arabic simple">
+<li><p>Đầu tiên xếp các phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập thì có <span class="math notranslate nohighlight">\(\mathcal{S}_n^{(k)}\)</span> cách chọn. Tiếp theo ta cho phần tử <span class="math notranslate nohighlight">\(n+1\)</span> vào một vị trí bất kì trong <span class="math notranslate nohighlight">\(k\)</span> chu trình trên thì có <span class="math notranslate nohighlight">\(n\)</span> cách chọn. Vậy trường hợp này là <span class="math notranslate nohighlight">\(n \cdot \mathcal{S}_n^{(k)}\)</span>.</p></li>
+<li><p>Ta phân <span class="math notranslate nohighlight">\(n\)</span> phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k-1\)</span> chu trình độc lập và phần tử <span class="math notranslate nohighlight">\(n+1\)</span> sẽ vào chu trình thứ <span class="math notranslate nohighlight">\(k\)</span>. Trường hợp này có <span class="math notranslate nohighlight">\(\mathcal{S}_n^{(k-1)} \cdot 1\)</span> cách chọn.</p></li>
+</ol>
+<p>Như vậy tổng số cách phân <span class="math notranslate nohighlight">\(n+1\)</span> phần tử vào <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập là hợp của hai trường hợp trên. Ta có điều phải chứng minh.</p>
 </div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 7.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Có bao nhiêu hoán vị của <span class="math notranslate nohighlight">\(\mathcal{S}_5\)</span> chứa đúng ba chu trình độc lập?</p>
+<p>Ta có các trường hợp sau:</p>
+<ol class="arabic simple">
+<li><p>Hoán vị có dạng <span class="math notranslate nohighlight">\((1)(2)(3, 4, 5)\)</span>. Ta chọn hai phần tử làm hai chu trình độc lập, có <span class="math notranslate nohighlight">\(C^2_5 = 10\)</span> cách chọn. Tiếp theo chọn ba phần tử cho chu trình cuối, có <span class="math notranslate nohighlight">\(2!\)</span> cách chọn. Vậy trường hợp này có <span class="math notranslate nohighlight">\(10 \cdot 2 = 20\)</span> cách chọn.</p></li>
+<li><p>Hoán vị có dạng <span class="math notranslate nohighlight">\((1)(2, 3)(4, 5)\)</span>. Ta chọn một phần tử làm chu trình độc lập có <span class="math notranslate nohighlight">\(C^1_5 = 5\)</span> cách chọn. Tiếp theo chọn hai phần tử cho chu trình tiếp theo trong 4 phần tử còn lại, có <span class="math notranslate nohighlight">\(C^2_4 = 6\)</span> cách chọn. Hai phần tử còn lại là <span class="math notranslate nohighlight">\(C^2_2 = 1\)</span> cách chọn. Lưu ý là hai chu trình độc lập có thể đổi chỗ cho nhau nên cần chia thêm <span class="math notranslate nohighlight">\(2!\)</span> nữa, ví dụ <span class="math notranslate nohighlight">\((1, 2)(3, 4)\)</span> hoàn toàn giống với <span class="math notranslate nohighlight">\((3, 4)(1, 2)\)</span>. Số cách chọn cho trường hợp này là <span class="math notranslate nohighlight">\(5 \cdot 6 / 2 = 15\)</span> cách chọn.</p></li>
+</ol>
+<p>Như vậy số hoán vị của <span class="math notranslate nohighlight">\(\mathcal{S}_5\)</span> chứa đúng ba chu trình độc lập là <span class="math notranslate nohighlight">\(20 + 15 = 35\)</span>.</p>
+<p>Ta so sánh kết quả với số Stirling. Ta cần tìm <span class="math notranslate nohighlight">\(\mathcal{S}_5^{(3)}\)</span>.</p>
+<p>Ta có:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \mathcal{S}_5^{(3)} = &amp; 4 \cdot \mathcal{S}_4^{(3)} + \mathcal{S}_4^{(2)} \\
+        = &amp; 4 \cdot \left(3 \cdot \mathcal{S}_3^{(3)} + \mathcal{S}_3^{(2)}\right) + 3 \cdot \mathcal{S}_3^{(2)} + \mathcal{S}_3^{(1)} \\
+        = &amp; 4 \cdot \left(3 \cdot 1  + 2 \cdot \mathcal{S}_2^{(2)} + \mathcal{S}_2^{(1)}\right) + 3 \cdot \left(2 \cdot \mathcal{S}_2^{(2)} + \mathcal{S}_2^{(1)}\right) + 2 \cdot \mathcal{S}_2^{(1)} + \mathcal{S}_2^{(0)} \\
+        = &amp; 4 \cdot \left(3 + 2 \cdot 1 + 1 \cdot \mathcal{S}_1^{(1)} + \mathcal{S}_1^{(0)}\right) + 3 \cdot \left(2 \cdot 1 + \mathcal{S}_1^{(1)} + \mathcal{S}_1^{(0)}\right) + \mathcal{S}_1^{(1)} + \mathcal{S}_1^{(0)} + 0 \\
+        = &amp; 4 \cdot (3 + 2 + 1) + 3 \cdot (2 + 1 + 0) + 2 \cdot 1 + 0 + 0 = 35
+\end{align*}\end{split}\]</div>
+<p>Kết quả số Stirling khớp với việc giải bằng tổ hợp và không đòi hỏi các suy luận phức tạp.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-1">
+<p class="admonition-title"><span class="caption-number">Remark 7.1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Số Stirling loại 1 cho phép tính số lượng phân hoạch theo đệ quy thay vì giải các bài toán tổ hợp phức tạp. Điều này hiệu quả khi các số <span class="math notranslate nohighlight">\(n\)</span> và <span class="math notranslate nohighlight">\(k\)</span> trở nên lớn.</p>
+</section>
+</div><p>Tính chất của số Stirling loại 1:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle{\sum_{k=1}^{n}\mathcal{S}_n^{(k)} = n!}\)</span>. Công thức này chỉ số hoán vị có thể có của một tập <span class="math notranslate nohighlight">\(n\)</span> phần tử.</p></li>
+</ol>
+</section>
+<section id="so-stirling-loai-2">
+<h3><span class="section-number">7.1.2. </span>Số Stirling loại 2<a class="headerlink" href="#so-stirling-loai-2" title="Link to this heading">#</a></h3>
+<p>Số Stirling loại 2 thể hiện số cách phân bổ <span class="math notranslate nohighlight">\(n\)</span> phần tử vào <span class="math notranslate nohighlight">\(k\)</span> tập hợp rời nhau, ký hiệu là <span class="math notranslate nohighlight">\(s(n, k)\)</span>.</p>
+<p>Công thức đệ quy của số Stirling loại 2 là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    s(n+1, k) = k \cdot s(n, k) + s(n, k-1)
+\end{equation}\]</div>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p>Cách chứng minh khá tương tự số Stirling loại 1. Tuy nhiên ở đây việc phân một phần tử vào một tập hợp không xét tới thứ tự, điều này khác với chu trình cần xem xét thứ tự. Như vậy ta vẫn có hai trường hợp</p>
+<ol class="arabic simple">
+<li><p>Phân các phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k\)</span> tập hợp. Sau đó phần tử <span class="math notranslate nohighlight">\(n+1\)</span> sẽ được phân vào một trong <span class="math notranslate nohighlight">\(k\)</span> tập đó nên có <span class="math notranslate nohighlight">\(k\)</span> cách chọn.</p></li>
+<li><p>Phân các phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k-1\)</span> tập hợp và phần tử <span class="math notranslate nohighlight">\(n+1\)</span> vào tập hợp thứ <span class="math notranslate nohighlight">\(k+1\)</span>.</p></li>
+</ol>
+<p>Từ đây ta có công thức số Stirling loại 2.</p>
+</div>
+<p>Các bước cơ sở cho số Stirling loại 2 cũng tương tự loại 1: <span class="math notranslate nohighlight">\(s(n, n) = 1\)</span>, <span class="math notranslate nohighlight">\(s(n, 0) = s(0, n) = 0\)</span>.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -494,20 +580,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="partition.html"
+       href="binary-relation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Phân hoạch</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Quan hệ hai ngôi</p>
       </div>
     </a>
     <a class="right-next"
-       href="boolean-function.html"
+       href="boolean.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.1. </span>Hàm boolean</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Đại số boolean</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,6 +603,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling">7.1. Số Stirling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling-loai-1">7.1.1. Số Stirling loại 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-stirling-loai-2">7.1.2. Số Stirling loại 2</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
