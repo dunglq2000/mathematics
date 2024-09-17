@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -230,11 +230,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">12. Lattice-based cryptography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">13. Code-based cryptography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">14. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">15. Discrete logarithm</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">15. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">15.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">16. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">16.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -539,7 +540,7 @@ document.write(`
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Nghịch thế)</p>
 <section class="definition-content" id="proof-content">
-<p>Cho tập hợp <span class="math notranslate nohighlight">\(A = \{1, 2, \cdots, n\}\)</span> và xét hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> trên ​<span class="math notranslate nohighlight">\(A\)</span>. Ta gọi hai phần tử <span class="math notranslate nohighlight">\(i\)</span>​ và <span class="math notranslate nohighlight">\(j\)</span>​ tạo thành \textbf{nghịch thế} (inversion) nếu <span class="math notranslate nohighlight">\(i &lt; j\)</span>​ và <span class="math notranslate nohighlight">\(\sigma(i) &gt; \sigma(j)\)</span>.</p>
+<p>Cho tập hợp <span class="math notranslate nohighlight">\(A = \{1, 2, \cdots, n\}\)</span> và xét hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> trên ​<span class="math notranslate nohighlight">\(A\)</span>. Ta gọi hai phần tử <span class="math notranslate nohighlight">\(i\)</span>​ và <span class="math notranslate nohighlight">\(j\)</span>​ tạo thành <strong>nghịch thế</strong> (hay <strong>inversion</strong>) nếu <span class="math notranslate nohighlight">\(i &lt; j\)</span>​ và <span class="math notranslate nohighlight">\(\sigma(i) &gt; \sigma(j)\)</span>.</p>
 <p>Đặt <span class="math notranslate nohighlight">\(\sigma = \begin{pmatrix}
     1 &amp; 2 &amp; \ldots &amp; n \\
     k_1 &amp; k_2 &amp; \cdots &amp; k_n
@@ -644,7 +645,7 @@ document.write(`
 <div class="proof definition admonition" id="definition-10">
 <p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (Độc lập tuyến tính)</p>
 <section class="definition-content" id="proof-content">
-<p>Tập hợp các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_d\)</span> được gọi <strong>độc lập tuyến tính</strong> (hay <strong>linear independent</strong>) nếu chỉ có duy nhất trường hợp <span class="math notranslate nohighlight">\(\alpha_1 = \alpha_2 = \ldots = \alpha_d = 0\)</span> thỏa tổ hợp tuyến tính trên.</p>
+<p>Tập hợp các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_d\)</span> được gọi là <strong>độc lập tuyến tính</strong> (hay <strong>linear independent</strong>) nếu chỉ có duy nhất trường hợp <span class="math notranslate nohighlight">\(\alpha_1 = \alpha_2 = \ldots = \alpha_d = 0\)</span> thỏa tổ hợp tuyến tính trên.</p>
 </section>
 </div><div class="proof definition admonition" id="definition-11">
 <p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Phụ thuộc tuyến tính)</p>

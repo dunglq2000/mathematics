@@ -49,6 +49,7 @@ parts:
     - file: cryptography/lattice-based.md
     - file: cryptography/code-based.md
     - file: cryptography/elliptic.md
+    - file: cryptography/discrete-logarithm.md
   - caption: Теоретико-числовые алгоритмы в криптографии
     numbered: true
     chapters:

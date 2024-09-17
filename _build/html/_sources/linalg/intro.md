@@ -27,7 +27,7 @@ Bảng thuật ngữ và ký hiệu
 ### Định thức ma trận
 
 ````{prf:definition} Nghịch thế
-Cho tập hợp $A = \{1, 2, \cdots, n\}$ và xét hoán vị $\sigma$ trên ​$A$. Ta gọi hai phần tử $i$​ và $j$​ tạo thành \textbf{nghịch thế} (inversion) nếu $i < j$​ và $\sigma(i) > \sigma(j)$.
+Cho tập hợp $A = \{1, 2, \cdots, n\}$ và xét hoán vị $\sigma$ trên ​$A$. Ta gọi hai phần tử $i$​ và $j$​ tạo thành **nghịch thế** (hay **inversion**) nếu $i < j$​ và $\sigma(i) > \sigma(j)$.
 
 Đặt $\sigma = \begin{pmatrix}
     1 & 2 & \ldots & n \\
@@ -143,7 +143,7 @@ Bây giờ ta xét tổ hợp tuyến tính
 $$\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \ldots + \alpha_d \mathbf{v}_d = \mathbf{0}$$
 
 ````{prf:definition} Độc lập tuyến tính
-Tập hợp các vector $\mathbf{v}_1$, $\mathbf{v}_2$, ..., $\mathbf{v}_d$ được gọi **độc lập tuyến tính** (hay **linear independent**) nếu chỉ có duy nhất trường hợp $\alpha_1 = \alpha_2 = \ldots = \alpha_d = 0$ thỏa tổ hợp tuyến tính trên.    
+Tập hợp các vector $\mathbf{v}_1$, $\mathbf{v}_2$, ..., $\mathbf{v}_d$ được gọi là **độc lập tuyến tính** (hay **linear independent**) nếu chỉ có duy nhất trường hợp $\alpha_1 = \alpha_2 = \ldots = \alpha_d = 0$ thỏa tổ hợp tuyến tính trên.    
 ````
 
 ````{prf:definition} Phụ thuộc tuyến tính
