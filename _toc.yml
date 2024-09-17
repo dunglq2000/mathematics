@@ -42,6 +42,7 @@ parts:
     chapters:
     - file: geometry/transformation.md
     - file: geometry/conics.md
+    - file: brachistochrone/brachistochrone.md
   - caption: Mật mã học (và những niềm đau)
     numbered: true
     chapters:
