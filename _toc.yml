@@ -37,6 +37,10 @@ parts:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
       - file: discrete-mathematics/linear-feedback-shift-register.md
+  - caption: Hình học
+    numbered: true
+    chapters:
+    - file: geometry/transformation.md
   - caption: Mật mã học (và những niềm đau)
     numbered: true
     chapters:
