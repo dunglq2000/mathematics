@@ -1,6 +1,10 @@
 # Số học
 
-*Toán học là vua của các môn khoa học, và số học là nữ hoàng* - Carl Friedrich Gauss
+```{epigraph}
+Toán học là vua của các môn khoa học, và số học là nữ hoàng.
+
+-- Carl Friedrich Gauss
+```
 
 ```{figure} ../mathematicians/Gauss.jpeg
 
@@ -8,6 +12,7 @@ Carl Friedrich Gauss (1777-1855)
 ```
 
 ```{contents}
+:depth: 2
 ```
 
 ## Phép chia Euclid và thuật toán Euclid
