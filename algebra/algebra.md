@@ -1,6 +1,7 @@
 # Đại cương về tập hợp
 
 ```{contents}
+:depth: 2
 ```
 
 Tập hợp là khái niệm nền tảng, có mặt trong hầu khắp các ngả rẽ của toán học. Mình có dịp đọc quyển *Toán học qua các câu chuyện về tập hợp* của Tủ sách Sputnik {cite}`Sputnik008`, dịch từ quyển *Рассказы о множествах* của Виленкин Н.Я. {cite}`Vilenkin19` và thấy những câu chuyện rất thú vị. Nếu hứng thú các bạn có thể tìm đọc.
@@ -164,12 +165,6 @@ Hàm số $f: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$ với $z = f(
 ````
 
 Chúng ta còn một cách gọi khác cho đơn ánh, toàn ánh, song ánh trong tiếng Anh.
-
-| Tiếng Việt | Tiếng Anh | Tiếng Anh kiểu 2 (?) |
-| ---------- | --------- | -------------------- |
-| đơn ánh | injection | one-to-one map |
-| toàn ánh | surjection | onto map |
-| song ánh | bijection | one-to-one and onto map |
 
 ````{prf:example}
 Hàm số $f: \mathbb{R} \rightarrow \mathbb{R}$ cho bởi $y = f(x) = x^3$ là song ánh.
@@ -340,3 +335,30 @@ Vậy là ta đã có điều cần chứng minh, và công thức đã được
 ````{prf:remark}
 Tùy thuộc bài toán, bước cơ sở có thể không phải $1$ mà là một số nguyên dương nào đó khác.
 ````
+
+## Bảng thuật ngữ
+
+| Tiếng Việt | Tiếng Anh | Tiếng Anh kiểu 2 (?) | Tiếng Nga |
+| ---------- | --------- | -------------------- | --------- |
+| tập hợp | set | | множество |
+| tập hợp rỗng | empty set | | пустое множество |
+| lực lượng (của tập hợp) | cardinality | | мощность |
+| phép giao tập hợp | intersection of sets| | пересечение множеств |
+| phép hợp tập hợp | union of sets | | объединение множеств |
+| phép hiệu hai tập hợp | set difference | | разность двух множеств |
+| ánh xạ | map | | отображение |
+| đơn ánh | injection | one-to-one map | инъекция |
+| toàn ánh | surjection | onto map | сюръекция |
+| song ánh | bijection | one-to-one and onto map | биекция |
+| hàm số | function | | функция |
+| hàm đơn điệu | monotonic function | | монотонная функция |
+| (hàm số) đồng biến | increasing | | возрастающая |
+| (hàm số) tăng nghiêm ngặt | strictly increasing | | строго возрастающая |
+| (hàm số) nghịch biến | decresing | | убывающая |
+| (hàm số) giảm nghiêm ngặt | strictly increasing | | строго убывающая |
+| hàm số chẵn | even function | | четная функция |
+| hàm số lẻ | odd function | | нечетная функция |
+| hàm cộng tính | additive function | | аддитивная функция |
+| hàm nhân tính | multiplicative function | | мультипликативная функция |
+| hàm tuần hoàn | periodic function | | периодическая функция |
+| quy nạp | induction | | индукция |
