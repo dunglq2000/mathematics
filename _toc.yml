@@ -9,6 +9,7 @@ parts:
     numbered: true
     chapters:
     - file: algebra/algebra.md
+    - file: algebra/polynomial.md
       sections:
         - file: algebra/lagrange-interpolation.md
   - caption: Đại số tuyến tính
