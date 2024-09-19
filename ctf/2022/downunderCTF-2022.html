@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DownUnder CTF 2022 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2022/downunderCTF-2022';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sekai CTF 2022" href="sekaiCTF-2022.html" />
+    <link rel="prev" title="ISITDTU Quals 2022" href="isitdtu-2022.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">3. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">4. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">5. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">5.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">5.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">5.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">5.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">5.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">6. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">7. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">8. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">9. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">9.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">9.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-feedback-shift-register.html">9.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">10. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">11. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">12. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/intro.html">13. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">14. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">14.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">14.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">15. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">16. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">17. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">18. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">19. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">20. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">21. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">21.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2022.html">CTF 2022</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fctf/2022/downunderCTF-2022.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ctf/2022/downunderCTF-2022.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>DownUnder CTF 2022</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-arx">1.  Baby ARX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ofb">2. OFB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crt">3. CRT</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="downunder-ctf-2022">
+<h1>DownUnder CTF 2022<a class="headerlink" href="#downunder-ctf-2022" title="Link to this heading">#</a></h1>
+<section id="baby-arx">
+<h2>1.  Baby ARX<a class="headerlink" href="#baby-arx" title="Link to this heading">#</a></h2>
+<p>Bài này thuộc dạng stream cipher với việc hai thằng kề nhau sẽ đưa ra một ciphertext.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">baby_arx</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">64</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="p">(</span><span class="n">b1</span> <span class="o">^</span> <span class="p">((</span><span class="n">b1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">b1</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="p">(</span><span class="n">b2</span> <span class="o">^</span> <span class="p">((</span><span class="n">b2</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">b2</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)))</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b1</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bytes</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./flag.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">baby_arx</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="c1"># cb57ba706aae5f275d6d8941b7c7706fe261b7c74d3384390b691c3d982941ac4931c6a4394a1a7b7a336bc3662fd0edab3ff8b31b96d112a026f93fff07e61b</span>
+</pre></div>
+</div>
+<p>Ở đây ta thấy rằng, với <span class="math notranslate nohighlight">\(p_i\)</span>​ và <span class="math notranslate nohighlight">\(p_{i+1}\)</span>​ là hai ký tự của plaintext sẽ cho ra ký tự thứ <span class="math notranslate nohighlight">\(c_i\)</span>​ của ciphertext.</p>
+<p>Như vậy mình đã biết một đoạn plaintext ban đầu là <code class="docutils literal notranslate"><span class="pre">DUCTF</span></code> rồi nên phần còn lại là bruteforce từng ký tự và so sánh với ciphertext để ra được ký tự ban đầu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">ct</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">^</span> <span class="p">((</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">^</span> <span class="p">((</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)))</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="n">pt</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;DUCTF{&#39;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pt</span><span class="p">),</span> <span class="mi">64</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">b</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">pt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">pt</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="ofb">
+<h2>2. OFB<a class="headerlink" href="#ofb" title="Link to this heading">#</a></h2>
+<p>Một bài block cipher gây rối loạn tiền đình :))))</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">urandom</span><span class="p">,</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+
+
+<span class="n">FLAG</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;flag.txt&#39;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">MESSAGE</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Decrypt this... </span><span class="si">{</span><span class="n">urandom</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">FLAG</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">iv</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;iv: &#39;</span><span class="p">))</span>
+        <span class="n">aes</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">iv</span><span class="o">=</span><span class="n">iv</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">AES</span><span class="o">.</span><span class="n">MODE_OFB</span><span class="p">)</span>
+        <span class="n">ct</span> <span class="o">=</span> <span class="n">aes</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">MESSAGE</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p>Ở đây mỗi lần netcat lên server sẽ random <span class="math notranslate nohighlight">\(300\)</span> bytes và nhét vào giữa đoạn <code class="docutils literal notranslate"><span class="pre">Decrypt</span> <span class="pre">this...</span></code> (có dấu cách ở cuối nữa nha!!!!) và FLAG. Thêm nữa mỗi lần netcat lên sẽ random một key AES nên chúng ta sẽ chỉ attack trong một session netcat.</p>
+<p>Mình được phép kiểm soát hai IV cho hai lần encrypt. Sau mỗi lần encrypt mình sẽ được nhận ciphertext. Do đó mình đoán rằng IV thứ hai sẽ có liên quan gì đó đến IV đầu và ciphertext đầu.</p>
+<p>Trời không phụ lòng người :)))) Có công đoán mò có ngày làm nên :)))) Mình đã guessing được IV2 để có thể decrypt :))</p>
+<p><em>Đã từng có tấm hình ở đây</em></p>
+<p><img alt="OFB" src="../../_images/ofb.png" /></p>
+<p>Cách giải bài này nằm ở hai dấu chấm đỏ lòm mà mình vẽ :))))</p>
+<p>Trong mode OFB, <span class="math notranslate nohighlight">\(C_i = P_i \oplus O_i\)</span> với <span class="math notranslate nohighlight">\(O_i\)</span>​ là encrypt AES của <span class="math notranslate nohighlight">\(O_{i-1}\)</span>​. Như vậy nếu mình chọn <span class="math notranslate nohighlight">\(IV2\)</span> sao cho sau khi encrypt thì nó bằng đúng <span class="math notranslate nohighlight">\(O_2\)</span>​ ở lần encrypt đầu, thì tất cả các <span class="math notranslate nohighlight">\(O'_i\)</span>​ sau đó luôn giống với <span class="math notranslate nohighlight">\(O_i\)</span>​ sau một đơn vị. Tức là <span class="math notranslate nohighlight">\(O'_i = O_{i+1}\)</span>, <span class="math notranslate nohighlight">\(i=1,2,\ldots\)</span>.</p>
+<p>Trong OFB thì <span class="math notranslate nohighlight">\(C_i = P_i \oplus O_i\)</span> và <span class="math notranslate nohighlight">\(C'_i = P'_i\oplus O'_i\)</span>. Do <span class="math notranslate nohighlight">\(O'_i=O_{i+1}\)</span>​ theo cách chọn IV2​ của mình nên mình sẽ có <span class="math notranslate nohighlight">\(C_{i+1} \oplus P_{i+1} = C'_i \oplus P'_i\)</span> hay <span class="math notranslate nohighlight">\(P_{i+1} = C_{i+1} \oplus C'_i \oplus P_i\)</span>. Mà <span class="math notranslate nohighlight">\(P_1\)</span>​ mình có rồi :)))) nên mình sẽ suy ra được tất cả <span class="math notranslate nohighlight">\(P_i\)</span>​ còn lại với <span class="math notranslate nohighlight">\(i=2, 3, \ldots\)</span>​</p>
+<p>Flag mình tìm được:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">&#39;Decrypt this... 65926f16baacedfc716e2046d55f56c449bf0d66e6344866a4a34c3879e687c3bc9ca79e6f74a2152def17d99043e4e7035b3af1379f57a737ea8d4c8557b31676cda81a7ed27b3333a7e63d7397b567485a0d9108eb2adfdee1c6eca22e9fda829f2cad61cbb20a4022918498496ee0185af3410a64987b5684aa03dc10b46d30aba53dcd64d1984956af0bb745db6f4692f997561c9a24afefdff9d5359744f8e984ffaaad38477fc0d015f699b31403494dde2ad436d4967fe98facdc70c705391f92ca0ed69170cdb2c6d85971e1450a41a7d8bf18eb82adb48967cf6d91156a9780fe4d6a0dfe492a5e5df3ba97a2028fdee1458cdfc00ecf008bb522b593b875127baeb1c6368f3d06fb8e59b01868043691b13a76edbdbcb77a86e26348038e92ea45e3963b634f51 DUCTF</span><span class="si">{0fb_mu5t_4ctu4lly_st4nd_f0r_0bvi0usly_f4ul7y_bl0ck_c1ph3r_m0d3_0f_0p3ra710n_7b9cb403e8332c980456b17a00abd51049cb8207581c274fcb233f3a43df4a}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="crt">
+<h2>3. CRT<a class="headerlink" href="#crt" title="Link to this heading">#</a></h2>
+<p>Một bài discrete logarithm trên modulo đa thức.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mi">55899879511190230528616866117179357211</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">^</span><span class="mi">3</span>
+<span class="n">R</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">36174005300402816514311230770140802253</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">35632245244482815363927956306821829684</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">10704085182912790916669912997954900147</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">quotient</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">V_pow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">V</span><span class="p">([</span><span class="n">a</span><span class="o">^</span><span class="n">n</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">A</span><span class="p">)])</span>
+
+<span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">random_element</span><span class="p">()</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">random_element</span><span class="p">()</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span><span class="o">^</span><span class="n">n</span> <span class="o">*</span> <span class="n">B</span><span class="o">^</span><span class="n">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">A</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">B</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">C</span><span class="p">))))</span>
+
+<span class="n">phi_A</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+<span class="n">phi_B</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+<span class="n">phi_C</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+
+<span class="n">check_phi_C</span> <span class="o">=</span> <span class="n">V_pow</span><span class="p">(</span><span class="n">phi_A</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">pairwise_product</span><span class="p">(</span><span class="n">V_pow</span><span class="p">(</span><span class="n">phi_B</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">phi_C</span> <span class="o">==</span> <span class="n">check_phi_C</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./flag.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># DUCTF{CRT_e4sy_as_0ne_tw0_thr3e}</span>
+</pre></div>
+</div>
+<p>Ở đây đề cho chúng ta hai đa thức được random là <span class="math notranslate nohighlight">\(A\)</span>​ và <span class="math notranslate nohighlight">\(B\)</span>​ (cả hai đều nằm trong modulo <span class="math notranslate nohighlight">\(f(x)\)</span>​ trên <span class="math notranslate nohighlight">\(\mathbb{Z}_p[x]\)</span>​. Với hai số random <span class="math notranslate nohighlight">\(n\)</span>​ và <span class="math notranslate nohighlight">\(m\)</span>​ bị giấu, đề cho mình đa thức <span class="math notranslate nohighlight">\(C = A^n \cdot B^m\)</span>.</p>
+<p>Nhiệm vụ của mình phải tìm ba vector trong <span class="math notranslate nohighlight">\(\mathrm{GF}(p)\)</span>​ là <span class="math notranslate nohighlight">\(\varphi_A\)</span>​, <span class="math notranslate nohighlight">\(\varphi_B\)</span> và <span class="math notranslate nohighlight">\(\varphi_C\)</span>​ sao cho tích có hướng của <span class="math notranslate nohighlight">\(\varphi^n_A\)</span>​ và <span class="math notranslate nohighlight">\(\varphi^m_B\)</span>​ bằng đúng <span class="math notranslate nohighlight">\(\varphi_C\)</span>​. Ở đây <span class="math notranslate nohighlight">\(\varphi^n_A\)</span>​ nghĩa là mỗi phần tử của <span class="math notranslate nohighlight">\(\varphi_A\)</span>​ được mũ <span class="math notranslate nohighlight">\(n \pmod p\)</span>​, <span class="math notranslate nohighlight">\(\varphi_A = (x_A, y_A, z_A)\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\varphi_A^n = (x^n_A \bmod p, y^n_A \bmod p, z^n_A \bmod p).\]</div>
+<p>Như vậy mình cần giải bài toán discrete logarithm cho polynomial ring. Phần khó của bài này là làm sao tìm được order của mỗi đa thức. Mình thấy rằng <span class="math notranslate nohighlight">\(f(x)\)</span>​ có thể factor thành tích của ba đa thức bậc 1. Như vậy việc giải bài toán trên modulo <span class="math notranslate nohighlight">\(f(x)\)</span>​ trở thành giải bài toán trên từng đa thức bậc 1 rồi CRT chúng lại với nhau.</p>
+<p>Nhưng mình không biết cách tìm order của mỗi đa thức ………</p>
+<p>Chán thật, mình chọn <span class="math notranslate nohighlight">\(\varphi_A = \varphi_B = \varphi_C = (0, 0, 0)\)</span> và nó luôn đúng chả quan tâm <span class="math notranslate nohighlight">\(n, m\)</span> chi cả :))))))</p>
+<p>Unintended solution :))))))</p>
+<p>Cám ơn mọi người đã đọc writeup của mình. Hẹn gặp lại :joy:</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ctf\2022"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="isitdtu-2022.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ISITDTU Quals 2022</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sekaiCTF-2022.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sekai CTF 2022</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baby-arx">1.  Baby ARX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ofb">2. OFB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crt">3. CRT</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

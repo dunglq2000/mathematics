@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dice CTF 2023 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2023/diceCTF-2023';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Google CTF 2023" href="googleCTF-2023.html" />
+    <link rel="prev" title="CTF 2023" href="2023.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">3. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">4. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">5. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">5.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">5.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">5.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">5.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">5.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">6. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">7. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">8. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">9. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">9.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">9.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-feedback-shift-register.html">9.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">10. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">11. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">12. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/intro.html">13. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">14. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">14.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">14.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">15. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">16. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">17. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">18. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">19. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">20. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">21. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">21.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2023.html">CTF 2023</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fctf/2023/diceCTF-2023.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ctf/2023/diceCTF-2023.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dice CTF 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#provably-secure-1-2">Provably Secure 1/2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bbbb">BBBB</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dice-ctf-2023">
+<h1>Dice CTF 2023<a class="headerlink" href="#dice-ctf-2023" title="Link to this heading">#</a></h1>
+<section id="provably-secure-1-2">
+<h2>Provably Secure 1/2<a class="headerlink" href="#provably-secure-1-2" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># server.py</span>
+<span class="c1">#!/usr/local/bin/python</span>
+
+<span class="c1"># Normally you have unlimited encryption and decryption query requests in the IND-CCA2 game.</span>
+<span class="c1"># For performance reasons, my definition of unlimited is 8 lol</span>
+
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives.asymmetric</span> <span class="kn">import</span> <span class="n">rsa</span><span class="p">,</span> <span class="n">padding</span>
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">hashes</span>
+<span class="kn">from</span> <span class="nn">secrets</span> <span class="kn">import</span> <span class="n">randbits</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">urandom</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.strxor</span> <span class="kn">import</span> <span class="n">strxor</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">pk0</span><span class="p">,</span> <span class="n">pk1</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">r_prime</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+    <span class="n">ct0</span> <span class="o">=</span> <span class="n">pk0</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span>
+                         <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="n">ct1</span> <span class="o">=</span> <span class="n">pk1</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">r_prime</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span> 
+                         <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ct0</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span> <span class="o">+</span> <span class="n">ct1</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">key0</span><span class="p">,</span> <span class="n">key1</span><span class="p">,</span> <span class="n">ct</span><span class="p">):</span>
+    <span class="n">ct0</span> <span class="o">=</span> <span class="n">ct</span><span class="p">[:</span><span class="mi">256</span><span class="p">]</span>
+    <span class="n">ct1</span> <span class="o">=</span> <span class="n">ct</span><span class="p">[</span><span class="mi">256</span><span class="p">:]</span>
+    <span class="n">r0</span> <span class="o">=</span> <span class="n">key0</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ct0</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span>
+                           <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="n">r1</span> <span class="o">=</span> <span class="n">key1</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ct1</span><span class="p">,</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span>
+                           <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">strxor</span><span class="p">(</span><span class="n">r0</span><span class="p">,</span> <span class="n">r1</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Actions:</span>
+<span class="s2">0) Solve</span>
+<span class="s2">1) Query Encryption</span>
+<span class="s2">2) Query Decryption</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">experiment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">129</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Experiment </span><span class="si">{}</span><span class="s2">/128&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">experiment</span><span class="p">))</span>
+        <span class="n">key0</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">generate_private_key</span><span class="p">(</span><span class="n">public_exponent</span><span class="o">=</span><span class="mi">65537</span><span class="p">,</span> <span class="n">key_size</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+        <span class="n">key1</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">generate_private_key</span><span class="p">(</span><span class="n">public_exponent</span><span class="o">=</span><span class="mi">65537</span><span class="p">,</span> <span class="n">key_size</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+        <span class="n">pk0</span> <span class="o">=</span> <span class="n">key0</span><span class="o">.</span><span class="n">public_key</span><span class="p">()</span>
+        <span class="n">pk1</span> <span class="o">=</span> <span class="n">key1</span><span class="o">.</span><span class="n">public_key</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pk0 =&quot;</span><span class="p">,</span> <span class="n">pk0</span><span class="o">.</span><span class="n">public_numbers</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pk1 =&quot;</span><span class="p">,</span> <span class="n">pk1</span><span class="o">.</span><span class="n">public_numbers</span><span class="p">()</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">m_bit</span> <span class="o">=</span> <span class="n">randbits</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">seen_ct</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">en_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">de_count</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Action: &quot;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;m_bit guess: &quot;</span><span class="p">))</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">guess</span> <span class="o">==</span> <span class="n">m_bit</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+                    <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrong!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">en_count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">en_count</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;ve run out of encryptions!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">m0</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;m0 (16 byte hexstring): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="n">m1</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;m1 (16 byte hexstring): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">16</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">16</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Must be 16 bytes!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">m0</span> <span class="k">if</span> <span class="n">m_bit</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">m1</span>
+                <span class="n">ct</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">pk0</span><span class="p">,</span> <span class="n">pk1</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+                <span class="n">seen_ct</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+            
+            <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">de_count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">de_count</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You&#39;ve run out of decryptions!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">in_ct</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ct (512 byte hexstring): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_ct</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">512</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Must be 512 bytes!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">in_ct</span> <span class="ow">in</span> <span class="n">seen_ct</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot query decryption on seen ciphertext!&quot;</span><span class="p">)</span>
+                    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">decrypt</span><span class="p">(</span><span class="n">key0</span><span class="p">,</span> <span class="n">key1</span><span class="p">,</span> <span class="n">in_ct</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flag: &quot;</span> <span class="o">+</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Chúng ta có 3 lựa chọn (cho đường đời) như sau:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Solve</span></code>: chỉ ra <span class="math notranslate nohighlight">\(m_{bit}\)</span> là <span class="math notranslate nohighlight">\(0\)</span> hay <span class="math notranslate nohighlight">\(1\)</span>, nếu đúng thì vượt <span class="math notranslate nohighlight">\(1\)</span> ải, vượt thành công <span class="math notranslate nohighlight">\(128\)</span> ải thì qua môn!!!;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">Encryption</span></code>: ở mỗi round server tạo hai key RSA để mình dùng. Mình cần nhập hai message có độ dài <span class="math notranslate nohighlight">\(16\)</span> byte và gửi lên server. Dựa vào bit random <span class="math notranslate nohighlight">\(m_{bit}\)</span> mà server sẽ encrypt <span class="math notranslate nohighlight">\(m_0\)</span> hay <span class="math notranslate nohighlight">\(m_1\)</span>. Server trả về ciphertext tương ứng (hai ciphertext với tổng độ dài <span class="math notranslate nohighlight">\(512\)</span> byte);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">Decryption</span></code>: để decrypt mình cần gửi lên server ciphertext <span class="math notranslate nohighlight">\(512\)</span> byte và chỉ được decrypt mỗi ciphertext một lần.</p></li>
+</ul>
+<p><strong>NOTE</strong>: mình chỉ được encrypt và decrypt <span class="math notranslate nohighlight">\(8\)</span> lần mỗi loại.</p>
+<p>Hàm encrypt làm việc như sau:</p>
+<ul class="simple">
+<li><p>lấy tham số là hai public key <span class="math notranslate nohighlight">\(pk_0\)</span> và <span class="math notranslate nohighlight">\(pk_1\)</span>, và plaintext <span class="math notranslate nohighlight">\(msg\)</span> <span class="math notranslate nohighlight">\(16\)</span> có byte;</p></li>
+<li><p>random 1 chuỗi <span class="math notranslate nohighlight">\(r\)</span> có <span class="math notranslate nohighlight">\(16\)</span> byte;</p></li>
+<li><p>tính <span class="math notranslate nohighlight">\(r\_ prime = r \oplus msg\)</span>;</p></li>
+<li><p>tính <span class="math notranslate nohighlight">\(ct_0 = \text{ENC}(r, pk_0)\)</span> và <span class="math notranslate nohighlight">\(ct_1 = \text{ENC}(r\_prime, pk_1)\)</span>;</p></li>
+<li><p>cả hai ciphertext đều dùng padding là OAEP và hash là SHA256 nên độ dài là <span class="math notranslate nohighlight">\(256\)</span> byte. Hàm trả về ghép hai chuỗi ciphertext lại (<span class="math notranslate nohighlight">\(512\)</span> byte).</p></li>
+</ul>
+<p>Hàm decrypt làm ngược lại và ở kết quả cuối thì xor hai plaintext lại (<span class="math notranslate nohighlight">\(msg = r\_prime \oplus r\)</span>).</p>
+<p>Đề chỉ cho hai public key, mình thì thích private key hơn :))))</p>
+<p>Mình nhận ra một điều, giả sử ciphertext của mình là <span class="math notranslate nohighlight">\(\text{ENC}(r, pk_0)\)</span> và <span class="math notranslate nohighlight">\(\text{ENC}(r\_prime = r \oplus msg, pk_1)\)</span> thì nếu mình gửi hai lần decrypt với các ciphertext:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{ENC}(r, pk_0)\)</span> và <span class="math notranslate nohighlight">\(\text{ENC}(00^{16}, pk_1)\)</span> thì kết quả trả về là <span class="math notranslate nohighlight">\(r \oplus 00^{16} = r\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{ENC}(00^{16}, pk_0)\)</span> và <span class="math notranslate nohighlight">\(\text{ENC}(r\_prime = r \oplus msg, pk_1)\)</span> thì kết quả trả về là <span class="math notranslate nohighlight">\(00^{16} \oplus r \oplus msg = r \oplus msg\)</span>.</p></li>
+</ul>
+<p>Khi đó mình xor hai plaintext này lại là được <span class="math notranslate nohighlight">\(msg\)</span> và so sánh xem nó trùng với <span class="math notranslate nohighlight">\(m_0\)</span> hay <span class="math notranslate nohighlight">\(m_1\)</span> mình gửi lên server ban đầu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">remote</span><span class="p">,</span> <span class="n">process</span><span class="p">,</span> <span class="n">context</span>
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives.asymmetric</span> <span class="kn">import</span> <span class="n">rsa</span><span class="p">,</span> <span class="n">padding</span>
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives</span> <span class="kn">import</span> <span class="n">hashes</span>
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.backends</span> <span class="kn">import</span> <span class="n">default_backend</span>
+<span class="kn">from</span> <span class="nn">cryptography.hazmat.primitives.serialization</span> <span class="kn">import</span> <span class="n">load_pem_public_key</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.strxor</span> <span class="kn">import</span> <span class="n">strxor</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;Debug&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s2">&quot;mc.ax&quot;</span><span class="p">,</span> <span class="mi">31497</span><span class="p">)</span>
+
+<span class="c1"># r = process([&quot;python3&quot;, &quot;server.py&quot;])</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+
+<span class="n">p0</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="mi">32</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="s2">&quot;f&quot;</span> <span class="o">*</span> <span class="mi">32</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">)):</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+    <span class="n">pk0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">pk1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">key0</span><span class="p">,</span> <span class="n">key1</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">construct</span><span class="p">((</span><span class="n">pk0</span><span class="p">,</span> <span class="mi">65537</span><span class="p">)),</span> <span class="n">RSA</span><span class="o">.</span><span class="n">construct</span><span class="p">((</span><span class="n">pk1</span><span class="p">,</span> <span class="mi">65537</span><span class="p">))</span>
+    <span class="n">key0_</span><span class="p">,</span> <span class="n">key1_</span> <span class="o">=</span> <span class="n">key0</span><span class="o">.</span><span class="n">export_key</span><span class="p">(</span><span class="s1">&#39;PEM&#39;</span><span class="p">),</span> <span class="n">key1</span><span class="o">.</span><span class="n">export_key</span><span class="p">(</span><span class="s1">&#39;PEM&#39;</span><span class="p">)</span>
+
+    <span class="n">pk0_</span> <span class="o">=</span> <span class="n">load_pem_public_key</span><span class="p">(</span><span class="n">key0_</span><span class="p">)</span>
+    <span class="n">pk1_</span> <span class="o">=</span> <span class="n">load_pem_public_key</span><span class="p">(</span><span class="n">key1_</span><span class="p">)</span>
+
+    <span class="n">ct0_</span> <span class="o">=</span> <span class="n">pk0_</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span>
+                            <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="n">ct1_</span> <span class="o">=</span> <span class="n">pk1_</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">padding</span><span class="o">.</span><span class="n">OAEP</span><span class="p">(</span><span class="n">mgf</span><span class="o">=</span><span class="n">padding</span><span class="o">.</span><span class="n">MGF1</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">()),</span>
+                            <span class="n">algorithm</span><span class="o">=</span><span class="n">hashes</span><span class="o">.</span><span class="n">SHA256</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Action: &quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;m0 (16 byte hexstring): &quot;</span><span class="p">,</span> <span class="n">p0</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;m1 (16 byte hexstring): &quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">ct0</span><span class="p">,</span> <span class="n">ct1</span> <span class="o">=</span> <span class="n">ct</span><span class="p">[:</span><span class="mi">512</span><span class="p">],</span> <span class="n">ct</span><span class="p">[</span><span class="mi">512</span><span class="p">:]</span>
+
+    <span class="n">payload0</span> <span class="o">=</span> <span class="n">ct0</span> <span class="o">+</span> <span class="n">ct1_</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Action: &quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;ct (512 byte hexstring): &quot;</span><span class="p">,</span> <span class="n">payload0</span><span class="p">)</span>
+
+    <span class="n">ran</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">payload1</span> <span class="o">=</span> <span class="n">ct0_</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> <span class="o">+</span> <span class="n">ct1</span>
+
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Action: &quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;ct (512 byte hexstring): &quot;</span><span class="p">,</span> <span class="n">payload1</span><span class="p">)</span>
+
+    <span class="n">ran_m</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">ran</span><span class="p">,</span> <span class="n">ran_m</span><span class="p">)</span>
+
+    <span class="n">m_bit</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="nb">bytes</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+        <span class="n">m_bit</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">m_bit</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Action: &quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;m_bit guess: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">m_bit</span><span class="p">))</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>NOTE</strong>: thật ra ở bài 1 không có công đoạn kiểm tra ciphertext không nằm trong ciphertext có sẵn nên mình chỉ cần gửi lên ciphertext vừa được encrypt là ra. Code trên được dùng để giải cả hai bài Provably Secure 1/2.</p>
+<p>Flag <strong>Provably Secure</strong>: <code class="docutils literal notranslate"><span class="pre">dice{yeah_I_lost_like_10_points_on_that_proof_lmao}</span></code></p>
+<p>Flag <strong>Provably Secure 2</strong>: <code class="docutils literal notranslate"><span class="pre">dice{my_professor_would_not_be_proud_of_me}</span></code></p>
+</section>
+<section id="bbbb">
+<h2>BBBB<a class="headerlink" href="#bbbb" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/local/bin/python</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">bytes_to_long</span><span class="p">,</span> <span class="n">getPrime</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">urandom</span>
+
+<span class="k">def</span> <span class="nf">generate_key</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">seed</span><span class="p">):</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)):</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">rng</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">q</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">generate_params</span><span class="p">():</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">getPrime</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">p</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="n">generate_params</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[+] The parameters of RNG:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;[+] Inject b[a]ckdoor!!: &quot;</span><span class="p">))</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
+
+    <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">seeds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">seed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;[+] Please input seed: &quot;</span><span class="p">))</span>
+        <span class="n">seed</span> <span class="o">%=</span> <span class="n">p</span>
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">in</span> <span class="n">seeds</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[!] Same seeds are not allowed!!&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+        <span class="n">seeds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">generate_key</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[!] `e` is so small!!&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+
+        <span class="n">keys</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">e</span><span class="p">))</span>
+
+    <span class="n">FLAG</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;flag.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">FLAG</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">50</span>
+    <span class="n">FLAG</span> <span class="o">=</span> <span class="n">FLAG</span> <span class="o">+</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">FLAG</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[+] Public Key:&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[+] Cipher Text:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bài này khoai thật sự :))))</p>
+<p>Bài này giống một phần bài <a class="reference external" href="https://ctftime.org/task/23982">BBB</a> của giải SECCON nhưng có chút khác bọt.</p>
+<p>Đề cho mình một số nguyên tố <span class="math notranslate nohighlight">\(p\)</span> <span class="math notranslate nohighlight">\(512\)</span> bit và số <span class="math notranslate nohighlight">\(b\)</span> nhỏ hơn <span class="math notranslate nohighlight">\(p\)</span>. Mình cần nhập số <span class="math notranslate nohighlight">\(a\)</span> và từ đó các số mũ <span class="math notranslate nohighlight">\(e\)</span> dùng trong RSA sẽ được tạo bởi hàm <code class="docutils literal notranslate"><span class="pre">rng</span></code>.</p>
+<p>Dựa trên bài của giải SECCON, chiến thuật làm bài này là cố gắng khiến hàm <code class="docutils literal notranslate"><span class="pre">rng</span></code> tạo nhiều <span class="math notranslate nohighlight">\(e=11\)</span> nhất có thể (ở bài này sẽ là <span class="math notranslate nohighlight">\(3\)</span> vì rất khó lấy đủ <span class="math notranslate nohighlight">\(5\)</span>).</p>
+<p>Điểm khó của bài này là hàm <code class="docutils literal notranslate"><span class="pre">rng</span></code> tuyến tính, nghĩa là với mỗi output chỉ tìm được đúng một input. Tuy nhiên chúng ta có thể tìm <code class="docutils literal notranslate"><span class="pre">rng</span></code> sao cho các input tạo thành vòng. Nghĩa là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    a X_{i} + b \equiv &amp; X_{i+1} &amp; \pmod p \\
+    a X_{i+1} + b \equiv &amp; X_{i+2} &amp; \pmod p \\
+    a X_{i+2} + b \equiv &amp; X_{i+3} &amp; \pmod p \\
+    a X_{i+3} + b \equiv &amp; X_{i+4} &amp; \pmod p \\
+    a X_{i+4} + b \equiv &amp; X_{i} &amp; \pmod p
+\end{align*}\end{split}\]</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(X_{i} = X_{i+5}\)</span>, tức là sau <span class="math notranslate nohighlight">\(5\)</span> lần thì các giá trị <span class="math notranslate nohighlight">\(X_i\)</span> lặp lại và mình sẽ tìm <span class="math notranslate nohighlight">\(a\)</span> thỏa mãn đống này.</p>
+<p>Trừ phương trình dưới cho phương trình trên vế theo vế, mình có:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    a (X_{i+1} - X_i) \equiv &amp; X_{i+2} - X_{i+1} &amp; \pmod p \\
+    a (X_{i+2} - X_{i+1}) \equiv &amp; X_{i+3} - X_{i+2} &amp; \pmod p \\
+    a (X_{i+3} - X_{i+2}) \equiv &amp; X_{i+4} - X_{i+3} &amp; \pmod p \\
+    a (X_{i+4} - X_{i+3}) \equiv &amp; X_{i} - X_{i+4} &amp; \pmod p \\
+    a (X_{i} - X_{i+4}) \equiv &amp; X_{i+1} - X_i &amp; \pmod p
+\end{align*}\end{split}\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(a^5 \equiv 1 \pmod p\)</span>. Nếu phương trình này có nghiệm khác <span class="math notranslate nohighlight">\(1\)</span> thì ta chọn làm tham số <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Tiếp theo, mình cần <span class="math notranslate nohighlight">\(e=11\)</span> nằm trong vòng lặp này nên mình cứ chọn <span class="math notranslate nohighlight">\(X_0 = e = 11\)</span> rồi theo trình tự <span class="math notranslate nohighlight">\(X_{i+1} = a X_i + b \pmod p\)</span> thôi.</p>
+<p>Câu hỏi là tại sao lại cần tới <span class="math notranslate nohighlight">\(3\)</span> bộ có <span class="math notranslate nohighlight">\(e=11\)</span> mà không phải <span class="math notranslate nohighlight">\(2\)</span>?</p>
+<p>Vì với mỗi public key <span class="math notranslate nohighlight">\(2048\)</span> bit, phương pháp Coppersmith sẽ hoạt động hiệu quả khi <span class="math notranslate nohighlight">\((2048 * T) \times (1/11 - \varepsilon) \approx 8 \times (L + 4)\)</span> với <span class="math notranslate nohighlight">\(L\)</span> là độ dài flag (tối đa là <span class="math notranslate nohighlight">\(49\)</span>) và <span class="math notranslate nohighlight">\(4\)</span> byte random. Như vậy khi <span class="math notranslate nohighlight">\(T = 3\)</span> thì <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> là điều mình cần nhắm tới. Tham khảo ở <a class="reference external" href="https://crypto.stackexchange.com/questions/95065/breaking-rsa-with-linear-padding-using-hastads-attack-with-e-11">đây</a></p>
+<p>Cuối cùng, sử dụng CRT và hastad attack (ví dụ như ở <a class="reference external" href="https://github.com/0n5/CTF-Crypto/blob/master/RSA/hastads.sage">đây</a>) để giải.</p>
+<p>Mình cần lưu ý rằng mình đã biết <span class="math notranslate nohighlight">\(5\)</span> byte đầu của flag là <code class="docutils literal notranslate"><span class="pre">dice{</span></code> nên mình có thể giảm độ dài flag cần tìm xuống, từ đó Coppersmith sẽ hiệu quả hơn.</p>
+<p>Mỗi phương trình của mình có dạng <span class="math notranslate nohighlight">\((\text{FLAG} \cdot 256^{16} + r_i)^e = c_i \pmod{n_i}\)</span> mà FLAG có <span class="math notranslate nohighlight">\(5\)</span> byte đầu là <code class="docutils literal notranslate"><span class="pre">dice{</span></code> nên mình có thể gọi <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">bytes_to_long(b&quot;dice{&quot;)</span> <span class="pre">&lt;&lt;</span> <span class="pre">(8</span> <span class="pre">*</span> <span class="pre">(L</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">+</span> <span class="pre">16))</span></code>. Phương trình trở thành</p>
+<div class="math notranslate nohighlight">
+\[(\text{FLAG}' \cdot 256^{16} + C + r_i)^e = c_i \pmod{n_i}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="n">remote</span><span class="p">,</span> <span class="n">process</span><span class="p">,</span> <span class="n">context</span>
+<span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="n">long_to_bytes</span><span class="p">,</span> <span class="n">bytes_to_long</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="c1"># context.log_level = &#39;Debug&#39;</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">get_a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">Zmod</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">roots</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">root</span>
+        <span class="n">seeds</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">seeds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rng</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">seeds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">seeds</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seeds</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">assert</span> <span class="n">rng</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">seeds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="n">seeds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">seeds</span>
+    
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">NUM</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">es</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">a_</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;dice{&#39;</span><span class="p">,</span> <span class="s1">&#39;big&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">16</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM</span><span class="p">):</span>
+        <span class="n">ns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">es</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">(</span><span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">TArray</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">NUM</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM</span><span class="p">):</span>
+        <span class="n">arrayToCRT</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">NUM</span>
+        <span class="n">arrayToCRT</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">TArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">crt</span><span class="p">(</span><span class="n">arrayToCRT</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">Zmod</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="n">ns</span><span class="p">)),</span> <span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+    <span class="n">gArray</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">NUM</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM</span><span class="p">):</span>
+        <span class="n">gArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">TArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">256</span><span class="o">**</span><span class="mi">16</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">a_</span> <span class="o">+</span> <span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">11</span><span class="p">)</span> <span class="o">-</span> <span class="n">cs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">gArray</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">monic</span><span class="p">()</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2048</span> <span class="o">*</span> <span class="n">NUM</span><span class="p">)</span>
+    <span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">32</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">small_roots</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)),</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="n">epsilon</span><span class="p">)</span>
+    <span class="c1"># roots = g.small_roots(X=2**(8*(L + 4)), epsilon=(1/11)-(8*(L+4)/(2048*NUM)))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No solutions found!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">root</span><span class="p">)))</span>
+
+<span class="n">rr</span> <span class="o">=</span> <span class="n">process</span><span class="p">([</span><span class="s2">&quot;python3&quot;</span><span class="p">,</span> <span class="s2">&quot;bbbb.py&quot;</span><span class="p">])</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="n">ns</span><span class="p">,</span> <span class="n">es</span><span class="p">,</span> <span class="n">rs</span><span class="p">,</span> <span class="n">cs</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">seeds</span> <span class="o">=</span> <span class="n">get_a</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a not found!&quot;</span><span class="p">)</span>
+    <span class="n">exit</span><span class="p">()</span>
+
+<span class="n">rr</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;[+] Inject b[a]ckdoor!!: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="n">seeds</span><span class="p">:</span>
+    <span class="n">rr</span><span class="o">.</span><span class="n">sendlineafter</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;[+] Please input seed: &quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()[</span><span class="mi">2</span><span class="p">:])</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()[</span><span class="mi">2</span><span class="p">:])</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">rr</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+        <span class="n">ns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">es</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">rs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">cs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">es</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">)):</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>NOTE</strong>: việc chọn beta và epsilon khá khó nhằn, công thức trong code là từ writeup người giải ra :)))) Và không phải lúc nào cũng có <span class="math notranslate nohighlight">\(a\)</span> thỏa cũng như đủ 3 bộ có <span class="math notranslate nohighlight">\(e=11\)</span>. Nên là ………. hên xui :))))</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ctf\2023"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CTF 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="googleCTF-2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Google CTF 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#provably-secure-1-2">Provably Secure 1/2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bbbb">BBBB</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

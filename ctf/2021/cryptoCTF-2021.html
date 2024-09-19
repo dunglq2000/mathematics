@@ -1,0 +1,1116 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Crypto CTF 2021 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2021/cryptoCTF-2021';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Google CTF 2021" href="googleCTF-2021.html" />
+    <link rel="prev" title="CTF 2021" href="2021.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">3. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">4. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">5. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">5.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">5.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">5.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">5.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">5.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">6. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">7. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">8. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">9. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">9.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">9.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-feedback-shift-register.html">9.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">10. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">11. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">12. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/intro.html">13. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">14. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">14.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">14.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">15. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">16. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">17. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">18. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">19. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">20. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">21. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">21.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2021.html">CTF 2021</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fctf/2021/cryptoCTF-2021.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ctf/2021/cryptoCTF-2021.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crypto CTF 2021</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#farm">Farm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keybase">KeyBase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rima">Rima</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maid">Maid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuti">Tuti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improve">Improve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onlude">Onlude</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="crypto-ctf-2021">
+<h1>Crypto CTF 2021<a class="headerlink" href="#crypto-ctf-2021" title="Link to this heading">#</a></h1>
+<p>Chào mọi người, lại một mùa Crypto CTF nữa đã qua và lần này mình có khá khẩm hơn năm ngoái một chút, và sau đây là writeup các challenge mình đã làm được</p>
+<section id="farm">
+<h2>Farm<a class="headerlink" href="#farm" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env sage</span>
+
+<span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">string</span><span class="o">,</span> <span class="nn">base64</span><span class="o">,</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="n">ALPHABET</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span><span class="p">[:</span><span class="mi">62</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">=&#39;</span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="mi">64</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">keygen</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+	<span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">63</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">)]</span> 
+	<span class="n">key</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1"># Optimization the key length :D</span>
+	<span class="k">return</span> <span class="n">key</span>
+
+<span class="k">def</span> <span class="nf">maptofarm</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+	<span class="k">assert</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ALPHABET</span>
+	<span class="k">return</span> <span class="n">F</span><span class="p">[</span><span class="n">ALPHABET</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+	<span class="n">m64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+	<span class="n">enc</span><span class="p">,</span> <span class="n">pkey</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">**</span><span class="mi">5</span> <span class="o">+</span> <span class="n">key</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">key</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">m64</span><span class="p">:</span>
+		<span class="n">enc</span> <span class="o">+=</span> <span class="n">ALPHABET</span><span class="p">[</span><span class="n">F</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">pkey</span> <span class="o">*</span> <span class="n">maptofarm</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">m</span><span class="p">)))]</span>
+	<span class="k">return</span> <span class="n">enc</span>
+
+<span class="c1"># KEEP IT SECRET </span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">keygen</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="c1"># I think 64**14 &gt; 2**64 is not brute-forcible :P</span>
+
+<span class="n">enc</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;enc = </span><span class="si">{</span><span class="n">enc</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Đề bài cho mình <code class="docutils literal notranslate"><span class="pre">F</span></code> tạo các đa thức trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^6)\)</span>, <code class="docutils literal notranslate"><span class="pre">maptofarm</span></code> để lấy đa thức tương ứng với chỉ số của ký tự trong alphabet, và <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> để mã hóa chuỗi base64, bằng cách là ký tự base64 <code class="docutils literal notranslate"><span class="pre">m</span></code> sẽ thành <code class="docutils literal notranslate"><span class="pre">ALPHABET[F.index(pkey</span> <span class="pre">*</span> <span class="pre">maptofarm(chr(m)))]</span></code>.</p>
+<p>Ok, vì <code class="docutils literal notranslate"><span class="pre">key</span></code> chỉ nằm trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^6)\)</span>, mình chỉ việc bruteforce thôi (nằm trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^6)\)</span> nên độ dài là <span class="math notranslate nohighlight">\(14\)</span> hay bao nhiêu cũng không quan trọng). Làm ngược lại quá trình mã hóa mình có flag.</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{EnCrYp7I0n_4nD_5u8STitUtIn9_iN_Fi3Ld!}</span></code></p>
+</section>
+<section id="keybase">
+<h2>KeyBase<a class="headerlink" href="#keybase" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util</span> <span class="kn">import</span> <span class="n">number</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="k">def</span> <span class="nf">keygen</span><span class="p">():</span>
+	<span class="n">iv</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="s1">&#39;01&#39;</span><span class="p">]</span>
+	<span class="k">return</span> <span class="n">iv</span><span class="p">,</span> <span class="n">key</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+	<span class="n">aes</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">aes</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">enc</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+	<span class="n">aes</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">,</span> <span class="n">iv</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">aes</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">enc</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">die</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+	<span class="n">quit</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">sc</span><span class="p">():</span>
+	<span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+	<span class="n">border</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot; hi all, welcome to the simple KEYBASE cryptography task, try to    &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot; decrypt the encrypted message and get the flag as a nice prize!    &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+
+	<span class="n">iv</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">keygen</span><span class="p">()</span>
+	<span class="n">flag_enc</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Options: </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[G]et the encrypted flag </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[T]est the encryption </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[Q]uit&quot;</span><span class="p">)</span>
+		<span class="n">ans</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| encrypt(flag) =&quot;</span><span class="p">,</span> <span class="n">flag_enc</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Please send your 32 bytes message to encrypt: &quot;</span><span class="p">)</span>
+			<span class="n">msg_inp</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg_inp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span><span class="p">:</span>
+				<span class="n">enc</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">msg_inp</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+				<span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+				<span class="n">s</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">r</span>
+				<span class="n">mask_key</span> <span class="o">=</span> <span class="n">key</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="mi">4</span>
+				<span class="n">mask_enc</span> <span class="o">=</span> <span class="n">enc</span><span class="p">[:</span><span class="n">r</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="mi">28</span> <span class="o">+</span> <span class="n">enc</span><span class="p">[</span><span class="mi">32</span><span class="o">-</span><span class="n">s</span><span class="p">:]</span>
+				<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| enc =&quot;</span><span class="p">,</span> <span class="n">mask_enc</span><span class="p">)</span>
+				<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| key =&quot;</span><span class="p">,</span> <span class="n">mask_key</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| SEND 32 BYTES MESSAGE :X&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Quitting ...&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Bye ...&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bài này cho mình 1 hệ thống sử dụng AES mode CBC (key và iv giống nhau suốt 1 phiên kết nối) để làm 2 việc:</p>
+<ul class="simple">
+<li><p>Đưa flag đã bị mã hóa;</p></li>
+<li><p>Mã hóa 1 đoạn input 32 byte bất kì và trả lại key (dạng hex) với 2 byte cuối bị ẩn, và ciphertext với 14 byte ở giữa bị ẩn.</p></li>
+</ul>
+<p>Do mode CBC có tính chất <span class="math notranslate nohighlight">\(C_{i+1} = E_k(C_i \oplus P_{i+1})\)</span>, với <span class="math notranslate nohighlight">\(P_0 = iv\)</span>. Do đó nếu mình chọn <span class="math notranslate nohighlight">\(P\)</span> và <span class="math notranslate nohighlight">\(P'\)</span> là hai plaintext có <span class="math notranslate nohighlight">\(16\)</span> byte đầu giống nhau còn <span class="math notranslate nohighlight">\(16\)</span> byte cuối khác nhau thì mình có <span class="math notranslate nohighlight">\(C_1=C_1'=E_k(iv \oplus P_1)\)</span> còn <span class="math notranslate nohighlight">\(C_2=E_k(C_1 \oplus P_2)\)</span> và <span class="math notranslate nohighlight">\(C_2'=E_k(C_1' \oplus P_2')\)</span>.</p>
+<p>Từ đây mình có <span class="math notranslate nohighlight">\(C_1 \oplus P_2 \oplus C_1' \oplus P_2' = D_k(C_2) \oplus D_k(C_2')\)</span>. Mà <span class="math notranslate nohighlight">\(C_1 = C_1'\)</span> rồi nên mình cần lấy ciphertext nào mà <span class="math notranslate nohighlight">\(16\)</span> byte cuối không bị ẩn đi để có thể bruteforce <span class="math notranslate nohighlight">\(2\)</span> byte cuối của key và decrypt, tức là mình phải có <span class="math notranslate nohighlight">\(P_2 \oplus P_2' = D_k(C_2) \oplus D_k(C_2')\)</span>.</p>
+<p>Bây giờ tìm iv, mình chỉ cần đưa lên server <span class="math notranslate nohighlight">\(32\)</span> byte <code class="docutils literal notranslate"><span class="pre">\0</span></code> là xong và cũng tương tự trên, chỉ lấy ciphertext nào mà <span class="math notranslate nohighlight">\(16\)</span> byte cuối không bị ẩn. Vì <span class="math notranslate nohighlight">\(C_2 = E_k(C_1) = E_k(E_k(iv))\)</span> (do xor với dãy toàn <code class="docutils literal notranslate"><span class="pre">0</span></code>). Decrypt mình có lại <span class="math notranslate nohighlight">\(iv\)</span>.</p>
+<p>Giờ thì giải mã flag thôi</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{h0W_R3cOVER_7He_5eCrET_1V?}</span></code></p>
+</section>
+<section id="rima">
+<h2>Rima<a class="headerlink" href="#rima" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">FLAG</span>
+
+<span class="k">def</span> <span class="nf">nextPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">n</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">FLAG</span><span class="o">.</span><span class="n">hex</span><span class="p">(),</span> <span class="mi">16</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]]</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">nextPrime</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">nextPrime</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="p">[[</span><span class="n">_</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]]</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">nextPrime</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> <span class="n">_</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">-</span>  <span class="n">c</span><span class="p">):</span> <span class="n">_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">_</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">]</span>
+
+<span class="n">g</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">__</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">__</span> <span class="ow">in</span> <span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">[</span><span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">_</span> <span class="o">==</span> <span class="n">g</span><span class="p">:</span>
+        <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;h&#39;</span>
+    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1">.enc&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+    <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">long_to_bytes</span><span class="p">(</span><span class="n">_</span><span class="p">))</span>
+    <span class="n">of</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bài này không dùng biến chữ để chạy loop và dùng dấu gạch dưới của python nên lúc đầu mình thấy hơi rắc rối.</p>
+<p>Đầu tiên flag được chuyển sang dạng nhị phân và thêm 1 bit <code class="docutils literal notranslate"><span class="pre">0</span></code> ở đầu được dãy <span class="math notranslate nohighlight">\(f\)</span>. Kế tiếp với mỗi <span class="math notranslate nohighlight">\(i = 0, \ldots, \mathrm{len}(f)-2\)</span> thì <span class="math notranslate nohighlight">\(f_i = f_i + f_{i+1}\)</span>.</p>
+<p>Kế tiếp hai số <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> được tạo là hai số nguyên tố kế tiếp tính từ <span class="math notranslate nohighlight">\(\mathrm{len}(f)\)</span> là độ dài <span class="math notranslate nohighlight">\(f\)</span>. Sau đó, <span class="math notranslate nohighlight">\(g\)</span> và <span class="math notranslate nohighlight">\(h\)</span> là hai list tạo ra từ việc lặp <span class="math notranslate nohighlight">\(f\)</span> lần lượt với <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> lần. Như vậy độ dài của <span class="math notranslate nohighlight">\(g\)</span> là <span class="math notranslate nohighlight">\(a \cdot \mathrm{len}(f)\)</span> và độ dài của <span class="math notranslate nohighlight">\(h\)</span> là <span class="math notranslate nohighlight">\(b \cdot \mathrm{len}(f)\)</span>.</p>
+<p>Tiếp theo, <span class="math notranslate nohighlight">\(c\)</span> là số nguyên tố kế tiếp tính từ <span class="math notranslate nohighlight">\(\mathrm{len}(f) \gg 2\)</span>. Thêm <span class="math notranslate nohighlight">\(c\)</span> bit <code class="docutils literal notranslate"><span class="pre">0</span></code> vào đầu <span class="math notranslate nohighlight">\(g\)</span> và thực hiện <span class="math notranslate nohighlight">\(g_i = g_i + g_{i+c}\)</span> với <span class="math notranslate nohighlight">\(i=0 \cdots \mathrm{len}(f)-c-1\)</span>. Làm tương tự với <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>Cuối cùng là chuyển <span class="math notranslate nohighlight">\(g\)</span> và <span class="math notranslate nohighlight">\(h\)</span> sang số int base <span class="math notranslate nohighlight">\(5\)</span> và viết lên file dưới dạng byte. Nên đầu tiên mình sẽ làm ngược lại và tìm được <span class="math notranslate nohighlight">\(g\)</span> và <span class="math notranslate nohighlight">\(h\)</span>, sau đó mình bruteforce <span class="math notranslate nohighlight">\(\mathrm{len}(f)\)</span> để tìm <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(c\)</span> và xem thử bộ nào thỏa <span class="math notranslate nohighlight">\(a \cdot \mathrm{len}(f) + c = \mathrm{len}(g)\)</span> và <span class="math notranslate nohighlight">\(b \cdot \mathrm{len}(f) + c = \mathrm{len}(h)\)</span>.</p>
+<p>Sau đó là làm ngược lại quá trình, với <span class="math notranslate nohighlight">\(i=\mathrm{len}(f)-c-1, \ldots, 0\)</span> thì <span class="math notranslate nohighlight">\(g_i = g_i - g_{i+c}\)</span>. Tương tự với <span class="math notranslate nohighlight">\(h\)</span>. Có thể kiểm chứng cách đúng nếu đầu <span class="math notranslate nohighlight">\(g\)</span> có đúng <span class="math notranslate nohighlight">\(c\)</span> số <code class="docutils literal notranslate"><span class="pre">0</span></code> :)))</p>
+<p>Giờ thì, lấy <span class="math notranslate nohighlight">\(\mathrm{len}(f)\)</span> số đầu của <span class="math notranslate nohighlight">\(g\)</span> và tiếp tục làm ngược lại sẽ ra các bit của flag.</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{_how_finD_7h1s_1z_s3cr3T?!}</span></code></p>
+</section>
+<section id="maid">
+<h2>Maid<a class="headerlink" href="#maid" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">secret</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="k">global</span> <span class="n">nbit</span>
+<span class="n">nbit</span> <span class="o">=</span> <span class="mi">1024</span>
+
+<span class="k">def</span> <span class="nf">keygen</span><span class="p">(</span><span class="n">nbit</span><span class="p">):</span>
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="n">getStrongPrime</span><span class="p">(</span><span class="n">nbit</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="s1">&#39;01&#39;</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">p</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="n">q</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+			<span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">q</span><span class="p">,</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">pubkey</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">GCD</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">pubkey</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nbit</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+		<span class="k">return</span> <span class="kc">None</span>
+	<span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">pubkey</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">flag_encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+	<span class="n">m</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+	<span class="k">assert</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span>
+	<span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">65537</span><span class="p">,</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">die</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+	<span class="n">quit</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">sc</span><span class="p">():</span>
+	<span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+	<span class="n">border</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot;  hi all, welcome to Rooney Oracle, you can encrypt and decrypt any &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot;  message in this oracle, but the flag is still encrypted, Rooney   &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot;  asked me to find the encrypted flag, I&#39;m trying now, please help! &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+
+	<span class="n">pubkey</span><span class="p">,</span> <span class="n">privkey</span> <span class="o">=</span> <span class="n">keygen</span><span class="p">(</span><span class="n">nbit</span><span class="p">)</span>
+	<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">privkey</span><span class="p">,</span> <span class="n">pubkey</span> <span class="o">//</span> <span class="p">(</span><span class="n">privkey</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Options: </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[E]ncrypt message </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[D]ecrypt ciphertext </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[S]how encrypted flag </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[Q]uit&quot;</span><span class="p">)</span>
+		<span class="n">ans</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Send the message to encrypt: &quot;</span><span class="p">)</span>
+			<span class="n">msg</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">msg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| your message is not integer!!&quot;</span><span class="p">)</span>
+			<span class="n">pr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;| encrypt(msg, pubkey) = </span><span class="si">{</span><span class="n">encrypt</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">pubkey</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Send the ciphertext to decrypt: &quot;</span><span class="p">)</span>
+			<span class="n">enc</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">enc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">enc</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| your message is not integer!!&quot;</span><span class="p">)</span>
+			<span class="n">pr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;| decrypt(enc, privkey) = </span><span class="si">{</span><span class="n">decrypt</span><span class="p">(</span><span class="n">enc</span><span class="p">,</span><span class="w"> </span><span class="n">privkey</span><span class="p">)</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span><span class="p">:</span> 
+			<span class="n">pr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;| enc = </span><span class="si">{</span><span class="n">flag_encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Quitting ...&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Bye ...&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ở bài này server cung cấp cho mình các chứng năng sau:</p>
+<ul class="simple">
+<li><p>Encrypt 1 số bất kì không vượt quá <span class="math notranslate nohighlight">\(2^{2048 - 2}\)</span> bit;</p></li>
+<li><p>Decrypt 1 số bất kì (hàm decrypt bị giấu đi);</p></li>
+<li><p>Lấy flag bị mã hóa.</p></li>
+</ul>
+<p>Key là 1 cặp khóa công khai-bí mật <span class="math notranslate nohighlight">\((pubkey, privkey)\)</span>, trong đó <span class="math notranslate nohighlight">\(pubkey = p^2q\)</span> còn <span class="math notranslate nohighlight">\(privkey = p^2\)</span>, với <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> là hai số nguyên tố <span class="math notranslate nohighlight">\(1024\)</span> bit và đồng dư <span class="math notranslate nohighlight">\(3\)</span> modulo <span class="math notranslate nohighlight">\(4\)</span>. Hàm <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> thực hiện mã hóa số <span class="math notranslate nohighlight">\(m\)</span> bằng cách trả về <span class="math notranslate nohighlight">\(m^2 \pmod{pubkey}\)</span>. Còn hàm <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> thực hiện giải mã chỉ cần <span class="math notranslate nohighlight">\(privkey\)</span>.</p>
+<p>Kì cục …………..</p>
+<p>Thế quái nào …………..</p>
+<p>Mà <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> cần cả <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> còn <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> chỉ cần <span class="math notranslate nohighlight">\(p\)</span>?</p>
+<p>Thật ra là vì nếu <span class="math notranslate nohighlight">\(c \equiv m^2 \pmod{pubkey}\)</span> thì <span class="math notranslate nohighlight">\(c \equiv m^2 \pmod{p^2}\)</span>, như vậy giải thích cho việc <span class="math notranslate nohighlight">\(m\)</span> không được vượt quá <span class="math notranslate nohighlight">\(2048-2\)</span> bit và việc giải mã chỉ cần <span class="math notranslate nohighlight">\(p\)</span>. Như vậy cách attack của mình như sau:</p>
+<ul class="simple">
+<li><p>Chọn ngẫu nhiên các ciphertext, gửi lên để server decrypt và nhận lại các plaintext tương ứng. Ta biết rằng <span class="math notranslate nohighlight">\(c \equiv m^2 \pmod{p^2}\)</span> nên <span class="math notranslate nohighlight">\(p^2 = \gcd(m_1^2 - c_1, m_2^2 - c_2)\)</span>, từ đó lấy căn bậc hai là có <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>Tiếp theo, chọn ngẫu nhiên các plaintext, gửi lên server encrypt và nhận lại ciphertext tươngg ứng. Do <span class="math notranslate nohighlight">\(c \equiv m^2 \pmod{pubkey} \equiv m^2 \pmod{p^2q}\)</span>, khi đó <span class="math notranslate nohighlight">\(p^2q = \gcd(m_1^2 - c_1, m_2^2 - c_2)\)</span>. Việc này ngược lại quá trình trên vì như nãy mình đã nói, <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> sử dụng <span class="math notranslate nohighlight">\(p^2q\)</span> còn <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> thì chỉ cần <span class="math notranslate nohighlight">\(p^2\)</span>.</p></li>
+<li><p>Và bây giờ <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> đã có đủ, ta decrypt và có flag thôi.</p></li>
+</ul>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{___Ra8!N_H_Cryp70_5YsT3M___}</span></code></p>
+</section>
+<section id="tuti">
+<h2>Tuti<a class="headerlink" href="#tuti" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<span class="n">m_1</span><span class="p">,</span> <span class="n">m_2</span> <span class="o">=</span> <span class="n">flag</span><span class="p">[:</span> <span class="n">l</span> <span class="o">//</span> <span class="mi">2</span><span class="p">],</span> <span class="n">flag</span><span class="p">[</span><span class="n">l</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">m_1</span><span class="p">),</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">m_2</span><span class="p">)</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">000bfdc32162934ad6a054b4b3db8578674e27a165113f8ed018cbe9112</span>
+<span class="s1">4fbd63144ab6923d107eee2bc0712fcbdb50d96fdf04dd1ba1b69cb1efe</span>
+<span class="s1">71af7ca08ddc7cc2d3dfb9080ae56861d952e8d5ec0ba0d3dfdf2d12764</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span><span class="p">((</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span> là nửa đầu và nửa sau của flag, <span class="math notranslate nohighlight">\(k\)</span> là một số cho trước thỏa mãn <span class="math notranslate nohighlight">\((x^2+1)(y^2+1)-2(x-y)(xy-1) = 4(k+xy)\)</span>. Biến đổi một tí mình có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{cccc}
+    &amp; x^2 y^2 + x^2 + y^2 + 1 - 2(x-y)xy+2(x-y)-4xy &amp; = &amp; 4k \\
+    \Leftrightarrow &amp; x^2 y^2 + (x^2 + y^2 + 1 + 2(x-y) - 2xy) - 2(x-y+1)xy &amp; = &amp; 4k \\
+    \Leftrightarrow &amp; x^2 y^2 + (x-y+1)^2 - 2(x-y+1)xy &amp; = &amp; 4k \\
+    \Leftrightarrow &amp; (xy - x + y - 1)^2 &amp; = &amp; 4k
+\end{array}\end{split}\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(xy-x+y-1=\sqrt{4k}\)</span> mà <span class="math notranslate nohighlight">\(xy-x+y-1=(x+1)(y-1)\)</span> nên mình chỉ cần factor số này là tìm được <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span>. Do có thể có nhiều cách chọn nên mình tìm cái “hợp lí” nhất.</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{S1mPL3_4Nd_N!cE_Diophantine_EqUa7I0nS!}</span></code></p>
+</section>
+<section id="improve">
+<h2>Improve<a class="headerlink" href="#improve" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="n">gcd</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="k">def</span> <span class="nf">lcm</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">//</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">gen_params</span><span class="p">(</span><span class="n">nbit</span><span class="p">):</span>
+	<span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="n">getPrime</span><span class="p">(</span><span class="n">nbit</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+	<span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">q</span><span class="p">,</span> <span class="n">lcm</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">p</span> <span class="o">+</span> <span class="n">q</span>
+	<span class="n">e</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+	<span class="n">u</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">v</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+	<span class="n">params</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">params</span>
+
+<span class="k">def</span> <span class="nf">improved</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+	<span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">params</span>
+	<span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="n">e</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+		<span class="n">u</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">L</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">u</span><span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">n</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="n">H</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">H</span>
+
+<span class="k">def</span> <span class="nf">die</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+	<span class="n">quit</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">pr</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+	<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">sc</span><span class="p">():</span>
+	<span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+	<span class="n">border</span> <span class="o">=</span> <span class="s2">&quot;+&quot;</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot; hi talented cryptographers! Your mission is to find hash collision &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot; in the given hash function based on famous cryptographic algorithm &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="s2">&quot; see the source code and get the flag! Its improved version :)      &quot;</span><span class="p">,</span> <span class="n">border</span><span class="p">)</span>
+	<span class="n">pr</span><span class="p">(</span><span class="n">border</span><span class="o">*</span><span class="mi">72</span><span class="p">)</span>
+
+	<span class="n">nbit</span> <span class="o">=</span> <span class="mi">512</span>
+	<span class="n">params</span> <span class="o">=</span> <span class="n">gen_params</span><span class="p">(</span><span class="n">nbit</span><span class="p">)</span>
+	<span class="n">n</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Options: </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[R]eport collision! </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[T]ry hash </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[G]et parameters </span><span class="se">\n</span><span class="s2">|</span><span class="se">\t</span><span class="s2">[Q]uit&quot;</span><span class="p">)</span>
+		<span class="n">ans</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| please send the messages split by comma: &quot;</span><span class="p">)</span>
+			<span class="n">m</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">m_1</span><span class="p">,</span> <span class="n">m_2</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+				<span class="n">m_1</span><span class="p">,</span> <span class="n">m_2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">m_1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">m_2</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| Sorry! your input is invalid, Bye!!&quot;</span><span class="p">)</span>
+				<span class="c1"># fix the bug :P</span>
+			<span class="k">if</span> <span class="n">m_1</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">m_2</span> <span class="o">%</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">m_1</span> <span class="o">!=</span> <span class="n">m_2</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">m_1</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">m_2</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">improved</span><span class="p">(</span><span class="n">m_1</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="n">improved</span><span class="p">(</span><span class="n">m_2</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+				<span class="n">die</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;| Congrats! You find the collision!! the flag is: </span><span class="si">{</span><span class="n">flag</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| Sorry! your input is not correct!!&quot;</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s2">&quot;| Please send your message to get the hash: &quot;</span><span class="p">)</span>
+			<span class="n">m</span> <span class="o">=</span> <span class="n">sc</span><span class="p">()</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+				<span class="n">pr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;improved(m) = </span><span class="si">{</span><span class="n">improved</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+			<span class="k">except</span><span class="p">:</span>
+				<span class="n">die</span><span class="p">(</span><span class="s2">&quot;| Sorry! your input is invalid, Bye!!&quot;</span><span class="p">)</span> 
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span>
+			<span class="n">pr</span><span class="p">(</span><span class="s1">&#39;| Parameters =&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">ans</span> <span class="o">==</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Quitting ...&quot;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">die</span><span class="p">(</span><span class="s2">&quot;Bye ...&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ở bài này khá có khá nhiều thứ linh tinh nhưng chung quy lại là mình cần nhập vào hai số khác nhau <span class="math notranslate nohighlight">\(m_1\)</span> và <span class="math notranslate nohighlight">\(m_2\)</span> khác <span class="math notranslate nohighlight">\(n\)</span> sao cho kết quả hàm <code class="docutils literal notranslate"><span class="pre">improve</span></code> với hai số này là giống nhau.</p>
+<p>Các tham số sẽ là <span class="math notranslate nohighlight">\(n\)</span> làm chặn trên cho hai số nhập vào (không vượt quá <span class="math notranslate nohighlight">\(n^2\)</span>, và <span class="math notranslate nohighlight">\(f\)</span> có tính chất quan trọng là luôn chẵn, đây là tiền đề để mình giải bài này.</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">improve</span></code> mình để ý rằng <span class="math notranslate nohighlight">\(L\)</span> được tạo ra sau vài biến đổi từ <span class="math notranslate nohighlight">\(e=m^f \pmod{n^2}\)</span>, mà mình cần hai số <span class="math notranslate nohighlight">\(m\)</span> cho cùng <span class="math notranslate nohighlight">\(L\)</span>, vậy chỉ cần cho ra cùng <span class="math notranslate nohighlight">\(e\)</span> là xong. Mà như hồi nãy mình có đề cập là <span class="math notranslate nohighlight">\(f\)</span> luôn chẵn, vậy chỉ cần chọn <span class="math notranslate nohighlight">\(m\)</span> và <span class="math notranslate nohighlight">\(n^2-m\)</span> là xong :))</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{Phillip_N0W_4_pr0b4b1liStiC__aSymM3Tr1C__AlGOrithM!!}</span></code></p>
+</section>
+<section id="onlude">
+<h2>Onlude<a class="headerlink" href="#onlude" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env sage</span>
+
+<span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span>
+
+<span class="k">global</span> <span class="n">p</span><span class="p">,</span> <span class="n">alphabet</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">71</span>
+<span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$!?_</span><span class="si">{}</span><span class="s1">&lt;&gt;&#39;</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;CCTF{&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="o">==</span> <span class="mi">24</span>
+
+<span class="k">def</span> <span class="nf">cross</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+	<span class="n">A</span> <span class="o">=</span> <span class="n">zero_matrix</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)):</span>
+		<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">k</span> <span class="o">//</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">k</span> <span class="o">%</span> <span class="mi">11</span>
+		<span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">cross</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">A</span>
+
+<span class="k">def</span> <span class="nf">keygen</span><span class="p">():</span>
+	<span class="n">R</span> <span class="o">=</span> <span class="n">random_matrix</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">S</span> <span class="o">=</span> <span class="n">random_matrix</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">S</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+			<span class="n">_</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">LU</span><span class="p">()</span>
+			<span class="k">return</span> <span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+	<span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">key</span>
+	<span class="n">S</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="n">U</span>
+	<span class="n">X</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">R</span>
+	<span class="n">Y</span> <span class="o">=</span> <span class="n">S</span> <span class="o">*</span> <span class="n">X</span>
+	<span class="n">E</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span> <span class="o">*</span> <span class="n">Y</span>
+	<span class="k">return</span> <span class="n">E</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">prepare</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">keygen</span><span class="p">()</span>
+<span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">U</span> <span class="o">=</span> <span class="n">key</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="n">U</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E = </span><span class="se">\n</span><span class="si">{</span><span class="n">E</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L * U * L = </span><span class="se">\n</span><span class="si">{</span><span class="n">L</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">U</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;L^(-1) * S^2 * L = </span><span class="se">\n</span><span class="si">{</span><span class="n">L</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">S</span><span class="o">**</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^(-1) * S^8 = </span><span class="se">\n</span><span class="si">{</span><span class="n">R</span><span class="o">.</span><span class="n">inverse</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">S</span><span class="o">**</span><span class="mi">8</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bài này mình giải trước khi hết thời gian 1 tiếng và là bài cuối cùng mình giải được. Hàm <code class="docutils literal notranslate"><span class="pre">prepare</span></code> chuyển flag thành ma trận <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(key\)</span> là bộ ba ma trận <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> và <span class="math notranslate nohighlight">\(U\)</span>. Ma trận <span class="math notranslate nohighlight">\(S=L U\)</span>.</p>
+<p>Việc mã hóa như sau:</p>
+<ul class="simple">
+<li><p>Với <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> và <span class="math notranslate nohighlight">\(U\)</span> như trên, <span class="math notranslate nohighlight">\(S = LU\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=A+R\)</span>, <span class="math notranslate nohighlight">\(Y=SX\)</span> và ciphertext là <span class="math notranslate nohighlight">\(E=L^{-1}Y\)</span>.</p></li>
+</ul>
+<p>Đề cho mình 4 ma trận:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> là ciphertext, với 1 chút biến đổi mình có <span class="math notranslate nohighlight">\(E=U(A+R)\)</span>;</p></li>
+<li><p>Ma trận <span class="math notranslate nohighlight">\(L U L\)</span>;</p></li>
+<li><p>Ma trận</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[L^{-1} S^2 L = L^{-1} (LU)^2 L = L^{-1}LULUL=(UL)^2,\]</div>
+<p>mình đặt là <span class="math notranslate nohighlight">\(T\)</span>;</p>
+<ul class="simple">
+<li><p>Ma trận <span class="math notranslate nohighlight">\(R^{-1}S^8\)</span>, mình đặt là <span class="math notranslate nohighlight">\(W\)</span>.</p></li>
+</ul>
+<p>Lấy <span class="math notranslate nohighlight">\(LUL\)</span> nhân với <span class="math notranslate nohighlight">\(T\)</span> mình có <span class="math notranslate nohighlight">\(LUL \cdot (UL)^2 = L(UL)^3\)</span>.</p>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[T^2 [L(UL)^3]^{-1} = (UL)^4 \cdot (UL)^{-3} \cdot L^{-1} = UL \cdot L^{-1} = U.\]</div>
+<p>Vậy là mình có <span class="math notranslate nohighlight">\(U\)</span> rồi :))</p>
+<p>Quay lại <span class="math notranslate nohighlight">\(E=U(A+R)\)</span>, khi đó <span class="math notranslate nohighlight">\(R=U^{-1}E-A\)</span>, nhân bên phải của hai vế với <span class="math notranslate nohighlight">\(W\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[R \cdot R^{-1} S^8 = (U^{-1} E - A) W = S^8 = (LU)^8\]</div>
+<p>Quay lại một chút,</p>
+<div class="math notranslate nohighlight">
+\[(LUL) \cdot T^3 = (LUL) \cdot (L^{-1}S^6L) = (LU)^7 \cdot L,\]</div>
+<p>suy ra <span class="math notranslate nohighlight">\((LUL) \cdot T^3 \cdot U = (LU)^8\)</span>.</p>
+<p>Từ đó mình dễ dàng tìm lại được <span class="math notranslate nohighlight">\(A = U^{-1}E - (LU)^8 W^{-1}\)</span>.</p>
+<p>Thực hiện tương tự hàm <code class="docutils literal notranslate"><span class="pre">prepare</span></code> mình có được flag</p>
+<p>Flag: <code class="docutils literal notranslate"><span class="pre">CCTF{LU__D3c0mpO517Ion__4L90?}</span></code></p>
+<p>Writeup đến đây là hết, cám ơn các bạn đã đọc. Source code của mình ở <a class="reference external" href="https://github.com/dunglq2000/CTF/tree/master/CryptoCTF/2021">đây</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ctf\2021"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2021.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CTF 2021</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="googleCTF-2021.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Google CTF 2021</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#farm">Farm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keybase">KeyBase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rima">Rima</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maid">Maid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuti">Tuti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improve">Improve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onlude">Onlude</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
