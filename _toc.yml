@@ -82,6 +82,7 @@ parts:
       - file: ctf/2022/sekaiCTF-2022.md
     - file: ctf/2023/2023.md
       sections:
+      - file: ctf/2023/AmateursCTF-2023.md
       - file: ctf/2023/diceCTF-2023.md
       - file: ctf/2023/googleCTF-2023.md
       - file: ctf/2023/backdoorCTF-2023.md

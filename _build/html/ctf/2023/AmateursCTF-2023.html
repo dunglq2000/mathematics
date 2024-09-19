@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Amateurs CTF 2023 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2023/AmateursCTF-2023';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dice CTF 2023" href="diceCTF-2023.html" />
+    <link rel="prev" title="CTF 2023" href="2023.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">3. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">4. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">5. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">5.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">5.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">5.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">5.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">5.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">6. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">7. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">8. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">9. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">9.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">9.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-feedback-shift-register.html">9.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">10. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">11. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">12. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/intro.html">13. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">14. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">14.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">14.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">15. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">16. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">17. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">18. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">19. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">20. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">21. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">21.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2023.html">CTF 2023</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fctf/2023/AmateursCTF-2023.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/ctf/2023/AmateursCTF-2023.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Amateurs CTF 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimalaestic">Minimalaestic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phan-tich-hien-truong">1. Phân tích hiện trường</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-bytes-va-final-sub-bytes">1.1. Sub Bytes và Final Sub Bytes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-rows-va-final-shift-rows">1.2. Shift Rows và Final Shift Rows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mix-columns">1.3. Mix Columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-round-keys">1.4. Add Round Keys</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-schedule">1.5. Key Schedule</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truy-tim-dau-moi">2. Truy tìm đầu mối</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noi-tinh-yeu-cryptanalysis-bat-dau">2.1. Nơi tình yêu ~~cryptanalysis~~ bắt đầu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#man-in-the-middle">2.2. Man-In-The-Middle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sua-chua-loi-lam">2.3. Sửa chữa lỗi lầm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owo-time-pad">Owo Time Pad</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="amateurs-ctf-2023">
+<h1>Amateurs CTF 2023<a class="headerlink" href="#amateurs-ctf-2023" title="Link to this heading">#</a></h1>
+<section id="minimalaestic">
+<h2>Minimalaestic<a class="headerlink" href="#minimalaestic" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># based on https://github.com/boppreh/aes/blob/master/aes.py</span>
+<span class="kn">from</span> <span class="nn">flag</span> <span class="kn">import</span> <span class="n">flag</span><span class="p">,</span> <span class="n">key</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">KEY_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ROUNDS</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">sub_bytes</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sbox</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">final_sub</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">sbox</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="n">sbox</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> <span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x7B</span><span class="p">,</span> <span class="mh">0xF2</span><span class="p">,</span> <span class="mh">0x6B</span><span class="p">,</span> <span class="mh">0x6F</span><span class="p">,</span> <span class="mh">0xC5</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x67</span><span class="p">,</span> <span class="mh">0x2B</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">,</span> <span class="mh">0xD7</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0x76</span><span class="p">,</span>
+        <span class="mh">0xCA</span><span class="p">,</span> <span class="mh">0x82</span><span class="p">,</span> <span class="mh">0xC9</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span> <span class="mh">0xFA</span><span class="p">,</span> <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0xAD</span><span class="p">,</span> <span class="mh">0xD4</span><span class="p">,</span> <span class="mh">0xA2</span><span class="p">,</span> <span class="mh">0xAF</span><span class="p">,</span> <span class="mh">0x9C</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0xC0</span><span class="p">,</span>
+        <span class="mh">0xB7</span><span class="p">,</span> <span class="mh">0xFD</span><span class="p">,</span> <span class="mh">0x93</span><span class="p">,</span> <span class="mh">0x26</span><span class="p">,</span> <span class="mh">0x36</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0xF7</span><span class="p">,</span> <span class="mh">0xCC</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="mh">0xA5</span><span class="p">,</span> <span class="mh">0xE5</span><span class="p">,</span> <span class="mh">0xF1</span><span class="p">,</span> <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0xD8</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span>
+        <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0xC7</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">,</span> <span class="mh">0xC3</span><span class="p">,</span> <span class="mh">0x18</span><span class="p">,</span> <span class="mh">0x96</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x9A</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0xE2</span><span class="p">,</span> <span class="mh">0xEB</span><span class="p">,</span> <span class="mh">0x27</span><span class="p">,</span> <span class="mh">0xB2</span><span class="p">,</span> <span class="mh">0x75</span><span class="p">,</span>
+        <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0x83</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="mh">0x1A</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x6E</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> <span class="mh">0xA0</span><span class="p">,</span> <span class="mh">0x52</span><span class="p">,</span> <span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0xD6</span><span class="p">,</span> <span class="mh">0xB3</span><span class="p">,</span> <span class="mh">0x29</span><span class="p">,</span> <span class="mh">0xE3</span><span class="p">,</span> <span class="mh">0x2F</span><span class="p">,</span> <span class="mh">0x84</span><span class="p">,</span>
+        <span class="mh">0x53</span><span class="p">,</span> <span class="mh">0xD1</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xED</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xFC</span><span class="p">,</span> <span class="mh">0xB1</span><span class="p">,</span> <span class="mh">0x5B</span><span class="p">,</span> <span class="mh">0x6A</span><span class="p">,</span> <span class="mh">0xCB</span><span class="p">,</span> <span class="mh">0xBE</span><span class="p">,</span> <span class="mh">0x39</span><span class="p">,</span> <span class="mh">0x4A</span><span class="p">,</span> <span class="mh">0x4C</span><span class="p">,</span> <span class="mh">0x58</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span>
+        <span class="mh">0xD0</span><span class="p">,</span> <span class="mh">0xEF</span><span class="p">,</span> <span class="mh">0xAA</span><span class="p">,</span> <span class="mh">0xFB</span><span class="p">,</span> <span class="mh">0x43</span><span class="p">,</span> <span class="mh">0x4D</span><span class="p">,</span> <span class="mh">0x33</span><span class="p">,</span> <span class="mh">0x85</span><span class="p">,</span> <span class="mh">0x45</span><span class="p">,</span> <span class="mh">0xF9</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0x50</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="mh">0x9F</span><span class="p">,</span> <span class="mh">0xA8</span><span class="p">,</span>
+        <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0xA3</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x8F</span><span class="p">,</span> <span class="mh">0x92</span><span class="p">,</span> <span class="mh">0x9D</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">,</span> <span class="mh">0xF5</span><span class="p">,</span> <span class="mh">0xBC</span><span class="p">,</span> <span class="mh">0xB6</span><span class="p">,</span> <span class="mh">0xDA</span><span class="p">,</span> <span class="mh">0x21</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xF3</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span>
+        <span class="mh">0xCD</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">,</span> <span class="mh">0x13</span><span class="p">,</span> <span class="mh">0xEC</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x97</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x17</span><span class="p">,</span> <span class="mh">0xC4</span><span class="p">,</span> <span class="mh">0xA7</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0x3D</span><span class="p">,</span> <span class="mh">0x64</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x19</span><span class="p">,</span> <span class="mh">0x73</span><span class="p">,</span>
+        <span class="mh">0x60</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0xDC</span><span class="p">,</span> <span class="mh">0x22</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="mh">0x90</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x46</span><span class="p">,</span> <span class="mh">0xEE</span><span class="p">,</span> <span class="mh">0xB8</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0xDE</span><span class="p">,</span> <span class="mh">0x5E</span><span class="p">,</span> <span class="mh">0x0B</span><span class="p">,</span> <span class="mh">0xDB</span><span class="p">,</span>
+        <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0x32</span><span class="p">,</span> <span class="mh">0x3A</span><span class="p">,</span> <span class="mh">0x0A</span><span class="p">,</span> <span class="mh">0x49</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0x5C</span><span class="p">,</span> <span class="mh">0xC2</span><span class="p">,</span> <span class="mh">0xD3</span><span class="p">,</span> <span class="mh">0xAC</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x91</span><span class="p">,</span> <span class="mh">0x95</span><span class="p">,</span> <span class="mh">0xE4</span><span class="p">,</span> <span class="mh">0x79</span><span class="p">,</span>
+        <span class="mh">0xE7</span><span class="p">,</span> <span class="mh">0xC8</span><span class="p">,</span> <span class="mh">0x37</span><span class="p">,</span> <span class="mh">0x6D</span><span class="p">,</span> <span class="mh">0x8D</span><span class="p">,</span> <span class="mh">0xD5</span><span class="p">,</span> <span class="mh">0x4E</span><span class="p">,</span> <span class="mh">0xA9</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0x56</span><span class="p">,</span> <span class="mh">0xF4</span><span class="p">,</span> <span class="mh">0xEA</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span>
+        <span class="mh">0xBA</span><span class="p">,</span> <span class="mh">0x78</span><span class="p">,</span> <span class="mh">0x25</span><span class="p">,</span> <span class="mh">0x2E</span><span class="p">,</span> <span class="mh">0x1C</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xB4</span><span class="p">,</span> <span class="mh">0xC6</span><span class="p">,</span> <span class="mh">0xE8</span><span class="p">,</span> <span class="mh">0xDD</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x4B</span><span class="p">,</span> <span class="mh">0xBD</span><span class="p">,</span> <span class="mh">0x8B</span><span class="p">,</span> <span class="mh">0x8A</span><span class="p">,</span>
+        <span class="mh">0x70</span><span class="p">,</span> <span class="mh">0x3E</span><span class="p">,</span> <span class="mh">0xB5</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x48</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0xF6</span><span class="p">,</span> <span class="mh">0x0E</span><span class="p">,</span> <span class="mh">0x61</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x57</span><span class="p">,</span> <span class="mh">0xB9</span><span class="p">,</span> <span class="mh">0x86</span><span class="p">,</span> <span class="mh">0xC1</span><span class="p">,</span> <span class="mh">0x1D</span><span class="p">,</span> <span class="mh">0x9E</span><span class="p">,</span>
+        <span class="mh">0xE1</span><span class="p">,</span> <span class="mh">0xF8</span><span class="p">,</span> <span class="mh">0x98</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0x8E</span><span class="p">,</span> <span class="mh">0x94</span><span class="p">,</span> <span class="mh">0x9B</span><span class="p">,</span> <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x87</span><span class="p">,</span> <span class="mh">0xE9</span><span class="p">,</span> <span class="mh">0xCE</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0xDF</span><span class="p">,</span>
+        <span class="mh">0x8C</span><span class="p">,</span> <span class="mh">0xA1</span><span class="p">,</span> <span class="mh">0x89</span><span class="p">,</span> <span class="mh">0x0D</span><span class="p">,</span> <span class="mh">0xBF</span><span class="p">,</span> <span class="mh">0xE6</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x68</span><span class="p">,</span> <span class="mh">0x41</span><span class="p">,</span> <span class="mh">0x99</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0xB0</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0xBB</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">shift_rows</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">final_shift</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">mix_column</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
+    <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">column</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+  
+<span class="k">def</span> <span class="nf">mix_columns</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">column</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">mix_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">state</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">add_round_key</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">^=</span> <span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">final_add</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">^=</span> <span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">schedule_key</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">sbox</span><span class="p">[</span><span class="n">sbox</span><span class="p">[</span><span class="n">sbox</span><span class="p">[((((</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">^</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">^</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="mi">256</span><span class="p">]]],</span> <span class="nb">pow</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="mi">256</span><span class="p">),</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span> <span class="mi">256</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">final_schedule</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">bytes2matrix</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="mi">2</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">matrix2bytes</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="p">[]))</span>
+
+<span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
+    <span class="n">padding_len</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">-</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">padding</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">([</span><span class="n">padding_len</span><span class="p">]</span> <span class="o">*</span> <span class="n">padding_len</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">plaintext</span> <span class="o">+</span> <span class="n">padding</span>
+
+<span class="k">def</span> <span class="nf">unpad</span><span class="p">(</span><span class="n">plaintext</span><span class="p">):</span>
+    <span class="n">padding_len</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">padding_len</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">message</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="n">plaintext</span><span class="p">[:</span><span class="o">-</span><span class="n">padding_len</span><span class="p">],</span> <span class="n">plaintext</span><span class="p">[</span><span class="o">-</span><span class="n">padding_len</span><span class="p">:]</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">padding_len</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">padding</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">message</span>
+
+<span class="k">def</span> <span class="nf">split_blocks</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">require_padding</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">%</span> <span class="n">block_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">require_padding</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">message</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">block_size</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">split_blocks</span><span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">p</span><span class="p">)):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">schedule_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">sub_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">shift_rows</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">mix_columns</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">final_schedule</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">final_sub</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">ciphertext</span> <span class="o">+=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ciphertext</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+</pre></div>
+</div>
+<section id="phan-tich-hien-truong">
+<h3>1. Phân tích hiện trường<a class="headerlink" href="#phan-tich-hien-truong" title="Link to this heading">#</a></h3>
+<p>Đây là một bài AES nhưng trên ma trận <span class="math notranslate nohighlight">\(2 \times 2\)</span>. Ma trận đầu vào có dạng $<span class="math notranslate nohighlight">\(\begin{pmatrix}s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11}\end{pmatrix}\)</span>$</p>
+<p>Các động tác cơ bản giống với AES gốc, bao gồm: add round key, shift rows, mix columns và sub bytes. Đối với vòng cuối sử dụng một biến thể của sub byte, shift rows và add round key. Ở bài này có 100 vòng biến đổi bình thường và 1 vòng cuối sử dụng các biến thể trên.</p>
+<section id="sub-bytes-va-final-sub-bytes">
+<h4>1.1. Sub Bytes và Final Sub Bytes<a class="headerlink" href="#sub-bytes-va-final-sub-bytes" title="Link to this heading">#</a></h4>
+<p>SBox được sử dụng trong bài là SBox của AES gốc. Do đó mình cũng không nghĩ rằng sẽ khai thác được gì ở đây. Ở đây có một điều mình cần nhớ là Sub Bytes biến đổi trên cột đầu, và Final Sub Bytes biến đổi trên cột sau.</p>
+<p>Đối với Sub Bytes thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11} \end{pmatrix} \to \begin{pmatrix} s_{00} &amp; S(s_{01}) \\ s_{10} &amp; S(s_{11}) \end{pmatrix}\end{split}\]</div>
+<p>Đối với Final Sub Bytes thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11} \end{pmatrix} \to \begin{pmatrix} S(s_{00}) &amp; s_{01} \\ S(s_{10}) &amp; s_{11} \end{pmatrix}\end{split}\]</div>
+</section>
+<section id="shift-rows-va-final-shift-rows">
+<h4>1.2. Shift Rows và Final Shift Rows<a class="headerlink" href="#shift-rows-va-final-shift-rows" title="Link to this heading">#</a></h4>
+<p>Đối với Shift Rows thay đổi vị trí 2 bytes ở cột (?) đầu.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11}\end{pmatrix} \to \begin{pmatrix}s_{10} &amp; s_{01} \\ s_{00} &amp; s_{11}\end{pmatrix}\end{split}\]</div>
+<p>Đối với Final Shift Rows thay đổi vị trí 2 bytes ở cột (?) sau.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11}\end{pmatrix} \to \begin{pmatrix} s_{00} &amp; s_{11} \\ s_{10} &amp; s_{01} \end{pmatrix}\end{split}\]</div>
+<p>Mình thấy rằng phép biến đổi ngược đối với shift rows và final shift rows cũng là chính nó.</p>
+</section>
+<section id="mix-columns">
+<h4>1.3. Mix Columns<a class="headerlink" href="#mix-columns" title="Link to this heading">#</a></h4>
+<p>Đối với Mix Columns, cột đầu mới sẽ là cột đầu cũ XOR với cột sau.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s_{00} &amp; s_{01} \\ s_{10} &amp; s_{11} \end{pmatrix} \to \begin{pmatrix} s_{00} \oplus s_{01} &amp; s_{01} \\ s_{10} \oplus s_{11} &amp; s_{11} \end{pmatrix}\end{split}\]</div>
+<p>Tương tự shift rows, phép biến đổi ngược của mix columns cũng là chính nó.</p>
+</section>
+<section id="add-round-keys">
+<h4>1.4. Add Round Keys<a class="headerlink" href="#add-round-keys" title="Link to this heading">#</a></h4>
+<p>Phép Add Round Keys ở bài này khá thú vị (mặc dù mình cũng không khai thác từ đó).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_round_key</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">^=</span> <span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">j</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span><span class="o">%</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Đối với final add round keys thì chỉ thực hiện phép XOR trên cột sau.</p>
+<p>Okay, tới đây thì việc phân tích mã hóa của bài này đã tạm xong và mình cũng không thấy điểm nào có thể dùng để khai thác (hoặc chưa thấy). Điều làm mình quan tâm là hàm <code class="docutils literal notranslate"><span class="pre">schedule_key</span></code>.</p>
+</section>
+<section id="key-schedule">
+<h4>1.5. Key Schedule<a class="headerlink" href="#key-schedule" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">schedule_key</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">sbox</span><span class="p">[</span><span class="n">sbox</span><span class="p">[</span><span class="n">sbox</span><span class="p">[((((</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">^</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">^</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">%</span> <span class="mi">256</span><span class="p">]]],</span> <span class="nb">pow</span><span class="p">(</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="mi">256</span><span class="p">),</span> <span class="nb">pow</span><span class="p">(</span><span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]),</span> <span class="mi">256</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">final_schedule</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sbox</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Hàm sinh khóa con khá lạ. Do đó mình thử in ra khóa con ở các vòng với một chút điều chỉnh ở hàm <code class="docutils literal notranslate"><span class="pre">encrypt</span></code> với các khóa được random.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">split_blocks</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">schedule_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sub_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">shift_rows</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">mix_columns</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">final_schedule</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;100, </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">final_sub</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">ciphertext</span> <span class="o">+=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ciphertext</span>
+
+<span class="n">pt</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;haha&quot;</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    <span class="n">encrypt</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Các khóa con trong các vòng từ 0 tới 99 đều có vẻ như nằm trong một tập hợp nhất định là <span class="math notranslate nohighlight">\(\{ 0, 1, 175 \}\)</span>. Từ đó khóa con ở vòng 100 (vòng final) cũng nằm trong một tập hợp nhất định do đã đi qua hàm sbox (<code class="docutils literal notranslate"><span class="pre">final_schedule</span></code>) và kết quả là tập <span class="math notranslate nohighlight">\(\{99, 121, 124 \}\)</span>.</p>
+</section>
+</section>
+<section id="truy-tim-dau-moi">
+<h3>2. Truy tìm đầu mối<a class="headerlink" href="#truy-tim-dau-moi" title="Link to this heading">#</a></h3>
+<section id="noi-tinh-yeu-cryptanalysis-bat-dau">
+<h4>2.1. Nơi tình yêu ~~cryptanalysis~~ bắt đầu<a class="headerlink" href="#noi-tinh-yeu-cryptanalysis-bat-dau" title="Link to this heading">#</a></h4>
+<p>Chiến thuật của mình là tìm khóa trước khi đi vào vòng lặp với known-plaintext là format của flag. Chú ý rằng ở đây không cần phải tìm khóa ban đầu mà chỉ cần tìm khóa trước khi vào vòng lặp, tức là khóa tham gia vào phép XOR <code class="docutils literal notranslate"><span class="pre">add_round_key</span></code> đầu tiên.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">split_blocks</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="c1">#   Find intermediate key used in add_round_key #</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">schedule_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">sub_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">shift_rows</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">mix_columns</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">final_schedule</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">final_sub</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">final_add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">ciphertext</span> <span class="o">+=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ciphertext</span>
+</pre></div>
+</div>
+<p>Để tìm khóa ở điểm được đánh dấu, mình sẽ đi ngược từ ciphertext lên. Mình bruteforce các khóa con dùng trong vòng lặp (<span class="math notranslate nohighlight">\(3^4 = 81\)</span> trường hợp). Ứng với mỗi khóa con cho vòng lặp mình có một khóa con cho vòng cuối cùng (final). Kết hợp hai khóa đó và ciphertext mình sẽ tìm được state trước khi vào vòng lặp. Cuối cùng mình XOR kết quả đó cho known-plaintext thì sẽ được khóa ở điểm được đánh dấu.</p>
+<p>Từ nhận xét bên trên, 100 vòng (0 tới 99) sử dụng cùng một khóa con, mình đặt là <span class="math notranslate nohighlight">\(k_1\)</span>. Ở vòng final sử dụng một khóa con, mình đặt là <span class="math notranslate nohighlight">\(k_2\)</span>. Quan hệ giữa chúng là <code class="docutils literal notranslate"><span class="pre">k_2</span> <span class="pre">=</span> <span class="pre">final_schedule(k_1)</span></code>.</p>
+</section>
+<section id="man-in-the-middle">
+<h4>2.2. Man-In-The-Middle<a class="headerlink" href="#man-in-the-middle" title="Link to this heading">#</a></h4>
+<p>Với mỗi block 4 bytes ciphertext và known-plaintext tương ứng, mình đi ngược từ dưới lên để tìm key trung gian. Lưu ý rằng mình chỉ cần xây dựng bảng <code class="docutils literal notranslate"><span class="pre">inv_sbox</span></code> vì các phép biến đổi khác có phép biến đổi ngược là chính nó.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">final_add</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k2_</span><span class="p">)</span>
+<span class="n">final_shift</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="n">inv_final_sub</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+    <span class="n">add_round_key</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k1_</span><span class="p">)</span>
+    <span class="n">mix_columns</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">shift_rows</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+
+<span class="n">pt</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Với format flag là <code class="docutils literal notranslate"><span class="pre">amateursCTF{</span></code> có 12 bytes tương ứng 3 block, mình thực hiện biến đổi trên với 12 bytes ciphertext tương ứng. Với mỗi block mình sẽ tìm ra được tập hợp các key tương ứng với các <span class="math notranslate nohighlight">\(k_1\)</span> (và <span class="math notranslate nohighlight">\(k_2\)</span> tương ứng với <span class="math notranslate nohighlight">\(k_1\)</span>). Sau đó mình giao các tập hợp key lại sẽ được key ban đầu.</p>
+<p>Nói cách khác</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candidates1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">candidates2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">candidates3</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">k1</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">K1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">final_schedule_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">k1</span><span class="p">))</span>
+
+    <span class="n">k1_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">k2_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k2</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Phase 1</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">flag</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">ctx</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">final_add</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k2_</span><span class="p">)</span>
+    <span class="n">final_shift</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">inv_final_sub</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k1_</span><span class="p">)</span>
+        <span class="n">mix_columns</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">shift_rows</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+    <span class="n">candidates1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    
+    <span class="c1"># Phase 2</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">ctx</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+    <span class="n">final_add</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+    <span class="n">final_shift</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">inv_final_sub</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k1_</span><span class="p">)</span>
+        <span class="n">mix_columns</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">shift_rows</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+    <span class="n">candidates2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    
+    <span class="c1"># Phase 3</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">ctx</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+    <span class="n">final_add</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k2_</span><span class="p">)</span>
+    <span class="n">final_shift</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">inv_final_sub</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k1_</span><span class="p">)</span>
+        <span class="n">inv_mix_columns</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">inv_shift_rows</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+    <span class="n">candidates3</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">candidates1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">candidates2</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">candidates3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kết quả khi giao ba tập hợp chỉ có đúng một key <code class="docutils literal notranslate"><span class="pre">b'\x00**\x00'</span></code>. Quá tốt!!!</p>
+<p>Ờ mà khoan, từ từ đã :)))) Có gì đó không đúng lắm. Cụ thể là khi mình encrypt hai block plaintext đầu thì nó không ra đúng ciphertext. Cụ thể hơn nữa, encrypt ra đúng ở vị trí 0 và 2, sai ở vị trí 1 và 3 cho mỗi block (?!?!).</p>
+</section>
+<section id="sua-chua-loi-lam">
+<h4>2.3. Sửa chữa lỗi lầm<a class="headerlink" href="#sua-chua-loi-lam" title="Link to this heading">#</a></h4>
+<p>Mình mất cả ngày để tìm lỗi sai nhưng thất bại. Và mình đã chuyển sang <em>tấn công cưỡng ép</em>. Vì encrypt đúng ở vị trí 0 và 2 còn sai ở vị trí 1 và 3 nên mình kết luận được là <span class="math notranslate nohighlight">\(k_2\)</span> có vấn đề, tức là key ở bước <code class="docutils literal notranslate"><span class="pre">final_add</span></code>.</p>
+<p>Mình thử in ra <span class="math notranslate nohighlight">\(k_1\)</span> và <span class="math notranslate nohighlight">\(k_2\)</span> tương ứng với khóa tìm được bên trên <code class="docutils literal notranslate"><span class="pre">b'\x00**\x00'</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k1</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="n">K1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">final_schedule_</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">k1</span><span class="p">))</span>
+
+    <span class="n">k1_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">k2_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">k2</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Phase 1</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">flag</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">ctx</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="n">final_add</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k2_</span><span class="p">)</span>
+    <span class="n">final_shift</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">inv_final_sub</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+        <span class="n">add_round_key</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">,</span> <span class="n">k1_</span><span class="p">)</span>
+        <span class="n">mix_columns</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">shift_rows</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+        <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">matrix2bytes</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span> <span class="n">ct</span><span class="p">)</span>
+    <span class="n">candidates1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">**</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hai trường hợp có thể xảy ra cho cặp <span class="math notranslate nohighlight">\((k_1, k_2)\)</span> là <span class="math notranslate nohighlight">\(([1, 0, 0, 1], [124, 99, 99, 124])\)</span> và
+<span class="math notranslate nohighlight">\(([1, 0, 175, 1], [124, 99, 121, 124])\)</span>. Mình chỉ cần xét trường hợp 1 là được.</p>
+<p>Khi nhìn vào hàm <code class="docutils literal notranslate"><span class="pre">final_add</span></code> thì mình biết chắc rằng <code class="docutils literal notranslate"><span class="pre">k[k[k[k[i*2+1]]]</span></code> chắc chắn nằm trong <code class="docutils literal notranslate"><span class="pre">[124,</span> <span class="pre">99]</span></code> nên mình <em>bốc</em> đại <span class="math notranslate nohighlight">\(k_2 = [124, 124, 124, 124]\)</span>, và nó đã thành công (????).</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> mình fix cứng <span class="math notranslate nohighlight">\(k_1\)</span> và <span class="math notranslate nohighlight">\(k_2\)</span> luôn, và decrypt ra toàn bộ flag ban đầu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">split_blocks</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">124</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">124</span><span class="p">]</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="n">bytes2matrix</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="n">final_add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k2</span><span class="p">)</span>
+        <span class="n">final_shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">inv_final_sub</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ROUNDS</span><span class="p">):</span>
+            <span class="n">add_round_key</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span>
+            <span class="n">mix_columns</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">shift_rows</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">inv_sub_bytes</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="n">plaintext</span> <span class="o">+=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">xor</span><span class="p">(</span><span class="n">matrix2bytes</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">key</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">plaintext</span>
+</pre></div>
+</div>
+<p>Flag <code class="docutils literal notranslate"><span class="pre">b'amateursCTF{th1s_1s_wh4t_bad_k3y_sch3dul1ng_d03s_t0_a_p3rson_109bcd1f}\x02\x02</span></code></p>
+<p>Nếu bạn nhìn thấy được điểm sai nào đó trong bài làm của mình dẫn tới <em>tấn công cưỡng ép</em> thì có thể nói cho mình biết. Thực sự thì mình không biết mình đang lag chỗ nào :confused:</p>
+</section>
+</section>
+</section>
+<section id="owo-time-pad">
+<h2>Owo Time Pad<a class="headerlink" href="#owo-time-pad" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">Crypto.Util.strxor</span> <span class="kn">import</span> <span class="n">strxor</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secret.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">keylength</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">gcd</span><span class="p">(</span><span class="n">keylength</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">keylength</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="n">keylength</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="n">plaintext</span> <span class="o">*</span> <span class="n">keylength</span>
+    <span class="n">ciphertext</span> <span class="o">=</span> <span class="n">strxor</span><span class="p">(</span><span class="n">plaintext</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;out.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">g</span><span class="p">:</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ciphertext</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Bài này sẽ random một key có độ dài là số nguyên tố cùng nhau với độ dài của plaintext. Đặt <span class="math notranslate nohighlight">\(l\)</span> là độ dài plaintext và <span class="math notranslate nohighlight">\(n\)</span> là độ dài key. Chương trình tạo key mới bằng cách lặp lại key cũ <span class="math notranslate nohighlight">\(l\)</span> lần, tương tự plaintext mới sẽ là plaintext cũ lặp lại <span class="math notranslate nohighlight">\(n\)</span> lần. Chú ý rằng <span class="math notranslate nohighlight">\(\gcd(l, n) = 1\)</span>, điều này rất quan trọng giải bài này.</p>
+<p>Khi factor độ dài của ciphertext thì mình thấy có hai khả năng xảy ra của độ dài key là 32 hoặc 79. Mình giải với <span class="math notranslate nohighlight">\(n = 79\)</span> (sai thì quay lại làm 32 :v).</p>
+<p>Như một thói quen, để xử lý các bài toán với số lớn mình thường xem xét những trường hợp số nhỏ để xem mối liên hệ giữa chúng.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(l = 5\)</span> và <span class="math notranslate nohighlight">\(n =3\)</span>. Đặt key là <span class="math notranslate nohighlight">\(\mathbf{k} = (k_0, k_1, k_2)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{P} = (p_0, p_1, p_2, p_3, p_4)\)</span>.</p>
+<p>Khi đó ciphertext sẽ được ghép cặp XOR như sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 \\ p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 &amp; p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 &amp; p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 \\ c_0 &amp; c_1 &amp; c_2 &amp; c_3 &amp; c_4 &amp; c_5 &amp; c_6 &amp; c_7 &amp; c_8 &amp; c_9 &amp; c_{10} &amp; c_{11} &amp; c_{12} &amp; c_{13} &amp; c_{14}\end{pmatrix}\end{split}\]</div>
+<p>Nhìn vào <span class="math notranslate nohighlight">\(k_0\)</span>, mình thấy rằng <span class="math notranslate nohighlight">\(k_0\)</span> tác động lần lượt lên <span class="math notranslate nohighlight">\(p_0\)</span>, <span class="math notranslate nohighlight">\(p_3\)</span>, <span class="math notranslate nohighlight">\(p_1\)</span>, <span class="math notranslate nohighlight">\(p_4\)</span> và <span class="math notranslate nohighlight">\(p_2\)</span>, tương ứng với các ciphertext <span class="math notranslate nohighlight">\(c_0\)</span>, <span class="math notranslate nohighlight">\(c_3\)</span>, <span class="math notranslate nohighlight">\(c_6\)</span>, <span class="math notranslate nohighlight">\(c_9\)</span> và <span class="math notranslate nohighlight">\(c_{12}\)</span>. Như vậy mình chỉ cần <em>sắp xếp</em> lại <span class="math notranslate nohighlight">\(p_0\)</span>, <span class="math notranslate nohighlight">\(p_3\)</span>, … về đúng vị trí của nó là được.</p>
+<p>Vì <span class="math notranslate nohighlight">\(\gcd(l, n) = 1\)</span> nên mình nhớ tới một tính chất mà chúng ta hay dùng để chứng minh định lý Wilson hoặc Euler là nếu <span class="math notranslate nohighlight">\(\{ g_1, g_2, \ldots, g_{\phi(n)} \}\)</span> là hệ thặng dư thu gọn modulo <span class="math notranslate nohighlight">\(n\)</span> và <span class="math notranslate nohighlight">\(a\)</span> là số sao cho <span class="math notranslate nohighlight">\(\gcd(a, n) = 1\)</span> thì tập <span class="math notranslate nohighlight">\(\{ a g_1 \bmod n, a g_2 \bmod n, \ldots, a g_{\phi(n)} \bmod n \}\)</span> cũng là hệ thặng dư thu gọn modulo <span class="math notranslate nohighlight">\(n\)</span>. Nói cách khác hai tập hợp <span class="math notranslate nohighlight">\(\{ g_1, g_2, \ldots, g_{\phi(n)} \}\)</span> và <span class="math notranslate nohighlight">\(\{ a g_1 \bmod n, a g_2 \bmod n, \ldots, a g_{\phi(n)} \bmod n \}\)</span> là hoán vị của nhau.</p>
+<p>Mình thử như sau:</p>
+<ul class="simple">
+<li><p>Với <span class="math notranslate nohighlight">\(i = 0\)</span> thì <span class="math notranslate nohighlight">\(0 \cdot 3 = 0 \bmod 5\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(i = 1\)</span> thì <span class="math notranslate nohighlight">\(1 \cdot 3 = 3 \bmod 5\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(i = 2\)</span> thì <span class="math notranslate nohighlight">\(2 \cdot 3 = 1 \bmod 5\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(i = 3\)</span> thì <span class="math notranslate nohighlight">\(3 \cdot 3 = 4 \bmod 5\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(i = 4\)</span> thì <span class="math notranslate nohighlight">\(4 \cdot 3 = 2 \bmod 5\)</span></p></li>
+</ul>
+<p>Nhìn chuỗi <span class="math notranslate nohighlight">\((0, 3, 1, 4, 2)\)</span> quen quen. Đó chính là <span class="math notranslate nohighlight">\(p_0\)</span>, <span class="math notranslate nohighlight">\(p_3\)</span>, <span class="math notranslate nohighlight">\(p_1\)</span>, <span class="math notranslate nohighlight">\(p_4\)</span>, <span class="math notranslate nohighlight">\(p_2\)</span> ở trên.</p>
+<p>Như vậy mình có công thức tổng quát là <span class="math notranslate nohighlight">\(p_{i \cdot 3 \bmod 5} = c_{i \cdot 3}\)</span>. Hay tổng quát hơn <span class="math notranslate nohighlight">\(p_{i \cdot n \bmod l} = c_{i \cdot n}\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, l-1\)</span>.</p>
+<p>Sau đó mình chỉ cần bruteforce 256 trường hợp <span class="math notranslate nohighlight">\(k_0\)</span> nữa. Ở đây mình thấy với <span class="math notranslate nohighlight">\(k_0 = 165\)</span> thì có chuỗi <code class="docutils literal notranslate"><span class="pre">PNG</span></code> (?).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ct</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">ctx</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+
+<span class="c1">#n = 32</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">79</span>
+<span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span> <span class="o">//</span> <span class="n">n</span>
+
+<span class="n">bb</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">bb</span><span class="p">[(</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">ctx</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">]</span>
+
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="o">^</span> <span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bb</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">flag</span><span class="p">[:</span><span class="mi">24</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Như vậy XOR với <span class="math notranslate nohighlight">\(165\)</span> sẽ có flag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flag</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="mi">165</span> <span class="o">^</span> <span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bb</span><span class="p">)[</span><span class="mh">0x1b2</span><span class="p">:</span><span class="mh">0x1f8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>b&#39;amateursCTF{M4yb3_H4v3_b3tt3r_0tP_3ncrYpt10n_n3X7_t1m3_l0L!!_a585b81b}&#39;
+</pre></div>
+</div>
+<p>Okay vậy là xong bài :))))</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ctf\2023"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CTF 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="diceCTF-2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dice CTF 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimalaestic">Minimalaestic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phan-tich-hien-truong">1. Phân tích hiện trường</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-bytes-va-final-sub-bytes">1.1. Sub Bytes và Final Sub Bytes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shift-rows-va-final-shift-rows">1.2. Shift Rows và Final Shift Rows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mix-columns">1.3. Mix Columns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-round-keys">1.4. Add Round Keys</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#key-schedule">1.5. Key Schedule</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truy-tim-dau-moi">2. Truy tìm đầu mối</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#noi-tinh-yeu-cryptanalysis-bat-dau">2.1. Nơi tình yêu ~~cryptanalysis~~ bắt đầu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#man-in-the-middle">2.2. Man-In-The-Middle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sua-chua-loi-lam">2.3. Sửa chữa lỗi lầm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owo-time-pad">Owo Time Pad</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
