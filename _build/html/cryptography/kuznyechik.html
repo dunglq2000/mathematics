@@ -218,13 +218,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">1.5. Tác động nhóm</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">2. Số học</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">3. Quan hệ hai ngôi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">4. Phân hoạch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">2. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">6. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">6.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
@@ -518,7 +519,7 @@ document.write(`
 là hệ mã Kuznyechik.</p>
 <p>Mã khối Kuznyechik biến đổi trên khối 128 bit, độ dài khóa là 256 bit, biến đổi trên 9 vòng. Kuznyechik sử dụng mô hình SPN tương tự như AES, trở thành chuẩn mã hóa của Nga và được định nghĩa trong GOST R 34.12-2015.</p>
 <p>Một điểm đặc biệt là quá trình biến đổi qua các vòng sử dụng mạng SPN, tuy nhiên thuật toán sinh khóa con cho các vòng sử dụng mô hình Feistel.</p>
-<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">11</a>]</span>.</p>
+<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">13</a>]</span>.</p>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -542,7 +543,7 @@ là hệ mã Kuznyechik.</p>
 \[a = a_0 \Vert a_1 \Vert \ldots \Vert a_{14} \Vert a_{15}\]</div>
 <p>với ký tự <span class="math notranslate nohighlight">\(\Vert\)</span> chỉ việc nối các chuỗi bit (concatenate). Tương tự <span class="math notranslate nohighlight">\(k_i\)</span> cũng được chia thành 16 cụm 8 bit. Khi đó,</p>
 <div class="math notranslate nohighlight" id="equation-kuz-1">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-kuz-1" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-kuz-1" title="Link to this equation">#</a></span>\[\begin{equation}
     X(k_i, a) = k_{i, 0} \oplus a_0 \Vert 
     k_{i, 1} \oplus a_1 \Vert \ldots \Vert k_{i, 14} \oplus a_{14}
     \Vert k_{i, 15} \oplus a_{15}
@@ -554,7 +555,7 @@ là hệ mã Kuznyechik.</p>
 <p>Hàm <span class="math notranslate nohighlight">\(S: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
 <p>Block đầu vào tiếp tục được chia thành 16 cụm 8 bit. Mỗi cụm sẽ đi qua một bảng tra cứu SBox (gọi là bảng <span class="math notranslate nohighlight">\(\pi\)</span>). Sau đó ta nối các kết quả với nhau.</p>
 <div class="math notranslate nohighlight" id="equation-kuz-2">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-kuz-2" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-kuz-2" title="Link to this equation">#</a></span>\[\begin{equation}
     S(a) = \pi(a_0) \Vert \pi(a_1) \Vert \ldots \Vert \pi(a_{14})
     \Vert \pi(a_{15})
 \end{equation}\]</div>
@@ -566,7 +567,7 @@ là hệ mã Kuznyechik.</p>
 <p>Block đầu vào vẫn được chia thành 16 cụm 8 bit. Tuy nhiên ở đây mỗi cụm 8 bit biểu diễn một đa thức trong trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> với đa thức tối giản là <span class="math notranslate nohighlight">\(g(x) = x^8 + x^7 + x^6 + x + 1\)</span>. Những phép tính cộng và nhân sau đây cũng được thực hiện trên
 trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> này.</p>
 <div class="math notranslate nohighlight" id="equation-kuz-3">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-kuz-3" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-kuz-3" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
     \begin{split}
     \lambda(a) &amp; = 148 a_{15} + 32 a_{14} + 133 a_{13} + 16 a_{12} \\
             &amp; + 194 a_{11} + 192 a_{10} + a_9 + 251 a_8 \\
@@ -593,7 +594,7 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
 \[L(a) = \underbrace{\Lambda(\ldots\Lambda(a)\ldots)}_{\text{16 lần}}\]</div>
 <p>Như vậy, phép biến đổi trên vòng thứ <span class="math notranslate nohighlight">\(i\)</span> với khóa con <span class="math notranslate nohighlight">\(k_i\)</span> là</p>
 <div class="math notranslate nohighlight" id="equation-kuz-4">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-kuz-4" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-kuz-4" title="Link to this equation">#</a></span>\[\begin{equation}
     R(k_i, a) = L(S(X(a)))
 \end{equation}\]</div>
 <p>với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 8\)</span>.</p>
@@ -605,7 +606,7 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
 <p>Để sinh khóa con cho 10 lần XOR, thuật toán Kuznyechik dùng mô hình Feistel. Đầu tiên ta định nghĩa hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span>. Với <span class="math notranslate nohighlight">\(c\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128}\)</span> và <span class="math notranslate nohighlight">\(a = a_0 \Vert a_1\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span>. Hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span> biến phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128} \times \mathbb{F}_2^{256}\)</span> thành phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span> bằng đẳng thức</p>
 <div class="math notranslate nohighlight">
 \[F(c, a) = a_1 \Vert a_0 \oplus R(c, a_1)\]</div>
-<p>với hàm <span class="math notranslate nohighlight">\(R\)</span> được định nghĩa ở phương trình <a class="reference internal" href="#equation-kuz-4">(2.7)</a>.</p>
+<p>với hàm <span class="math notranslate nohighlight">\(R\)</span> được định nghĩa ở phương trình <a class="reference internal" href="#equation-kuz-4">(2.5)</a>.</p>
 <figure class="align-default" id="kuzfic-2">
 <img alt="../_images/funcF.jpg" src="../_images/funcF.jpg" />
 <figcaption>

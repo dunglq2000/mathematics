@@ -218,13 +218,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">1.5. Tác động nhóm</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">2. Số học</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">3. Quan hệ hai ngôi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">4. Phân hoạch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">5. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">5.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">5.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">5.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">2. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">6. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">6.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
@@ -609,7 +610,7 @@ document.write(`
 \end{equation}\]</div>
 <p>Suy ra</p>
 <div class="math notranslate nohighlight" id="equation-diff-eq1">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-diff-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-diff-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
     \left(\frac{dy}{dx}\right)^2 = \frac{2 r}{y_0 - y} - 1
 \end{equation}\]</div>
 <p>Tới đây ta thấy rằng bậc của <span class="math notranslate nohighlight">\(dy\)</span> và <span class="math notranslate nohighlight">\(dx\)</span> ở vế trái là giống nhau, trong khi vế phải chỉ có <span class="math notranslate nohighlight">\(y\)</span> mà không có <span class="math notranslate nohighlight">\(x\)</span>. Do đó “bắt chước” cách đổi biến của đường tròn, đặt</p>
@@ -628,7 +629,7 @@ document.write(`
     dx = a - b \sin \theta \, d \theta \\ dy = d \cos \theta \, d \theta
 \end{cases}
 \end{equation*}\end{split}\]</div>
-<p>Thay vào phương trình <a class="reference internal" href="#equation-diff-eq1">(3.1)</a> ta được</p>
+<p>Thay vào phương trình <a class="reference internal" href="#equation-diff-eq1">(3.4)</a> ta được</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     \frac{d^2 \cos^2 \theta}{(a - b \sin \theta)^2} = \frac{2 r}{y_0 - c - d \sin \theta} - 1 = \frac{2 r - y_0 + c + d \sin \theta}{y_0 - c - d \sin \theta}
