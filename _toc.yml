@@ -17,6 +17,13 @@ parts:
     numbered: true
     chapters:
     - file: linalg/intro.md
+  - caption: Giải tích
+    numbered: true
+    chapters:
+    - file: calculus/calculus.md
+      sections:
+        - file: calculus/series.md
+        - file: calculus/partial-derivative.md
   - caption: Xác suất
     numbered: true
     chapters:
