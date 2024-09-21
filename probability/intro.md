@@ -327,7 +327,7 @@ $$\begin{equation*}
 \end{equation*}$$
 ````
 
-Ở đây, nếu chúng ta thêm điều kiện cho đề bài, ví dụ như bạn được chọn ngẫu nhiên biết chơi bóng chuyền *với điều kiện bạn đó là nữ* thì sao? Đề bài lúc này tương đương việc tính $P(B \vert A_2)$.
+Ở đây, nếu chúng ta đảo điều kiện đề bài, ví dụ như bạn được chọn ngẫu nhiên là nữ *với điều kiện bạn đó biết chơi bóng chuyền* thì sao? Đề bài lúc này tương đương việc tính $P(A_2 \vert B)$.
 
 Để trả lời câu hỏi này chúng ta sử dụng công thức Bayes.
 
