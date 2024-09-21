@@ -150,6 +150,34 @@ Toàn ánh
 Song ánh
 ```
 
+````{prf:definition} Ánh xạ ngược
+Ánh xạ ngược của ánh xạ của $\phi: X \to Y$, thường được ký hiệu là $\phi^{-1}$ là ánh xạ biến phần tử từ tập $Y$ vào tập $X$, tức là $\phi^{-1}: Y \to X$, $y \to x$.
+````
+
+Tuy nhiên cần lưu ý khi này tập xác định đã trở thành $Y$ nên phải giới hạn lại các phần tử làm giá trị $\phi^{-1}(y)$ xác định.
+
+````{prf:theorem}
+Xét hàm số $f: \mathbb{R} \to \mathbb{R}$, $x \to y=f(x)=x^2$.
+
+Lúc này, $y \geqslant 0$ với mọi $x$ và mình có thể biểu diễn hàm ngược là $x=\sqrt{y}$. Lúc này ánh xạ ngược sẽ trở thành $f^{-1}: \mathbb{R}^{+} \to \mathbb{R}^{+}$
+````
+
+````{prf:definition} Ánh xạ hợp
+Xét hai ánh xạ $f: X \to Y$, $f(x) = y$ và $g: Y \to Z$, $z = g(y)$. Ánh xạ hợp của $g$ và $f$ được ký hiệu là $g \circ f: X \to Z$, $z = g(y) = g(f(x))$.
+````
+
+````{prf:definition} Tích Descartes
+Tích Descartes của hai tập hợp $A = \{ a_1, a_2, \cdots, a_n \}$ và $B = \{ b_1, b_2, \cdots, b_m \}$ là tập hợp $S A \times B = \{ (a_i, b_j) : a_i \in A, b_j \in B\}$. Ví dụ với $A = \{1, 2, 3\}$ và $B = \{4, 5\}$ thì tích Descartes là 
+
+$$S = A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}.$$
+````
+
+Với nhiều tập hợp thì định nghĩa tương tự.
+
+````{prf:example}
+Xét ba tập nguồn $X$, $Y$, $Z$, và tập đích là $T$, ánh xạ $\phi : X \times Y \times Z \to T$, với $\phi(x, y, z) \to t$ là ánh xạ ba biến, tập nguồn của ánh xạ khi này là tích Descartes $X \times Y \times Z$.
+````
+
 ### Hàm số
 
 Khi hai tập nguồn và đích của ánh xạ là hai tập hợp số, ta có hàm số.

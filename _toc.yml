@@ -12,6 +12,7 @@ parts:
     - file: algebra/polynomial.md
       sections:
         - file: algebra/lagrange-interpolation.md
+    - file: algebra/infinity
   - caption: Đại số tuyến tính
     numbered: true
     chapters:
