@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.6. Đạo hàm một số hàm nhiều biến &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/partial-derivative';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Xác suất thống kê" href="../probability/intro.html" />
+    <link rel="prev" title="1.5. Chuỗi số" href="series.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../linalg/intro.html">1. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="calculus.html">1. Giải tích</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="series.html">1.5. Chuỗi số</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">1. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">1. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">1.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">1.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">1.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">1.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">2. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">6. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">6.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">1. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">2. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">3. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">1. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">2. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">2.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">2.2. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">3. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">4. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">5. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">6. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">7. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">8. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">1. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">1.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fcalculus/partial-derivative.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/calculus/partial-derivative.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Đạo hàm một số hàm nhiều biến</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so-cho-gia-tri-la-so-vo-huong">1.6.1. Hàm số cho giá trị là số vô hướng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so-cho-gia-tri-la-vector">1.6.2. Hàm số cho giá trị là vector</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dao-ham-mot-so-ham-nhieu-bien">
+<h1><span class="section-number">1.6. </span>Đạo hàm một số hàm nhiều biến<a class="headerlink" href="#dao-ham-mot-so-ham-nhieu-bien" title="Link to this heading">#</a></h1>
+<section id="ham-so-cho-gia-tri-la-so-vo-huong">
+<h2><span class="section-number">1.6.1. </span>Hàm số cho giá trị là số vô hướng<a class="headerlink" href="#ham-so-cho-gia-tri-la-so-vo-huong" title="Link to this heading">#</a></h2>
+<p>Giả sử ta có vector hàng <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, \ldots, x_n)\)</span> và hàm số <span class="math notranslate nohighlight">\(f\)</span> có biến là vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Nói cách khác là <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = f(x_1, \ldots, x_n)\)</span>.</p>
+<p>Khi đó đạo hàm riêng của hàm <span class="math notranslate nohighlight">\(f\)</span> theo vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> cũng là một vector (nếu <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là vector hàng thì đạo hàm riêng cũng là vector hàng và ngược lại) và được ký hiệu</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \nabla f(\mathbf{x}) = \begin{pmatrix}
+        \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n}
+    \end{pmatrix}
+\end{equation*}\]</div>
+<p>Ví dụ, đối với hàm tuyến tính</p>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{x}) = a_1 x_1 + \ldots + a_n x_n = \mathbf{a} \cdot \mathbf{x}^\top\]</div>
+<p>thì ta thấy rằng <span class="math notranslate nohighlight">\(\dfrac{\partial f}{\partial x_i} = a_i\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\nabla f (\mathbf{x}) = \begin{pmatrix}
+    \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n}
+\end{pmatrix} = (a_1, \ldots, a_n) = \mathbf{a}\]</div>
+<p>Ta thấy rằng <span class="math notranslate nohighlight">\(f(\mathbf{x}) = \mathbf{a} \cdot \mathbf{x}^\top = \mathbf{x} \cdot \mathbf{a}^\top\)</span>. Do đó</p>
+<div class="math notranslate nohighlight">
+\[\nabla (\mathbf{a} \cdot \mathbf{x}^\top) = \nabla (\mathbf{x} \cdot \mathbf{a}^\top) = \mathbf{a}\]</div>
+<p>Đạo hàm riêng cấp hai được cho bởi ma trận được gọi là ma trận Hessian.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \nabla^2 f(\mathbf{x}) = \begin{pmatrix}
+        \dfrac{\partial^2 f}{\partial x_1^2} &amp; \dfrac{\partial^2 f}{\partial x_1 x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_1 x_n} \\ \dfrac{\partial^2 f}{\partial x_2 x_1} &amp; \dfrac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_2 x_n} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ \dfrac{\partial^2 f}{\partial x_n x_1} &amp; \dfrac{\partial^2 f}{\partial x_n x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_n^2}
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Theo tính chất của đạo hàm riêng cấp hai có thể thấy ma trận trên là ma trận đối xứng.</p>
+<p>Nếu đầu vào là một ma trận, hay <span class="math notranslate nohighlight">\(f: \mathbb{R}^{n \times m} \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{X})\)</span> thì ta làm tương tự</p>
+<p>Giả sử</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{X} = \begin{pmatrix}
+    x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1m} \\ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2m} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nm}
+\end{pmatrix}\end{split}\]</div>
+<p>Khi đó đạo hàm của hàm <span class="math notranslate nohighlight">\(f\)</span> theo ma trận <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \nabla f(\mathbf{X}) = \begin{pmatrix}
+        \dfrac{\partial f}{\partial x_{11}} &amp; \dfrac{\partial f}{\partial x_{12}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{1m}} \\ \dfrac{\partial f}{\partial x_{21}} &amp; \dfrac{\partial f}{\partial x_{22}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{2m}} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ \dfrac{\partial f}{\partial x_{n1}} &amp; \dfrac{\partial f}{\partial x_{n2}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{nm}}
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Như vậy đạo hàm theo ma trận cũng là ma trận cùng cỡ với ma trận đầu vào.</p>
+</section>
+<section id="ham-so-cho-gia-tri-la-vector">
+<h2><span class="section-number">1.6.2. </span>Hàm số cho giá trị là vector<a class="headerlink" href="#ham-so-cho-gia-tri-la-vector" title="Link to this heading">#</a></h2>
+<p>Xét hàm vector</p>
+<div class="math notranslate nohighlight">
+\[F(\mathbf{x}) = (f_1(\mathbf{x}), f_2(\mathbf{x}), \ldots, f_m(\mathbf{x}))\]</div>
+<p>với <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n\)</span> và các hàm <span class="math notranslate nohighlight">\(f_i (\mathbf{x})\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Khi đó hàm vector <span class="math notranslate nohighlight">\(F\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(f_i\)</span> là các hàm tuyến tính như trên thì hàm <span class="math notranslate nohighlight">\(F\)</span> là một ánh xạ tuyến tính, hay tương đương với phép nhân ma trận <span class="math notranslate nohighlight">\(F(\mathbf{x}) = \mathbf{x} \cdot \mathbf{A}\)</span>. Ở đây <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là vector hàng, còn <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> là ma trận <span class="math notranslate nohighlight">\(n \times m\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} = \begin{pmatrix}
+    a_{11} &amp; a_{21} &amp; \cdots &amp; a_{m1} \\ a_{12} &amp; a_{22} &amp; \cdots &amp; a_{m2} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ a_{1n} &amp; a_{2n} &amp; \cdots &amp; a_{mn}
+\end{pmatrix}\end{split}\]</div>
+<p>Ở đây, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = f_i(x_1, x_2, \ldots, x_n) = a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n\)</span>. Nếu đặt <span class="math notranslate nohighlight">\(\mathbf{a}_i = (a_{i1}, a_{i2}, \ldots, a_{in})\)</span> thì ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> có các cột là <span class="math notranslate nohighlight">\(\mathbf{a}_i^\top\)</span>. Nói cách khác</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A} = \begin{pmatrix}
+    \mathbf{a}_1^\top &amp; \mathbf{a}_2^\top &amp; \cdots &amp; \mathbf{a}_m^\top
+\end{pmatrix}\]</div>
+<p>Nếu ta xét từng cột của ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> thì hoàn toàn giống trường hợp trên. Giả sử với cột đầu tiên (ứng với <span class="math notranslate nohighlight">\(f_1\)</span>) ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f_1 (\mathbf{x}) = \begin{pmatrix}
+    x_1 &amp; x_2 &amp; \cdots &amp; x_n
+\end{pmatrix} \cdot \begin{pmatrix}
+    a_{11} \\ a_{12} \\ \vdots \\ a_{1n}\end{pmatrix} = \mathbf{x} \cdot \mathbf{a}_1^\top\end{split}\]</div>
+<p>Đạo hàm của <span class="math notranslate nohighlight">\(f_1\)</span> theo vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\nabla f_1 (\mathbf{x}) = \begin{pmatrix}
+    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} 
+\end{pmatrix} = \mathbf{a_1}\]</div>
+<p>Xếp các hàm <span class="math notranslate nohighlight">\(f_i\)</span> từ trên xuống dưới, ta có được đạo hàm của hàm <span class="math notranslate nohighlight">\(F\)</span> theo vector <span class="math notranslate nohighlight">\(x\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \nabla F(\mathbf{x}) = \begin{pmatrix}
+        \nabla f_1 (\mathbf{x}) \\ \nabla f_2 (\mathbf{x}) \\ \vdots \\ \nabla f_m(\mathbf{x})
+    \end{pmatrix}  = \begin{pmatrix}
+    \mathbf{a}_1 \\ \mathbf{a}_2 \\ \vdots \\ \mathbf{a}_m
+    \end{pmatrix} = \mathbf{A}^\top
+\end{equation*}\end{split}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="series.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Chuỗi số</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../probability/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Xác suất thống kê</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so-cho-gia-tri-la-so-vo-huong">1.6.1. Hàm số cho giá trị là số vô hướng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-so-cho-gia-tri-la-vector">1.6.2. Hàm số cho giá trị là vector</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
