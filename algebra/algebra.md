@@ -156,7 +156,7 @@ Song ánh
 
 Tuy nhiên cần lưu ý khi này tập xác định đã trở thành $Y$ nên phải giới hạn lại các phần tử làm giá trị $\phi^{-1}(y)$ xác định.
 
-````{prf:theorem}
+````{prf:example}
 Xét hàm số $f: \mathbb{R} \to \mathbb{R}$, $x \to y=f(x)=x^2$.
 
 Lúc này, $y \geqslant 0$ với mọi $x$ và mình có thể biểu diễn hàm ngược là $x=\sqrt{y}$. Lúc này ánh xạ ngược sẽ trở thành $f^{-1}: \mathbb{R}^{+} \to \mathbb{R}^{+}$
@@ -167,7 +167,11 @@ Xét hai ánh xạ $f: X \to Y$, $f(x) = y$ và $g: Y \to Z$, $z = g(y)$. Ánh x
 ````
 
 ````{prf:definition} Tích Descartes
-Tích Descartes của hai tập hợp $A = \{ a_1, a_2, \cdots, a_n \}$ và $B = \{ b_1, b_2, \cdots, b_m \}$ là tập hợp $S A \times B = \{ (a_i, b_j) : a_i \in A, b_j \in B\}$. Ví dụ với $A = \{1, 2, 3\}$ và $B = \{4, 5\}$ thì tích Descartes là 
+Tích Descartes của hai tập hợp $A = \{ a_1, a_2, \cdots, a_n \}$ và $B = \{ b_1, b_2, \cdots, b_m \}$ là tập hợp $S A \times B = \{ (a_i, b_j) : a_i \in A, b_j \in B\}$.
+````
+
+````{prf:example}
+Với $A = \{1, 2, 3\}$ và $B = \{4, 5\}$ thì tích Descartes là 
 
 $$S = A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}.$$
 ````

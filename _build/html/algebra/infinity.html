@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -555,7 +555,7 @@ document.write(`
 <blockquote>
 <div><p>Khoảng <span class="math notranslate nohighlight">\((0, 1)\)</span> là tương đương với tập <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 </div></blockquote>
-<p>Chúng ta có thể xây dựng một song ánh từ <span class="math notranslate nohighlight">\((0, 1)\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, ví dụ <span class="math notranslate nohighlight">\(f(x) = \dfrac{e^x}{e^x+1}\)</span>.</p>
+<p>Chúng ta có thể xây dựng một song ánh từ <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> tới <span class="math notranslate nohighlight">\((0, 1)\)</span>, ví dụ <span class="math notranslate nohighlight">\(f(x) = \dfrac{e^x}{e^x+1}\)</span>.</p>
 <p><strong>Phương án 1:</strong> Phương pháp chéo hóa (diagonalization).</p>
 <p>Xét ánh xạ</p>
 <div class="math notranslate nohighlight">
@@ -565,7 +565,7 @@ document.write(`
     &amp; 2 \to 0,a_{2, 0}a_{2, 1}a_{2, 2} \cdots \\
     &amp; \cdots
 \end{align*}\end{split}\]</div>
-<p>Ta chứng minh ánh xạ này không phải toàn ánh. Xét số <span class="math notranslate nohighlight">\(y = 0.b_0 b_1 b_2 \cdots\)</span>, với <span class="math notranslate nohighlight">\(b_i \neq a_{i, i}\)</span> với mọi <span class="math notranslate nohighlight">\(i\)</span>, tức là trên đường chéo của các số trên ta chọn số <span class="math notranslate nohighlight">\(b_i\)</span> khác với số trên đường chéo. Như vậy số <span class="math notranslate nohighlight">\(y\)</span> này có chữ số ở vị trí 0 khác <span class="math notranslate nohighlight">\(f(0)\)</span>, chữ số ở vị trí 1 khác <span class="math notranslate nohighlight">\(f(1)\)</span>, vân vân, nên không tìm được số <span class="math notranslate nohighlight">\(n\)</span> nào mà <span class="math notranslate nohighlight">\(f(n) = y\)</span>. Suy ra <span class="math notranslate nohighlight">\(f\)</span> không phải toàn ánh và từ đó không phải song ánh.</p>
+<p>Ta chứng minh ánh xạ này không phải toàn ánh. Xét số <span class="math notranslate nohighlight">\(y = 0,b_0 b_1 b_2 \cdots\)</span>, với <span class="math notranslate nohighlight">\(b_i \neq a_{i, i}\)</span> với mọi <span class="math notranslate nohighlight">\(i\)</span>, tức là trên đường chéo của các số trên ta chọn số <span class="math notranslate nohighlight">\(b_i\)</span> khác với số trên đường chéo. Như vậy số <span class="math notranslate nohighlight">\(y\)</span> này có chữ số ở vị trí 0 khác <span class="math notranslate nohighlight">\(f(0)\)</span>, chữ số ở vị trí 1 khác <span class="math notranslate nohighlight">\(f(1)\)</span>, vân vân, nên không tìm được số <span class="math notranslate nohighlight">\(n\)</span> nào mà <span class="math notranslate nohighlight">\(f(n) = y\)</span>. Suy ra <span class="math notranslate nohighlight">\(f\)</span> không phải toàn ánh và từ đó không phải song ánh.</p>
 <p><strong>Phương án 2.</strong> Phương pháp dãy các đoạn thẳng đóng bị chặn lồng vào nhau (sequence of closed bounded nested).</p>
 <p>Giả sử đoạn <span class="math notranslate nohighlight">\((0, 1)\)</span> đếm được. Khi đó ta có thể liệt kê các phần tử của đoạn là <span class="math notranslate nohighlight">\(I = \{ x_1, x_2, \ldots \}\)</span>.</p>
 <p>Từ tập <span class="math notranslate nohighlight">\(I\)</span> ta lấy ra một đoạn con <span class="math notranslate nohighlight">\(I_1\)</span> sao cho <span class="math notranslate nohighlight">\(x_1 \not\in I_1\)</span>.</p>

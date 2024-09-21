@@ -56,7 +56,7 @@ Cantor đưa ra hai phương pháp chứng minh và cả hai đều độc đáo
 
 > Khoảng $(0, 1)$ là tương đương với tập $\mathbb{R}$.
 
-Chúng ta có thể xây dựng một song ánh từ $(0, 1)$ tới $\mathbb{R}$, ví dụ $f(x) = \dfrac{e^x}{e^x+1}$.
+Chúng ta có thể xây dựng một song ánh từ $\mathbb{R}$ tới $(0, 1)$, ví dụ $f(x) = \dfrac{e^x}{e^x+1}$.
 
 **Phương án 1:** Phương pháp chéo hóa (diagonalization).
 
@@ -69,7 +69,7 @@ $$\begin{align*}
     & \cdots
 \end{align*}$$
 
-Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $y = 0.b_0 b_1 b_2 \cdots$, với $b_i \neq a_{i, i}$ với mọi $i$, tức là trên đường chéo của các số trên ta chọn số $b_i$ khác với số trên đường chéo. Như vậy số $y$ này có chữ số ở vị trí 0 khác $f(0)$, chữ số ở vị trí 1 khác $f(1)$, vân vân, nên không tìm được số $n$ nào mà $f(n) = y$. Suy ra $f$ không phải toàn ánh và từ đó không phải song ánh.
+Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $y = 0,b_0 b_1 b_2 \cdots$, với $b_i \neq a_{i, i}$ với mọi $i$, tức là trên đường chéo của các số trên ta chọn số $b_i$ khác với số trên đường chéo. Như vậy số $y$ này có chữ số ở vị trí 0 khác $f(0)$, chữ số ở vị trí 1 khác $f(1)$, vân vân, nên không tìm được số $n$ nào mà $f(n) = y$. Suy ra $f$ không phải toàn ánh và từ đó không phải song ánh.
 
 **Phương án 2.** Phương pháp dãy các đoạn thẳng đóng bị chặn lồng vào nhau (sequence of closed bounded nested).
 
