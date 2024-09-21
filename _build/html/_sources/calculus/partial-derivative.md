@@ -96,9 +96,3 @@ $$\begin{equation*}
     \mathbf{a}_1 \\ \mathbf{a}_2 \\ \vdots \\ \mathbf{a}_m
     \end{pmatrix} = \mathbf{A}^\top
 \end{equation*}$$
-
-### Hàm bậc hai
-
-Trong Machine Learning chúng ta sẽ gặp dạng toán sử dụng Linear Regression. Khi đó hàm regression là một hàm theo vector $\mathbf{w}$ có dạng
-
-$$f(\mathbf{w}) = f (w_0, w_1, \ldots, w_n) = w_0 + w_1 x_1 + \ldots + w_n x_n$$
