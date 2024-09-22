@@ -122,7 +122,9 @@ Ký hiệu đạo hàm của $f$ tại $x_0$ là $f'(x_0)$.
 ````{prf:example}
 Xét hàm số $f(x) = x^2 + 1$ trên $\mathbb{R}$. Tìm đạo hàm tại $x_0 \in \mathbb{R}$.
 
-Ta có $f(x)-f(x_0) = x^2 + 1 - (x_0^2 + 1) = (x - x_0) (x + x_0)$.
+Ta có 
+
+$$f(x)-f(x_0) = x^2 + 1 - (x_0^2 + 1) = (x - x_0) (x + x_0).$$
 
 Khi đó $\dfrac{f(x)-f(x_0)}{x-x_0} = x + x_0$ nên ta có $\displaystyle{\lim_{x \to x_0} (x + x_0) = 2 x_0}$.
 ````

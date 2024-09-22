@@ -46,7 +46,7 @@ Từ đây tập hợp vô hạn có thể chia ra **đếm được** (countabl
 ### Định lý về $\mathbb{R}$
 
 ````{prf:theorem}
-Tập hợp số thực $$\mathbb{R}$$ là tập không đếm được
+Tập hợp số thực $\mathbb{R}$ là tập không đếm được
 ````
 
 ```{admonition} **Chứng minh**
@@ -85,5 +85,5 @@ $$ \cdots \subset I_n \subset \cdots \subset I_2 \subset I_1 \subset I$$
 
 với $x_n \not\in I_n$ với mọi $n \in \mathbb{N}$. 
 
-Theo định lý về các đoạn thẳng đóng bị chặn lồng vào nhau thì giao của chúng không rỗng, tức là tồn tại số $x$ thuộc giao giao của các tập $I_1, \ldots, I_n$. Phần tử $x \in I_n$ với mọi $n$. Do $x_1 \not\in I_n$ và $x \in I_n$ nên $x \neq x_n$ với mọi $n$, tức là không nằm trong tập $I$. Điều này mâu thuẫn với giả sử đoạn $(0, 1)$ đếm được. Suy ra đoạn $(0, 1)$ là tập không đếm được.
+Theo định lý về các đoạn thẳng đóng bị chặn lồng vào nhau thì giao của chúng không rỗng, tức là tồn tại số $x$ thuộc giao giao của các tập $I_1, \ldots, I_n$. Phần tử $x \in I_n$ với mọi $n$. Do $x_n \not\in I_n$ và $x \in I_n$ nên $x \neq x_n$ với mọi $n$, tức là không nằm trong tập $I$. Điều này mâu thuẫn với giả sử đoạn $(0, 1)$ đếm được. Suy ra đoạn $(0, 1)$ là tập không đếm được.
 ```
