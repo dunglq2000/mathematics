@@ -33,7 +33,7 @@ Nếu chuỗi số $\displaystyle{\sum_{n=1}^\infty a_i}$ hội tụ thì $\disp
 
 ```{admonition} **Chứng minh**
 :class: danger, dropdown
-Theo tiêu chuẩn Cauchy, với mọi $\varepsilon > 0$, do chuỗi hội tụ nên tồn tại $N \in \mathbb{N}$ sao cho với mọi $n \geqslant m \geqslant N$ ta có \[ \Bigg\lvert \sum_{i=m}^{n} a_i \Bigg\rvert < \varepsilon \]
+Theo tiêu chuẩn Cauchy, với mọi $\varepsilon > 0$, do chuỗi hội tụ nên tồn tại $N \in \mathbb{N}$ sao cho với mọi $n \geqslant m \geqslant N$ ta có $\Bigg\lvert \sum\limits_{i=m}^{n} a_i \Bigg\rvert < \varepsilon$.
 
 Nếu ta chọn $m = n$ thì điều kiện trở thành với mọi $\varepsilon > 0$, tồn tại $N \in \mathbb{N}$ sao cho với mọi $n \geqslant N$ ta có $\lvert a_n \rvert < \varepsilon$. Nói cách khác $\displaystyle{\lim_{n \to \infty} a_n = 0}$ (định nghĩa giới hạn dãy số).
 ```
