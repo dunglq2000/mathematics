@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Đại số boolean &#8212; Math Book</title>
+    <title>7. Đại số boolean &#8212; Math Book</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.1. Hàm boolean" href="boolean-function.html" />
-    <link rel="prev" title="5. Phân hoạch" href="partition.html" />
+    <link rel="next" title="7.1. Hàm boolean" href="boolean-function.html" />
+    <link rel="prev" title="6. Đại cương tổ hợp" href="combinatoric.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,10 +222,11 @@
 <li class="toctree-l1"><a class="reference internal" href="number-theory.html">3. Số học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary-relation.html">4. Quan hệ hai ngôi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition.html">5. Phân hoạch</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">6. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">6.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatoric.html">6. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">7. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">7.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-feedback-shift-register.html">7.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
@@ -497,7 +498,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dai-so-boolean">
-<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">6. </span>Đại số boolean</a><a class="headerlink" href="#dai-so-boolean" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">7. </span>Đại số boolean</a><a class="headerlink" href="#dai-so-boolean" title="Link to this heading">#</a></h1>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -541,12 +542,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="partition.html"
+       href="combinatoric.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Phân hoạch</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Đại cương tổ hợp</p>
       </div>
     </a>
     <a class="right-next"
@@ -554,7 +555,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.1. </span>Hàm boolean</p>
+        <p class="prev-next-title"><span class="section-number">7.1. </span>Hàm boolean</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

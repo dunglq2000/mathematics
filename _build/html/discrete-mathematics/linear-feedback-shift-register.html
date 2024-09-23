@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6.3. Linear Feedback Shift Register &#8212; Math Book</title>
+    <title>7.3. Linear Feedback Shift Register &#8212; Math Book</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Phép biến hình" href="../geometry/transformation.html" />
-    <link rel="prev" title="6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance" href="walsh-hadamard-spectre.html" />
+    <link rel="prev" title="7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance" href="walsh-hadamard-spectre.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,10 +222,11 @@
 <li class="toctree-l1"><a class="reference internal" href="number-theory.html">3. Số học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary-relation.html">4. Quan hệ hai ngôi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition.html">5. Phân hoạch</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">6. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">6.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatoric.html">6. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">7. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">7.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
@@ -494,8 +495,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.1. Linear Feedback Shift Register</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-berlekamp-massey">6.3.2. Thuật toán Berlekamp-Massey</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.1. Linear Feedback Shift Register</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-berlekamp-massey">7.3.2. Thuật toán Berlekamp-Massey</a></li>
 </ul>
             </nav>
         </div>
@@ -508,7 +509,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="linear-feedback-shift-register">
-<h1><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">6.3. </span>Linear Feedback Shift Register</a><a class="headerlink" href="#linear-feedback-shift-register" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">7.3. </span>Linear Feedback Shift Register</a><a class="headerlink" href="#linear-feedback-shift-register" title="Link to this heading">#</a></h1>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -522,7 +523,7 @@ document.write(`
 </nav>
 <p>Linear Feedback Shift Register (LFSR) là một ứng dụng quan trọng của hàm boolean để sinh ra một chuỗi các giá trị (giả ngẫu nhiên, pseudorandom).</p>
 <section id="id1">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">6.3.1. </span>Linear Feedback Shift Register</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">7.3.1. </span>Linear Feedback Shift Register</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_0, x_1, \ldots, x_{n-1})\)</span>. Khi đó với các giá trị (bit) khởi tạo <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(x_1\)</span>, …, <span class="math notranslate nohighlight">\(x_{n-1}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>, ta có thể sinh ra bit ở các vị trí tiếp theo</p>
 <div class="math notranslate nohighlight">
 \[x_{n} = f(x_0, x_1, \ldots, x_{n-1})\]</div>
@@ -532,11 +533,11 @@ document.write(`
 \[\begin{equation}
 	x_{n+i} = f(x_i, x_{i+1}, \ldots, x_{i+n-1})
 \end{equation}\]</div>
-<p>Theo hình sau (<a class="reference internal" href="#lfsr-im1"><span class="std std-numref">Fig. 6.4</span></a>), kết quả của hàm <span class="math notranslate nohighlight">\(f\)</span> sẽ được nối vào sau của dãy bit. Theo đó dãy bit sẽ luôn có dạng <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(x_1\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>, …</p>
+<p>Theo hình sau (<a class="reference internal" href="#lfsr-im1"><span class="std std-numref">Fig. 7.4</span></a>), kết quả của hàm <span class="math notranslate nohighlight">\(f\)</span> sẽ được nối vào sau của dãy bit. Theo đó dãy bit sẽ luôn có dạng <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(x_1\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>, …</p>
 <figure class="align-default" id="lfsr-im1">
 <img alt="../_images/lfsr-1.jpg" src="../_images/lfsr-1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Feedback Shift Register</span><a class="headerlink" href="#lfsr-im1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.4 </span><span class="caption-text">Feedback Shift Register</span><a class="headerlink" href="#lfsr-im1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Thông qua hàm <span class="math notranslate nohighlight">\(f\)</span>, các vector trong <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> sẽ chuyển trạng thái lẫn nhau theo công thức</p>
@@ -545,7 +546,7 @@ document.write(`
 	(x_{n-1}, x_{n-2}, \ldots, x_1, x_0) \to (x_n, x_{n-1}, \ldots, x_2, x_1)
 \end{equation}\]</div>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 6.9 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x_3, x_2, x_1, x_0) = x_3 x_2 \oplus x_0\)</span>. Bảng chân trị của hàm <span class="math notranslate nohighlight">\(f\)</span> là</p>
 <div class="math notranslate nohighlight">
@@ -558,25 +559,25 @@ document.write(`
 <figure class="align-default" id="id2">
 <img alt="../_images/lfsr-2.jpg" src="../_images/lfsr-2.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Chu trình thứ nhất của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.5 </span><span class="caption-text">Chu trình thứ nhất của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id3">
 <img alt="../_images/lfsr-3.jpg" src="../_images/lfsr-3.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">Chu trình thứ hai của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.6 </span><span class="caption-text">Chu trình thứ hai của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id4">
 <img alt="../_images/lfsr-4.jpg" src="../_images/lfsr-4.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Chu trình thứ ba của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.7 </span><span class="caption-text">Chu trình thứ ba của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id5">
 <img alt="../_images/lfsr-5.jpg" src="../_images/lfsr-5.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Chu trình thứ tư của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.8 </span><span class="caption-text">Chu trình thứ tư của <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -592,7 +593,7 @@ document.write(`
 \end{equation*}\]</div>
 <p>Trong đó <span class="math notranslate nohighlight">\(a_i \in \mathbb{F}_2\)</span> là các hệ số cho trước. Ta định nghĩa đa thức đặc trưng cho hàm boolean tuyến tính như sau.</p>
 <div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 6.11 </span> (Đa thức đặc trưng)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7.11 </span> (Đa thức đặc trưng)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hàm boolean tuyến tính</p>
 <div class="math notranslate nohighlight">
@@ -605,7 +606,7 @@ document.write(`
 </section>
 </div><p>Do hàm boolean tuyến tính có tính chất là <span class="math notranslate nohighlight">\(f(\mathbf{0}) = 0\)</span> nên chu kì tối đa có thể đạt được là <span class="math notranslate nohighlight">\(2^n - 1\)</span>. Ta có một vài định nghĩa sau để một LFSR đạt được chu kì tối đa.</p>
 <div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 6.12 </span> (Đa thức primitive)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7.12 </span> (Đa thức primitive)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét đa thức</p>
 <div class="math notranslate nohighlight">
@@ -617,7 +618,7 @@ document.write(`
 \end{equation*}\]</div>
 </section>
 </div><div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 6.13 </span> (Đa thức đặc trưng với chu kì cực đại)</p>
+<p class="admonition-title"><span class="caption-number">Definition 7.13 </span> (Đa thức đặc trưng với chu kì cực đại)</p>
 <section class="definition-content" id="proof-content">
 <p>Đa thức</p>
 <div class="math notranslate nohighlight">
@@ -625,7 +626,7 @@ document.write(`
 <p>được gọi là <strong>đa thức đặc trưng với chu kì cực đại</strong> nếu đa thức đó tối giản và là đa thức primitive.</p>
 </section>
 </div><div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 6.10 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét đa thức <span class="math notranslate nohighlight">\(f(x) = x^4 + x^3 + 1\)</span>. Ta có thể xác định xem đa thức này có sinh ra LFSR với chu kì tối đa hay không mà không cần tìm đồ thị chuyển trạng thái của LFSR.</p>
 <p>Đầu tiên ta chứng minh <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức tối giản. Thật vậy, giả sử ngược lại, <span class="math notranslate nohighlight">\(f(x)\)</span> là tích của hai đa thức bậc nhỏ hơn 4. Hai trường hợp có thể xảy ra là <span class="math notranslate nohighlight">\(f(x)\)</span> chia hết cho đa thức tối giản bậc 1 hoặc bậc 2.</p>
@@ -638,7 +639,7 @@ document.write(`
 </section>
 </div></section>
 <section id="thuat-toan-berlekamp-massey">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">6.3.2. </span>Thuật toán Berlekamp-Massey</a><a class="headerlink" href="#thuat-toan-berlekamp-massey" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">7.3.2. </span>Thuật toán Berlekamp-Massey</a><a class="headerlink" href="#thuat-toan-berlekamp-massey" title="Link to this heading">#</a></h2>
 <p>Thuật toán Berlekamp-Massey là thuật toán tìm đa thức sinh có chu kì ngắn nhất sinh ra một dãy LFSR cho trước.</p>
 <p>Bài toán ở đây là, giả sử chúng ta có một dãy bit</p>
 <div class="math notranslate nohighlight">
@@ -663,7 +664,7 @@ document.write(`
 \end{equation*}\]</div>
 <p>với <span class="math notranslate nohighlight">\(i=0, 1, \ldots\)</span>.</p>
 <div class="proof algorithm admonition" id="algorithm-5">
-<p class="admonition-title"><span class="caption-number">Algorithm 6.1 </span> (Thuật toán Berlekamp-Massey)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 7.1 </span> (Thuật toán Berlekamp-Massey)</p>
 <section class="algorithm-content" id="proof-content">
 <p>Đầu vào là dãy bit <span class="math notranslate nohighlight">\(u_0, u_1, \ldots, u_{l-1}\)</span>.</p>
 <p>Đầu ra là đa thức đặc trưng bậc nhỏ nhất mà sinh ra toàn bộ dãy bit trên, bắt đầu từ các bit <span class="math notranslate nohighlight">\(u_0, u_1, \ldots\)</span> nhất định.</p>
@@ -687,7 +688,7 @@ document.write(`
 <p>Ở mỗi bước, nếu <span class="math notranslate nohighlight">\(P_n(x)\)</span> sinh ra toàn bộ dãy bit thì ta dừng thuật toán.</p>
 </section>
 </div><div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 6.11 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 7.11 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét dãy bit <span class="math notranslate nohighlight">\(111100100\)</span>. Đặt <span class="math notranslate nohighlight">\(n_0 = 0\)</span>, <span class="math notranslate nohighlight">\(P_{-1}(x) = 1\)</span> và <span class="math notranslate nohighlight">\(k_{-1} = 0\)</span>.</p>
 <p>Theo <span class="math notranslate nohighlight">\(P_{-1}(x) = 1\)</span> thì <span class="math notranslate nohighlight">\(1 \to 1 \to 1 \to 1\)</span>, nghĩa là bit đầu thành bit thứ hai, bit thứ hai thành bit thứ ba và thứ ba thành thứ tư. Từ đó suy ra</p>
@@ -705,7 +706,7 @@ document.write(`
 <figure class="align-default" id="id6">
 <img alt="../_images/berlekamp_massey-1.jpg" src="../_images/berlekamp_massey-1.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_4(x)\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.9 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_4(x)\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Trong hình trên, hàng đầu từ trái sang phải là <span class="math notranslate nohighlight">\(u_0, u_1, u_2, u_3\)</span>. Hàng thứ hai từ trái sang phải là <span class="math notranslate nohighlight">\(u_1, u_2, u_3, u_4\)</span>. Hàng thứ ba là <span class="math notranslate nohighlight">\(u_2, u_3, u_4, u_5\)</span> nhưng <span class="math notranslate nohighlight">\(u_5 = 0\)</span> theo dãy ban đầu nên LFSR sinh ra 1 là chưa đúng, thuật toán chuyển sang bước tiếp theo.</p>
@@ -718,7 +719,7 @@ document.write(`
 <figure class="align-default" id="id7">
 <img alt="../_images/berlekamp_massey-2.jpg" src="../_images/berlekamp_massey-2.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_5(x)\)</span> và <span class="math notranslate nohighlight">\(P_6(x)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.10 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_5(x)\)</span> và <span class="math notranslate nohighlight">\(P_6(x)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Để tìm <span class="math notranslate nohighlight">\(P_7(x)\)</span>, ta có <span class="math notranslate nohighlight">\(a = m - k_{m-1} = 3\)</span> và <span class="math notranslate nohighlight">\(b = n - k_{n-1} = 7 - 4 = 3\)</span>. Do <span class="math notranslate nohighlight">\(a \geqslant b\)</span> nên</p>
@@ -730,7 +731,7 @@ document.write(`
 <figure class="align-default" id="id8">
 <img alt="../_images/berlekamp_massey-3.jpg" src="../_images/berlekamp_massey-3.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_7(x)\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.11 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_7(x)\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Để tìm <span class="math notranslate nohighlight">\(P_8(x)\)</span>, <span class="math notranslate nohighlight">\(a = 3\)</span> và <span class="math notranslate nohighlight">\(b = 8 - 4 = 4\)</span>. Do <span class="math notranslate nohighlight">\(a &lt; b\)</span> nên</p>
@@ -742,7 +743,7 @@ document.write(`
 <figure class="align-default" id="id9">
 <img alt="../_images/berlekamp_massey-4.jpg" src="../_images/berlekamp_massey-4.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_8(x)\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.12 </span><span class="caption-text">LFSR tương ứng <span class="math notranslate nohighlight">\(P_8(x)\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Như vậy đa thức sinh ra dãy bit ban đầu là <span class="math notranslate nohighlight">\(x^5 \oplus x^3 \oplus x^2 \oplus x \oplus 1\)</span>. Thuật toán Berlekamp-Massey tìm ra đa thức đặc trưng với độ phức tạp là 8 (tìm tới <span class="math notranslate nohighlight">\(P_8(x)\)</span>).</p>
@@ -787,7 +788,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6.2. </span>Trọng số, phổ Furier, phổ Walsh, Hamming distance</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Trọng số, phổ Furier, phổ Walsh, Hamming distance</p>
       </div>
     </a>
     <a class="right-next"
@@ -815,8 +816,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">6.3.1. Linear Feedback Shift Register</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-berlekamp-massey">6.3.2. Thuật toán Berlekamp-Massey</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7.3.1. Linear Feedback Shift Register</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-berlekamp-massey">7.3.2. Thuật toán Berlekamp-Massey</a></li>
 </ul>
   </nav></div>
 

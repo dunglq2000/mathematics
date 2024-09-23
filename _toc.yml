@@ -42,6 +42,7 @@ parts:
     - file: discrete-mathematics/number-theory.md
     - file: discrete-mathematics/binary-relation.md
     - file: discrete-mathematics/partition.md
+    - file: discrete-mathematics/combinatoric.md
     - file: discrete-mathematics/boolean.md
       sections:
       - file: discrete-mathematics/boolean-function.md
