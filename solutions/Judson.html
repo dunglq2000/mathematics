@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Abstract Algebra: Theory and Applications &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solutions/Judson';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CTF 2020" href="../ctf/2020/2020.html" />
+    <link rel="prev" title="CryptoFox 2024" href="../cryptofox/2024.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../linalg/intro.html">1. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/calculus.html">1. Giải tích</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series.html">1.5. Chuỗi số</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/partial-derivative.html">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/differential-equation.html">2. Phương trình vi phân</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">1. Xác suất thống kê</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">1. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">1.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">1.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">1.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">1.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">2. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">6. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">7. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">7.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">7.3. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">1. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">2. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">3. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">4. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">1. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">2. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">2.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">2.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">2.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">2.4. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">3. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">4. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">5. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">6. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">7. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">8. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">1. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">1.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2024.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptofox/2024.html">CryptoFox 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Abstract Algebra: Theory and Applications</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fsolutions/Judson.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/solutions/Judson.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Abstract Algebra: Theory and Applications</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-3-groups">Chương 3. Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-5-permutation-groups">Chương 5. Permutation Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-6-cosets">Chương 6. Cosets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-9-isomorphism">Chương 9. Isomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-11-homomorphism">Chương 11. Homomorphism</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="abstract-algebra-theory-and-applications">
+<h1>Abstract Algebra: Theory and Applications<a class="headerlink" href="#abstract-algebra-theory-and-applications" title="Link to this heading">#</a></h1>
+<p>Lời giải cho quyển sách <strong>Abstract Algebra: Theory and Applications</strong> của Thomas W. Judson <span id="id1">[<a class="reference internal" href="../intro.html#id20" title="T. W. Judson. Abstract Algebra. Theory and Applications. Stephen F. Austin State University, 08 2012. URL: abstract.pugetsound.edu.">4</a>]</span>.</p>
+<section id="chuong-3-groups">
+<h2>Chương 3. Groups<a class="headerlink" href="#chuong-3-groups" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-7 admonition">
+<p class="admonition-title">Bài 7</p>
+<p>Đặt <span class="math notranslate nohighlight">\(S = \mathbb{R} \setminus \{-1\}\)</span> và định nghĩa toán tử 2 ngôi trên <span class="math notranslate nohighlight">\(S\)</span> là <span class="math notranslate nohighlight">\(a \star b = a + b + ab\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\((S, \star)\)</span> là nhóm Abel.</p>
+</div>
+<p>Để chứng minh <span class="math notranslate nohighlight">\((S, \star)\)</span> là nhóm ta chứng minh 3 tiên đề của nhóm.</p>
+<ol class="arabic simple">
+<li><p>Giả sử tồn tại phần tử đơn vị <span class="math notranslate nohighlight">\(e\)</span>, khi đó <span class="math notranslate nohighlight">\(e \star s = s \star e = s\)</span> với mọi <span class="math notranslate nohighlight">\(s \in S\)</span>. Nghĩa là <span class="math notranslate nohighlight">\(e + s + es = s + e + se = s\)</span>. Vậy <span class="math notranslate nohighlight">\(e + se = 0\)</span> mà <span class="math notranslate nohighlight">\(s \neq -1\)</span> nên <span class="math notranslate nohighlight">\(e = 0\)</span></p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(e = 0\)</span>, giả sử với mọi <span class="math notranslate nohighlight">\(s \in S\)</span> có nghịch đảo <span class="math notranslate nohighlight">\(s'\)</span>. Do <span class="math notranslate nohighlight">\(s \star s' = s' \star s = e\)</span> nên <span class="math notranslate nohighlight">\(s + s' + ss' = s' + s + s's = e = 0\)</span>, tức là <span class="math notranslate nohighlight">\(s'(1 + s) = -s\)</span>. Vậy <span class="math notranslate nohighlight">\(s' = \dfrac{-s}{1 + s}\)</span></p></li>
+<li><p>Với mọi <span class="math notranslate nohighlight">\(a, b, c \in S\)</span>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    a \star (b \star c) &amp; = a \star (b + c + bc) = a + (b+c+bc) + a (b+c+bc) \\ 
+    &amp; = a + b + c + ab + bc + ca + abc
+\end{align*}\end{split}\]</div>
+<p>và</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    (a \star b) \star c &amp; = (a + b + ab) \star c = a + b + ab + c + c(a+b+bc) \\
+    &amp; = a + b + c + ab + bc + ca + abc.
+\end{align*}\end{split}\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(a \star (b \star c) = (a \star b) \star c\)</span>, do đó <span class="math notranslate nohighlight">\(\star\)</span> có tính kết hợp.</p>
+<p>Vậy <span class="math notranslate nohighlight">\((S, \star)\)</span> là nhóm.</p>
+<div class="admonition-bai-39 admonition">
+<p class="admonition-title">Bài 39</p>
+<p>Gọi <span class="math notranslate nohighlight">\(G\)</span> là tập các ma trận <span class="math notranslate nohighlight">\(2 \times 2\)</span> với dạng</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+    \cos \theta &amp; -\sin \theta \\ \sin \theta &amp; \cos \theta
+\end{pmatrix}\end{split}\]</div>
+<p>với <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(G\)</span> là subgroup của <span class="math notranslate nohighlight">\(SL_2 (\mathbb{R})\)</span>.</p>
+</div>
+<p>Với <span class="math notranslate nohighlight">\(\theta_1, \theta_2 \in \mathbb{R}\)</span>, ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+&amp; \begin{pmatrix}
+    \cos \theta_1 &amp; -\sin \theta_1 \\ \sin \theta_1 &amp; \cos \theta_1
+\end{pmatrix} \begin{pmatrix}
+    \cos \theta_2 &amp; -\sin \theta_2 \\ \sin \theta_2 &amp; \cos \theta_2
+\end{pmatrix} \\
+= &amp; \begin{pmatrix}
+    \cos \theta_1 \cos \theta_2 - \sin \theta_1 \sin \theta_2 &amp; -\cos \theta_1 \sin \theta_2 - \sin \theta_1 \cos \theta_2 \\ 
+    \sin \theta_1 \cos \theta_2 + \cos \theta_1 \sin \theta_2 &amp; -\sin \theta_1 \sin \theta_2 + \cos \theta_1 \cos \theta_2
+\end{pmatrix} \\
+= &amp; \begin{pmatrix}
+    \cos (\theta_1 + \theta_2) &amp; -\sin (\theta_1 + \theta_2) \\
+    \sin (\theta_1 + \theta_2) &amp; \cos (\theta_1 + \theta_2)
+\end{pmatrix}
+\end{align*}\end{split}\]</div>
+<p>Suy ra định thức của tích 2 ma trận là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \det \Biggl(\begin{pmatrix}
+        \cos (\theta_1 + \theta_2) &amp; -\sin (\theta_1 + \theta_2) \\
+        \sin (\theta_1 + \theta_2) &amp; \cos (\theta_1 + \theta_2)
+    \end{pmatrix}\Biggr)
+    = &amp; 1 \cdot 1 = 1
+\end{align*}\end{split}\]</div>
+<p>Như vậy phép nhân 2 ma trận có dạng trên đóng trên <span class="math notranslate nohighlight">\(SL_2 (\mathbb{R})\)</span>.</p>
+<p>Phần tử đơn vị là <span class="math notranslate nohighlight">\(\begin{pmatrix}
+1 &amp; 0 \\ 0 &amp; 1
+\end{pmatrix}\)</span> tương ứng với <span class="math notranslate nohighlight">\(\theta = 0\)</span>.</p>
+<p>Phần tử nghịch đảo là <span class="math notranslate nohighlight">\(\begin{pmatrix}
+\cos (-\theta) &amp; -\sin (-\theta) \\ \sin (-\theta) &amp; \cos (-\theta)
+\end{pmatrix}\)</span> suy ra từ công thức định thức ban nãy.</p>
+<p>Cuối cùng, phép nhân ma trận có tính kết hợp. Như vậy <span class="math notranslate nohighlight">\(G\)</span> là subgroup của <span class="math notranslate nohighlight">\(SL_2 (\mathbb{R})\)</span>.</p>
+<div class="admonition-bai-47 admonition">
+<p class="admonition-title">Bài 47</p>
+<p>Đặt <span class="math notranslate nohighlight">\(G\)</span> là nhóm và <span class="math notranslate nohighlight">\(g \in G\)</span>. Chứng minh rằng</p>
+<div class="math notranslate nohighlight">
+\[Z(G) = \{ x \in G: gx = xg \; \forall \; g \in G \}\]</div>
+<p>là subgroup của <span class="math notranslate nohighlight">\(G\)</span>. Subgroup này gọi là <strong>center</strong> của <span class="math notranslate nohighlight">\(G\)</span>.</p>
+</div>
+<p>Giả sử trong <span class="math notranslate nohighlight">\(G\)</span> có 2 phần tử là <span class="math notranslate nohighlight">\(x_1\)</span> và <span class="math notranslate nohighlight">\(x_2\)</span> thuộc <span class="math notranslate nohighlight">\(Z(G)\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[x_1 g = g x_1 \text{ và } x_2 g = g x_2 \text{ với mọi } g \in G.\]</div>
+<p>Xét phần tử <span class="math notranslate nohighlight">\(x_1 x_2\)</span>, ta có</p>
+<div class="math notranslate nohighlight">
+\[(x_1 x_2) g = x_1 (x_2 g) = x_1 (g x_2) = (g x_1) x_2 = g (x_1 x_2)\]</div>
+<p>với mọi <span class="math notranslate nohighlight">\(g \in G\)</span>. Do đó <span class="math notranslate nohighlight">\(x_1 x_2 \in Z(G)\)</span> nên <span class="math notranslate nohighlight">\(Z(G)\)</span> là subgroup.</p>
+<div class="admonition-bai-49 admonition">
+<p class="admonition-title">Bài 49</p>
+<p>Cho ví dụ về nhóm vô hạn mà mọi nhóm con không tầm thường của nó đều vô hạn.</p>
+</div>
+<p>Ví dụ tập <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> và phép cộng số nguyên. Khi đó mọi nhóm con của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> có dạng <span class="math notranslate nohighlight">\(n\mathbb{Z}\)</span> với <span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span>. Ví dụ</p>
+<p><span class="math notranslate nohighlight">\(2\mathbb{Z} = \{\cdots, -4, -2, 0, 2, 4, \cdots\}\)</span> với phần tử sinh là <span class="math notranslate nohighlight">\(2\)</span></p>
+<p><span class="math notranslate nohighlight">\(n\mathbb{Z} = \{\cdots, -2n, -n, 0, n, 2n, \cdots\}\)</span> với phần tử sinh là <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="admonition-bai-54 admonition">
+<p class="admonition-title">Bài 54</p>
+<p>Cho <span class="math notranslate nohighlight">\(H\)</span> là subgroup của <span class="math notranslate nohighlight">\(G\)</span> và</p>
+<div class="math notranslate nohighlight">
+\[C(H) = \{g \in G: gh = hg \; \forall \; h \in H\}.\]</div>
+<p>Chứng minh rằng <span class="math notranslate nohighlight">\(C(H)\)</span> là subgroup của <span class="math notranslate nohighlight">\(G\)</span>. Subgroup này được gọi là <strong>centralizer</strong> của <span class="math notranslate nohighlight">\(H\)</span> trong <span class="math notranslate nohighlight">\(G\)</span>.</p>
+</div>
+<p>Gọi <span class="math notranslate nohighlight">\(g_1\)</span> và <span class="math notranslate nohighlight">\(g_2\)</span> thuộc <span class="math notranslate nohighlight">\(C(H)\)</span>. Khi đó <span class="math notranslate nohighlight">\(g_1 h = h g_1\)</span> và <span class="math notranslate nohighlight">\(g_2 h = h g_2\)</span> với mọi <span class="math notranslate nohighlight">\(h \in H\)</span></p>
+<p>Xét phần tử <span class="math notranslate nohighlight">\(g_1 g_2\)</span>, với mọi <span class="math notranslate nohighlight">\(h \in H\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[(g_1 g_2) h = g_1 (g_2 h) = g_1 (h g_2) = (g_1 h) g_2 = (h g_1) g_2 = h (g_1 g_2).\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(g_1 g_2 \in C(H)\)</span>, từ đó <span class="math notranslate nohighlight">\(C(H)\)</span> là subgroup của <span class="math notranslate nohighlight">\(G\)</span></p>
+</section>
+<section id="chuong-5-permutation-groups">
+<h2>Chương 5. Permutation Groups<a class="headerlink" href="#chuong-5-permutation-groups" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-13 admonition">
+<p class="admonition-title">Bài 13</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\sigma = \sigma_1 \cdots \sigma_m \in S_n\)</span> là tích của các cycle độc lập. Chứng minh rằng order của <span class="math notranslate nohighlight">\(\sigma\)</span> là LCM của độ dài các cycle <span class="math notranslate nohighlight">\(\sigma_1, \cdots, \sigma_m\)</span>.</p>
+</div>
+<p>Đặt <span class="math notranslate nohighlight">\(l_i\)</span> là độ dài cycle <span class="math notranslate nohighlight">\(\sigma_i\)</span> (<span class="math notranslate nohighlight">\(i = 1, \cdots m\)</span>). Khi đó <span class="math notranslate nohighlight">\(\sigma_i^{k_i l_i}\)</span> sẽ ở dạng các cycle độ dài 1 (<span class="math notranslate nohighlight">\(k_i \in \mathbb{Z}\)</span>).</p>
+<p>Từ đó, <span class="math notranslate nohighlight">\(\sigma^l = \sigma_1^l \cdots \sigma_m^l = (1)\cdots(n)\)</span> nếu <span class="math notranslate nohighlight">\(l = k_1 l_1 = \cdots k_m l_m\)</span>. Số <span class="math notranslate nohighlight">\(l\)</span> nhỏ nhất thỏa mãn điều kiện này là <span class="math notranslate nohighlight">\(\text{lcm} (l_1, \cdots, l_m)\)</span> (đpcm).</p>
+<div class="admonition-bai-23 admonition">
+<p class="admonition-title">Bài 23</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\sigma\)</span> là chu trình với độ dài lẻ, chứng minh rằng <span class="math notranslate nohighlight">\(\sigma^2\)</span> cũng là chu trình.</p>
+</div>
+<p>Giả sử <span class="math notranslate nohighlight">\(\sigma = (g_1, g_2, \cdots, g_{n-1}, g_n)\)</span> với <span class="math notranslate nohighlight">\(n\)</span> lẻ.</p>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2 = (g_1, g_3, \cdots, g_n, g_2, g_4, \cdots, g_{n-1})\]</div>
+<p>cũng là chu trình.</p>
+<div class="admonition-bai-30 admonition">
+<p class="admonition-title">Bài 30</p>
+<p>Cho <span class="math notranslate nohighlight">\(\tau = (a_1, a_2, \cdots, a_k)\)</span> là chu trình độ dài <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Chứng minh rằng với mọi hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\sigma \tau \sigma^{-1} = (\sigma(a_1), \sigma(a_2), \cdots, \sigma(a_k))\]</div>
+<p>là chu trình độ dài <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Gọi <span class="math notranslate nohighlight">\(\mu\)</span> là chu trình độ dài <span class="math notranslate nohighlight">\(k\)</span>. Chứng minh rằng tồn tại hoán vị <span class="math notranslate nohighlight">\(\sigma\)</span> sao cho <span class="math notranslate nohighlight">\(\sigma \tau \sigma^{-1} = \mu\)</span></p></li>
+</ol>
+</div>
+<p>Để chứng minh hai mệnh đề trên ta cần chú ý một số điều.</p>
+<ol class="arabic simple">
+<li><p>Ta thấy rằng bất kì phần tử nào khác <span class="math notranslate nohighlight">\(a_1, a_2, \cdots, a_k\)</span> thì khi qua <span class="math notranslate nohighlight">\(\tau\)</span> không đổi, do đó khi đi qua <span class="math notranslate nohighlight">\(\sigma \tau \sigma^{-1}\)</span> thì chỉ đi qua <span class="math notranslate nohighlight">\(\sigma \sigma^{-1}\)</span> và cũng không đổi. Nói cách khác các phần tử <span class="math notranslate nohighlight">\(a_1, a_2, \cdots, a_k\)</span> vẫn nằm trong chu trình nên ta có đpcm.</p></li>
+<li><p>Từ câu (a), với <span class="math notranslate nohighlight">\(\mu = (b_1, b_2, \cdots, b_k)\)</span> thì ta chọn <span class="math notranslate nohighlight">\(\sigma\)</span> sao cho <span class="math notranslate nohighlight">\(b_i = \sigma(a_i)\)</span>.</p></li>
+</ol>
+</section>
+<section id="chuong-6-cosets">
+<h2>Chương 6. Cosets<a class="headerlink" href="#chuong-6-cosets" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-11 admonition">
+<p class="admonition-title">Bài 11</p>
+<p>Gọi <span class="math notranslate nohighlight">\(H\)</span> là subgroup của nhóm <span class="math notranslate nohighlight">\(G\)</span> và giả sử <span class="math notranslate nohighlight">\(g_1, g_2 \in G\)</span>. Chứng minh các mệnh đề sau là tương đương:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(g_1 H = g_2 H\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H g_1^{-1} = H g_2^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g_1 H \subseteq g_2 H\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g_2 \in g_1 H\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g_1^{-1} g_2 \in H\)</span></p></li>
+</ol>
+</div>
+<p>Từ (1) ra (2): Ta đã biết các coset là rời nhau hoặc trùng nhau, do đó với mọi <span class="math notranslate nohighlight">\(g_1 h \in g_1 H\)</span>, tồn tại <span class="math notranslate nohighlight">\(g_2 h' \in g_2 H\)</span> mà <span class="math notranslate nohighlight">\(g_1 h = g_2 h'\)</span>. Suy ra <span class="math notranslate nohighlight">\((g_1 h)^{-1} = (g_2 h')^{-1}\)</span> hay <span class="math notranslate nohighlight">\(h^{-1} g_1^{-1} = h'^{_1} g_2^{-1}\)</span> (đpcm).</p>
+<p>Từ (1) ra (3): Hiển nhiên.</p>
+<p>Từ (1) ra (4): Với mọi <span class="math notranslate nohighlight">\(g_1 h \in g_1 H\)</span>, tồn tại <span class="math notranslate nohighlight">\(g_2 h' \in g_2 H\)</span> sao cho <span class="math notranslate nohighlight">\(g_1 h = g_2 h'\)</span>, hay <span class="math notranslate nohighlight">\(g_2 = g_1 h h'^{-1}\)</span>, đặt <span class="math notranslate nohighlight">\(h'' = h h'^{-1}\)</span> thì <span class="math notranslate nohighlight">\(h'' \in H\)</span> (<span class="math notranslate nohighlight">\(H\)</span> là nhóm con) nên <span class="math notranslate nohighlight">\(g_1 h'' \in g_1 H\)</span>. Suy ra <span class="math notranslate nohighlight">\(g_2 \in g_1 H\)</span>.</p>
+<p>Từ (1) ra (5): Tương tự, ta có <span class="math notranslate nohighlight">\(g_1 h = g_2 h'\)</span>, suy ra <span class="math notranslate nohighlight">\(h h'^{-1}= g_1^{-1} g_2 \in H\)</span>.</p>
+<div class="admonition-bai-16 admonition">
+<p class="admonition-title">Bài 16</p>
+<p>Nếu <span class="math notranslate nohighlight">\(g h g^{-1} \in H\)</span> với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> và <span class="math notranslate nohighlight">\(h \in H\)</span>, chứng minh rằng right coset trùng với left coset.</p>
+</div>
+<p>Do <span class="math notranslate nohighlight">\(g h g^{-1} \in H\)</span> nên tồn tại <span class="math notranslate nohighlight">\(h' \in H\)</span> sao cho <span class="math notranslate nohighlight">\(g h g^{-1} = h'\)</span>. Tương đương <span class="math notranslate nohighlight">\(g h = h' g\)</span> với mọi <span class="math notranslate nohighlight">\(h \in H\)</span> nên <span class="math notranslate nohighlight">\(g H = H g\)</span>. Điều này đúng với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> nên các right coset trùng left coset.</p>
+<div class="admonition-bai-17 admonition">
+<p class="admonition-title">Bài 17</p>
+<p>Giả sử <span class="math notranslate nohighlight">\([G:H]=2\)</span>. Chứng minh rằng nếu <span class="math notranslate nohighlight">\(a, b\)</span> không thuộc <span class="math notranslate nohighlight">\(H\)</span> thì <span class="math notranslate nohighlight">\(ab \in H\)</span>.</p>
+</div>
+<p>Ta biết rằng 2 coset ứng với 2 phần tử <span class="math notranslate nohighlight">\(g_1, g_2\)</span> bất kì là trùng nhau hoặc rời nhau.</p>
+<p>Do đó với <span class="math notranslate nohighlight">\(eH = H\)</span>, ta suy ra 2 coset của <span class="math notranslate nohighlight">\(G\)</span> là <span class="math notranslate nohighlight">\(H\)</span> và <span class="math notranslate nohighlight">\(G \setminus H\)</span>.</p>
+<p>Vì <span class="math notranslate nohighlight">\(a, b \not\in H\)</span> nên coset của chúng trùng nhau. Và nghịch đảo của <span class="math notranslate nohighlight">\(a\)</span> cũng nằm trong <span class="math notranslate nohighlight">\(G \setminus H\)</span> vì nếu nghịch đảo của <span class="math notranslate nohighlight">\(a\)</span> nằm trong <span class="math notranslate nohighlight">\(H\)</span> thì <span class="math notranslate nohighlight">\(a\)</span> cũng phải nằm trong <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(a^{-1} H = b H\)</span>. Nghĩa là tồn tại 2 phần tử <span class="math notranslate nohighlight">\(h_1, h_2 \in H\)</span> sao cho <span class="math notranslate nohighlight">\(a^{-1} h_1 = b h_2\)</span>, tương đương <span class="math notranslate nohighlight">\(h_1 h_2^{-1} = a b \in H\)</span> (đpcm).</p>
+<div class="admonition-bai-21 admonition">
+<p class="admonition-title">Bài 21</p>
+<p>Gọi <span class="math notranslate nohighlight">\(G\)</span> là cyclic group với order <span class="math notranslate nohighlight">\(n\)</span>. Chứng minh rằng có đúng <span class="math notranslate nohighlight">\(\phi(n)\)</span> phần tử sinh của <span class="math notranslate nohighlight">\(G\)</span>.</p>
+</div>
+<p>Gọi <span class="math notranslate nohighlight">\(g\)</span> là một phần tử sinh của <span class="math notranslate nohighlight">\(G\)</span>. Khi đó <span class="math notranslate nohighlight">\(g\)</span> sinh ra tất cả phần tử trong <span class="math notranslate nohighlight">\(G\)</span>, hay nói cách khác các phần tử trong <span class="math notranslate nohighlight">\(G\)</span> có dạng <span class="math notranslate nohighlight">\(g^i\)</span> với <span class="math notranslate nohighlight">\(0 \leq i &lt; n\)</span>.</p>
+<p>Như vậy một phần tử <span class="math notranslate nohighlight">\(h = g^i\)</span> cũng là phần tử sinh của <span class="math notranslate nohighlight">\(G\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(\gcd(i, n) = 1\)</span> và có <span class="math notranslate nohighlight">\(\phi(n)\)</span> số <span class="math notranslate nohighlight">\(i\)</span> như vậy (đpcm).</p>
+</section>
+<section id="chuong-9-isomorphism">
+<h2>Chương 9. Isomorphism<a class="headerlink" href="#chuong-9-isomorphism" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-18 admonition">
+<p class="admonition-title">Bài 18</p>
+<p>Chứng minh rằng subgroup của <span class="math notranslate nohighlight">\(\mathbb{Q}^*\)</span> gồm các phần tử có dạng <span class="math notranslate nohighlight">\(2^m 3^n\)</span> với <span class="math notranslate nohighlight">\(m, n \in \mathbb{Z}\)</span> là internal direct product tới <span class="math notranslate nohighlight">\(\mathbb{Z} \times \mathbb{Z}\)</span></p>
+</div>
+<p>Xét ánh xạ <span class="math notranslate nohighlight">\(\varphi: \mathbb{Q}^* \rightarrow \mathbb{Z~} \times \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(\varphi(2^m 3^n) = (m, n)\)</span>.</p>
+<p>Hàm này là well-defined vì với <span class="math notranslate nohighlight">\(m\)</span> cố định thì mỗi phần tử <span class="math notranslate nohighlight">\(2^m 3^n\)</span> chỉ cho ra một phần tử <span class="math notranslate nohighlight">\((m, n)\)</span>. Tương tự với cố định <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Hàm này là đơn ánh (one-to-one) vì với <span class="math notranslate nohighlight">\(m_1 = m_2\)</span> và <span class="math notranslate nohighlight">\(n_1 = n_2\)</span> thì <span class="math notranslate nohighlight">\(2^{m_1} 3^{n_1} = 2^{m_2} 3^{n_2}\)</span>.</p>
+<p>Hàm này cũng là toàn ánh vì với mỗi cặp <span class="math notranslate nohighlight">\((m, n)\)</span> ta đều tính được <span class="math notranslate nohighlight">\(2^m 3^n\)</span>.</p>
+<p>Vậy hàm <span class="math notranslate nohighlight">\(\varphi\)</span> là song ánh.</p>
+<p>Thêm nữa,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \varphi(2^{m_1} 3^{n_1} \cdot 2^{m_2} 3^{n_2})&amp; = \varphi(2^{m_1 + m_2} 3^{n_1 + n_2}) \\
+    &amp; = (m_1 + m_2, n_1 + n_2) = (m_1, n_1) + (m_2, n_2) \\
+    &amp; = \varphi(2^{m_1} 3^{n_1}) \varphi(2^{m_2} 3^{n_2})
+\end{align*}\end{split}\]</div>
+<p>Vậy <span class="math notranslate nohighlight">\(\varphi\)</span> là homomorphism, và là song ánh nên là isomorphism.</p>
+<div class="admonition-bai-20 admonition">
+<p class="admonition-title">Bài 20</p>
+<p>Chứng minh hoặc bác bỏ: mọi nhóm Abel có order chia hết bởi 3 chứa một subgroup có order là 3.</p>
+</div>
+<p>Gọi order của nhóm Abel là <span class="math notranslate nohighlight">\(n=3k\)</span>, và <span class="math notranslate nohighlight">\(g\)</span> là phần tử sinh của nhóm Abel đó. Như vậy <span class="math notranslate nohighlight">\(g^n = g^{3k} = e\)</span>.</p>
+<p>Nếu ta chọn <span class="math notranslate nohighlight">\(h = g^k\)</span> thì <span class="math notranslate nohighlight">\(h^3 = e\)</span>, khi đó subgroup được sinh bởi <span class="math notranslate nohighlight">\(h\)</span> có order 3 (đpcm).</p>
+<div class="admonition-bai-21 admonition">
+<p class="admonition-title">Bài 21</p>
+<p>Chứng minh hoặc bác bỏ: mọi nhóm không phải Abel có order chia hết bởi 6 chứa một subgroup có order 6</p>
+</div>
+<p>Với <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> có order là 6 nhưng không có nhóm con nào order 6 (nhóm con chỉ có order 1, 2 hoặc 3) (bác bỏ).</p>
+<div class="admonition-bai-22 admonition">
+<p class="admonition-title">Bài 22</p>
+<p>Gọi <span class="math notranslate nohighlight">\(G\)</span> là group với order 20. Nếu <span class="math notranslate nohighlight">\(G\)</span> có các subgroup <span class="math notranslate nohighlight">\(H\)</span> và <span class="math notranslate nohighlight">\(K\)</span> với order 4 và 5 mà <span class="math notranslate nohighlight">\(hk=kh\)</span> với mọi <span class="math notranslate nohighlight">\(h \in H\)</span> và <span class="math notranslate nohighlight">\(k \in K\)</span>, chứng minh rằng <span class="math notranslate nohighlight">\(G\)</span> là internal direct product của <span class="math notranslate nohighlight">\(H\)</span> và <span class="math notranslate nohighlight">\(K\)</span>.</p>
+</div>
+<p>Ta chứng minh <span class="math notranslate nohighlight">\(H \cap K = \{ e \}\)</span>. Giả sử tồn tại phần tử <span class="math notranslate nohighlight">\(m \in H \cap K\)</span>, khi đó do <span class="math notranslate nohighlight">\(m \in H\)</span> nên <span class="math notranslate nohighlight">\(mk = km\)</span> với mọi <span class="math notranslate nohighlight">\(k \in K\)</span>. Tuy nhiên <span class="math notranslate nohighlight">\(m \in K\)</span> do đó điều này xảy ra khi và chỉ khi <span class="math notranslate nohighlight">\(m = e\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(H \cap K = \{ e \}\)</span>.</p>
+</section>
+<section id="chuong-11-homomorphism">
+<h2>Chương 11. Homomorphism<a class="headerlink" href="#chuong-11-homomorphism" title="Link to this heading">#</a></h2>
+<div class="admonition-bai-1 admonition">
+<p class="admonition-title">Bài 1</p>
+<p>Chứng minh rằng <span class="math notranslate nohighlight">\(\det(AB) = \det(A) \det(B)\)</span> với <span class="math notranslate nohighlight">\(A, B \in GL_2(\mathbb{R})\)</span>. Điều này chứng tỏ rằng định thức là homomorphism từ <span class="math notranslate nohighlight">\(GL_2(\mathbb{R})\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}^*\)</span>.</p>
+</div>
+<p>Đặt <span class="math notranslate nohighlight">\(A = \begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix}\)</span> và <span class="math notranslate nohighlight">\(B = \begin{pmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{pmatrix}\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    A B = \begin{pmatrix}
+        a_{11} b_{11} + a_{12} b_{21} &amp; a_{11} b_{12} + a_{12} b_{22} \\
+        a_{21} b_{11} + a_{22} b_{21} &amp; a_{21} b_{12} + a_{22} b_{22}
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Như vậy ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \det (AB) = &amp; (a_{11} b_{11} + a_{12} b_{21}) (a_{21} b_{12} + a_{22} b_{22}) \\
+            - &amp; (a_{11} b_{12} + a_{12} b_{22}) (a_{21} b_{11} + a_{22} b_{21}) \\ 
+            = &amp; \cancel{a_{11} a_{21} b_{11} b_{12}} + a_{11} a_{22} b_{11} b_{22} + a_{12} a_{21} b_{12} b_{21} + \bcancel{a_{12} a_{22} b_{21} b_{22}} \\ 
+            - &amp; \cancel{a_{11} a_{21} b_{11} b_{12}} - a_{11} a_{22} b_{12} b_{21} - a_{12} a_{21} b_{11} b_{22} - \bcancel{a_{12} a_{22} b_{21} b_{22}}
+\end{align*}\end{split}\]</div>
+<p>Tương tự,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \det (A) \det (B) = &amp; (a_{11} a_{22} - a_{12} a_{21}) (b_{11} b_{22} - b_{12} b_{21}) \\ = &amp; a_{11} a_{22} b_{11} b_{22} - a_{11} a_{22} b_{12} b_{21} \\ - &amp; a_{12} a_{21} b_{11} b_{22} + a_{12} a_{21} b_{12} b_{21}
+\end{align*}\end{split}\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(\det (AB) = \det (A) \det (B)\)</span> và do đó ánh xạ <span class="math notranslate nohighlight">\(\det\)</span> từ <span class="math notranslate nohighlight">\(GL_2(\mathbb{R})\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}^*\)</span> là homomorphism.</p>
+<div class="admonition-bai-4 admonition">
+<p class="admonition-title">Bài 4</p>
+<p>Xét <span class="math notranslate nohighlight">\(\phi : \mathbb{Z} \to \mathbb{Z}\)</span> cho bởi <span class="math notranslate nohighlight">\(\phi(n) = 7n\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism. Tìm hạt nhân và ảnh của <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+</div>
+<p>Ta có <span class="math notranslate nohighlight">\(\phi(a+b) = 7(a+b) = 7a + 7b = \phi(a) + \phi(b)\)</span> với mọi <span class="math notranslate nohighlight">\(a, b \in \mathbb{Z}\)</span>. Do đó <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism.</p>
+<p>Hạt nhân của <span class="math notranslate nohighlight">\(\phi\)</span> là tập hợp các số <span class="math notranslate nohighlight">\(n\)</span> để <span class="math notranslate nohighlight">\(\phi(n) = 0\)</span>, hay <span class="math notranslate nohighlight">\(7 n = 0\)</span>. Như vậy <span class="math notranslate nohighlight">\(n=0\)</span> nên <span class="math notranslate nohighlight">\(\ker \phi = \{ 0 \}\)</span>.</p>
+<p>Ảnh của <span class="math notranslate nohighlight">\(\phi\)</span> là tập <span class="math notranslate nohighlight">\(\{ \ldots, -2 \cdot 7, -7, 0, 7, 2 \cdot 7, \ldots \}\)</span>.</p>
+<div class="admonition-bai-8 admonition">
+<p class="admonition-title">Bài 8</p>
+<p>Nếu <span class="math notranslate nohighlight">\(G\)</span> là nhóm Abel và <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>, chứng minh rằng <span class="math notranslate nohighlight">\(\phi : G \to G\)</span> xác định bởi <span class="math notranslate nohighlight">\(g \mapsto g^n\)</span> là homomorphism.</p>
+</div>
+<p>Với mọi <span class="math notranslate nohighlight">\(g, h \in G\)</span> thì <span class="math notranslate nohighlight">\(\phi(gh) = (gh)^n\)</span>. Do <span class="math notranslate nohighlight">\(G\)</span> là nhóm Abel nên ta có <span class="math notranslate nohighlight">\((gh)^n = g^n h^n = \phi(g) \phi(h)\)</span>. Như vậy <span class="math notranslate nohighlight">\(\phi\)</span> là đồng cấu nhóm.</p>
+<div class="admonition-bai-9 admonition">
+<p class="admonition-title">Bài 9</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\phi : G \to H\)</span> là homomorphism và <span class="math notranslate nohighlight">\(G\)</span> là nhóm Abel, chứng minh rằng <span class="math notranslate nohighlight">\(\phi(G)\)</span> cũng là nhóm Abel.</p>
+</div>
+<p>Với mọi <span class="math notranslate nohighlight">\(g, h \in G\)</span>, do <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism nên <span class="math notranslate nohighlight">\(\phi(gh) = \phi(g) \phi(h)\)</span>. Do <span class="math notranslate nohighlight">\(G\)</span> là nhóm Abel nên <span class="math notranslate nohighlight">\(gh = hg\)</span> với mọi <span class="math notranslate nohighlight">\(g, h \in G\)</span>, suy ra <span class="math notranslate nohighlight">\(\phi(gh) = \phi(hg)\)</span>. Tương đương với <span class="math notranslate nohighlight">\(\phi(g) \phi(h) = \phi(h) \phi(g)\)</span> nên <span class="math notranslate nohighlight">\(\phi(G)\)</span> cũng là nhóm Abel.</p>
+<div class="admonition-bai-10 admonition">
+<p class="admonition-title">Bài 10</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\phi : G \to H\)</span> là homomorphism và <span class="math notranslate nohighlight">\(G\)</span> là nhóm cyclic, chứng minh rằng <span class="math notranslate nohighlight">\(\phi(G)\)</span> cũng là nhóm cyclic.</p>
+</div>
+<p>Tương tự câu 9.</p>
+<div class="admonition-bai-20 admonition">
+<p class="admonition-title">Bài 20</p>
+<p>Cho homomorphism <span class="math notranslate nohighlight">\(\phi : G \to H\)</span> và định nghĩa quan hệ <span class="math notranslate nohighlight">\(\sim\)</span> trên <span class="math notranslate nohighlight">\(G\)</span> theo quy tắc <span class="math notranslate nohighlight">\(a, b \in G\)</span> có quan hệ với nhau nếu <span class="math notranslate nohighlight">\(\phi(a) = \phi(b)\)</span> và ký hiệu là <span class="math notranslate nohighlight">\(a \sim b\)</span>. Chứng minh đây là quan hệ tương đương và mô tả cách xây dựng các lớp tương đương.</p>
+</div>
+<p>Do <span class="math notranslate nohighlight">\(\phi\)</span> là ánh xạ nên <span class="math notranslate nohighlight">\(\phi(a) = \phi(a)\)</span> với mọi <span class="math notranslate nohighlight">\(a \in G\)</span>, suy ra <span class="math notranslate nohighlight">\(\sim\)</span> có tính phản xạ.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(a \sim b\)</span> thì <span class="math notranslate nohighlight">\(\phi(a) = \phi(b)\)</span>. Tương đương với <span class="math notranslate nohighlight">\(\phi(b) = \phi(a)\)</span> nên <span class="math notranslate nohighlight">\(b \sim a\)</span>. Như vậy quan hệ trên có tính đối xứng.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(a \sim b\)</span> thì <span class="math notranslate nohighlight">\(\phi(a) = \phi(b)\)</span>, và nếu <span class="math notranslate nohighlight">\(b \sim c\)</span> thì <span class="math notranslate nohighlight">\(\phi(b) = \phi(c)\)</span>. Suy ra <span class="math notranslate nohighlight">\(\phi(a) = \phi(b) = \phi(c)\)</span> nên <span class="math notranslate nohighlight">\(a \sim c\)</span>. Như vậy quan hệ có tính bắc cầu.</p>
+<p>Kết luận: quan hệ <span class="math notranslate nohighlight">\(\sim\)</span> xác định như trên là quan hệ tương đương.</p>
+<p>Để xây dựng các lớp tương đương, đặt <span class="math notranslate nohighlight">\(I = \{ i_1, i_2, \ldots, i_m \}\)</span> là ảnh của homomorphism <span class="math notranslate nohighlight">\(\phi\)</span>. Rõ ràng <span class="math notranslate nohighlight">\(I \subset H\)</span>. Khi đó các lớp tương đương ứng với các phần tử <span class="math notranslate nohighlight">\(i_1, i_2, \ldots, i_m\)</span>, hay</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \bar{i}_j = \{ g \in G : \phi(g) = i_j \}, \quad 1 \leqslant i \leqslant m
+\end{equation*}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../cryptofox/2024.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CryptoFox 2024</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ctf/2020/2020.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CTF 2020</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-3-groups">Chương 3. Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-5-permutation-groups">Chương 5. Permutation Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-6-cosets">Chương 6. Cosets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-9-isomorphism">Chương 9. Isomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chuong-11-homomorphism">Chương 11. Homomorphism</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

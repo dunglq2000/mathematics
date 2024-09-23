@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8. Discrete logarithm &#8212; Math Book</title>
+    <title>2.2. SMS4 &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/discrete-logarithm';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/sms4';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Теоретико-числовые алгоритмы в криптографии" href="../vasilenko/intro.html" />
-    <link rel="prev" title="7. Đường cong elliptic" href="elliptic.html" />
+    <link rel="next" title="2.3. AES" href="AES.html" />
+    <link rel="prev" title="2.1. Magma" href="magma.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -241,9 +241,9 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Đại số boolean và mật mã học</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="block-cipher.html">2. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="block-cipher.html">2. Block cipher</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="magma.html">2.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sms4.html">2.2. SMS4</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. SMS4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AES.html">2.3. AES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kuznyechik.html">2.4. Kuznyechik</a></li>
 </ul>
@@ -253,7 +253,7 @@
 <li class="toctree-l1"><a class="reference internal" href="lattice-based.html">5. Lattice-based cryptography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-based.html">6. Code-based cryptography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="elliptic.html">7. Đường cong elliptic</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Discrete logarithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-logarithm.html">8. Discrete logarithm</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -384,7 +384,7 @@
       
       
       
-      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fcryptography/discrete-logarithm.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fcryptography/sms4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -414,7 +414,7 @@
       
       
       
-      <li><a href="../_sources/cryptography/discrete-logarithm.md" target="_blank"
+      <li><a href="../_sources/cryptography/sms4.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -498,7 +498,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Discrete logarithm</h1>
+    <h1>SMS4</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -508,7 +508,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-thuat-toan-tinh-discrete-logarithm">8.1. Các thuật toán tính discrete logarithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.2.1. Mã hóa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-function">2.2.2. Round function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.2.3. Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#giai-ma">2.2.4. Giải mã</a></li>
 </ul>
             </nav>
         </div>
@@ -520,54 +523,78 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="discrete-logarithm">
-<h1><span class="section-number">8. </span>Discrete logarithm<a class="headerlink" href="#discrete-logarithm" title="Link to this heading">#</a></h1>
-<section id="cac-thuat-toan-tinh-discrete-logarithm">
-<h2><span class="section-number">8.1. </span>Các thuật toán tính discrete logarithm<a class="headerlink" href="#cac-thuat-toan-tinh-discrete-logarithm" title="Link to this heading">#</a></h2>
-<p>Thuật toán Baby-Step-Giant-Step (BSGS) giúp tính discrete logarithm trên nhóm cyclic với order là số nguyên tố.</p>
-<div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 8.1 </span> (Thuật toán Baby-Step-Giant-Step)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input:</strong> Nhóm cyclic <span class="math notranslate nohighlight">\(G\)</span> có order <span class="math notranslate nohighlight">\(n\)</span>, generator <span class="math notranslate nohighlight">\(g\)</span> và phần tử <span class="math notranslate nohighlight">\(h \in G\)</span>.</p>
-<p><strong>Output:</strong> Số <span class="math notranslate nohighlight">\(x\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\{ 0, 1, \ldots, n-1 \}\)</span> thỏa <span class="math notranslate nohighlight">\(g^x = h\)</span>.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(m \gets \lfloor \sqrt{n} \rfloor\)</span></p></li>
-<li><p>for <span class="math notranslate nohighlight">\(j = 0\)</span> to <span class="math notranslate nohighlight">\(m-1\)</span></p>
-<ol class="arabic simple">
-<li><p>Tính <span class="math notranslate nohighlight">\(g^j\)</span>. Lưu <span class="math notranslate nohighlight">\((j, g^j)\)</span> vào bảng.</p></li>
-</ol>
-</li>
-<li><p>Tính <span class="math notranslate nohighlight">\(g^{-m}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\gamma \gets h\)</span>.</p></li>
-<li><p>for <span class="math notranslate nohighlight">\(i = 0\)</span> to <span class="math notranslate nohighlight">\(m-1\)</span></p>
-<ol class="arabic simple">
-<li><p>Kiểm tra điều kiện <span class="math notranslate nohighlight">\(\gamma = g^j\)</span> với <span class="math notranslate nohighlight">\(j = 0, 1, \ldots, m-1\)</span>.</p></li>
-<li><p>Nếu điều kiện thỏa, trả về <span class="math notranslate nohighlight">\(im + j\)</span>.</p></li>
-<li><p>Nếu không, đặt <span class="math notranslate nohighlight">\(\gamma \gets \gamma \cdot g^{-m}\)</span>.</p></li>
-</ol>
-</li>
-</ol>
+  <section id="sms4">
+<h1><span class="section-number">2.2. </span>SMS4<a class="headerlink" href="#sms4" title="Link to this heading">#</a></h1>
+<p>SM4 (trước đây là SMS4) là thuật toán mã hóa khối của Trung Quốc để bảo vệ mạng không dây. Thuật toán được phát triển vào năm 2006.</p>
+<p>Phần này mình dịch từ <span id="id1">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">6</a>]</span> hoặc bản dịch tiếng Anh là <span id="id2">[<a class="reference internal" href="../intro.html#id24" title="Whitfield Diffie and George Ledin (translators). SMS4 encryption algorithm for wireless networks. Cryptology ePrint Archive, Paper 2008/329, 2008. URL: https://eprint.iacr.org/2008/329.">15</a>]</span>.</p>
+<p>Input, output và độ dài khóa của SMS4 đều là <span class="math notranslate nohighlight">\(128\)</span> bit. Thuật toán gồm <span class="math notranslate nohighlight">\(32\)</span> vòng.</p>
+<p>Plaintext <span class="math notranslate nohighlight">\(128\)</span> bit sẽ được chia thành <span class="math notranslate nohighlight">\(4\)</span> phần độ dài <span class="math notranslate nohighlight">\(32\)</span> bit (gọi là <strong>word</strong>). Giả sử plaintext là <span class="math notranslate nohighlight">\(P\)</span> có <span class="math notranslate nohighlight">\(128\)</span> bit sẽ được biểu diễn thành</p>
+<div class="math notranslate nohighlight">
+\[P = (X^0, X^1, X^2, X^3)\]</div>
+<p>Từ khóa ban đầu là <span class="math notranslate nohighlight">\(K\)</span>, thuật toán sinh khóa sinh ra các khóa <span class="math notranslate nohighlight">\(K_0, \ldots, K_{31}\)</span>, mỗi khóa con độ dài <span class="math notranslate nohighlight">\(32\)</span> bit.</p>
+<p>SMS4 sử dụng <strong>mô hình Feistel tổng quát</strong> (hay <strong>generalized Feistel model</strong>).</p>
+<section id="ma-hoa">
+<h2><span class="section-number">2.2.1. </span>Mã hóa<a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h2>
+<p>Ở vòng thứ <span class="math notranslate nohighlight">\(i\)</span>, với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 31\)</span>, ta tính word mới <span class="math notranslate nohighlight">\(X^{i+4}\)</span> theo công thức</p>
+<div class="math notranslate nohighlight">
+\[X^{i+4} = X^i \oplus T(X^{i+1} \oplus X^{i+2} \oplus X^{i+3} \oplus K_i)\]</div>
+<figure class="align-default" id="id4">
+<img alt="../_images/encryption.jpg" src="../_images/encryption.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Một vòng SMS4 (Nguồn - <span id="id3">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">6</a>]</span>)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Ciphertext sẽ là viết ngược của bốn word ở vòng cuối cùng, nói cách khác là</p>
+<div class="math notranslate nohighlight">
+\[C = (X^{35}, X^{34}, X^{33}, X^{32})\]</div>
 </section>
-</div><p>Khi order của cyclic group là lũy thừa một số nguyên tố thì ta dùng thuật toán Pohlig-Hellman.</p>
-<div class="proof algorithm admonition" id="algorithm-1">
-<p class="admonition-title"><span class="caption-number">Algorithm 8.2 </span> (Thuật toán Pohlig-Hellman)</p>
-<section class="algorithm-content" id="proof-content">
-<p><strong>Input:</strong> Nhóm cyclic <span class="math notranslate nohighlight">\(G\)</span> có order <span class="math notranslate nohighlight">\(n=p^e\)</span>, generator <span class="math notranslate nohighlight">\(g\)</span> và phần tử <span class="math notranslate nohighlight">\(h \in G\)</span>.</p>
-<p><strong>Output:</strong> Số <span class="math notranslate nohighlight">\(x\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\{ 0, 1, \ldots, n-1 \}\)</span> thỏa <span class="math notranslate nohighlight">\(g^x = h\)</span>.</p>
-<ol class="arabic simple">
-<li><p>Khởi tạo <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p></li>
-<li><p>Tính <span class="math notranslate nohighlight">\(\gamma = g^{p^{e-1}}\)</span>. Theo định lý Lagrange, <span class="math notranslate nohighlight">\(\gamma\)</span> có order là <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
-<li><p>for <span class="math notranslate nohighlight">\(k = 0\)</span> to <span class="math notranslate nohighlight">\(e-1\)</span></p>
-<ol class="arabic simple">
-<li><p>Tính <span class="math notranslate nohighlight">\(h_k = (g^{-x_k} \cdot h)^{e-1-k}\)</span>.</p></li>
-<li><p>Sử dụng thuật toán baby-step-giant-step, tìm <span class="math notranslate nohighlight">\(d_k \in \{ 0, 1, \ldots, p-1 \}\)</span> sao cho <span class="math notranslate nohighlight">\(\gamma^{d_k} = h_k\)</span>. Bước này có độ phức tạp <span class="math notranslate nohighlight">\(O(\sqrt{p})\)</span>.</p></li>
-<li><p>Tính <span class="math notranslate nohighlight">\(x_{k+1} = x_k + p^k d_k\)</span>.</p></li>
-</ol>
-</li>
-<li><p>Trả về <span class="math notranslate nohighlight">\(x_e\)</span> là kết quả cần tìm.</p></li>
-</ol>
+<section id="round-function">
+<h2><span class="section-number">2.2.2. </span>Round function<a class="headerlink" href="#round-function" title="Link to this heading">#</a></h2>
+<p>Biến đổi <span class="math notranslate nohighlight">\(T\)</span> gồm hai phần là hoán vị (không tuyến tính) <span class="math notranslate nohighlight">\(\tau\)</span> và hoán vị (tuyến tính) <span class="math notranslate nohighlight">\(L\)</span>. Nói cách khác là <span class="math notranslate nohighlight">\(T(\cdot) = L(\tau(\cdot))\)</span>.</p>
+<p>Hoán vị không tuyến tính có dạng</p>
+<div class="math notranslate nohighlight">
+\[\tau(X) = \tau(a_0, a_1, a_2, a_3) = (\text{Sbox}(a_0), \text{Sbox}(a_1), \text{Sbox}(a_2), \text{Sbox}(a_3)),\]</div>
+<p>với <span class="math notranslate nohighlight">\(a_i\)</span> là các byte của <span class="math notranslate nohighlight">\(X\)</span>. Nghĩa là <span class="math notranslate nohighlight">\(X\)</span> có <span class="math notranslate nohighlight">\(32\)</span> bit sẽ được chia thành bốn khối độ dài <span class="math notranslate nohighlight">\(8\)</span> bit là <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span> và <span class="math notranslate nohighlight">\(a_3\)</span>.</p>
+<p>Bảng S-box có thể xem ở một trong hai tài liệu trên.</p>
+<p>Hoán vị tuyến tính có dạng</p>
+<div class="math notranslate nohighlight">
+\[L(X) = X \oplus (X \ll 2) \oplus (X \ll 10) \oplus (X \ll 18) \oplus (X \ll 24),\]</div>
+<p>trong đó <span class="math notranslate nohighlight">\(\ll\)</span> là phép dịch bit sang trái.</p>
 </section>
-</div></section>
+<section id="thuat-toan-sinh-khoa-con">
+<h2><span class="section-number">2.2.3. </span>Thuật toán sinh khóa con<a class="headerlink" href="#thuat-toan-sinh-khoa-con" title="Link to this heading">#</a></h2>
+<p>Khóa <span class="math notranslate nohighlight">\(K\)</span> ban đầu (<span class="math notranslate nohighlight">\(128\)</span> bit) được chia thành bốn word</p>
+<div class="math notranslate nohighlight">
+\[K = (MK_0, MK_1, MK_2, MK_3)\]</div>
+<p>Các khóa con <span class="math notranslate nohighlight">\(K_0, K_1, \ldots, K_{31}\)</span> được sinh ra theo quy tắc sau. Với mỗi <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 31\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[K_i = HK_{i+4} = HK_i \oplus T'(HK_{i+1} \oplus HK_{i+2} \oplus HK_{i+3} \oplus CK_i),\]</div>
+<p>với <span class="math notranslate nohighlight">\(HK_i = MK_i \oplus FK_i\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, 2, 3\)</span>. Trong đó <span class="math notranslate nohighlight">\(FK\)</span> là một mảng được định nghĩa sẵn</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+FK_0 = (\mathtt{a3b1bac6}), FK_1 = (\mathtt{56aa3350}), \\
+FK_2 = (\mathtt{677d9197}), FK_3 = (\mathtt{b27022dc}).
+\end{align*}\end{split}\]</div>
+<p>Hàm <span class="math notranslate nohighlight">\(T'\)</span> khác với hàm <span class="math notranslate nohighlight">\(T\)</span> ở trên, thay vì dùng <span class="math notranslate nohighlight">\(L\)</span> thì dùng <span class="math notranslate nohighlight">\(L'\)</span> có dạng</p>
+<div class="math notranslate nohighlight">
+\[L'(X) = X \oplus (X \ll 13) \oplus (X \ll 23).\]</div>
+<p><span class="math notranslate nohighlight">\(CK\)</span> cũng là một mảng cố định. <span class="math notranslate nohighlight">\(CK_i\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 31\)</span> là bảng sau</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\mathtt{00070e15}, \quad \mathtt{1c232a31}, \quad \mathtt{383f464d}, \quad \mathtt{545b6269}, \\
+\mathtt{70777e85}, \quad \mathtt{8c939aa1}, \quad \mathtt{a8afb6bd}, \quad \mathtt{c4cbd2d9}, \\
+\mathtt{e0e7eef5}, \quad \mathtt{fc030a11}, \quad \mathtt{181f262d}, \quad \mathtt{343b4249}, \\
+\mathtt{50575e65}, \quad \mathtt{6c737a81}, \quad \mathtt{888f969d}, \quad \mathtt{a4abb2b9}, \\
+\mathtt{c0c7ced5}, \quad \mathtt{dce3eaf1}, \quad \mathtt{f8ff060d}, \quad \mathtt{141b2229}, \\
+\mathtt{30373e45}, \quad \mathtt{4c535a61}, \quad \mathtt{686f767d}, \quad \mathtt{848b9299}, \\
+\mathtt{a0a7aeb5}, \quad \mathtt{bcc3cad1}, \quad \mathtt{d8dfe6ed}, \quad \mathtt{f4fb0209}, \\
+\mathtt{10171e25}, \quad \mathtt{2c333a41}, \quad \mathtt{484f565d}, \quad \mathtt{646b7279}.
+\end{align*}\end{split}\]</div>
+</section>
+<section id="giai-ma">
+<h2><span class="section-number">2.2.4. </span>Giải mã<a class="headerlink" href="#giai-ma" title="Link to this heading">#</a></h2>
+<p>Để giải mã ta dùng round function ở trên nhưng theo thứ tự ngược lại.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -601,20 +628,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="elliptic.html"
+       href="magma.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Đường cong elliptic</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Magma</p>
       </div>
     </a>
     <a class="right-next"
-       href="../vasilenko/intro.html"
+       href="AES.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Теоретико-числовые алгоритмы в криптографии</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>AES</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,7 +661,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-thuat-toan-tinh-discrete-logarithm">8.1. Các thuật toán tính discrete logarithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.2.1. Mã hóa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-function">2.2.2. Round function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.2.3. Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#giai-ma">2.2.4. Giải mã</a></li>
 </ul>
   </nav></div>
 

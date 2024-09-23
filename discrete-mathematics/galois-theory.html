@@ -203,6 +203,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../calculus/partial-derivative.html">1.6. Đạo hàm một số hàm nhiều biến</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/differential-equation.html">2. Phương trình vi phân</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
 <ul class="nav bd-sidenav">
@@ -242,8 +243,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">1. Đại số boolean và mật mã học</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">2. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">2.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">2.2. AES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">2.3. Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">2.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">2.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">2.4. Kuznyechik</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">3. Phá mã vi sai trên TinyDES</a></li>
@@ -263,12 +265,20 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet-olympiad/2024.html">Internet Olympiad 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
@@ -533,7 +543,7 @@ document.write(`
 <section id="id3">
 <h3><span class="section-number">2.1.1. </span>Extension Fields<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Mở rộng trường)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.9 </span> (Mở rộng trường)</p>
 <section class="definition-content" id="proof-content">
 <p>Trường <span class="math notranslate nohighlight">\(E\)</span> được gọi là <strong>mở rộng trường</strong> (hay <strong>extension field</strong>) của trường <span class="math notranslate nohighlight">\(F\)</span> nếu <span class="math notranslate nohighlight">\(F\)</span> là trường con của <span class="math notranslate nohighlight">\(E\)</span>. Khi đó <span class="math notranslate nohighlight">\(F\)</span> được gọi là <strong>trường cơ sở</strong> (hay <strong>base field</strong>) và ký hiệu <span class="math notranslate nohighlight">\(F \subset E\)</span>.</p>
 </section>
@@ -669,7 +679,7 @@ document.write(`
 <section id="splitting-field">
 <h3><span class="section-number">2.1.3. </span>Splitting Field<a class="headerlink" href="#splitting-field" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Trường phân rã)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.10 </span> (Trường phân rã)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét trường <span class="math notranslate nohighlight">\(F\)</span> và đa thức khác hằng <span class="math notranslate nohighlight">\(p(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0\)</span> trên <span class="math notranslate nohighlight">\(F[x]\)</span> (<span class="math notranslate nohighlight">\(a_i \in F\)</span> với mọi <span class="math notranslate nohighlight">\(i = 1, 2, \ldots\)</span>).</p>
 <p>Trường mở rộng <span class="math notranslate nohighlight">\(E\)</span> của trường <span class="math notranslate nohighlight">\(F\)</span> được gọi là <strong>trường phân rã</strong> (hay <strong>splitting field</strong>) của <span class="math notranslate nohighlight">\(p(x)\)</span> nếu tồn tại các phần tử <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, \ldots, \alpha_n\)</span> thuộc <span class="math notranslate nohighlight">\(E\)</span> sao cho <span class="math notranslate nohighlight">\(E = F(\alpha_1, \alpha_2, \ldots, \alpha_n)\)</span> và</p>
