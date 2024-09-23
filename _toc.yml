@@ -83,6 +83,7 @@ parts:
     - file: cryptofox/2024.md
   - caption: CTF
     chapters:
+    - file: ctf/2020/midnightsunCTF-2020.md
     - file: ctf/2021/2021.md
       sections:
       - file: ctf/2021/cryptoCTF-2021.md
