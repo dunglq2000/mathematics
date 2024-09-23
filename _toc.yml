@@ -62,6 +62,7 @@ parts:
     - file: cryptography/block-cipher.md
       sections:
       - file: cryptography/magma.md
+      - file: cryptography/AES.md
       - file: cryptography/kuznyechik.md
     - file: cryptography/differential-attack/tinydes.md
     - file: cryptography/quantum-computing.md
