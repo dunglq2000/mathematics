@@ -62,6 +62,7 @@ parts:
     - file: cryptography/block-cipher.md
       sections:
       - file: cryptography/magma.md
+      - file: cryptography/sms4.md
       - file: cryptography/AES.md
       - file: cryptography/kuznyechik.md
     - file: cryptography/differential-attack/tinydes.md
@@ -79,6 +80,7 @@ parts:
   - caption: Olympiad
     chapters:
     - file: internet-olympiad/2023.md
+    - file: internet-olympiad/2024.md
     - file: siberian-maths-contest/2023.md
     - file: cryptofox/2024.md
   - caption: Bài tập và lời giải

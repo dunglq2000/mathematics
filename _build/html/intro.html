@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=564be945" />
   
@@ -243,8 +243,9 @@
 <li class="toctree-l1"><a class="reference internal" href="cryptography/intro.html">1. Đại số boolean và mật mã học</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="cryptography/block-cipher.html">2. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="cryptography/magma.html">2.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cryptography/AES.html">2.2. AES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cryptography/kuznyechik.html">2.3. Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography/sms4.html">2.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography/AES.html">2.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptography/kuznyechik.html">2.4. Kuznyechik</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="cryptography/differential-attack/tinydes.html">3. Phá mã vi sai trên TinyDES</a></li>
@@ -264,6 +265,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2024.html">Internet Olympiad 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
@@ -597,6 +599,7 @@ document.write(`
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Olympiad</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internet-olympiad/2024.html">Internet Olympiad 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="siberian-maths-contest/2023.html">Siberian Mathematical Contest 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cryptofox/2024.html">CryptoFox 2024</a></li>
 </ul>
@@ -684,36 +687,40 @@ document.write(`
 <span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
 <p>М.А. Черепнев С.Б. Гашков, Э.А. Применко. <em>Криптографические методы защиты информации</em>. Академия, 2010. ISBN 978-5-7695-4962-5.</p>
 </div>
-<div class="citation" id="id8" role="doc-biblioentry">
+<div class="citation" id="id24" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
+<p>Whitfield Diffie and George Ledin (translators). SMS4 encryption algorithm for wireless networks. Cryptology ePrint Archive, Paper 2008/329, 2008. URL: <a class="reference external" href="https://eprint.iacr.org/2008/329">https://eprint.iacr.org/2008/329</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
 <p>М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. <em>Криптографические методы защиты инфомации</em>. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.</p>
 </div>
 <div class="citation" id="id14" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
 <p>Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. <em>An Introduction to Mathematical Cryptography</em>. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. <a class="reference external" href="https://doi.org/10.1007/978-1-4939-1711-2">doi:10.1007/978-1-4939-1711-2</a>.</p>
 </div>
 <div class="citation" id="id15" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
 <p>Steven D Galbraith. <em>Mathematics of Public Key Cryptography</em>. Cambridge University, 2018.</p>
 </div>
 <div class="citation" id="id16" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
 <p>E. Berlekamp, R. McEliece, and H. van Tilborg. On the inherent intractability of certain coding problems (corresp.). <em>IEEE Transactions on Information Theory</em>, 24(3):384–386, 1978. <a class="reference external" href="https://doi.org/10.1109/TIT.1978.1055873">doi:10.1109/TIT.1978.1055873</a>.</p>
 </div>
 <div class="citation" id="id17" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
 <p>Robert J. McEliece. A public key cryptosystem based on algebraic coding theory. <em>DSN Progress Report 42-44</em>, 1978.</p>
 </div>
 <div class="citation" id="id9" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
 <p>Василенко О. Н. <em>Теоретико-числовые алгоритмы в криптографии</em>. МЦНМО, 2003.</p>
 </div>
 <div class="citation" id="id18" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
 <p>Lê Quang Ánh. <em>Thiên tài và số phận. Chuyện kể về các nhà toán học</em>. Volume 35 of Tủ sách Sputnik. Nhà xuất bản Thế Giới, 2018.</p>
 </div>
 <div class="citation" id="id19" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></span>
 <p>Lê Quang Ánh. <em>Định lý cuối cùng của Fermat. Một mật mã huyền bí và định mệnh</em>. Nhà xuất bản tổng hợp Thành phố Hồ Chí Minh, 2018.</p>
 </div>
 </div>
