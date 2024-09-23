@@ -51,6 +51,7 @@ parts:
   - caption: Hình học
     numbered: true
     chapters:
+    - file: geometry/analytic-geometry.md
     - file: geometry/transformation.md
     - file: geometry/conics.md
     - file: brachistochrone/brachistochrone.md

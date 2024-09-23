@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -222,18 +222,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">6. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">6.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">6. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">7. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">7.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">7.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">1. Phép biến hình</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">2. Ba đường Conic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">3. Đường đoản thời</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">1. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">2. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">3. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">4. Đường đoản thời</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="current nav bd-sidenav">
@@ -771,7 +773,7 @@ document.write(`
 <h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">5.4. </span>Các thuật toán lattice-based</a><a class="headerlink" href="#cac-thuat-toan-lattice-based" title="Link to this heading">#</a></h2>
 <section id="congruential-public-key-cryptosystem">
 <h3><span class="section-number">5.4.1. </span>Congruential public key cryptosystem<a class="headerlink" href="#congruential-public-key-cryptosystem" title="Link to this heading">#</a></h3>
-<p>Thuật toán này có thể xem chi trong <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">14</a>]</span>.</p>
+<p>Thuật toán này có thể xem chi trong <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">16</a>]</span>.</p>
 <section id="tao-khoa">
 <h4><span class="section-number">5.4.1.1. </span>Tạo khóa<a class="headerlink" href="#tao-khoa" title="Link to this heading">#</a></h4>
 <p>Trong thuật toán này, ta chọn số nguyên tố <span class="math notranslate nohighlight">\(q\)</span> làm public parameter.</p>
@@ -861,7 +863,7 @@ document.write(`
 </section>
 <section id="phuong-phap-coppersmith">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">5.5. </span>Phương pháp Coppersmith</a><a class="headerlink" href="#phuong-phap-coppersmith" title="Link to this heading">#</a></h2>
-<p>Phương pháp Coppersmith được dùng để tìm nghiệm nhỏ của đa thức trên modulo. Phần này mình tham khảo chính từ <span id="id3">[<a class="reference internal" href="../intro.html#id15" title="Steven D Galbraith. Mathematics of Public Key Cryptography. Cambridge University, 2018.">15</a>]</span>.</p>
+<p>Phương pháp Coppersmith được dùng để tìm nghiệm nhỏ của đa thức trên modulo. Phần này mình tham khảo chính từ <span id="id3">[<a class="reference internal" href="../intro.html#id15" title="Steven D Galbraith. Mathematics of Public Key Cryptography. Cambridge University, 2018.">17</a>]</span>.</p>
 <section id="y-tuong">
 <h3><span class="section-number">5.5.1. </span>Ý tưởng<a class="headerlink" href="#y-tuong" title="Link to this heading">#</a></h3>
 <p>Giả sử ta có phương trình <span class="math notranslate nohighlight">\(F(x) \equiv 0 \bmod M\)</span>​. Với số <span class="math notranslate nohighlight">\(X\)</span>​ cố định cho trước, phương pháp Coppersmith cho phép tìm nghiệm <span class="math notranslate nohighlight">\(x_0\)</span> nhỏ thỏa mãn <span class="math notranslate nohighlight">\(\lvert x_0 \rvert \leqslant X\)</span>​.</p>
