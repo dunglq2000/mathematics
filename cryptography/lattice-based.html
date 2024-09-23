@@ -268,6 +268,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
@@ -527,6 +528,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-thuat-toan">5.5.2. Cải tiến thuật toán</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-don-gian">5.5.2.1. Dạng đơn giản</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-nang-cao">5.5.2.2. Dạng nâng cao</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-thu-nghiem">5.5.3. Code thử nghiệm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-vi-du-don-gian-voi-small-roots-cua-sagemath">5.5.3.1. So sánh ví dụ đơn giản với small_roots của SageMath</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-dang-don-gian">5.5.3.2. Cải tiến dạng đơn giản</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-dang-nang-cao">5.5.3.3. Cải tiến dạng nâng cao</a></li>
 </ul>
 </li>
 </ul>
@@ -989,6 +996,121 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <p>Chạy LLL trên lattice trên sẽ cho kết quả 😆</p>
 </section>
 </section>
+<section id="code-thu-nghiem">
+<h3><span class="section-number">5.5.3. </span>Code thử nghiệm<a class="headerlink" href="#code-thu-nghiem" title="Link to this heading">#</a></h3>
+<section id="so-sanh-vi-du-don-gian-voi-small-roots-cua-sagemath">
+<h4><span class="section-number">5.5.3.1. </span>So sánh ví dụ đơn giản với small_roots của SageMath<a class="headerlink" href="#so-sanh-vi-du-don-gian-voi-small-roots-cua-sagemath" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+
+    <span class="n">P</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">base_ring</span><span class="p">()</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">X</span><span class="o">**</span><span class="n">i</span>
+        <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">j</span><span class="o">*</span><span class="n">X</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">coefficients</span><span class="p">())])</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">LLL</span><span class="p">()</span>
+    <span class="n">bf</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">j</span><span class="o">//</span><span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="n">i</span><span class="p">))</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bf</span><span class="p">))</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">roots</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">]</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="mi">10001</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">Zmod</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="s1">&#39;xn&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5000</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">222</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">change_ring</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">small_roots</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="cai-tien-dang-don-gian">
+<h4><span class="section-number">5.5.3.2. </span>Cải tiến dạng đơn giản<a class="headerlink" href="#cai-tien-dang-don-gian" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">X</span><span class="o">**</span><span class="n">i</span>
+        <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">f</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="n">X</span><span class="o">**</span><span class="n">u</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+        <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">LLL</span><span class="p">()</span>
+    <span class="n">bf</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">j</span> <span class="o">//</span> <span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="n">i</span><span class="p">))</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bf</span><span class="p">))</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">roots</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">]</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="mi">10001</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5000</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">222</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="cai-tien-dang-nang-cao">
+<h4><span class="section-number">5.5.3.3. </span>Cải tiến dạng nâng cao<a class="headerlink" href="#cai-tien-dang-nang-cao" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">h</span><span class="p">:</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">epsilon</span><span class="p">:</span>
+        <span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">X</span><span class="p">:</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">d</span><span class="o">-</span><span class="n">epsilon</span><span class="p">))</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="n">M</span><span class="o">**</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="o">**</span><span class="n">j</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">g</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="n">X</span><span class="o">**</span><span class="n">u</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">))]</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="n">h</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+            <span class="n">B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">LLL</span><span class="p">()</span>
+    <span class="n">bf</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">j</span> <span class="o">//</span> <span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="n">i</span><span class="p">))</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bf</span><span class="p">))</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">roots</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">]</span>
+
+<span class="c1"># Test theo sách giáo khoa</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">30</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">+</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">1942528644709637042</span> <span class="o">+</span> <span class="mi">1234567890123456789</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">987654321987654321</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">))</span>
+
+<span class="c1"># Tự test</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">21</span> <span class="o">+</span> <span class="mi">17</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">ZZ</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">25</span> <span class="o">-</span> <span class="mi">2883584</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">46976195</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">227</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">small_roots</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -1086,6 +1208,12 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-thuat-toan">5.5.2. Cải tiến thuật toán</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-don-gian">5.5.2.1. Dạng đơn giản</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dang-nang-cao">5.5.2.2. Dạng nâng cao</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-thu-nghiem">5.5.3. Code thử nghiệm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-vi-du-don-gian-voi-small-roots-cua-sagemath">5.5.3.1. So sánh ví dụ đơn giản với small_roots của SageMath</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-dang-don-gian">5.5.3.2. Cải tiến dạng đơn giản</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cai-tien-dang-nang-cao">5.5.3.3. Cải tiến dạng nâng cao</a></li>
 </ul>
 </li>
 </ul>
