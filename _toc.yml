@@ -81,6 +81,9 @@ parts:
     - file: internet-olympiad/2023.md
     - file: siberian-maths-contest/2023.md
     - file: cryptofox/2024.md
+  - caption: Bài tập và lời giải
+    chapters:
+    - file: solutions/Judson.md
   - caption: CTF
     chapters:
     - file: ctf/2020/midnightsunCTF-2020.md
