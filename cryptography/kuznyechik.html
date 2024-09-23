@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.2. Kuznyechik &#8212; Math Book</title>
+    <title>2.3. Kuznyechik &#8212; Math Book</title>
   
   
   
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Phá mã vi sai trên TinyDES" href="differential-attack/tinydes.html" />
-    <link rel="prev" title="2.1. Magma" href="magma.html" />
+    <link rel="prev" title="2.2. AES" href="AES.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -222,25 +222,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">3. Số học</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">4. Quan hệ hai ngôi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">5. Phân hoạch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">6. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">6.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">6.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">6.3. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">6. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">7. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">7.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">7.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-feedback-shift-register.html">7.3. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">1. Phép biến hình</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">2. Ba đường Conic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">3. Đường đoản thời</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">1. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">2. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">3. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">4. Đường đoản thời</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">1. Đại số boolean và mật mã học</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="block-cipher.html">2. Block cipher</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="magma.html">2.1. Magma</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AES.html">2.2. AES</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Kuznyechik</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="differential-attack/tinydes.html">3. Phá mã vi sai trên TinyDES</a></li>
@@ -494,14 +497,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.2.1. Mã hóa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">2.2.1.1. Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">2.2.1.2. Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">2.2.1.3. Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.3.1. Mã hóa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">2.3.1.1. Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">2.3.1.2. Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">2.3.1.3. Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.2.2. Thuật toán sinh khóa con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">2.2.3. So sánh Kuznyechik với AES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.3.2. Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">2.3.3. So sánh Kuznyechik với AES</a></li>
 </ul>
             </nav>
         </div>
@@ -514,12 +517,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="kuznyechik">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">2.2. </span>Kuznyechik</a><a class="headerlink" href="#kuznyechik" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">2.3. </span>Kuznyechik</a><a class="headerlink" href="#kuznyechik" title="Link to this heading">#</a></h1>
 <p>Kuznyechik là một thuật toán mã hóa khối, đối xứng như AES. Kuznyechik tiếng Nga là Кузнечик, có nghĩa là châu chấu. Tuy nhiên trong văn bản quốc tế thì chúng ta giữ nguyên tên gọi
 là hệ mã Kuznyechik.</p>
 <p>Mã khối Kuznyechik biến đổi trên khối 128 bit, độ dài khóa là 256 bit, biến đổi trên 9 vòng. Kuznyechik sử dụng mô hình SPN tương tự như AES, trở thành chuẩn mã hóa của Nga và được định nghĩa trong GOST R 34.12-2015.</p>
 <p>Một điểm đặc biệt là quá trình biến đổi qua các vòng sử dụng mạng SPN, tuy nhiên thuật toán sinh khóa con cho các vòng sử dụng mô hình Feistel.</p>
-<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">13</a>]</span>.</p>
+<p>Phần này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id8" title="М.И. Рожков А.Б. Лось, А.Ю. Нестеренко. Криптографические методы защиты инфомации. Юрайт, 2 edition, 2018. ISBN 978-5-534-01530-0.">15</a>]</span>.</p>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -533,10 +536,10 @@ là hệ mã Kuznyechik.</p>
 </ul>
 </nav>
 <section id="ma-hoa">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">2.2.1. </span>Mã hóa</a><a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">2.3.1. </span>Mã hóa</a><a class="headerlink" href="#ma-hoa" title="Link to this heading">#</a></h2>
 <p>Gọi <span class="math notranslate nohighlight">\(k_i\)</span> là khóa con của vòng thứ <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 9\)</span>. Ta có các động tác biến đổi sau:</p>
 <section id="phep-bien-doi-x">
-<h3><span class="section-number">2.2.1.1. </span>Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span><a class="headerlink" href="#phep-bien-doi-x" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1.1. </span>Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span><a class="headerlink" href="#phep-bien-doi-x" title="Link to this heading">#</a></h3>
 <p>Hàm <span class="math notranslate nohighlight">\(X: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span> biến đổi trên block 128 bit.</p>
 <p>Ta chia block đầu vào thành 16 cụm 8 bit, ký hiệu</p>
 <div class="math notranslate nohighlight">
@@ -551,7 +554,7 @@ là hệ mã Kuznyechik.</p>
 <p>Nói cách khác, chúng ta xor 128 bit của khối đầu vào và 128 bit của khóa con <span class="math notranslate nohighlight">\(k_i\)</span>.</p>
 </section>
 <section id="phep-bien-doi-s">
-<h3><span class="section-number">2.2.1.2. </span>Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span><a class="headerlink" href="#phep-bien-doi-s" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1.2. </span>Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span><a class="headerlink" href="#phep-bien-doi-s" title="Link to this heading">#</a></h3>
 <p>Hàm <span class="math notranslate nohighlight">\(S: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
 <p>Block đầu vào tiếp tục được chia thành 16 cụm 8 bit. Mỗi cụm sẽ đi qua một bảng tra cứu SBox (gọi là bảng <span class="math notranslate nohighlight">\(\pi\)</span>). Sau đó ta nối các kết quả với nhau.</p>
 <div class="math notranslate nohighlight" id="equation-kuz-2">
@@ -562,7 +565,7 @@ là hệ mã Kuznyechik.</p>
 <p>Bảng <span class="math notranslate nohighlight">\(\pi\)</span> được định nghĩa sẵn và không tuyến tính, nên đây là bước không tuyến tính của thuật toán.</p>
 </section>
 <section id="phep-bien-doi-l">
-<h3><span class="section-number">2.2.1.3. </span>Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#phep-bien-doi-l" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">2.3.1.3. </span>Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#phep-bien-doi-l" title="Link to this heading">#</a></h3>
 <p>Hàm <span class="math notranslate nohighlight">\(L: \mathbb{F}_2^{128} \to \mathbb{F}_2^{128}\)</span>.</p>
 <p>Block đầu vào vẫn được chia thành 16 cụm 8 bit. Tuy nhiên ở đây mỗi cụm 8 bit biểu diễn một đa thức trong trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> với đa thức tối giản là <span class="math notranslate nohighlight">\(g(x) = x^8 + x^7 + x^6 + x + 1\)</span>. Những phép tính cộng và nhân sau đây cũng được thực hiện trên
 trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> này.</p>
@@ -602,7 +605,7 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
 </section>
 </section>
 <section id="thuat-toan-sinh-khoa-con">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">2.2.2. </span>Thuật toán sinh khóa con</a><a class="headerlink" href="#thuat-toan-sinh-khoa-con" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">2.3.2. </span>Thuật toán sinh khóa con</a><a class="headerlink" href="#thuat-toan-sinh-khoa-con" title="Link to this heading">#</a></h2>
 <p>Để sinh khóa con cho 10 lần XOR, thuật toán Kuznyechik dùng mô hình Feistel. Đầu tiên ta định nghĩa hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span>. Với <span class="math notranslate nohighlight">\(c\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128}\)</span> và <span class="math notranslate nohighlight">\(a = a_0 \Vert a_1\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span>. Hàm <span class="math notranslate nohighlight">\(F(c, a)\)</span> biến phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{128} \times \mathbb{F}_2^{256}\)</span> thành phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^{256}\)</span> bằng đẳng thức</p>
 <div class="math notranslate nohighlight">
 \[F(c, a) = a_1 \Vert a_0 \oplus R(c, a_1)\]</div>
@@ -623,7 +626,7 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
 <p>Theo đó, các số <span class="math notranslate nohighlight">\(c_0, c_1, \ldots, c_7\)</span> được sử dụng để sinh khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span> từ <span class="math notranslate nohighlight">\(k_0 \Vert k_1\)</span>. Tương tự, <span class="math notranslate nohighlight">\(c_8, c_9, \ldots, c_{15}\)</span> dược dùng để sinh khóa <span class="math notranslate nohighlight">\(k_4 \Vert k_5\)</span> từ khóa <span class="math notranslate nohighlight">\(k_2 \Vert k_3\)</span>. Các số <span class="math notranslate nohighlight">\(c_0\)</span>, <span class="math notranslate nohighlight">\(c_1\)</span>, …, <span class="math notranslate nohighlight">\(c_{31}\)</span> được định nghĩa trong tiêu chuẩn.</p>
 </section>
 <section id="so-sanh-kuznyechik-voi-aes">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">2.2.3. </span>So sánh Kuznyechik với AES</a><a class="headerlink" href="#so-sanh-kuznyechik-voi-aes" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">2.3.3. </span>So sánh Kuznyechik với AES</a><a class="headerlink" href="#so-sanh-kuznyechik-voi-aes" title="Link to this heading">#</a></h2>
 <p>Điểm giống nhau là cả hai thuật toán đều có phần tuyến tính và phần không tuyến tính. Về phần tuyến tính, đối với AES là các động tác Shift Rows, Mix Columns và Add Round Key, còn đối với Kuznyechik là hàm <span class="math notranslate nohighlight">\(X\)</span> và <span class="math notranslate nohighlight">\(L\)</span> bên trên. Về phần không tuyến tính đều là việc sử dụng một bảng tra cứu SBox của riêng thuật toán đó.</p>
 <p>Điểm khác nhau đầu tiên là cách xây dựng ma trận tính toán. Nếu ta xem xét Shift Rows và Mix Columns dưới dạng phép nhân ma trận trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> thì ta thấy rằng ma trận chứa nhiều số 0 nhất có thể. Điều này giúp tăng tốc độ tính toán. Về phần Kuznyechik, phép tính ở hàm <span class="math notranslate nohighlight">\(\lambda\)</span> cũng thực hiện trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> nhưng không chứa bất kì số 0 nào. Điều này làm tăng độ phức tạp tính toán nhưng cũng làm tăng tính an toàn.</p>
 <p>Điểm khác nhau tiếp theo là việc sinh khóa con. AES sử dụng thuật toán sinh khóa con từng vòng từ toàn bộ 256 bit ban đầu. Trong khi Kuznyechik sử dụng mô hình Feistel, theo đó với 256 bit ban đầu được sử dụng cho 2 vòng đầu, cứ mỗi hai khóa con sẽ sinh ra hai khóa con tiếp theo. Như vậy thuật toán sinh khóa con ít phức tạp hơn AES (Kuznyechik cần 5 lần sinh khóa còn AES 14 lần).</p>
@@ -661,12 +664,12 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="magma.html"
+       href="AES.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.1. </span>Magma</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>AES</p>
       </div>
     </a>
     <a class="right-next"
@@ -694,14 +697,14 @@ trường <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.2.1. Mã hóa</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">2.2.1.1. Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">2.2.1.2. Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">2.2.1.3. Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ma-hoa">2.3.1. Mã hóa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-x">2.3.1.1. Phép biến đổi <span class="math notranslate nohighlight">\(X\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-s">2.3.1.2. Phép biến đổi <span class="math notranslate nohighlight">\(S\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phep-bien-doi-l">2.3.1.3. Phép biến đổi <span class="math notranslate nohighlight">\(L\)</span></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.2.2. Thuật toán sinh khóa con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">2.2.3. So sánh Kuznyechik với AES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thuat-toan-sinh-khoa-con">2.3.2. Thuật toán sinh khóa con</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-sanh-kuznyechik-voi-aes">2.3.3. So sánh Kuznyechik với AES</a></li>
 </ul>
   </nav></div>
 
