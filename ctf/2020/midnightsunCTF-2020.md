@@ -1,6 +1,6 @@
-# Midnight Sun CTF 2020
+## Midnight Sun CTF 2020
 
-## rsa_yay
+### rsa_yay
 
 ```python
 while True:

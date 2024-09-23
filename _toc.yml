@@ -89,7 +89,9 @@ parts:
     - file: solutions/Judson.md
   - caption: CTF
     chapters:
-    - file: ctf/2020/midnightsunCTF-2020.md
+    - file: ctf/2020/2020.md
+      sections:
+      - file: ctf/2020/midnightsunCTF-2020.md
     - file: ctf/2021/2021.md
       sections:
       - file: ctf/2021/cryptoCTF-2021.md
