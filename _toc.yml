@@ -82,10 +82,14 @@ parts:
         - file: vasilenko/discrete-fourier-transform.md
   - caption: Olympiad
     chapters:
-    - file: internet-olympiad/2023.md
-    - file: internet-olympiad/2024.md
-    - file: siberian-maths-contest/2023.md
-    - file: cryptofox/2024.md
+    - file: contests/2023/2023.md
+      sections:
+      - file: contests/2023/internet-olympiad/2023.md
+      - file: contests/2023/siberian-maths-contest-2023.md
+    - file: contests/2024/2024.md
+      sections:
+      - file: contests/2024/internet-olympiad-2024.md
+      - file: contests/2024/cryptofox-2024.md
   - caption: Bài tập và lời giải
     chapters:
     - file: solutions/Judson.md
