@@ -82,7 +82,7 @@ parts:
     - file: vasilenko/intro.md
       sections:
         - file: vasilenko/discrete-fourier-transform.md
-  - caption: Olympiad
+  - caption: Contests
     chapters:
     - file: contests/2023/2023.md
       sections:
