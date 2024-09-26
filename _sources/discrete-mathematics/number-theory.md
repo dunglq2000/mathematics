@@ -44,7 +44,7 @@ $$\begin{equation*}
 
 Điểm quan trọng ở thuật toán Euclid là thuật toán chắc chắn sẽ dừng sau một số hữu hạn bước, và kết quả sẽ là ước chung lớn nhất của hai số $a$ và $b$.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Đặt $r_0 = a$ và $r_1 = b$. Theo thuật chia Euclid ta có các số $q_0$ và $r_2$ sao cho $r_0 = r_1 q_0 + r_2$ với $0 \leqslant r_2 < r_1$. Thuật toán Euclid hoạt động như sau:
 
@@ -194,7 +194,7 @@ $$\{a_1, a_2, \ldots, a_{\varphi(n)}\}$$
 Với $(m, n) = 1$ thì $\varphi(m n) = \varphi(m) \varphi(n)$.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta viết các số từ 1 tới $mn$ thành bảng như sau
 
@@ -220,7 +220,7 @@ Do tính chất này nên hàm Euler là hàm nhân tính.
 Cho số nguyên dương $n$. Khi đó $\displaystyle{\sum_{d | n} \varphi(d) = n}$.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Giả sử phân tích thừa số nguyên tố của $n$ là 
 
@@ -268,7 +268,7 @@ $$\begin{equation*}
 \end{equation*}$$
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Giả sử $S = \{a_1, a_2, \ldots, a_{\varphi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
 
@@ -390,7 +390,7 @@ $$\begin{equation*}
 1. Nếu $(n_1, n_2) = 1$ thì $\mu(n_1, n_2) = \mu(n_1) \mu(n_2)$
 2. $\displaystyle{\sum_{d \mid n} \mu(d) = 0}$ với $n = p_1 p_2 \ldots p_k$
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Với tính chất 1, ta dễ thấy rằng do $n_1$ và $n_2$ nguyên tố cùng nhau nên trong cách phân tích thừa số nguyên tố của chúng sẽ chứa các số nguyên tố khác nhau. 
 
@@ -422,7 +422,7 @@ $$\begin{equation*}
 
 Nghĩa là nếu chúng ta có hai hàm số $f$ và $g$ thỏa phương trình đầu (biểu diễn $f$ theo $g$) thì chúng ta cũng sẽ tìm được cách biểu diễn $g$ theo $f$.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Với $d \mid n$, đặt $d' = \dfrac{n}{d} \Rightarrow d = \dfrac{n}{d'}$.
 
@@ -485,7 +485,7 @@ Trong đó $\gcd(m_i, m_j) = 1$ với mọi $i \neq j$, $1 \leqslant i, j \leqsl
 
 Khi đó định lý số dư Trung Hoa phát biểu rằng hệ phương trình đồng như này có nghiệm duy nhất trong modulo $M = m_1 m_2 \ldots m_k$.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Chúng ta cần chứng minh sự tồn tại và tính duy nhất của nghiệm.
 

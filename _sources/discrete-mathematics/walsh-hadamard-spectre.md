@@ -62,7 +62,7 @@ $$\begin{equation}
 \end{equation}$$ (fur:eq4)
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Để chứng minh nhận xét này, ta thấy rằng nếu $\mathbf{z} \neq \mathbf{0}$ thì có ít nhất một bit $z_i \neq 0$. 
 
@@ -85,7 +85,7 @@ Trong trường hợp $\mathbf{z} = \mathbf{0}$ thì $\langle \mathbf{a}, \mathb
 
 Nhận xét {eq}`fur:eq4` đã được chứng minh. Ta quay lại bài toán.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Với mọi vector $\mathbf{x} \in \mathbb{F}_2^n$, ta khai triển từ vế phải của {eq}`fur:eq2` và từ {eq}`fur:eq3`:
 
@@ -150,7 +150,7 @@ $$\begin{equation}
 
 Tập hợp $\{ W_f (\mathbf{a}), \mathbf{a} \in \mathbb{F}_2^n \}$ được gọi là **phổ Walsh** (hay **spectre Walsh**) của hàm $f(\mathbf{x})$. Các giá trị $W_f (\mathbf{a})$ được gọi là hệ số Walsh.
 	
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Tương tự như trên, ta khai triển vế phải của {eq}`walsh:eq1` và thay {eq}`walsh:eq2` vào
 
@@ -203,7 +203,7 @@ với $\Delta (\mathbf{a}) = \begin{cases}
 \end{cases}$
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta có
 

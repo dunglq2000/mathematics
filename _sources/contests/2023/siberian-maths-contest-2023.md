@@ -1,14 +1,14 @@
-# Siberian Mathematical Contest 2023
+## Siberian Mathematical Contest 2023
 
-## Đề dành cho năm nhất
+### Đề dành cho năm nhất
 
-### Bài 1
+#### Bài 1
 
-#### Đề bài
+##### Đề bài
 
 Tồn tại hay không một đa thức $p(x)$ sao cho mọi hệ số khác không của nó không phải số nguyên, nhưng với hai số nguyên bất kì khác nhau $a$ và $b$ ta đều có $\dfrac{p(a) - p(b)}{b - a}$ là số nguyên?
 
-#### Lời giải
+##### Lời giải
 
 Tồn tại, ví dụ như $p(x) = \dfrac{x^4 + x^2}{2}$:
 
@@ -16,9 +16,9 @@ $$\frac{p(a) - p(b)}{a - b} = \cdots = \frac{(a + b)(a^2 + b^2 + 1)}{2}$$
 
 Vì $a+b$ và $a^2 + b^2 + 1$ khác tính chẵn lẻ nên tích trên luôn chia hết cho $2$ và do đó là số nguyên.
 
-### Bài 2
+#### Bài 2
 
-#### Đề bài
+##### Đề bài
 
 Cho dãy $\{ a_n \}$, $n \geqslant 0$ thỏa điều kiện $a_0 = 1$, $a_1 = \dfrac{1}{2}$,
 
@@ -26,7 +26,7 @@ $$a_n = \frac{n}{2} a_{n-1} + \frac{n(n-1)}{2} a_{n-2} + \frac{(-1)^n (1 - n)}{2
 
 Tìm $\lim\limits_{n \to \infty} \dfrac{a_n}{n!}$.
 
-#### Lời giải
+##### Lời giải
 
 Từ quy nạp toán học có thể tìm được
 
@@ -48,15 +48,15 @@ $$\begin{align*}
     & = \sum_{k=0}^n \frac{(-1)^k}{(k+1)!} = 1 - \sum_{k=0}^{n+1} \frac{(-1)^k}{k!} \to 1 - \frac{1}{e}
 \end{align*}$$
 
-### Bài 3
+#### Bài 3
 
-#### Đề bài
+##### Đề bài
 
 Cho hàm đơn điệu liên tục tăng nghiêm ngặt $f(x)$ xác định trên nửa khoảng $[0, +\infty)$ và thỏa $f(0) = 0$. Đặt $g(x)$ là hàm ngược của $f(x)$. Chứng minh rằng, với mọi số nguyên $m, n$ thì bất đẳng thức sau thỏa mãn:
 
 $$m n \leqslant \sum_{k=0}^m [f(k)] + \sum_{s=0}^n [g(s)]$$
 
-#### Lời giải
+##### Lời giải
 
 Giả sử, $[f(m)] \geqslant n$. Đặt $[f(s)] = l_s$. Theo tính đơn điệu thì $l_s \leqslant f(s) < l_{s+1}$. Do $f(x)$ liên tục và đơn điệu tăng nghiêm ngặt nên $g(x)$ cũng liên tục và đơn điệu.
 
@@ -77,9 +77,9 @@ $$\begin{align*}
 
 Chứng minh tương tự cho $[f(m)] < n$ (thay $f(x)$ thành $g(x)$).
 
-### Bài 4
+#### Bài 4
 
-#### Đề bài
+##### Đề bài
 
 Cho đa thức với hệ số nguyên
 
@@ -87,7 +87,7 @@ $$f(x) = x^{2m} + x^{m+2} - 4 x^m + x^{m-n} + 1$$
 
 với $m > n$ là hai số tự nhiên nguyên tố cùng nhau. Tìm ước chung lớn nhất giữa $f(x)$ và $f'(x)$.
 
-#### Lời giải
+##### Lời giải
 
 Ta thấy rằng $x=1$ là nghiệm bậc hai của $f(x)$. Ta sẽ chứng minh rằng $f(x)$ và $f'(x)$ không có nghiệm tổng quát (nghiệm phức) nào khác. Giả sử có nghiệm $z \in \mathbb{C}$. Khi đó
 
@@ -103,4 +103,3 @@ $$u_0 = - \frac{m^2 + 3n^2 + 2n \sqrt{2(m^2 + n^2)}}{m^2 - n^2}, v_0 = \frac{3m^
 
 Ở đây $u_0$ và $v_0$ là các số thực và thỏa mãn đẳng thức $u_0^n = v_0^m$. Nhưng vì $1 < \lvert u_0 \rvert < v_0$ nên khi $m > n$ các đẳng thức trên không đúng.
 
-### Bài 5

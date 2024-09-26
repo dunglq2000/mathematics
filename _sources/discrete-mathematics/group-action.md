@@ -39,7 +39,7 @@ $$G(m) = \{gm : g \in G\}$$
 Hai orbit của hai phần tử bất kì hoặc rời nhau, hoặc trùng nhau.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Giả sử ta có $m_1, m_2 \in M$ mà $G(m_1) \cap G(m_2) \neq \emptyset$.
 
@@ -82,7 +82,7 @@ Ta ký hiệu là $m \tilde{G} n$.
 Quan hệ được định nghĩa như trên là quan hệ tương đương.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Để chứng minh một quan hệ là tương đương, ta cần chứng minh tính phản xạ, đối xứng và bắc cầu.
 

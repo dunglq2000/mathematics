@@ -1,10 +1,10 @@
-# Internet Olympiad 2024
+## Internet Olympiad 2024
 
-## Vòng 2
+### Vòng 2
 
-### Bài 2
+#### Bài 2
 
-#### Đề bài
+##### Đề bài
 
 Cho hai số tự nhiên $x, y$ sao cho
 
@@ -12,7 +12,7 @@ $$A = \dfrac{2y}{x(y-x)}, B = \dfrac{(y-x)(y+1)}{2y^2} \in \mathbb{Z}.$$
 
 Tìm $x, y$.
 
-#### Lời giải
+##### Lời giải
 
 Do $A, B \in \mathbb{Z}$ nên
 
@@ -20,13 +20,13 @@ $$A \cdot B = \dfrac{2y}{x(y-x)} \cdot \dfrac{(y-x)(y+1)}{2y^2} = \dfrac{y+1}{xy
 
 Suy ra tồn tại $k \in \mathbb{Z}$ sao cho $y + 1 = kxy$, tương đương với $y(kx - 1) = 1$. Điều này chỉ xảy ra khi $y = 1, x = 2$ (có một nghiệm khác là $y = 1, x = 1$ nhưng sẽ không thỏa mẫu số của $A$).
 
-### Bài 8
+#### Bài 8
 
-#### Đề bài
+##### Đề bài
 
 Cho $x, y$ là các số thực thỏa $x^2 + y^2 + xy = x + y$. Tìm giá trị lớn nhất của $x^2 + y^2$.
 
-#### Lời giải
+##### Lời giải
 
 Thầy mình bảo đây là dạng bậc hai nên có thể biến đổi để thành phương trình ellipse. Ở đây mình giải theo cách của mình.
 
@@ -42,13 +42,13 @@ Ta có $f'(t) = -2t + 2$, $f'(t) = 0 \Leftrightarrow t = 1$.
 
 Do đó $f(t)_{\max} = f(1) = 1$.
 
-### Bài 9
+#### Bài 9
 
-#### Đề bài
+##### Đề bài
 
 Xét đa thức $P(x) = x^4 - 4x^2 - x + 1$. Tính $\displaystyle{\sum_{i=1}^4 \dfrac{2x_i + 1}{(x_i^2 - 1)^2}}$ với $x_i$ là các nghiệm của $P(x)$.
 
-#### Lời giải
+##### Lời giải
 
 Ta biến đổi
 
@@ -58,9 +58,9 @@ Do $x_i$ là nghiệm nên $P(x_i) = 0$, tương đương với $\dfrac{1}{x_i} 
 
 Tổng trên tương đương với $\sum \dfrac{1}{x_i}$. Dùng Viete có thể tính ra.
 
-### Bài 10
+#### Bài 10
 
-#### Đề bài
+##### Đề bài
 
 Cho hàm số
 
@@ -70,7 +70,7 @@ $$\begin{equation*}
 
 Gọi $M$ là đạo hàm của $f(x)$ tại $x_0 = 0$. Tính giá trị $2^{1013 \cdot 2023} \cdot M - 7 \cdot 2^{2023}$.
 
-#### Lời giải
+##### Lời giải
 
 Đặt $f(x) = \dfrac{4x-3}{g(x)}$ thì 
 

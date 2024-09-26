@@ -109,7 +109,7 @@ $$\begin{equation*}
 
 với $\mathbf{v}$ là các vector trong $\mathcal{L}$, sẽ cover hết $\mathbb{R}^n$.
 
-````{admonition} **Chứng minh.**
+````{admonition} **Chứng minh**
 :class: danger, dropdown
 
 Để chứng minh nhận xét trên, giả sử $\{ \mathbf{v}_i : 1 \leqslant i \leqslant n \}$ là cơ sở của $\mathcal{L}$. Khi đó các $\mathbf{v}_i$ độc lập tuyến tính nên cũng là cơ sở của $\mathbb{R}^n$.
@@ -296,7 +296,7 @@ $$a = fe \pmod q, \quad b = f^{-1} a \pmod g$$
 
 Lưu ý $f^{-1}$ là nghịch đảo modulo $g$. Khi đó $b \equiv m$ là message ban đầu.
 
-````{admonition} **Chứng minh.**
+````{admonition} **Chứng minh**
 :class: danger, dropdown
 Để chứng minh rằng số $b$ sau khi tính toán bằng chính xác $m$ ban đầu ta cần xem xét điều kiện của private key và public key.
 	

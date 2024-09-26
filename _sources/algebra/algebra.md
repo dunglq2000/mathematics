@@ -202,7 +202,7 @@ Chúng ta còn một cách gọi khác cho đơn ánh, toàn ánh, song ánh tro
 Hàm số $f: \mathbb{R} \rightarrow \mathbb{R}$ cho bởi $y = f(x) = x^3$ là song ánh.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta thấy nếu $f(x_1) = f(x_2)$, tương đương $x_1^3 = x_2^3$ nên $x_1 = x_2$. Do đó $f$ là đơn ánh.
 

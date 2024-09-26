@@ -1,10 +1,10 @@
-# CryptoFox 2024
+## CryptoFox 2024
 
 Olympiad mật mã và bảo mật thông tin CryptoFox 2024
 
-## Задача 1. дешифрование файла
+### Задача 1. дешифрование файла
 
-### Câu hỏi
+#### Câu hỏi
 
 ```python
 import os.path		# стандартная библиотека
@@ -156,7 +156,7 @@ if __name__ == '__main__':
         decrypt(cipher_file_path, decipher_file_path, k)    # расшифрование ШТ
 ```
 
-### Lời giải
+#### Lời giải
 
 Bài này cho file encrypt bằng thuật toán Kuznyechik 256 bit. Với password bị ẩn đi, khóa cho Kuznyechik được sinh bằng việc hash password bằng Streebog, sau đó các bit sau khi hash đi qua một hoán vị.
 
@@ -259,9 +259,9 @@ for t in range(len(ss)):
 Когда же черт возьмет тебя!
 ```
 
-## Задача 2. Анализ GOST-CryptoFox
+### Задача 2. Анализ GOST-CryptoFox
 
-### Phân tích GOST-CryptoFox
+#### Phân tích GOST-CryptoFox
 
 Đặt $V_{n}(2^m)$ là không gian vector $n$ chiều trên trường $\mathbb{F}_{2^m}$, $\boxplus$ là phép cộng trên vành $\mathbb{Z}_{2^{32}}$ (phép cộng modulo $2^{32}$), $\oplus$ là phép cộng trên $V_{n}(2)$ (phép XOR).
 
@@ -280,7 +280,7 @@ Ngoài ra, trong thuật toán sử dụng:
 - các hoán vị $\pi_1, \pi_2, \pi_3, \pi_4$ trên tập $\{ 1, 2, \ldots, 8 \}$ để chỉ định khóa con cho từng vòng
 - các hoán vị 8 bit $s_1, s_2, s_3, s_4$ là các S-box của thuật toán
 
-#### Thuật toán sinh khóa con
+##### Thuật toán sinh khóa con
 
 Khóa đầu vào $K$ có 256 bit.
 
@@ -292,7 +292,7 @@ Khóa đầu vào $K$ có 256 bit.
 
 Khi đó các khóa con cho 32 vòng là $k_1, k_2, \ldots, k_{32}$.
 
-#### Thuật toán mã hóa
+##### Thuật toán mã hóa
 
 GOST-CryptoFox 2024 dựa trên mô hình Feistel. Round function $f_k : V_{64}(2) \to V_{64}(2)$ với khóa $k \in V_{32}(2)$:
 
@@ -336,7 +336,7 @@ Mã hóa là hàm $b_K : V_{64}(2) \to V_{64}(2)$ định nghĩa bởi phương 
 
 $$b_K(\alpha) = g_{k_32} g_{k_31} \ldots g_{k_2} g_{k_1} (\alpha), \quad \alpha \in V_{64}(2)$$
 
-### Câu hỏi
+#### Câu hỏi
 
 1. Trong hệ mật mã GOST-CryptoFox trên đầy đủ 32 vòng tìm các vi sai liên quan đến các khóa với xác suất là 1 và chỉ sử dụng các khóa liên quan và cặp plaintext thích hợp. Điều đó nghĩa là, với mỗi khóa chưa biết $K \in V_{256}$ tìm phần tử $\varepsilon \in V_{256} \backslash \{ \vec{0}_{256} \}$ và $\delta_1, \delta_2 \in V_{64}$ sao cho với cách chọn ngẫu nhiên plaintext $\alpha \in V_{64}(2)$ đẳng thức vi sai với xác suất là 1 là phương trình:
 
@@ -449,9 +449,9 @@ $$
 3. Тогда получим $\delta_2 \equiv \delta_1 = \delta_{11} \Vert \delta_{12} \in V_{64}$
 ```
 
-## Задача 3. Инвариантные структуры
+### Задача 3. Инвариантные структуры
 
-### Câu hỏi
+#### Câu hỏi
 
 Alice và Bob sử dụng thuật toán PRINTcipher-48 để mã hóa dữ liệu. Eva rất muốn biết Alice và Bob đã trao đổi thông tin gì bằng thuật toán này. Eva biết được perm key là 7e92c53f và 10 cặp plaintext-ciphertext theo bảng sau:
 
@@ -468,11 +468,13 @@ Alice và Bob sử dụng thuật toán PRINTcipher-48 để mã hóa dữ liệ
 | 9 | 1a8d558c018c | 2d16ebafea7a |
 | 10 | 38c3840ae3a9 | 2953ab0bf3b1 |
 
-Hãy giúp Eva khôi phục 80 bit của khóa bí mật. Tài liệu mô tả thuật toán cũng như cách tấn công dựa trên invariant structure (cấu trúc bất biến) ở [1].
+Hãy giúp Eva khôi phục 80 bit của khóa bí mật. Tài liệu mô tả thuật toán cũng như cách tấn công dựa trên invariant structure (cấu trúc bất biến) [^Leander].
 
-## Задача 4. Корректирующий код и шифр Вернама
+[^Leander]: Leander G. et al. "A cryptanalysis of PRINTcipher: the invariant subspace attack". In: Advances in Cryptology–CRYPTO 2011: 31st Annual Cryptology Conference (Aug. 2011).
 
-### Câu hỏi
+### Задача 4. Корректирующий код и шифр Вернама
+
+#### Câu hỏi
 
 Alice gửi cho Bob thông điệp được mã hóa bằng mã Vernam.
 
@@ -499,9 +501,9 @@ Anton và Bella muốn sử dụng kênh truyền của Alice và Bob để trao
 
 Anton có thể gửi thông điệp cho Bella, sử dụng kênh truyền của Alice và Bob, mà không ảnh hưởng hay tiết lộ sự tồn tại của bản thân không? Nếu có, lượng thông tin lớn nhất mà Anton có thể gửi đi trong một thông-điệp-Alice là bao nhiêu?
 
-## Задача 5. Эффективная реализация
+### Задача 5. Эффективная реализация
 
-### Câu hỏi
+#### Câu hỏi
 
 Alice nhận được một thiết bị phần cứng, cho phép thực hiện các phép tính trên đường cong elliptic, bao gồm: cộng, trừ, nhân đôi, nhân ba và nhân 7 (nhân vô hướng một điểm với 7).
 
@@ -540,9 +542,9 @@ $$2024 = 2^a \cdot 3^b \cdot 7^c + 2^m \cdot 3^n \cdot 7^p + 2^u \cdot 3^v \cdot
 Ответ: НЕВОЗМОЖНО.
 ```
 
-## Задача 7. Диффенциальная равномерность
+### Задача 7. Диффенциальная равномерность
 
-### Câu hỏi
+#### Câu hỏi
 
 Ánh xạ
 
@@ -577,9 +579,9 @@ có không quá $\delta$ nghiệm trên $\mathrm{GF}(2^n)$.
 
 Hãy tìm toán tử $\circ$ sao cho hàm $I(x)$ có diffential formidity thấp nhất.
 
-## Задача 8. Разделение секретов
+### Задача 8. Разделение секретов
 
-### Câu hỏi
+#### Câu hỏi
 
 Ông chủ trước khi đi nghỉ mát đã thay đổi code 6 chữ số của két sắt và, trong mọi trường hợp, chia bí mật đó theo sơ đồ "$2$ trong $N$" bằng việc vẽ một "đường thẳng" bí mật dưới vành modulo $1$ triệu, trong đó code là tọa độ ban đầu của đường thẳng đó.
 
@@ -623,9 +625,9 @@ $$535970 \cdot 0 + 385035 y + 328925 = 0 \bmod{10^6}$$
 Ответ: 891140.
 ```
 
-## Задача 9. Схемная сложность S-блока
+### Задача 9. Схемная сложность S-блока
 
-### Câu hỏi
+#### Câu hỏi
 
 Kí hiệu độ phức tạp mạch của hàm boolean vector (S-box) $F$ trong cơ sở $B$ là $L_B(F)$. Ta nói S-box khả nghịch $F : \{ 0, 1 \}^n \to \{ 0, 1 \}$ là bất đối xứng (asymmetric computing), nếu với cơ sở $B$ nào đó ta có $L_B(F) \neq L_B(F^{-1})$.
 
@@ -633,9 +635,9 @@ Kí hiệu độ phức tạp mạch của hàm boolean vector (S-box) $F$ trong
 2. Xây dựng một họ vô hạn các S-box bất đối xứng.
 3. Xây dựng một họ vô hạn các S-box bất đối xứng $\{ F_n \}$ với $F_n : \{ 0, 1 \}^n \to \{ 0, 1 \}^n$ và $\lim\limits_{n \to \infty} \dfrac{L_B(F_n)}{L_B(F^{-1}_n)} \neq 1$. (*Đây là bài toán chưa có lời giải*).
 
-## Задача 10. Анализ алгоритма блочного шифрования «TryHard» (исследовательская)
+### Задача 10. Анализ алгоритма блочного шифрования «TryHard» (исследовательская)
 
-### Câu hỏi
+#### Câu hỏi
 
 ![Question 10](question-10-2024.png)
 
@@ -662,7 +664,3 @@ Thuật toán sinh khóa con cho các vòng giống với GOST 28147-89 (Magma).
 | Số lượng vòng mã hóa | $20$ vòng |
 
 **Câu hỏi.** Hãy đánh giá số lượng vòng của thuật toán mã hóa, trong đó số lượng vòng cho phép đánh giá sự độc lập thống kê giữa các plaintext và ciphertext, mà qua đó khôi phục được một phần hoặc toàn bộ khóa. Hãy đề xuất thuật toán khôi phục khóa mã hóa (phải hiệu quả hơn bruteforce).
-
-## Tài liệu tham khảo
-
-[1] Leander G. et al. "A cryptanalysis of PRINTcipher: the invariant subspace attack". In: Advances in Cryptology–CRYPTO 2011: 31st Annual Cryptology Conference (Aug. 2011).

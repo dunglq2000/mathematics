@@ -88,7 +88,7 @@ Ngược lại, chúng ta cũng có các **trường hữu hạn**.
 
 Cho $p$ là số nguyên tố. Khi đó tập hợp các số dư khi chia cho $p$ cùng với phép cộng và nhân modulo $p$ tạo thành trường.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Xét tập hợp các số dư khi chia cho $p$ là $S = \{0, 1, \ldots, p-2, p-1\}$.
 
@@ -179,7 +179,7 @@ Nếu $I$ là một ideal của $R$ và không tồn tại tập con $I'$ mà $I
 Xét vành số nguyên $\mathbb{Z}$. Khi đó mọi ideal của $\mathbb{Z}$ đều là principal.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Giả sử ideal $I$ của $\mathbb{Z}$ có phần tử dương nhỏ nhất là $n$.
 
@@ -198,7 +198,7 @@ Vậy mọi ideal đều là principal.
 Ideal $I$ của $\mathbb{Z}$ là maximal khi và chỉ khi $I = n\mathbb{Z}$ với $n$ là số nguyên tố.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta chứng minh chiều thuận, chiều ngược tương tự. Sử dụng phản chứng, ta giả sử $n$ là hợp số. Khi đó $n = n_1 n_2$ ($n_1 \geqslant n_2 > 1$).
 
@@ -209,7 +209,7 @@ Khi đó $n \mathbb{Z} \subset n_1 \mathbb{Z} \subset \mathbb{Z}$, suy ra ideal 
 Gọi $R$ là vành giao hoán với đơn vị. Khi đó, nếu $I$ là ideal của $R$ thì $R / I$ là trường khi và chỉ khi $I$ là maximal ideal.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta chứng minh điều kiện cần và điều kiện đủ.
 
@@ -254,7 +254,7 @@ với $0_{2}$ là phần tử trung hòa của $R_2$.
 $\ker f$ là một ideal của $R_1$.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta có $f(0_1) = 0_2$ theo định nghĩa homomorphism. Do đó với mọi $a \in R_1$ và với mọi $b \in \ker f$ thì $f(a) \otimes f(b) = f(a) \otimes 0_2 = 0_2 = f(a \times b)$. 
 
