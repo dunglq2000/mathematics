@@ -68,7 +68,9 @@ parts:
       - file: cryptography/sms4.md
       - file: cryptography/AES.md
       - file: cryptography/kuznyechik.md
-    - file: cryptography/differential-attack/tinydes.md
+    - file: cryptography/differential-attack/differential-attack.md
+      sections:
+      - file: cryptography/differential-attack/tinydes.md
     - file: cryptography/quantum-computing.md
     - file: cryptography/lattice-based.md
     - file: cryptography/code-based.md

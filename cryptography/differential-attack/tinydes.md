@@ -1,14 +1,10 @@
-# Phá mã vi sai trên TinyDES
-
-Phá mã vi sai (differential cryptanalysis) đã làm chuẩn mã hóa DES không còn đủ an toàn.
-
-Trong các chuẩn mã hóa hiện đại về sau, khả năng kháng phá mã vi sai và phá mã tuyến tính trở thành tiêu chuẩn đánh giá độ an toàn của thuật toán mã hóa.
+## Phá mã vi sai trên TinyDES
 
 ```{contents}
 :depth: 2
 ```
 
-## Mô tả TinyDES
+### Mô tả TinyDES
 
 TinyDES là một phiên bản thu nhỏ của chuẩn mã hóa DES. TinyDES là mã hóa khối theo mô hình Feistel, kích thước khối là $8$ bit, kích thước khóa cũng là $8$ bit. Mỗi vòng khóa con có độ dài $6$ bit.
 
@@ -107,7 +103,7 @@ def encrypt_block(plaintext: list[int], key: list[int]) -> list[int]:
 #print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))
 ```
 
-## Phá mã vi sai trên TinyDES
+### Phá mã vi sai trên TinyDES
 
 Giả sử $X_1$ và $X_2$ là hai khối input có cùng số bit.
 
@@ -115,11 +111,11 @@ Ta định nghĩa vi sai của $X_1$ và $X_2$ là $X = X_1 \oplus X_2$.
 
 Xét các phép biến đổi trong TinyDES
 
-### Phép XOR key
+#### Phép XOR key
 
 Gọi $K$ là khóa con ở vòng nào đó trong thuật toán. Khi đó nếu đặt  $Y_1 = X_1 \oplus K$ và $Y_2 = X_2 \oplus K$ thì vi sai của output là $Y = Y_1 \oplus Y_2 = X_1 \oplus X_2$. Như vậy $K$ không tác động lên vi sai và đây là tính chất quan trọng để chúng ta phá mã vi sai.
 
-### Phép PBox
+#### Phép PBox
 
 Phép PBox bảo toàn số bit (hoán vị 4 bit thành 4 bit) và cách xây dựng hoán vị là một biến đổi tuyến tính. Việc hoán vị 4 bit $b_0 b_1 b_2 b_3$ thành $b_2 b_0 b_3 b_1$ tương đương với phép nhân ma trận
 
@@ -144,7 +140,7 @@ $$Y_1 \oplus Y_2 = \text{PBox}(X_1) \oplus \text{PBox}(X_2) = \text{PBox} (X_1 \
 
 Như vậy nếu vi sai input là cố định thì vi sai output cũng cố định do tính tuyến tính.
 
-### Phép Expand
+#### Phép Expand
 
 Tương tự, phép Expand cũng là biến đổi tuyến tính và nếu đặt $Y_1 = \text{Expand}(X_1)$ và $Y_2 = \text{Expand}(X_2)$ thì
 
@@ -152,7 +148,7 @@ $$Y_1 \oplus Y_2 = \text{Expand}(X_1) \oplus \text{Expand}(X_2) = \text{Expand}(
 
 Cũng tương tự, nếu vi sai input là cố định thì vi sai output cũng cố định.
 
-### Phép SBox
+#### Phép SBox
 
 Phép SBox là một biến đổi không tuyến tính với input 6 bit và output 4 bit.
 
@@ -216,7 +212,7 @@ Xét hai hàng 16 và 52, ta thấy rằng:
 1. Nếu vi sai input $X = 16$ thì vi sai output $Y = 7$ là cao nhất với xác suất $14/64$.
 2. Nếu vi sai input $X = 52$ thì vi sai output $Y = 2$ là cao nhất với xác suất $16/64$.
 
-### Hàm $F$
+#### Hàm $F$
 
 Như vậy, phép XOR key, phép PBox và phép Expand cho xác suất đều nhau với các cặp vi sai $(X, Y)$. Trong khi đó thì SBox lại cho xác suất các cặp vi sai $(X, Y)$ không đều nhau.
 
@@ -235,11 +231,11 @@ Ta có thể đưa ra nhận xét về xác suất vi sai output $Y = Y_1 \oplus
 
 Nói chung, chúng ta chọn output của $\text{Expand}$ (input cho $\text{SBox}$) giống với xác suất cao nhất với phân tích $\text{SBox}$ ở trên kia.
 
-## Chosen plaintext
+### Chosen plaintext
 
 Differential attack là một dạng chosen plaintext, trong đó chúng ta tận dụng các xác suất ở trên.
 
-### Chosen plaintext phần một
+#### Chosen plaintext phần một
 
 Do tính chất vi sai, chúng ta sẽ mong muốn tìm những cặp (plaintext, ciphertext) $(P_1, C_1)$ và $(P_2, C_2)$ nào đó mà vi sai input $P_1 \oplus P_2$ và vi sai output $C_1 \oplus C_2$ có thể tối ưu xác suất trên.
 
@@ -287,7 +283,7 @@ mà ta nhớ lại ở trên $R_1 \oplus R_1' = 0$ nên suy ra $L_0 \oplus L_0' 
 
 Tổng kết lại, ta chọn vi sai input $(L, R) = (8, 3)$ thì xác suất để vi sai output bằng $(3, 8)$ là $(1/4) \times 1 \times (1/4) = 1/16$. Đây là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.
 
-### Chosen plaintext phần hai
+#### Chosen plaintext phần hai
 
 Tương tự, chúng ta xét trường hợp 2 ở trên, khi vi sai input của $F$ là 1 thì vi sai output của $F$ là 11 với xác suất $7/32$. Ta cũng mong muốn sau 3 vòng của TinyDES sẽ tận dụng được càng nhiều càng tốt.
 
@@ -333,7 +329,7 @@ mà $R_1 \oplus R_1' = 0$ và $F(R_0, K_1) \oplus F(R_0', K_1) = 11$ nên $L_0 \
 
 Tổng kết lại, ta chọn vi sai input $(L, R) = (11, 1)$ thì xác suất để vi sai output bằng $(1, 11)$ là $(7/32) \times 1 \times (7/32) \approx 0.048$. Đây cũng là xác suất cao nhất có thể sau khi TinyDES chạy đủ 3 vòng.
 
-### Final attack
+#### Final attack
 
 Như vậy, đối với TinyDES chúng ta phá mã vi sai như sau:
 
