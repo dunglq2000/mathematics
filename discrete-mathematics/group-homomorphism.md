@@ -18,7 +18,7 @@ Do $g_1$, $g_2$ là các phần tử thuộc $G$ nên toán tử giữa chúng l
 2. Với mọi phần tử $g \in G$, nếu $g^{-1}$ là nghịch đảo của nó trong $G$ thì $f(g^{-1}) = f(g)^{-1}$
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 1. Nếu $e_G$ là phần tử đơn vị của $G$ thì với mọi $g \in G$ ta có $g \star e_G = e_G \star g = g$. Ta lấy $f$ cả ba vế và theo định nghĩa homomorphism thu được $f(g \star e_G) = f(e_G \star g) = f(g)$, suy ra $f(g) * f(e_G) = f(e_G) * f(g) = f(g)$. Đẳng thức trên đúng với mọi $g \in G$ nên đúng với mọi $f(g)$, suy ra $f(e_G)$ là phần tử đơn vị trong nhóm $(H, *)$ và do đó $f(e_G) = e_H$
 2. Từ việc tìm ra phần tử đơn vị, ta cũng chứng minh được tính chất nghịch đảo trên.
@@ -62,7 +62,7 @@ Như vậy $\ker f$ là tập con của $G$.
 $K = \ker f$ là normal subgroup của $G$.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Để chứng minh, ta thấy rằng theo định nghĩa homomorphism, với $g_1, g_2 \in K$ thì $f(g_1) = f(g_2) = e_H$.
 
@@ -96,7 +96,7 @@ thuyết nhóm là **Định lý thứ nhất về sự đẳng cấu** (First i
 Với hai nhóm $(G, \star)$ và $(H, *)$. Xét homomorphism $f: G \to H$. Khi đó $\mathrm{im} f$ đẳng cấu (isomorphism) với nhóm thương $G / \ker f$.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Gọi $G$, $H$ là hai nhóm và homomorphism $f: G \to H$.
 Đặt $K = \ker f$. Ta xét biến đổi

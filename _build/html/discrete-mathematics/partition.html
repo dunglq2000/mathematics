@@ -548,7 +548,7 @@ document.write(`
     \mathcal{S}_{n+1}^{(k)} = n \cdot \mathcal{S}_n^{(k)} + \mathcal{S}_{n}^{(k-1)}
 \end{equation}\]</div>
 <div class="danger dropdown admonition">
-<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p class="admonition-title"><strong>Chứng minh</strong></p>
 <p>Giả sử tập có <span class="math notranslate nohighlight">\(n+1\)</span> phần tử là <span class="math notranslate nohighlight">\(A = \{ 1, 2, \ldots, n, n+1\}\)</span>. Khi đó để phân hoạch <span class="math notranslate nohighlight">\(n+1\)</span> phần tử này vào <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập thì có hai trường hợp:</p>
 <ol class="arabic simple">
 <li><p>Đầu tiên xếp các phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k\)</span> chu trình độc lập thì có <span class="math notranslate nohighlight">\(\mathcal{S}_n^{(k)}\)</span> cách chọn. Tiếp theo ta cho phần tử <span class="math notranslate nohighlight">\(n+1\)</span> vào một vị trí bất kì trong <span class="math notranslate nohighlight">\(k\)</span> chu trình trên thì có <span class="math notranslate nohighlight">\(n\)</span> cách chọn. Vậy trường hợp này là <span class="math notranslate nohighlight">\(n \cdot \mathcal{S}_n^{(k)}\)</span>.</p></li>
@@ -597,7 +597,7 @@ document.write(`
     s(n+1, k) = k \cdot s(n, k) + s(n, k-1)
 \end{equation}\]</div>
 <div class="danger dropdown admonition">
-<p class="admonition-title"><strong>Chứng minh.</strong></p>
+<p class="admonition-title"><strong>Chứng minh</strong></p>
 <p>Cách chứng minh khá tương tự số Stirling loại 1. Tuy nhiên ở đây việc phân một phần tử vào một tập hợp không xét tới thứ tự, điều này khác với chu trình cần xem xét thứ tự. Như vậy ta vẫn có hai trường hợp</p>
 <ol class="arabic simple">
 <li><p>Phân các phần tử <span class="math notranslate nohighlight">\(1, 2, \ldots, n\)</span> vào <span class="math notranslate nohighlight">\(k\)</span> tập hợp. Sau đó phần tử <span class="math notranslate nohighlight">\(n+1\)</span> sẽ được phân vào một trong <span class="math notranslate nohighlight">\(k\)</span> tập đó nên có <span class="math notranslate nohighlight">\(k\)</span> cách chọn.</p></li>

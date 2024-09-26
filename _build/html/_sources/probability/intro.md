@@ -386,7 +386,7 @@ $$\begin{equation}
 
 **Tính chất 1.** Hàm phân phối $F(x)$ không giảm trên mọi đoạn thẳng.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Đặt $x_2 > x_1$. Ta thấy rằng
 

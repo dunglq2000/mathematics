@@ -18,7 +18,7 @@ $$\begin{equation}
     \mathcal{S}_{n+1}^{(k)} = n \cdot \mathcal{S}_n^{(k)} + \mathcal{S}_{n}^{(k-1)}
 \end{equation}$$
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Giả sử tập có $n+1$ phần tử là $A = \{ 1, 2, \ldots, n, n+1\}$. Khi đó để phân hoạch $n+1$ phần tử này vào $k$ chu trình độc lập thì có hai trường hợp:
 
@@ -71,7 +71,7 @@ $$\begin{equation}
     s(n+1, k) = k \cdot s(n, k) + s(n, k-1)
 \end{equation}$$
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Cách chứng minh khá tương tự số Stirling loại 1. Tuy nhiên ở đây việc phân một phần tử vào một tập hợp không xét tới thứ tự, điều này khác với chu trình cần xem xét thứ tự. Như vậy ta vẫn có hai trường hợp
 

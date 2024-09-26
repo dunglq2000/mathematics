@@ -206,7 +206,7 @@ Mọi cơ sở của không gian vector $\mathcal{V}$ đều có số phần t�
 
 Giả sử ta có $\mathbf{v}_1$, $\mathbf{v}_2$, ..., $\mathbf{v}_d$ là một cơ sở của không gian vector $\mathbb{R}^n$. Khi đó nếu hệ vector $\mathbf{w}_1$, $\mathbf{w}_2$, ..., $\mathbf{w}_d$ cũng là một hệ cơ sở khi và chỉ khi tồn tại ma trận khả nghịch $\mathbf{A}$ sao cho $\mathbf{W} = \mathbf{A} \cdot \mathbf{V}$. Ở đây $\mathbf{W}$ là ma trận với các hàng là các vector $\mathbf{w}_i$. Tương tự $\mathbf{V}$ là ma trận với các hàng là các vector $\mathbf{v}_i$.
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Ta viết các vector $\mathbf{v}_i$ dưới dạng $\mathbb{R}^n$.
 
@@ -356,7 +356,7 @@ $$\begin{equation}
 Nghĩa là tích độ dài của hai vector bất kì trong cùng không gian Euclide lớn hơn hoặc bằng tích vô hướng giữa chúng. Dấu bằng xảy ra khi và chỉ khi $\dfrac{x_1}{y_1} = \dfrac{x_2}{y_2} = \ldots = \dfrac{x_n}{y_n}$. Nói cách khác là hai vector cùng phương.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Với mọi số thực $t$, ta luôn có 
 

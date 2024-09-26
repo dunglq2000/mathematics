@@ -26,62 +26,62 @@ Khi đó, ta brute $12$ bit thấp nhất của $p$ và tính nghịch đảo c�
 from gmpy2 import *
 import binascii
 
-n=0x7ef80c5df74e6fecf7031e1f00fbbb74c16dfebe9f6ecd29091d51cac41e30465777f5e3f1f291ea82256a72276db682b539e463a6d9111cf6e2f61e50a9280ca506a0803d2a911914a385ac6079b7c6ec58d6c19248c894e67faddf96a8b88b365f16e7cc4bc6e2b4389fa7555706ab4119199ec20e9928f75393c5dc386c65
-cipher=0x3ea5b2827eaabaec8e6e1d62c6bb3338f537e36d5fd94e5258577e3a729e071aa745195c9c3e88cb8b46d29614cb83414ac7bf59574e55c280276ba1645fdcabb7839cdac4d352c5d2637d3a46b5ee3c0dec7d0402404aa13525719292f65a451452328ccbd8a0b3412ab738191c1f3118206b36692b980abe092486edc38488
+n = 0x7ef80c5df74e6fecf7031e1f00fbbb74c16dfebe9f6ecd29091d51cac41e30465777f5e3f1f291ea82256a72276db682b539e463a6d9111cf6e2f61e50a9280ca506a0803d2a911914a385ac6079b7c6ec58d6c19248c894e67faddf96a8b88b365f16e7cc4bc6e2b4389fa7555706ab4119199ec20e9928f75393c5dc386c65
+cipher = 0x3ea5b2827eaabaec8e6e1d62c6bb3338f537e36d5fd94e5258577e3a729e071aa745195c9c3e88cb8b46d29614cb83414ac7bf59574e55c280276ba1645fdcabb7839cdac4d352c5d2637d3a46b5ee3c0dec7d0402404aa13525719292f65a451452328ccbd8a0b3412ab738191c1f3118206b36692b980abe092486edc38488
 
 def reverse_hex(x,n):
-    y=0
+    y = 0
     for i in range(n):
-        y=y*16+x%16
-        x//=16
+        y = y*16 + x % 16
+        x //= 16
     return y
 
-cur=[]
+cur = []
 
 # Find all cases for lowest 12 bits
-for i in range(1,4096,2): # i is lowest 12 bits of p
-    t=pow(i, -1, 4096)*(n%4096)%4096 # t is lowest 12 bits of q
-    assert t*i%4096==n%4096
-    t2=reverse_hex(t,3) # t2 is highest 12 bits of q
-    i2=reverse_hex(i,3) # i2 is highest 12 bits of p
-    l=i2*t2<<(4*125*2)
-    r=(i2+1)*(t2+1)<<(4*125*2)
-    if l<=n<=r: # check where n is in the range
+for i in range(1, 4096, 2): # i is lowest 12 bits of p
+    t = pow(i, -1, 4096) * (n % 4096) % 4096 # t is lowest 12 bits of q
+    assert t * i % 4096 == n % 4096
+    t2 = reverse_hex(t,3) # t2 is highest 12 bits of q
+    i2 = reverse_hex(i,3) # i2 is highest 12 bits of p
+    l = i2 * t2 << (4 * 125 * 2)
+    r = (i2 + 1) * (t2 + 1) << (4 * 125 * 2)
+    if l <= n <= r: # check where n is in the range
         cur.append(i)
 
 # Current digit (in hex)
-for c in range(4,65):
-    nc=[]
-    mod=16**c
+for c in range(4, 65):
+    nc = []
+    mod = 16**c
     for x in cur:
         for y in range(16):
-            i=x+y*16**(c-1) # i is lowest 4c bits of p
-            t=pow(i, -1, mod) * (n % mod)%mod # t is lowest 4c bits of q
+            i = x + y * 16**(c-1) # i is lowest 4c bits of p
+            t = pow(i, -1, mod) * (n % mod) % mod # t is lowest 4c bits of q
             assert t*i%mod==n%mod
-            t2=reverse_hex(t,c) # t2 is highest 4c bits of q
-            i2=reverse_hex(i,c) # i2 is highest 4c bits of p
-            l=i2*t2<<(4*(128-c)*2)
-            r=(i2+1)*(t2+1)<<(4*(128-c)*2)
-            if l<=n<=r: # check where n is in the range
+            t2 = reverse_hex(t, c) # t2 is highest 4c bits of q
+            i2 = reverse_hex(i, c) # i2 is highest 4c bits of p
+            l = i2 * t2 << (4 * (128 - c) * 2)
+            r = (i2 + 1) * (t2 + 1) << (4 * (128 - c) * 2)
+            if l <= n <= r: # check where n is in the range
                 nc.append(i)
     cur=nc
 
 # Find real solution
-c=64
-mod=16**c
+c = 64
+mod = 16**c
 for i in cur:
-    t=pow(i, -1, mod)*(n%mod)%mod
-    assert t*i%mod==n%mod
-    t2=reverse_hex(t,c)
-    i2=reverse_hex(i,c)
-    p=t2<<256|i
-    q=i2<<256|t
-    if p*q==n:
+    t = pow(i, -1, mod) * (n % mod) % mod
+    assert t * i % mod == n % mod
+    t2 = reverse_hex(t, c)
+    i2 = reverse_hex(i, c)
+    p = t2 << 256 | i
+    q = i2 << 256 | t
+    if p * q == n:
         break
 
-e=65537
-d=pow(e, -1, (p-1)*(q-1))
-o=pow(cipher,d,p*q)
+e = 65537
+d = pow(e, -1, (p - 1) * (q - 1))
+o = pow(cipher, d, p*q)
 print(binascii.unhexlify(hex(o)[2:]))
 ```
 

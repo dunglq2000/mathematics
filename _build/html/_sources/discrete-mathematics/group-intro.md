@@ -89,7 +89,7 @@ Rõ ràng hai coset trên rời nhau.
 Hai coset bất kì hoặc rời nhau, hoặc trùng nhau.
 ````
 
-```{admonition} **Chứng minh.**
+```{admonition} **Chứng minh**
 :class: danger, dropdown
 Nếu hai coset rời nhau thì không có gì phải nói. Ta chứng minh trường hợp còn lại.
 
