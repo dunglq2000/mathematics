@@ -22,8 +22,8 @@ parts:
     chapters:
     - file: calculus/calculus.md
       sections:
-        - file: calculus/series.md
         - file: calculus/partial-derivative.md
+    - file: calculus/series.md
     - file: calculus/differential-equation.md
   - caption: Xác suất
     numbered: true
