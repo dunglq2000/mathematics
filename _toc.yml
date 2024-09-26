@@ -48,7 +48,6 @@ parts:
       sections:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
-      - file: discrete-mathematics/linear-feedback-shift-register.md
   - caption: Hình học
     numbered: true
     chapters:
@@ -60,6 +59,9 @@ parts:
     numbered: true
     chapters:
     - file: cryptography/intro.md
+    - file: cryptography/stream-cipher.md
+      sections:
+      - file: cryptography/linear-feedback-shift-register.md
     - file: cryptography/block-cipher.md
       sections:
       - file: cryptography/magma.md
