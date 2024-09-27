@@ -59,7 +59,6 @@ parts:
   - caption: Mật mã học (và những niềm đau)
     numbered: true
     chapters:
-    - file: cryptography/intro.md
     - file: cryptography/stream-cipher.md
       sections:
       - file: cryptography/linear-feedback-shift-register.md
@@ -77,6 +76,10 @@ parts:
     - file: cryptography/code-based.md
     - file: cryptography/elliptic.md
     - file: cryptography/discrete-logarithm.md
+  - caption: Đại số boolean và mật mã học
+    numbered: true
+    chapters:
+    - file: boolean/intro.md
   - caption: Теоретико-числовые алгоритмы в криптографии
     numbered: true
     chapters:
