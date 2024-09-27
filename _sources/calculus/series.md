@@ -1,4 +1,4 @@
-## Chuỗi số
+# Chuỗi số
 
 Xét dãy số $\{a_n\}$. Đặt
 
@@ -12,7 +12,7 @@ Chuỗi số $\{S_n\}$ được gọi là **hội tụ** nếu tồn tại giớ
 
 Ngược lại ta gọi là chuỗi phân kỳ. Nghĩa là $\displaystyle{\lim_{n \to \infty} S_n = \infty}$.
 
-### Tiêu chuẩn Cauchy
+## Tiêu chuẩn Cauchy
 
 Theo định nghĩa, chuỗi số hội tụ khi tồn tại giới hạn hữu hạn. Do đó ta có thể viết theo ngôn ngữ $\delta - \varepsilon$ như đối với dãy số.
 

@@ -1,33 +1,8 @@
-## Trọng số, phổ Furier, phổ Walsh, Hamming distance
+## Nonlinearlity của hàm boolean
 
 ```{contents}
+:depth: 2
 ```
-
-Ở phần này ký hiệu vector không $\mathbf{0} = (0, \ldots, 0)$, vector một $\mathbf{1} = (1, \ldots, 1)$.
-
-### Trọng số của hàm boolean
-
-````{prf:definition} Trọng số hàm boolean
-**Trọng số** (hay **weight**, **вес**) của hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$ là số lượng giá trị khác $0$ của hàm $f$. 
-
-Ký hiệu là $\mathrm{wt}(f)$.
-````
-
-````{prf:example}
-Hàm boolean $f(x, y) = (0, 1, 0, 1)$ có trọng số $\mathrm{wt}(f) = 2$.
-
-Hàm boolean $f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)$ có trọng số $\mathrm{wt}(f) = 5$.
-````
-
-Một số tính chất của trọng số:
-
-1. $0 \leqslant \mathrm{wt}(f) \leqslant 2^n$
-2. $\mathrm{wt}(f \oplus \mathbf{1}) = 2^n - \mathrm{wt}(f)$
-3. Nếu $h$ cũng là một hàm boolean từ $\mathbb{F}_2^n$ tới $\mathbb{F}_2$ thì
-
-$$\mathrm{wt}(f \oplus h) = \mathrm{wt}(f) + \mathrm{wt}(h) - 2 \mathrm{wt}(fh)$$
-
-4. Giá trị $\mathrm{wt}(f)$ nhận giá trị lẻ khi và chỉ khi $\deg(f) = n$.
 
 ### Biến đổi Fourier
 
@@ -245,47 +220,17 @@ $$\begin{equation}
 	W_f (\mathbf{0}) = 2^n - 2 wt(f) \Leftrightarrow wt(f) = 2^{n-1} - \frac{1}{2} W_f (\mathbf{0})
 \end{equation}$$ (walsh:eq4)
 ````
-	
-### Khoảng cách Hamming
-
-````{prf:definition} Khoảng cách Hamming giữa hai vector
-Với hai vector $\mathbf{x}$, $\mathbf{y}$ thuộc $\mathbb{F}_2^n$, đặt
-
-$$\begin{equation}
-	d (\mathbf{x}, \mathbf{y}) = \mathrm{wt} (\mathbf{x} \oplus \mathbf{y})
-\end{equation}$$
-
-là **khoảng cách Hamming** giữa hai vector $\mathbf{x}$ và $\mathbf{y}$. Trong đó $\mathrm{wt}(\mathbf{z})$ là trọng số vector $\mathbf{z}$.
-````
-
-````{prf:definition} Khoảng cách Hamming từ vector tới tập vector
-Xét $M \subseteq \mathbb{F}_2^n$. Khi đó với mọi $\mathbf{x} \in \mathbb{F}_2^n$, ta nói khoảng cách từ $\mathbf{x}$ tới $M$ là
-
-$$\begin{equation}
-	d(\mathbf{x}, M) = \min_{\mathbf{y} \in M} d (\mathbf{x}, \mathbf{y})
-\end{equation}$$
-````
-
-````{prf:definition} Khoảng cách Hamming giữa hai hàm boolean
-Xét hai hàm boolean $n$ biến là $f(x_1, x_2, \ldots, x_n)$ và $g(x_1, x_2, \ldots, x_n)$. Khi đó khoảng cách Hamming từ hàm $f$ tới hàm $g$ là
-
-$$\begin{equation}
-	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) \oplus g(\mathbf{x})
-\end{equation}$$
-````
 
 ### Hàm Bent
 
-Ta ký hiệu $\mathcal{L}$ là tập hợp tất cả các hàm boolean affine với $n$ biến. Nghĩa là
+Ta ký hiệu $\mathcal{A}$ là tập hợp tất cả các hàm boolean affine với $n$ biến. Nghĩa là
 
 $$\begin{equation}
-	\mathcal{L} = \{ l_{a_0} (\mathbf{a}, \mathbf{x}) \, | \, a_0 \in \mathbb{F}_2, \mathbf{a} \in \mathbb{F}_2^n \}
+	\mathcal{A} = \{ a_0 \oplus a_1 x_1 \oplus \cdots \oplus a_n x_n \, | \, a_0, a_1, \ldots, a_n \in \mathbb{F}_2 \}
 \end{equation}$$
 
-với $l_{a_0} (\mathbf{a}, \mathbf{x}) = a_0 \oplus a_1 x_1 \oplus \ldots \oplus a_n x_n$.
-
 ````{prf:definition} Nonlinearity của hàm boolean
-**Nonlinearity** của hàm boolean $f$ bất kì được định nghĩa là khoảng cách Hamming từ $f$ tới $\mathcal{L}$, hay nói cách khác $N_f = d(f, \mathcal{L})$.
+**Nonlinearity** của hàm boolean $f$ bất kì được định nghĩa là khoảng cách Hamming từ $f$ tới $\mathcal{A}$, hay nói cách khác $N_f = d(f, \mathcal{A})$.
 ````
 
 ````{prf:remark}
