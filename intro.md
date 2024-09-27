@@ -4,11 +4,6 @@
 
 Notebook về toán ...
 
-## Nội dung
-
-```{tableofcontents}
-```
-
 ## Tài liệu tham khảo
 
 ```{bibliography}
