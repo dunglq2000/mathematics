@@ -226,7 +226,7 @@ $$\begin{equation}
 Ta ký hiệu $\mathcal{A}$ là tập hợp tất cả các hàm boolean affine với $n$ biến. Nghĩa là
 
 $$\begin{equation}
-	\mathcal{A} = \{ a_0 \oplus a_1 x_1 \oplus \cdots \oplus a_n x_n \, | \, a_0 a_1, \ldots, a_n \in \mathbb{F}_2 \}
+	\mathcal{A} = \{ a_0 \oplus a_1 x_1 \oplus \cdots \oplus a_n x_n \, | \, a_0, a_1, \ldots, a_n \in \mathbb{F}_2 \}
 \end{equation}$$
 
 ````{prf:definition} Nonlinearity của hàm boolean

@@ -233,12 +233,12 @@ Vậy đây là hàm đơn điệu.
 
 Ở trên đã tính được
 
-$$\lvert \mathcal{F}_n \rvert = 2^{2^n}$$
+$$\lvert \mathcal{F}_n \rvert = 2^{2^n}.$$
 
 Số lượng hàm boolean affine là số cách chọn các hệ số $a_0$, $a_1$, ..., $a_n$. Như vậy cần chọn $n+1$ số trong $\mathbb{F}_2$ nên
 
-$$\lvert \mathcal{A}_n \rvert = 2^{n+1}$$
+$$\lvert \mathcal{A}_n \rvert = 2^{n+1}.$$
 
 Đối với hàm boolean tuyến tính thì chọn từ $a_1$ tới $a_n$ nên cần chọn $n$ số, suy ra
 
-$$\lvert \mathcal{L}_n \rvert = 2^n$$
+$$\lvert \mathcal{L}_n \rvert = 2^n.$$

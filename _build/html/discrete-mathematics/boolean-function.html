@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean-function';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance" href="weight-boolean.html" />
+    <link rel="next" title="15.2. Trọng số của hàm boolean" href="weight-boolean.html" />
     <link rel="prev" title="15. Đại số boolean" href="boolean.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -226,7 +226,7 @@
 <li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Trọng số, phổ Furier, phổ Walsh, Hamming distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
 </ul>
 </details></li>
@@ -528,7 +528,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.3. Hàm affine và hàm tuyến tính</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.4.1. Một số kí hiệu hay dùng</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -555,7 +558,11 @@ document.write(`
 </ul>
 </li>
 <li><p><a class="reference internal" href="#ham-affine-va-ham-tuyen-tinh" id="id11">Hàm affine và hàm tuyến tính</a></p></li>
-<li><p><a class="reference internal" href="#ham-don-dieu" id="id12">Hàm đơn điệu</a></p></li>
+<li><p><a class="reference internal" href="#ham-don-dieu" id="id12">Hàm đơn điệu</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mot-so-ki-hieu-hay-dung" id="id13">Một số kí hiệu hay dùng</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -854,7 +861,24 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
 </ul>
 <p>Vậy đây là hàm đơn điệu.</p>
 </section>
-</div></section>
+</div><section id="mot-so-ki-hieu-hay-dung">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">15.1.4.1. </span>Một số kí hiệu hay dùng</a><a class="headerlink" href="#mot-so-ki-hieu-hay-dung" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Để chỉ tập hợp tất cả hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến ta dùng <span class="math notranslate nohighlight">\(\mathcal{F}_n\)</span>.</p></li>
+<li><p>Để chỉ tập hợp tất cả hàm boolean affine <span class="math notranslate nohighlight">\(n\)</span> biến ta dùng <span class="math notranslate nohighlight">\(\mathcal{A}_n\)</span>.</p></li>
+<li><p>Để chỉ tập hợp tất cả hàm boolean tuyến tính <span class="math notranslate nohighlight">\(n\)</span> biến ta dùng <span class="math notranslate nohighlight">\(\mathcal{L}_n\)</span>.</p></li>
+</ol>
+<p>Ở trên đã tính được</p>
+<div class="math notranslate nohighlight">
+\[\lvert \mathcal{F}_n \rvert = 2^{2^n}.\]</div>
+<p>Số lượng hàm boolean affine là số cách chọn các hệ số <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, …, <span class="math notranslate nohighlight">\(a_n\)</span>. Như vậy cần chọn <span class="math notranslate nohighlight">\(n+1\)</span> số trong <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> nên</p>
+<div class="math notranslate nohighlight">
+\[\lvert \mathcal{A}_n \rvert = 2^{n+1}.\]</div>
+<p>Đối với hàm boolean tuyến tính thì chọn từ <span class="math notranslate nohighlight">\(a_1\)</span> tới <span class="math notranslate nohighlight">\(a_n\)</span> nên cần chọn <span class="math notranslate nohighlight">\(n\)</span> số, suy ra</p>
+<div class="math notranslate nohighlight">
+\[\lvert \mathcal{L}_n \rvert = 2^n.\]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -901,7 +925,7 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.2. </span>Trọng số, phổ Furier, phổ Walsh, Hamming distance</p>
+        <p class="prev-next-title"><span class="section-number">15.2. </span>Trọng số của hàm boolean</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -928,7 +952,10 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.3. Hàm affine và hàm tuyến tính</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.4.1. Một số kí hiệu hay dùng</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
