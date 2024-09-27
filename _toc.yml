@@ -47,6 +47,7 @@ parts:
     - file: discrete-mathematics/boolean.md
       sections:
       - file: discrete-mathematics/boolean-function.md
+      - file: discrete-mathematics/weight-boolean.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
   - caption: Hình học
     numbered: true

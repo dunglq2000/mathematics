@@ -224,3 +224,21 @@ Ta thấy rằng:
 
 Vậy đây là hàm đơn điệu.
 ````
+
+#### Một số kí hiệu hay dùng
+
+1. Để chỉ tập hợp tất cả hàm boolean $n$ biến ta dùng $\mathcal{F}_n$.
+2. Để chỉ tập hợp tất cả hàm boolean affine $n$ biến ta dùng $\mathcal{A}_n$.
+3. Để chỉ tập hợp tất cả hàm boolean tuyến tính $n$ biến ta dùng $\mathcal{L}_n$.
+
+Ở trên đã tính được
+
+$$\lvert \mathcal{F}_n \rvert = 2^{2^n}$$
+
+Số lượng hàm boolean affine là số cách chọn các hệ số $a_0$, $a_1$, ..., $a_n$. Như vậy cần chọn $n+1$ số trong $\mathbb{F}_2$ nên
+
+$$\lvert \mathcal{A}_n \rvert = 2^{n+1}$$
+
+Đối với hàm boolean tuyến tính thì chọn từ $a_1$ tới $a_n$ nên cần chọn $n$ số, suy ra
+
+$$\lvert \mathcal{L}_n \rvert = 2^n$$
