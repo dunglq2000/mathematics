@@ -4,6 +4,17 @@
 :depth: 2
 ```
 
+## Kí hiệu
+
+| Kí hiệu | Ý nghĩa |
+| ------- | ------- |
+| $\mathcal{F}_n$ | Tập hợp tất cả hàm boolean $n$ biến |
+| $\mathcal{A}_n$ | Tập hợp tất cả hàm boolean affine $n$ biến |
+| $\mathcal{L}_n$ | Tập hợp tất cả hàm boolean tuyến tính $n$ biến |
+| $\mathrm{wt}(f)$ | Trọng số của hàm boolean $f$ |
+| $N_f$ | Nonlinearlity của hàm boolean $f$ |
+| $W_f(\mathbf{a})$ | Hệ số Walsh của hàm $f$ ứng với vector $\mathbf{a}$ |
+
 ## Các tính chất mật mã của hàm boolean
 
 ### Bậc đại số cao
@@ -18,7 +29,7 @@ Nonlinearlity cực kì quan trọng trong việc chống phá mã tuyến tính
 
 Đối với hàm boolean với số biến là chẵn, nếu có nonlinearlity cực đại (tức bằng $2^{n-1} - 2^{n/2-1}$) được gọi là **hàm bent** (hay **bent function**).
 
-**Bài tập:**
+#### Bài tập
 
 1. Chứng minh rằng khoảng cách từ hàm boolean $f$ với $n$ biến tới hàm boolean affine
 
@@ -58,7 +69,7 @@ Hàm boolean $f$ với $n$ biến được gọi là **correlation immune of ord
 
 $$\mathrm{wt} (f^{a_1, \ldots, a_r}_{i_1, \ldots, i_r}) = \frac{\mathrm{wt}(f)}{2^r}$$
 
-**Bài tập:**
+#### Bài tập
 
 1. Chứng minh rằng hàm boolean $f$ là $r$-resillient khi và chỉ khi nó cân bằng và correlation immune bậc $r$.
 2. (**Định lí Siegenthaler I**, 1984) Chứng minh rằng nếu hàm boolean $f$ là correlation immune bậc $r$ thì $\deg f + r \leqslant n$.
@@ -83,7 +94,7 @@ Algebraic immune của hàm $f$ được kí hiệu là $AI(f)$.
 
 Ví dụ algebraic immune hàm $f(\mathbf{x}) = x_1 x_2 x_3 \oplus x_1$ bằng $1$, vì ta có thể chọn $g(\mathbf{x}) = x_1 \oplus 1$. Khi đó $f g = (x_1 x_2 x_3 \oplus x_1) (x_1 \oplus 1) = 1$.
 
-**Bài tập:**
+#### Bài tập
 
 1. Chứng minh rằng algebraic immune của hàm boolean $f$ bất kì với $n$ biến không vượt quá giá trị $\lceil n/2 \rceil$.
 2. Chứng minh một số tính chất cơ bản của algebraic immune:
@@ -117,4 +128,6 @@ Hàm boolean vector được gọi là **hàm APN** nếu differentially uniform
 
 Bài toán khó hiện nay là xây dựng hàm APN là song ánh với số biến $n$ chẵn.
 
-**Bài tập:** Chứng minh hàm $S : \mathbb{F}_2^8 \to \mathbb{F}_2^8$ của S-box trong thuật toán AES là differentially 4-uniform.
+#### Bài tập
+
+Chứng minh hàm $S : \mathbb{F}_2^8 \to \mathbb{F}_2^8$ của S-box trong thuật toán AES là differentially 4-uniform.
