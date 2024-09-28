@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/group-action';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -240,27 +240,30 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">20. Đại số boolean và mật mã học</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">20. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">20.1. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">22.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">22.2. SMS4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">22.3. AES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">21. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">21.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">21.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">21.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">21.4. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">23.1. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">22. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">22.1. Phá mã vi sai trên TinyDES</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">24. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">26. Code-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">23. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">24. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">25. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">26. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">27. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -710,10 +713,10 @@ tô màu đỉnh 1 tùy ý, đỉnh 2-3-4 chung màu (cũng tùy ý).</p>
 </section>
 <section id="tac-dong-nhom-len-vector">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">9.5.4. </span>Tác động nhóm lên vector</a><a class="headerlink" href="#tac-dong-nhom-len-vector" title="Link to this heading">#</a></h2>
-<p>Xét nhóm <span class="math notranslate nohighlight">\(G\)</span> và không gian vector <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>. Khi đó hai vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> được gọi là <strong>quan hệ với nhau</strong> nếu tồn tại <span class="math notranslate nohighlight">\(g \in G\)</span> mà <span class="math notranslate nohighlight">\(\mathbf{x} = g \mathbf{y}\)</span>.</p>
+<p>Xét nhóm <span class="math notranslate nohighlight">\(G\)</span> và không gian vector <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>. Khi đó hai vector <span class="math notranslate nohighlight">\(\bm{x}\)</span> và <span class="math notranslate nohighlight">\(\bm{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> được gọi là <strong>quan hệ với nhau</strong> nếu tồn tại <span class="math notranslate nohighlight">\(g \in G\)</span> mà <span class="math notranslate nohighlight">\(\bm{x} = g \bm{y}\)</span>.</p>
 <p>Ví dụ, xét nhóm hoán vị <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span>. Giả sử các vector trong <span class="math notranslate nohighlight">\(\mathbb{F}_2^3\)</span> có dạng</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{x} = (x_1, x_2, x_3) \in \mathbb{F}_2^3.\]</div>
+\[\bm{x} = (x_1, x_2, x_3) \in \mathbb{F}_2^3.\]</div>
 <p>Khi đó vector <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> có quan hệ với <span class="math notranslate nohighlight">\((0, 0, 1)\)</span> với hoán vị <span class="math notranslate nohighlight">\((1, 3)(2)\)</span>. Cụ thể là <span class="math notranslate nohighlight">\((x_1, x_2, x_3) \xrightarrow{(1, 3)(2)} (x_3, x_2, x_1)\)</span>.</p>
 <p>Tương tự, vector <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> cũng có quan hệ với <span class="math notranslate nohighlight">\((0, 1, 0)\)</span> với hoán vị <span class="math notranslate nohighlight">\((1, 2)(3)\)</span>. Thêm nữa, vector <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> có quan hệ với chính nó qua hoán vị đồng nhất <span class="math notranslate nohighlight">\((1)(2)(3)\)</span>.</p>
 <p>Câu hỏi đặt ra là, có bao nhiêu lớp tương đương dưới tác động của nhóm <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span>?</p>
@@ -730,8 +733,8 @@ tô màu đỉnh 1 tùy ý, đỉnh 2-3-4 chung màu (cũng tùy ý).</p>
 <p>Thật vậy, ta có thể chia các vector thành 4 lớp tương đương là <span class="math notranslate nohighlight">\(\{ 000 \}\)</span>, <span class="math notranslate nohighlight">\(\{ 001, 010, 011 \}\)</span>, <span class="math notranslate nohighlight">\(\{ 011, 101, 110 \}\)</span>, <span class="math notranslate nohighlight">\(\{ 111 \}\)</span>.</p>
 <p>Ngoài nhóm <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> ra còn các nhóm khác cũng tác động lên các vector. Một số nhóm hay được sử dụng là:</p>
 <ol class="arabic simple">
-<li><p>Nhóm general linear: gồm các ma trận khả nghịch <span class="math notranslate nohighlight">\(n \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>. Tác động nhóm lúc này là phép nhân ma trận <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathrm{GL} (n, 2)\)</span> với vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span>, hay <span class="math notranslate nohighlight">\(\mathbf{A} \cdot \mathbf{x}\)</span>.</p></li>
-<li><p>Nhóm general affine: gồm các ma trận khả nghịch <span class="math notranslate nohighlight">\(n \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> và vector bất kì trong <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>. Tác động nhóm lúc này là biến đổi affine <span class="math notranslate nohighlight">\(\mathbf{A} \cdot \mathbf{x} + \mathbf{b}\)</span> với <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathrm{GL} (n, 2)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{F}_2^n\)</span>.</p></li>
+<li><p>Nhóm general linear: gồm các ma trận khả nghịch <span class="math notranslate nohighlight">\(n \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>. Tác động nhóm lúc này là phép nhân ma trận <span class="math notranslate nohighlight">\(\bm{A} \in \mathrm{GL} (n, 2)\)</span> với vector <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, hay <span class="math notranslate nohighlight">\(\bm{A} \cdot \bm{x}\)</span>.</p></li>
+<li><p>Nhóm general affine: gồm các ma trận khả nghịch <span class="math notranslate nohighlight">\(n \times n\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> và vector bất kì trong <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>. Tác động nhóm lúc này là biến đổi affine <span class="math notranslate nohighlight">\(\bm{A} \cdot \bm{x} + \bm{b}\)</span> với <span class="math notranslate nohighlight">\(\bm{A} \in \mathrm{GL} (n, 2)\)</span> và <span class="math notranslate nohighlight">\(\bm{b} \in \mathbb{F}_2^n\)</span>.</p></li>
 </ol>
 <p><strong>Note.</strong> Số lượng phần tử của nhóm <span class="math notranslate nohighlight">\(\mathrm{GL} (n, 2)\)</span> là</p>
 <div class="math notranslate nohighlight">
@@ -740,9 +743,9 @@ tô màu đỉnh 1 tùy ý, đỉnh 2-3-4 chung màu (cũng tùy ý).</p>
 </section>
 <section id="tac-dong-nhom-len-ham-boolean">
 <h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">9.5.5. </span>Tác động nhóm lên hàm boolean</a><a class="headerlink" href="#tac-dong-nhom-len-ham-boolean" title="Link to this heading">#</a></h2>
-<p>Ta tiếp tục xét nhóm <span class="math notranslate nohighlight">\(G\)</span> và không gian vector <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>. Khi đó hai hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(x_1, \ldots, x_n)\)</span> được gọi là <strong>quan hệ với nhau</strong> nếu tồn tại <span class="math notranslate nohighlight">\(\tilde{g} \in G\)</span> mà <span class="math notranslate nohighlight">\(g(\mathbf{x}) = f(\tilde{g} \mathbf{x})\)</span> với mọi <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span>.</p>
+<p>Ta tiếp tục xét nhóm <span class="math notranslate nohighlight">\(G\)</span> và không gian vector <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>. Khi đó hai hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(x_1, \ldots, x_n)\)</span> được gọi là <strong>quan hệ với nhau</strong> nếu tồn tại <span class="math notranslate nohighlight">\(\tilde{g} \in G\)</span> mà <span class="math notranslate nohighlight">\(g(\bm{x}) = f(\tilde{g} \bm{x})\)</span> với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>.</p>
 <p>Ta cũng xét hoán vị <span class="math notranslate nohighlight">\(\mathcal{S}_3\)</span> làm ví dụ. Ta cũng lần lượt xét các phần tử của nhóm.</p>
-<p>Đặt <span class="math notranslate nohighlight">\(f_0, f_1, \ldots, f_7\)</span> lần lượt là các giá trị hàm <span class="math notranslate nohighlight">\(f\)</span> với các vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^3\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(f_0, f_1, \ldots, f_7\)</span> lần lượt là các giá trị hàm <span class="math notranslate nohighlight">\(f\)</span> với các vector <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^3\)</span>.</p>
 <p>Đầu tiên, với <span class="math notranslate nohighlight">\((1)(2)(3)\)</span>, ta có bảng chuyển vector như hình sau (<a class="reference internal" href="#burnside-first"><span class="std std-numref">Fig. 9.4</span></a>).</p>
 <figure class="align-default" id="burnside-first">
 <img alt="../_images/burnside-1.jpg" src="../_images/burnside-1.jpg" />

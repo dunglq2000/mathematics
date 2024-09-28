@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2021/cryptoCTF-2021';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -240,27 +240,30 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/intro.html">20. Đại số boolean và mật mã học</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/stream-cipher.html">20. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/linear-feedback-shift-register.html">20.1. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">22.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/sms4.html">22.2. SMS4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/AES.html">22.3. AES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">21. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">21.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/sms4.html">21.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/AES.html">21.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">21.4. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">23.1. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/differential-attack/differential-attack.html">22. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">22.1. Phá mã vi sai trên TinyDES</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">24. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">26. Code-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">23. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">24. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">25. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">26. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">27. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -1039,7 +1042,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./ctf\2021"
+            path: "./ctf/2021"
         },
         predefinedOutput: true
     }

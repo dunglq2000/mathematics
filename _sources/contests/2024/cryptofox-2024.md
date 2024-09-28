@@ -304,14 +304,14 @@ $$g_k : \alpha \to h(S(\psi^{-1}(\psi(\alpha) \boxplus \psi(k)))),$$
 
 trong đó:
 
-- $h$ là ánh xạ tuyến tính trên $V_{32}(2)$ xác định bởi ma trận $4 \times 4$ là $\mathbf{H}$ trên $\mathbb{F}_{2^8}$,
+- $h$ là ánh xạ tuyến tính trên $V_{32}(2)$ xác định bởi ma trận $4 \times 4$ là $\bm{H}$ trên $\mathbb{F}_{2^8}$,
 
 $$
-    h(\lambda^{(1)}, \ldots, \lambda^{(4)}) = (\lambda^{(1)}, \ldots, \lambda^{(4)}) \mathbf{H}, \quad \lambda^{(1)}, \ldots, \lambda^{(4)} \in \mathbb{F}_{2^8},
+    h(\lambda^{(1)}, \ldots, \lambda^{(4)}) = (\lambda^{(1)}, \ldots, \lambda^{(4)}) \bm{H}, \quad \lambda^{(1)}, \ldots, \lambda^{(4)} \in \mathbb{F}_{2^8},
 $$
 
 $$
-    \mathbf{H} = \begin{pmatrix}
+    \bm{H} = \begin{pmatrix}
         \theta & \theta \oplus 1 & 1 & 1 \\
         1 & \theta & \theta \oplus 1 & 1 \\
         1 & 1 & \theta & \theta \oplus 1 \\
@@ -328,7 +328,7 @@ nghĩa là khi đó:
         
 $$\lambda = \psi^{-1}(\psi(\alpha) \boxplus \psi(k));$$
 
-- vector 32 bit $\lambda$ được chia thành 4 đoạn $\lambda^{(1)}, \ldots, \lambda^{(4)}$ là các phần tử $\mathbb{F}_{2^8}$ và biểu diễn $\lambda = (\lambda^{(1)}, \ldots, \lambda^{(4)})$ là không gian 4 chiều $V_4(2^8)$. Sau đó tính $\beta = \lambda \mathbf{H}$;
+- vector 32 bit $\lambda$ được chia thành 4 đoạn $\lambda^{(1)}, \ldots, \lambda^{(4)}$ là các phần tử $\mathbb{F}_{2^8}$ và biểu diễn $\lambda = (\lambda^{(1)}, \ldots, \lambda^{(4)})$ là không gian 4 chiều $V_4(2^8)$. Sau đó tính $\beta = \lambda \bm{H}$;
 - vector 32 bit $\beta$ được chia thành 4 vector 8 bit là $\beta^{(1)}, \ldots, \beta^{(4)}$. Sau đó mỗi vector $\beta^{(i)}$ đi qua S-box con $s_i$, $i = 1, 2, 3, 4$. Bốn kết quả được ghép lại nhau thành $S(\beta)$.
 \end{itemize}
 
