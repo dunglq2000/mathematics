@@ -204,11 +204,9 @@ $$\begin{align*}
 Nói cách khác, nếu đặt $\bm{x}' = (x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n)$ và $\bm{a}' = (a_1, \ldots, a_{i-1}, a_{i+1}, \ldots, a_n)$ và để ý rằng $\langle \bm{a}, \bm{x} \rangle = \langle \bm{a}', \bm{x}' \rangle \oplus a_i x_i$. Khi đó nếu $a_i = 1$ thì
 
 $$\begin{align*}
-	W_f(\bm{a}) & = \sum_\bm{x} (-1)^{f(\bm{x}) \oplus \langle \bm{a}, \bm{x} \rangle} \\ 
+	W_f(\bm{a}) & = \sum_{\bm{x}} (-1)^{f(\bm{x}) \oplus \langle \bm{a}, \bm{x} \rangle} \\ 
 	& = \sum_{\substack{\bm{x}, \\ x_i = 0}} (-1)^{f(\bm{x}) \oplus \langle \bm{a}', \bm{x}' \rangle} + \sum_{\substack{\bm{x}, \\ x_i = 1}} (-1)^{f(\bm{x}) \oplus \langle \bm{a}', \bm{x}' \rangle \oplus 1} = 0
 \end{align*}$$
-
-$\bm{a} = \bm{b}$
 
 ### Liên hệ giữa hệ số Fourier và hệ số Walsh
 
