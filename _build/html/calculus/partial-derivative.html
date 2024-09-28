@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'calculus/partial-derivative';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -541,43 +541,43 @@ document.write(`
 <h1><span class="section-number">5.5. </span>Đạo hàm một số hàm nhiều biến<a class="headerlink" href="#dao-ham-mot-so-ham-nhieu-bien" title="Link to this heading">#</a></h1>
 <section id="ham-so-cho-gia-tri-la-so-vo-huong">
 <h2><span class="section-number">5.5.1. </span>Hàm số cho giá trị là số vô hướng<a class="headerlink" href="#ham-so-cho-gia-tri-la-so-vo-huong" title="Link to this heading">#</a></h2>
-<p>Giả sử ta có vector hàng <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, \ldots, x_n)\)</span> và hàm số <span class="math notranslate nohighlight">\(f\)</span> có biến là vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Nói cách khác là <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = f(x_1, \ldots, x_n)\)</span>.</p>
-<p>Khi đó đạo hàm riêng của hàm <span class="math notranslate nohighlight">\(f\)</span> theo vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> cũng là một vector (nếu <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là vector hàng thì đạo hàm riêng cũng là vector hàng và ngược lại) và được ký hiệu</p>
+<p>Giả sử ta có vector hàng <span class="math notranslate nohighlight">\(\bm{x} = (x_1, \ldots, x_n)\)</span> và hàm số <span class="math notranslate nohighlight">\(f\)</span> có biến là vector <span class="math notranslate nohighlight">\(\bm{x}\)</span>. Nói cách khác là <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\bm{x}) = f(x_1, \ldots, x_n)\)</span>.</p>
+<p>Khi đó đạo hàm riêng của hàm <span class="math notranslate nohighlight">\(f\)</span> theo vector <span class="math notranslate nohighlight">\(\bm{x}\)</span> cũng là một vector (nếu <span class="math notranslate nohighlight">\(\bm{x}\)</span> là vector hàng thì đạo hàm riêng cũng là vector hàng và ngược lại) và được ký hiệu</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-    \nabla f(\mathbf{x}) = \begin{pmatrix}
+    \nabla f(\bm{x}) = \begin{pmatrix}
         \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n}
     \end{pmatrix}
 \end{equation*}\]</div>
 <p>Ví dụ, đối với hàm tuyến tính</p>
 <div class="math notranslate nohighlight">
-\[f(\mathbf{x}) = a_1 x_1 + \ldots + a_n x_n = \mathbf{a} \cdot \mathbf{x}^\top\]</div>
+\[f(\bm{x}) = a_1 x_1 + \ldots + a_n x_n = \bm{a} \cdot \bm{x}^\top\]</div>
 <p>thì ta thấy rằng <span class="math notranslate nohighlight">\(\dfrac{\partial f}{\partial x_i} = a_i\)</span>. Khi đó</p>
 <div class="math notranslate nohighlight">
-\[\nabla f (\mathbf{x}) = \begin{pmatrix}
+\[\nabla f (\bm{x}) = \begin{pmatrix}
     \dfrac{\partial f}{\partial x_1} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_n}
-\end{pmatrix} = (a_1, \ldots, a_n) = \mathbf{a}\]</div>
-<p>Ta thấy rằng <span class="math notranslate nohighlight">\(f(\mathbf{x}) = \mathbf{a} \cdot \mathbf{x}^\top = \mathbf{x} \cdot \mathbf{a}^\top\)</span>. Do đó</p>
+\end{pmatrix} = (a_1, \ldots, a_n) = \bm{a}\]</div>
+<p>Ta thấy rằng <span class="math notranslate nohighlight">\(f(\bm{x}) = \bm{a} \cdot \bm{x}^\top = \bm{x} \cdot \bm{a}^\top\)</span>. Do đó</p>
 <div class="math notranslate nohighlight">
-\[\nabla (\mathbf{a} \cdot \mathbf{x}^\top) = \nabla (\mathbf{x} \cdot \mathbf{a}^\top) = \mathbf{a}\]</div>
+\[\nabla (\bm{a} \cdot \bm{x}^\top) = \nabla (\bm{x} \cdot \bm{a}^\top) = \bm{a}\]</div>
 <p>Đạo hàm riêng cấp hai được cho bởi ma trận được gọi là ma trận Hessian.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
-    \nabla^2 f(\mathbf{x}) = \begin{pmatrix}
+    \nabla^2 f(\bm{x}) = \begin{pmatrix}
         \dfrac{\partial^2 f}{\partial x_1^2} &amp; \dfrac{\partial^2 f}{\partial x_1 x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_1 x_n} \\ \dfrac{\partial^2 f}{\partial x_2 x_1} &amp; \dfrac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_2 x_n} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ \dfrac{\partial^2 f}{\partial x_n x_1} &amp; \dfrac{\partial^2 f}{\partial x_n x_2} &amp; \cdots &amp; \dfrac{\partial^2 f}{\partial x_n^2}
     \end{pmatrix}
 \end{equation*}\end{split}\]</div>
 <p>Theo tính chất của đạo hàm riêng cấp hai có thể thấy ma trận trên là ma trận đối xứng.</p>
-<p>Nếu đầu vào là một ma trận, hay <span class="math notranslate nohighlight">\(f: \mathbb{R}^{n \times m} \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\mathbf{X})\)</span> thì ta làm tương tự</p>
+<p>Nếu đầu vào là một ma trận, hay <span class="math notranslate nohighlight">\(f: \mathbb{R}^{n \times m} \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(f(\bm{X})\)</span> thì ta làm tương tự</p>
 <p>Giả sử</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{X} = \begin{pmatrix}
+\[\begin{split}\bm{X} = \begin{pmatrix}
     x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1m} \\ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2m} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nm}
 \end{pmatrix}\end{split}\]</div>
-<p>Khi đó đạo hàm của hàm <span class="math notranslate nohighlight">\(f\)</span> theo ma trận <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> là</p>
+<p>Khi đó đạo hàm của hàm <span class="math notranslate nohighlight">\(f\)</span> theo ma trận <span class="math notranslate nohighlight">\(\bm{X}\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
-    \nabla f(\mathbf{X}) = \begin{pmatrix}
+    \nabla f(\bm{X}) = \begin{pmatrix}
         \dfrac{\partial f}{\partial x_{11}} &amp; \dfrac{\partial f}{\partial x_{12}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{1m}} \\ \dfrac{\partial f}{\partial x_{21}} &amp; \dfrac{\partial f}{\partial x_{22}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{2m}} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ \dfrac{\partial f}{\partial x_{n1}} &amp; \dfrac{\partial f}{\partial x_{n2}} &amp; \cdots &amp; \dfrac{\partial f}{\partial x_{nm}}
     \end{pmatrix}
 \end{equation*}\end{split}\]</div>
@@ -587,37 +587,37 @@ document.write(`
 <h2><span class="section-number">5.5.2. </span>Hàm số cho giá trị là vector<a class="headerlink" href="#ham-so-cho-gia-tri-la-vector" title="Link to this heading">#</a></h2>
 <p>Xét hàm vector</p>
 <div class="math notranslate nohighlight">
-\[F(\mathbf{x}) = (f_1(\mathbf{x}), f_2(\mathbf{x}), \ldots, f_m(\mathbf{x}))\]</div>
-<p>với <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n\)</span> và các hàm <span class="math notranslate nohighlight">\(f_i (\mathbf{x})\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Khi đó hàm vector <span class="math notranslate nohighlight">\(F\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p>
-<p>Nếu <span class="math notranslate nohighlight">\(f_i\)</span> là các hàm tuyến tính như trên thì hàm <span class="math notranslate nohighlight">\(F\)</span> là một ánh xạ tuyến tính, hay tương đương với phép nhân ma trận <span class="math notranslate nohighlight">\(F(\mathbf{x}) = \mathbf{x} \cdot \mathbf{A}\)</span>. Ở đây <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là vector hàng, còn <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> là ma trận <span class="math notranslate nohighlight">\(n \times m\)</span>.</p>
+\[F(\bm{x}) = (f_1(\bm{x}), f_2(\bm{x}), \ldots, f_m(\bm{x}))\]</div>
+<p>với <span class="math notranslate nohighlight">\(\bm{x} = (x_1, x_2, \ldots, x_n) \in \mathbb{R}^n\)</span> và các hàm <span class="math notranslate nohighlight">\(f_i (\bm{x})\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Khi đó hàm vector <span class="math notranslate nohighlight">\(F\)</span> là hàm từ <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(f_i\)</span> là các hàm tuyến tính như trên thì hàm <span class="math notranslate nohighlight">\(F\)</span> là một ánh xạ tuyến tính, hay tương đương với phép nhân ma trận <span class="math notranslate nohighlight">\(F(\bm{x}) = \bm{x} \cdot \bm{A}\)</span>. Ở đây <span class="math notranslate nohighlight">\(\bm{x}\)</span> là vector hàng, còn <span class="math notranslate nohighlight">\(\bm{A}\)</span> là ma trận <span class="math notranslate nohighlight">\(n \times m\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{A} = \begin{pmatrix}
+\[\begin{split}\bm{A} = \begin{pmatrix}
     a_{11} &amp; a_{21} &amp; \cdots &amp; a_{m1} \\ a_{12} &amp; a_{22} &amp; \cdots &amp; a_{m2} \\ \cdots &amp; \cdots &amp; \ddots &amp; \cdots \\ a_{1n} &amp; a_{2n} &amp; \cdots &amp; a_{mn}
 \end{pmatrix}\end{split}\]</div>
-<p>Ở đây, <span class="math notranslate nohighlight">\(f(\mathbf{x}) = f_i(x_1, x_2, \ldots, x_n) = a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n\)</span>. Nếu đặt <span class="math notranslate nohighlight">\(\mathbf{a}_i = (a_{i1}, a_{i2}, \ldots, a_{in})\)</span> thì ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> có các cột là <span class="math notranslate nohighlight">\(\mathbf{a}_i^\top\)</span>. Nói cách khác</p>
+<p>Ở đây, <span class="math notranslate nohighlight">\(f(\bm{x}) = f_i(x_1, x_2, \ldots, x_n) = a_{i1} x_1 + a_{i2} x_2 + \ldots + a_{in} x_n\)</span>. Nếu đặt <span class="math notranslate nohighlight">\(\bm{a}_i = (a_{i1}, a_{i2}, \ldots, a_{in})\)</span> thì ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span> có các cột là <span class="math notranslate nohighlight">\(\bm{a}_i^\top\)</span>. Nói cách khác</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{A} = \begin{pmatrix}
-    \mathbf{a}_1^\top &amp; \mathbf{a}_2^\top &amp; \cdots &amp; \mathbf{a}_m^\top
+\[\bm{A} = \begin{pmatrix}
+    \bm{a}_1^\top &amp; \bm{a}_2^\top &amp; \cdots &amp; \bm{a}_m^\top
 \end{pmatrix}\]</div>
-<p>Nếu ta xét từng cột của ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> thì hoàn toàn giống trường hợp trên. Giả sử với cột đầu tiên (ứng với <span class="math notranslate nohighlight">\(f_1\)</span>) ta có</p>
+<p>Nếu ta xét từng cột của ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span> thì hoàn toàn giống trường hợp trên. Giả sử với cột đầu tiên (ứng với <span class="math notranslate nohighlight">\(f_1\)</span>) ta có</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}f_1 (\mathbf{x}) = \begin{pmatrix}
+\[\begin{split}f_1 (\bm{x}) = \begin{pmatrix}
     x_1 &amp; x_2 &amp; \cdots &amp; x_n
 \end{pmatrix} \cdot \begin{pmatrix}
-    a_{11} \\ a_{12} \\ \vdots \\ a_{1n}\end{pmatrix} = \mathbf{x} \cdot \mathbf{a}_1^\top\end{split}\]</div>
-<p>Đạo hàm của <span class="math notranslate nohighlight">\(f_1\)</span> theo vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là</p>
+    a_{11} \\ a_{12} \\ \vdots \\ a_{1n}\end{pmatrix} = \bm{x} \cdot \bm{a}_1^\top\end{split}\]</div>
+<p>Đạo hàm của <span class="math notranslate nohighlight">\(f_1\)</span> theo vector <span class="math notranslate nohighlight">\(\bm{x}\)</span> là</p>
 <div class="math notranslate nohighlight">
-\[\nabla f_1 (\mathbf{x}) = \begin{pmatrix}
+\[\nabla f_1 (\bm{x}) = \begin{pmatrix}
     a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} 
-\end{pmatrix} = \mathbf{a_1}\]</div>
+\end{pmatrix} = \bm{a_1}\]</div>
 <p>Xếp các hàm <span class="math notranslate nohighlight">\(f_i\)</span> từ trên xuống dưới, ta có được đạo hàm của hàm <span class="math notranslate nohighlight">\(F\)</span> theo vector <span class="math notranslate nohighlight">\(x\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
-    \nabla F(\mathbf{x}) = \begin{pmatrix}
-        \nabla f_1 (\mathbf{x}) \\ \nabla f_2 (\mathbf{x}) \\ \vdots \\ \nabla f_m(\mathbf{x})
+    \nabla F(\bm{x}) = \begin{pmatrix}
+        \nabla f_1 (\bm{x}) \\ \nabla f_2 (\bm{x}) \\ \vdots \\ \nabla f_m(\bm{x})
     \end{pmatrix}  = \begin{pmatrix}
-    \mathbf{a}_1 \\ \mathbf{a}_2 \\ \vdots \\ \mathbf{a}_m
-    \end{pmatrix} = \mathbf{A}^\top
+    \bm{a}_1 \\ \bm{a}_2 \\ \vdots \\ \bm{a}_m
+    \end{pmatrix} = \bm{A}^\top
 \end{equation*}\end{split}\]</div>
 </section>
 </section>

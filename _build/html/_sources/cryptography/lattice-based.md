@@ -6,62 +6,62 @@
 
 ## Introduction
 
-**Ký hiệu**. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ $\mathbf{x}, \mathbf{y}, \mathbf{v}$. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ $\mathbf{A}, \mathbf{B}$.
+**Ký hiệu**. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ $\bm{x}, \bm{y}, \bm{v}$. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ $\bm{A}, \bm{B}$.
 
 ````{prf:defintion} Lattice
-Xét tập hợp các vector độc lập tuyến tính $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d$ trên $\mathbb{R}^n$. Ta nói **lattice** (hay **lưới**) $\mathcal{L} \subset \mathbb{R}^n$ được sinh bởi các vector $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d$ nếu
+Xét tập hợp các vector độc lập tuyến tính $\bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d$ trên $\mathbb{R}^n$. Ta nói **lattice** (hay **lưới**) $\mathcal{L} \subset \mathbb{R}^n$ được sinh bởi các vector $\bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d$ nếu
 
-$$\mathcal{L} = \{ a_1 \mathbf{v}_1 + a_2 \mathbf{v}_2 + \ldots + a_d \mathbf{v}_d : a_i \in \mathbb{Z} \}$$
+$$\mathcal{L} = \{ a_1 \bm{v}_1 + a_2 \bm{v}_2 + \ldots + a_d \bm{v}_d : a_i \in \mathbb{Z} \}$$
 ````
 
 Nói cách khác, lattice là không gian vector được sinh bởi tổ hợp tuyến tính với hệ số nguyên.
 
-Tập các vector $\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}$ được gọi là **tập sinh** hay **cơ sở** (basis, базис) của lattice $\mathcal{L}$.
+Tập các vector $\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}$ được gọi là **tập sinh** hay **cơ sở** (basis, базис) của lattice $\mathcal{L}$.
 
 Số lượng vector trong cơ sở được gọi là **số chiều** của lattice và kí hiệu là $d = \dim(\mathcal{L})$.
 
 Lattice được gọi là **full-rank** nếu $\dim(\mathcal{L}) = n$.
 
-Xét ma trận $\mathbf{V}$ có các hàng là các vector $\mathbf{v}_1, \ldots, \mathbf{v}_d$, nghĩa là $\mathbf{V} \in \mathbb{R}^{d \times n}$.
+Xét ma trận $\bm{V}$ có các hàng là các vector $\bm{v}_1, \ldots, \bm{v}_d$, nghĩa là $\bm{V} \in \mathbb{R}^{d \times n}$.
 
 ````{prf:defintion} Định thức của lattice
-**Định thức của lattice** $\mathcal{L}$ được xác định bởi công thức $\displaystyle{\det(\mathcal{L}) = \sqrt{\lvert \det\left(\mathbf{V} \mathbf{V}^\top \right)\rvert}}$.
+**Định thức của lattice** $\mathcal{L}$ được xác định bởi công thức $\displaystyle{\det(\mathcal{L}) = \sqrt{\lvert \det\left(\bm{V} \bm{V}^\top \right)\rvert}}$.
 ````
 
-Nếu lattice full-rank thì $\det(\mathcal{L}) = \det(\mathbf{V})$.
+Nếu lattice full-rank thì $\det(\mathcal{L}) = \det(\bm{V})$.
 
 ````{prf:remark}
 Cơ sở của một lưới không là duy nhất nhưng số lượng vector trong mỗi cơ sở là như nhau và bằng số chiều của lattice.
 ````
 
-Nếu $\mathbf{V}$ và $\mathbf{W}$ là hai ma trận cơ sở của cùng lattice $\mathcal{L}$ thì tồn tại ma trận $\mathbf{A}$ với hệ số nguyên (tức $\mathbf{A} \in \mathbb{Z}^{d \times d}$) có định thức bằng $1$ sao cho $\mathbf{W} = \mathbf{A} \cdot \mathbf{V}$. Chúng ta có thể dễ dàng chứng minh điều này khi biểu diễn các vector trong $\mathbf{W}$ thành tổ hợp tuyến tính các vector trong $\mathbf{V}$.
+Nếu $\bm{V}$ và $\bm{W}$ là hai ma trận cơ sở của cùng lattice $\mathcal{L}$ thì tồn tại ma trận $\bm{A}$ với hệ số nguyên (tức $\bm{A} \in \mathbb{Z}^{d \times d}$) có định thức bằng $1$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$. Chúng ta có thể dễ dàng chứng minh điều này khi biểu diễn các vector trong $\bm{W}$ thành tổ hợp tuyến tính các vector trong $\bm{V}$.
 
-Giả sử $\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}$ là một cơ sở của $\mathcal{L}$. Tương tự, $\{ \mathbf{w}_1, \mathbf{w}_2, \ldots, \mathbf{w}_d \}$ là một cơ sở khác của $\mathcal{L}$.
+Giả sử $\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}$ là một cơ sở của $\mathcal{L}$. Tương tự, $\{ \bm{w}_1, \bm{w}_2, \ldots, \bm{w}_d \}$ là một cơ sở khác của $\mathcal{L}$.
 
-Ta có thể viết mỗi $\mathbf{w}_i$ là tổ hợp tuyến tính của các vector $\mathbf{v}$ như sau
+Ta có thể viết mỗi $\bm{w}_i$ là tổ hợp tuyến tính của các vector $\bm{v}$ như sau
 
 $$\begin{align*}
-	\mathbf{w}_1 & = a_{11} \mathbf{v}_1 + a_{12} \mathbf{v}_2 + \ldots + a_{1d} \mathbf{v}_d \\
-	\mathbf{w}_2 & = a_{21} \mathbf{v}_1 + a_{22} \mathbf{v}_2 + \ldots + a_{2d} \mathbf{v}_d \\
+	\bm{w}_1 & = a_{11} \bm{v}_1 + a_{12} \bm{v}_2 + \ldots + a_{1d} \bm{v}_d \\
+	\bm{w}_2 & = a_{21} \bm{v}_1 + a_{22} \bm{v}_2 + \ldots + a_{2d} \bm{v}_d \\
 	\vdots & \\
-	\mathbf{w}_d & = a_{d1} \mathbf{v}_1 + a_{d2} \mathbf{v}_2 + \ldots + a_{dd} \mathbf{v}_d
+	\bm{w}_d & = a_{d1} \bm{v}_1 + a_{d2} \bm{v}_2 + \ldots + a_{dd} \bm{v}_d
 \end{align*}$$
 
-Khi đó, nếu viết các vector $\mathbf{w}_i$ thành hàng của ma trận $\mathbf{W}$ và $\mathbf{v}_j$ thành hàng của ma trận $\mathbf{V}$ thì biểu diễn trên tương đương với:
+Khi đó, nếu viết các vector $\bm{w}_i$ thành hàng của ma trận $\bm{W}$ và $\bm{v}_j$ thành hàng của ma trận $\bm{V}$ thì biểu diễn trên tương đương với:
 
 $$\begin{equation*}
-	\mathbf{W} = \begin{pmatrix}
+	\bm{W} = \begin{pmatrix}
 		a_{11} & a_{12} & \cdots & a_{1d} \\
 		a_{21} & a_{22} & \cdots & a_{2d} \\
 		\vdots & \vdots & \ddots & \vdots \\
 		a_{d1} & a_{d2} & \cdots & a_{dd}
-	\end{pmatrix} \cdot \mathbf{V}
+	\end{pmatrix} \cdot \bm{V}
 \end{equation*}$$
 
 Đặt
 
 $$\begin{equation*}
-	\mathbf{A} = \begin{pmatrix}
+	\bm{A} = \begin{pmatrix}
 		a_{11} & a_{12} & \cdots & a_{1d} \\
 		a_{21} & a_{22} & \cdots & a_{2d} \\
 		\vdots & \vdots & \ddots & \vdots \\
@@ -69,61 +69,61 @@ $$\begin{equation*}
 	\end{pmatrix}
 \end{equation*}$$
 
-Do $\mathbf{W}$ và $\mathbf{V}$ là các cơ sở của $\mathcal{L}$ nên nếu các vector $\mathbf{w}_i$ có thể biểu diễn qua các vector $\mathbf{v}_j$ thì ngược lại, các vector $\mathbf{v}_j$ cũng có thể được biểu diễn qua các vector $\mathbf{w}_i$. Suy ra ma trận $\mathbf{A}$ là ma trận khả nghịch. Do $a_{ij} \in \mathbb{Z}$ theo định nghĩa lattice, $\det(\mathbf{A}) \in \mathbb{Z}$.
+Do $\bm{W}$ và $\bm{V}$ là các cơ sở của $\mathcal{L}$ nên nếu các vector $\bm{w}_i$ có thể biểu diễn qua các vector $\bm{v}_j$ thì ngược lại, các vector $\bm{v}_j$ cũng có thể được biểu diễn qua các vector $\bm{w}_i$. Suy ra ma trận $\bm{A}$ là ma trận khả nghịch. Do $a_{ij} \in \mathbb{Z}$ theo định nghĩa lattice, $\det(\bm{A}) \in \mathbb{Z}$.
 
 Hơn nữa, vì:
 
 $$\begin{equation*}
-	I = \mathbf{A} \cdot \mathbf{A}^{-1} \Rightarrow 1 = \det (\mathbf{A}) \cdot \det (\mathbf{A}^{-1})
+	I = \bm{A} \cdot \bm{A}^{-1} \Rightarrow 1 = \det (\bm{A}) \cdot \det (\bm{A}^{-1})
 \end{equation*}$$
 
-nên $\det(\mathbf{A}) = \pm 1$.
+nên $\det(\bm{A}) = \pm 1$.
 
 Mỗi lattice $\mathcal{L}$ có một lattice đối ngẫu (dual lattice), kí hiệu là
 
-$$\mathcal{L}^* = \{ \mathbf{w} \in \mathbb{R}^n : \langle \mathbf{w}, \mathbf{x} \rangle \in \mathbb{Z} \ \text{với mọi} \ \mathbf{x} \in \mathcal{L} \}$$
+$$\mathcal{L}^* = \{ \bm{w} \in \mathbb{R}^n : \langle \bm{w}, \bm{x} \rangle \in \mathbb{Z} \ \text{với mọi} \ \bm{x} \in \mathcal{L} \}$$
 
 ````{prf:defintion} Fundamental domain
-Cho lattice $\mathcal{L}$ có số chiều là $d$ với cơ sở gồm các vector $\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}$. Ta gọi **fundamental domain** (hay **fundamental parallelepiped**) của $\mathcal{L}$ ứng với cơ sở trên là tập
+Cho lattice $\mathcal{L}$ có số chiều là $d$ với cơ sở gồm các vector $\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}$. Ta gọi **fundamental domain** (hay **fundamental parallelepiped**) của $\mathcal{L}$ ứng với cơ sở trên là tập
 
 $$\begin{equation}
-    \mathcal{F} (\mathbf{v}_1, \ldots, \mathbf{v}_d) = \{ t_1 \mathbf{v}_1 + \ldots + t_d \mathbf{v}_d : 0 \leqslant t_i < 1 \}
+    \mathcal{F} (\bm{v}_1, \ldots, \bm{v}_d) = \{ t_1 \bm{v}_1 + \ldots + t_d \bm{v}_d : 0 \leqslant t_i < 1 \}
 \end{equation}$$
 ````
 
-Trong mặt phẳng $Oxy$ với hai vector $\mathbf{u}$ và $\mathbf{v}$ không cùng phương thì fundamental domain là hình bình hành tạo bởi hai vector đó.
+Trong mặt phẳng $Oxy$ với hai vector $\bm{u}$ và $\bm{v}$ không cùng phương thì fundamental domain là hình bình hành tạo bởi hai vector đó.
 
 ````{prf:remark}
-Gọi $\mathcal{L} \subset \mathbb{R}^n$ là lattice với số chiều là $n$ và gọi $\mathcal{F}$ là fundamental domain của $\mathcal{L}$. Khi đó mọi vetor $\mathbf{w} \in \mathbb{R}^n$ đều có thể viết dưới dạng
+Gọi $\mathcal{L} \subset \mathbb{R}^n$ là lattice với số chiều là $n$ và gọi $\mathcal{F}$ là fundamental domain của $\mathcal{L}$. Khi đó mọi vetor $\bm{w} \in \mathbb{R}^n$ đều có thể viết dưới dạng
 	
-$$\mathbf{w} = \mathbf{t} + \mathbf{v}$$
+$$\bm{w} = \bm{t} + \bm{v}$$
 
-với $\mathbf{t}$ duy nhất thuộc $\mathcal{F}$ và $\mathbf{v}$ duy nhất thuộc $\mathcal{L}$.
+với $\bm{t}$ duy nhất thuộc $\mathcal{F}$ và $\bm{v}$ duy nhất thuộc $\mathcal{L}$.
 ````	
 
 Một cách tương đương, hợp của các fundamental domains
 
 $$\begin{equation*}
-    \mathcal{F} + \mathbf{v} = \{ \mathbf{t} + \mathbf{v} : \mathbf{t} \in \mathcal{F} \}
+    \mathcal{F} + \bm{v} = \{ \bm{t} + \bm{v} : \bm{t} \in \mathcal{F} \}
 \end{equation*}$$
 
-với $\mathbf{v}$ là các vector trong $\mathcal{L}$, sẽ cover hết $\mathbb{R}^n$.
+với $\bm{v}$ là các vector trong $\mathcal{L}$, sẽ cover hết $\mathbb{R}^n$.
 
 ````{admonition} **Chứng minh**
 :class: danger, dropdown
 
-Để chứng minh nhận xét trên, giả sử $\{ \mathbf{v}_i : 1 \leqslant i \leqslant n \}$ là cơ sở của $\mathcal{L}$. Khi đó các $\mathbf{v}_i$ độc lập tuyến tính nên cũng là cơ sở của $\mathbb{R}^n$.
+Để chứng minh nhận xét trên, giả sử $\{ \bm{v}_i : 1 \leqslant i \leqslant n \}$ là cơ sở của $\mathcal{L}$. Khi đó các $\bm{v}_i$ độc lập tuyến tính nên cũng là cơ sở của $\mathbb{R}^n$.
 	
-Ta viết các vector $\mathbf{w} \in \mathbb{R}^n$ dưới dạng tổ hợp tuyến tính của $\mathbf{v}_i$ và tách hệ số trước mỗi vector thành phần nguyên và phần lẻ. Phần nguyên cho vector trong $\mathcal{L}$ và phần lẻ cho vector trong $\mathcal{F}$.
+Ta viết các vector $\bm{w} \in \mathbb{R}^n$ dưới dạng tổ hợp tuyến tính của $\bm{v}_i$ và tách hệ số trước mỗi vector thành phần nguyên và phần lẻ. Phần nguyên cho vector trong $\mathcal{L}$ và phần lẻ cho vector trong $\mathcal{F}$.
 	
-Để chứng minh tính duy nhất của tổ hợp, xét hai cách biểu diễn khác nhau của $\mathbf{w}$ và chứng minh hai cách đó là một.
+Để chứng minh tính duy nhất của tổ hợp, xét hai cách biểu diễn khác nhau của $\bm{w}$ và chứng minh hai cách đó là một.
 ````
 
 ````{prf:theorem} Bất đẳng thức Hadamard
-Cho lattice $\mathcal{L}$, lấy cơ sở bất kỳ của $\mathcal{L}$ là các vector $\mathbf{v}_1$, ..., $\mathbf{v}_n$ và gọi $\mathcal{F}$ là fundamental domain cho $\mathcal{L}$. Khi đó
+Cho lattice $\mathcal{L}$, lấy cơ sở bất kỳ của $\mathcal{L}$ là các vector $\bm{v}_1$, ..., $\bm{v}_n$ và gọi $\mathcal{F}$ là fundamental domain cho $\mathcal{L}$. Khi đó
 
 $$\begin{equation}
-    \det L = \text{Vol} (\mathcal{F}) \leqslant \lVert \mathbf{v}_1 \rVert \cdot \lVert \mathbf{v}_2 \rVert \cdots \lVert \mathbf{v}_n \rVert
+    \det L = \text{Vol} (\mathcal{F}) \leqslant \lVert \bm{v}_1 \rVert \cdot \lVert \bm{v}_2 \rVert \cdots \lVert \bm{v}_n \rVert
 \end{equation}$$
 ````
 
@@ -156,22 +156,22 @@ Cho một nhóm $G$ và một hàm $f$ trên $G$ là hằng số và phân biệ
 ```
 
 ```{admonition} **Bài toán 2.** (Bài toán vector ngắn nhất, Shortest Vector Problem - SVP)
-Cho một cơ sở tùy ý $\mathbf{V}$ của lattice $\mathcal{L}$. Hãy tìm một vector $\mathbf{x} \in \mathcal{L}$ khác không với $\lVert \mathbf{x} \rVert \leqslant \gamma(m) \cdot \lambda_1(\mathcal{L})$.
+Cho một cơ sở tùy ý $\bm{V}$ của lattice $\mathcal{L}$. Hãy tìm một vector $\bm{x} \in \mathcal{L}$ khác không với $\lVert \bm{x} \rVert \leqslant \gamma(m) \cdot \lambda_1(\mathcal{L})$.
 ```
 
 ```{admonition} **Bài toán 3.** (Bài toán Learning With Error, LWE Problem)
-Cho $n, m, q > 0$ là các số nguyên và $\chi$ là một phân bố trên $\mathbb{Z}$. Với $\mathbf{s} \xleftarrow{\chi} \mathbb{Z}_n$, định nghĩa $\mathcal{D}_{\mathbf{s}, \chi}$ là phân bố lấy các mẫu $\mathbf{a} \xleftarrow{\$} \mathbb{Z}_q^n$ và $e \xleftarrow{\chi} \mathbb{Z}$. Kết quả trả về $(\mathbf{a}, \langle \mathbf{a}, \mathbf{s} \rangle + e) \in \mathbb{Z}_q^n \times \mathbb{Z}_q$.
+Cho $n, m, q > 0$ là các số nguyên và $\chi$ là một phân bố trên $\mathbb{Z}$. Với $\bm{s} \xleftarrow{\chi} \mathbb{Z}_n$, định nghĩa $\mathcal{D}_{\bm{s}, \chi}$ là phân bố lấy các mẫu $\bm{a} \xleftarrow{\$} \mathbb{Z}_q^n$ và $e \xleftarrow{\chi} \mathbb{Z}$. Kết quả trả về $(\bm{a}, \langle \bm{a}, \bm{s} \rangle + e) \in \mathbb{Z}_q^n \times \mathbb{Z}_q$.
 
-1. Với $n, p \geqslant 2$ và $m$ mẫu độc lập từ phân bố $\mathcal{D}_{\mathbf{s}, \chi}$, bài toán LWE tìm kiếm là tìm $\mathbf{s}$ (search LWE problem).
+1. Với $n, p \geqslant 2$ và $m$ mẫu độc lập từ phân bố $\mathcal{D}_{\bm{s}, \chi}$, bài toán LWE tìm kiếm là tìm $\bm{s}$ (search LWE problem).
 
-2. Với $n, q \geqslant 2$ và $m$ mẫu độc lập $(\mathbf{a}_i, b_i)$, bài toán LWE quyết định (decisional LWE problem) là phân biệt với $i = 1, \ldots, m$ thì $(\mathbf{a}_i, b_i)$ thuộc $\mathbb{Z}_q^n \times \mathbb{Z}_q$ hay thuộc $\mathcal{D}_{\mathbf{s}, \chi}$. Nói cách khác là được lấy mẫu ngẫu nhiên theo $\mathbb{Z}_q^n \times \mathbb{Z}_q$ hay theo phân bố $\mathcal{D}$.
+2. Với $n, q \geqslant 2$ và $m$ mẫu độc lập $(\bm{a}_i, b_i)$, bài toán LWE quyết định (decisional LWE problem) là phân biệt với $i = 1, \ldots, m$ thì $(\bm{a}_i, b_i)$ thuộc $\mathbb{Z}_q^n \times \mathbb{Z}_q$ hay thuộc $\mathcal{D}_{\bm{s}, \chi}$. Nói cách khác là được lấy mẫu ngẫu nhiên theo $\mathbb{Z}_q^n \times \mathbb{Z}_q$ hay theo phân bố $\mathcal{D}$.
 ```
 
-Thông thường chúng ta coi vector $\mathbf{s}$ là secret và $e$ là lỗi (error) của LWE.
+Thông thường chúng ta coi vector $\bm{s}$ là secret và $e$ là lỗi (error) của LWE.
 
 Chúng ta nói rằng bài toán LWE quyết định $\text{LWE}_{n, m, q, \chi}$ là $(t, \varepsilon)$-hard nếu đối với bất kì thuật toán $\mathcal{A}$ nào chạy trong thời gian $t$, nó đảm bảo rằng:
 
-$$\left| \mathrm{Pr}\left[ \mathcal{A}^{\mathcal{D}_{\mathbf{s}, \chi}}(\cdot) = 1 \right] - \mathrm{Pr} \left[ \mathcal{A}^{\mathcal{U}(\mathbb{Z}_q^n \times \mathbb{Z}_q)} (\cdot) = 1 \right] \right| \leqslant \varepsilon$$
+$$\left| \mathrm{Pr}\left[ \mathcal{A}^{\mathcal{D}_{\bm{s}, \chi}}(\cdot) = 1 \right] - \mathrm{Pr} \left[ \mathcal{A}^{\mathcal{U}(\mathbb{Z}_q^n \times \mathbb{Z}_q)} (\cdot) = 1 \right] \right| \leqslant \varepsilon$$
 
 ```{admonition} **Bài toán 4.** (Bài toán Ring-LWE, R-LWE)
 Cho $n, q > 0$ là các số nguyên và $\chi$ là phân bố trên $\mathcal{R}$. Với $s \xleftarrow{\$} \mathcal{R}$, định nghĩa $\mathcal{D}_{s, \chi}$ là phân bố lấy các mẫu $a \xleftarrow{\$} \mathcal{R}_q$ và $e \xleftarrow{\chi} \mathcal{R}$. Kết quả trả về $(a, a s + e) \in \mathcal{R}_q \times \mathcal{R}_q$.
@@ -186,30 +186,30 @@ Tương tự:
 
 Các bài toán liên quan tới lattice mà chúng ta cần quan tâm để xây dựng các thuật toán mã hóa lattice-based.
 
-1. **Shortest Vector Problem** (hay **SVP**): Tìm vector khác không có độ dài ngắn nhất trong lattice $\mathcal{L}$, nghĩa là tìm vector $\mathbf{v} \in L$ mà $\lVert v \rVert$ nhỏ nhất;
-2. **Closest Vector Problem** (hay **CVP**): Cho trước vector $\mathbf{w} \in \mathbb{R}^n$ mà không nằm trong $\mathcal{L}$, tìm vector $\mathbf{v} \in L$ gần với $\mathbf{w}$ nhất, nghĩa là tìm $\mathbf{v} \in L$ sao cho $\lVert \mathbf{w} - \mathbf{v} \rVert$ nhỏ nhất.
+1. **Shortest Vector Problem** (hay **SVP**): Tìm vector khác không có độ dài ngắn nhất trong lattice $\mathcal{L}$, nghĩa là tìm vector $\bm{v} \in L$ mà $\lVert v \rVert$ nhỏ nhất;
+2. **Closest Vector Problem** (hay **CVP**): Cho trước vector $\bm{w} \in \mathbb{R}^n$ mà không nằm trong $\mathcal{L}$, tìm vector $\bm{v} \in L$ gần với $\bm{w}$ nhất, nghĩa là tìm $\bm{v} \in L$ sao cho $\lVert \bm{w} - \bm{v} \rVert$ nhỏ nhất.
 
 ### Thuật toán Babai
 
 Thuật toán này giúp tìm một cơ sở "đủ tốt" để giải **apprCVP**.
 
 ````{prf:theorem} Thuật toán Babai tìm Closest Vertex
-Gọi $\mathcal{L} \subset \mathbb{R}^n$ là lattice với cơ sở là $\mathbf{v}_1$, $\mathbf{v}_2$, ..., $\mathbf{v}_n$ và gọi $\mathbf{w} \in \mathbb{R}^n$ là vector bất kỳ. 
+Gọi $\mathcal{L} \subset \mathbb{R}^n$ là lattice với cơ sở là $\bm{v}_1$, $\bm{v}_2$, ..., $\bm{v}_n$ và gọi $\bm{w} \in \mathbb{R}^n$ là vector bất kỳ. 
 	
 Nếu các vector trong cơ sở trực giao nhau thì thuật toán Babai sẽ giải được **CVP**.
 	
 Nếu các vector trong cơ sở gần như trực giao thì thuật toán Babai sẽ giải được **apprCVP**.
 	
-Ngược lại, nếu các vector trong cơ sở không trực giao (nhiều) thì kết quả thuật toán trả về sẽ xa hơn vector gần với $\mathbf{w}$.
+Ngược lại, nếu các vector trong cơ sở không trực giao (nhiều) thì kết quả thuật toán trả về sẽ xa hơn vector gần với $\bm{w}$.
 ````
 
 ````{prf:algorithm} Babai's Closest Vertex Algorithm
-1. Biểu diễn $\mathbf{w} = t_1 \mathbf{v}_1 + t_2 \mathbf{v}_2 + \ldots + t_n \mathbf{v}_n$ với $t_1, \ldots, t_n \in \mathbb{R}$.
+1. Biểu diễn $\bm{w} = t_1 \bm{v}_1 + t_2 \bm{v}_2 + \ldots + t_n \bm{v}_n$ với $t_1, \ldots, t_n \in \mathbb{R}$.
 2. Đặt $a_i = \lfloor t_i \rceil$ với $i = 1, \ldots, n$.
-3. Trả về vector $\mathbf{v} = a_1 \mathbf{v}_1 + a_2 \mathbf{v}_2 + \ldots + a_n \mathbf{v}_n$.
+3. Trả về vector $\bm{v} = a_1 \bm{v}_1 + a_2 \bm{v}_2 + \ldots + a_n \bm{v}_n$.
 ````
 
-Mình có thể thấy rằng thuật toán Babai làm tròn hệ số để đưa trả về vector gần với $\mathbf{w}$.
+Mình có thể thấy rằng thuật toán Babai làm tròn hệ số để đưa trả về vector gần với $\bm{w}$.
 
 ### Lattice reduction
 
@@ -219,33 +219,33 @@ Mục tiêu của việc giải các bài toán **SVP** hay **CVP** (hay các bi
 
 ### Gaussian lattice reduction
 
-Giả sử ta có $\mathcal{L} \subset \mathbb{R}^2$ là lattice 2 chiều với cơ sở là $\mathbf{v}_1$ và $\mathbf{v}_2$.
+Giả sử ta có $\mathcal{L} \subset \mathbb{R}^2$ là lattice 2 chiều với cơ sở là $\bm{v}_1$ và $\bm{v}_2$.
 
-Ta có thể đổi chỗ $\mathbf{v}_1$ và $\mathbf{v}_2$ nếu cần thiết để luôn đảm bảo $\lVert \mathbf{v}_1 \rVert < \lVert \mathbf{v}_2 \rVert$.
+Ta có thể đổi chỗ $\bm{v}_1$ và $\bm{v}_2$ nếu cần thiết để luôn đảm bảo $\lVert \bm{v}_1 \rVert < \lVert \bm{v}_2 \rVert$.
 
-Để làm nhỏ $\mathbf{v}_2$ ta có thể trừ đi một bội số của $\mathbf{v}_1$. Nếu ta sử dụng cách giống như thuật toán trực giao Gram-Schmidt thì
+Để làm nhỏ $\bm{v}_2$ ta có thể trừ đi một bội số của $\bm{v}_1$. Nếu ta sử dụng cách giống như thuật toán trực giao Gram-Schmidt thì
 
-$$\mathbf{v}_2^* = \mathbf{v}_2 - \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \mathbf{v}_1$$
+$$\bm{v}_2^* = \bm{v}_2 - \dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2} \bm{v}_1$$
 
-Khi đó $\mathbf{v}_2^*$ sẽ trực giao với $\mathbf{v}_1$. Tuy nhiên vector này không nằm trong $\mathcal{L}$ vì hệ số $\dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2}$ có thể không phải số nguyên. Để khắc phục ta chỉ việc lấy phần nguyên của hệ số này. Nghĩa là ta thay $\mathbf{v}_2$ bằng vector
+Khi đó $\bm{v}_2^*$ sẽ trực giao với $\bm{v}_1$. Tuy nhiên vector này không nằm trong $\mathcal{L}$ vì hệ số $\dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2}$ có thể không phải số nguyên. Để khắc phục ta chỉ việc lấy phần nguyên của hệ số này. Nghĩa là ta thay $\bm{v}_2$ bằng vector
 
-$$\mathbf{v}_2 - m \mathbf{v}_1 \quad \text{với}\ m = \left\lfloor \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \right\rceil$$
+$$\bm{v}_2 - m \bm{v}_1 \quad \text{với}\ m = \left\lfloor \dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2} \right\rceil$$
 
-Nếu $\mathbf{v}_2$ vẫn lớn hơn $\mathbf{v}_1$ thì ta dừng thuật toán. Ngược lại ta đảo vị trí $\mathbf{v}_1$ và $\mathbf{v}_2$ rồi lặp lại bước trên. Thuật toán như sau
+Nếu $\bm{v}_2$ vẫn lớn hơn $\bm{v}_1$ thì ta dừng thuật toán. Ngược lại ta đảo vị trí $\bm{v}_1$ và $\bm{v}_2$ rồi lặp lại bước trên. Thuật toán như sau
 
 ````{prf:theorem} Gaussian lattice reduction
 
-**Input::** Lattice 2 chiều $\mathcal{L} \subset \mathbb{R}^2$ với cơ sở $\mathbf{v}_1$ và $\mathbf{v}_2$
+**Input::** Lattice 2 chiều $\mathcal{L} \subset \mathbb{R}^2$ với cơ sở $\bm{v}_1$ và $\bm{v}_2$
 
-**Output:** Cơ sở mới $\mathbf{v}_1^*$ và $\mathbf{v}_2^*$ gần như trực giao nhau
+**Output:** Cơ sở mới $\bm{v}_1^*$ và $\bm{v}_2^*$ gần như trực giao nhau
 
-1. Nếu $\lVert \mathbf{v}_2 \rVert < \lVert \mathbf{v}_1 \rVert$ thì ta đổi chỗ $\mathbf{v}_1$ và $\mathbf{v}_2$.
+1. Nếu $\lVert \bm{v}_2 \rVert < \lVert \bm{v}_1 \rVert$ thì ta đổi chỗ $\bm{v}_1$ và $\bm{v}_2$.
 
-2. Tính $m = \left\lfloor \mathbf{v}_1 \cdot \mathbf{v}_2 / \lVert \mathbf{v}_1 \rVert^2 \right\rceil$.
+2. Tính $m = \left\lfloor \bm{v}_1 \cdot \bm{v}_2 / \lVert \bm{v}_1 \rVert^2 \right\rceil$.
 
-3. Nếu $m = 0$ thì trả về cơ sở gồm $\mathbf{v}_1$ và $\mathbf{v}_2$.
+3. Nếu $m = 0$ thì trả về cơ sở gồm $\bm{v}_1$ và $\bm{v}_2$.
 
-4. Thay $\mathbf{v}_2$ bởi $\mathbf{v}_2 - m \mathbf{v}_1$.
+4. Thay $\bm{v}_2$ bởi $\bm{v}_2 - m \bm{v}_1$.
 ````
 
 ## Heuristic
@@ -410,15 +410,15 @@ Do đó với số $X$​ cho trước, nếu ta xây lattice ($d+2$ vector) sau
 
 $$
 	\begin{array}{cccccccc}
-		\mathbf{v}_0 & \Leftarrow & M & 0 & 0 & \cdots & 0 & 0 \\
-		\mathbf{v}_1 & \Leftarrow & 0 & MX & 0 & \cdots & 0 & 0 \\
+		\bm{v}_0 & \Leftarrow & M & 0 & 0 & \cdots & 0 & 0 \\
+		\bm{v}_1 & \Leftarrow & 0 & MX & 0 & \cdots & 0 & 0 \\
 		\vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
-		\mathbf{v}_d & \Leftarrow & 0 & 0 & 0 & \cdots & 0 & MX^d \\
-		\mathbf{v}_{d+1} & \Leftarrow & a_0 & a_1 X & a_2 X^2 & \cdots & a_{d-1} X^{d-1} & a_d X^d
+		\bm{v}_d & \Leftarrow & 0 & 0 & 0 & \cdots & 0 & MX^d \\
+		\bm{v}_{d+1} & \Leftarrow & a_0 & a_1 X & a_2 X^2 & \cdots & a_{d-1} X^{d-1} & a_d X^d
 	\end{array}
 $$
 
-Khi đó hệ số của mỗi dòng từ $\mathbf{v}_0$​ tới $\mathbf{v}_d$​ là $b_0$​ tới $b_d$​. Còn hệ số của $\mathbf{v}_{d+1}$​ là $k$​.
+Khi đó hệ số của mỗi dòng từ $\bm{v}_0$​ tới $\bm{v}_d$​ là $b_0$​ tới $b_d$​. Còn hệ số của $\bm{v}_{d+1}$​ là $k$​.
 
 Tuy nhiên chúng ta thường sẽ biến đổi để đa thức trở thành monic ($a_d = 1$​). Khi đó chúng ta bỏ đi $v_d$​ và còn $d+1$​ vector trong lattice.
 
@@ -444,11 +444,11 @@ Tương tự, mình sẽ có các vector trong lattice như sau:
 
 $$
 \begin{array}{ccccccccccc}
-    \mathbf{v}_0 & \Leftarrow & M & 0 & 0 & \cdots & 0 & 0 & 0 & 0 & \cdots \\​
-    \mathbf{v}_1 & \Leftarrow & 0 & MX & 0 & \cdots & 0 & 0 & 0 & 0 & \cdots \\
+    \bm{v}_0 & \Leftarrow & M & 0 & 0 & \cdots & 0 & 0 & 0 & 0 & \cdots \\​
+    \bm{v}_1 & \Leftarrow & 0 & MX & 0 & \cdots & 0 & 0 & 0 & 0 & \cdots \\
     \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-    \mathbf{v}_{d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & MX^{d-1} & 0 & 0 & 0 & \cdots \\
-    \mathbf{v}_d & \Leftarrow & a_0 & a_1 X & a_2 X^2 & \cdots & a_{d-1} X^{d-1} & X^d & 0 & 0 & \cdots
+    \bm{v}_{d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & MX^{d-1} & 0 & 0 & 0 & \cdots \\
+    \bm{v}_d & \Leftarrow & a_0 & a_1 X & a_2 X^2 & \cdots & a_{d-1} X^{d-1} & X^d & 0 & 0 & \cdots
 \end{array}
 $$
 
@@ -456,8 +456,8 @@ Sau đó thêm các vector khi shift vào, tương ứng với $xF(x)$​, $x^2 
 
 $$
 \begin{array}{cccccccccccc}
-    \mathbf{v}_{d+1} & \Leftarrow & 0 & a_0 X & a_1 X^2 & a_2 X^3 & \cdots & a_{d-1} X^d & a_d X^{d+1} & 0 & 0 & \cdots \\
-    \mathbf{v}_{d+2} & \Leftarrow & 0 & 0 & a_0 X^2 & a_1 X^3 & \cdots & a_{d-2} X^d & a_{d-1} X^{d+1} & a_d X^{d+2} & 0 & \cdots
+    \bm{v}_{d+1} & \Leftarrow & 0 & a_0 X & a_1 X^2 & a_2 X^3 & \cdots & a_{d-1} X^d & a_d X^{d+1} & 0 & 0 & \cdots \\
+    \bm{v}_{d+2} & \Leftarrow & 0 & 0 & a_0 X^2 & a_1 X^3 & \cdots & a_{d-2} X^d & a_{d-1} X^{d+1} & a_d X^{d+2} & 0 & \cdots
 \end{array}
 $$
 
@@ -504,10 +504,10 @@ Nói cách khác thì:
 
 $$
 \begin{array}{ccccccccc}
-    \mathbf{v}_0 & \Leftarrow & M^{h-1} & 0 & 0 & \cdots & 0 & 0 & \cdots \\
-    \mathbf{v}_1 & \Leftarrow & 0 & M^{h-1} X & 0 & \cdots & 0 & 0 & \cdots \\
+    \bm{v}_0 & \Leftarrow & M^{h-1} & 0 & 0 & \cdots & 0 & 0 & \cdots \\
+    \bm{v}_1 & \Leftarrow & 0 & M^{h-1} X & 0 & \cdots & 0 & 0 & \cdots \\
     \vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
-    \mathbf{v}_{d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & M^{h-1} X^{d-1} & 0 & \cdots
+    \bm{v}_{d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & M^{h-1} X^{d-1} & 0 & \cdots
 \end{array}
 $$
 
@@ -519,10 +519,10 @@ Nói cách khác thì:
 
 $$
 \begin{array}{cccccccccc}
-    \mathbf{v}_d & \Leftarrow & Ma_0 & M a_1 X & M a_2 X^2 & \cdots & M a_{d-1} X^{d-1} & M X^d & \cdots & \cdots \\ 
-    \mathbf{v}_{d+1} & \Leftarrow & 0 & Ma_0 X & Ma_1 X^2 & \cdots & M a_{d-2} X^{d-1} & M a_{d-1} X^d & M X^{d+1} & \cdots \\
+    \bm{v}_d & \Leftarrow & Ma_0 & M a_1 X & M a_2 X^2 & \cdots & M a_{d-1} X^{d-1} & M X^d & \cdots & \cdots \\ 
+    \bm{v}_{d+1} & \Leftarrow & 0 & Ma_0 X & Ma_1 X^2 & \cdots & M a_{d-2} X^{d-1} & M a_{d-1} X^d & M X^{d+1} & \cdots \\
     \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-    \mathbf{v}_{2d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & M a_0 X^{d-1} & M a_1 X^d & \cdots & \cdots
+    \bm{v}_{2d-1} & \Leftarrow & 0 & 0 & 0 & \cdots & M a_0 X^{d-1} & M a_1 X^d & \cdots & \cdots
 \end{array}
 $$
 

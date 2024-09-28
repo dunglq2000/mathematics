@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ctf/2023/AmateursCTF-2023';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -953,7 +953,7 @@ document.write(`
 <p>Bài này sẽ random một key có độ dài là số nguyên tố cùng nhau với độ dài của plaintext. Đặt <span class="math notranslate nohighlight">\(l\)</span> là độ dài plaintext và <span class="math notranslate nohighlight">\(n\)</span> là độ dài key. Chương trình tạo key mới bằng cách lặp lại key cũ <span class="math notranslate nohighlight">\(l\)</span> lần, tương tự plaintext mới sẽ là plaintext cũ lặp lại <span class="math notranslate nohighlight">\(n\)</span> lần. Chú ý rằng <span class="math notranslate nohighlight">\(\gcd(l, n) = 1\)</span>, điều này rất quan trọng giải bài này.</p>
 <p>Khi factor độ dài của ciphertext thì mình thấy có hai khả năng xảy ra của độ dài key là 32 hoặc 79. Mình giải với <span class="math notranslate nohighlight">\(n = 79\)</span> (sai thì quay lại làm 32 :v).</p>
 <p>Như một thói quen, để xử lý các bài toán với số lớn mình thường xem xét những trường hợp số nhỏ để xem mối liên hệ giữa chúng.</p>
-<p>Giả sử <span class="math notranslate nohighlight">\(l = 5\)</span> và <span class="math notranslate nohighlight">\(n =3\)</span>. Đặt key là <span class="math notranslate nohighlight">\(\mathbf{k} = (k_0, k_1, k_2)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{P} = (p_0, p_1, p_2, p_3, p_4)\)</span>.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(l = 5\)</span> và <span class="math notranslate nohighlight">\(n =3\)</span>. Đặt key là <span class="math notranslate nohighlight">\(\bm{k} = (k_0, k_1, k_2)\)</span> và <span class="math notranslate nohighlight">\(\bm{P} = (p_0, p_1, p_2, p_3, p_4)\)</span>.</p>
 <p>Khi đó ciphertext sẽ được ghép cặp XOR như sau</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix} k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 &amp; k_0 &amp; k_1 &amp; k_2 \\ p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 &amp; p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 &amp; p_0 &amp; p_1 &amp; p_2 &amp; p_3 &amp; p_4 \\ c_0 &amp; c_1 &amp; c_2 &amp; c_3 &amp; c_4 &amp; c_5 &amp; c_6 &amp; c_7 &amp; c_8 &amp; c_9 &amp; c_{10} &amp; c_{11} &amp; c_{12} &amp; c_{13} &amp; c_{14}\end{pmatrix}\end{split}\]</div>

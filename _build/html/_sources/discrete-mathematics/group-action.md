@@ -178,11 +178,11 @@ $$t_G = \dfrac{1}{12}\left(1 \cdot k^4 + 8 \cdot k^2 + 3 \cdot k^2\right) = \dfr
 
 ### Tác động nhóm lên vector
 
-Xét nhóm $G$ và không gian vector $\mathbb{F}_2^n$, $n \in \mathbb{N}$. Khi đó hai vector $\mathbf{x}$ và $\mathbf{y}$ thuộc $\mathbb{F}_2^n$ được gọi là **quan hệ với nhau** nếu tồn tại $g \in G$ mà $\mathbf{x} = g \mathbf{y}$.
+Xét nhóm $G$ và không gian vector $\mathbb{F}_2^n$, $n \in \mathbb{N}$. Khi đó hai vector $\bm{x}$ và $\bm{y}$ thuộc $\mathbb{F}_2^n$ được gọi là **quan hệ với nhau** nếu tồn tại $g \in G$ mà $\bm{x} = g \bm{y}$.
 
 Ví dụ, xét nhóm hoán vị $\mathcal{S}_3$. Giả sử các vector trong $\mathbb{F}_2^3$ có dạng
 
-$$\mathbf{x} = (x_1, x_2, x_3) \in \mathbb{F}_2^3.$$
+$$\bm{x} = (x_1, x_2, x_3) \in \mathbb{F}_2^3.$$
 
 Khi đó vector $(1, 0, 0)$ có quan hệ với $(0, 0, 1)$ với hoán vị $(1, 3)(2)$. Cụ thể là $(x_1, x_2, x_3) \xrightarrow{(1, 3)(2)} (x_3, x_2, x_1)$.
 
@@ -210,8 +210,8 @@ Thật vậy, ta có thể chia các vector thành 4 lớp tương đương là 
 
 Ngoài nhóm $\mathcal{S}_3$ ra còn các nhóm khác cũng tác động lên các vector. Một số nhóm hay được sử dụng là:
 
-1. Nhóm general linear: gồm các ma trận khả nghịch $n \times n$ trên $\mathbb{F}_2$. Tác động nhóm lúc này là phép nhân ma trận $\mathbf{A} \in \mathrm{GL} (n, 2)$ với vector $\mathbf{x} \in \mathbb{F}_2^n$, hay $\mathbf{A} \cdot \mathbf{x}$.
-2. Nhóm general affine: gồm các ma trận khả nghịch $n \times n$ trên $\mathbb{F}_2$ và vector bất kì trong $\mathbb{F}_2^n$. Tác động nhóm lúc này là biến đổi affine $\mathbf{A} \cdot \mathbf{x} + \mathbf{b}$ với $\mathbf{A} \in \mathrm{GL} (n, 2)$ và $\mathbf{b} \in \mathbb{F}_2^n$.
+1. Nhóm general linear: gồm các ma trận khả nghịch $n \times n$ trên $\mathbb{F}_2$. Tác động nhóm lúc này là phép nhân ma trận $\bm{A} \in \mathrm{GL} (n, 2)$ với vector $\bm{x} \in \mathbb{F}_2^n$, hay $\bm{A} \cdot \bm{x}$.
+2. Nhóm general affine: gồm các ma trận khả nghịch $n \times n$ trên $\mathbb{F}_2$ và vector bất kì trong $\mathbb{F}_2^n$. Tác động nhóm lúc này là biến đổi affine $\bm{A} \cdot \bm{x} + \bm{b}$ với $\bm{A} \in \mathrm{GL} (n, 2)$ và $\bm{b} \in \mathbb{F}_2^n$.
 
 **Note.** Số lượng phần tử của nhóm $\mathrm{GL} (n, 2)$ là
 
@@ -221,11 +221,11 @@ $$(2^n - 1) \cdot (2^n - 2) \cdots (2^n - 2^{n-1})$$
 
 ### Tác động nhóm lên hàm boolean
 
-Ta tiếp tục xét nhóm $G$ và không gian vector $\mathbb{F}_2^n$, $n \in \mathbb{N}$. Khi đó hai hàm boolean $n$ biến $f(x_1, \ldots, x_n)$ và $g(x_1, \ldots, x_n)$ được gọi là **quan hệ với nhau** nếu tồn tại $\tilde{g} \in G$ mà $g(\mathbf{x}) = f(\tilde{g} \mathbf{x})$ với mọi $\mathbf{x} \in \mathbb{F}_2^n$.
+Ta tiếp tục xét nhóm $G$ và không gian vector $\mathbb{F}_2^n$, $n \in \mathbb{N}$. Khi đó hai hàm boolean $n$ biến $f(x_1, \ldots, x_n)$ và $g(x_1, \ldots, x_n)$ được gọi là **quan hệ với nhau** nếu tồn tại $\tilde{g} \in G$ mà $g(\bm{x}) = f(\tilde{g} \bm{x})$ với mọi $\bm{x} \in \mathbb{F}_2^n$.
 
 Ta cũng xét hoán vị $\mathcal{S}_3$ làm ví dụ. Ta cũng lần lượt xét các phần tử của nhóm.
 
-Đặt $f_0, f_1, \ldots, f_7$ lần lượt là các giá trị hàm $f$ với các vector $\mathbf{x} \in \mathbb{F}_2^3$.
+Đặt $f_0, f_1, \ldots, f_7$ lần lượt là các giá trị hàm $f$ với các vector $\bm{x} \in \mathbb{F}_2^3$.
 
 Đầu tiên, với $(1)(2)(3)$, ta có bảng chuyển vector như hình sau ({numref}`burnside:first`).
 

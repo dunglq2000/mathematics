@@ -195,7 +195,7 @@ Tiếp theo ta sẽ xét sự so sánh của hai vector và hàm boolean đơn �
 ### Hàm đơn điệu
 
 ````{prf:definition} Vector so sánh được
-Xét hai vector $\mathbf{a} = (a_1, a_2, \ldots, a_n)$ và $\mathbf{b} = (b_1, b_2, \ldots, b_n)$ ($a_i, b_i \in \{0, 1\}$). Ta nói $\mathbf{a}$ **so sánh được nhỏ hơn** $\mathbf{b}$ nếu với mọi $i = 1, 2, \ldots, n$ ta có $a_i \leqslant b_i$. Ký hiệu $\mathbf{a} \prec \mathbf{b}$.
+Xét hai vector $\bm{a} = (a_1, a_2, \ldots, a_n)$ và $\bm{b} = (b_1, b_2, \ldots, b_n)$ ($a_i, b_i \in \{0, 1\}$). Ta nói $\bm{a}$ **so sánh được nhỏ hơn** $\bm{b}$ nếu với mọi $i = 1, 2, \ldots, n$ ta có $a_i \leqslant b_i$. Ký hiệu $\bm{a} \prec \bm{b}$.
 ````
 
 ````{prf:example}

@@ -69,7 +69,7 @@ Chu trình thứ tư của $f$
 ```
 ````
 
-Ta thấy rằng tập các vector $\mathbf{x} = (x_i, x_{i+1}, \ldots, x_{i+n-1})$ có $2^n$ trường hợp. Do đó sẽ có một lúc nào đó (số $i$ nào đó) mà vector $\mathbf{x}$ trở lại đúng vector ban đầu. Nghĩa là tồn tại $i$ sao cho
+Ta thấy rằng tập các vector $\bm{x} = (x_i, x_{i+1}, \ldots, x_{i+n-1})$ có $2^n$ trường hợp. Do đó sẽ có một lúc nào đó (số $i$ nào đó) mà vector $\bm{x}$ trở lại đúng vector ban đầu. Nghĩa là tồn tại $i$ sao cho
 
 $$(x_0, x_1, \ldots, x_{n-1}) = (x_i, x_{i+1}, \ldots, x_{i+n-1})$$
 
@@ -97,7 +97,7 @@ $$\begin{equation}
 \end{equation}$$
 ````
 
-Do hàm boolean tuyến tính có tính chất là $f(\mathbf{0}) = 0$ nên chu kì tối đa có thể đạt được là $2^n - 1$. Ta có một vài định nghĩa sau để một LFSR đạt được chu kì tối đa.
+Do hàm boolean tuyến tính có tính chất là $f(\bm{0}) = 0$ nên chu kì tối đa có thể đạt được là $2^n - 1$. Ta có một vài định nghĩa sau để một LFSR đạt được chu kì tối đa.
 
 ````{prf:definition} Đa thức primitive
 Xét đa thức

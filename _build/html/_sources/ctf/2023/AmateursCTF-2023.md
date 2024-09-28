@@ -430,7 +430,7 @@ Khi factor độ dài của ciphertext thì mình thấy có hai khả năng x�
 
 Như một thói quen, để xử lý các bài toán với số lớn mình thường xem xét những trường hợp số nhỏ để xem mối liên hệ giữa chúng. 
 
-Giả sử $l = 5$ và $n =3$. Đặt key là $\mathbf{k} = (k_0, k_1, k_2)$ và $\mathbf{P} = (p_0, p_1, p_2, p_3, p_4)$.
+Giả sử $l = 5$ và $n =3$. Đặt key là $\bm{k} = (k_0, k_1, k_2)$ và $\bm{P} = (p_0, p_1, p_2, p_3, p_4)$.
 
 Khi đó ciphertext sẽ được ghép cặp XOR như sau
 

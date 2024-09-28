@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'geometry/analytic-geometry';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -682,9 +682,9 @@ document.write(`
 <p><strong>Đường thẳng</strong> đi qua hai điểm phân biệt cho trước. Đường thẳng có thể kéo dài vô hạn về hai phía. Đường thẳng được ký hiệu bởi chữ in thường hoặc chữ Hy Lạp trong ngoặc đơn, ví dụ như <span class="math notranslate nohighlight">\((d)\)</span>, <span class="math notranslate nohighlight">\((\Delta)\)</span>.</p>
 <p><strong>Đoạn thẳng</strong> chỉ phần đường thẳng nằm giữa hai điểm và bản thân hai điểm đó.</p>
 <p><strong>Nửa đường thẳng</strong> chỉ phần đường thẳng nằm một phía của một điểm trên đường thẳng và chỉ kéo dài vô hạn về phía đó.</p>
-<p><strong>Vector</strong> là đoạn thẳng có hướng. Với điểm đầu là <span class="math notranslate nohighlight">\(A\)</span> và điểm cuối là <span class="math notranslate nohighlight">\(B\)</span> thì vector từ <span class="math notranslate nohighlight">\(A\)</span> tới <span class="math notranslate nohighlight">\(B\)</span> được ký hiệu là <span class="math notranslate nohighlight">\(\overrightarrow{AB}\)</span>. Để chỉ một vector không cần biết điểm đầu và điểm cuối ta dùng chữ thường in đậm, ví dụ như <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>.</p>
+<p><strong>Vector</strong> là đoạn thẳng có hướng. Với điểm đầu là <span class="math notranslate nohighlight">\(A\)</span> và điểm cuối là <span class="math notranslate nohighlight">\(B\)</span> thì vector từ <span class="math notranslate nohighlight">\(A\)</span> tới <span class="math notranslate nohighlight">\(B\)</span> được ký hiệu là <span class="math notranslate nohighlight">\(\overrightarrow{AB}\)</span>. Để chỉ một vector không cần biết điểm đầu và điểm cuối ta dùng chữ thường in đậm, ví dụ như <span class="math notranslate nohighlight">\(\bm{a}\)</span>.</p>
 <p><strong>Góc giữa hai vector</strong> <span class="math notranslate nohighlight">\(\overrightarrow{OA}\)</span> và <span class="math notranslate nohighlight">\(\overrightarrow{OB}\)</span> là góc <span class="math notranslate nohighlight">\(\angle AOB\)</span> và ký hiệu là <span class="math notranslate nohighlight">\((\overrightarrow{OA}, \overrightarrow{OB})\)</span>.</p>
-<p>Tương tự đối với vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> thì góc giữa chúng ký hiệu là <span class="math notranslate nohighlight">\((\mathbf{a}, \mathbf{b})\)</span>.</p>
+<p>Tương tự đối với vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> và <span class="math notranslate nohighlight">\(\bm{b}\)</span> thì góc giữa chúng ký hiệu là <span class="math notranslate nohighlight">\((\bm{a}, \bm{b})\)</span>.</p>
 </section>
 <section id="vector-trong-mat-phang">
 <h3><span class="section-number">16.2.2. </span>Vector trong mặt phẳng<a class="headerlink" href="#vector-trong-mat-phang" title="Link to this heading">#</a></h3>
@@ -702,36 +702,36 @@ document.write(`
 \[\begin{equation*}
 	\overrightarrow{AB} = (x_B - x_A, y_B - y_A)
 \end{equation*}\]</div>
-<p><strong>Tích vô hướng của hai vector</strong> <span class="math notranslate nohighlight">\(\mathbf{a} = (x_1, y_1)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b} = (x_2, y_2)\)</span> được định nghĩa là</p>
+<p><strong>Tích vô hướng của hai vector</strong> <span class="math notranslate nohighlight">\(\bm{a} = (x_1, y_1)\)</span> và <span class="math notranslate nohighlight">\(\bm{b} = (x_2, y_2)\)</span> được định nghĩa là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-	\langle \mathbf{a}, \mathbf{b} \rangle = x_1 x_2 + y_1 y_2
+	\langle \bm{a}, \bm{b} \rangle = x_1 x_2 + y_1 y_2
 \end{equation*}\]</div>
-<p>Ta cũng có thể ký hiệu tích vô hướng là <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b}\)</span>.</p>
-<p>Ta ký hiệu <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert\)</span> là độ dài (chuẩn Euclid, Euclid norm) của vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>. Trong hệ tọa độ Descartes vuông góc, theo định lý Pythagoras, độ dài của vector là độ dài cạnh huyền tam giác vuông (<a class="reference internal" href="#oxy1"><span class="std std-numref">Fig. 16.8</span></a>). Như vậy, độ dài đoạn thẳng <span class="math notranslate nohighlight">\(AB\)</span> với <span class="math notranslate nohighlight">\(A = (x_A, y_A)\)</span> và <span class="math notranslate nohighlight">\(B = (x_B, y_B)\)</span> là</p>
+<p>Ta cũng có thể ký hiệu tích vô hướng là <span class="math notranslate nohighlight">\(\bm{a} \cdot \bm{b}\)</span>.</p>
+<p>Ta ký hiệu <span class="math notranslate nohighlight">\(\lVert \bm{a} \rVert\)</span> là độ dài (chuẩn Euclid, Euclid norm) của vector <span class="math notranslate nohighlight">\(\bm{a}\)</span>. Trong hệ tọa độ Descartes vuông góc, theo định lý Pythagoras, độ dài của vector là độ dài cạnh huyền tam giác vuông (<a class="reference internal" href="#oxy1"><span class="std std-numref">Fig. 16.8</span></a>). Như vậy, độ dài đoạn thẳng <span class="math notranslate nohighlight">\(AB\)</span> với <span class="math notranslate nohighlight">\(A = (x_A, y_A)\)</span> và <span class="math notranslate nohighlight">\(B = (x_B, y_B)\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
 	AB = \lVert \overrightarrow{AB} \rVert = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}
 \end{equation*}\]</div>
-<p>Khi đó cosin góc giữa hai vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> là</p>
+<p>Khi đó cosin góc giữa hai vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> và <span class="math notranslate nohighlight">\(\bm{b}\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-	\cos (\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \cdot \lVert \mathbf{b} \rVert} = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2 + y_1^2} \cdot \sqrt{x_2^2 + y_2^2}}
+	\cos (\bm{a}, \bm{b}) = \frac{\bm{a} \cdot \bm{b}}{\lVert \bm{a} \rVert \cdot \lVert \bm{b} \rVert} = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2 + y_1^2} \cdot \sqrt{x_2^2 + y_2^2}}
 \end{equation*}\]</div>
-<p>Nếu góc giữa hai vector bằng 90 độ thì hai vector được gọi là vuông góc nhau. Khi đó tích vô hướng <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = 0\)</span>.</p>
+<p>Nếu góc giữa hai vector bằng 90 độ thì hai vector được gọi là vuông góc nhau. Khi đó tích vô hướng <span class="math notranslate nohighlight">\(\bm{a} \cdot \bm{b} = 0\)</span>.</p>
 </section>
 <section id="phuong-trinh-duong-thang-trong-mat-phang">
 <h3><span class="section-number">16.2.3. </span>Phương trình đường thẳng trong mặt phẳng<a class="headerlink" href="#phuong-trinh-duong-thang-trong-mat-phang" title="Link to this heading">#</a></h3>
 <p>Theo tiên đề Euclid, một đường thẳng được xác định khi biết hai điểm phân biệt thuộc đường thẳng đó. Trong hệ tọa độ, chúng ta có hai cách tìm phương trình đường thẳng.</p>
-<p><strong>Sử dụng vector pháp tuyến.</strong> Vector pháp tuyến của đường thẳng là vector vuông góc với mọi vector có phương là đường thẳng đó. Giả sử <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b)\)</span> là vector pháp tuyến của đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0 = (x_0, y_0)\)</span>. Khi đó đường thẳng đi qua qua <span class="math notranslate nohighlight">\(M_0\)</span> nhận <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> làm vector pháp tuyến là <em>tập hợp điểm</em> <span class="math notranslate nohighlight">\(M = (x, y)\)</span> trên mặt phẳng sao cho <span class="math notranslate nohighlight">\(\mathbf{v} \cdot \overrightarrow{M_0 M} = 0\)</span>. Điều này tương đương với</p>
+<p><strong>Sử dụng vector pháp tuyến.</strong> Vector pháp tuyến của đường thẳng là vector vuông góc với mọi vector có phương là đường thẳng đó. Giả sử <span class="math notranslate nohighlight">\(\bm{v} = (a, b)\)</span> là vector pháp tuyến của đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0 = (x_0, y_0)\)</span>. Khi đó đường thẳng đi qua qua <span class="math notranslate nohighlight">\(M_0\)</span> nhận <span class="math notranslate nohighlight">\(\bm{v}\)</span> làm vector pháp tuyến là <em>tập hợp điểm</em> <span class="math notranslate nohighlight">\(M = (x, y)\)</span> trên mặt phẳng sao cho <span class="math notranslate nohighlight">\(\bm{v} \cdot \overrightarrow{M_0 M} = 0\)</span>. Điều này tương đương với</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-	\mathbf{v} \cdot \overrightarrow{M_0 M} = a \cdot (x - x_0) + b \cdot (y - y_0) = 0
+	\bm{v} \cdot \overrightarrow{M_0 M} = a \cdot (x - x_0) + b \cdot (y - y_0) = 0
 \end{equation*}\]</div>
-<p><strong>Sử dụng vector chỉ phương.</strong> Vector chỉ phương của đường thẳng là vector có phương song song với đường thẳng đó. Giả sử <span class="math notranslate nohighlight">\(\mathbf{v}' = (a', b')\)</span> là vector chỉ phương của đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0 = (x_0, y_0)\)</span>. Khi đó đường thẳng đi qua <span class="math notranslate nohighlight">\(M_0\)</span> nhận <span class="math notranslate nohighlight">\(\mathbf{v}'\)</span> làm vector chỉ phương là <em>tập hợp điểm</em> <span class="math notranslate nohighlight">\(M = (x, y)\)</span> trên mặt phẳng sao cho <span class="math notranslate nohighlight">\(\mathbf{v}' \parallel \overrightarrow{M_0 M}\)</span>. Điều này tương đương với</p>
+<p><strong>Sử dụng vector chỉ phương.</strong> Vector chỉ phương của đường thẳng là vector có phương song song với đường thẳng đó. Giả sử <span class="math notranslate nohighlight">\(\bm{v}' = (a', b')\)</span> là vector chỉ phương của đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0 = (x_0, y_0)\)</span>. Khi đó đường thẳng đi qua <span class="math notranslate nohighlight">\(M_0\)</span> nhận <span class="math notranslate nohighlight">\(\bm{v}'\)</span> làm vector chỉ phương là <em>tập hợp điểm</em> <span class="math notranslate nohighlight">\(M = (x, y)\)</span> trên mặt phẳng sao cho <span class="math notranslate nohighlight">\(\bm{v}' \parallel \overrightarrow{M_0 M}\)</span>. Điều này tương đương với</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-	\mathbf{v}' \parallel \overrightarrow{M_0 M} \Leftrightarrow \frac{x - x_0}{a'} = \frac{y - y_0}{b'}
+	\bm{v}' \parallel \overrightarrow{M_0 M} \Leftrightarrow \frac{x - x_0}{a'} = \frac{y - y_0}{b'}
 \end{equation*}\]</div>
 <ol class="arabic simple">
 <li><p>Cả hai cách biểu diễn khi khai triển ra đều có dạng <span class="math notranslate nohighlight">\(a x + by + c = 0\)</span> với <span class="math notranslate nohighlight">\(c\)</span> là hằng số. Đây được gọi là dạng tổng quát của phương trình đường thẳng.</p></li>
@@ -761,8 +761,8 @@ document.write(`
 </figcaption>
 </figure>
 <p>Như vậy, để tìm hình chiếu của điểm <span class="math notranslate nohighlight">\(A\)</span> lên đường thẳng <span class="math notranslate nohighlight">\((d)\)</span>, ta dựng đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(A\)</span> và vuông góc với <span class="math notranslate nohighlight">\((d)\)</span>.</p>
-<p>Giả sử phương trình đường thẳng <span class="math notranslate nohighlight">\((d)\)</span> với vector pháp tuyến <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b)\)</span> là <span class="math notranslate nohighlight">\((d): ax + by + c = 0\)</span>.</p>
-<p>Gọi <span class="math notranslate nohighlight">\((d')\)</span> là đường thẳng đi qua <span class="math notranslate nohighlight">\(A = (x_0, y_0)\)</span> và vuông góc với <span class="math notranslate nohighlight">\(d\)</span>. Do <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> là vector pháp tuyến của <span class="math notranslate nohighlight">\((d)\)</span> nên <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> là vector chỉ phương của <span class="math notranslate nohighlight">\((d')\)</span>. Khi đó phương trình dạng tham số của <span class="math notranslate nohighlight">\((d')\)</span> là</p>
+<p>Giả sử phương trình đường thẳng <span class="math notranslate nohighlight">\((d)\)</span> với vector pháp tuyến <span class="math notranslate nohighlight">\(\bm{v} = (a, b)\)</span> là <span class="math notranslate nohighlight">\((d): ax + by + c = 0\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\((d')\)</span> là đường thẳng đi qua <span class="math notranslate nohighlight">\(A = (x_0, y_0)\)</span> và vuông góc với <span class="math notranslate nohighlight">\(d\)</span>. Do <span class="math notranslate nohighlight">\(\bm{v}\)</span> là vector pháp tuyến của <span class="math notranslate nohighlight">\((d)\)</span> nên <span class="math notranslate nohighlight">\(\bm{v}\)</span> là vector chỉ phương của <span class="math notranslate nohighlight">\((d')\)</span>. Khi đó phương trình dạng tham số của <span class="math notranslate nohighlight">\((d')\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
 	x = x_0 + a t \\ y = y_0 + b t

@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'boolean/intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -595,8 +595,8 @@ document.write(`
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(N_f\)</span></p></td>
 <td><p>Nonlinearlity của hàm boolean <span class="math notranslate nohighlight">\(f\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(W_f(\mathbf{a})\)</span></p></td>
-<td><p>Hệ số Walsh của hàm <span class="math notranslate nohighlight">\(f\)</span> ứng với vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(W_f(\bm{a})\)</span></p></td>
+<td><p>Hệ số Walsh của hàm <span class="math notranslate nohighlight">\(f\)</span> ứng với vector <span class="math notranslate nohighlight">\(\bm{a}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -619,19 +619,19 @@ document.write(`
 <li><p>Chứng minh rằng khoảng cách từ hàm boolean <span class="math notranslate nohighlight">\(f\)</span> với <span class="math notranslate nohighlight">\(n\)</span> biến tới hàm boolean affine</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[l_{\mathbf{a}, b}(\mathbf{x}) = a_1 x_1 \oplus \ldots \oplus a_n x_n \oplus b\]</div>
-<p>với <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, \ldots, a_n) \in \mathbb{F}_2^n\)</span> và <span class="math notranslate nohighlight">\(b \in \mathbb{F}_2\)</span> được tính theo công thức:</p>
+\[l_{\bm{a}, b}(\bm{x}) = a_1 x_1 \oplus \ldots \oplus a_n x_n \oplus b\]</div>
+<p>với <span class="math notranslate nohighlight">\(\bm{a} = (a_1, \ldots, a_n) \in \mathbb{F}_2^n\)</span> và <span class="math notranslate nohighlight">\(b \in \mathbb{F}_2\)</span> được tính theo công thức:</p>
 <div class="math notranslate nohighlight">
-\[d(f, l_{\mathbf{a}, 0} (\mathbf{x})) = 2^{n-1} - \frac{1}{2} W_f(\mathbf{a}),\]</div>
+\[d(f, l_{\bm{a}, 0} (\bm{x})) = 2^{n-1} - \frac{1}{2} W_f(\bm{a}),\]</div>
 <div class="math notranslate nohighlight">
-\[d(f, l_{\mathbf{a}, 1} (\mathbf{x})) = 2^{n-1} + \frac{1}{2} W_f (\mathbf{a})\]</div>
+\[d(f, l_{\bm{a}, 1} (\bm{x})) = 2^{n-1} + \frac{1}{2} W_f (\bm{a})\]</div>
 <ol class="arabic simple" start="2">
 <li><p>Chứng minh rằng nonlinearlity của hàm boolean <span class="math notranslate nohighlight">\(f\)</span> bất kì được tính bởi công thức</p></li>
 </ol>
 <div class="math notranslate nohighlight">
-\[N_f = 2^{n-1} - \frac{1}{2} \max_\mathbf{y} \lvert W_f (\mathbf{y}) \rvert\]</div>
+\[N_f = 2^{n-1} - \frac{1}{2} \max_\bm{y} \lvert W_f (\bm{y}) \rvert\]</div>
 <ol class="arabic simple" start="3">
-<li><p>Chứng minh rằng hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là hàm bent khi và chỉ khi <span class="math notranslate nohighlight">\(W_f(\mathbf{y}) = \pm 2^{n/2}\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>.</p></li>
+<li><p>Chứng minh rằng hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là hàm bent khi và chỉ khi <span class="math notranslate nohighlight">\(W_f(\bm{y}) = \pm 2^{n/2}\)</span> với mọi vector <span class="math notranslate nohighlight">\(\bm{y}\)</span>.</p></li>
 </ol>
 </section>
 </section>
@@ -664,7 +664,7 @@ document.write(`
 </ol>
 <p>Chứng minh cho các định lí Siegenthaler có thể tìm ở <span id="id2">[<a class="reference internal" href="../intro.html#id10" title="Агибалов Г. П. Избранные теоремы начального курса криптографии. Томский государственный университет, 2005.">17</a>]</span>.</p>
 <ol class="arabic simple" start="4">
-<li><p>Chứng minh rằng hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(W_f(\mathbf{y}) = 0\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> thỏa <span class="math notranslate nohighlight">\(1 \leqslant \mathrm{wt} (\mathbf{y}) \leqslant r\)</span>.</p></li>
+<li><p>Chứng minh rằng hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(W_f(\bm{y}) = 0\)</span> với mọi vector <span class="math notranslate nohighlight">\(\bm{y}\)</span> thỏa <span class="math notranslate nohighlight">\(1 \leqslant \mathrm{wt} (\bm{y}) \leqslant r\)</span>.</p></li>
 </ol>
 <p>Năm 2007 Д. Г. Фон–Дер–Флаасс tìm được chặn trên cho correlation immune của hàm boolean không cân bằng.</p>
 <ol class="arabic simple" start="5">
@@ -676,9 +676,9 @@ document.write(`
 <section id="algebraic-immune">
 <h3><span class="section-number">28.2.6. </span>Algebraic immune<a class="headerlink" href="#algebraic-immune" title="Link to this heading">#</a></h3>
 <p>Tính chất này được giới thiệu vào năm 2004.</p>
-<p><strong>Algebraic immune</strong> (tạm dịch là <em>kháng đại số</em>) của hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là số <span class="math notranslate nohighlight">\(d\)</span> nhỏ nhất sao cho tồn tại hàm boolean <span class="math notranslate nohighlight">\(g\)</span> bậc <span class="math notranslate nohighlight">\(d\)</span>, không đồng nhất với <span class="math notranslate nohighlight">\(0\)</span>, thỏa mãn <span class="math notranslate nohighlight">\(f g = 0\)</span> hoặc <span class="math notranslate nohighlight">\((f \oplus \mathbf{1}) g = 0\)</span>.</p>
+<p><strong>Algebraic immune</strong> (tạm dịch là <em>kháng đại số</em>) của hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là số <span class="math notranslate nohighlight">\(d\)</span> nhỏ nhất sao cho tồn tại hàm boolean <span class="math notranslate nohighlight">\(g\)</span> bậc <span class="math notranslate nohighlight">\(d\)</span>, không đồng nhất với <span class="math notranslate nohighlight">\(0\)</span>, thỏa mãn <span class="math notranslate nohighlight">\(f g = 0\)</span> hoặc <span class="math notranslate nohighlight">\((f \oplus \bm{1}) g = 0\)</span>.</p>
 <p>Algebraic immune của hàm <span class="math notranslate nohighlight">\(f\)</span> được kí hiệu là <span class="math notranslate nohighlight">\(AI(f)\)</span>.</p>
-<p>Ví dụ algebraic immune hàm <span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 x_2 x_3 \oplus x_1\)</span> bằng <span class="math notranslate nohighlight">\(1\)</span>, vì ta có thể chọn <span class="math notranslate nohighlight">\(g(\mathbf{x}) = x_1 \oplus 1\)</span>. Khi đó <span class="math notranslate nohighlight">\(f g = (x_1 x_2 x_3 \oplus x_1) (x_1 \oplus 1) = 1\)</span>.</p>
+<p>Ví dụ algebraic immune hàm <span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 x_2 x_3 \oplus x_1\)</span> bằng <span class="math notranslate nohighlight">\(1\)</span>, vì ta có thể chọn <span class="math notranslate nohighlight">\(g(\bm{x}) = x_1 \oplus 1\)</span>. Khi đó <span class="math notranslate nohighlight">\(f g = (x_1 x_2 x_3 \oplus x_1) (x_1 \oplus 1) = 1\)</span>.</p>
 <section id="id5">
 <h4><span class="section-number">28.2.6.1. </span>Bài tập<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
@@ -688,18 +688,18 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(AI(f) \leqslant \deg f\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(AI(f \cdot g) \leqslant AI(f) + AI(g)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(AI(f \oplus g) \leqslant AI(f) + AI(g)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(AI(f) = AI(g)\)</span> nếu <span class="math notranslate nohighlight">\(g\)</span> nhận được từ <span class="math notranslate nohighlight">\(f\)</span> qua một biến đổi affine trên các biến, nghĩa là <span class="math notranslate nohighlight">\(g(\mathbf{x}) = f(\mathbf{A} \mathbf{x} \oplus \mathbf{b})\)</span> với <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> là ma trận nghịch đảo bậc <span class="math notranslate nohighlight">\(n\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> là vector.</p></li>
+<li><p><span class="math notranslate nohighlight">\(AI(f) = AI(g)\)</span> nếu <span class="math notranslate nohighlight">\(g\)</span> nhận được từ <span class="math notranslate nohighlight">\(f\)</span> qua một biến đổi affine trên các biến, nghĩa là <span class="math notranslate nohighlight">\(g(\bm{x}) = f(\bm{A} \bm{x} \oplus \bm{b})\)</span> với <span class="math notranslate nohighlight">\(\bm{A}\)</span> là ma trận nghịch đảo bậc <span class="math notranslate nohighlight">\(n\)</span> và <span class="math notranslate nohighlight">\(\bm{b}\)</span> là vector.</p></li>
 </ul>
 </li>
 <li><p>Xác định giá trị của <span class="math notranslate nohighlight">\(AI(f)\)</span> với các hàm boolean sau và tìm hàm <span class="math notranslate nohighlight">\(g\)</span> tương ứng:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 x_2 x_4 \oplus x_1 x_2 \oplus 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = 0\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = 1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 \cdots x_k\)</span> với <span class="math notranslate nohighlight">\(k = 1, 2, \ldots, n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 \oplus \ldots \oplus x_n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 x_2 \oplus \ldots \oplus x_{n-1} x_n\)</span> (tổng tất cả cặp tích)</p></li>
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}) = x_1 x_2 x_3 x_4 \oplus x_5 x_6\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 x_2 x_4 \oplus x_1 x_2 \oplus 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 \cdots x_k\)</span> với <span class="math notranslate nohighlight">\(k = 1, 2, \ldots, n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 \oplus \ldots \oplus x_n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 x_2 \oplus \ldots \oplus x_{n-1} x_n\)</span> (tổng tất cả cặp tích)</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(\bm{x}) = x_1 x_2 x_3 x_4 \oplus x_5 x_6\)</span></p></li>
 </ul>
 </li>
 <li><p>Cho ví dụ hàm boolean <span class="math notranslate nohighlight">\(f\)</span> với giá trị algebraic immune nhỏ nhất, nghĩa là <span class="math notranslate nohighlight">\(AI(f) = d\)</span> với <span class="math notranslate nohighlight">\(d = 1, 2, \ldots, k\)</span>.</p></li>
@@ -709,11 +709,11 @@ document.write(`
 <section id="differentially-delta-uniform">
 <h3><span class="section-number">28.2.7. </span>Differentially <span class="math notranslate nohighlight">\(\delta\)</span>-uniform<a class="headerlink" href="#differentially-delta-uniform" title="Link to this heading">#</a></h3>
 <p>Khái niệm này lần đầu được định nghĩa trong <span id="id6">[<a class="reference internal" href="../intro.html#id13" title="Kaisa Nyberg. Differentially uniform mappings for cryptography. In Advances in Cryptology - EUROCRYPT '93, Workshop on the Theory and Application of of Cryptographic Techniques, Lofthus, Norway, May 23-27, 1993, Proceedings, volume 765 of Lecture Notes in Computer Science, 55-64. Springer, 1993. doi:10.1007/3-540-48285-7_6.">20</a>]</span>.</p>
-<p>Hàm boolean vector <span class="math notranslate nohighlight">\(F : \mathbb{F}_2^n \to \mathbb{F}_2^n\)</span> gọi là <strong>differentially <span class="math notranslate nohighlight">\(\delta\)</span>-uniform</strong> nếu với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> khác không và vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> bất kì thì phương trình</p>
+<p>Hàm boolean vector <span class="math notranslate nohighlight">\(F : \mathbb{F}_2^n \to \mathbb{F}_2^n\)</span> gọi là <strong>differentially <span class="math notranslate nohighlight">\(\delta\)</span>-uniform</strong> nếu với mọi vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> khác không và vector <span class="math notranslate nohighlight">\(\bm{b}\)</span> bất kì thì phương trình</p>
 <div class="math notranslate nohighlight">
-\[F(\mathbf{x}) \oplus F(\mathbf{x} \oplus \mathbf{a}) = \mathbf{b}\]</div>
+\[F(\bm{x}) \oplus F(\bm{x} \oplus \bm{a}) = \bm{b}\]</div>
 <p>có không quá <span class="math notranslate nohighlight">\(\delta\)</span> nghiệm với <span class="math notranslate nohighlight">\(\delta\)</span> là số nguyên.</p>
-<p>Để ý rằng nếu phương trình có nghiệm là <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> thì cũng có nghiệm <span class="math notranslate nohighlight">\(\mathbf{x} \oplus \mathbf{a}\)</span>. Số <span class="math notranslate nohighlight">\(\delta\)</span> càng nhỏ thì phép biến đổi của thuật toán mã hóa càng ít có dấu hiệu tuyến tính, tăng khả năng kháng phá mã vi sai.</p>
+<p>Để ý rằng nếu phương trình có nghiệm là <span class="math notranslate nohighlight">\(\bm{x}\)</span> thì cũng có nghiệm <span class="math notranslate nohighlight">\(\bm{x} \oplus \bm{a}\)</span>. Số <span class="math notranslate nohighlight">\(\delta\)</span> càng nhỏ thì phép biến đổi của thuật toán mã hóa càng ít có dấu hiệu tuyến tính, tăng khả năng kháng phá mã vi sai.</p>
 <p>Hàm boolean vector được gọi là <strong>hàm APN</strong> nếu differentially uniform với giá trị <span class="math notranslate nohighlight">\(\delta\)</span> nhỏ nhất. Trong trường hợp này là <span class="math notranslate nohighlight">\(\delta = 2\)</span>.</p>
 <p>Bài toán khó hiện nay là xây dựng hàm APN là song ánh với số biến <span class="math notranslate nohighlight">\(n\)</span> chẵn.</p>
 <section id="id7">

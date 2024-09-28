@@ -132,11 +132,11 @@ René Descartes (1596-1650)
 
 **Nửa đường thẳng** chỉ phần đường thẳng nằm một phía của một điểm trên đường thẳng và chỉ kéo dài vô hạn về phía đó.
 
-**Vector** là đoạn thẳng có hướng. Với điểm đầu là $A$ và điểm cuối là $B$ thì vector từ $A$ tới $B$ được ký hiệu là $\overrightarrow{AB}$. Để chỉ một vector không cần biết điểm đầu và điểm cuối ta dùng chữ thường in đậm, ví dụ như $\mathbf{a}$.
+**Vector** là đoạn thẳng có hướng. Với điểm đầu là $A$ và điểm cuối là $B$ thì vector từ $A$ tới $B$ được ký hiệu là $\overrightarrow{AB}$. Để chỉ một vector không cần biết điểm đầu và điểm cuối ta dùng chữ thường in đậm, ví dụ như $\bm{a}$.
 
 **Góc giữa hai vector** $\overrightarrow{OA}$ và $\overrightarrow{OB}$ là góc $\angle AOB$ và ký hiệu là $(\overrightarrow{OA}, \overrightarrow{OB})$.
 
-Tương tự đối với vector $\mathbf{a}$ và $\mathbf{b}$ thì góc giữa chúng ký hiệu là $(\mathbf{a}, \mathbf{b})$.
+Tương tự đối với vector $\bm{a}$ và $\bm{b}$ thì góc giữa chúng ký hiệu là $(\bm{a}, \bm{b})$.
 
 ### Vector trong mặt phẳng
 
@@ -158,42 +158,42 @@ $$\begin{equation*}
 	\overrightarrow{AB} = (x_B - x_A, y_B - y_A)
 \end{equation*}$$
 
-**Tích vô hướng của hai vector** $\mathbf{a} = (x_1, y_1)$ và $\mathbf{b} = (x_2, y_2)$ được định nghĩa là
+**Tích vô hướng của hai vector** $\bm{a} = (x_1, y_1)$ và $\bm{b} = (x_2, y_2)$ được định nghĩa là
 
 $$\begin{equation*}
-	\langle \mathbf{a}, \mathbf{b} \rangle = x_1 x_2 + y_1 y_2
+	\langle \bm{a}, \bm{b} \rangle = x_1 x_2 + y_1 y_2
 \end{equation*}$$
 
-Ta cũng có thể ký hiệu tích vô hướng là $\mathbf{a} \cdot \mathbf{b}$.
+Ta cũng có thể ký hiệu tích vô hướng là $\bm{a} \cdot \bm{b}$.
 
-Ta ký hiệu $\lVert \mathbf{a} \rVert$ là độ dài (chuẩn Euclid, Euclid norm) của vector $\mathbf{a}$. Trong hệ tọa độ Descartes vuông góc, theo định lý Pythagoras, độ dài của vector là độ dài cạnh huyền tam giác vuông ({numref}`oxy1`). Như vậy, độ dài đoạn thẳng $AB$ với $A = (x_A, y_A)$ và $B = (x_B, y_B)$ là
+Ta ký hiệu $\lVert \bm{a} \rVert$ là độ dài (chuẩn Euclid, Euclid norm) của vector $\bm{a}$. Trong hệ tọa độ Descartes vuông góc, theo định lý Pythagoras, độ dài của vector là độ dài cạnh huyền tam giác vuông ({numref}`oxy1`). Như vậy, độ dài đoạn thẳng $AB$ với $A = (x_A, y_A)$ và $B = (x_B, y_B)$ là
 
 $$\begin{equation*}
 	AB = \lVert \overrightarrow{AB} \rVert = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}
 \end{equation*}$$
 
-Khi đó cosin góc giữa hai vector $\mathbf{a}$ và $\mathbf{b}$ là
+Khi đó cosin góc giữa hai vector $\bm{a}$ và $\bm{b}$ là
 
 $$\begin{equation*}
-	\cos (\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \cdot \lVert \mathbf{b} \rVert} = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2 + y_1^2} \cdot \sqrt{x_2^2 + y_2^2}}
+	\cos (\bm{a}, \bm{b}) = \frac{\bm{a} \cdot \bm{b}}{\lVert \bm{a} \rVert \cdot \lVert \bm{b} \rVert} = \frac{x_1 x_2 + y_1 y_2}{\sqrt{x_1^2 + y_1^2} \cdot \sqrt{x_2^2 + y_2^2}}
 \end{equation*}$$
 
-Nếu góc giữa hai vector bằng 90 độ thì hai vector được gọi là vuông góc nhau. Khi đó tích vô hướng $\mathbf{a} \cdot \mathbf{b} = 0$.
+Nếu góc giữa hai vector bằng 90 độ thì hai vector được gọi là vuông góc nhau. Khi đó tích vô hướng $\bm{a} \cdot \bm{b} = 0$.
 
 ### Phương trình đường thẳng trong mặt phẳng
 
 Theo tiên đề Euclid, một đường thẳng được xác định khi biết hai điểm phân biệt thuộc đường thẳng đó. Trong hệ tọa độ, chúng ta có hai cách tìm phương trình đường thẳng.
 
-**Sử dụng vector pháp tuyến.** Vector pháp tuyến của đường thẳng là vector vuông góc với mọi vector có phương là đường thẳng đó. Giả sử $\mathbf{v} = (a, b)$ là vector pháp tuyến của đường thẳng đi qua điểm $M_0 = (x_0, y_0)$. Khi đó đường thẳng đi qua qua $M_0$ nhận $\mathbf{v}$ làm vector pháp tuyến là *tập hợp điểm* $M = (x, y)$ trên mặt phẳng sao cho $\mathbf{v} \cdot \overrightarrow{M_0 M} = 0$. Điều này tương đương với
+**Sử dụng vector pháp tuyến.** Vector pháp tuyến của đường thẳng là vector vuông góc với mọi vector có phương là đường thẳng đó. Giả sử $\bm{v} = (a, b)$ là vector pháp tuyến của đường thẳng đi qua điểm $M_0 = (x_0, y_0)$. Khi đó đường thẳng đi qua qua $M_0$ nhận $\bm{v}$ làm vector pháp tuyến là *tập hợp điểm* $M = (x, y)$ trên mặt phẳng sao cho $\bm{v} \cdot \overrightarrow{M_0 M} = 0$. Điều này tương đương với
 
 $$\begin{equation*}
-	\mathbf{v} \cdot \overrightarrow{M_0 M} = a \cdot (x - x_0) + b \cdot (y - y_0) = 0
+	\bm{v} \cdot \overrightarrow{M_0 M} = a \cdot (x - x_0) + b \cdot (y - y_0) = 0
 \end{equation*}$$
 
-**Sử dụng vector chỉ phương.** Vector chỉ phương của đường thẳng là vector có phương song song với đường thẳng đó. Giả sử $\mathbf{v}' = (a', b')$ là vector chỉ phương của đường thẳng đi qua điểm $M_0 = (x_0, y_0)$. Khi đó đường thẳng đi qua $M_0$ nhận $\mathbf{v}'$ làm vector chỉ phương là *tập hợp điểm* $M = (x, y)$ trên mặt phẳng sao cho $\mathbf{v}' \parallel \overrightarrow{M_0 M}$. Điều này tương đương với
+**Sử dụng vector chỉ phương.** Vector chỉ phương của đường thẳng là vector có phương song song với đường thẳng đó. Giả sử $\bm{v}' = (a', b')$ là vector chỉ phương của đường thẳng đi qua điểm $M_0 = (x_0, y_0)$. Khi đó đường thẳng đi qua $M_0$ nhận $\bm{v}'$ làm vector chỉ phương là *tập hợp điểm* $M = (x, y)$ trên mặt phẳng sao cho $\bm{v}' \parallel \overrightarrow{M_0 M}$. Điều này tương đương với
 
 $$\begin{equation*}
-	\mathbf{v}' \parallel \overrightarrow{M_0 M} \Leftrightarrow \frac{x - x_0}{a'} = \frac{y - y_0}{b'}
+	\bm{v}' \parallel \overrightarrow{M_0 M} \Leftrightarrow \frac{x - x_0}{a'} = \frac{y - y_0}{b'}
 \end{equation*}$$
 
 1. Cả hai cách biểu diễn khi khai triển ra đều có dạng $a x + by + c = 0$ với $c$ là hằng số. Đây được gọi là dạng tổng quát của phương trình đường thẳng. 
@@ -228,9 +228,9 @@ Hình chiếu và khoảng cách tới đường thẳng
 
 Như vậy, để tìm hình chiếu của điểm $A$ lên đường thẳng $(d)$, ta dựng đường thẳng đi qua điểm $A$ và vuông góc với $(d)$.
 
-Giả sử phương trình đường thẳng $(d)$ với vector pháp tuyến $\mathbf{v} = (a, b)$ là $(d): ax + by + c = 0$.
+Giả sử phương trình đường thẳng $(d)$ với vector pháp tuyến $\bm{v} = (a, b)$ là $(d): ax + by + c = 0$.
 
-Gọi $(d')$ là đường thẳng đi qua $A = (x_0, y_0)$ và vuông góc với $d$. Do $\mathbf{v}$ là vector pháp tuyến của $(d)$ nên $\mathbf{v}$ là vector chỉ phương của $(d')$. Khi đó phương trình dạng tham số của $(d')$ là
+Gọi $(d')$ là đường thẳng đi qua $A = (x_0, y_0)$ và vuông góc với $d$. Do $\bm{v}$ là vector pháp tuyến của $(d)$ nên $\bm{v}$ là vector chỉ phương của $(d')$. Khi đó phương trình dạng tham số của $(d')$ là
 
 $$\begin{cases}
 	x = x_0 + a t \\ y = y_0 + b t

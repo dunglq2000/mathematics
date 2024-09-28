@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cryptography/lattice-based';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -593,86 +593,86 @@ document.write(`
 </nav>
 <section id="introduction">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">24.1. </span>Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p><strong>Ký hiệu</strong>. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ <span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{y}, \mathbf{v}\)</span>. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ <span class="math notranslate nohighlight">\(\mathbf{A}, \mathbf{B}\)</span>.</p>
+<p><strong>Ký hiệu</strong>. Vector hàng được ký hiệu bởi chữ thường in đậm, ví dụ <span class="math notranslate nohighlight">\(\bm{x}, \bm{y}, \bm{v}\)</span>. Ma trận được ký hiệu bởi chữ hoa in đậm, ví dụ <span class="math notranslate nohighlight">\(\bm{A}, \bm{B}\)</span>.</p>
 <p>Nói cách khác, lattice là không gian vector được sinh bởi tổ hợp tuyến tính với hệ số nguyên.</p>
-<p>Tập các vector <span class="math notranslate nohighlight">\(\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}\)</span> được gọi là <strong>tập sinh</strong> hay <strong>cơ sở</strong> (basis, базис) của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+<p>Tập các vector <span class="math notranslate nohighlight">\(\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}\)</span> được gọi là <strong>tập sinh</strong> hay <strong>cơ sở</strong> (basis, базис) của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
 <p>Số lượng vector trong cơ sở được gọi là <strong>số chiều</strong> của lattice và kí hiệu là <span class="math notranslate nohighlight">\(d = \dim(\mathcal{L})\)</span>.</p>
 <p>Lattice được gọi là <strong>full-rank</strong> nếu <span class="math notranslate nohighlight">\(\dim(\mathcal{L}) = n\)</span>.</p>
-<p>Xét ma trận <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> có các hàng là các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1, \ldots, \mathbf{v}_d\)</span>, nghĩa là <span class="math notranslate nohighlight">\(\mathbf{V} \in \mathbb{R}^{d \times n}\)</span>.</p>
-<p>Nếu lattice full-rank thì <span class="math notranslate nohighlight">\(\det(\mathcal{L}) = \det(\mathbf{V})\)</span>.</p>
+<p>Xét ma trận <span class="math notranslate nohighlight">\(\bm{V}\)</span> có các hàng là các vector <span class="math notranslate nohighlight">\(\bm{v}_1, \ldots, \bm{v}_d\)</span>, nghĩa là <span class="math notranslate nohighlight">\(\bm{V} \in \mathbb{R}^{d \times n}\)</span>.</p>
+<p>Nếu lattice full-rank thì <span class="math notranslate nohighlight">\(\det(\mathcal{L}) = \det(\bm{V})\)</span>.</p>
 <div class="proof remark admonition" id="remark-0">
 <p class="admonition-title"><span class="caption-number">Remark 24.1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Cơ sở của một lưới không là duy nhất nhưng số lượng vector trong mỗi cơ sở là như nhau và bằng số chiều của lattice.</p>
 </section>
-</div><p>Nếu <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> là hai ma trận cơ sở của cùng lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> thì tồn tại ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> với hệ số nguyên (tức <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathbb{Z}^{d \times d}\)</span>) có định thức bằng <span class="math notranslate nohighlight">\(1\)</span> sao cho <span class="math notranslate nohighlight">\(\mathbf{W} = \mathbf{A} \cdot \mathbf{V}\)</span>. Chúng ta có thể dễ dàng chứng minh điều này khi biểu diễn các vector trong <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> thành tổ hợp tuyến tính các vector trong <span class="math notranslate nohighlight">\(\mathbf{V}\)</span>.</p>
-<p>Giả sử <span class="math notranslate nohighlight">\(\{ \mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_d \}\)</span> là một cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Tương tự, <span class="math notranslate nohighlight">\(\{ \mathbf{w}_1, \mathbf{w}_2, \ldots, \mathbf{w}_d \}\)</span> là một cơ sở khác của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
-<p>Ta có thể viết mỗi <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> là tổ hợp tuyến tính của các vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> như sau</p>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\bm{V}\)</span> và <span class="math notranslate nohighlight">\(\bm{W}\)</span> là hai ma trận cơ sở của cùng lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> thì tồn tại ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span> với hệ số nguyên (tức <span class="math notranslate nohighlight">\(\bm{A} \in \mathbb{Z}^{d \times d}\)</span>) có định thức bằng <span class="math notranslate nohighlight">\(1\)</span> sao cho <span class="math notranslate nohighlight">\(\bm{W} = \bm{A} \cdot \bm{V}\)</span>. Chúng ta có thể dễ dàng chứng minh điều này khi biểu diễn các vector trong <span class="math notranslate nohighlight">\(\bm{W}\)</span> thành tổ hợp tuyến tính các vector trong <span class="math notranslate nohighlight">\(\bm{V}\)</span>.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}\)</span> là một cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Tương tự, <span class="math notranslate nohighlight">\(\{ \bm{w}_1, \bm{w}_2, \ldots, \bm{w}_d \}\)</span> là một cơ sở khác của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+<p>Ta có thể viết mỗi <span class="math notranslate nohighlight">\(\bm{w}_i\)</span> là tổ hợp tuyến tính của các vector <span class="math notranslate nohighlight">\(\bm{v}\)</span> như sau</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
-	\mathbf{w}_1 &amp; = a_{11} \mathbf{v}_1 + a_{12} \mathbf{v}_2 + \ldots + a_{1d} \mathbf{v}_d \\
-	\mathbf{w}_2 &amp; = a_{21} \mathbf{v}_1 + a_{22} \mathbf{v}_2 + \ldots + a_{2d} \mathbf{v}_d \\
+	\bm{w}_1 &amp; = a_{11} \bm{v}_1 + a_{12} \bm{v}_2 + \ldots + a_{1d} \bm{v}_d \\
+	\bm{w}_2 &amp; = a_{21} \bm{v}_1 + a_{22} \bm{v}_2 + \ldots + a_{2d} \bm{v}_d \\
 	\vdots &amp; \\
-	\mathbf{w}_d &amp; = a_{d1} \mathbf{v}_1 + a_{d2} \mathbf{v}_2 + \ldots + a_{dd} \mathbf{v}_d
+	\bm{w}_d &amp; = a_{d1} \bm{v}_1 + a_{d2} \bm{v}_2 + \ldots + a_{dd} \bm{v}_d
 \end{align*}\end{split}\]</div>
-<p>Khi đó, nếu viết các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> thì biểu diễn trên tương đương với:</p>
+<p>Khi đó, nếu viết các vector <span class="math notranslate nohighlight">\(\bm{w}_i\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\bm{W}\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_j\)</span> thành hàng của ma trận <span class="math notranslate nohighlight">\(\bm{V}\)</span> thì biểu diễn trên tương đương với:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
-	\mathbf{W} = \begin{pmatrix}
+	\bm{W} = \begin{pmatrix}
 		a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1d} \\
 		a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2d} \\
 		\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 		a_{d1} &amp; a_{d2} &amp; \cdots &amp; a_{dd}
-	\end{pmatrix} \cdot \mathbf{V}
+	\end{pmatrix} \cdot \bm{V}
 \end{equation*}\end{split}\]</div>
 <p>Đặt</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
-	\mathbf{A} = \begin{pmatrix}
+	\bm{A} = \begin{pmatrix}
 		a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1d} \\
 		a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2d} \\
 		\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 		a_{d1} &amp; a_{d2} &amp; \cdots &amp; a_{dd}
 	\end{pmatrix}
 \end{equation*}\end{split}\]</div>
-<p>Do <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> là các cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> nên nếu các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span> có thể biểu diễn qua các vector <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> thì ngược lại, các vector <span class="math notranslate nohighlight">\(\mathbf{v}_j\)</span> cũng có thể được biểu diễn qua các vector <span class="math notranslate nohighlight">\(\mathbf{w}_i\)</span>. Suy ra ma trận <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> là ma trận khả nghịch. Do <span class="math notranslate nohighlight">\(a_{ij} \in \mathbb{Z}\)</span> theo định nghĩa lattice, <span class="math notranslate nohighlight">\(\det(\mathbf{A}) \in \mathbb{Z}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\bm{W}\)</span> và <span class="math notranslate nohighlight">\(\bm{V}\)</span> là các cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> nên nếu các vector <span class="math notranslate nohighlight">\(\bm{w}_i\)</span> có thể biểu diễn qua các vector <span class="math notranslate nohighlight">\(\bm{v}_j\)</span> thì ngược lại, các vector <span class="math notranslate nohighlight">\(\bm{v}_j\)</span> cũng có thể được biểu diễn qua các vector <span class="math notranslate nohighlight">\(\bm{w}_i\)</span>. Suy ra ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span> là ma trận khả nghịch. Do <span class="math notranslate nohighlight">\(a_{ij} \in \mathbb{Z}\)</span> theo định nghĩa lattice, <span class="math notranslate nohighlight">\(\det(\bm{A}) \in \mathbb{Z}\)</span>.</p>
 <p>Hơn nữa, vì:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-	I = \mathbf{A} \cdot \mathbf{A}^{-1} \Rightarrow 1 = \det (\mathbf{A}) \cdot \det (\mathbf{A}^{-1})
+	I = \bm{A} \cdot \bm{A}^{-1} \Rightarrow 1 = \det (\bm{A}) \cdot \det (\bm{A}^{-1})
 \end{equation*}\]</div>
-<p>nên <span class="math notranslate nohighlight">\(\det(\mathbf{A}) = \pm 1\)</span>.</p>
+<p>nên <span class="math notranslate nohighlight">\(\det(\bm{A}) = \pm 1\)</span>.</p>
 <p>Mỗi lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> có một lattice đối ngẫu (dual lattice), kí hiệu là</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{L}^* = \{ \mathbf{w} \in \mathbb{R}^n : \langle \mathbf{w}, \mathbf{x} \rangle \in \mathbb{Z} \ \text{với mọi} \ \mathbf{x} \in \mathcal{L} \}\]</div>
-<p>Trong mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> với hai vector <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> không cùng phương thì fundamental domain là hình bình hành tạo bởi hai vector đó.</p>
+\[\mathcal{L}^* = \{ \bm{w} \in \mathbb{R}^n : \langle \bm{w}, \bm{x} \rangle \in \mathbb{Z} \ \text{với mọi} \ \bm{x} \in \mathcal{L} \}\]</div>
+<p>Trong mặt phẳng <span class="math notranslate nohighlight">\(Oxy\)</span> với hai vector <span class="math notranslate nohighlight">\(\bm{u}\)</span> và <span class="math notranslate nohighlight">\(\bm{v}\)</span> không cùng phương thì fundamental domain là hình bình hành tạo bởi hai vector đó.</p>
 <div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 24.2 </span></p>
 <section class="remark-content" id="proof-content">
-<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với số chiều là <span class="math notranslate nohighlight">\(n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó mọi vetor <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> đều có thể viết dưới dạng</p>
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với số chiều là <span class="math notranslate nohighlight">\(n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó mọi vetor <span class="math notranslate nohighlight">\(\bm{w} \in \mathbb{R}^n\)</span> đều có thể viết dưới dạng</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{w} = \mathbf{t} + \mathbf{v}\]</div>
-<p>với <span class="math notranslate nohighlight">\(\mathbf{t}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
+\[\bm{w} = \bm{t} + \bm{v}\]</div>
+<p>với <span class="math notranslate nohighlight">\(\bm{t}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> và <span class="math notranslate nohighlight">\(\bm{v}\)</span> duy nhất thuộc <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>.</p>
 </section>
 </div><p>Một cách tương đương, hợp của các fundamental domains</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-    \mathcal{F} + \mathbf{v} = \{ \mathbf{t} + \mathbf{v} : \mathbf{t} \in \mathcal{F} \}
+    \mathcal{F} + \bm{v} = \{ \bm{t} + \bm{v} : \bm{t} \in \mathcal{F} \}
 \end{equation*}\]</div>
-<p>với <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> là các vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, sẽ cover hết <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<p>với <span class="math notranslate nohighlight">\(\bm{v}\)</span> là các vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, sẽ cover hết <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
 <div class="danger dropdown admonition">
 <p class="admonition-title"><strong>Chứng minh</strong></p>
-<p>Để chứng minh nhận xét trên, giả sử <span class="math notranslate nohighlight">\(\{ \mathbf{v}_i : 1 \leqslant i \leqslant n \}\)</span> là cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó các <span class="math notranslate nohighlight">\(\mathbf{v}_i\)</span> độc lập tuyến tính nên cũng là cơ sở của <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
-<p>Ta viết các vector <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> dưới dạng tổ hợp tuyến tính của <span class="math notranslate nohighlight">\(\mathbf{v}_i\)</span> và tách hệ số trước mỗi vector thành phần nguyên và phần lẻ. Phần nguyên cho vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> và phần lẻ cho vector trong <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p>
-<p>Để chứng minh tính duy nhất của tổ hợp, xét hai cách biểu diễn khác nhau của <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và chứng minh hai cách đó là một.</p>
+<p>Để chứng minh nhận xét trên, giả sử <span class="math notranslate nohighlight">\(\{ \bm{v}_i : 1 \leqslant i \leqslant n \}\)</span> là cơ sở của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó các <span class="math notranslate nohighlight">\(\bm{v}_i\)</span> độc lập tuyến tính nên cũng là cơ sở của <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p>
+<p>Ta viết các vector <span class="math notranslate nohighlight">\(\bm{w} \in \mathbb{R}^n\)</span> dưới dạng tổ hợp tuyến tính của <span class="math notranslate nohighlight">\(\bm{v}_i\)</span> và tách hệ số trước mỗi vector thành phần nguyên và phần lẻ. Phần nguyên cho vector trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> và phần lẻ cho vector trong <span class="math notranslate nohighlight">\(\mathcal{F}\)</span>.</p>
+<p>Để chứng minh tính duy nhất của tổ hợp, xét hai cách biểu diễn khác nhau của <span class="math notranslate nohighlight">\(\bm{w}\)</span> và chứng minh hai cách đó là một.</p>
 </div>
 <div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 24.1 </span> (Bất đẳng thức Hadamard)</p>
 <section class="theorem-content" id="proof-content">
-<p>Cho lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, lấy cơ sở bất kỳ của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> là các vector <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain cho <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó</p>
+<p>Cho lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, lấy cơ sở bất kỳ của <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> là các vector <span class="math notranslate nohighlight">\(\bm{v}_1\)</span>, …, <span class="math notranslate nohighlight">\(\bm{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathcal{F}\)</span> là fundamental domain cho <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Khi đó</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-    \det L = \text{Vol} (\mathcal{F}) \leqslant \lVert \mathbf{v}_1 \rVert \cdot \lVert \mathbf{v}_2 \rVert \cdots \lVert \mathbf{v}_n \rVert
+    \det L = \text{Vol} (\mathcal{F}) \leqslant \lVert \bm{v}_1 \rVert \cdot \lVert \bm{v}_2 \rVert \cdots \lVert \bm{v}_n \rVert
 \end{equation}\]</div>
 </section>
 </div><p>Cơ sở càng gần với trực giao thì bất đẳng thức Hadamard trên càng trở thành đẳng thức.</p>
@@ -708,20 +708,20 @@ document.write(`
 </div>
 <div class="admonition-bai-toan-2-bai-toan-vector-ngan-nhat-shortest-vector-problem-svp admonition">
 <p class="admonition-title"><strong>Bài toán 2.</strong> (Bài toán vector ngắn nhất, Shortest Vector Problem - SVP)</p>
-<p>Cho một cơ sở tùy ý <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Hãy tìm một vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{L}\)</span> khác không với <span class="math notranslate nohighlight">\(\lVert \mathbf{x} \rVert \leqslant \gamma(m) \cdot \lambda_1(\mathcal{L})\)</span>.</p>
+<p>Cho một cơ sở tùy ý <span class="math notranslate nohighlight">\(\bm{V}\)</span> của lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>. Hãy tìm một vector <span class="math notranslate nohighlight">\(\bm{x} \in \mathcal{L}\)</span> khác không với <span class="math notranslate nohighlight">\(\lVert \bm{x} \rVert \leqslant \gamma(m) \cdot \lambda_1(\mathcal{L})\)</span>.</p>
 </div>
 <div class="admonition-bai-toan-3-bai-toan-learning-with-error-lwe-problem admonition">
 <p class="admonition-title"><strong>Bài toán 3.</strong> (Bài toán Learning With Error, LWE Problem)</p>
-<p>Cho <span class="math notranslate nohighlight">\(n, m, q &gt; 0\)</span> là các số nguyên và <span class="math notranslate nohighlight">\(\chi\)</span> là một phân bố trên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Với <span class="math notranslate nohighlight">\(\mathbf{s} \xleftarrow{\chi} \mathbb{Z}_n\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span> là phân bố lấy các mẫu <span class="math notranslate nohighlight">\(\mathbf{a} \xleftarrow{\$} \mathbb{Z}_q^n\)</span> và <span class="math notranslate nohighlight">\(e \xleftarrow{\chi} \mathbb{Z}\)</span>. Kết quả trả về <span class="math notranslate nohighlight">\((\mathbf{a}, \langle \mathbf{a}, \mathbf{s} \rangle + e) \in \mathbb{Z}_q^n \times \mathbb{Z}_q\)</span>.</p>
+<p>Cho <span class="math notranslate nohighlight">\(n, m, q &gt; 0\)</span> là các số nguyên và <span class="math notranslate nohighlight">\(\chi\)</span> là một phân bố trên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Với <span class="math notranslate nohighlight">\(\bm{s} \xleftarrow{\chi} \mathbb{Z}_n\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\mathcal{D}_{\bm{s}, \chi}\)</span> là phân bố lấy các mẫu <span class="math notranslate nohighlight">\(\bm{a} \xleftarrow{\$} \mathbb{Z}_q^n\)</span> và <span class="math notranslate nohighlight">\(e \xleftarrow{\chi} \mathbb{Z}\)</span>. Kết quả trả về <span class="math notranslate nohighlight">\((\bm{a}, \langle \bm{a}, \bm{s} \rangle + e) \in \mathbb{Z}_q^n \times \mathbb{Z}_q\)</span>.</p>
 <ol class="arabic simple">
-<li><p>Với <span class="math notranslate nohighlight">\(n, p \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập từ phân bố <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span>, bài toán LWE tìm kiếm là tìm <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> (search LWE problem).</p></li>
-<li><p>Với <span class="math notranslate nohighlight">\(n, q \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập <span class="math notranslate nohighlight">\((\mathbf{a}_i, b_i)\)</span>, bài toán LWE quyết định (decisional LWE problem) là phân biệt với <span class="math notranslate nohighlight">\(i = 1, \ldots, m\)</span> thì <span class="math notranslate nohighlight">\((\mathbf{a}_i, b_i)\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay thuộc <span class="math notranslate nohighlight">\(\mathcal{D}_{\mathbf{s}, \chi}\)</span>. Nói cách khác là được lấy mẫu ngẫu nhiên theo <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay theo phân bố <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.</p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(n, p \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập từ phân bố <span class="math notranslate nohighlight">\(\mathcal{D}_{\bm{s}, \chi}\)</span>, bài toán LWE tìm kiếm là tìm <span class="math notranslate nohighlight">\(\bm{s}\)</span> (search LWE problem).</p></li>
+<li><p>Với <span class="math notranslate nohighlight">\(n, q \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(m\)</span> mẫu độc lập <span class="math notranslate nohighlight">\((\bm{a}_i, b_i)\)</span>, bài toán LWE quyết định (decisional LWE problem) là phân biệt với <span class="math notranslate nohighlight">\(i = 1, \ldots, m\)</span> thì <span class="math notranslate nohighlight">\((\bm{a}_i, b_i)\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay thuộc <span class="math notranslate nohighlight">\(\mathcal{D}_{\bm{s}, \chi}\)</span>. Nói cách khác là được lấy mẫu ngẫu nhiên theo <span class="math notranslate nohighlight">\(\mathbb{Z}_q^n \times \mathbb{Z}_q\)</span> hay theo phân bố <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>.</p></li>
 </ol>
 </div>
-<p>Thông thường chúng ta coi vector <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> là secret và <span class="math notranslate nohighlight">\(e\)</span> là lỗi (error) của LWE.</p>
+<p>Thông thường chúng ta coi vector <span class="math notranslate nohighlight">\(\bm{s}\)</span> là secret và <span class="math notranslate nohighlight">\(e\)</span> là lỗi (error) của LWE.</p>
 <p>Chúng ta nói rằng bài toán LWE quyết định <span class="math notranslate nohighlight">\(\text{LWE}_{n, m, q, \chi}\)</span> là <span class="math notranslate nohighlight">\((t, \varepsilon)\)</span>-hard nếu đối với bất kì thuật toán <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> nào chạy trong thời gian <span class="math notranslate nohighlight">\(t\)</span>, nó đảm bảo rằng:</p>
 <div class="math notranslate nohighlight">
-\[\left| \mathrm{Pr}\left[ \mathcal{A}^{\mathcal{D}_{\mathbf{s}, \chi}}(\cdot) = 1 \right] - \mathrm{Pr} \left[ \mathcal{A}^{\mathcal{U}(\mathbb{Z}_q^n \times \mathbb{Z}_q)} (\cdot) = 1 \right] \right| \leqslant \varepsilon\]</div>
+\[\left| \mathrm{Pr}\left[ \mathcal{A}^{\mathcal{D}_{\bm{s}, \chi}}(\cdot) = 1 \right] - \mathrm{Pr} \left[ \mathcal{A}^{\mathcal{U}(\mathbb{Z}_q^n \times \mathbb{Z}_q)} (\cdot) = 1 \right] \right| \leqslant \varepsilon\]</div>
 <div class="admonition-bai-toan-4-bai-toan-ring-lwe-r-lwe admonition">
 <p class="admonition-title"><strong>Bài toán 4.</strong> (Bài toán Ring-LWE, R-LWE)</p>
 <p>Cho <span class="math notranslate nohighlight">\(n, q &gt; 0\)</span> là các số nguyên và <span class="math notranslate nohighlight">\(\chi\)</span> là phân bố trên <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Với <span class="math notranslate nohighlight">\(s \xleftarrow{\$} \mathcal{R}\)</span>, định nghĩa <span class="math notranslate nohighlight">\(\mathcal{D}_{s, \chi}\)</span> là phân bố lấy các mẫu <span class="math notranslate nohighlight">\(a \xleftarrow{\$} \mathcal{R}_q\)</span> và <span class="math notranslate nohighlight">\(e \xleftarrow{\chi} \mathcal{R}\)</span>. Kết quả trả về <span class="math notranslate nohighlight">\((a, a s + e) \in \mathcal{R}_q \times \mathcal{R}_q\)</span>.</p>
@@ -735,8 +735,8 @@ document.write(`
 <h3><span class="section-number">24.2.1. </span>Short vectors trong lattice<a class="headerlink" href="#short-vectors-trong-lattice" title="Link to this heading">#</a></h3>
 <p>Các bài toán liên quan tới lattice mà chúng ta cần quan tâm để xây dựng các thuật toán mã hóa lattice-based.</p>
 <ol class="arabic simple">
-<li><p><strong>Shortest Vector Problem</strong> (hay <strong>SVP</strong>): Tìm vector khác không có độ dài ngắn nhất trong lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, nghĩa là tìm vector <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> mà <span class="math notranslate nohighlight">\(\lVert v \rVert\)</span> nhỏ nhất;</p></li>
-<li><p><strong>Closest Vector Problem</strong> (hay <strong>CVP</strong>): Cho trước vector <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> mà không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, tìm vector <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> nhất, nghĩa là tìm <span class="math notranslate nohighlight">\(\mathbf{v} \in L\)</span> sao cho <span class="math notranslate nohighlight">\(\lVert \mathbf{w} - \mathbf{v} \rVert\)</span> nhỏ nhất.</p></li>
+<li><p><strong>Shortest Vector Problem</strong> (hay <strong>SVP</strong>): Tìm vector khác không có độ dài ngắn nhất trong lattice <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, nghĩa là tìm vector <span class="math notranslate nohighlight">\(\bm{v} \in L\)</span> mà <span class="math notranslate nohighlight">\(\lVert v \rVert\)</span> nhỏ nhất;</p></li>
+<li><p><strong>Closest Vector Problem</strong> (hay <strong>CVP</strong>): Cho trước vector <span class="math notranslate nohighlight">\(\bm{w} \in \mathbb{R}^n\)</span> mà không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span>, tìm vector <span class="math notranslate nohighlight">\(\bm{v} \in L\)</span> gần với <span class="math notranslate nohighlight">\(\bm{w}\)</span> nhất, nghĩa là tìm <span class="math notranslate nohighlight">\(\bm{v} \in L\)</span> sao cho <span class="math notranslate nohighlight">\(\lVert \bm{w} - \bm{v} \rVert\)</span> nhỏ nhất.</p></li>
 </ol>
 </section>
 <section id="thuat-toan-babai">
@@ -745,21 +745,21 @@ document.write(`
 <div class="proof theorem admonition" id="theorem-7">
 <p class="admonition-title"><span class="caption-number">Theorem 24.2 </span> (Thuật toán Babai tìm Closest Vertex)</p>
 <section class="theorem-content" id="proof-content">
-<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với cơ sở là <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\mathbf{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\mathbf{w} \in \mathbb{R}^n\)</span> là vector bất kỳ.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^n\)</span> là lattice với cơ sở là <span class="math notranslate nohighlight">\(\bm{v}_1\)</span>, <span class="math notranslate nohighlight">\(\bm{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\bm{v}_n\)</span> và gọi <span class="math notranslate nohighlight">\(\bm{w} \in \mathbb{R}^n\)</span> là vector bất kỳ.</p>
 <p>Nếu các vector trong cơ sở trực giao nhau thì thuật toán Babai sẽ giải được <strong>CVP</strong>.</p>
 <p>Nếu các vector trong cơ sở gần như trực giao thì thuật toán Babai sẽ giải được <strong>apprCVP</strong>.</p>
-<p>Ngược lại, nếu các vector trong cơ sở không trực giao (nhiều) thì kết quả thuật toán trả về sẽ xa hơn vector gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.</p>
+<p>Ngược lại, nếu các vector trong cơ sở không trực giao (nhiều) thì kết quả thuật toán trả về sẽ xa hơn vector gần với <span class="math notranslate nohighlight">\(\bm{w}\)</span>.</p>
 </section>
 </div><div class="proof algorithm admonition" id="algorithm-8">
 <p class="admonition-title"><span class="caption-number">Algorithm 24.1 </span> (Babai’s Closest Vertex Algorithm)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic simple">
-<li><p>Biểu diễn <span class="math notranslate nohighlight">\(\mathbf{w} = t_1 \mathbf{v}_1 + t_2 \mathbf{v}_2 + \ldots + t_n \mathbf{v}_n\)</span> với <span class="math notranslate nohighlight">\(t_1, \ldots, t_n \in \mathbb{R}\)</span>.</p></li>
+<li><p>Biểu diễn <span class="math notranslate nohighlight">\(\bm{w} = t_1 \bm{v}_1 + t_2 \bm{v}_2 + \ldots + t_n \bm{v}_n\)</span> với <span class="math notranslate nohighlight">\(t_1, \ldots, t_n \in \mathbb{R}\)</span>.</p></li>
 <li><p>Đặt <span class="math notranslate nohighlight">\(a_i = \lfloor t_i \rceil\)</span> với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>.</p></li>
-<li><p>Trả về vector <span class="math notranslate nohighlight">\(\mathbf{v} = a_1 \mathbf{v}_1 + a_2 \mathbf{v}_2 + \ldots + a_n \mathbf{v}_n\)</span>.</p></li>
+<li><p>Trả về vector <span class="math notranslate nohighlight">\(\bm{v} = a_1 \bm{v}_1 + a_2 \bm{v}_2 + \ldots + a_n \bm{v}_n\)</span>.</p></li>
 </ol>
 </section>
-</div><p>Mình có thể thấy rằng thuật toán Babai làm tròn hệ số để đưa trả về vector gần với <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>.</p>
+</div><p>Mình có thể thấy rằng thuật toán Babai làm tròn hệ số để đưa trả về vector gần với <span class="math notranslate nohighlight">\(\bm{w}\)</span>.</p>
 </section>
 <section id="lattice-reduction">
 <h3><span class="section-number">24.2.3. </span>Lattice reduction<a class="headerlink" href="#lattice-reduction" title="Link to this heading">#</a></h3>
@@ -768,25 +768,25 @@ document.write(`
 </section>
 <section id="gaussian-lattice-reduction">
 <h3><span class="section-number">24.2.4. </span>Gaussian lattice reduction<a class="headerlink" href="#gaussian-lattice-reduction" title="Link to this heading">#</a></h3>
-<p>Giả sử ta có <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> là lattice 2 chiều với cơ sở là <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p>
-<p>Ta có thể đổi chỗ <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> nếu cần thiết để luôn đảm bảo <span class="math notranslate nohighlight">\(\lVert \mathbf{v}_1 \rVert &lt; \lVert \mathbf{v}_2 \rVert\)</span>.</p>
-<p>Để làm nhỏ <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> ta có thể trừ đi một bội số của <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>. Nếu ta sử dụng cách giống như thuật toán trực giao Gram-Schmidt thì</p>
+<p>Giả sử ta có <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> là lattice 2 chiều với cơ sở là <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span>.</p>
+<p>Ta có thể đổi chỗ <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> nếu cần thiết để luôn đảm bảo <span class="math notranslate nohighlight">\(\lVert \bm{v}_1 \rVert &lt; \lVert \bm{v}_2 \rVert\)</span>.</p>
+<p>Để làm nhỏ <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> ta có thể trừ đi một bội số của <span class="math notranslate nohighlight">\(\bm{v}_1\)</span>. Nếu ta sử dụng cách giống như thuật toán trực giao Gram-Schmidt thì</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{v}_2^* = \mathbf{v}_2 - \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \mathbf{v}_1\]</div>
-<p>Khi đó <span class="math notranslate nohighlight">\(\mathbf{v}_2^*\)</span> sẽ trực giao với <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span>. Tuy nhiên vector này không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> vì hệ số <span class="math notranslate nohighlight">\(\dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2}\)</span> có thể không phải số nguyên. Để khắc phục ta chỉ việc lấy phần nguyên của hệ số này. Nghĩa là ta thay <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> bằng vector</p>
+\[\bm{v}_2^* = \bm{v}_2 - \dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2} \bm{v}_1\]</div>
+<p>Khi đó <span class="math notranslate nohighlight">\(\bm{v}_2^*\)</span> sẽ trực giao với <span class="math notranslate nohighlight">\(\bm{v}_1\)</span>. Tuy nhiên vector này không nằm trong <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> vì hệ số <span class="math notranslate nohighlight">\(\dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2}\)</span> có thể không phải số nguyên. Để khắc phục ta chỉ việc lấy phần nguyên của hệ số này. Nghĩa là ta thay <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> bằng vector</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{v}_2 - m \mathbf{v}_1 \quad \text{với}\ m = \left\lfloor \dfrac{\mathbf{v}_1 \cdot \mathbf{v}_2}{\lVert \mathbf{v}_1 \rVert^2} \right\rceil\]</div>
-<p>Nếu <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> vẫn lớn hơn <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> thì ta dừng thuật toán. Ngược lại ta đảo vị trí <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> rồi lặp lại bước trên. Thuật toán như sau</p>
+\[\bm{v}_2 - m \bm{v}_1 \quad \text{với}\ m = \left\lfloor \dfrac{\bm{v}_1 \cdot \bm{v}_2}{\lVert \bm{v}_1 \rVert^2} \right\rceil\]</div>
+<p>Nếu <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> vẫn lớn hơn <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> thì ta dừng thuật toán. Ngược lại ta đảo vị trí <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> rồi lặp lại bước trên. Thuật toán như sau</p>
 <div class="proof theorem admonition" id="theorem-9">
 <p class="admonition-title"><span class="caption-number">Theorem 24.3 </span> (Gaussian lattice reduction)</p>
 <section class="theorem-content" id="proof-content">
-<p><strong>Input::</strong> Lattice 2 chiều <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> với cơ sở <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span></p>
-<p><strong>Output:</strong> Cơ sở mới <span class="math notranslate nohighlight">\(\mathbf{v}_1^*\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2^*\)</span> gần như trực giao nhau</p>
+<p><strong>Input::</strong> Lattice 2 chiều <span class="math notranslate nohighlight">\(\mathcal{L} \subset \mathbb{R}^2\)</span> với cơ sở <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span></p>
+<p><strong>Output:</strong> Cơ sở mới <span class="math notranslate nohighlight">\(\bm{v}_1^*\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2^*\)</span> gần như trực giao nhau</p>
 <ol class="arabic simple">
-<li><p>Nếu <span class="math notranslate nohighlight">\(\lVert \mathbf{v}_2 \rVert &lt; \lVert \mathbf{v}_1 \rVert\)</span> thì ta đổi chỗ <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p></li>
-<li><p>Tính <span class="math notranslate nohighlight">\(m = \left\lfloor \mathbf{v}_1 \cdot \mathbf{v}_2 / \lVert \mathbf{v}_1 \rVert^2 \right\rceil\)</span>.</p></li>
-<li><p>Nếu <span class="math notranslate nohighlight">\(m = 0\)</span> thì trả về cơ sở gồm <span class="math notranslate nohighlight">\(\mathbf{v}_1\)</span> và <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span>.</p></li>
-<li><p>Thay <span class="math notranslate nohighlight">\(\mathbf{v}_2\)</span> bởi <span class="math notranslate nohighlight">\(\mathbf{v}_2 - m \mathbf{v}_1\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(\lVert \bm{v}_2 \rVert &lt; \lVert \bm{v}_1 \rVert\)</span> thì ta đổi chỗ <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span>.</p></li>
+<li><p>Tính <span class="math notranslate nohighlight">\(m = \left\lfloor \bm{v}_1 \cdot \bm{v}_2 / \lVert \bm{v}_1 \rVert^2 \right\rceil\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(m = 0\)</span> thì trả về cơ sở gồm <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{v}_2\)</span>.</p></li>
+<li><p>Thay <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> bởi <span class="math notranslate nohighlight">\(\bm{v}_2 - m \bm{v}_1\)</span>.</p></li>
 </ol>
 </section>
 </div></section>
@@ -916,14 +916,14 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	\begin{array}{cccccccc}
-		\mathbf{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
-		\mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+		\bm{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+		\bm{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
 		\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
-		\mathbf{v}_d &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; MX^d \\
-		\mathbf{v}_{d+1} &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; a_d X^d
+		\bm{v}_d &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; MX^d \\
+		\bm{v}_{d+1} &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; a_d X^d
 	\end{array}
 \end{split}\]</div>
-<p>Khi đó hệ số của mỗi dòng từ <span class="math notranslate nohighlight">\(\mathbf{v}_0\)</span>​ tới <span class="math notranslate nohighlight">\(\mathbf{v}_d\)</span>​ là <span class="math notranslate nohighlight">\(b_0\)</span>​ tới <span class="math notranslate nohighlight">\(b_d\)</span>​. Còn hệ số của <span class="math notranslate nohighlight">\(\mathbf{v}_{d+1}\)</span>​ là <span class="math notranslate nohighlight">\(k\)</span>​.</p>
+<p>Khi đó hệ số của mỗi dòng từ <span class="math notranslate nohighlight">\(\bm{v}_0\)</span>​ tới <span class="math notranslate nohighlight">\(\bm{v}_d\)</span>​ là <span class="math notranslate nohighlight">\(b_0\)</span>​ tới <span class="math notranslate nohighlight">\(b_d\)</span>​. Còn hệ số của <span class="math notranslate nohighlight">\(\bm{v}_{d+1}\)</span>​ là <span class="math notranslate nohighlight">\(k\)</span>​.</p>
 <p>Tuy nhiên chúng ta thường sẽ biến đổi để đa thức trở thành monic (<span class="math notranslate nohighlight">\(a_d = 1\)</span>​). Khi đó chúng ta bỏ đi <span class="math notranslate nohighlight">\(v_d\)</span>​ và còn <span class="math notranslate nohighlight">\(d+1\)</span>​ vector trong lattice.</p>
 </section>
 <section id="cai-tien-thuat-toan">
@@ -944,19 +944,19 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{ccccccccccc}
-    \mathbf{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\​
-    \mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+    \bm{v}_0 &amp; \Leftarrow &amp; M &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\​
+    \bm{v}_1 &amp; \Leftarrow &amp; 0 &amp; MX &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
     \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
-    \mathbf{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; MX^{d-1} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
-    \mathbf{v}_d &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; X^d &amp; 0 &amp; 0 &amp; \cdots
+    \bm{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; MX^{d-1} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+    \bm{v}_d &amp; \Leftarrow &amp; a_0 &amp; a_1 X &amp; a_2 X^2 &amp; \cdots &amp; a_{d-1} X^{d-1} &amp; X^d &amp; 0 &amp; 0 &amp; \cdots
 \end{array}
 \end{split}\]</div>
 <p>Sau đó thêm các vector khi shift vào, tương ứng với <span class="math notranslate nohighlight">\(xF(x)\)</span>​, <span class="math notranslate nohighlight">\(x^2 F(x)\)</span>​, …​</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cccccccccccc}
-    \mathbf{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; a_0 X &amp; a_1 X^2 &amp; a_2 X^3 &amp; \cdots &amp; a_{d-1} X^d &amp; a_d X^{d+1} &amp; 0 &amp; 0 &amp; \cdots \\
-    \mathbf{v}_{d+2} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; a_0 X^2 &amp; a_1 X^3 &amp; \cdots &amp; a_{d-2} X^d &amp; a_{d-1} X^{d+1} &amp; a_d X^{d+2} &amp; 0 &amp; \cdots
+    \bm{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; a_0 X &amp; a_1 X^2 &amp; a_2 X^3 &amp; \cdots &amp; a_{d-1} X^d &amp; a_d X^{d+1} &amp; 0 &amp; 0 &amp; \cdots \\
+    \bm{v}_{d+2} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; a_0 X^2 &amp; a_1 X^3 &amp; \cdots &amp; a_{d-2} X^d &amp; a_{d-1} X^{d+1} &amp; a_d X^{d+2} &amp; 0 &amp; \cdots
 \end{array}
 \end{split}\]</div>
 <p>Tuy nhiên vấn đề ở đây là bound của nghiệm bị thu hẹp lại. Ban nãy mình nói rằng nếu chọn <span class="math notranslate nohighlight">\(h=d-1\)</span>​ thì nghiệm cho kết quả nếu <span class="math notranslate nohighlight">\(X \approx M^{1/(2d-1)}\)</span>​. Ở đây <span class="math notranslate nohighlight">\(M = 10001\)</span>​ nên <span class="math notranslate nohighlight">\(X \approx 4\)</span>​. Trong khi ở bài viết trước thì <span class="math notranslate nohighlight">\(X = 10\)</span>​. Do đó có thể thấy việc mở rộng này đôi khi kém hiệu quả tùy thuộc vào <span class="math notranslate nohighlight">\(h\)</span>​.</p>
@@ -995,10 +995,10 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{ccccccccc}
-    \mathbf{v}_0 &amp; \Leftarrow &amp; M^{h-1} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
-    \mathbf{v}_1 &amp; \Leftarrow &amp; 0 &amp; M^{h-1} X &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
+    \bm{v}_0 &amp; \Leftarrow &amp; M^{h-1} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
+    \bm{v}_1 &amp; \Leftarrow &amp; 0 &amp; M^{h-1} X &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\
     \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \vdots \\
-    \mathbf{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M^{h-1} X^{d-1} &amp; 0 &amp; \cdots
+    \bm{v}_{d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M^{h-1} X^{d-1} &amp; 0 &amp; \cdots
 \end{array}
 \end{split}\]</div>
 <ul class="simple">
@@ -1010,10 +1010,10 @@ với <span class="math notranslate nohighlight">\(a_i \in \mathbb{Z}\)</span>.<
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{cccccccccc}
-    \mathbf{v}_d &amp; \Leftarrow &amp; Ma_0 &amp; M a_1 X &amp; M a_2 X^2 &amp; \cdots &amp; M a_{d-1} X^{d-1} &amp; M X^d &amp; \cdots &amp; \cdots \\ 
-    \mathbf{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; Ma_0 X &amp; Ma_1 X^2 &amp; \cdots &amp; M a_{d-2} X^{d-1} &amp; M a_{d-1} X^d &amp; M X^{d+1} &amp; \cdots \\
+    \bm{v}_d &amp; \Leftarrow &amp; Ma_0 &amp; M a_1 X &amp; M a_2 X^2 &amp; \cdots &amp; M a_{d-1} X^{d-1} &amp; M X^d &amp; \cdots &amp; \cdots \\ 
+    \bm{v}_{d+1} &amp; \Leftarrow &amp; 0 &amp; Ma_0 X &amp; Ma_1 X^2 &amp; \cdots &amp; M a_{d-2} X^{d-1} &amp; M a_{d-1} X^d &amp; M X^{d+1} &amp; \cdots \\
     \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
-    \mathbf{v}_{2d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M a_0 X^{d-1} &amp; M a_1 X^d &amp; \cdots &amp; \cdots
+    \bm{v}_{2d-1} &amp; \Leftarrow &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; M a_0 X^{d-1} &amp; M a_1 X^d &amp; \cdots &amp; \cdots
 \end{array}
 \end{split}\]</div>
 <ul class="simple">

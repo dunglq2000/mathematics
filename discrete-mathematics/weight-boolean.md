@@ -4,7 +4,7 @@
 :depth: 2
 ```
 
-Ở phần này ký hiệu vector không $\mathbf{0} = (0, \ldots, 0)$, vector một $\mathbf{1} = (1, \ldots, 1)$.
+Ở phần này ký hiệu vector không $\bm{0} = (0, \ldots, 0)$, vector một $\bm{1} = (1, \ldots, 1)$.
 
 ### Trọng số của hàm boolean
 
@@ -23,7 +23,7 @@ Hàm boolean $f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)$ có trọng số $\mathrm{w
 Một số tính chất của trọng số:
 
 1. $0 \leqslant \mathrm{wt}(f) \leqslant 2^n$
-2. $\mathrm{wt}(f \oplus \mathbf{1}) = 2^n - \mathrm{wt}(f)$
+2. $\mathrm{wt}(f \oplus \bm{1}) = 2^n - \mathrm{wt}(f)$
 3. Nếu $h$ cũng là một hàm boolean từ $\mathbb{F}_2^n$ tới $\mathbb{F}_2$ thì
 
 $$\mathrm{wt}(f \oplus h) = \mathrm{wt}(f) + \mathrm{wt}(h) - 2 \mathrm{wt}(fh)$$
@@ -53,9 +53,9 @@ $$g(x_1, \ldots, x_n, 0) = g(x_1, \ldots, x_n, 1) = f(x_1, \ldots, x_n)$$
 
 nên ta có điều phải chứng minh.
 
-2. Đặt $\mathbf{x} = (x_1, \ldots, x_n)$ và $\mathbf{y} = (y_1, \ldots, y_m)$.
+2. Đặt $\bm{x} = (x_1, \ldots, x_n)$ và $\bm{y} = (y_1, \ldots, y_m)$.
 
-a) Đặt $\mathrm{wt}(f) = r < 2^n$ và $\mathrm{wt}(g) = s < 2^m$. Vì $f(\mathbf{x}) \cdot g(\mathbf{y}) = 1$ khi và chỉ khi $f(\mathbf{x}) = g(\mathbf{y}) = 1$ nên $\mathrm{wt}(f \cdot g) = r \cdot s$. 
+a) Đặt $\mathrm{wt}(f) = r < 2^n$ và $\mathrm{wt}(g) = s < 2^m$. Vì $f(\bm{x}) \cdot g(\bm{y}) = 1$ khi và chỉ khi $f(\bm{x}) = g(\bm{y}) = 1$ nên $\mathrm{wt}(f \cdot g) = r \cdot s$. 
 
 Do đó nếu $f \cdot g$ cân bằng thì $2^{n+m-1} = \mathrm{wt}(f \cdot g) = r \cdot s$.
 
@@ -63,7 +63,7 @@ Như vậy $r = 2^k$ và $s = 2^l$ với $k \leqslant n-1$ và $l \leqslant m-1$
 
 Suy ra $r \cdot s \leqslant 2^{n+m-2}$. Điều này vô lý vì $r \cdot s = 2^{n + m - 1} > 2^{n+m-2}$. Nghĩa là giả sử ban đầu $r < 2^n$ là sai, tương tự với $s$ và ta có điều phải chứng minh.
 
-b) Chú ý rằng $f(\mathbf{x}) \oplus g(\mathbf{y}) = 1$ khi và chỉ khi $f(\mathbf{x}) \neq g(\mathbf{y})$. Suy ra 
+b) Chú ý rằng $f(\bm{x}) \oplus g(\bm{y}) = 1$ khi và chỉ khi $f(\bm{x}) \neq g(\bm{y})$. Suy ra 
 
 $$\mathrm{wt}(f \oplus g) = \mathrm{wt}(f) \cdot \mathrm{wt}(\bar{g}) + \mathrm{wt}(\bar{f}) \cdot \mathrm{wt}(g)$$
 
@@ -91,20 +91,20 @@ Vậy $g$ là hàm cân bằng.
 ### Khoảng cách Hamming
 
 ````{prf:definition} Khoảng cách Hamming giữa hai vector
-Với hai vector $\mathbf{x}$, $\mathbf{y}$ thuộc $\mathbb{F}_2^n$, đặt
+Với hai vector $\bm{x}$, $\bm{y}$ thuộc $\mathbb{F}_2^n$, đặt
 
 $$\begin{equation}
-	d (\mathbf{x}, \mathbf{y}) = \mathrm{wt} (\mathbf{x} \oplus \mathbf{y})
+	d (\bm{x}, \bm{y}) = \mathrm{wt} (\bm{x} \oplus \bm{y})
 \end{equation}$$
 
-là **khoảng cách Hamming** giữa hai vector $\mathbf{x}$ và $\mathbf{y}$. Trong đó $\mathrm{wt}(\mathbf{z})$ là trọng số vector $\mathbf{z}$.
+là **khoảng cách Hamming** giữa hai vector $\bm{x}$ và $\bm{y}$. Trong đó $\mathrm{wt}(\bm{z})$ là trọng số vector $\bm{z}$.
 ````
 
 ````{prf:definition} Khoảng cách Hamming từ vector tới tập vector
-Xét $M \subseteq \mathbb{F}_2^n$. Khi đó với mọi $\mathbf{x} \in \mathbb{F}_2^n$, ta nói khoảng cách từ $\mathbf{x}$ tới $M$ là
+Xét $M \subseteq \mathbb{F}_2^n$. Khi đó với mọi $\bm{x} \in \mathbb{F}_2^n$, ta nói khoảng cách từ $\bm{x}$ tới $M$ là
 
 $$\begin{equation}
-	d(\mathbf{x}, M) = \min_{\mathbf{y} \in M} d (\mathbf{x}, \mathbf{y})
+	d(\bm{x}, M) = \min_{\bm{y} \in M} d (\bm{x}, \bm{y})
 \end{equation}$$
 ````
 
@@ -112,6 +112,6 @@ $$\begin{equation}
 Xét hai hàm boolean $n$ biến là $f(x_1, x_2, \ldots, x_n)$ và $g(x_1, x_2, \ldots, x_n)$. Khi đó khoảng cách Hamming từ hàm $f$ tới hàm $g$ là
 
 $$\begin{equation}
-	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) \oplus g(\mathbf{x})
+	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x}) \oplus g(\bm{x})
 \end{equation}$$
 ````

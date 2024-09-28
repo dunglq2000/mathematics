@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contests/2024/cryptofox-2024';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -852,15 +852,15 @@ document.write(`
 \[g_k : \alpha \to h(S(\psi^{-1}(\psi(\alpha) \boxplus \psi(k)))),\]</div>
 <p>trong đó:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(h\)</span> là ánh xạ tuyến tính trên <span class="math notranslate nohighlight">\(V_{32}(2)\)</span> xác định bởi ma trận <span class="math notranslate nohighlight">\(4 \times 4\)</span> là <span class="math notranslate nohighlight">\(\mathbf{H}\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(h\)</span> là ánh xạ tuyến tính trên <span class="math notranslate nohighlight">\(V_{32}(2)\)</span> xác định bởi ma trận <span class="math notranslate nohighlight">\(4 \times 4\)</span> là <span class="math notranslate nohighlight">\(\bm{H}\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span>,</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-    h(\lambda^{(1)}, \ldots, \lambda^{(4)}) = (\lambda^{(1)}, \ldots, \lambda^{(4)}) \mathbf{H}, \quad \lambda^{(1)}, \ldots, \lambda^{(4)} \in \mathbb{F}_{2^8},
+    h(\lambda^{(1)}, \ldots, \lambda^{(4)}) = (\lambda^{(1)}, \ldots, \lambda^{(4)}) \bm{H}, \quad \lambda^{(1)}, \ldots, \lambda^{(4)} \in \mathbb{F}_{2^8},
 \]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \mathbf{H} = \begin{pmatrix}
+    \bm{H} = \begin{pmatrix}
         \theta &amp; \theta \oplus 1 &amp; 1 &amp; 1 \\
         1 &amp; \theta &amp; \theta \oplus 1 &amp; 1 \\
         1 &amp; 1 &amp; \theta &amp; \theta \oplus 1 \\
@@ -879,7 +879,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\lambda = \psi^{-1}(\psi(\alpha) \boxplus \psi(k));\]</div>
 <ul class="simple">
-<li><p>vector 32 bit <span class="math notranslate nohighlight">\(\lambda\)</span> được chia thành 4 đoạn <span class="math notranslate nohighlight">\(\lambda^{(1)}, \ldots, \lambda^{(4)}\)</span> là các phần tử <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span> và biểu diễn <span class="math notranslate nohighlight">\(\lambda = (\lambda^{(1)}, \ldots, \lambda^{(4)})\)</span> là không gian 4 chiều <span class="math notranslate nohighlight">\(V_4(2^8)\)</span>. Sau đó tính <span class="math notranslate nohighlight">\(\beta = \lambda \mathbf{H}\)</span>;</p></li>
+<li><p>vector 32 bit <span class="math notranslate nohighlight">\(\lambda\)</span> được chia thành 4 đoạn <span class="math notranslate nohighlight">\(\lambda^{(1)}, \ldots, \lambda^{(4)}\)</span> là các phần tử <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span> và biểu diễn <span class="math notranslate nohighlight">\(\lambda = (\lambda^{(1)}, \ldots, \lambda^{(4)})\)</span> là không gian 4 chiều <span class="math notranslate nohighlight">\(V_4(2^8)\)</span>. Sau đó tính <span class="math notranslate nohighlight">\(\beta = \lambda \bm{H}\)</span>;</p></li>
 <li><p>vector 32 bit <span class="math notranslate nohighlight">\(\beta\)</span> được chia thành 4 vector 8 bit là <span class="math notranslate nohighlight">\(\beta^{(1)}, \ldots, \beta^{(4)}\)</span>. Sau đó mỗi vector <span class="math notranslate nohighlight">\(\beta^{(i)}\)</span> đi qua S-box con <span class="math notranslate nohighlight">\(s_i\)</span>, <span class="math notranslate nohighlight">\(i = 1, 2, 3, 4\)</span>. Bốn kết quả được ghép lại nhau thành <span class="math notranslate nohighlight">\(S(\beta)\)</span>.
 \end{itemize}</p></li>
 </ul>

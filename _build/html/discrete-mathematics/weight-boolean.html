@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -59,7 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/weight-boolean';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -550,7 +550,7 @@ document.write(`
 </li>
 </ul>
 </nav>
-<p>Ở phần này ký hiệu vector không <span class="math notranslate nohighlight">\(\mathbf{0} = (0, \ldots, 0)\)</span>, vector một <span class="math notranslate nohighlight">\(\mathbf{1} = (1, \ldots, 1)\)</span>.</p>
+<p>Ở phần này ký hiệu vector không <span class="math notranslate nohighlight">\(\bm{0} = (0, \ldots, 0)\)</span>, vector một <span class="math notranslate nohighlight">\(\bm{1} = (1, \ldots, 1)\)</span>.</p>
 <section id="id1">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">15.2.1. </span>Trọng số của hàm boolean</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
@@ -568,7 +568,7 @@ document.write(`
 </div><p>Một số tính chất của trọng số:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(0 \leqslant \mathrm{wt}(f) \leqslant 2^n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathrm{wt}(f \oplus \mathbf{1}) = 2^n - \mathrm{wt}(f)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{wt}(f \oplus \bm{1}) = 2^n - \mathrm{wt}(f)\)</span></p></li>
 <li><p>Nếu <span class="math notranslate nohighlight">\(h\)</span> cũng là một hàm boolean từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> thì</p></li>
 </ol>
 <div class="math notranslate nohighlight">
@@ -600,13 +600,13 @@ document.write(`
 \[g(x_1, \ldots, x_n, 0) = g(x_1, \ldots, x_n, 1) = f(x_1, \ldots, x_n)\]</div>
 <p>nên ta có điều phải chứng minh.</p>
 <ol class="arabic simple" start="2">
-<li><p>Đặt <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{y} = (y_1, \ldots, y_m)\)</span>.</p></li>
+<li><p>Đặt <span class="math notranslate nohighlight">\(\bm{x} = (x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(\bm{y} = (y_1, \ldots, y_m)\)</span>.</p></li>
 </ol>
-<p>a) Đặt <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = r &lt; 2^n\)</span> và <span class="math notranslate nohighlight">\(\mathrm{wt}(g) = s &lt; 2^m\)</span>. Vì <span class="math notranslate nohighlight">\(f(\mathbf{x}) \cdot g(\mathbf{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\mathbf{x}) = g(\mathbf{y}) = 1\)</span> nên <span class="math notranslate nohighlight">\(\mathrm{wt}(f \cdot g) = r \cdot s\)</span>.</p>
+<p>a) Đặt <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = r &lt; 2^n\)</span> và <span class="math notranslate nohighlight">\(\mathrm{wt}(g) = s &lt; 2^m\)</span>. Vì <span class="math notranslate nohighlight">\(f(\bm{x}) \cdot g(\bm{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\bm{x}) = g(\bm{y}) = 1\)</span> nên <span class="math notranslate nohighlight">\(\mathrm{wt}(f \cdot g) = r \cdot s\)</span>.</p>
 <p>Do đó nếu <span class="math notranslate nohighlight">\(f \cdot g\)</span> cân bằng thì <span class="math notranslate nohighlight">\(2^{n+m-1} = \mathrm{wt}(f \cdot g) = r \cdot s\)</span>.</p>
 <p>Như vậy <span class="math notranslate nohighlight">\(r = 2^k\)</span> và <span class="math notranslate nohighlight">\(s = 2^l\)</span> với <span class="math notranslate nohighlight">\(k \leqslant n-1\)</span> và <span class="math notranslate nohighlight">\(l \leqslant m-1\)</span>.</p>
 <p>Suy ra <span class="math notranslate nohighlight">\(r \cdot s \leqslant 2^{n+m-2}\)</span>. Điều này vô lý vì <span class="math notranslate nohighlight">\(r \cdot s = 2^{n + m - 1} &gt; 2^{n+m-2}\)</span>. Nghĩa là giả sử ban đầu <span class="math notranslate nohighlight">\(r &lt; 2^n\)</span> là sai, tương tự với <span class="math notranslate nohighlight">\(s\)</span> và ta có điều phải chứng minh.</p>
-<p>b) Chú ý rằng <span class="math notranslate nohighlight">\(f(\mathbf{x}) \oplus g(\mathbf{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\mathbf{x}) \neq g(\mathbf{y})\)</span>. Suy ra</p>
+<p>b) Chú ý rằng <span class="math notranslate nohighlight">\(f(\bm{x}) \oplus g(\bm{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\bm{x}) \neq g(\bm{y})\)</span>. Suy ra</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{wt}(f \oplus g) = \mathrm{wt}(f) \cdot \mathrm{wt}(\bar{g}) + \mathrm{wt}(\bar{f}) \cdot \mathrm{wt}(g)\]</div>
 <p><em>Điều kiện đủ.</em> Giả sử hàm <span class="math notranslate nohighlight">\(f\)</span> cân bằng, suy ra</p>
@@ -630,20 +630,20 @@ document.write(`
 <div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 15.8 </span> (Khoảng cách Hamming giữa hai vector)</p>
 <section class="definition-content" id="proof-content">
-<p>Với hai vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, đặt</p>
+<p>Với hai vector <span class="math notranslate nohighlight">\(\bm{x}\)</span>, <span class="math notranslate nohighlight">\(\bm{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, đặt</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-	d (\mathbf{x}, \mathbf{y}) = \mathrm{wt} (\mathbf{x} \oplus \mathbf{y})
+	d (\bm{x}, \bm{y}) = \mathrm{wt} (\bm{x} \oplus \bm{y})
 \end{equation}\]</div>
-<p>là <strong>khoảng cách Hamming</strong> giữa hai vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. Trong đó <span class="math notranslate nohighlight">\(\mathrm{wt}(\mathbf{z})\)</span> là trọng số vector <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>.</p>
+<p>là <strong>khoảng cách Hamming</strong> giữa hai vector <span class="math notranslate nohighlight">\(\bm{x}\)</span> và <span class="math notranslate nohighlight">\(\bm{y}\)</span>. Trong đó <span class="math notranslate nohighlight">\(\mathrm{wt}(\bm{z})\)</span> là trọng số vector <span class="math notranslate nohighlight">\(\bm{z}\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 15.9 </span> (Khoảng cách Hamming từ vector tới tập vector)</p>
 <section class="definition-content" id="proof-content">
-<p>Xét <span class="math notranslate nohighlight">\(M \subseteq \mathbb{F}_2^n\)</span>. Khi đó với mọi <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{F}_2^n\)</span>, ta nói khoảng cách từ <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> tới <span class="math notranslate nohighlight">\(M\)</span> là</p>
+<p>Xét <span class="math notranslate nohighlight">\(M \subseteq \mathbb{F}_2^n\)</span>. Khi đó với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, ta nói khoảng cách từ <span class="math notranslate nohighlight">\(\bm{x}\)</span> tới <span class="math notranslate nohighlight">\(M\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-	d(\mathbf{x}, M) = \min_{\mathbf{y} \in M} d (\mathbf{x}, \mathbf{y})
+	d(\bm{x}, M) = \min_{\bm{y} \in M} d (\bm{x}, \bm{y})
 \end{equation}\]</div>
 </section>
 </div><div class="proof definition admonition" id="definition-6">
@@ -652,7 +652,7 @@ document.write(`
 <p>Xét hai hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến là <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n)\)</span>. Khi đó khoảng cách Hamming từ hàm <span class="math notranslate nohighlight">\(f\)</span> tới hàm <span class="math notranslate nohighlight">\(g\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
-	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\mathbf{x} \in \mathbb{F}_2^n} f(\mathbf{x}) \oplus g(\mathbf{x})
+	d(f, g) = \mathrm{wt}(f \oplus g) = \sum_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x}) \oplus g(\bm{x})
 \end{equation}\]</div>
 </section>
 </div></section>
