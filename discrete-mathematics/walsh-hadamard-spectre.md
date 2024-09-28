@@ -208,8 +208,6 @@ $$\begin{align*}
 	& = \sum_{\substack{\bm{x}, \\ x_i = 0}} (-1)^{f(\bm{x}) \oplus \langle \bm{a}', \bm{x}' \rangle} + \sum_{\substack{\bm{x}, \\ x_i = 1}} (-1)^{f(\bm{x}) \oplus \langle \bm{a}', \bm{x}' \rangle \oplus 1} = 0
 \end{align*}$$
 
-$\bm{a} = \bm{b}$
-
 ### Liên hệ giữa hệ số Fourier và hệ số Walsh
 
 ````{prf:remark}
