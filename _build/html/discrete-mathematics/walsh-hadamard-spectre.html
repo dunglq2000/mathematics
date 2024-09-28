@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
   
@@ -263,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Đại số boolean và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
@@ -526,8 +526,9 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier">15.3.1. Biến đổi Fourier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-walsh-hadamard">15.3.2. Biến đổi Walsh-Hadamard</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">15.3.3. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">15.3.4. Hàm Bent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-chat-cua-bien-doi-walsh-hadamard">15.3.3. Tính chất của biến đổi Walsh-Hadamard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">15.3.4. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">15.3.5. Hàm Bent</a></li>
 </ul>
             </nav>
         </div>
@@ -548,8 +549,9 @@ document.write(`
 <ul>
 <li><p><a class="reference internal" href="#bien-doi-fourier" id="id2">Biến đổi Fourier</a></p></li>
 <li><p><a class="reference internal" href="#bien-doi-walsh-hadamard" id="id3">Biến đổi Walsh-Hadamard</a></p></li>
-<li><p><a class="reference internal" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" id="id4">Liên hệ giữa hệ số Fourier và hệ số Walsh</a></p></li>
-<li><p><a class="reference internal" href="#ham-bent" id="id5">Hàm Bent</a></p></li>
+<li><p><a class="reference internal" href="#tinh-chat-cua-bien-doi-walsh-hadamard" id="id4">Tính chất của biến đổi Walsh-Hadamard</a></p></li>
+<li><p><a class="reference internal" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" id="id5">Liên hệ giữa hệ số Fourier và hệ số Walsh</a></p></li>
+<li><p><a class="reference internal" href="#ham-bent" id="id6">Hàm Bent</a></p></li>
 </ul>
 </li>
 </ul>
@@ -690,8 +692,59 @@ document.write(`
 	\sum_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2 = 2^{2n}
 \end{equation}\]</div>
 </section>
+<section id="tinh-chat-cua-bien-doi-walsh-hadamard">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">15.3.3. </span>Tính chất của biến đổi Walsh-Hadamard</a><a class="headerlink" href="#tinh-chat-cua-bien-doi-walsh-hadamard" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(W_f(\mathbf{0}) = 2^n - 2 \mathrm{wt} (f)\)</span>, và <span class="math notranslate nohighlight">\(W_f(\mathbf{0}) = 0\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f\)</span> là hàm cân bằng.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(g = \bar{f}\)</span> thì <span class="math notranslate nohighlight">\(W_g(\mathbf{a}) = -W_f(\mathbf{a})\)</span> với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(g(\mathbf{x}) = f(\mathbf{x} \oplus \mathbf{b})\)</span> với vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> nào đó, thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	W_g(\mathbf{a}) &amp; = \sum_x (-1)^{f(\mathbf{x} \oplus \mathbf{b}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\
+	&amp; = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \oplus \mathbf{b} \rangle} \\
+	&amp; = (-1)^{\langle \mathbf{a}, \mathbf{b} \rangle W_f(\mathbf{a})}
+\end{align*}\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Đặt <span class="math notranslate nohighlight">\(f \in \mathcal{F}_n\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{F}_2^n\)</span>, <span class="math notranslate nohighlight">\(g(\mathbf{x}) = f(\mathbf{x}) \oplus \langle \mathbf{b}, \mathbf{x} \rangle\)</span>. Khi đó</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	W_g(\mathbf{a}) &amp; = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{b}, \mathbf{x} \rangle \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\
+	&amp; = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{b} \oplus \mathbf{a}, \mathbf{x} \rangle} \\
+	&amp; = W_f(\mathbf{b} \oplus \mathbf{a})
+\end{align*}\end{split}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Đặt <span class="math notranslate nohighlight">\(f(\mathbf{x}) = c\)</span> là hằng số. Hàm <span class="math notranslate nohighlight">\(c \oplus \langle \mathbf{a}, \mathbf{x} \rangle\)</span> là hàm tuyến tính với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \neq \mathbf{0}\)</span>. Hệ quả là <span class="math notranslate nohighlight">\(W_f(\mathbf{a}) = 0\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> khác không, trừ khi</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}W_f(\mathbf{0}) = 2^n - 2 \mathrm{wt} (f) = \begin{cases}
+	- 2^n, &amp; \, \text{nếu} \, c = 1, \\
+	\quad 2^n, &amp; \, \text{nếu} \, c = 0.
+\end{cases}\end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>Đặt <span class="math notranslate nohighlight">\(f(\mathbf{x}) = c \oplus \langle \mathbf{b}, \mathbf{x} \rangle\)</span> là hàm affine. Khi đó, theo tính chất 4 và 5 suy ra <span class="math notranslate nohighlight">\(W_f(\mathbf{a}) = 0\)</span> với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \neq \mathbf{0}\)</span>, và <span class="math notranslate nohighlight">\(W_f(\mathbf{b}) = (-1)^c \cdot 2^n\)</span>.</p></li>
+<li><p>Đặt <span class="math notranslate nohighlight">\(f(\mathbf{x}, \mathbf{y}) = g(\mathbf{x}) \oplus h(\mathbf{y})\)</span> với <span class="math notranslate nohighlight">\(g \in \mathcal{F}_n\)</span> và <span class="math notranslate nohighlight">\(h \in \mathcal{F}_m\)</span> và hai tập hợp biến <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> không giao nhau. Nói cách khác <span class="math notranslate nohighlight">\(f\)</span> là hàm boolean <span class="math notranslate nohighlight">\(n+m\)</span> biến. Khi đó với mọi <span class="math notranslate nohighlight">\(\mathbf{a} \in \mathbb{F}_2^n\)</span> và <span class="math notranslate nohighlight">\(\mathbf{b} \in \mathbb{F}_2^n\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	W_f(\mathbf{a} \mathbf{b}) &amp; = \sum_{\mathbf{x}, \mathbf{y}} (-1)^{g(\mathbf{x}) \oplus h(\mathbf{y}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle \oplus \langle \mathbf{b}, \mathbf{y} \rangle} \\
+	&amp; = \sum_{\mathbf{x}} (-1)^{g(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \sum_{\mathbf{y}} (-1)^{h(\mathbf{y}) \oplus \langle \mathbf{b}, \mathbf{y} \rangle} \\
+	&amp; = W_g(\mathbf{a}) \cdot W_h(\mathbf{b})
+\end{align*}\end{split}\]</div>
+<ol class="arabic simple" start="8">
+<li><p>Đặt <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> <em>giả phụ thuộc</em> vào biến <span class="math notranslate nohighlight">\(x_i\)</span>. Khi đó <span class="math notranslate nohighlight">\(W_f(\mathbf{a}) = 0\)</span> với mọi vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> mà <span class="math notranslate nohighlight">\(a_i = 1\)</span>.</p></li>
+</ol>
+<p>Nói cách khác, nếu đặt <span class="math notranslate nohighlight">\(\mathbf{x}' = (x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(\mathbf{a}' = (a_1, \ldots, a_{i-1}, a_{i+1}, \ldots, a_n)\)</span> và để ý rằng <span class="math notranslate nohighlight">\(\langle \mathbf{a}, \mathbf{x} \rangle = \langle \mathbf{a}', \mathbf{x}' \rangle \oplus a_i x_i\)</span>. Khi đó nếu <span class="math notranslate nohighlight">\(a_i = 1\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+	W_f(\mathbf{a}) &amp; = \sum_\mathbf{x} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\ 
+	&amp; = \sum_{\substack{\mathbf{x}, \\ x_i = 0}} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}', \mathbf{x}' \rangle} + \sum_{\substack{\mathbf{x}, \\ x_i = 1}} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}', \mathbf{x}' \rangle \oplus 1} = 0
+\end{align*}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\bm{a} = \bm{b}\)</span></p>
+</section>
 <section id="lien-he-giua-he-so-fourier-va-he-so-walsh">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">15.3.3. </span>Liên hệ giữa hệ số Fourier và hệ số Walsh</a><a class="headerlink" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">15.3.4. </span>Liên hệ giữa hệ số Fourier và hệ số Walsh</a><a class="headerlink" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" title="Link to this heading">#</a></h2>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 15.3 </span></p>
 <section class="remark-content" id="proof-content">
@@ -744,7 +797,7 @@ document.write(`
 </section>
 </div></section>
 <section id="ham-bent">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">15.3.4. </span>Hàm Bent</a><a class="headerlink" href="#ham-bent" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">15.3.5. </span>Hàm Bent</a><a class="headerlink" href="#ham-bent" title="Link to this heading">#</a></h2>
 <p>Ta ký hiệu <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> là tập hợp tất cả các hàm boolean affine với <span class="math notranslate nohighlight">\(n\)</span> biến. Nghĩa là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}
@@ -854,8 +907,9 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-fourier">15.3.1. Biến đổi Fourier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bien-doi-walsh-hadamard">15.3.2. Biến đổi Walsh-Hadamard</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">15.3.3. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">15.3.4. Hàm Bent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tinh-chat-cua-bien-doi-walsh-hadamard">15.3.3. Tính chất của biến đổi Walsh-Hadamard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lien-he-giua-he-so-fourier-va-he-so-walsh">15.3.4. Liên hệ giữa hệ số Fourier và hệ số Walsh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-bent">15.3.5. Hàm Bent</a></li>
 </ul>
   </nav></div>
 

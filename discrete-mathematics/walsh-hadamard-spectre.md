@@ -163,6 +163,53 @@ $$\begin{equation}
 	\sum_{\mathbf{a} \in \mathbb{F}_2^n} (W_f (\mathbf{a}))^2 = 2^{2n}
 \end{equation}$$
 
+### Tính chất của biến đổi Walsh-Hadamard
+
+1. $W_f(\mathbf{0}) = 2^n - 2 \mathrm{wt} (f)$, và $W_f(\mathbf{0}) = 0$ khi và chỉ khi $f$ là hàm cân bằng.
+2. Nếu $g = \bar{f}$ thì $W_g(\mathbf{a}) = -W_f(\mathbf{a})$ với mọi $\mathbf{a} \in \mathbb{F}_2^n$.
+3. Nếu $g(\mathbf{x}) = f(\mathbf{x} \oplus \mathbf{b})$ với vector $\mathbf{b}$ nào đó, thì
+
+$$\begin{align*}
+	W_g(\mathbf{a}) & = \sum_x (-1)^{f(\mathbf{x} \oplus \mathbf{b}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\
+	& = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \oplus \mathbf{b} \rangle} \\
+	& = (-1)^{\langle \mathbf{a}, \mathbf{b} \rangle W_f(\mathbf{a})}
+\end{align*}$$
+
+4. Đặt $f \in \mathcal{F}_n$, $\mathbf{b} \in \mathbb{F}_2^n$, $g(\mathbf{x}) = f(\mathbf{x}) \oplus \langle \mathbf{b}, \mathbf{x} \rangle$. Khi đó
+
+$$\begin{align*}
+	W_g(\mathbf{a}) & = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{b}, \mathbf{x} \rangle \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\
+	& = \sum_x (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{b} \oplus \mathbf{a}, \mathbf{x} \rangle} \\
+	& = W_f(\mathbf{b} \oplus \mathbf{a})
+\end{align*}$$
+
+5. Đặt $f(\mathbf{x}) = c$ là hằng số. Hàm $c \oplus \langle \mathbf{a}, \mathbf{x} \rangle$ là hàm tuyến tính với mọi $\mathbf{a} \neq \mathbf{0}$. Hệ quả là $W_f(\mathbf{a}) = 0$ với mọi vector $\mathbf{a}$ khác không, trừ khi
+
+$$W_f(\mathbf{0}) = 2^n - 2 \mathrm{wt} (f) = \begin{cases}
+	- 2^n, & \, \text{nếu} \, c = 1, \\
+	\quad 2^n, & \, \text{nếu} \, c = 0.
+\end{cases}$$
+
+6. Đặt $f(\mathbf{x}) = c \oplus \langle \mathbf{b}, \mathbf{x} \rangle$ là hàm affine. Khi đó, theo tính chất 4 và 5 suy ra $W_f(\mathbf{a}) = 0$ với mọi $\mathbf{a} \neq \mathbf{0}$, và $W_f(\mathbf{b}) = (-1)^c \cdot 2^n$.
+7. Đặt $f(\mathbf{x}, \mathbf{y}) = g(\mathbf{x}) \oplus h(\mathbf{y})$ với $g \in \mathcal{F}_n$ và $h \in \mathcal{F}_m$ và hai tập hợp biến $\mathbf{x}$ và $\mathbf{y}$ không giao nhau. Nói cách khác $f$ là hàm boolean $n+m$ biến. Khi đó với mọi $\mathbf{a} \in \mathbb{F}_2^n$ và $\mathbf{b} \in \mathbb{F}_2^n$ thì
+
+$$\begin{align*}
+	W_f(\mathbf{a} \mathbf{b}) & = \sum_{\mathbf{x}, \mathbf{y}} (-1)^{g(\mathbf{x}) \oplus h(\mathbf{y}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle \oplus \langle \mathbf{b}, \mathbf{y} \rangle} \\
+	& = \sum_{\mathbf{x}} (-1)^{g(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \sum_{\mathbf{y}} (-1)^{h(\mathbf{y}) \oplus \langle \mathbf{b}, \mathbf{y} \rangle} \\
+	& = W_g(\mathbf{a}) \cdot W_h(\mathbf{b})
+\end{align*}$$
+
+8. Đặt $f(x_1, \ldots, x_n)$ *giả phụ thuộc* vào biến $x_i$. Khi đó $W_f(\mathbf{a}) = 0$ với mọi vector $\mathbf{a}$ mà $a_i = 1$.
+
+Nói cách khác, nếu đặt $\mathbf{x}' = (x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n)$ và $\mathbf{a}' = (a_1, \ldots, a_{i-1}, a_{i+1}, \ldots, a_n)$ và để ý rằng $\langle \mathbf{a}, \mathbf{x} \rangle = \langle \mathbf{a}', \mathbf{x}' \rangle \oplus a_i x_i$. Khi đó nếu $a_i = 1$ thì
+
+$$\begin{align*}
+	W_f(\mathbf{a}) & = \sum_\mathbf{x} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}, \mathbf{x} \rangle} \\ 
+	& = \sum_{\substack{\mathbf{x}, \\ x_i = 0}} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}', \mathbf{x}' \rangle} + \sum_{\substack{\mathbf{x}, \\ x_i = 1}} (-1)^{f(\mathbf{x}) \oplus \langle \mathbf{a}', \mathbf{x}' \rangle \oplus 1} = 0
+\end{align*}$$
+
+$\bm{a} = \bm{b}$
+
 ### Liên hệ giữa hệ số Fourier và hệ số Walsh
 
 ````{prf:remark}
