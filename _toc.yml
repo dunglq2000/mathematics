@@ -129,6 +129,7 @@ parts:
       - file: ctf/2024/TJCTF/TJCTF-2024-part-1.md
       - file: ctf/2024/TJCTF/TJCTF-2024-part-2.md
       - file: ctf/2024/TJCTF/TJCTF-2024-part-3.md
+      - file: ctf/2024/ASISCTF-2024.md
   - caption: Review sách
     chapters:
     - file: book-review/intro.md
