@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.4. Dạng DNF và CNF &#8212; Math Book</title>
+    <title>15.4. Disjunctive và Conjunctive Normal Form &#8212; Math Book</title>
   
   
   
@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=564be945" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=026e908c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -228,7 +228,7 @@
 <li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Dạng DNF và CNF</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -516,7 +516,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dạng DNF và CNF</h1>
+    <h1>Disjunctive và Conjunctive Normal Form</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -528,6 +528,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
 </ul>
             </nav>
         </div>
@@ -539,8 +540,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="dang-dnf-va-cnf">
-<h1><span class="section-number">15.4. </span>Dạng DNF và CNF<a class="headerlink" href="#dang-dnf-va-cnf" title="Link to this heading">#</a></h1>
+  <section id="disjunctive-va-conjunctive-normal-form">
+<h1><span class="section-number">15.4. </span>Disjunctive và Conjunctive Normal Form<a class="headerlink" href="#disjunctive-va-conjunctive-normal-form" title="Link to this heading">#</a></h1>
 <p>Khi xử lý các mạch logic có ba toán tử chúng ta đặc biệt quan tâm là AND, OR, NOT. Điều này khác với đại số boolean ở phần trước chỉ quan tâm phép XOR và AND - phép cộng và nhân trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span>.</p>
 <p>Ở phần này kí hiệu:</p>
 <ul class="simple">
@@ -616,7 +617,189 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[(a \land b) \lor (a \land \neg b) \lor (\neg a \land b)\]</div>
 </section>
+</div><p>Để chuyển một hàm boolean về dạng full DNF chúng ta có thể dùng bảng chân trị.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> là hàm boolean cần đưa về dạng full DNF.</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(f = 0\)</span> thì ta không xét.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f = 1\)</span>, với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span> ta xây dựng term như sau:</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\(x_i = 0\)</span> thì literal là <span class="math notranslate nohighlight">\(\neg x_i\)</span>,</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(x_i = 1\)</span> thì literal là <span class="math notranslate nohighlight">\(x_i\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 15.11 </span></p>
+<section class="example-content" id="proof-content">
+<p>Sử dụng ví dụ ở trên</p>
+<div class="math notranslate nohighlight">
+\[f(a, b, c) = (a \land \neg b \land \neg c) \lor (a \land b) \lor (b \land \neg c)\]</div>
+<p>Bảng chân trị của <span class="math notranslate nohighlight">\(f\)</span> sẽ có dạng</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(a\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(f\)</span> nhận giá trị <span class="math notranslate nohighlight">\(1\)</span> khi <span class="math notranslate nohighlight">\((a, b, c)\)</span> là các bộ <span class="math notranslate nohighlight">\((0, 1, 0)\)</span>, <span class="math notranslate nohighlight">\((1, 0, 0)\)</span>, <span class="math notranslate nohighlight">\((1, 1, 0)\)</span> và <span class="math notranslate nohighlight">\((1, 1, 1)\)</span>.</p>
+<ul class="simple">
+<li><p>đối với <span class="math notranslate nohighlight">\((0, 1, 0)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(\neg a \land b \land \neg c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \land \neg b \land \neg c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((1, 1, 0)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \land b \land \neg c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((1, 1, 1)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \land b \land c\)</span></p></li>
+</ul>
+<p>Như vậy hàm <span class="math notranslate nohighlight">\(f\)</span> có thể viết lại là</p>
+<div class="math notranslate nohighlight">
+\[f(a, b, c) = (\neg a \land b \land \neg c) \lor (a \land \neg b \land \neg c) \lor (a \land b \land \neg c) \lor (a \land b \land c)\]</div>
+</section>
 </div></section>
+<section id="tich-cua-cac-tong">
+<h2><span class="section-number">15.4.3. </span>Tích của các tổng<a class="headerlink" href="#tich-cua-cac-tong" title="Link to this heading">#</a></h2>
+<p>Nếu biểu thức boolean được biểu diễn ở dạng tích của các tổng thì ta gọi là <strong>conjunctive normal form</strong> (hay <strong>CNF</strong>).</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 15.12 </span></p>
+<section class="example-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)\)</span></p>
+</section>
+</div><p>Tương tự, mỗi tổng sẽ bao gồm các <strong>literal</strong> (hay <strong>đơn tử</strong>). Ví dụ với tổng <span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c)\)</span> thì các literal sẽ là <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\neg b\)</span> và <span class="math notranslate nohighlight">\(\neg c\)</span>.</p>
+<p>Mỗi tích sẽ được gọi là <strong>term</strong> (hay <strong>hạng tử</strong>). Trong ví dụ trên có ba term là <span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c)\)</span>, <span class="math notranslate nohighlight">\((a \lor b)\)</span> và <span class="math notranslate nohighlight">\((b \lor \neg c)\)</span>.</p>
+<p>Biểu thức boolean với <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(x_1, \ldots, x_n\)</span> ở dạng <strong>full conjunctive normal form</strong> (hay <strong>full CNF</strong>) mỗi term của nó có đủ <span class="math notranslate nohighlight">\(n\)</span> literal.</p>
+<p>Ở ví dụ trên thì các term <span class="math notranslate nohighlight">\(a \lor b\)</span> và <span class="math notranslate nohighlight">\(b \lor \neg c\)</span> chỉ có hai literal nên không phải là full DNF.</p>
+<p>Tương tự, để chuyển một hàm boolean về dạng full CNF chúng ta có thể dùng bảng chân trị nhưng làm ngược lại so với DNF.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> là hàm boolean cần đưa về dạng full CNF.</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(f = 1\)</span> thì ta không xét.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f = 0\)</span>, với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span> ta xây dựng term như sau:</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\(x_i = 0\)</span> thì literal là <span class="math notranslate nohighlight">\(x_i\)</span>,</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(x_i = 1\)</span> thì literal là <span class="math notranslate nohighlight">\(\neg x_i\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 15.13 </span></p>
+<section class="example-content" id="proof-content">
+<p>Sử dụng ví dụ ở trên</p>
+<div class="math notranslate nohighlight">
+\[f(a, b, c) = (a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)\]</div>
+<p>Bảng chân trị của <span class="math notranslate nohighlight">\(f\)</span> sẽ có dạng</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(a\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(b\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(f\)</span> nhận giá trị <span class="math notranslate nohighlight">\(0\)</span> khi <span class="math notranslate nohighlight">\((a, b, c)\)</span> là các bộ <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>, <span class="math notranslate nohighlight">\((0, 0, 1)\)</span>, <span class="math notranslate nohighlight">\((0, 1, 1)\)</span>, và <span class="math notranslate nohighlight">\((1, 0, 1)\)</span>.</p>
+<ul class="simple">
+<li><p>đối với <span class="math notranslate nohighlight">\((0, 0, 0)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \lor b \lor c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((0, 0, 1)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \lor b \lor \neg c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((0, 1, 1)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(a \lor \neg b \lor \neg c\)</span></p></li>
+<li><p>đối với <span class="math notranslate nohighlight">\((1, 0, 1)\)</span> thì term tương ứng là <span class="math notranslate nohighlight">\(\neg a \lor b \lor \neg c\)</span></p></li>
+</ul>
+<p>Như vậy hàm <span class="math notranslate nohighlight">\(f\)</span> có thể viết lại là</p>
+<div class="math notranslate nohighlight">
+\[f(a, b, c) = (a \lor b \lor c) \land (a \lor b \lor \neg c) \land (a \lor \neg b \lor \neg c) \land (\neg a \lor b \lor \neg c)\]</div>
+</section>
+</div><p>Chúng ta có thể sử dụng đoạn code sau của SageMath để tìm full CNF (các bạn có thể xem ở <a class="reference external" href="https://doc.sagemath.org/html/en/reference/logic/sage/logic/boolformula.html">đây</a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sage.logic.propcalc</span> <span class="k">as</span> <span class="nn">propcalc</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">propcalc</span><span class="o">.</span><span class="n">formula</span><span class="p">(</span><span class="s2">&quot;(a | ~b | ~c) &amp; (a | b) &amp; (b | ~c)&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">convert_cnf</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -685,6 +868,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
 </ul>
   </nav></div>
 

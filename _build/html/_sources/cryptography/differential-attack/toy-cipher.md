@@ -35,6 +35,11 @@ Quá trình mã hóa mỗi khối plaintext $4$ bit $P$ thành ciphertext $C$ c�
 
 $$P \to P \oplus K_0 \to S(P \oplus K_0) \to S(P \oplus K_0) \oplus K_1 = C$$
 
+```{figure} toycipher.jpg
+
+Sơ đồ toy cipher
+```
+
 ### Phân tích vi sai
 
 Tiếp theo chúng ta phân tích sự phân bố vi sai của S-box và biểu diễn thành bảng. Trong bảng này, phần tử ở hàng $i$ và cột $j$ thể hiện số lượng cặp $(\bm{a}, \bm{b}) \in \mathbb{F}_2^4 \times \mathbb{F}_2^4$ sao cho $\bm{a} \oplus \bm{b} = i$ và $S(\bm{a} \oplus \bm{b}) = j$.

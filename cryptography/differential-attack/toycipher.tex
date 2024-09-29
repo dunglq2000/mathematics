@@ -1,0 +1,31 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsfonts, amsmath}
+\usepackage{tikz}
+
+%% Public TikZ libraries
+\usetikzlibrary{positioning}
+
+%% Custom TikZ addons
+\usetikzlibrary{crypto.symbols}
+\tikzset{shadows=no}        % Option: add shadows to XOR, ADD, etc.
+
+\newcommand{\SBox}{\mathsf{SBox}}
+\begin{document}
+\begin{tikzpicture}
+    \node [rectangle, draw, minimum width=1.5cm] (P) {$P$};
+    \node [XOR, right=1.5cm of P] (xor1) {};
+    \node [rectangle, draw, minimum width=1.5cm, above=1cm of xor1] (K0) {$K_0$};
+    \node [rectangle, draw, minimum width=1.5cm, right=1.5cm of xor1] (SBox) {$\SBox$};
+    \node [XOR, right=1.5cm of SBox] (xor2) {};
+    \node [rectangle, draw, minimum width=1.5cm, above=1cm of xor2] (K1) {$K_1$};
+    \node [rectangle, draw, minimum width=1.5cm, right=1.5cm of xor2] (C) {$C$};
+
+    \draw [->] (P.east) -- (xor1.west);
+    \draw [->] (K0.south) -- (xor1.north);
+    \draw [->] (xor1.east) -- (SBox.west);
+    \draw [->] (SBox.east) -- (xor2.west);
+    \draw [->] (K1.south) -- (xor2.north);
+    \draw [->] (xor2.east) -- (C.west);
+\end{tikzpicture}
+\end{document}
