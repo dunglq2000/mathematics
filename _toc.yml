@@ -49,6 +49,7 @@ parts:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/weight-boolean.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
+      - file: discrete-mathematics/boolean-dnf-cnf.md
   - caption: Hình học
     numbered: true
     chapters:

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15. Đại số boolean &#8212; Math Book</title>
+    <title>15.4. Dạng DNF và CNF &#8212; Math Book</title>
   
   
   
@@ -61,11 +61,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean-dnf-cnf';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.1. Hàm boolean" href="boolean-function.html" />
-    <link rel="prev" title="14. Đại cương tổ hợp" href="combinatoric.html" />
+    <link rel="next" title="16. Hình học giải tích (theo góc nhìn không giải tích)" href="../geometry/analytic-geometry.html" />
+    <link rel="prev" title="15.3. Nonlinearlity của hàm boolean" href="walsh-hadamard-spectre.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -224,11 +224,11 @@
 <li class="toctree-l1"><a class="reference internal" href="binary-relation.html">12. Quan hệ hai ngôi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="partition.html">13. Phân hoạch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">15.4. Dạng DNF và CNF</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Dạng DNF và CNF</a></li>
 </ul>
 </details></li>
 </ul>
@@ -402,7 +402,7 @@
       
       
       
-      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/boolean.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/boolean-dnf-cnf.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,7 +432,7 @@
       
       
       
-      <li><a href="../_sources/discrete-mathematics/boolean.md" target="_blank"
+      <li><a href="../_sources/discrete-mathematics/boolean-dnf-cnf.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -503,7 +503,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -514,11 +516,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Đại số boolean</h1>
+    <h1>Dạng DNF và CNF</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -528,18 +539,84 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dai-so-boolean">
-<h1><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">15. </span>Đại số boolean</a><a class="headerlink" href="#dai-so-boolean" title="Link to this heading">#</a></h1>
-<nav class="contents" id="contents">
-<p class="topic-title">Contents</p>
+  <section id="dang-dnf-va-cnf">
+<h1><span class="section-number">15.4. </span>Dạng DNF và CNF<a class="headerlink" href="#dang-dnf-va-cnf" title="Link to this heading">#</a></h1>
+<p>Khi xử lý các mạch logic có ba toán tử chúng ta đặc biệt quan tâm là AND, OR, NOT. Điều này khác với đại số boolean ở phần trước chỉ quan tâm phép XOR và AND - phép cộng và nhân trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span>.</p>
+<p>Ở phần này kí hiệu:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#dai-so-boolean" id="id3">Đại số boolean</a></p></li>
+<li><p>NOT của biến <span class="math notranslate nohighlight">\(a\)</span> là <span class="math notranslate nohighlight">\(\neg a\)</span>.</p></li>
+<li><p>AND của hai biến <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> là <span class="math notranslate nohighlight">\(a \land b\)</span>. Chúng ta cũng có thể kí hiệu là <span class="math notranslate nohighlight">\(a \cdot b\)</span> hoặc <span class="math notranslate nohighlight">\(ab\)</span> như đại số boolean ở phần trước.</p></li>
+<li><p>OR của hai biến <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> là <span class="math notranslate nohighlight">\(a \lor b\)</span>. Chúng ta <strong>KHÔNG</strong> dùng kí hiệu <span class="math notranslate nohighlight">\(a + b\)</span> ở đây vì phép cộng đã được dùng ở phần ANF.</p></li>
 </ul>
-</nav>
-<p>Boolean (hay luận lý) chỉ giá trị đúng hoặc sai của mệnh đề nào đó.</p>
-<p>Theo cách hiểu cơ bản, boolean gồm hai giá trị 0 hoặc 1 (sai hoặc đúng). Chương này tham khảo chính từ <span id="id1">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">6</a>]</span> và <span id="id2">[<a class="reference internal" href="../intro.html#id4" title="Н. Н. Токарева. Нелинейные булевы функции. LAP LAMBERT Academic Publishing, 2011. ISBN 978-3-8433-0904-2.">7</a>]</span>.</p>
-<div class="toctree-wrapper compound">
-</div>
+<p>Phép AND và OR có tính giao hoán, kết hợp.</p>
+<section id="mot-so-luat-logic">
+<h2><span class="section-number">15.4.1. </span>Một số luật logic<a class="headerlink" href="#mot-so-luat-logic" title="Link to this heading">#</a></h2>
+<p>Sau đây là một số “hằng đẳng thức đáng nhớ trong logic:</p>
+<ol class="arabic simple">
+<li><p>Luật bù:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a \lor \neg a = 1\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(a \land \neg a = 0\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật hấp thụ:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \lor (x \land y) = x\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \land (x \lor y) = x\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật đồng nhất:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \lor 0 = x\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \land 1 = x\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật giao hoán:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \lor y = y \lor x\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \land y = y \land x\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật kết hợp:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \lor (y \lor z) = (x \lor y) \lor z\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \land (y \land z) = (x \land y) \land z\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật phân phối:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \lor (y \land z) = (x \lor y) \land (x \lor z)\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \land (y \lor z) = (x \land y) \lor (x \land z)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Luật De Morgan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\neg (x \land y) = \neg x \lor \neg y\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\neg (x \lor y) = \neg x \land \neg y\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="tong-cua-tich">
+<h2><span class="section-number">15.4.2. </span>Tổng của tích<a class="headerlink" href="#tong-cua-tich" title="Link to this heading">#</a></h2>
+<p>Nếu biểu thức boolean được biểu diễn ở dạng tổng của các tích thì ta gọi là <strong>disjunctive normal form</strong> (hay <strong>DNF</strong>).</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 15.9 </span></p>
+<section class="example-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\((a \land \neg b \land \neg c) \lor (a \land b) \lor (b \land \neg c)\)</span></p>
+</section>
+</div><p>Ở đây, mỗi tích sẽ bao gồm các <strong>literal</strong> (hay <strong>đơn tử</strong>). Ví dụ với tích <span class="math notranslate nohighlight">\((a \land \neg b \land \neg c)\)</span> thì các literal sẽ là <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\neg b\)</span> và <span class="math notranslate nohighlight">\(\neg c\)</span>.</p>
+<p>Mỗi tích sẽ được gọi là <strong>term</strong> (hay <strong>hạng tử</strong>). Trong ví dụ trên có ba term là <span class="math notranslate nohighlight">\((a \land \neg b \land \neg c)\)</span>, <span class="math notranslate nohighlight">\((a \land b)\)</span> và <span class="math notranslate nohighlight">\((b \land \neg c)\)</span>.</p>
+<p>Biểu thức boolean với <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(x_1, \ldots, x_n\)</span> ở dạng <strong>full disjunctive normal form</strong> (hay <strong>full DNF</strong>) mỗi term của nó có đủ <span class="math notranslate nohighlight">\(n\)</span> literal.</p>
+<p>Ở ví dụ trên thì các term <span class="math notranslate nohighlight">\(a \land b\)</span> và <span class="math notranslate nohighlight">\(b \land \neg c\)</span> chỉ có hai literal nên không phải là full DNF.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 15.10 </span></p>
+<section class="example-content" id="proof-content">
+<p>Ví dụ về full DNF:</p>
+<div class="math notranslate nohighlight">
+\[(a \land b) \lor (a \land \neg b) \lor (\neg a \land b)\]</div>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -573,20 +650,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="combinatoric.html"
+       href="walsh-hadamard-spectre.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Đại cương tổ hợp</p>
+        <p class="prev-next-title"><span class="section-number">15.3. </span>Nonlinearlity của hàm boolean</p>
       </div>
     </a>
     <a class="right-next"
-       href="boolean-function.html"
+       href="../geometry/analytic-geometry.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.1. </span>Hàm boolean</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Hình học giải tích (theo góc nhìn không giải tích)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -596,6 +673,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
