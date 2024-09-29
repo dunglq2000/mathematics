@@ -35,7 +35,7 @@ Biến đổi $T$ gồm hai phần là hoán vị (không tuyến tính) $\tau$ 
 
 Hoán vị không tuyến tính có dạng
 
-$$\tau(X) = \tau(a_0, a_1, a_2, a_3) = (\text{Sbox}(a_0), \text{Sbox}(a_1), \text{Sbox}(a_2), \text{Sbox}(a_3)),$$
+$$\tau(X) = \tau(a_0, a_1, a_2, a_3) = (\mathsf{SBox}(a_0), \mathsf{SBox}(a_1), \mathsf{SBox}(a_2), \mathsf{SBox}(a_3)),$$
 
 với $a_i$ là các byte của $X$. Nghĩa là $X$ có $32$ bit sẽ được chia thành bốn khối độ dài $8$ bit là $a_0$, $a_1$, $a_2$ và $a_3$.
 
@@ -43,9 +43,9 @@ Bảng S-box có thể xem ở một trong hai tài liệu trên.
 
 Hoán vị tuyến tính có dạng
 
-$$L(X) = X \oplus (X \ll 2) \oplus (X \ll 10) \oplus (X \ll 18) \oplus (X \ll 24),$$
+$$L(X) = X \oplus (X \lll 2) \oplus (X \lll 10) \oplus (X \lll 18) \oplus (X \lll 24),$$
 
-trong đó $\ll$ là phép dịch bit sang trái.
+trong đó $\lll$ là phép dịch vòng bit sang trái.
 
 ### Thuật toán sinh khóa con
 
@@ -66,7 +66,7 @@ FK_2 = (\mathtt{677d9197}), FK_3 = (\mathtt{b27022dc}).
 
 Hàm $T'$ khác với hàm $T$ ở trên, thay vì dùng $L$ thì dùng $L'$ có dạng
 
-$$L'(X) = X \oplus (X \ll 13) \oplus (X \ll 23).$$
+$$L'(X) = X \oplus (X \lll 13) \oplus (X \lll 23).$$
 
 $CK$ cũng là một mảng cố định. $CK_i$ với $i = 0, 1, \ldots, 31$ là bảng sau
 
