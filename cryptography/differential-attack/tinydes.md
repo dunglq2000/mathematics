@@ -30,7 +30,7 @@ Chúng ta cần các động tác sau:
 
 Như vậy, hàm $F$ của mô hình Feistel đối với mã TinyDES là:
 
-$$F(R_i, K_i) = \text{PBox}(\text{SBox}(\text{Expand}(R_i) \oplus K_{i+1}))$$
+$$F(R_i, K_i) = \mathsf{PBox}(\mathsf{SBox}(\mathsf{Expand}(R_i) \oplus K_{i+1}))$$
 
 Để sinh khóa con cho 3 vòng, khóa ban đầu được chia thành hai nửa trái phải lần lượt là $KL_0$ và $KR_0$. TinyDES thực hiện như sau:
 
@@ -134,17 +134,17 @@ $$\begin{equation*}
     \end{pmatrix}
 \end{equation*}$$
 
-Do đó nếu đặt $Y_1 = \text{PBox}(X_1)$ và $Y_2 = \text{PBox} (X_2)$ thì
+Do đó nếu đặt $Y_1 = \mathsf{PBox}(X_1)$ và $Y_2 = \mathsf{PBox} (X_2)$ thì
 
-$$Y_1 \oplus Y_2 = \text{PBox}(X_1) \oplus \text{PBox}(X_2) = \text{PBox} (X_1 \oplus X_2)$$
+$$Y_1 \oplus Y_2 = \mathsf{PBox}(X_1) \oplus \mathsf{PBox}(X_2) = \mathsf{PBox} (X_1 \oplus X_2)$$
 
 Như vậy nếu vi sai input là cố định thì vi sai output cũng cố định do tính tuyến tính.
 
 #### Phép Expand
 
-Tương tự, phép Expand cũng là biến đổi tuyến tính và nếu đặt $Y_1 = \text{Expand}(X_1)$ và $Y_2 = \text{Expand}(X_2)$ thì
+Tương tự, phép Expand cũng là biến đổi tuyến tính và nếu đặt $Y_1 = \mathsf{Expand}(X_1)$ và $Y_2 = \mathsf{Expand}(X_2)$ thì
 
-$$Y_1 \oplus Y_2 = \text{Expand}(X_1) \oplus \text{Expand}(X_2) = \text{Expand}(X_1 \oplus X_2)$$
+$$Y_1 \oplus Y_2 = \mathsf{Expand}(X_1) \oplus \mathsf{Expand}(X_2) = \mathsf{Expand}(X_1 \oplus X_2)$$
 
 Cũng tương tự, nếu vi sai input là cố định thì vi sai output cũng cố định.
 
@@ -152,7 +152,7 @@ Cũng tương tự, nếu vi sai input là cố định thì vi sai output cũng
 
 Phép SBox là một biến đổi không tuyến tính với input 6 bit và output 4 bit.
 
-Đặt $Y_1 = \text{SBox}(X_1)$ và $Y_2 = \text{SBox}(X_2)$.
+Đặt $Y_1 = \mathsf{SBox}(X_1)$ và $Y_2 = \mathsf{SBox}(X_2)$.
 
 Với mỗi $X = X_1 \oplus X_2$ cố định thì cứ một giá trị $X_1$ sẽ có duy nhất một giá trị $X_2$ cho ra vi sai $X$. Tuy nhiên vi sai output $Y_1 \oplus Y_2$ phân bố không đều nhau.
 
@@ -216,7 +216,7 @@ Xét hai hàng 16 và 52, ta thấy rằng:
 
 Như vậy, phép XOR key, phép PBox và phép Expand cho xác suất đều nhau với các cặp vi sai $(X, Y)$. Trong khi đó thì SBox lại cho xác suất các cặp vi sai $(X, Y)$ không đều nhau.
 
-Đặt $Y_1 = F(X_1)$ và $Y_2 = F(X_2)$. Đi từ trong ra ngoài ($\text{Expand}$, tới $\text{SBox}$, tới $\text{PBox}$ và cuối cùng là $F$) ta thấy rằng:
+Đặt $Y_1 = F(X_1)$ và $Y_2 = F(X_2)$. Đi từ trong ra ngoài ($\mathsf{Expand}$, tới $\mathsf{SBox}$, tới $\mathsf{PBox}$ và cuối cùng là $F$) ta thấy rằng:
 
 - Vi sai input của hàm $F$ chính là vi sai input của Expand.
 - Vi sai output của Expand là vi sai input của SBox (không phụ thuộc vào khóa).
@@ -229,7 +229,7 @@ Ta có thể đưa ra nhận xét về xác suất vi sai output $Y = Y_1 \oplus
 2. Nếu vi sai input của $F$ là 1 $\Rightarrow$ vi sai output của Expand là 16 $\Rightarrow$ **vi sai output của SBox là $7$ với xác suất $14/64$** $\Rightarrow$ vi sai output của PBox là 11 với xác suất là $14/64$ $\Rightarrow$ hàm $F$ là 11 với xác suất $14/64=7/32$.
 3. Nếu vi sai input của $F$ là 3 $\Rightarrow$ vi sai output của Expand là 52 $\Rightarrow$ **vi sai output của SBox là $2$ với xác suất $16/64$** $\Rightarrow$ vi sai output của PBox là 8 với xác suất $16/64$ $\Rightarrow$ hàm $F$ là 8 với xác suất $16/64 = 1/4$.
 
-Nói chung, chúng ta chọn output của $\text{Expand}$ (input cho $\text{SBox}$) giống với xác suất cao nhất với phân tích $\text{SBox}$ ở trên kia.
+Nói chung, chúng ta chọn output của $\mathsf{Expand}$ (input cho $\mathsf{SBox}$) giống với xác suất cao nhất với phân tích $\mathsf{SBox}$ ở trên kia.
 
 ### Chosen plaintext
 
@@ -338,7 +338,7 @@ Như vậy, đối với TinyDES chúng ta phá mã vi sai như sau:
 
 Sau khi đã tìm được một số lượng cặp plaintext, ciphertext thỏa vi sai trên, nhớ lại hàm $F$ ở vòng 3, do $L_3 = R_2$ và $R_3 = L_2 \oplus F(R_2, K_3) = L_2 \oplus F(L_3, K_3) = F(L_3, K_3)$ (ta chọn $L_2 = 0$ ở trên), dễ thấy rằng chúng ta có thể tìm được các $K_3$ thỏa mãn hàm $F$ ở vòng 3.
 
-Để làm điều đó thì ta tính $O = \text{Expand}(L_3)$, và do $\text{SBox}(O \oplus K_3) = \text{PBox}^{-1}(R_3)$ cũng tính được nên có thể tìm các giá trị $O \oplus K_3$ mà khi đi qua $\text{SBox}$ cho kết quả bằng $\text{PBox}^{-1}(R_3)$. Sau đó XOR lại cho $O$ thì sẽ tìm được các giá trị có thể của $K_3$. Lưu ý rằng $\text{SBox}$ làm giảm 6 bit còn 4 bit nên sẽ có nhiều giá trị khác nhau cho cùng giá trị $\text{SBox}$.
+Để làm điều đó thì ta tính $O = \mathsf{Expand}(L_3)$, và do $\mathsf{SBox}(O \oplus K_3) = \mathsf{PBox}^{-1}(R_3)$ cũng tính được nên có thể tìm các giá trị $O \oplus K_3$ mà khi đi qua $\mathsf{SBox}$ cho kết quả bằng $\mathsf{PBox}^{-1}(R_3)$. Sau đó XOR lại cho $O$ thì sẽ tìm được các giá trị có thể của $K_3$. Lưu ý rằng $\mathsf{SBox}$ làm giảm 6 bit còn 4 bit nên sẽ có nhiều giá trị khác nhau cho cùng giá trị $\mathsf{SBox}$.
 
 Thực hiện trên hai trường hợp vi sai input-output là $(0x83, 0x38)$ và $(0xB1, 0x1B)$ ta có tập các giá trị có thể xảy ra của $K_3$.
 
