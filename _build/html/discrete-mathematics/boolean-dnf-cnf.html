@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -529,6 +529,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.4.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.4.4.1. Trường hợp ba biến</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -800,6 +804,141 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">
+<h2><span class="section-number">15.4.4. </span>Phương pháp bìa Karnaugh tìm biểu thức tối tiểu<a class="headerlink" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu" title="Link to this heading">#</a></h2>
+<p>Chúng ta đã thấy rằng từ một biểu thức DNF hoặc CNF thì tìm được biểu thức full DNF hoặc full CNF.</p>
+<p>Tuy nhiên trong thực tế chúng ta quan tâm đến biểu thức ít term, và mỗi term có ít literal nhất có thể. Do đó chúng ta cần một phương án rút gọn biểu thức boolean.</p>
+<p>Đối với hàm ba hoặc bốn biến chúng ta có thể sử dụng <strong>bìa Karnaugh</strong> (hay <strong>Karnaugh map</strong>, <strong>карта Карно</strong>).</p>
+<p>Ở phần sau mình sẽ trình bày cách tìm tất cả biểu thức tối tiểu đối với DNF. Đối với CNF làm ngược lại.</p>
+<section id="truong-hop-ba-bien">
+<h3><span class="section-number">15.4.4.1. </span>Trường hợp ba biến<a class="headerlink" href="#truong-hop-ba-bien" title="Link to this heading">#</a></h3>
+<p>Giả sử ta có biểu thức boolean <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3)\)</span>.</p>
+<p>Ta viết bảng gồm <span class="math notranslate nohighlight">\(2\)</span> hàng (ứng với <span class="math notranslate nohighlight">\(2\)</span> giá trị của <span class="math notranslate nohighlight">\(x_1\)</span> là <span class="math notranslate nohighlight">\(\{0 ,1 \}\)</span>) và <span class="math notranslate nohighlight">\(4\)</span> cột (ứng với <span class="math notranslate nohighlight">\(4\)</span> giá trị <span class="math notranslate nohighlight">\(x_2 x_3\)</span> là <span class="math notranslate nohighlight">\(\{ 00, 01, 10, 11 \}\)</span>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Hai ô kề nhau khác nhau đúng <strong>MỘT</strong> bit.</p>
+</div>
+<figure class="align-default" id="kn-map">
+<img alt="../_images/karnaugh-1.jpg" src="../_images/karnaugh-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15.4 </span><span class="caption-text">Bìa Karnaugh</span><a class="headerlink" href="#kn-map" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Ở <a class="reference internal" href="#kn-map"><span class="std std-numref">Fig. 15.4</span></a>, <span class="math notranslate nohighlight">\(x_2 x_3\)</span> được viết theo thứ tự <span class="math notranslate nohighlight">\(00\)</span>, <span class="math notranslate nohighlight">\(01\)</span>, <span class="math notranslate nohighlight">\(11\)</span> rồi mới tới <span class="math notranslate nohighlight">\(10\)</span>. Điều này đảm bảo với lưu ý ở trên là hai ô kề nhau khác nhau đúng một bit.</p>
+<p>Tiếp theo, ta điền giá trị của hàm <span class="math notranslate nohighlight">\(f\)</span> vào bảng. Ở đây, ô ở hàng <span class="math notranslate nohighlight">\(x_1\)</span> và ở cột <span class="math notranslate nohighlight">\(x_2 x_3\)</span> sẽ là giá trị <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3)\)</span>.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/karnaugh-2.jpg" src="../_images/karnaugh-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15.5 </span><span class="caption-text">Điền giá trị vào bìa Karnaugh</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Lấy ví dụ DNF ở trên với bảng chân trị tương ứng:</p>
+<div class="math notranslate nohighlight">
+\[f(x_1, x_2, x_3) = (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land x_2) \lor (x_2 \land \neg x_3)\]</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Khi đó bìa Karnaugh sẽ là</p>
+<figure class="align-default">
+<img alt="../_images/karnaugh-dnf-1.jpg" src="../_images/karnaugh-dnf-1.jpg" />
+</figure>
+<p>Tiếp theo chúng ta xác định các tế bào, là các term với số lượng literal nhỏ nhất có thể.</p>
+<p>Đối với dạng DNF, chúng ta quan tâm các ô có giá trị <span class="math notranslate nohighlight">\(1\)</span>. Ta gom các ô có giá trị <span class="math notranslate nohighlight">\(1\)</span> kề nhau tạo thành hình chữ nhật có <span class="math notranslate nohighlight">\(2^i\)</span> ô với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots\)</span>.</p>
+<p>Ở hình trên có ba tế bào (theo thứ tự <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> và <span class="math notranslate nohighlight">\(x_3\)</span>) (xem <a class="reference internal" href="#kn-dnf"><span class="std std-numref">Fig. 15.6</span></a>):</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(001\)</span> và <span class="math notranslate nohighlight">\(011\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(011\)</span> và <span class="math notranslate nohighlight">\(010\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(011\)</span> và <span class="math notranslate nohighlight">\(111\)</span></p></li>
+</ul>
+<figure class="align-default" id="kn-dnf">
+<img alt="../_images/karnaugh-dnf-1.jpg" src="../_images/karnaugh-dnf-1.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15.6 </span><span class="caption-text">Các tế bào của biểu thức <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#kn-dnf" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Mỗi tế bào sẽ tương ứng với term ở các vị trí giống nhau. Nói cách khác:</p>
+<ul class="simple">
+<li><p>tế bào màu đỏ <span class="math notranslate nohighlight">\(001\)</span> và <span class="math notranslate nohighlight">\(011\)</span> giống nhau ở bit đầu và bit thứ ba, tương ứng <span class="math notranslate nohighlight">\(x_1\)</span> và <span class="math notranslate nohighlight">\(x_3\)</span> nên term là <span class="math notranslate nohighlight">\(\neg x_1 \land x_3\)</span>. Ta đặt <span class="math notranslate nohighlight">\(T_1 = \neg x_1 \land x_3\)</span>.</p></li>
+<li><p>tế bào màu xanh lá <span class="math notranslate nohighlight">\(011\)</span> và <span class="math notranslate nohighlight">\(010\)</span> giống nhau ở bit đầu và bit thứ hai, tương ứng <span class="math notranslate nohighlight">\(x_1\)</span> và <span class="math notranslate nohighlight">\(x_2\)</span> nên term là <span class="math notranslate nohighlight">\(\neg x_1 \land x_2\)</span>. Ta đặt <span class="math notranslate nohighlight">\(T_2 = \neg x_1 \land x_2\)</span>.</p></li>
+<li><p>tế bào màu vàng <span class="math notranslate nohighlight">\(011\)</span> và <span class="math notranslate nohighlight">\(111\)</span> giống nhau ở bit thứ hai và thứ ba, tương ứng <span class="math notranslate nohighlight">\(x_2\)</span> và <span class="math notranslate nohighlight">\(x_3\)</span> nên term là <span class="math notranslate nohighlight">\(x_2 \land x_3\)</span>. Ta đặt <span class="math notranslate nohighlight">\(T_3 = x_2 \land x_3\)</span>.</p></li>
+</ul>
+<p>Luôn nhớ rằng trong DNF thì giá trị <span class="math notranslate nohighlight">\(1\)</span> ta giữ nguyên (ví dụ <span class="math notranslate nohighlight">\(x_3\)</span>) còn giá trị <span class="math notranslate nohighlight">\(0\)</span> thì ta đảo (ví dụ <span class="math notranslate nohighlight">\(\neg x_1\)</span>).</p>
+<p>Tiếp theo, ta xét các tế bào có số ô nhiều nhất trước. Ở đây cả ba tế bào đều có hai ô nên tương đương nhau.</p>
+<ol class="arabic simple">
+<li><p>Chọn tế bào <span class="math notranslate nohighlight">\(T_1\)</span>. Ta gạch bỏ tất cả ô của tế bào <span class="math notranslate nohighlight">\(T_1\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="id2">
+<img alt="../_images/karnaugh-dnf-2.jpg" src="../_images/karnaugh-dnf-2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15.7 </span><span class="caption-text">Bìa Karnaugh sau khi gạch bỏ <span class="math notranslate nohighlight">\(T_1\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Trong các tế bào còn lại, ta chọn tế bào chưa bị gạch hết và có số ô cao nhất. Ở đây chúng ta có hai phương án:</p>
+<ul class="simple">
+<li><p>Chọn <span class="math notranslate nohighlight">\(T_2\)</span>, ta gạch bỏ <span class="math notranslate nohighlight">\(T_2\)</span>. Tiếp tục quá trình với <span class="math notranslate nohighlight">\(T_3\)</span>, ta gạch bỏ <span class="math notranslate nohighlight">\(T_3\)</span>. Khi đó công thức tối tiểu là <span class="math notranslate nohighlight">\(T_1 \to T_2 \to T_3\)</span>.</p></li>
+<li><p>Chọn <span class="math notranslate nohighlight">\(T_3\)</span>, ta gạch bỏ <span class="math notranslate nohighlight">\(T_3\)</span>. Tiếp tục quá trình với <span class="math notranslate nohighlight">\(T_2\)</span>, ta gạch bỏ <span class="math notranslate nohighlight">\(T_2\)</span>. Khi đó công thức tối tiểu là <span class="math notranslate nohighlight">\(T_1 \to T_3 \to T_2\)</span>.</p></li>
+</ul>
+</li>
+</ol>
+<p>Như vậy ta có hai công thức tối tiểu là <span class="math notranslate nohighlight">\(T_1 \to T_2 \to T_3\)</span> và <span class="math notranslate nohighlight">\(T_1 \to T_3 \to T_2\)</span>, nghĩa là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    f(x_1, x_2, x_3) &amp; = (\neg x_1 \land x_3) \lor (\neg x_1 \land x_2) \lor (x_2 \land x_3) \\
+    &amp; = (\neg x_1 \land x_3) \lor (x_2 \land x_3) \lor (\neg x_1 \land x_2)
+\end{align*}\end{split}\]</div>
+<p>Hai công thức hóa ra … giống nhau. Đó là do biểu thức ban đầu chứ không phải tất cả trường hợp đều như vậy.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -869,6 +1008,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.4.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.4.4.1. Trường hợp ba biến</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -160,3 +160,105 @@ s = propcalc.formula("(a | ~b | ~c) & (a | b) & (b | ~c)")
 s.convert_cnf()
 print(s)
 ```
+
+### Phương pháp bìa Karnaugh tìm biểu thức tối tiểu
+
+Chúng ta đã thấy rằng từ một biểu thức DNF hoặc CNF thì tìm được biểu thức full DNF hoặc full CNF.
+
+Tuy nhiên trong thực tế chúng ta quan tâm đến biểu thức ít term, và mỗi term có ít literal nhất có thể. Do đó chúng ta cần một phương án rút gọn biểu thức boolean.
+
+Đối với hàm ba hoặc bốn biến chúng ta có thể sử dụng **bìa Karnaugh** (hay **Karnaugh map**, **карта Карно**).
+
+Ở phần sau mình sẽ trình bày cách tìm tất cả biểu thức tối tiểu đối với DNF. Đối với CNF làm ngược lại.
+
+#### Trường hợp ba biến
+
+Giả sử ta có biểu thức boolean $f(x_1, x_2, x_3)$.
+
+Ta viết bảng gồm $2$ hàng (ứng với $2$ giá trị của $x_1$ là $\{0 ,1 \}$) và $4$ cột (ứng với $4$ giá trị $x_2 x_3$ là $\{ 00, 01, 10, 11 \}$).
+
+```{important}
+Hai ô kề nhau khác nhau đúng **MỘT** bit.
+```
+
+```{figure} karnaugh-1.jpg
+:name: kn-map
+
+Bìa Karnaugh
+```
+
+Ở {numref}`kn-map`, $x_2 x_3$ được viết theo thứ tự $00$, $01$, $11$ rồi mới tới $10$. Điều này đảm bảo với lưu ý ở trên là hai ô kề nhau khác nhau đúng một bit.
+
+Tiếp theo, ta điền giá trị của hàm $f$ vào bảng. Ở đây, ô ở hàng $x_1$ và ở cột $x_2 x_3$ sẽ là giá trị $f(x_1, x_2, x_3)$.
+
+```{figure} karnaugh-2.jpg
+
+Điền giá trị vào bìa Karnaugh
+```
+
+Lấy ví dụ DNF ở trên với bảng chân trị tương ứng:
+
+$$f(x_1, x_2, x_3) = (x_1 \land \neg x_2 \land \neg x_3) \lor (x_1 \land x_2) \lor (x_2 \land \neg x_3)$$
+
+| $x_1$ | $x_2$ | $x_3$ | $f$ |
+| --- | --- | --- | --- |
+| 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 |
+| 1 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 1 |
+
+Khi đó bìa Karnaugh sẽ là
+
+```{figure} karnaugh-dnf-1.jpg
+```
+
+Tiếp theo chúng ta xác định các tế bào, là các term với số lượng literal nhỏ nhất có thể.
+
+Đối với dạng DNF, chúng ta quan tâm các ô có giá trị $1$. Ta gom các ô có giá trị $1$ kề nhau tạo thành hình chữ nhật có $2^i$ ô với $i = 0, 1, \ldots$.
+
+Ở hình trên có ba tế bào (theo thứ tự $x_1$, $x_2$ và $x_3$) (xem {numref}`kn-dnf`):
+
+- $001$ và $011$
+- $011$ và $010$
+- $011$ và $111$
+
+```{figure} karnaugh-dnf-1.jpg
+:name: kn-dnf
+
+Các tế bào của biểu thức $f$
+```
+
+Mỗi tế bào sẽ tương ứng với term ở các vị trí giống nhau. Nói cách khác:
+
+- tế bào màu đỏ $001$ và $011$ giống nhau ở bit đầu và bit thứ ba, tương ứng $x_1$ và $x_3$ nên term là $\neg x_1 \land x_3$. Ta đặt $T_1 = \neg x_1 \land x_3$.
+- tế bào màu xanh lá $011$ và $010$ giống nhau ở bit đầu và bit thứ hai, tương ứng $x_1$ và $x_2$ nên term là $\neg x_1 \land x_2$. Ta đặt $T_2 = \neg x_1 \land x_2$.
+- tế bào màu vàng $011$ và $111$ giống nhau ở bit thứ hai và thứ ba, tương ứng $x_2$ và $x_3$ nên term là $x_2 \land x_3$. Ta đặt $T_3 = x_2 \land x_3$.
+
+Luôn nhớ rằng trong DNF thì giá trị $1$ ta giữ nguyên (ví dụ $x_3$) còn giá trị $0$ thì ta đảo (ví dụ $\neg x_1$).
+
+Tiếp theo, ta xét các tế bào có số ô nhiều nhất trước. Ở đây cả ba tế bào đều có hai ô nên tương đương nhau.
+
+1. Chọn tế bào $T_1$. Ta gạch bỏ tất cả ô của tế bào $T_1$.
+
+```{figure} karnaugh-dnf-2.jpg
+
+Bìa Karnaugh sau khi gạch bỏ $T_1$
+```
+
+2. Trong các tế bào còn lại, ta chọn tế bào chưa bị gạch hết và có số ô cao nhất. Ở đây chúng ta có hai phương án:
+
+    - Chọn $T_2$, ta gạch bỏ $T_2$. Tiếp tục quá trình với $T_3$, ta gạch bỏ $T_3$. Khi đó công thức tối tiểu là $T_1 \to T_2 \to T_3$.
+    - Chọn $T_3$, ta gạch bỏ $T_3$. Tiếp tục quá trình với $T_2$, ta gạch bỏ $T_2$. Khi đó công thức tối tiểu là $T_1 \to T_3 \to T_2$.
+
+Như vậy ta có hai công thức tối tiểu là $T_1 \to T_2 \to T_3$ và $T_1 \to T_3 \to T_2$, nghĩa là:
+
+$$\begin{align*}
+    f(x_1, x_2, x_3) & = (\neg x_1 \land x_3) \lor (\neg x_1 \land x_2) \lor (x_2 \land x_3) \\
+    & = (\neg x_1 \land x_3) \lor (x_2 \land x_3) \lor (\neg x_1 \land x_2)
+\end{align*}$$
+
+Hai công thức hóa ra ... giống nhau. Đó là do biểu thức ban đầu chứ không phải tất cả trường hợp đều như vậy.

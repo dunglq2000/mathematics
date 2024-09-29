@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{karnaugh-map}
+\usepackage{cancel}
+
+\begin{document}
+\begin{karnaugh-map}[4][2][1][$x_3$][$x_2$][$x_1$]
+    \minterms{2, 7}
+    \terms{1}{$\cancel{1}$}
+    \terms{3}{$\cancel{1}$}
+    \implicant{1}{3}
+    \implicant{3}{2}
+    \implicant{3}{7}
+\end{karnaugh-map}
+\end{document}
