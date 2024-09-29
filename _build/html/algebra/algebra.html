@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -800,7 +800,9 @@ document.write(`
 <section class="example-content" id="proof-content">
 <p>Khảo sát sự biến thiên của hàm số <span class="math notranslate nohighlight">\(f(x) = x^2 + 3\)</span>.</p>
 <p>Để khảo sát sự biến thiên, một cách làm đơn giản theo định nghĩa là ta xét <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span> và so sánh <span class="math notranslate nohighlight">\(f(x_1)\)</span> với <span class="math notranslate nohighlight">\(f(x_2)\)</span>.</p>
-<p>Ta có <span class="math notranslate nohighlight">\(f(x_1) - f(x_2) = x_1^2 + 3 - x_2^2 - 3 = (x_1 - x_2)(x_1 + x_2)\)</span></p>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[f(x_1) - f(x_2) = x_1^2 + 3 - x_2^2 - 3 = (x_1 - x_2)(x_1 + x_2)\]</div>
 <p>Do <span class="math notranslate nohighlight">\(x_1 &lt; x_2\)</span>, nên với <span class="math notranslate nohighlight">\(x_1, x_2 &gt; 0\)</span> thì <span class="math notranslate nohighlight">\(x_1 + x_2 &gt; 0\)</span> và <span class="math notranslate nohighlight">\(x_1 - x_2 &lt; 0\)</span>. Suy ra <span class="math notranslate nohighlight">\(f(x_1) - f(x_2) &lt; 0\)</span> và từ đó <span class="math notranslate nohighlight">\(f(x_1) &lt; f(x_2)\)</span>. Như vậy <span class="math notranslate nohighlight">\(f(x)\)</span> đồng biến trên <span class="math notranslate nohighlight">\((0, +\infty)\)</span>.</p>
 <p>Tương tự, khi <span class="math notranslate nohighlight">\(x_1, x_2 &lt; 0\)</span> thì <span class="math notranslate nohighlight">\(x_1 + x_2 &lt; 0\)</span>. Khi đó <span class="math notranslate nohighlight">\(f(x_1) &gt; f(x_2)\)</span> nên <span class="math notranslate nohighlight">\(f(x)\)</span> nghịch biến trên <span class="math notranslate nohighlight">\((-\infty, 0)\)</span>.</p>
 </section>
