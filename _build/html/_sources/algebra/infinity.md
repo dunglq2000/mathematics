@@ -20,9 +20,9 @@ là hữu hạn.
 
 ### So sánh $\mathbb{N}$ và $\mathbb{Z}$
 
-> Hai tập hợp $\mathbb{N}$ và $\mathbb{Z}$ là các tập vô hạn, như vậy số phần tử của tập hợp nào lớn hơn?
+> Hai tập hợp $\mathbb{N}$ và $\mathbb{Z}$ là các tập vô hạn, như vậy lực lượng của tập hợp nào lớn hơn?
 
-Câu hỏi tưởng chừng như vô vị vì nhìn vào mọi người đều thấy rằng $\mathbb{Z}$ "bao trọn" $\mathbb{N}$ (số nguyên kéo dài vô hạn về bên trái lẫn phải trong khi số tự nhiên chỉ kéo dài vô hạn về bên phải). Tuy nhiên, nhà toán học Cantor đã tìm ra một lý luận đầy *tính thuyết phục* để chứng minh rằng số phần tử của hai tập là bằng nhau.
+Câu hỏi tưởng chừng như vô vị vì nhìn vào mọi người đều thấy rằng $\mathbb{Z}$ "bao trọn" $\mathbb{N}$ (số nguyên kéo dài vô hạn về bên trái lẫn phải trong khi số tự nhiên chỉ kéo dài vô hạn về bên phải). Tuy nhiên, nhà toán học Cantor đã tìm ra một lý luận đầy *tính thuyết phục* để chứng minh rằng lực lượng của hai tập là bằng nhau.
 
 Ta xét ánh xạ $f: \mathbb{Z} \to \mathbb{N}$ như sau:
 
@@ -34,9 +34,26 @@ Ví dụ $f(-1) = 1$, $f(-2) = 3$, $f(-3) = 5$ và cứ như vậy tăng lên. T
 
 $$z = f(n) = \begin{cases} 2n, & \quad \text{nếu } n \geqslant 0 \\ -1-2n, & \quad \text{nếu } n < 0\end{cases}$$
 
-Như vậy $f$ là đơn ánh vì hai phần tử khác nhau của $\mathbb{Z}$ sẽ cho ra hai phần tử khác nhau thuộc $\mathbb{N}$. Tương tự $f$ cũng là toàn ánh vì mọi phần tử thuộc $\mathbb{N}$ đều có một phần tử từ $\mathbb{Z}$ biến thành. Như vậy $f$ là song ánh. Vậy số phần tử của $\mathbb{N}$ và $\mathbb{Z}$ bằng nhau.
+Như vậy $f$ là đơn ánh vì hai phần tử khác nhau của $\mathbb{Z}$ sẽ cho ra hai phần tử khác nhau thuộc $\mathbb{N}$. Tương tự $f$ cũng là toàn ánh vì mọi phần tử thuộc $\mathbb{N}$ đều có một phần tử từ $\mathbb{Z}$ biến thành. Như vậy $f$ là song ánh. Vậy lực lượng $\mathbb{N}$ và $\mathbb{Z}$ bằng nhau.
 
 Bằng lập luận tương tự cũng có thể chứng minh số phần tử của $\mathbb{Q}$ bằng số phần tử của $\mathbb{N}$. Những lập luận này đã gây ra tiếng vang lớn vào thời đó.
+
+Ở {numref}`meme-1` cho thấy một cách xây dựng song ánh từ $\mathbb{N}$ tới $\mathbb{Z}^2$, trong đó:
+
+- điểm $(0, 0)$ tương ứng với $1$
+- điểm $(1, 0)$ tương ứng với $2$
+- điểm $(1, 1)$ tương ứng với $3$
+- điểm $(0, 1)$ tương ứng với $4$
+- cứ tiếp tục như vậy theo hình xoắn vuông
+
+Vietsub cho {numref}`meme-1`: Không có chuyện $\mathbb{N}$ và $\mathbb{Z}^2$ có cùng số phần tử. Ở đây thuật ngữ "số phần tử" không thực sự chính xác mà nên gọi là "lực lượng" vì khi nói đến các tập vô hạn (tức tập có vô hạn phần tử) thì vô hạn không thể so sánh với vô hạn. Hai tập hợp vô hạn chỉ có thể có cùng lực lượng.
+
+```{figure} https://sun9-41.userapi.com/impg/zmz_1-_MamZ7dwVLXKooNar7f1hC5crUItC2YA/sCWd3BmHVqc.jpg?size=640x550&quality=95&sign=53e3e82934396255a586fb2e39f0c82e&type=album
+:name: meme-1
+
+Song ánh giữa $\mathbb{N}$ và $\mathbb{Z}^2$. Nguồn: https://vk.com/wall-91031095_82482. 
+```
+
 
 Từ đây tập hợp vô hạn có thể chia ra **đếm được** (countable) và **không đếm được** (uncountable). Tiếp theo ta định nghĩa hai dạng tập hợp này.
 
@@ -49,14 +66,18 @@ Từ đây tập hợp vô hạn có thể chia ra **đếm được** (countabl
 Tập hợp số thực $\mathbb{R}$ là tập không đếm được
 ````
 
-```{admonition} **Chứng minh**
-:class: danger
-
-Cantor đưa ra hai phương pháp chứng minh và cả hai đều độc đáo. Chúng ta cần một nhận xét sau:
+Chúng ta cần một nhận xét sau:
 
 > Khoảng $(0, 1)$ là tương đương với tập $\mathbb{R}$.
 
 Chúng ta có thể xây dựng một song ánh từ $\mathbb{R}$ tới $(0, 1)$, ví dụ $f(x) = \dfrac{e^x}{e^x+1}$.
+
+Khi đó, thay vì chứng minh $ \mathbb{R}$ không đếm được, ta chỉ cần chứng minh đoạn $(0, 1)$ không đếm được.
+
+```{admonition} **Chứng minh**
+:class: danger
+
+Cantor đưa ra hai phương pháp chứng minh và cả hai đều độc đáo. 
 
 **Phương án 1:** Phương pháp chéo hóa (diagonalization).
 
