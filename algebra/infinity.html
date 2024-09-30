@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=c9a5b90f" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -322,6 +322,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/ASISCTF-2024.html">ASIS CTF 2024</a></li>
 </ul>
 </details></li>
 </ul>
@@ -563,9 +564,9 @@ document.write(`
 <section id="so-sanh-mathbb-n-va-mathbb-z">
 <h3><span class="section-number">3.1.2. </span>So sánh <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span><a class="headerlink" href="#so-sanh-mathbb-n-va-mathbb-z" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>Hai tập hợp <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là các tập vô hạn, như vậy số phần tử của tập hợp nào lớn hơn?</p>
+<div><p>Hai tập hợp <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là các tập vô hạn, như vậy lực lượng của tập hợp nào lớn hơn?</p>
 </div></blockquote>
-<p>Câu hỏi tưởng chừng như vô vị vì nhìn vào mọi người đều thấy rằng <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> “bao trọn” <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> (số nguyên kéo dài vô hạn về bên trái lẫn phải trong khi số tự nhiên chỉ kéo dài vô hạn về bên phải). Tuy nhiên, nhà toán học Cantor đã tìm ra một lý luận đầy <em>tính thuyết phục</em> để chứng minh rằng số phần tử của hai tập là bằng nhau.</p>
+<p>Câu hỏi tưởng chừng như vô vị vì nhìn vào mọi người đều thấy rằng <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> “bao trọn” <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> (số nguyên kéo dài vô hạn về bên trái lẫn phải trong khi số tự nhiên chỉ kéo dài vô hạn về bên phải). Tuy nhiên, nhà toán học Cantor đã tìm ra một lý luận đầy <em>tính thuyết phục</em> để chứng minh rằng lực lượng của hai tập là bằng nhau.</p>
 <p>Ta xét ánh xạ <span class="math notranslate nohighlight">\(f: \mathbb{Z} \to \mathbb{N}\)</span> như sau:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(0) = 0\)</span>;</p></li>
@@ -575,8 +576,23 @@ document.write(`
 <p>Ví dụ <span class="math notranslate nohighlight">\(f(-1) = 1\)</span>, <span class="math notranslate nohighlight">\(f(-2) = 3\)</span>, <span class="math notranslate nohighlight">\(f(-3) = 5\)</span> và cứ như vậy tăng lên. Tương tự với số dương <span class="math notranslate nohighlight">\(f(1) = 2\)</span>, <span class="math notranslate nohighlight">\(f(2) = 4\)</span>. Ta có công thức</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}z = f(n) = \begin{cases} 2n, &amp; \quad \text{nếu } n \geqslant 0 \\ -1-2n, &amp; \quad \text{nếu } n &lt; 0\end{cases}\end{split}\]</div>
-<p>Như vậy <span class="math notranslate nohighlight">\(f\)</span> là đơn ánh vì hai phần tử khác nhau của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> sẽ cho ra hai phần tử khác nhau thuộc <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>. Tương tự <span class="math notranslate nohighlight">\(f\)</span> cũng là toàn ánh vì mọi phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> đều có một phần tử từ <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> biến thành. Như vậy <span class="math notranslate nohighlight">\(f\)</span> là song ánh. Vậy số phần tử của <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> bằng nhau.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(f\)</span> là đơn ánh vì hai phần tử khác nhau của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> sẽ cho ra hai phần tử khác nhau thuộc <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>. Tương tự <span class="math notranslate nohighlight">\(f\)</span> cũng là toàn ánh vì mọi phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> đều có một phần tử từ <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> biến thành. Như vậy <span class="math notranslate nohighlight">\(f\)</span> là song ánh. Vậy lực lượng <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> bằng nhau.</p>
 <p>Bằng lập luận tương tự cũng có thể chứng minh số phần tử của <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> bằng số phần tử của <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>. Những lập luận này đã gây ra tiếng vang lớn vào thời đó.</p>
+<p>Ở <a class="reference internal" href="#meme-1"><span class="std std-numref">Fig. 3.1</span></a> cho thấy một cách xây dựng song ánh từ <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{Z}^2\)</span>, trong đó:</p>
+<ul class="simple">
+<li><p>điểm <span class="math notranslate nohighlight">\((0, 0)\)</span> tương ứng với <span class="math notranslate nohighlight">\(1\)</span></p></li>
+<li><p>điểm <span class="math notranslate nohighlight">\((1, 0)\)</span> tương ứng với <span class="math notranslate nohighlight">\(2\)</span></p></li>
+<li><p>điểm <span class="math notranslate nohighlight">\((1, 1)\)</span> tương ứng với <span class="math notranslate nohighlight">\(3\)</span></p></li>
+<li><p>điểm <span class="math notranslate nohighlight">\((0, 1)\)</span> tương ứng với <span class="math notranslate nohighlight">\(4\)</span></p></li>
+<li><p>cứ tiếp tục như vậy theo hình xoắn vuông</p></li>
+</ul>
+<p>Vietsub cho <a class="reference internal" href="#meme-1"><span class="std std-numref">Fig. 3.1</span></a>: Không có chuyện <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}^2\)</span> có cùng số phần tử. Ở đây thuật ngữ “số phần tử” không thực sự chính xác mà nên gọi là “lực lượng” vì khi nói đến các tập vô hạn (tức tập có vô hạn phần tử) thì vô hạn không thể so sánh với vô hạn. Hai tập hợp vô hạn chỉ có thể có cùng lực lượng.</p>
+<figure class="align-default" id="meme-1">
+<img alt="https://sun9-41.userapi.com/impg/zmz_1-_MamZ7dwVLXKooNar7f1hC5crUItC2YA/sCWd3BmHVqc.jpg?size=640x550&amp;quality=95&amp;sign=53e3e82934396255a586fb2e39f0c82e&amp;type=album" src="https://sun9-41.userapi.com/impg/zmz_1-_MamZ7dwVLXKooNar7f1hC5crUItC2YA/sCWd3BmHVqc.jpg?size=640x550&amp;quality=95&amp;sign=53e3e82934396255a586fb2e39f0c82e&amp;type=album" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Song ánh giữa <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(\mathbb{Z}^2\)</span>. Nguồn: <a class="reference external" href="https://vk.com/wall-91031095_82482">https://vk.com/wall-91031095_82482</a>.</span><a class="headerlink" href="#meme-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Từ đây tập hợp vô hạn có thể chia ra <strong>đếm được</strong> (countable) và <strong>không đếm được</strong> (uncountable). Tiếp theo ta định nghĩa hai dạng tập hợp này.</p>
 <ol class="arabic simple">
 <li><p>Tập hợp được gọi là <strong>đếm được</strong> khi tồn tại song ánh từ nó tới <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>.</p></li>
@@ -590,13 +606,15 @@ document.write(`
 <section class="theorem-content" id="proof-content">
 <p>Tập hợp số thực <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> là tập không đếm được</p>
 </section>
-</div><div class="danger admonition">
-<p class="admonition-title"><strong>Chứng minh</strong></p>
-<p>Cantor đưa ra hai phương pháp chứng minh và cả hai đều độc đáo. Chúng ta cần một nhận xét sau:</p>
+</div><p>Chúng ta cần một nhận xét sau:</p>
 <blockquote>
 <div><p>Khoảng <span class="math notranslate nohighlight">\((0, 1)\)</span> là tương đương với tập <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
 </div></blockquote>
 <p>Chúng ta có thể xây dựng một song ánh từ <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> tới <span class="math notranslate nohighlight">\((0, 1)\)</span>, ví dụ <span class="math notranslate nohighlight">\(f(x) = \dfrac{e^x}{e^x+1}\)</span>.</p>
+<p>Khi đó, thay vì chứng minh <span class="math notranslate nohighlight">\( \mathbb{R}\)</span> không đếm được, ta chỉ cần chứng minh đoạn <span class="math notranslate nohighlight">\((0, 1)\)</span> không đếm được.</p>
+<div class="danger admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Cantor đưa ra hai phương pháp chứng minh và cả hai đều độc đáo.</p>
 <p><strong>Phương án 1:</strong> Phương pháp chéo hóa (diagonalization).</p>
 <p>Xét ánh xạ</p>
 <div class="math notranslate nohighlight">
