@@ -271,6 +271,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -543,18 +544,30 @@ document.write(`
 <h1><span class="section-number">6. </span>Chuỗi số<a class="headerlink" href="#chuoi-so" title="Link to this heading">#</a></h1>
 <p>Xét dãy số <span class="math notranslate nohighlight">\(\{a_n\}\)</span>. Đặt</p>
 <div class="math notranslate nohighlight">
-\[S_n = a_1 + a_2 + \ldots + a_n = S_n\]</div>
+\[S_n = a_1 + a_2 + \ldots + a_n\]</div>
 <p>Khi đó <span class="math notranslate nohighlight">\(\{S_n\}\)</span> là chuỗi số. Tương tự như sự hội tụ hoặc phân kỳ của dãy số, ta cũng quan tâm đến sự hội tụ và phân kỳ của chuỗi số.</p>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 6.1 </span> (Chuỗi số hội tụ)</p>
 <section class="definition-content" id="proof-content">
 <p>Chuỗi số <span class="math notranslate nohighlight">\(\{S_n\}\)</span> được gọi là <strong>hội tụ</strong> nếu tồn tại giới hạn hữu hạn <span class="math notranslate nohighlight">\(\displaystyle{L = \lim_{n \to \infty} S_n}\)</span>.</p>
 </section>
-</div><p>Ngược lại ta gọi là chuỗi phân kỳ. Nghĩa là <span class="math notranslate nohighlight">\(\displaystyle{\lim_{n \to \infty} S_n = \infty}\)</span>.</p>
-<section id="tieu-chuan-cauchy">
+</div><p>Ngược lại ta gọi là chuỗi phân kỳ. Nghĩa là <span class="math notranslate nohighlight">\(\displaystyle{\lim_{n \to \infty} S_n = \infty}\)</span> hoặc không tồn tại <span class="math notranslate nohighlight">\(\lim\limits_{n \to \infty} S_n\)</span>.</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 6.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét dãy số <span class="math notranslate nohighlight">\(a_n = \dfrac{1}{2^n}\)</span> với <span class="math notranslate nohighlight">\(n = 1, 2, \ldots\)</span>.</p>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    S_n &amp; = \frac{1}{2} + \frac{1}{2^2} + \ldots + \frac{1}{2^n} \\
+    &amp; = \frac{1}{2} \cdot \dfrac{1 - \dfrac{1}{2^n}}{1 - \dfrac{1}{2}} \longrightarrow \frac{1}{2} \cdot \dfrac{1}{1 - \dfrac{1}{2}} = 1
+\end{align*}\end{split}\]</div>
+<p>khi <span class="math notranslate nohighlight">\(n \to \infty\)</span>. Như vậy <span class="math notranslate nohighlight">\(S_n\)</span> là chuỗi hội tụ.</p>
+</section>
+</div><section id="tieu-chuan-cauchy">
 <h2><span class="section-number">6.1. </span>Tiêu chuẩn Cauchy<a class="headerlink" href="#tieu-chuan-cauchy" title="Link to this heading">#</a></h2>
 <p>Theo định nghĩa, chuỗi số hội tụ khi tồn tại giới hạn hữu hạn. Do đó ta có thể viết theo ngôn ngữ <span class="math notranslate nohighlight">\(\delta - \varepsilon\)</span> như đối với dãy số.</p>
-<div class="proof theorem admonition" id="theorem-1">
+<div class="proof theorem admonition" id="theorem-2">
 <p class="admonition-title"><span class="caption-number">Theorem 6.1 </span> (Tiêu chuẩn Cauchy)</p>
 <section class="theorem-content" id="proof-content">
 <p>Chuỗi số <span class="math notranslate nohighlight">\(\displaystyle{\sum_{i=1}^{\infty} a_i}\)</span> hội tụ nếu với mọi <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>, tồn tại <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span>, sao cho với mọi <span class="math notranslate nohighlight">\(n \geqslant m \geqslant N\)</span>, ta có</p>
@@ -565,7 +578,7 @@ document.write(`
 <p class="admonition-title"><strong>Chứng minh</strong></p>
 <p>Do <span class="math notranslate nohighlight">\(\displaystyle{\sum_{i=m}^n a_i = \sum_{i=1}^n a_i - \sum_{i=1}^{m-1} a_i}\)</span> nên chuỗi số hội tụ từ một điểm <span class="math notranslate nohighlight">\(m\)</span> nào đó trở đi thì chuỗi hội tụ. Tương tự cho phân kỳ.</p>
 </div>
-<div class="proof corollary admonition" id="corollary-2">
+<div class="proof corollary admonition" id="corollary-3">
 <p class="admonition-title"><span class="caption-number">Corollary 6.1 </span></p>
 <section class="corollary-content" id="proof-content">
 <p>Nếu chuỗi số <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^\infty a_i}\)</span> hội tụ thì <span class="math notranslate nohighlight">\(\displaystyle{\lim_{n \to \infty} a_n = 1}\)</span>.</p>
@@ -576,7 +589,7 @@ document.write(`
 <p>Nếu ta chọn <span class="math notranslate nohighlight">\(m = n\)</span> thì điều kiện trở thành với mọi <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>, tồn tại <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(n \geqslant N\)</span> ta có <span class="math notranslate nohighlight">\(\lvert a_n \rvert &lt; \varepsilon\)</span>. Nói cách khác <span class="math notranslate nohighlight">\(\displaystyle{\lim_{n \to \infty} a_n = 0}\)</span> (định nghĩa giới hạn dãy số).</p>
 </div>
 <p>Dựa vào tiêu chuẩn Cauchy ta có một số tiêu chuẩn hội tụ hữu dụng như sau.</p>
-<div class="proof theorem admonition" id="theorem-3">
+<div class="proof theorem admonition" id="theorem-4">
 <p class="admonition-title"><span class="caption-number">Theorem 6.2 </span> (Tiêu chuẩn thứ nhất về sự hội tụ)</p>
 <section class="theorem-content" id="proof-content">
 <p>Xét hai chuỗi số <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^\infty a_n}\)</span> và <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^\infty b_n}\)</span>. Khi điều kiện <span class="math notranslate nohighlight">\(0 \leqslant a_n \leqslant b_n\)</span> thỏa mãn, ta có các kết quả sau:</p>
@@ -590,7 +603,7 @@ document.write(`
 <p>Ta thấy rằng nếu <span class="math notranslate nohighlight">\(\sum b_n\)</span> hội tụ thì với mọi <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>, tồn tại <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(n \geqslant m \geqslant N\)</span>, <span class="math notranslate nohighlight">\(\displaystyle{\Bigg\lvert \sum_{i=m}^n a_i \Bigg\rvert &lt; \varepsilon}\)</span>.</p>
 <p>Do <span class="math notranslate nohighlight">\(0 \leqslant a_i \leqslant b_i\)</span> nên <span class="math notranslate nohighlight">\(\displaystyle{\Bigg\lvert \sum_{i=m}^{n} a_i \Bigg\rvert &lt; \Bigg\lvert \sum_{i=m}^{n} b_i \Bigg\rvert &lt; \varepsilon}\)</span>. Như vậy chuỗi <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^{\infty} a_n}\)</span> cũng hội tụ.</p>
 </div>
-<div class="proof theorem admonition" id="theorem-4">
+<div class="proof theorem admonition" id="theorem-5">
 <p class="admonition-title"><span class="caption-number">Theorem 6.3 </span> (Tiêu chuẩn so sánh)</p>
 <section class="theorem-content" id="proof-content">
 <p>Xét hai chuỗi số dương <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^\infty a_n}\)</span> và <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^\infty b_n}\)</span>. Nếu tồn tại giới hạn hữu hạn <span class="math notranslate nohighlight">\(\displaystyle{\lim_{n \to \infty} \dfrac{a_n}{b_n} = L}\)</span> thì hai dãy số trên cùng hội tụ hoặc cùng phân kỳ.</p>
@@ -600,7 +613,7 @@ document.write(`
 <p>Do dãy số <span class="math notranslate nohighlight">\(\dfrac{a_n}{b_n}\)</span> có giới hạn hữu hạn <span class="math notranslate nohighlight">\(L\)</span> nên với mọi <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>, tồn tại <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(n \geqslant N\)</span>, ta có <span class="math notranslate nohighlight">\(\Big\lvert \dfrac{a_n}{b_n} - L \Big\rvert &lt; \varepsilon\)</span>. Tương đương với <span class="math notranslate nohighlight">\(\displaystyle{b_n (-\varepsilon + L) &lt; a_n &lt; b_n (\varepsilon + L)}\)</span>. Từ tiêu chuẩn thứ nhất về sự hội tụ và bất đẳng thức thứ hai suy ra nếu chuỗi <span class="math notranslate nohighlight">\(\sum b_n\)</span> hội tụ thì chuỗi <span class="math notranslate nohighlight">\(\sum a_n\)</span> cũng hội tụ.</p>
 <p>Tương tự, với bất đẳng thức thứ nhất, nếu <span class="math notranslate nohighlight">\(\sum b_n\)</span> phân kỳ thì <span class="math notranslate nohighlight">\(\sum a_n\)</span> cũng phân kỳ.</p>
 </div>
-<div class="proof theorem admonition" id="theorem-5">
+<div class="proof theorem admonition" id="theorem-6">
 <p class="admonition-title"><span class="caption-number">Theorem 6.4 </span> (Tiêu chuẩn tích phân Cauchy)</p>
 <section class="theorem-content" id="proof-content">
 <p>Xét chuỗi số dương <span class="math notranslate nohighlight">\(\displaystyle{\sum_{n=1}^{\infty} a_n}\)</span>. Nếu <span class="math notranslate nohighlight">\(a_n\)</span> là dãy số có dạng <span class="math notranslate nohighlight">\(a_n = f(n)\)</span>, ta chuyển qua xét hàm số <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>

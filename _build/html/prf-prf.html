@@ -275,6 +275,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -496,7 +497,7 @@ document.write(`
    <a href="#cap-algorithm-5"><strong>algorithm-5</strong></a> | 
    <a href="#cap-algorithm-55"><strong>algorithm-55</strong></a> | 
    <a href="#cap-algorithm-8"><strong>algorithm-8</strong></a> | 
-   <a href="#cap-corollary-2"><strong>corollary-2</strong></a> | 
+   <a href="#cap-corollary-3"><strong>corollary-3</strong></a> | 
    <a href="#cap-corollary-6"><strong>corollary-6</strong></a> | 
    <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
@@ -573,9 +574,9 @@ document.write(`
    <a href="#cap-example-7"><strong>example-7</strong></a> | 
    <a href="#cap-example-8"><strong>example-8</strong></a> | 
    <a href="#cap-example-9"><strong>example-9</strong></a> | 
-   <a href="#cap-lemma-0"><strong>lemma-0</strong></a> | 
+   <a href="#cap-fhat-fcheck"><strong>fhat-fcheck</strong></a> | 
+   <a href="#cap-fi"><strong>fi</strong></a> | 
    <a href="#cap-lemma-10"><strong>lemma-10</strong></a> | 
-   <a href="#cap-lemma-2"><strong>lemma-2</strong></a> | 
    <a href="#cap-lemma-4"><strong>lemma-4</strong></a> | 
    <a href="#cap-lemma-7"><strong>lemma-7</strong></a> | 
    <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
@@ -614,14 +615,14 @@ document.write(`
    <a href="#cap-theorem-19"><strong>theorem-19</strong></a> | 
    <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
    <a href="#cap-theorem-20"><strong>theorem-20</strong></a> | 
-   <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
    <a href="#cap-theorem-4"><strong>theorem-4</strong></a> | 
    <a href="#cap-theorem-45"><strong>theorem-45</strong></a> | 
    <a href="#cap-theorem-47"><strong>theorem-47</strong></a> | 
    <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
    <a href="#cap-theorem-6"><strong>theorem-6</strong></a> | 
    <a href="#cap-theorem-7"><strong>theorem-7</strong></a> | 
-   <a href="#cap-theorem-9"><strong>theorem-9</strong></a>
+   <a href="#cap-theorem-9"><strong>theorem-9</strong></a> | 
+   <a href="#cap-z2n"><strong>z2n</strong></a>
    </div>
 
    <table class="indextable modindextable">
@@ -682,12 +683,12 @@ document.write(`
        <a href="cryptography/lattice-based.html#algorithm-8"><code class="xref">algorithm-8</code></a> <em>(cryptography/lattice-based)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-corollary-2"><td></td><td>
-       <strong>corollary-2</strong></td><td></td></tr>
+     <tr class="cap" id="cap-corollary-3"><td></td><td>
+       <strong>corollary-3</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="calculus/series.html#corollary-2"><code class="xref">corollary-2</code></a> <em>(calculus/series)</em></td><td>
+       <a href="calculus/series.html#corollary-3"><code class="xref">corollary-3</code></a> <em>(calculus/series)</em></td><td>
        <em>corollary</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-corollary-6"><td></td><td>
@@ -703,7 +704,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="cryptography/differential-attack/toy-cipher.html#definition-0"><code class="xref">definition-0</code></a> <em>(cryptography/differential-attack/toy-cipher)</em></td><td>
+       <a href="probability/intro.html#definition-0"><code class="xref">definition-0</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-1"><td></td><td>
@@ -711,7 +712,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-1"><code class="xref">definition-1</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="discrete-mathematics/group-intro.html#definition-1"><code class="xref">definition-1</code></a> <em>(discrete-mathematics/group-intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-10"><td></td><td>
@@ -719,7 +720,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-10"><code class="xref">definition-10</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#definition-10"><code class="xref">definition-10</code></a> <em>(linalg/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-11"><td></td><td>
@@ -767,7 +768,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-16"><code class="xref">definition-16</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#definition-16"><code class="xref">definition-16</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-17"><td></td><td>
@@ -791,7 +792,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-19"><code class="xref">definition-19</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#definition-19"><code class="xref">definition-19</code></a> <em>(linalg/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-2"><td></td><td>
@@ -807,7 +808,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-20"><code class="xref">definition-20</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="cryptography/code-based.html#definition-20"><code class="xref">definition-20</code></a> <em>(cryptography/code-based)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-21"><td></td><td>
@@ -815,7 +816,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-21"><code class="xref">definition-21</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#definition-21"><code class="xref">definition-21</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-22"><td></td><td>
@@ -831,7 +832,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-23"><code class="xref">definition-23</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#definition-23"><code class="xref">definition-23</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-24"><td></td><td>
@@ -839,7 +840,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-24"><code class="xref">definition-24</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#definition-24"><code class="xref">definition-24</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-25"><td></td><td>
@@ -887,7 +888,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-3"><code class="xref">definition-3</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#definition-3"><code class="xref">definition-3</code></a> <em>(probability/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-30"><td></td><td>
@@ -943,7 +944,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-4"><code class="xref">definition-4</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="discrete-mathematics/weight-boolean.html#definition-4"><code class="xref">definition-4</code></a> <em>(discrete-mathematics/weight-boolean)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-40"><td></td><td>
@@ -1007,7 +1008,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-5"><code class="xref">definition-5</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#definition-5"><code class="xref">definition-5</code></a> <em>(linalg/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-50"><td></td><td>
@@ -1087,7 +1088,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-7"><code class="xref">definition-7</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="discrete-mathematics/binary-relation.html#definition-7"><code class="xref">definition-7</code></a> <em>(discrete-mathematics/binary-relation)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-8"><td></td><td>
@@ -1103,7 +1104,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#definition-9"><code class="xref">definition-9</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#definition-9"><code class="xref">definition-9</code></a> <em>(linalg/intro)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-0"><td></td><td>
@@ -1143,7 +1144,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-12"><code class="xref">example-12</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="discrete-mathematics/binary-relation.html#example-12"><code class="xref">example-12</code></a> <em>(discrete-mathematics/binary-relation)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-13"><td></td><td>
@@ -1159,7 +1160,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-14"><code class="xref">example-14</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#example-14"><code class="xref">example-14</code></a> <em>(linalg/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-15"><td></td><td>
@@ -1183,7 +1184,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-17"><code class="xref">example-17</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#example-17"><code class="xref">example-17</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-18"><td></td><td>
@@ -1223,7 +1224,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-25"><code class="xref">example-25</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#example-25"><code class="xref">example-25</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-26"><td></td><td>
@@ -1271,7 +1272,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-6"><code class="xref">example-6</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#example-6"><code class="xref">example-6</code></a> <em>(probability/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-7"><td></td><td>
@@ -1287,7 +1288,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#example-8"><code class="xref">example-8</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="linalg/intro.html#example-8"><code class="xref">example-8</code></a> <em>(linalg/intro)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-9"><td></td><td>
@@ -1298,12 +1299,20 @@ document.write(`
        <a href="discrete-mathematics/group-action.html#example-9"><code class="xref">example-9</code></a> <em>(discrete-mathematics/group-action)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-lemma-0"><td></td><td>
-       <strong>lemma-0</strong></td><td></td></tr>
+     <tr class="cap" id="cap-fhat-fcheck"><td></td><td>
+       <strong>fhat-fcheck</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="vasilenko/discrete-fourier-transform.html#lemma-0"><code class="xref">lemma-0</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
+       <a href="vasilenko/discrete-fourier-transform.html#fhat-fcheck"><code class="xref">fhat-fcheck</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-fi"><td></td><td>
+       <strong>fi</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vasilenko/discrete-fourier-transform.html#fi"><code class="xref">fi</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lemma-10"><td></td><td>
@@ -1312,14 +1321,6 @@ document.write(`
        <td></td>
        <td>
        <a href="cryptography/lattice-based.html#lemma-10"><code class="xref">lemma-10</code></a> <em>(cryptography/lattice-based)</em></td><td>
-       <em>lemma</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-lemma-2"><td></td><td>
-       <strong>lemma-2</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="vasilenko/discrete-fourier-transform.html#lemma-2"><code class="xref">lemma-2</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lemma-4"><td></td><td>
@@ -1351,7 +1352,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="cryptography/differential-attack/toy-cipher.html#remark-1"><code class="xref">remark-1</code></a> <em>(cryptography/differential-attack/toy-cipher)</em></td><td>
+       <a href="vasilenko/discrete-fourier-transform.html#remark-1"><code class="xref">remark-1</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-11"><td></td><td>
@@ -1407,7 +1408,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#remark-2"><code class="xref">remark-2</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="discrete-mathematics/walsh-hadamard-spectre.html#remark-2"><code class="xref">remark-2</code></a> <em>(discrete-mathematics/walsh-hadamard-spectre)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-23"><td></td><td>
@@ -1423,7 +1424,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/algebra.html#remark-27"><code class="xref">remark-27</code></a> <em>(algebra/algebra)</em></td><td>
+       <a href="probability/intro.html#remark-27"><code class="xref">remark-27</code></a> <em>(probability/intro)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-3"><td></td><td>
@@ -1535,7 +1536,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="algebra/infinity.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(algebra/infinity)</em></td><td>
+       <a href="geometry/analytic-geometry.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(geometry/analytic-geometry)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-1"><td></td><td>
@@ -1626,14 +1627,6 @@ document.write(`
        <a href="probability/intro.html#theorem-20"><code class="xref">theorem-20</code></a> <em>(probability/intro)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-theorem-3"><td></td><td>
-       <strong>theorem-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="vasilenko/discrete-fourier-transform.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-4"><td></td><td>
        <strong>theorem-4</strong></td><td></td></tr>
      <tr>
@@ -1671,7 +1664,7 @@ document.write(`
      <tr>
        <td></td>
        <td>
-       <a href="calculus/differential-equation.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(calculus/differential-equation)</em></td><td>
+       <a href="calculus/series.html#theorem-6"><code class="xref">theorem-6</code></a> <em>(calculus/series)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-7"><td></td><td>
@@ -1689,6 +1682,14 @@ document.write(`
        <td>
        <a href="probability/intro.html#theorem-9"><code class="xref">theorem-9</code></a> <em>(probability/intro)</em></td><td>
        <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-z2n"><td></td><td>
+       <strong>z2n</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="vasilenko/discrete-fourier-transform.html#z2n"><code class="xref">z2n</code></a> <em>(vasilenko/discrete-fourier-transform)</em></td><td>
+       <em>lemma</em></td></tr>
    </table>
 
 
