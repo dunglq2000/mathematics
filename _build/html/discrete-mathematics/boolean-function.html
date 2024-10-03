@@ -992,7 +992,15 @@ các bảng chân trị cơ bản trên):</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{wt}(f) = \mathrm{wt}(\bar{g}(\bm{x}, 0)) + \mathrm{wt}(\bar{g}(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 0)) = 2^{n+1}.\]</div>
 </div>
+<div class="proof example admonition" id="example-14">
+<p class="admonition-title"><span class="caption-number">Example 15.4 </span> (hàm quasi-linear dependent)</p>
+<section class="example-content" id="proof-content">
+<p>Hàm boolean</p>
+<div class="math notranslate nohighlight">
+\[f(x, y, z) = y \oplus xz \oplus xy\]</div>
+<p>quasi-linear dependent trên hai biến <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span>.</p>
 </section>
+</div></section>
 <section id="cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">15.1.3. </span>Cách tìm đa thức Zhegalkin từ bảng chân trị</a><a class="headerlink" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri" title="Link to this heading">#</a></h2>
 <p>Ta có nhiều phương pháp để tìm đa thức Zhegalkin của một hàm boolean từ bảng chân trị.</p>
@@ -1047,7 +1055,7 @@ các bảng chân trị cơ bản trên):</p>
 </section>
 <section id="ham-affine-va-ham-tuyen-tinh">
 <h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">15.1.4. </span>Hàm affine và hàm tuyến tính</a><a class="headerlink" href="#ham-affine-va-ham-tuyen-tinh" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-14">
+<div class="proof definition admonition" id="definition-15">
 <p class="admonition-title"><span class="caption-number">Definition 15.5 </span> (Hàm boolean affine)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. Khi đó <span class="math notranslate nohighlight">\(f\)</span> được gọi là <strong>hàm boolean affine</strong> nếu nó có dạng</p>
@@ -1059,8 +1067,8 @@ các bảng chân trị cơ bản trên):</p>
 <p>Khi <span class="math notranslate nohighlight">\(a_0 = 0\)</span> thì ta gọi là <strong>hàm boolean tuyến tính</strong> (linear).</p>
 </section>
 </div><p>Ta thấy rằng chỉ có các hạng tử dạng <span class="math notranslate nohighlight">\(a_i x_i\)</span> xuất hiện trong biểu diễn đa thức Zhegalkin tương ứng của hàm boolean đó. Hay  nói cách khác hàm boolean là affine khi <span class="math notranslate nohighlight">\(\deg(f) = 1\)</span>.</p>
-<div class="proof example admonition" id="example-15">
-<p class="admonition-title"><span class="caption-number">Example 15.4 </span></p>
+<div class="proof example admonition" id="example-16">
+<p class="admonition-title"><span class="caption-number">Example 15.5 </span></p>
 <section class="example-content" id="proof-content">
 <p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = x \oplus y\)</span> là hàm boolean affine và cũng tuyến tính. Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = x \oplus xy\)</span> không là hàm boolean affine.</p>
 </section>
@@ -1068,18 +1076,18 @@ các bảng chân trị cơ bản trên):</p>
 </section>
 <section id="ham-don-dieu">
 <h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">15.1.5. </span>Hàm đơn điệu</a><a class="headerlink" href="#ham-don-dieu" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-16">
+<div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 15.6 </span> (Vector so sánh được)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai vector <span class="math notranslate nohighlight">\(\bm{a} = (a_1, a_2, \ldots, a_n)\)</span> và <span class="math notranslate nohighlight">\(\bm{b} = (b_1, b_2, \ldots, b_n)\)</span> (<span class="math notranslate nohighlight">\(a_i, b_i \in \{0, 1\}\)</span>). Ta nói <span class="math notranslate nohighlight">\(\bm{a}\)</span> <strong>so sánh được nhỏ hơn</strong> <span class="math notranslate nohighlight">\(\bm{b}\)</span> nếu với mọi <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span> ta có <span class="math notranslate nohighlight">\(a_i \leqslant b_i\)</span>. Ký hiệu <span class="math notranslate nohighlight">\(\bm{a} \prec \bm{b}\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="example-17">
-<p class="admonition-title"><span class="caption-number">Example 15.5 </span></p>
+</div><div class="proof example admonition" id="example-18">
+<p class="admonition-title"><span class="caption-number">Example 15.6 </span></p>
 <section class="example-content" id="proof-content">
 <p>Ta có <span class="math notranslate nohighlight">\((1, 0, 0) \prec (1, 0, 1)\)</span>, còn <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> và <span class="math notranslate nohighlight">\((0, 1, 0)\)</span>
 thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
 </section>
-</div><div class="proof definition admonition" id="definition-18">
+</div><div class="proof definition admonition" id="definition-19">
 <p class="admonition-title"><span class="caption-number">Definition 15.7 </span> (Hàm boolean đơn điệu)</p>
 <section class="definition-content" id="proof-content">
 <p>Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> được gọi là <strong>hàm boolean đơn điệu</strong> (hay <strong>monotone</strong>) nếu với mọi vector <span class="math notranslate nohighlight">\((a_1, a_2, \ldots, a_n) \prec (b_1, b_2, \ldots, b_n)\)</span> thì ta có</p>
@@ -1088,8 +1096,8 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
     f(a_1, a_2, \ldots, a_n) \leqslant f(b_1, b_2, \ldots, b_n)  
 \end{equation}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-19">
-<p class="admonition-title"><span class="caption-number">Example 15.6 </span></p>
+</div><div class="proof example admonition" id="example-20">
+<p class="admonition-title"><span class="caption-number">Example 15.7 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 0, 1)\)</span>.</p>
 <p>Ta thấy rằng:</p>

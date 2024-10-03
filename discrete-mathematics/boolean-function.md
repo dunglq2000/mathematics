@@ -359,6 +359,14 @@ Theo đẳng thức {eq}`wt-decomp` thì
 $$\mathrm{wt}(f) = \mathrm{wt}(\bar{g}(\bm{x}, 0)) + \mathrm{wt}(\bar{g}(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 0)) = 2^{n+1}.$$
 ```
 
+````{prf:example} hàm quasi-linear dependent
+Hàm boolean
+
+$$f(x, y, z) = y \oplus xz \oplus xy$$
+
+quasi-linear dependent trên hai biến $y$ và $z$.
+````
+
 ### Cách tìm đa thức Zhegalkin từ bảng chân trị
 
 Ta có nhiều phương pháp để tìm đa thức Zhegalkin của một hàm boolean từ bảng chân trị. 
