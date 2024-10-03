@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -271,7 +273,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -666,14 +667,14 @@ document.write(`
 <li><p>(<strong>Định lí Siegenthaler I</strong>, 1984) Chứng minh rằng nếu hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> thì <span class="math notranslate nohighlight">\(\deg f + r \leqslant n\)</span>.</p></li>
 <li><p>(<strong>Định lí Siegenthaler II</strong>) Chứng minh rằng nếu hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là <span class="math notranslate nohighlight">\(r\)</span>-resillient và <span class="math notranslate nohighlight">\(r \leqslant n - 2\)</span> thì <span class="math notranslate nohighlight">\(\deg f + r \leqslant n - 1\)</span>.</p></li>
 </ol>
-<p>Chứng minh cho các định lí Siegenthaler có thể tìm ở <span id="id2">[<a class="reference internal" href="../intro.html#id10" title="Агибалов Г. П. Избранные теоремы начального курса криптографии. Томский государственный университет, 2005.">17</a>]</span>.</p>
+<p>Chứng minh cho các định lí Siegenthaler có thể tìm ở <span id="id2">[<a class="reference internal" href="../intro.html#id10" title="Агибалов Г. П. Избранные теоремы начального курса криптографии. Томский государственный университет, 2005.">18</a>]</span>.</p>
 <ol class="arabic simple" start="4">
 <li><p>Chứng minh rằng hàm boolean <span class="math notranslate nohighlight">\(f\)</span> là correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(W_f(\bm{y}) = 0\)</span> với mọi vector <span class="math notranslate nohighlight">\(\bm{y}\)</span> thỏa <span class="math notranslate nohighlight">\(1 \leqslant \mathrm{wt} (\bm{y}) \leqslant r\)</span>.</p></li>
 </ol>
 <p>Năm 2007 Д. Г. Фон–Дер–Флаасс tìm được chặn trên cho correlation immune của hàm boolean không cân bằng.</p>
 <ol class="arabic simple" start="5">
-<li><p>(<strong>Định lí Д. Г. Фон–Дер–Флаасс</strong>, <span id="id3">[<a class="reference internal" href="../intro.html#id11" title="Fon-Der-Flaass D. G. A bound on correlation immunity. Elektron. Mat. Izv., 2007.">18</a>]</span>) Gọi <span class="math notranslate nohighlight">\(f\)</span> là hàm boolean không rân bằng có correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(r \leqslant (2n/3) - 1\)</span>.</p></li>
-<li><p>Chứng minh rằng với hàm boolean <span class="math notranslate nohighlight">\(r\)</span>-resillient <span class="math notranslate nohighlight">\(f\)</span> sao cho <span class="math notranslate nohighlight">\(r \leqslant n-2\)</span> thì ta có bất đẳng thức <span class="math notranslate nohighlight">\(N_f \leqslant 2^{n-1} - 2^{r+1}\)</span> <span id="id4">[<a class="reference internal" href="../intro.html#id12" title="Cusick T. W. and St˘anic˘a P. Cryptographic Boolean Functions and Applications. Acad. Press. Elsevier, 2009.">19</a>]</span>.</p></li>
+<li><p>(<strong>Định lí Д. Г. Фон–Дер–Флаасс</strong>, <span id="id3">[<a class="reference internal" href="../intro.html#id11" title="Fon-Der-Flaass D. G. A bound on correlation immunity. Elektron. Mat. Izv., 2007.">19</a>]</span>) Gọi <span class="math notranslate nohighlight">\(f\)</span> là hàm boolean không rân bằng có correlation immune bậc <span class="math notranslate nohighlight">\(r\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(r \leqslant (2n/3) - 1\)</span>.</p></li>
+<li><p>Chứng minh rằng với hàm boolean <span class="math notranslate nohighlight">\(r\)</span>-resillient <span class="math notranslate nohighlight">\(f\)</span> sao cho <span class="math notranslate nohighlight">\(r \leqslant n-2\)</span> thì ta có bất đẳng thức <span class="math notranslate nohighlight">\(N_f \leqslant 2^{n-1} - 2^{r+1}\)</span> <span id="id4">[<a class="reference internal" href="../intro.html#id12" title="Cusick T. W. and St˘anic˘a P. Cryptographic Boolean Functions and Applications. Acad. Press. Elsevier, 2009.">20</a>]</span>.</p></li>
 </ol>
 </section>
 </section>
@@ -712,7 +713,7 @@ document.write(`
 </section>
 <section id="differentially-delta-uniform">
 <h3><span class="section-number">28.2.7. </span>Differentially <span class="math notranslate nohighlight">\(\delta\)</span>-uniform<a class="headerlink" href="#differentially-delta-uniform" title="Link to this heading">#</a></h3>
-<p>Khái niệm này lần đầu được định nghĩa trong <span id="id6">[<a class="reference internal" href="../intro.html#id13" title="Kaisa Nyberg. Differentially uniform mappings for cryptography. In Advances in Cryptology - EUROCRYPT '93, Workshop on the Theory and Application of of Cryptographic Techniques, Lofthus, Norway, May 23-27, 1993, Proceedings, volume 765 of Lecture Notes in Computer Science, 55-64. Springer, 1993. doi:10.1007/3-540-48285-7_6.">20</a>]</span>.</p>
+<p>Khái niệm này lần đầu được định nghĩa trong <span id="id6">[<a class="reference internal" href="../intro.html#id13" title="Kaisa Nyberg. Differentially uniform mappings for cryptography. In Advances in Cryptology - EUROCRYPT '93, Workshop on the Theory and Application of of Cryptographic Techniques, Lofthus, Norway, May 23-27, 1993, Proceedings, volume 765 of Lecture Notes in Computer Science, 55-64. Springer, 1993. doi:10.1007/3-540-48285-7_6.">21</a>]</span>.</p>
 <p>Hàm boolean vector <span class="math notranslate nohighlight">\(F : \mathbb{F}_2^n \to \mathbb{F}_2^n\)</span> gọi là <strong>differentially <span class="math notranslate nohighlight">\(\delta\)</span>-uniform</strong> nếu với mọi vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> khác không và vector <span class="math notranslate nohighlight">\(\bm{b}\)</span> bất kì thì phương trình</p>
 <div class="math notranslate nohighlight">
 \[F(\bm{x}) \oplus F(\bm{x} \oplus \bm{a}) = \bm{b}\]</div>

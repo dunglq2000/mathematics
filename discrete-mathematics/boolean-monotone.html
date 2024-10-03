@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>29.2. Biến đổi Fourier rời rạc &#8212; Math Book</title>
+    <title>15.4. Hàm đơn điệu &#8212; Math Book</title>
   
   
   
@@ -59,11 +59,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'vasilenko/dft';</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/boolean-monotone';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2023" href="../contests/2023/2023.html" />
-    <link rel="prev" title="29.1. Biến đổi Fourier rời rạc" href="discrete-fourier-transform.html" />
+    <link rel="next" title="15.5. Nonlinearlity của hàm boolean" href="walsh-hadamard-spectre.html" />
+    <link rel="prev" title="15.3. Hàm affine và hàm tuyến tính" href="boolean-aff-lin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,25 +210,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">8. Xác suất thống kê</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">9. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">9.1. Nhóm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">9.2. Nhóm hoán vị</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">9.3. Group homomorphism</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">9.4. Vành và trường</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">9.5. Tác động nhóm</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="group.html">9. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-intro.html">9.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric-group.html">9.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group-homomorphism.html">9.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ring-and-field.html">9.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group-action.html">9.5. Tác động nhóm</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">10. Lý thuyết Galois</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">11. Số học</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">12. Quan hệ hai ngôi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">13. Phân hoạch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">14. Đại cương tổ hợp</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galois-theory.html">10. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="number-theory.html">11. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-relation.html">12. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition.html">13. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -266,10 +270,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">29.2. Biến đổi Fourier rời rạc</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -402,7 +405,7 @@
       
       
       
-      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fvasilenko/dft.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fdiscrete-mathematics/boolean-monotone.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,7 +435,7 @@
       
       
       
-      <li><a href="../_sources/vasilenko/dft.ipynb" target="_blank"
+      <li><a href="../_sources/discrete-mathematics/boolean-monotone.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -442,7 +445,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -514,7 +517,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Biến đổi Fourier rời rạc</h1>
+    <h1>Hàm đơn điệu</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -528,70 +531,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="bien-doi-fourier-roi-rac">
-<h1><span class="section-number">29.2. </span>Biến đổi Fourier rời rạc<a class="headerlink" href="#bien-doi-fourier-roi-rac" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="k">def</span> <span class="nf">discrete_fourier_transform</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">zeta_n</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="n">f_hat</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">fi</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">zeta_n</span><span class="o">**</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-        <span class="n">f_hat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fi</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f_hat</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">f_hat</span>
-
-
-<span class="n">F3</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">F3</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-
-<span class="n">F9</span> <span class="o">=</span> <span class="n">GF</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">modulus</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">t</span>
-
-<span class="n">PR</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">F9</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">PR</span><span class="o">.</span><span class="n">gen</span><span class="p">()</span>
-
-<span class="n">pol</span> <span class="o">=</span> <span class="n">z</span><span class="o">**</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="n">roots</span> <span class="o">=</span> <span class="n">pol</span><span class="o">.</span><span class="n">roots</span><span class="p">()</span>
-
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">roots</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">zeta_2n</span> <span class="o">=</span> <span class="n">roots</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">zeta_n</span> <span class="o">=</span> <span class="n">zeta_2n</span><span class="o">**</span><span class="mi">2</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zeta_2n</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zeta_n</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># f = [F9.random_element() for _ in range(n)]</span>
-<span class="c1"># f = [0, 2*x]</span>
-<span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="n">discrete_fourier_transform</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">zeta_n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-
-<span class="n">f_hat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 0</span>
-<span class="n">f_hat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 1</span>
-<span class="n">f_hat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 2</span>
-<span class="n">f_hat</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roots = [(2*x + 2, 1), (2*x + 1, 1), (x + 2, 1), (x + 1, 1)]
-zeta_2n = x + 2
-zeta_n = x
-f_hat = [2*x, x*x + x + 1, 0, 2*x*x + 2*x + 1]
-</pre></div>
-</div>
-</div>
-</div>
-<p><a class="github reference external" href="https://github.com/jacksonwalters/dft-finite-groups">jacksonwalters/dft-finite-groups</a></p>
+  <section id="ham-don-dieu">
+<h1><span class="section-number">15.4. </span>Hàm đơn điệu<a class="headerlink" href="#ham-don-dieu" title="Link to this heading">#</a></h1>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 15.11 </span> (Vector so sánh được)</p>
+<section class="definition-content" id="proof-content">
+<p>Xét hai vector <span class="math notranslate nohighlight">\(\bm{a} = (a_1, a_2, \ldots, a_n)\)</span> và <span class="math notranslate nohighlight">\(\bm{b} = (b_1, b_2, \ldots, b_n)\)</span> (<span class="math notranslate nohighlight">\(a_i, b_i \in \{0, 1\}\)</span>). Ta nói <span class="math notranslate nohighlight">\(\bm{a}\)</span> <strong>so sánh được nhỏ hơn</strong> <span class="math notranslate nohighlight">\(\bm{b}\)</span> nếu với mọi <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span> ta có <span class="math notranslate nohighlight">\(a_i \leqslant b_i\)</span>. Ký hiệu <span class="math notranslate nohighlight">\(\bm{a} \preccurlyeq \bm{b}\)</span>.</p>
 </section>
+</div><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 15.7 </span></p>
+<section class="example-content" id="proof-content">
+<p>Ta có <span class="math notranslate nohighlight">\((1, 0, 0) \preccurlyeq (1, 0, 1)\)</span>, còn <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> và <span class="math notranslate nohighlight">\((0, 1, 0)\)</span>
+thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
+</section>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 15.12 </span> (Hàm boolean đơn điệu)</p>
+<section class="definition-content" id="proof-content">
+<p>Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> được gọi là <strong>hàm boolean đơn điệu</strong> (hay <strong>monotone</strong>) nếu với mọi vector <span class="math notranslate nohighlight">\((a_1, a_2, \ldots, a_n) \preccurlyeq (b_1, b_2, \ldots, b_n)\)</span> thì ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    f(a_1, a_2, \ldots, a_n) \leqslant f(b_1, b_2, \ldots, b_n)  
+\end{equation}\]</div>
+</section>
+</div><div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 15.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 0, 1)\)</span>.</p>
+<p>Ta thấy rằng:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((0, 0) \preccurlyeq (0, 1)\)</span> và <span class="math notranslate nohighlight">\(f(0, 0) = 0 \leqslant 1 = f(0, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0, 0) \preccurlyeq (1, 0)\)</span> và <span class="math notranslate nohighlight">\(f(0, 0) = 0 \leqslant 0 = f(1, 0)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0, 0) \preccurlyeq (1, 1)\)</span> và <span class="math notranslate nohighlight">\(f(0, 0) = 0 \leqslant 1 = f(1, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((0, 1)\)</span> và <span class="math notranslate nohighlight">\((1, 0)\)</span> không so sánh được nên bỏ qua</p></li>
+<li><p><span class="math notranslate nohighlight">\((0, 1) \preccurlyeq (1, 1)\)</span> và <span class="math notranslate nohighlight">\(f(0, 1) = 1 \leqslant 1 = f(1, 1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((1, 0) \preccurlyeq (1, 1)\)</span> và <span class="math notranslate nohighlight">\(f(1, 0) = 0 \leqslant 1 = f(1, 1)\)</span></p></li>
+</ul>
+<p>Vậy đây là hàm đơn điệu.</p>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -606,7 +583,7 @@ f_hat = [2*x, x*x + x + 1, 0, 2*x*x + 2*x + 1]
         },
         kernelOptions: {
             name: "python3",
-            path: "./vasilenko"
+            path: "./discrete-mathematics"
         },
         predefinedOutput: true
     }
@@ -624,20 +601,20 @@ f_hat = [2*x, x*x + x + 1, 0, 2*x*x + 2*x + 1]
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="discrete-fourier-transform.html"
+       href="boolean-aff-lin.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">29.1. </span>Biến đổi Fourier rời rạc</p>
+        <p class="prev-next-title"><span class="section-number">15.3. </span>Hàm affine và hàm tuyến tính</p>
       </div>
     </a>
     <a class="right-next"
-       href="../contests/2023/2023.html"
+       href="walsh-hadamard-spectre.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2023</p>
+        <p class="prev-next-title"><span class="section-number">15.5. </span>Nonlinearlity của hàm boolean</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

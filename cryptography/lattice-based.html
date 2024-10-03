@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -271,7 +273,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -811,7 +812,7 @@ document.write(`
 <h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">24.4. </span>Các thuật toán lattice-based</a><a class="headerlink" href="#cac-thuat-toan-lattice-based" title="Link to this heading">#</a></h2>
 <section id="congruential-public-key-cryptosystem">
 <h3><span class="section-number">24.4.1. </span>Congruential public key cryptosystem<a class="headerlink" href="#congruential-public-key-cryptosystem" title="Link to this heading">#</a></h3>
-<p>Thuật toán này có thể xem chi trong <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">13</a>]</span>.</p>
+<p>Thuật toán này có thể xem chi trong <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">14</a>]</span>.</p>
 <section id="tao-khoa">
 <h4><span class="section-number">24.4.1.1. </span>Tạo khóa<a class="headerlink" href="#tao-khoa" title="Link to this heading">#</a></h4>
 <p>Trong thuật toán này, ta chọn số nguyên tố <span class="math notranslate nohighlight">\(q\)</span> làm public parameter.</p>
@@ -901,7 +902,7 @@ document.write(`
 </section>
 <section id="phuong-phap-coppersmith">
 <h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">24.5. </span>Phương pháp Coppersmith</a><a class="headerlink" href="#phuong-phap-coppersmith" title="Link to this heading">#</a></h2>
-<p>Phương pháp Coppersmith được dùng để tìm nghiệm nhỏ của đa thức trên modulo. Phần này mình tham khảo chính từ <span id="id3">[<a class="reference internal" href="../intro.html#id15" title="Steven D Galbraith. Mathematics of Public Key Cryptography. Cambridge University, 2018.">14</a>]</span>.</p>
+<p>Phương pháp Coppersmith được dùng để tìm nghiệm nhỏ của đa thức trên modulo. Phần này mình tham khảo chính từ <span id="id3">[<a class="reference internal" href="../intro.html#id15" title="Steven D Galbraith. Mathematics of Public Key Cryptography. Cambridge University, 2018.">15</a>]</span>.</p>
 <section id="y-tuong">
 <h3><span class="section-number">24.5.1. </span>Ý tưởng<a class="headerlink" href="#y-tuong" title="Link to this heading">#</a></h3>
 <p>Giả sử ta có phương trình <span class="math notranslate nohighlight">\(F(x) \equiv 0 \bmod M\)</span>​. Với số <span class="math notranslate nohighlight">\(X\)</span>​ cố định cho trước, phương pháp Coppersmith cho phép tìm nghiệm <span class="math notranslate nohighlight">\(x_0\)</span> nhỏ thỏa mãn <span class="math notranslate nohighlight">\(\lvert x_0 \rvert \leqslant X\)</span>​.</p>
