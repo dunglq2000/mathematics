@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -528,14 +528,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-thuc-zhegalkin">15.1.1. Đa thức Zhegalkin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">15.1.2. Cách tìm đa thức Zhegalkin từ bảng chân trị</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-tam-giac">15.1.2.1. Phương pháp tam giác</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-mobius">15.1.2.2. Phương pháp Möbius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phu-thuoc-tuyen-tinh">15.1.2. Phụ thuộc tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">15.1.3. Cách tìm đa thức Zhegalkin từ bảng chân trị</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-tam-giac">15.1.3.1. Phương pháp tam giác</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-mobius">15.1.3.2. Phương pháp Möbius</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.3. Hàm affine và hàm tuyến tính</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.4.1. Một số kí hiệu hay dùng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.4. Hàm affine và hàm tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.5. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.5.1. Một số kí hiệu hay dùng</a></li>
 </ul>
 </li>
 </ul>
@@ -557,16 +558,17 @@ document.write(`
 <li><p><a class="reference internal" href="#ham-boolean" id="id6">Hàm boolean</a></p>
 <ul>
 <li><p><a class="reference internal" href="#da-thuc-zhegalkin" id="id7">Đa thức Zhegalkin</a></p></li>
-<li><p><a class="reference internal" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri" id="id8">Cách tìm đa thức Zhegalkin từ bảng chân trị</a></p>
+<li><p><a class="reference internal" href="#phu-thuoc-tuyen-tinh" id="id8">Phụ thuộc tuyến tính</a></p></li>
+<li><p><a class="reference internal" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri" id="id9">Cách tìm đa thức Zhegalkin từ bảng chân trị</a></p>
 <ul>
-<li><p><a class="reference internal" href="#phuong-phap-tam-giac" id="id9">Phương pháp tam giác</a></p></li>
-<li><p><a class="reference internal" href="#phuong-phap-mobius" id="id10">Phương pháp Möbius</a></p></li>
+<li><p><a class="reference internal" href="#phuong-phap-tam-giac" id="id10">Phương pháp tam giác</a></p></li>
+<li><p><a class="reference internal" href="#phuong-phap-mobius" id="id11">Phương pháp Möbius</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#ham-affine-va-ham-tuyen-tinh" id="id11">Hàm affine và hàm tuyến tính</a></p></li>
-<li><p><a class="reference internal" href="#ham-don-dieu" id="id12">Hàm đơn điệu</a></p>
+<li><p><a class="reference internal" href="#ham-affine-va-ham-tuyen-tinh" id="id12">Hàm affine và hàm tuyến tính</a></p></li>
+<li><p><a class="reference internal" href="#ham-don-dieu" id="id13">Hàm đơn điệu</a></p>
 <ul>
-<li><p><a class="reference internal" href="#mot-so-ki-hieu-hay-dung" id="id13">Một số kí hiệu hay dùng</a></p></li>
+<li><p><a class="reference internal" href="#mot-so-ki-hieu-hay-dung" id="id14">Một số kí hiệu hay dùng</a></p></li>
 </ul>
 </li>
 </ul>
@@ -697,7 +699,43 @@ các bảng chân trị cơ bản trên):</p>
 </ul>
 <section id="da-thuc-zhegalkin">
 <h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">15.1.1. </span>Đa thức Zhegalkin</a><a class="headerlink" href="#da-thuc-zhegalkin" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-0">
+<p>Đặt <span class="math notranslate nohighlight">\(f(\bm{x})\)</span> là hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến. Với số <span class="math notranslate nohighlight">\(m \leqslant n\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(x_1, \ldots, x_n) = \bigoplus_{a_1, \ldots, a_m \in \mathbb{F}_2} &amp; (x_1 \oplus a_1 \oplus 1) \times \cdots \times \\
+  \times &amp; (x_m \oplus a_m \oplus 1) \cdot f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_n)
+\end{align*}\end{split}\]</div>
+<div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Chọn bộ <span class="math notranslate nohighlight">\((b_1, \ldots, b_m)\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^m\)</span>.</p>
+<p>Thay <span class="math notranslate nohighlight">\(x_i\)</span> bởi <span class="math notranslate nohighlight">\(b_i\)</span> với <span class="math notranslate nohighlight">\(i = 1, \ldots, m\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+  f(b_1, \ldots, b_m, x_{m+1}, x_m) = \bigoplus_{a_1, \ldots, a_m \in \mathbb{F}_2} (b_1 \oplus a_1 \oplus 1) \cdots (b_m \oplus a_m \oplus 1) \cdot f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_n)
+\end{align*}\]</div>
+<p>Ở vế phải, tích <span class="math notranslate nohighlight">\(\prod\limits_{i=1}^m (b_i \oplus a_i \oplus 1) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(b_i \oplus a_i \oplus 1 = 1\)</span> với mọi <span class="math notranslate nohighlight">\(i = 1, \ldots, m\)</span>.</p>
+<p>Nói cách khác là khi <span class="math notranslate nohighlight">\(b_i \equiv a_i\)</span> thì ta còn <span class="math notranslate nohighlight">\(f\)</span> ở vế phải, còn các trường hợp kia thì bằng <span class="math notranslate nohighlight">\(0\)</span>. Do đó ta có điều phải chứng minh.</p>
+</div>
+<p>Khi đó, <span class="math notranslate nohighlight">\(f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_m)\)</span> được gọi là <strong>hệ số khai triển của hàm <span class="math notranslate nohighlight">\(f\)</span> theo các biến <span class="math notranslate nohighlight">\(x_1\)</span>, …, <span class="math notranslate nohighlight">\(x_m\)</span></strong>.</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 15.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét <span class="math notranslate nohighlight">\(f(x_1, x_2) = x_1 x_2 \oplus 1\)</span>. Với <span class="math notranslate nohighlight">\(m = 1\)</span>, ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  a_1 = 0 &amp; \Rightarrow (x_1 \oplus 0 \oplus 1) \cdot f(0, x_2) = (x_1 \oplus 1) \cdot 1 = x_1 \oplus 1 \\
+  a_1 = 1 &amp; \Rightarrow (x_1 \oplus 1 \oplus 1) \cdot f(1, x_2) = x_1 \oplus (x_2 \oplus 1)
+\end{align*}\end{split}\]</div>
+<p>Như vậy</p>
+<div class="math notranslate nohighlight">
+\[f(x_1, x_2) = (x_1 \oplus 1) \oplus \left(x_1 \cdot (x_2 \oplus 1)\right)\]</div>
+<p>Nếu khai triển vế phải ra chúng ta thấy bằng với hàm <span class="math notranslate nohighlight">\(f\)</span> ban đầu.</p>
+</section>
+</div><p>Tương ứng với <span class="math notranslate nohighlight">\(m\)</span> biến ta có <span class="math notranslate nohighlight">\(2^m\)</span> hệ số khai triển.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(f_1, \ldots, f_{2^m}\)</span> là các hệ số khai triển hàm <span class="math notranslate nohighlight">\(f\)</span> theo <span class="math notranslate nohighlight">\(m\)</span> biến bất kì. Khi đó</p>
+<div class="math notranslate nohighlight" id="equation-wt-decomp">
+<span class="eqno">(15.1)<a class="headerlink" href="#equation-wt-decomp" title="Link to this equation">#</a></span>\[\mathrm{wt}(f) = \sum_{i=1}^{2^m} \mathrm{wt} (f_i)\]</div>
+<div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 15.1 </span> (Đa thức Zhegalkin)</p>
 <section class="definition-content" id="proof-content">
 <p>Với hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>, <strong>đa thức Zhegalkin</strong> tương ứng với hàm bool đó là cách biểu diễn đa thức đó dưới dạng tổng các tích như sau</p>
@@ -710,8 +748,15 @@ các bảng chân trị cơ bản trên):</p>
 <p>với <span class="math notranslate nohighlight">\(a_i \in \{0, 1\}\)</span>. Ta thấy rằng có <span class="math notranslate nohighlight">\(n\)</span> biến, do đó có <span class="math notranslate nohighlight">\(2^n\)</span> hệ số <span class="math notranslate nohighlight">\(a_i\)</span> (<span class="math notranslate nohighlight">\(i = 0, 1, \ldots, 2^n-1\)</span>).</p>
 </section>
 </div><p>Khi đó ta nói hàm boolean <span class="math notranslate nohighlight">\(f\)</span> được biểu diễn ở <strong>dạng chuẩn tắc đại số</strong> (hay <strong>algebraic normal form</strong>, <strong>ANF</strong>).</p>
-<div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 15.1 </span></p>
+<p>Đặt</p>
+<div class="math notranslate nohighlight" id="equation-g">
+<span class="eqno">(15.2)<a class="headerlink" href="#equation-g" title="Link to this equation">#</a></span>\[
+  f(x_1, \ldots, x_n) = \bigoplus_{a_1, \ldots, a_n \in \mathbb{F}_2} g(a_1, \ldots, a_n) \cdot x_1^{a_1} \cdots x_n^{a_n}
+\]</div>
+<p>Hàm <span class="math notranslate nohighlight">\(g\)</span> khi đó được gọi là <strong>hệ số ANF</strong> của hàm <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Ánh xạ <span class="math notranslate nohighlight">\(\mu(f) = g\)</span> được gọi là <strong>biến đổi Mobius</strong> (hay <strong>преобразование Мёбиуса</strong>).</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 15.2 </span></p>
 <section class="example-content" id="proof-content">
 <p>Cho hàm bool <span class="math notranslate nohighlight">\(f(x, y) = x \vee y\)</span>. Ta có bảng chân trị sau</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -745,23 +790,222 @@ các bảng chân trị cơ bản trên):</p>
 <div class="math notranslate nohighlight">
 \[f(x, y) = x \oplus y \oplus xy\]</div>
 </section>
-</div><div class="proof definition admonition" id="definition-2">
+</div><p>ANF ở ví dụ trên có thể được viết lại</p>
+<div class="math notranslate nohighlight">
+\[f(x, y) = 0 \cdot x^0 y^0 \oplus 1 \cdot x^0 y^1 \oplus 1 \cdot x^1 y^0 \oplus 1 \cdot x^1 y^1\]</div>
+<p>Như vậy biến đổi Mobius của hàm <span class="math notranslate nohighlight">\(f\)</span> là</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f(x, y)\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(g = \mu(f)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ta ký hiệu <span class="math notranslate nohighlight">\(\bm{x}^{\bm{a}} = x_1^{a_1} \cdots x_n^{a_n}\)</span> với</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bm{x} = (x_1, \ldots, x_n)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{a} = (a_1, \ldots, a_n)\)</span></p></li>
+</ul>
+<p>Do <span class="math notranslate nohighlight">\(x_i^{a_i} = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(a_i \leqslant x_i\)</span>, ta có <span class="math notranslate nohighlight">\(\bm{x}^{\bm{a}} = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(\bm{a} \preccurlyeq \bm{x}\)</span> theo nghĩa <span class="math notranslate nohighlight">\(a_i \leqslant x_i\)</span> với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>.</p>
+<p>Ta có thể viết lại <a class="reference internal" href="#equation-g">(15.2)</a> là</p>
+<div class="math notranslate nohighlight">
+\[f(\bm{x}) = \bigoplus_{\bm{a} \in \mathbb{F}_2^n} g(\bm{a}) \cdot \bm{x}^{\bm{a}} = \bigoplus_{\bm{a} \in \mathbb{F}_2^n} g(\bm{a})\]</div>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 15.1 </span> (Biến đổi Mobius)</p>
+<section class="remark-content" id="proof-content">
+<p>Đặt <span class="math notranslate nohighlight">\(f \in \mathcal{F}_n\)</span> và <span class="math notranslate nohighlight">\(g = \mu(f)\)</span>. Khi đó với mọi <span class="math notranslate nohighlight">\(\bm{a} \in \mathbb{F}_2^n\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[g(\bm{a}) = \bigoplus_{\bm{x} \preccurlyeq \bm{a}} f(\bm{x})\]</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Ta chứng minh bằng quy nạp theo trọng số của <span class="math notranslate nohighlight">\(\bm{a}\)</span>.</p>
+<p>Ở bước cơ sở khi trọng số bằng không, <span class="math notranslate nohighlight">\(g(\bm{0}) = f(\bm{0})\)</span> với <span class="math notranslate nohighlight">\(\bm{0}\)</span> là vector chứa <span class="math notranslate nohighlight">\(n\)</span> số <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Giả thiết quy nạp: giả sử mệnh đề đúng với mọi vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> có trọng số nhỏ hơn <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Khi <span class="math notranslate nohighlight">\(\bm{a}\)</span> có trọng số bằng <span class="math notranslate nohighlight">\(p\)</span>, ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(\bm{a}) = \bigoplus_{\bm{x} \preccurlyeq \bm{a}} g(\bm{x}) &amp; = \left( \bigoplus_{\bm{x} \prec \bm{a}} g(\bm{x}) \right) \oplus g(\bm{a}) \quad (\text{tách thành phần nhỏ hơn và bằng} \, \bm{a}) \\
+  &amp; = \left(\bigoplus_{\bm{x} \prec \bm{a}} \bigoplus_{\bm{y} \preccurlyeq \bm{x}} f(\bm{y})\right) \oplus g(\bm{a}) \quad (\text{sử dụng giả thiết quy nạp thay} \, g(\bm{x}))
+\end{align*}\end{split}\]</div>
+<p>Đặt</p>
+<div class="math notranslate nohighlight">
+\[S = \bigoplus_{\bm{x} \prec \bm{a}} \bigoplus_{\bm{y} \preccurlyeq \bm{x}} f(\bm{y}) = \bigoplus_{\bm{y} \prec \bm{a}} f(\bm{y}) \bigoplus_{\bm{y} \preccurlyeq \bm{x} \prec \bm{a}} 1 = \bigoplus_{\bm{y} \prec \bm{a}} f(\bm{y})\]</div>
+<p>Đẳng thức thứ hai đúng là do <span class="math notranslate nohighlight">\(\bm{y}\)</span> nhận tất cả vector từ <span class="math notranslate nohighlight">\(\bm{0}\)</span> tới <span class="math notranslate nohighlight">\(\bm{x}\)</span> mà <span class="math notranslate nohighlight">\(\bm{x} \prec \bm{a}\)</span> nên thực chất có thể thay <span class="math notranslate nohighlight">\(\bm{x}\)</span> thành <span class="math notranslate nohighlight">\(\bm{y}\)</span>.</p>
+<p>Đẳng thức cuối đúng là do <span class="math notranslate nohighlight">\(2^{\mathrm{wt}(\bm{a}) - \mathrm{wt}(\bm{y})} - 1\)</span> là số lẻ nào đó mà <span class="math notranslate nohighlight">\(\bm{y} \preccurlyeq \bm{x} \prec \bm{a}\)</span>. Suy ra <span class="math notranslate nohighlight">\(g(\bm{a}) = S \oplus f(\bm{a}) = \bigoplus\limits_{\bm{y} \preccurlyeq \bm{a}} f(\bm{y})\)</span>.</p>
+</div>
+<div class="proof definition admonition" id="definition-4">
 <p class="admonition-title"><span class="caption-number">Definition 15.2 </span> (Bậc của đa thức Zhegalkin)</p>
 <section class="definition-content" id="proof-content">
 <p>Tương tự như bậc của một đa thức đại số thông thường, bậc của đa thức Zhegalkin là bậc của hạng tử chứa nhiều đơn thức <span class="math notranslate nohighlight">\(x_i\)</span> nhất. Ký hiệu là <span class="math notranslate nohighlight">\(\deg(f)\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 15.2 </span></p>
+</div><div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 15.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x, y, z) = 1 \oplus x \oplus yz \oplus xyz\)</span>. Khi đó <span class="math notranslate nohighlight">\(\deg(f) = 3\)</span> vì hạng tử chứa nhiều đơn thức nhất là <span class="math notranslate nohighlight">\(xyz\)</span> có 3 đơn thức.</p>
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x, y, z) = 1 \oplus z \oplus zy \oplus xy\)</span>. Khi đó <span class="math notranslate nohighlight">\(\deg(f) = 2\)</span> vì hạng tử chứa nhiều đơn thức nhất là <span class="math notranslate nohighlight">\(zy\)</span> (cũng có thể xét <span class="math notranslate nohighlight">\(xy\)</span>).</p>
 </section>
+</div><div class="proof corollary admonition" id="corollary-6">
+<p class="admonition-title"><span class="caption-number">Corollary 15.1 </span></p>
+<section class="corollary-content" id="proof-content">
+<div class="math notranslate nohighlight">
+\[\mu(\mu(f)) = f\]</div>
+</section>
+</div><div class="proof corollary admonition" id="corollary-7">
+<p class="admonition-title"><span class="caption-number">Corollary 15.2 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Đặt <span class="math notranslate nohighlight">\(f \in \mathcal{F}_n\)</span>. Khi đó <span class="math notranslate nohighlight">\(\deg f = n\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(\mathrm{wt} (f)\)</span> lẻ.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-8">
+<p class="admonition-title"><span class="caption-number">Remark 15.2 </span></p>
+<section class="remark-content" id="proof-content">
+<div class="math notranslate nohighlight">
+\[g(\bm{1}) = \bigoplus_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x})\]</div>
+<p>với <span class="math notranslate nohighlight">\(\bm{1}\)</span> là vector có <span class="math notranslate nohighlight">\(n\)</span> số <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="remark-9">
+<p class="admonition-title"><span class="caption-number">Remark 15.3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(f \in \mathcal{F}_n\)</span> và <span class="math notranslate nohighlight">\(\deg f = d \geqslant 1\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[2^{n - d} \leqslant \mathrm{wt} (f) \leqslant 2^n - 2^{n-d}\]</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Đặt <span class="math notranslate nohighlight">\(x_{i_1} \cdots x_{i_d}\)</span> là đơn thức có bậc cao nhất ở ANF. Khai triển <span class="math notranslate nohighlight">\(f\)</span> thành <span class="math notranslate nohighlight">\(n-d\)</span> biến và đặt <span class="math notranslate nohighlight">\(f_1, \ldots, f_{2^{n-d}}\)</span> là các hệ số khai triển.</p>
+<p>Ở ANF, mỗi hệ số đều có <span class="math notranslate nohighlight">\(x_{i_1}\)</span>, …, <span class="math notranslate nohighlight">\(x_{i_d}\)</span> nên mọi hệ số đều khác hằng. Suy ra</p>
+<div class="math notranslate nohighlight">
+\[1 \leqslant \mathrm{wt} (f_i) \leqslant 2^d - 1\]</div>
+<p>với <span class="math notranslate nohighlight">\(i = 1, \ldots, 2^{n-d}\)</span>. Ta có điều phải chứng minh.</p>
+</div>
+<p>Nói riêng, nếu <span class="math notranslate nohighlight">\(\deg f = 1\)</span> thì <span class="math notranslate nohighlight">\(f\)</span> là hàm cân bằng.</p>
+</section>
+<section id="phu-thuoc-tuyen-tinh">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">15.1.2. </span>Phụ thuộc tuyến tính</a><a class="headerlink" href="#phu-thuoc-tuyen-tinh" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 15.3 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Hàm <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> được gọi là <strong>linear dependent</strong> (hay <strong>линейно зависить</strong>) vào biến <span class="math notranslate nohighlight">\(x_i\)</span> nếu <span class="math notranslate nohighlight">\(f\)</span> có thể biểu diễn ở dạng</p>
+<div class="math notranslate nohighlight">
+\[f(x_1, \ldots, x_n) = g(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n) \oplus x_i\]</div>
+<p>với <span class="math notranslate nohighlight">\(g \in \mathcal{F}_{n-1}\)</span>.</p>
+</section>
+</div><p>Theo trường hợp riêng ở trên thì nếu <span class="math notranslate nohighlight">\(f\)</span> linear dependent vào một biến bất kì thì <span class="math notranslate nohighlight">\(f\)</span> là hàm cân bằng.</p>
+<p>Ta có thể diễn đạt định nghĩa trên theo cách khác:</p>
+<div class="math notranslate nohighlight">
+\[f(x_1, \ldots, x_{i-1}, 0, x_{i+1}, \ldots, x_n) \neq f(x_1, \ldots, x_{i-1}, 1, x_{i+1}, \ldots, x_n)\]</div>
+<div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 15.4 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Hàm <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> được gọi là <strong>quasi-linear dependent</strong> (hay <strong>квазилинейно зависить</strong>) trên cặp biến <span class="math notranslate nohighlight">\(x_i\)</span> và <span class="math notranslate nohighlight">\(x_j\)</span> nếu <span class="math notranslate nohighlight">\(f\)</span> đổi giá trị khi ta đảo giá trị ở vị trí <span class="math notranslate nohighlight">\(i\)</span> và <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>Nói cách khác, ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+  f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) = \bar{f}(x_1, \ldots, \bar{x}_i, \ldots, \bar{x}_j, \ldots, x_n)
+\end{align*}\]</div>
+<p>với <span class="math notranslate nohighlight">\(x_i, x_j \in \mathbb{F}_2\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="quasi-fg">
+<p class="admonition-title"><span class="caption-number">Remark 15.4 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Hàm <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n, y, z)\)</span> là hàm quasi-linear dependent trên biến <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f\)</span> có dạng</p>
+<div class="math notranslate nohighlight">
+\[f(x_1, \ldots, x_n, y, z) = g(x_1, \ldots, x_n, y \oplus z) \oplus y.\]</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p><strong>Điều kiện cần.</strong> Đặt <span class="math notranslate nohighlight">\(\bm{x} = \mathbb{F}_2^n\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(\bm{x}, 0, 0) = g(\bm{x}, 0), \quad f(\bm{x}, 1, 1) = g(\bm{x}, 0) \oplus 1 = \bar{f}(\bm{x}, 0, 0) \\
+  f(\bm{x}, 0, 1) = g(\bm{x}, 1), \quad f(\bm{x}, 1, 0) = g(\bm{x}, 1) \oplus 1  = \bar{f}(\bm{x}, 1, 0)
+\end{align*}\end{split}\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(f\)</span> là quasi-linear dependent.</p>
+<p><strong>Điều kiện đủ.</strong> Khai triển <span class="math notranslate nohighlight">\(f\)</span> theo <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span>, sau đó thay <span class="math notranslate nohighlight">\(f(\bm{x}, 0, 0)\)</span> bởi <span class="math notranslate nohighlight">\(f(\bm{x}, 0, 0) \oplus 1\)</span>, tương tự <span class="math notranslate nohighlight">\(f(\bm{x}, 0, 1)\)</span> thành <span class="math notranslate nohighlight">\(f(\bm{x}, 0, 1) \oplus 1\)</span>. Nói cách khác là</p>
+<div class="math notranslate nohighlight" id="equation-fyz">
+<span class="eqno">(15.3)<a class="headerlink" href="#equation-fyz" title="Link to this equation">#</a></span>\[\begin{split}\begin{align*}
+  f(\bm{x}, y, z) &amp; = (y \oplus 1) \cdot (z \oplus 1) \cdot f(\bm{x}, 0, 0) \\
+  &amp; \oplus (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \\
+  &amp; \oplus y \cdot (z \oplus 1) \cdot f(\bm{x}, 1, 0) \\
+  &amp; \oplus y \cdot z \cdot f(\bm{x}, 1, 1)
+\end{align*}\end{split}\]</div>
+<p>Ta gom hai nhóm:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  &amp; (y \oplus 1) \cdot (z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus y \cdot z \cdot f(\bm{x}, 1, 1) \\
+  = &amp; (yz \oplus y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus y z \cdot (f(\bm{x}, 0, 0) \oplus 1) \\
+  = &amp; (y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus yz
+\end{align*}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  &amp; (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \oplus y \cdot (z \oplus 1) \cdot f(\bm{x}, 1, 0) \\
+  = &amp; (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \oplus y \cdot (z \oplus 1) \cdot (f(\bm{x}, 0, 1) \oplus 1) \\
+  = &amp; (y \oplus z) \cdot f(\bm{x}, 0, 1) \oplus yz \oplus y
+\end{align*}\end{split}\]</div>
+<p>Tóm lại, phương trình khai triển ở <a class="reference internal" href="#equation-fyz">(15.3)</a> sẽ tương đương với</p>
+<div class="math notranslate nohighlight">
+\[f(\bm{x}, y, z) = \underbrace{(y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus (y \oplus z) \cdot f(\bm{x}, 0, 1)}_{g(\bm{x}, y \oplus z)} \oplus y\]</div>
+</div>
+<div class="proof remark admonition" id="remark-13">
+<p class="admonition-title"><span class="caption-number">Remark 15.5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu hàm boolean quasi-linear dependent trên hai biến bất kì thì hàm boolean đó cân bằng.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Đặt <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>. Do <span class="math notranslate nohighlight">\(f(\bm{x}, y, z) \in \mathcal{F}_{n+2}\)</span> và <span class="math notranslate nohighlight">\(f\)</span> quasi-linear dependent trên hai biến <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span> nên theo <a class="reference internal" href="#quasi-fg">Remark 15.4</a> thì <span class="math notranslate nohighlight">\(f\)</span> có dạng</p>
+<div class="math notranslate nohighlight">
+\[f(\bm{x}, y, z) = g(\bm{x}, y \oplus z) \oplus y\]</div>
+<p>Do tổng (XOR) của <span class="math notranslate nohighlight">\(f\)</span> có phần tuyến tính nên <span class="math notranslate nohighlight">\(f\)</span> cân bằng.</p>
+<p>Chúng ta cũng có thể chứng minh theo cách khác bằng khai triển <span class="math notranslate nohighlight">\(f\)</span> theo <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+  f(\bm{x}, y, z) &amp; = y \cdot z \cdot (g(\bm{x}, 0) \oplus 1) \oplus y \cdot (z \oplus 1) \cdot (g(\bm{x}, 1) \oplus 1) \\
+  &amp; \oplus (y \oplus 1) \cdot z \cdot g(\bm{x}, 1) \oplus (y \oplus 1) \cdot (z \oplus 1) \cdot g(\bm{x}, 0)
+\end{align*}\end{split}\]</div>
+<p>Theo đẳng thức <a class="reference internal" href="#equation-wt-decomp">(15.1)</a> thì</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{wt}(f) = \mathrm{wt}(\bar{g}(\bm{x}, 0)) + \mathrm{wt}(\bar{g}(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 0)) = 2^{n+1}.\]</div>
+</div>
+<div class="proof example admonition" id="example-14">
+<p class="admonition-title"><span class="caption-number">Example 15.4 </span> (hàm quasi-linear dependent)</p>
+<section class="example-content" id="proof-content">
+<p>Hàm boolean</p>
+<div class="math notranslate nohighlight">
+\[f(x, y, z) = y \oplus xz \oplus xy\]</div>
+<p>quasi-linear dependent trên hai biến <span class="math notranslate nohighlight">\(y\)</span> và <span class="math notranslate nohighlight">\(z\)</span>.</p>
+</section>
 </div></section>
 <section id="cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">15.1.2. </span>Cách tìm đa thức Zhegalkin từ bảng chân trị</a><a class="headerlink" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">15.1.3. </span>Cách tìm đa thức Zhegalkin từ bảng chân trị</a><a class="headerlink" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri" title="Link to this heading">#</a></h2>
 <p>Ta có nhiều phương pháp để tìm đa thức Zhegalkin của một hàm boolean từ bảng chân trị.</p>
 <section id="phuong-phap-tam-giac">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">15.1.2.1. </span>Phương pháp tam giác</a><a class="headerlink" href="#phuong-phap-tam-giac" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">15.1.3.1. </span>Phương pháp tam giác</a><a class="headerlink" href="#phuong-phap-tam-giac" title="Link to this heading">#</a></h3>
 <p>Ở hàng đầu ta viết các phần tử bảng chân trị từ trái sang phải. Với <span class="math notranslate nohighlight">\(n\)</span> biến sẽ có <span class="math notranslate nohighlight">\(2^n\)</span> ô.</p>
 <p>Hàng thứ hai có <span class="math notranslate nohighlight">\(2^n-1\)</span> ô. Phần tử dưới sẽ bằng XOR của 2 phần tử ngay trên nó (tạo thành tam giác). Tiếp tục như vậy tới khi ta có hàng cuối chỉ có 1 ô.</p>
 <figure class="align-default" id="id3">
@@ -789,7 +1033,7 @@ các bảng chân trị cơ bản trên):</p>
 \end{equation*}\]</div>
 </section>
 <section id="phuong-phap-mobius">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">15.1.2.2. </span>Phương pháp Möbius</a><a class="headerlink" href="#phuong-phap-mobius" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">15.1.3.2. </span>Phương pháp Möbius</a><a class="headerlink" href="#phuong-phap-mobius" title="Link to this heading">#</a></h3>
 <p>Phương pháp này cho phép chúng ta tính hệ số đa thức Zhegalkin như phương pháp tam giác nhưng nhanh hơn và đỡ sai sót hơn.</p>
 <p>Đầu tiên chúng ta chia đôi bảng chân trị thành hai nửa trái phải. Nửa trái giữa nguyên, mỗi phần tử ở nửa phải được XOR (cộng modulo 2) với phần tử tương ứng ở nửa trái.</p>
 <p>Giả sử với hàm <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 1, 1)\)</span> như trên. Bước 1, ta giữ nguyên 2 phần tử đầu 0 và 1. Phần tử thứ ba (mới) bằng phần tử thứ ba (cũ) XOR với phần tử đầu (<span class="math notranslate nohighlight">\(0 \oplus 1 = 1\)</span>). Phần tử thứ tư (mới) bằng phần tử thứ tư (cũ) XOR với phần tử thứ hai (<span class="math notranslate nohighlight">\(1 \oplus 1 = 0\)</span>).</p>
@@ -810,9 +1054,9 @@ các bảng chân trị cơ bản trên):</p>
 </section>
 </section>
 <section id="ham-affine-va-ham-tuyen-tinh">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">15.1.3. </span>Hàm affine và hàm tuyến tính</a><a class="headerlink" href="#ham-affine-va-ham-tuyen-tinh" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 15.3 </span> (Hàm boolean affine)</p>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">15.1.4. </span>Hàm affine và hàm tuyến tính</a><a class="headerlink" href="#ham-affine-va-ham-tuyen-tinh" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-15">
+<p class="admonition-title"><span class="caption-number">Definition 15.5 </span> (Hàm boolean affine)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span>. Khi đó <span class="math notranslate nohighlight">\(f\)</span> được gọi là <strong>hàm boolean affine</strong> nếu nó có dạng</p>
 <div class="math notranslate nohighlight">
@@ -823,28 +1067,28 @@ các bảng chân trị cơ bản trên):</p>
 <p>Khi <span class="math notranslate nohighlight">\(a_0 = 0\)</span> thì ta gọi là <strong>hàm boolean tuyến tính</strong> (linear).</p>
 </section>
 </div><p>Ta thấy rằng chỉ có các hạng tử dạng <span class="math notranslate nohighlight">\(a_i x_i\)</span> xuất hiện trong biểu diễn đa thức Zhegalkin tương ứng của hàm boolean đó. Hay  nói cách khác hàm boolean là affine khi <span class="math notranslate nohighlight">\(\deg(f) = 1\)</span>.</p>
-<div class="proof example admonition" id="example-5">
-<p class="admonition-title"><span class="caption-number">Example 15.3 </span></p>
+<div class="proof example admonition" id="example-16">
+<p class="admonition-title"><span class="caption-number">Example 15.5 </span></p>
 <section class="example-content" id="proof-content">
 <p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = x \oplus y\)</span> là hàm boolean affine và cũng tuyến tính. Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = x \oplus xy\)</span> không là hàm boolean affine.</p>
 </section>
 </div><p>Tiếp theo ta sẽ xét sự so sánh của hai vector và hàm boolean đơn điệu.</p>
 </section>
 <section id="ham-don-dieu">
-<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">15.1.4. </span>Hàm đơn điệu</a><a class="headerlink" href="#ham-don-dieu" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 15.4 </span> (Vector so sánh được)</p>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">15.1.5. </span>Hàm đơn điệu</a><a class="headerlink" href="#ham-don-dieu" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 15.6 </span> (Vector so sánh được)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai vector <span class="math notranslate nohighlight">\(\bm{a} = (a_1, a_2, \ldots, a_n)\)</span> và <span class="math notranslate nohighlight">\(\bm{b} = (b_1, b_2, \ldots, b_n)\)</span> (<span class="math notranslate nohighlight">\(a_i, b_i \in \{0, 1\}\)</span>). Ta nói <span class="math notranslate nohighlight">\(\bm{a}\)</span> <strong>so sánh được nhỏ hơn</strong> <span class="math notranslate nohighlight">\(\bm{b}\)</span> nếu với mọi <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span> ta có <span class="math notranslate nohighlight">\(a_i \leqslant b_i\)</span>. Ký hiệu <span class="math notranslate nohighlight">\(\bm{a} \prec \bm{b}\)</span>.</p>
 </section>
-</div><div class="proof example admonition" id="example-7">
-<p class="admonition-title"><span class="caption-number">Example 15.4 </span></p>
+</div><div class="proof example admonition" id="example-18">
+<p class="admonition-title"><span class="caption-number">Example 15.6 </span></p>
 <section class="example-content" id="proof-content">
 <p>Ta có <span class="math notranslate nohighlight">\((1, 0, 0) \prec (1, 0, 1)\)</span>, còn <span class="math notranslate nohighlight">\((1, 0, 0)\)</span> và <span class="math notranslate nohighlight">\((0, 1, 0)\)</span>
 thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
 </section>
-</div><div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 15.5 </span> (Hàm boolean đơn điệu)</p>
+</div><div class="proof definition admonition" id="definition-19">
+<p class="admonition-title"><span class="caption-number">Definition 15.7 </span> (Hàm boolean đơn điệu)</p>
 <section class="definition-content" id="proof-content">
 <p>Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> được gọi là <strong>hàm boolean đơn điệu</strong> (hay <strong>monotone</strong>) nếu với mọi vector <span class="math notranslate nohighlight">\((a_1, a_2, \ldots, a_n) \prec (b_1, b_2, \ldots, b_n)\)</span> thì ta có</p>
 <div class="math notranslate nohighlight">
@@ -852,8 +1096,8 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
     f(a_1, a_2, \ldots, a_n) \leqslant f(b_1, b_2, \ldots, b_n)  
 \end{equation}\]</div>
 </section>
-</div><div class="proof example admonition" id="example-9">
-<p class="admonition-title"><span class="caption-number">Example 15.5 </span></p>
+</div><div class="proof example admonition" id="example-20">
+<p class="admonition-title"><span class="caption-number">Example 15.7 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 0, 1)\)</span>.</p>
 <p>Ta thấy rằng:</p>
@@ -868,7 +1112,7 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
 <p>Vậy đây là hàm đơn điệu.</p>
 </section>
 </div><section id="mot-so-ki-hieu-hay-dung">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">15.1.4.1. </span>Một số kí hiệu hay dùng</a><a class="headerlink" href="#mot-so-ki-hieu-hay-dung" title="Link to this heading">#</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">15.1.5.1. </span>Một số kí hiệu hay dùng</a><a class="headerlink" href="#mot-so-ki-hieu-hay-dung" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Để chỉ tập hợp tất cả hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến ta dùng <span class="math notranslate nohighlight">\(\mathcal{F}_n\)</span>.</p></li>
 <li><p>Để chỉ tập hợp tất cả hàm boolean affine <span class="math notranslate nohighlight">\(n\)</span> biến ta dùng <span class="math notranslate nohighlight">\(\mathcal{A}_n\)</span>.</p></li>
@@ -952,14 +1196,15 @@ thì không so sánh được (vị trí thứ 1 và thứ 2).</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-thuc-zhegalkin">15.1.1. Đa thức Zhegalkin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">15.1.2. Cách tìm đa thức Zhegalkin từ bảng chân trị</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-tam-giac">15.1.2.1. Phương pháp tam giác</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-mobius">15.1.2.2. Phương pháp Möbius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phu-thuoc-tuyen-tinh">15.1.2. Phụ thuộc tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-tim-da-thuc-zhegalkin-tu-bang-chan-tri">15.1.3. Cách tìm đa thức Zhegalkin từ bảng chân trị</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-tam-giac">15.1.3.1. Phương pháp tam giác</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-mobius">15.1.3.2. Phương pháp Möbius</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.3. Hàm affine và hàm tuyến tính</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.4. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.4.1. Một số kí hiệu hay dùng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-affine-va-ham-tuyen-tinh">15.1.4. Hàm affine và hàm tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-don-dieu">15.1.5. Hàm đơn điệu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-ki-hieu-hay-dung">15.1.5.1. Một số kí hiệu hay dùng</a></li>
 </ul>
 </li>
 </ul>

@@ -2,7 +2,7 @@
 
 Xét dãy số $\{a_n\}$. Đặt
 
-$$S_n = a_1 + a_2 + \ldots + a_n = S_n$$
+$$S_n = a_1 + a_2 + \ldots + a_n$$
 
 Khi đó $\{S_n\}$ là chuỗi số. Tương tự như sự hội tụ hoặc phân kỳ của dãy số, ta cũng quan tâm đến sự hội tụ và phân kỳ của chuỗi số.
 
@@ -10,7 +10,20 @@ Khi đó $\{S_n\}$ là chuỗi số. Tương tự như sự hội tụ hoặc ph
 Chuỗi số $\{S_n\}$ được gọi là **hội tụ** nếu tồn tại giới hạn hữu hạn $\displaystyle{L = \lim_{n \to \infty} S_n}$.
 ````
 
-Ngược lại ta gọi là chuỗi phân kỳ. Nghĩa là $\displaystyle{\lim_{n \to \infty} S_n = \infty}$.
+Ngược lại ta gọi là chuỗi phân kỳ. Nghĩa là $\displaystyle{\lim_{n \to \infty} S_n = \infty}$ hoặc không tồn tại $\lim\limits_{n \to \infty} S_n$.
+
+````{prf:example}
+Xét dãy số $a_n = \dfrac{1}{2^n}$ với $n = 1, 2, \ldots$.
+
+Khi đó
+
+$$\begin{align*}
+    S_n & = \frac{1}{2} + \frac{1}{2^2} + \ldots + \frac{1}{2^n} \\
+    & = \frac{1}{2} \cdot \dfrac{1 - \dfrac{1}{2^n}}{1 - \dfrac{1}{2}} \longrightarrow \frac{1}{2} \cdot \dfrac{1}{1 - \dfrac{1}{2}} = 1
+\end{align*}$$
+
+khi $n \to \infty$. Như vậy $S_n$ là chuỗi hội tụ.
+````
 
 ## Tiêu chuẩn Cauchy
 
