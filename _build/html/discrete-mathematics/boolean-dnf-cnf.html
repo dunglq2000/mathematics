@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -271,7 +271,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -608,7 +607,7 @@ document.write(`
 <h2><span class="section-number">15.4.2. </span>Tổng của tích<a class="headerlink" href="#tong-cua-tich" title="Link to this heading">#</a></h2>
 <p>Nếu biểu thức boolean được biểu diễn ở dạng tổng của các tích thì ta gọi là <strong>disjunctive normal form</strong> (hay <strong>DNF</strong>).</p>
 <div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 15.9 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.10 </span></p>
 <section class="example-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\((a \land \neg b \land \neg c) \lor (a \land b) \lor (b \land \neg c)\)</span></p>
 </section>
@@ -617,7 +616,7 @@ document.write(`
 <p>Biểu thức boolean với <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(x_1, \ldots, x_n\)</span> ở dạng <strong>full disjunctive normal form</strong> (hay <strong>full DNF</strong>) mỗi term của nó có đủ <span class="math notranslate nohighlight">\(n\)</span> literal.</p>
 <p>Ở ví dụ trên thì các term <span class="math notranslate nohighlight">\(a \land b\)</span> và <span class="math notranslate nohighlight">\(b \land \neg c\)</span> chỉ có hai literal nên không phải là full DNF.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 15.10 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.11 </span></p>
 <section class="example-content" id="proof-content">
 <p>Ví dụ về full DNF:</p>
 <div class="math notranslate nohighlight">
@@ -635,7 +634,7 @@ document.write(`
 </li>
 </ol>
 <div class="proof example admonition" id="example-2">
-<p class="admonition-title"><span class="caption-number">Example 15.11 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.12 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sử dụng ví dụ ở trên</p>
 <div class="math notranslate nohighlight">
@@ -709,7 +708,7 @@ document.write(`
 <h2><span class="section-number">15.4.3. </span>Tích của các tổng<a class="headerlink" href="#tich-cua-cac-tong" title="Link to this heading">#</a></h2>
 <p>Nếu biểu thức boolean được biểu diễn ở dạng tích của các tổng thì ta gọi là <strong>conjunctive normal form</strong> (hay <strong>CNF</strong>).</p>
 <div class="proof example admonition" id="example-3">
-<p class="admonition-title"><span class="caption-number">Example 15.12 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.13 </span></p>
 <section class="example-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)\)</span></p>
 </section>
@@ -729,7 +728,7 @@ document.write(`
 </li>
 </ol>
 <div class="proof example admonition" id="example-4">
-<p class="admonition-title"><span class="caption-number">Example 15.13 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.14 </span></p>
 <section class="example-content" id="proof-content">
 <p>Sử dụng ví dụ ở trên</p>
 <div class="math notranslate nohighlight">

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -271,7 +271,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -564,26 +563,26 @@ document.write(`
 <h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">15.3.1. </span>Biến đổi Fourier</a><a class="headerlink" href="#bien-doi-fourier" title="Link to this heading">#</a></h2>
 <p>Với mỗi vector <span class="math notranslate nohighlight">\(\bm{a} = (a_1, \ldots, a_n) \in \mathbb{F}_2^n\)</span>, ta ký hiệu <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{x} \rangle\)</span> là hàm sau:</p>
 <div class="math notranslate nohighlight" id="equation-fur-eq1">
-<span class="eqno">(15.1)<a class="headerlink" href="#equation-fur-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.4)<a class="headerlink" href="#equation-fur-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
 	\langle \bm{a}, \bm{x} \rangle = a_1 x_1 \oplus a_2 x_2 \oplus \ldots \oplus a_n x_n
 \end{equation}\]</div>
 <p>Mỗi hàm boolean <span class="math notranslate nohighlight">\(f(\bm{x}) = f(x_1, x_2, \ldots, x_n)\)</span> sẽ được biểu diễn dưới dạng duy nhất với</p>
 <div class="math notranslate nohighlight" id="equation-fur-eq2">
-<span class="eqno">(15.2)<a class="headerlink" href="#equation-fur-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.5)<a class="headerlink" href="#equation-fur-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
 	f(\bm{x}) = 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} F_f (\bm{a}) \cdot (-1)^{\langle \bm{a}, \bm{x} \rangle}
 \end{equation}\]</div>
 <p>Trong đó</p>
 <div class="math notranslate nohighlight" id="equation-fur-eq3">
-<span class="eqno">(15.3)<a class="headerlink" href="#equation-fur-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.6)<a class="headerlink" href="#equation-fur-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
 	F_f (\bm{a}) = \sum_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x}) \cdot (-1)^{\langle \bm{a}, \bm{x} \rangle}
 \end{equation}\]</div>
 <p>Khi đó, tập hợp <span class="math notranslate nohighlight">\(\{F_f (\bm{a}), \bm{a} \in \mathbb{F}_2^n \}\)</span> được gọi là <strong>phổ Fourier</strong> (hay <strong>spectre Fourier</strong>) của hàm boolean <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="proof remark admonition" id="remark-0">
-<p class="admonition-title"><span class="caption-number">Remark 15.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 15.7 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Đầu tiên ta có nhận xét rằng, với vector <span class="math notranslate nohighlight">\(\bm{z}\)</span> cố định thì</p>
 <div class="math notranslate nohighlight" id="equation-fur-eq4">
-<span class="eqno">(15.4)<a class="headerlink" href="#equation-fur-eq4" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(15.7)<a class="headerlink" href="#equation-fur-eq4" title="Link to this equation">#</a></span>\[\begin{split}\begin{equation}
     \sum_{\bm{a} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{z} \rangle} = \begin{cases}
         0, \quad &amp; \text{nếu } \bm{z} \neq \bm{0} \\
         2^n, \quad &amp; \text{nếu } \bm{z} = \bm{0}
@@ -604,15 +603,15 @@ document.write(`
 <p>Tương đương với <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{z} \rangle = 1 \oplus \langle \bm{a}', \bm{z} \rangle\)</span>. Do đó <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{z} \rangle\)</span> và <span class="math notranslate nohighlight">\(\langle \bm{a}', \bm{z} \rangle\)</span> là hai bit khác nhau, dẫn tới <span class="math notranslate nohighlight">\((-1)^{\langle \bm{a}, \bm{z} \rangle}\)</span> và <span class="math notranslate nohighlight">\((-1)^{\langle \bm{a}', \bm{z} \rangle}\)</span> là hai số trái dấu nhau nên tổng chúng là 0. Chúng ta có <span class="math notranslate nohighlight">\(2^n / 2\)</span> cặp như vậy và tổng cuối cùng là 0.</p>
 <p>Trong trường hợp <span class="math notranslate nohighlight">\(\bm{z} = \bm{0}\)</span> thì <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{z} \rangle = \bm{0}\)</span> với mọi <span class="math notranslate nohighlight">\(\bm{a} \in \mathbb{F}_2^n\)</span>. Do đó <span class="math notranslate nohighlight">\((-1)^{\langle \bm{a}, \bm{z} \rangle} = (-1)^0 = 1\)</span> với mọi vector <span class="math notranslate nohighlight">\(\bm{a}\)</span>. Hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến có <span class="math notranslate nohighlight">\(2^n\)</span> vector <span class="math notranslate nohighlight">\(\bm{a}\)</span> nên tổng là <span class="math notranslate nohighlight">\(2^n \cdot 1 = 2^n\)</span>.</p>
 </div>
-<p>Nhận xét <a class="reference internal" href="#equation-fur-eq4">(15.4)</a> đã được chứng minh. Ta quay lại bài toán.</p>
+<p>Nhận xét <a class="reference internal" href="#equation-fur-eq4">(15.7)</a> đã được chứng minh. Ta quay lại bài toán.</p>
 <div class="danger dropdown admonition">
 <p class="admonition-title"><strong>Chứng minh</strong></p>
-<p>Với mọi vector <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, ta khai triển từ vế phải của <a class="reference internal" href="#equation-fur-eq2">(15.2)</a> và từ <a class="reference internal" href="#equation-fur-eq3">(15.3)</a>:</p>
+<p>Với mọi vector <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, ta khai triển từ vế phải của <a class="reference internal" href="#equation-fur-eq2">(15.5)</a> và từ <a class="reference internal" href="#equation-fur-eq3">(15.6)</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
     &amp; 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} F_f (\bm{a}) \cdot (-1)^{\langle \bm{a}, \bm{x} \rangle} \\ = &amp; 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} \biggl( \sum_{\bm{y} \in \mathbb{F}_2^n} f(\bm{y}) \cdot (-1)^{\langle \bm{a}, \bm{y} \rangle} \biggr) \cdot (-1)^{\langle \bm{a}, \bm{x} \rangle} \\ = &amp; 2^{-n} \sum_{\bm{y} \in \mathbb{F}_2^n} f(\bm{y}) \sum_{\bm{a} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{y} \oplus \bm{x} \rangle}
 \end{align*}\end{split}\]</div>
-<p>Theo <a class="reference internal" href="#equation-fur-eq4">(15.4)</a>, nếu ta coi <span class="math notranslate nohighlight">\(\bm{y} \oplus \bm{x} = \bm{z}\)</span> thì</p>
+<p>Theo <a class="reference internal" href="#equation-fur-eq4">(15.7)</a>, nếu ta coi <span class="math notranslate nohighlight">\(\bm{y} \oplus \bm{x} = \bm{z}\)</span> thì</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
     \sum_{\bm{a} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{y} \oplus \bm{x} \rangle} = \begin{cases}
@@ -623,7 +622,7 @@ document.write(`
 <p>Nghĩa là trong tổng trên thì chỉ có <span class="math notranslate nohighlight">\(\bm{y}\)</span> thỏa <span class="math notranslate nohighlight">\(\bm{y} \oplus \bm{x} = \bm{0}\)</span> thì <span class="math notranslate nohighlight">\(f(\bm{y})\)</span> không bị triệt tiêu. Nói cách khác là <span class="math notranslate nohighlight">\(\bm{y} = \bm{x}\)</span> và do đó tổng trên còn lại <span class="math notranslate nohighlight">\(2^{-n} (f(\bm{x}) \cdot 2^n) = f(\bm{x})\)</span> và ta có điều phải chứng minh.</p>
 </div>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 15.7 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.8 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét hàm boolean <span class="math notranslate nohighlight">\(f(x_1, x_2) = (1, 0, 0, 1)\)</span>.</p>
 <p>Xét <span class="math notranslate nohighlight">\(\bm{a} = (0, 0)\)</span>. Ta có:</p>
@@ -643,7 +642,7 @@ document.write(`
 <li><p>Với <span class="math notranslate nohighlight">\(\bm{a} = (1, 0)\)</span>, <span class="math notranslate nohighlight">\(F_f (\bm{a}) = F_f (1, 0) = 0\)</span></p></li>
 <li><p>Với <span class="math notranslate nohighlight">\(\bm{a} = (1, 1)\)</span>, <span class="math notranslate nohighlight">\(F_f (\bm{a}) = F_f (1, 1) = 2\)</span></p></li>
 </ul>
-<p>Bây giờ ta đã có đủ <span class="math notranslate nohighlight">\(F_f(\bm{a})\)</span> với <span class="math notranslate nohighlight">\(\bm{a} \in \mathbb{F}_2^2\)</span> nên ta có thể kiểm chứng với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^2\)</span> thỏa công thức <a class="reference internal" href="#equation-fur-eq2">(15.2)</a>.</p>
+<p>Bây giờ ta đã có đủ <span class="math notranslate nohighlight">\(F_f(\bm{a})\)</span> với <span class="math notranslate nohighlight">\(\bm{a} \in \mathbb{F}_2^2\)</span> nên ta có thể kiểm chứng với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^2\)</span> thỏa công thức <a class="reference internal" href="#equation-fur-eq2">(15.5)</a>.</p>
 </section>
 </div></section>
 <section id="bien-doi-walsh-hadamard">
@@ -653,23 +652,23 @@ document.write(`
 \[f^*(\bm{x}) = (-1)^{f(\bm{x})}\]</div>
 <p>Ta định nghĩa <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{x} \rangle\)</span> như trên, khi đó hàm <span class="math notranslate nohighlight">\(f^*(\bm{x})\)</span> sẽ có dạng</p>
 <div class="math notranslate nohighlight" id="equation-walsh-eq1">
-<span class="eqno">(15.5)<a class="headerlink" href="#equation-walsh-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.8)<a class="headerlink" href="#equation-walsh-eq1" title="Link to this equation">#</a></span>\[\begin{equation}
 	f^*(\bm{x}) = 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} W_f (\bm{a}) (-1)^{\langle \bm{a}, \bm{x} \rangle}
 \end{equation}\]</div>
 <p>Trong đó</p>
 <div class="math notranslate nohighlight" id="equation-walsh-eq2">
-<span class="eqno">(15.6)<a class="headerlink" href="#equation-walsh-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.9)<a class="headerlink" href="#equation-walsh-eq2" title="Link to this equation">#</a></span>\[\begin{equation}
 	W_f (\bm{a}) = \sum_{\bm{x} \in \mathbb{F}_2^n} (-1)^{f(\bm{x}) \oplus \langle \bm{a}, \bm{x} \rangle}
 \end{equation}\]</div>
 <p>Tập hợp <span class="math notranslate nohighlight">\(\{ W_f (\bm{a}), \bm{a} \in \mathbb{F}_2^n \}\)</span> được gọi là <strong>phổ Walsh</strong> (hay <strong>spectre Walsh</strong>) của hàm <span class="math notranslate nohighlight">\(f(\bm{x})\)</span>. Các giá trị <span class="math notranslate nohighlight">\(W_f (\bm{a})\)</span> được gọi là hệ số Walsh.</p>
 <div class="danger dropdown admonition">
 <p class="admonition-title"><strong>Chứng minh</strong></p>
-<p>Tương tự như trên, ta khai triển vế phải của <a class="reference internal" href="#equation-walsh-eq1">(15.5)</a> và thay <a class="reference internal" href="#equation-walsh-eq2">(15.6)</a> vào</p>
+<p>Tương tự như trên, ta khai triển vế phải của <a class="reference internal" href="#equation-walsh-eq1">(15.8)</a> và thay <a class="reference internal" href="#equation-walsh-eq2">(15.9)</a> vào</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align*}
 	&amp; 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} W_f (\bm{a}) (-1)^{\langle \bm{a}, \bm{x} \rangle} \\ = &amp; 2^{-n} \sum_{\bm{a} \in \mathbb{F}_2^n} \biggl( \sum_{\bm{y} \in \mathbb{F}_2^n} (-1)^{f(\bm{y}) \oplus \langle \bm{a}, \bm{y} \rangle} \biggr) (-1)^{\langle \bm{a}, \bm{x} \rangle} \\ = &amp; 2^{-n} \sum_{\bm{y} \in \mathbb{F}_2^n} (-1)^{f(\bm{y})} \sum_{\bm{a} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{y} \oplus \bm{x} \rangle}
 \end{align*}\end{split}\]</div>
-<p>Cũng từ <a class="reference internal" href="#equation-fur-eq4">(15.4)</a>, tương tự như trên ta có</p>
+<p>Cũng từ <a class="reference internal" href="#equation-fur-eq4">(15.7)</a>, tương tự như trên ta có</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation*}
 	\sum_{\bm{a} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{y} \oplus \bm{x} \rangle} = \begin{cases}
@@ -749,7 +748,7 @@ document.write(`
 <section id="lien-he-giua-he-so-fourier-va-he-so-walsh">
 <h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">15.3.4. </span>Liên hệ giữa hệ số Fourier và hệ số Walsh</a><a class="headerlink" href="#lien-he-giua-he-so-fourier-va-he-so-walsh" title="Link to this heading">#</a></h2>
 <div class="proof remark admonition" id="remark-2">
-<p class="admonition-title"><span class="caption-number">Remark 15.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 15.8 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Quan hệ giữa hệ số Fourier và hệ số Walsh là biểu thức sau</p>
 <div class="math notranslate nohighlight">
@@ -777,7 +776,7 @@ document.write(`
 <p>Nói cách khác biểu thức trên trở thành</p>
 <div class="math notranslate nohighlight">
 \[W_f (\bm{a}) + 2 F_f (\bm{a}) = \sum_{\bm{x} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{x} \rangle}\]</div>
-<p>Từ <a class="reference internal" href="#equation-fur-eq2">(15.2)</a> ta có</p>
+<p>Từ <a class="reference internal" href="#equation-fur-eq2">(15.5)</a> ta có</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\sum_{\bm{x} \in \mathbb{F}_2^n} (-1)^{\langle \bm{a}, \bm{x} \rangle} = \begin{cases}
 	0, \quad &amp;\text{nếu } \bm{a} \neq \bm{0} \\ 2^n, \quad &amp; \text{nếu } \bm{a} = \bm{0}
@@ -787,14 +786,14 @@ document.write(`
 \end{cases}\)</span> thì ta có điều phải chứng minh.</p>
 </div>
 <div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 15.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 15.9 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Khi <span class="math notranslate nohighlight">\(\bm{a} = \bm{0}\)</span> thì với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span> ta đều có <span class="math notranslate nohighlight">\(\langle \bm{a}, \bm{x} \rangle = 0\)</span>. Do đó</p>
 <div class="math notranslate nohighlight">
 \[F_f (\bm{0}) = \sum_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x}) (-1)^{\langle \bm{a}, \bm{x} \rangle} = \sum_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x}) (-1)^0 = \mathrm{wt}(f)\]</div>
 <p>Suy ra</p>
 <div class="math notranslate nohighlight" id="equation-walsh-eq4">
-<span class="eqno">(15.7)<a class="headerlink" href="#equation-walsh-eq4" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.10)<a class="headerlink" href="#equation-walsh-eq4" title="Link to this equation">#</a></span>\[\begin{equation}
 	W_f (\bm{0}) = 2^n - 2 wt(f) \Leftrightarrow wt(f) = 2^{n-1} - \frac{1}{2} W_f (\bm{0})
 \end{equation}\]</div>
 </section>
@@ -807,21 +806,21 @@ document.write(`
 	\mathcal{A} = \{ a_0 \oplus a_1 x_1 \oplus \cdots \oplus a_n x_n \, | \, a_0, a_1, \ldots, a_n \in \mathbb{F}_2 \}
 \end{equation}\]</div>
 <div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 15.11 </span> (Nonlinearity của hàm boolean)</p>
+<p class="admonition-title"><span class="caption-number">Definition 15.13 </span> (Nonlinearity của hàm boolean)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Nonlinearity</strong> của hàm boolean <span class="math notranslate nohighlight">\(f\)</span> bất kì được định nghĩa là khoảng cách Hamming từ <span class="math notranslate nohighlight">\(f\)</span> tới <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>, hay nói cách khác <span class="math notranslate nohighlight">\(N_f = d(f, \mathcal{A})\)</span>.</p>
 </section>
 </div><div class="proof remark admonition" id="remark-5">
-<p class="admonition-title"><span class="caption-number">Remark 15.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 15.10 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Xét hàm <span class="math notranslate nohighlight">\(f\)</span> với <span class="math notranslate nohighlight">\(n\)</span> biến và phổ Walsh tương ứng của hàm <span class="math notranslate nohighlight">\(f\)</span> là <span class="math notranslate nohighlight">\(\{ W_f (\bm{a}), \bm{a} \in \mathbb{F}_2^n \}\)</span>. Khi đó</p>
 <div class="math notranslate nohighlight" id="equation-walsh-eq3">
-<span class="eqno">(15.8)<a class="headerlink" href="#equation-walsh-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
+<span class="eqno">(15.11)<a class="headerlink" href="#equation-walsh-eq3" title="Link to this equation">#</a></span>\[\begin{equation}
 	N_f = 2^{n-1} - \frac{1}{2} \max_{\bm{a} \in \mathbb{F}_2^n} \lvert W_f (\bm{a}) \rvert
 \end{equation}\]</div>
 </section>
 </div><div class="proof remark admonition" id="remark-6">
-<p class="admonition-title"><span class="caption-number">Remark 15.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 15.11 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Từ đẳng thức Parcel ta có</p>
 <div class="math notranslate nohighlight">
@@ -837,7 +836,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[W_f (\bm{a}) = \pm 2^{n/2}\]</div>
 <div class="proof example admonition" id="example-7">
-<p class="admonition-title"><span class="caption-number">Example 15.8 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Với <span class="math notranslate nohighlight">\(n = 2\)</span>, hàm <span class="math notranslate nohighlight">\(f(x_1, x_2) = x_1 \oplus x_1 x_2\)</span> là hàm Bent. Ta có thể tính toán và thấy rằng <span class="math notranslate nohighlight">\(W_f (0, 0) = 2\)</span>, <span class="math notranslate nohighlight">\(W_f (0, 1) = -2\)</span>, <span class="math notranslate nohighlight">\(W_f (1, 0) = 2\)</span> và <span class="math notranslate nohighlight">\(W_f (1, 1) = 2\)</span>.</p>
 </section>

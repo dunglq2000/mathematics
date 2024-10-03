@@ -73,6 +73,52 @@ các bảng chân trị cơ bản trên):
 
 ### Đa thức Zhegalkin
 
+Đặt $f(\bm{x})$ là hàm boolean $n$ biến. Với số $m \leqslant n$ thì
+
+$$\begin{align*}
+  f(x_1, \ldots, x_n) = \bigoplus_{a_1, \ldots, a_m \in \mathbb{F}_2} & (x_1 \oplus a_1 \oplus 1) \times \cdots \times \\
+  \times & (x_m \oplus a_m \oplus 1) \cdot f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_n)
+\end{align*}$$
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Chọn bộ $(b_1, \ldots, b_m)$ bất kì thuộc $\mathbb{F}_2^m$.
+
+Thay $x_i$ bởi $b_i$ với $i = 1, \ldots, m$ thì
+
+$$\begin{align*}
+  f(b_1, \ldots, b_m, x_{m+1}, x_m) = \bigoplus_{a_1, \ldots, a_m \in \mathbb{F}_2} (b_1 \oplus a_1 \oplus 1) \cdots (b_m \oplus a_m \oplus 1) \cdot f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_n)
+\end{align*}$$
+
+Ở vế phải, tích $\prod\limits_{i=1}^m (b_i \oplus a_i \oplus 1) = 1$ khi và chỉ khi $b_i \oplus a_i \oplus 1 = 1$ với mọi $i = 1, \ldots, m$. 
+
+Nói cách khác là khi $b_i \equiv a_i$ thì ta còn $f$ ở vế phải, còn các trường hợp kia thì bằng $0$. Do đó ta có điều phải chứng minh.
+```
+
+Khi đó, $f(a_1, \ldots, a_m, x_{m+1}, \ldots, x_m)$ được gọi là **hệ số khai triển của hàm $f$ theo các biến $x_1$, ..., $x_m$**.
+
+````{prf:example}
+Xét $f(x_1, x_2) = x_1 x_2 \oplus 1$. Với $m = 1$, ta có
+
+$$\begin{align*}
+  a_1 = 0 & \Rightarrow (x_1 \oplus 0 \oplus 1) \cdot f(0, x_2) = (x_1 \oplus 1) \cdot 1 = x_1 \oplus 1 \\
+  a_1 = 1 & \Rightarrow (x_1 \oplus 1 \oplus 1) \cdot f(1, x_2) = x_1 \oplus (x_2 \oplus 1)
+\end{align*}$$
+
+Như vậy
+
+$$f(x_1, x_2) = (x_1 \oplus 1) \oplus \left(x_1 \cdot (x_2 \oplus 1)\right)$$
+
+Nếu khai triển vế phải ra chúng ta thấy bằng với hàm $f$ ban đầu.
+````
+
+Tương ứng với $m$ biến ta có $2^m$ hệ số khai triển.
+
+Đặt $f_1, \ldots, f_{2^m}$ là các hệ số khai triển hàm $f$ theo $m$ biến bất kì. Khi đó
+
+$$\mathrm{wt}(f) = \sum_{i=1}^{2^m} \mathrm{wt} (f_i)$$ (wt-decomp)
+
 ````{prf:definition} Đa thức Zhegalkin
 Với hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$, **đa thức Zhegalkin** tương ứng với hàm bool đó là cách biểu diễn đa thức đó dưới dạng tổng các tích như sau
 
@@ -87,6 +133,16 @@ với $a_i \in \{0, 1\}$. Ta thấy rằng có $n$ biến, do đó có $2^n$ h�
 
 Khi đó ta nói hàm boolean $f$ được biểu diễn ở **dạng chuẩn tắc đại số** (hay **algebraic normal form**, **ANF**).
 
+Đặt
+
+$$
+  f(x_1, \ldots, x_n) = \bigoplus_{a_1, \ldots, a_n \in \mathbb{F}_2} g(a_1, \ldots, a_n) \cdot x_1^{a_1} \cdots x_n^{a_n}
+$$ (g)
+
+Hàm $g$ khi đó được gọi là **hệ số ANF** của hàm $f$.
+
+Ánh xạ $\mu(f) = g$ được gọi là **biến đổi Mobius** (hay **преобразование Мёбиуса**).
+
 ````{prf:example}
 Cho hàm bool $f(x, y) = x \vee y$. Ta có bảng chân trị sau
 
@@ -100,7 +156,63 @@ Cho hàm bool $f(x, y) = x \vee y$. Ta có bảng chân trị sau
 Bảng chân trị này tương đương với đa thức Zhegalkin
 
 $$f(x, y) = x \oplus y \oplus xy$$
+
 ````
+
+ANF ở ví dụ trên có thể được viết lại
+
+$$f(x, y) = 0 \cdot x^0 y^0 \oplus 1 \cdot x^0 y^1 \oplus 1 \cdot x^1 y^0 \oplus 1 \cdot x^1 y^1$$
+
+Như vậy biến đổi Mobius của hàm $f$ là
+
+| $x$ | $y$ | $f(x, y)$ | $g = \mu(f)$ |
+| --- | --- | --------- | ------------ |
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 1 |
+
+Ta ký hiệu $\bm{x}^{\bm{a}} = x_1^{a_1} \cdots x_n^{a_n}$ với
+
+- $\bm{x} = (x_1, \ldots, x_n)$
+- $\bm{a} = (a_1, \ldots, a_n)$
+
+Do $x_i^{a_i} = 1$ khi và chỉ khi $a_i \leqslant x_i$, ta có $\bm{x}^{\bm{a}} = 1$ khi và chỉ khi $\bm{a} \preccurlyeq \bm{x}$ theo nghĩa $a_i \leqslant x_i$ với $i = 1, \ldots, n$.
+
+Ta có thể viết lại {eq}`g` là
+
+$$f(\bm{x}) = \bigoplus_{\bm{a} \in \mathbb{F}_2^n} g(\bm{a}) \cdot \bm{x}^{\bm{a}} = \bigoplus_{\bm{a} \in \mathbb{F}_2^n} g(\bm{a})$$
+
+````{prf:remark} Biến đổi Mobius
+Đặt $f \in \mathcal{F}_n$ và $g = \mu(f)$. Khi đó với mọi $\bm{a} \in \mathbb{F}_2^n$ ta có
+
+$$g(\bm{a}) = \bigoplus_{\bm{x} \preccurlyeq \bm{a}} f(\bm{x})$$
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Ta chứng minh bằng quy nạp theo trọng số của $\bm{a}$.
+
+Ở bước cơ sở khi trọng số bằng không, $g(\bm{0}) = f(\bm{0})$ với $\bm{0}$ là vector chứa $n$ số $0$.
+
+Giả thiết quy nạp: giả sử mệnh đề đúng với mọi vector $\bm{a}$ có trọng số nhỏ hơn $p$.
+
+Khi $\bm{a}$ có trọng số bằng $p$, ta có
+
+$$\begin{align*}
+  f(\bm{a}) = \bigoplus_{\bm{x} \preccurlyeq \bm{a}} g(\bm{x}) & = \left( \bigoplus_{\bm{x} \prec \bm{a}} g(\bm{x}) \right) \oplus g(\bm{a}) \quad (\text{tách thành phần nhỏ hơn và bằng} \, \bm{a}) \\
+  & = \left(\bigoplus_{\bm{x} \prec \bm{a}} \bigoplus_{\bm{y} \preccurlyeq \bm{x}} f(\bm{y})\right) \oplus g(\bm{a}) \quad (\text{sử dụng giả thiết quy nạp thay} \, g(\bm{x}))
+\end{align*}$$
+
+Đặt 
+
+$$S = \bigoplus_{\bm{x} \prec \bm{a}} \bigoplus_{\bm{y} \preccurlyeq \bm{x}} f(\bm{y}) = \bigoplus_{\bm{y} \prec \bm{a}} f(\bm{y}) \bigoplus_{\bm{y} \preccurlyeq \bm{x} \prec \bm{a}} 1 = \bigoplus_{\bm{y} \prec \bm{a}} f(\bm{y})$$
+
+Đẳng thức thứ hai đúng là do $\bm{y}$ nhận tất cả vector từ $\bm{0}$ tới $\bm{x}$ mà $\bm{x} \prec \bm{a}$ nên thực chất có thể thay $\bm{x}$ thành $\bm{y}$.
+
+Đẳng thức cuối đúng là do $2^{\mathrm{wt}(\bm{a}) - \mathrm{wt}(\bm{y})} - 1$ là số lẻ nào đó mà $\bm{y} \preccurlyeq \bm{x} \prec \bm{a}$. Suy ra $g(\bm{a}) = S \oplus f(\bm{a}) = \bigoplus\limits_{\bm{y} \preccurlyeq \bm{a}} f(\bm{y})$.
+```
 
 ````{prf:definition} Bậc của đa thức Zhegalkin
 Tương tự như bậc của một đa thức đại số thông thường, bậc của đa thức Zhegalkin là bậc của hạng tử chứa nhiều đơn thức $x_i$ nhất. Ký hiệu là $\deg(f)$.
@@ -111,6 +223,141 @@ Xét hàm boolean $f(x, y, z) = 1 \oplus x \oplus yz \oplus xyz$. Khi đó $\deg
 
 Xét hàm boolean $f(x, y, z) = 1 \oplus z \oplus zy \oplus xy$. Khi đó $\deg(f) = 2$ vì hạng tử chứa nhiều đơn thức nhất là $zy$ (cũng có thể xét $xy$).
 ````
+
+````{prf:corollary}
+$$\mu(\mu(f)) = f$$
+````
+
+````{prf:corollary}
+Đặt $f \in \mathcal{F}_n$. Khi đó $\deg f = n$ khi và chỉ khi $\mathrm{wt} (f)$ lẻ.
+````
+
+````{prf:remark}
+$$g(\bm{1}) = \bigoplus_{\bm{x} \in \mathbb{F}_2^n} f(\bm{x})$$
+
+với $\bm{1}$ là vector có $n$ số $1$.
+````
+
+````{prf:remark}
+Nếu $f \in \mathcal{F}_n$ và $\deg f = d \geqslant 1$ thì
+
+$$2^{n - d} \leqslant \mathrm{wt} (f) \leqslant 2^n - 2^{n-d}$$
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Đặt $x_{i_1} \cdots x_{i_d}$ là đơn thức có bậc cao nhất ở ANF. Khai triển $f$ thành $n-d$ biến và đặt $f_1, \ldots, f_{2^{n-d}}$ là các hệ số khai triển.
+
+Ở ANF, mỗi hệ số đều có $x_{i_1}$, ..., $x_{i_d}$ nên mọi hệ số đều khác hằng. Suy ra
+
+$$1 \leqslant \mathrm{wt} (f_i) \leqslant 2^d - 1$$
+
+với $i = 1, \ldots, 2^{n-d}$. Ta có điều phải chứng minh.
+```
+
+Nói riêng, nếu $\deg f = 1$ thì $f$ là hàm cân bằng.
+
+### Phụ thuộc tuyến tính
+
+````{prf:definition}
+Hàm $f(x_1, \ldots, x_n)$ được gọi là **linear dependent** (hay **линейно зависить**) vào biến $x_i$ nếu $f$ có thể biểu diễn ở dạng
+
+$$f(x_1, \ldots, x_n) = g(x_1, \ldots, x_{i-1}, x_{i+1}, \ldots, x_n) \oplus x_i$$
+
+với $g \in \mathcal{F}_{n-1}$.
+````
+
+Theo trường hợp riêng ở trên thì nếu $f$ linear dependent vào một biến bất kì thì $f$ là hàm cân bằng.
+
+Ta có thể diễn đạt định nghĩa trên theo cách khác:
+
+$$f(x_1, \ldots, x_{i-1}, 0, x_{i+1}, \ldots, x_n) \neq f(x_1, \ldots, x_{i-1}, 1, x_{i+1}, \ldots, x_n)$$
+
+````{prf:definition}
+Hàm $f(x_1, \ldots, x_n)$ được gọi là **quasi-linear dependent** (hay **квазилинейно зависить**) trên cặp biến $x_i$ và $x_j$ nếu $f$ đổi giá trị khi ta đảo giá trị ở vị trí $i$ và $j$.
+
+Nói cách khác, ta có
+
+$$\begin{align*}
+  f(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) = \bar{f}(x_1, \ldots, \bar{x}_i, \ldots, \bar{x}_j, \ldots, x_n)
+\end{align*}$$
+
+với $x_i, x_j \in \mathbb{F}_2$.
+````
+
+````{prf:remark}
+:label: quasi-fg
+
+Hàm $f(x_1, \ldots, x_n, y, z)$ là hàm quasi-linear dependent trên biến $y$ và $z$ khi và chỉ khi $f$ có dạng
+
+$$f(x_1, \ldots, x_n, y, z) = g(x_1, \ldots, x_n, y \oplus z) \oplus y.$$
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+**Điều kiện cần.** Đặt $\bm{x} = \mathbb{F}_2^n$. Khi đó
+
+$$\begin{align*}
+  f(\bm{x}, 0, 0) = g(\bm{x}, 0), \quad f(\bm{x}, 1, 1) = g(\bm{x}, 0) \oplus 1 = \bar{f}(\bm{x}, 0, 0) \\
+  f(\bm{x}, 0, 1) = g(\bm{x}, 1), \quad f(\bm{x}, 1, 0) = g(\bm{x}, 1) \oplus 1  = \bar{f}(\bm{x}, 1, 0)
+\end{align*}$$
+
+Như vậy $f$ là quasi-linear dependent.
+
+**Điều kiện đủ.** Khai triển $f$ theo $y$ và $z$, sau đó thay $f(\bm{x}, 0, 0)$ bởi $f(\bm{x}, 0, 0) \oplus 1$, tương tự $f(\bm{x}, 0, 1)$ thành $f(\bm{x}, 0, 1) \oplus 1$. Nói cách khác là
+
+$$\begin{align*}
+  f(\bm{x}, y, z) & = (y \oplus 1) \cdot (z \oplus 1) \cdot f(\bm{x}, 0, 0) \\
+  & \oplus (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \\
+  & \oplus y \cdot (z \oplus 1) \cdot f(\bm{x}, 1, 0) \\
+  & \oplus y \cdot z \cdot f(\bm{x}, 1, 1)
+\end{align*}$$ (fyz)
+
+Ta gom hai nhóm:
+
+$$\begin{align*}
+  & (y \oplus 1) \cdot (z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus y \cdot z \cdot f(\bm{x}, 1, 1) \\
+  = & (yz \oplus y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus y z \cdot (f(\bm{x}, 0, 0) \oplus 1) \\
+  = & (y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus yz
+\end{align*}$$
+
+$$\begin{align*}
+  & (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \oplus y \cdot (z \oplus 1) \cdot f(\bm{x}, 1, 0) \\
+  = & (y \oplus 1) \cdot z \cdot f(\bm{x}, 0, 1) \oplus y \cdot (z \oplus 1) \cdot (f(\bm{x}, 0, 1) \oplus 1) \\
+  = & (y \oplus z) \cdot f(\bm{x}, 0, 1) \oplus yz \oplus y
+\end{align*}$$
+
+Tóm lại, phương trình khai triển ở {eq}`fyz` sẽ tương đương với
+
+$$f(\bm{x}, y, z) = \underbrace{(y \oplus z \oplus 1) \cdot f(\bm{x}, 0, 0) \oplus (y \oplus z) \cdot f(\bm{x}, 0, 1)}_{g(\bm{x}, y \oplus z)} \oplus y$$
+```
+
+````{prf:remark}
+Nếu hàm boolean quasi-linear dependent trên hai biến bất kì thì hàm boolean đó cân bằng.
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Đặt $\bm{x} \in \mathbb{F}_2^n$. Do $f(\bm{x}, y, z) \in \mathcal{F}_{n+2}$ và $f$ quasi-linear dependent trên hai biến $y$ và $z$ nên theo {prf:ref}`quasi-fg` thì $f$ có dạng
+
+$$f(\bm{x}, y, z) = g(\bm{x}, y \oplus z) \oplus y$$
+
+Do tổng (XOR) của $f$ có phần tuyến tính nên $f$ cân bằng.
+
+Chúng ta cũng có thể chứng minh theo cách khác bằng khai triển $f$ theo $y$ và $z$
+
+$$\begin{align*}
+  f(\bm{x}, y, z) & = y \cdot z \cdot (g(\bm{x}, 0) \oplus 1) \oplus y \cdot (z \oplus 1) \cdot (g(\bm{x}, 1) \oplus 1) \\
+  & \oplus (y \oplus 1) \cdot z \cdot g(\bm{x}, 1) \oplus (y \oplus 1) \cdot (z \oplus 1) \cdot g(\bm{x}, 0)
+\end{align*}$$
+
+Theo đẳng thức {eq}`wt-decomp` thì
+
+$$\mathrm{wt}(f) = \mathrm{wt}(\bar{g}(\bm{x}, 0)) + \mathrm{wt}(\bar{g}(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 1)) + \mathrm{wt}(g(\bm{x}, 0)) = 2^{n+1}.$$
+```
 
 ### Cách tìm đa thức Zhegalkin từ bảng chân trị
 
