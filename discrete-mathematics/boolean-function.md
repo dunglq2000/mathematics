@@ -3,75 +3,7 @@
 ```{contents}
 ```
 
-Hàm boolean $f$ đối với các biến $x_1, x_2, \ldots, x_n$ là hàm số nhận giá trị trong $\mathbb{F}_2^n$ và trả về giá trị thuộc $\mathbb{F}_2$.
-
-Nói cách khác $f$ là ánh xạ từ $\mathbb{F}_2^n$ tới $\mathbb{F}_2$.
-
-Ta ký hiệu hàm boolean $n$ biến là $f(x_1, x_2, \ldots, x_n)$.
-
-Do $x_i \in \mathbb{F}_2$ nên ta có $2^n$ vector (bộ số) $(x_1, x_2, \ldots, x_n)$. Giá trị của hàm $f$ lại nằm trong tập $\{0, 1\}$ nên ứng với mỗi vector có thể có 2 giá trị của hàm boolean, và ta có $2^n$ vector nên số lượng hàm boolean có thể có là $2^{2^n}$.
-
-Một số toán tử boolean hay dùng: đối, AND, OR, XOR, NAND, NOR, kéo theo, tương đương.
-
-Để biểu diễn hàm boolean chúng ta dùng bảng chân trị. Bảng chân
-trị tương ứng với các toán tử boolean trên là:
-
-| | | AND | OR | XOR | NAND | NOR |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| $x_1$ | $x_2$ | $x_1 \cdot x_2$ | $x_1 \vee x_2$ | $x_1 \oplus x_2$ | $x_1 \vert x_2$ | $x_1 \downarrow x_2$ |
-| 0 | 0 | 0 | 0 | 0 | 1 | 1 |
-| 0 | 1 | 0 | 1 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 1 | 1 | 1 | 0 |
-| 1 | 1 | 1 | 1 | 0 | 0 | 0 |
-
-Toán tử đối làm đổi giá trị của hàm bool (0 thành 1 và 1 thành 0).
-Ký hiệu $\overline{x}$.
-
-```{list-table} Toán tử đối
-:header-rows: 1
-
-* - $x$
-  - $\overline{x}$
-* - 0
-  - 1
-* - 1
-  - 0
-```
-
-```{list-table} Toán tử kéo theo và tương đương
-:header-rows: 1
-
-* - $x_1$
-  - $x_2$
-  - $x_1 \rightarrow x_2$ 
-  - $x_1 \sim x_2$
-* - 0 
-  - 0 
-  - 1
-  - 1
-* - 0
-  - 1 
-  - 1 
-  - 0
-* - 1 
-  - 0 
-  - 0 
-  - 0
-* - 1
-  - 1 
-  - 1 
-  - 1
-```
-
-Toán tử tương đương còn chỉ sự tương đương của hai mệnh đề logic.
-Khi hai biểu thức logic có cùng bảng chân trị thì hai mệnh đề đó
-tương đương nhau. Do đó ta có thể viết một số kết quả như sau (từ
-các bảng chân trị cơ bản trên):
-
-- $x_1 \vert x_2 \sim \overline{x_1 \cdot x_2}$. Ở đây ta đổi dấu từng giá trị hàm boolean $x_1 \cdot x_2$
-- $x_1 \downarrow x_2 \sim \overline{x_1 \vee x_2}$. Tương tự ta đổi dấu từng giá trị hàm boolean $x_1 \vee x_2$
-
-### Đa thức Zhegalkin
+### Algebraic Normal Form
 
 Đặt $f(\bm{x})$ là hàm boolean $n$ biến. Với số $m \leqslant n$ thì
 
@@ -119,8 +51,8 @@ Tương ứng với $m$ biến ta có $2^m$ hệ số khai triển.
 
 $$\mathrm{wt}(f) = \sum_{i=1}^{2^m} \mathrm{wt} (f_i)$$ (wt-decomp)
 
-````{prf:definition} Đa thức Zhegalkin
-Với hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$, **đa thức Zhegalkin** tương ứng với hàm bool đó là cách biểu diễn đa thức đó dưới dạng tổng các tích như sau
+````{prf:definition} Algebraic Normal Form
+Với hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$, **algrebaric normal form** (hay **ANF**, **dạng chuẩn tắc đại số**, **алгебраическая нормальная форма**) tương ứng với hàm bool đó là cách biểu diễn đa thức đó dưới dạng tổng các tích như sau
 
 $$\begin{equation}
     f(x_1, x_2, \ldots, x_n) = a_0 \oplus a_1 x_1 
@@ -131,7 +63,100 @@ $$\begin{equation}
 với $a_i \in \{0, 1\}$. Ta thấy rằng có $n$ biến, do đó có $2^n$ hệ số $a_i$ ($i = 0, 1, \ldots, 2^n-1$).
 ````
 
-Khi đó ta nói hàm boolean $f$ được biểu diễn ở **dạng chuẩn tắc đại số** (hay **algebraic normal form**, **ANF**).
+Trong các tài liệu tiếng Nga thì ANF còn được gọi là **đa thức Zhegalkin** (hay **полином Жегалкина**)
+
+````{prf:definition} Bậc của đa thức Zhegalkin
+Tương tự như bậc của một đa thức đại số thông thường, bậc của đa thức Zhegalkin là bậc của hạng tử chứa nhiều đơn thức $x_i$ nhất. Ký hiệu là $\deg(f)$.
+````
+
+````{prf:example}
+Xét hàm boolean $f(x, y, z) = 1 \oplus x \oplus yz \oplus xyz$. Khi đó $\deg(f) = 3$ vì hạng tử chứa nhiều đơn thức nhất là $xyz$ có 3 đơn thức.
+
+Xét hàm boolean $f(x, y, z) = 1 \oplus z \oplus zy \oplus xy$. Khi đó $\deg(f) = 2$ vì hạng tử chứa nhiều đơn thức nhất là $zy$ (cũng có thể xét $xy$).
+````
+
+````{prf:definition} Trọng số của hàm boolean
+**Trọng số** (hay **weight**, **вес**) của hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$ là số lượng giá trị khác $0$ của hàm $f$. 
+
+Ký hiệu là $\mathrm{wt}(f)$.
+````
+
+````{prf:example}
+Hàm boolean $f(x, y) = (0, 1, 0, 1)$ có trọng số $\mathrm{wt}(f) = 2$.
+
+Hàm boolean $f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)$ có trọng số $\mathrm{wt}(f) = 5$.
+````
+
+````{prf:property} Một số tính chất của trọng số
+
+Gọi $f$ là hàm boolean $n$ biến. Khi đó:
+
+1. $0 \leqslant \mathrm{wt}(f) \leqslant 2^n$
+2. $\mathrm{wt}(f \oplus \bm{1}) = 2^n - \mathrm{wt}(f)$
+3. Nếu $h$ cũng là một hàm boolean $n$ biến thì
+
+$$\mathrm{wt}(f \oplus h) = \mathrm{wt}(f) + \mathrm{wt}(h) - 2 \mathrm{wt}(fh)$$
+
+4. $\mathrm{wt}(f)$ nhận giá trị lẻ khi và chỉ khi $\deg(f) = n$.
+````
+
+````{prf:definition} Hàm boolean cân bằng
+Nếu hàm boolean $n$ biến $f$ có trọng số bằng $2^{n-1}$ thì $f$ được gọi là hàm boolean **cân bằng** (hay **balanced**, **сбалансированная**).
+````
+
+````{prf:remark}
+1. Ta nói hàm boolean $g$ *giả phụ thuộc* vào biến $y$ nếu $g(x_1, \ldots, x_n, y) = f(x_1, \ldots x_n)$. Khi đó $\mathrm{wt} (g) = 2 \mathrm{wt} (f)$.
+
+2. Đặt $f(x_1, \ldots, x_n)$ và $g(y_1, \ldots, y_m)$ là các hàm boolean phụ thuộc vào tập các biến không giao nhau. Khi đó:
+
+a) nếu $f$ và $g$ là các hàm số khác hằng $1$ thì $f \cdot g$ không là hàm cân bằng;
+
+b) $f$ hoặc $g$ cân bằng khi và chỉ khi $f \oplus g$ cân bằng.
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+1. Do 
+
+$$g(x_1, \ldots, x_n, 0) = g(x_1, \ldots, x_n, 1) = f(x_1, \ldots, x_n)$$
+
+nên ta có điều phải chứng minh.
+
+2. Đặt $\bm{x} = (x_1, \ldots, x_n)$ và $\bm{y} = (y_1, \ldots, y_m)$.
+
+a) Đặt $\mathrm{wt}(f) = r < 2^n$ và $\mathrm{wt}(g) = s < 2^m$. Vì $f(\bm{x}) \cdot g(\bm{y}) = 1$ khi và chỉ khi $f(\bm{x}) = g(\bm{y}) = 1$ nên $\mathrm{wt}(f \cdot g) = r \cdot s$. 
+
+Do đó nếu $f \cdot g$ cân bằng thì $2^{n+m-1} = \mathrm{wt}(f \cdot g) = r \cdot s$.
+
+Như vậy $r = 2^k$ và $s = 2^l$ với $k \leqslant n-1$ và $l \leqslant m-1$.
+
+Suy ra $r \cdot s \leqslant 2^{n+m-2}$. Điều này vô lý vì $r \cdot s = 2^{n + m - 1} > 2^{n+m-2}$. Nghĩa là giả sử ban đầu $r < 2^n$ là sai, tương tự với $s$ và ta có điều phải chứng minh.
+
+b) Chú ý rằng $f(\bm{x}) \oplus g(\bm{y}) = 1$ khi và chỉ khi $f(\bm{x}) \neq g(\bm{y})$. Suy ra 
+
+$$\mathrm{wt}(f \oplus g) = \mathrm{wt}(f) \cdot \mathrm{wt}(\bar{g}) + \mathrm{wt}(\bar{f}) \cdot \mathrm{wt}(g)$$
+
+*Điều kiện đủ.* Giả sử hàm $f$ cân bằng, suy ra
+
+$$\mathrm{wt}(f) = \mathrm{wt}(\bar{f}) = 2^{n-1}$$
+
+Như vậy
+
+$$\mathrm{wt}(f \oplus g) = 2^{n-1} \cdot \mathrm{wt}(g) + 2^{n-1} \cdot \mathrm{wt}(\bar{g}) = 2^{n-1} \cdot 2^m$$
+
+Vậy $f \oplus g$ là hàm cân bằng.
+
+*Điều kiện cần.* Giả sử $\mathrm{wt}(f) = r \neq 2^{n-1}$ và $\mathrm{wt}(g) = s$. Như vậy
+
+$$\mathrm{wt}(f \oplus g) = r (2^m - s) + s (2^n - r) = 2^{n+m-1}$$
+
+do $f \oplus g$ là hàm cân bằng. Tiếp theo
+
+$$s = \dfrac{2^{n+m-1} - 2^m \cdot r}{2^n - 2r} = 2^{m-1}$$
+
+Vậy $g$ là hàm cân bằng.
+```
 
 Đặt
 
@@ -214,22 +239,8 @@ $$S = \bigoplus_{\bm{x} \prec \bm{a}} \bigoplus_{\bm{y} \preccurlyeq \bm{x}} f(\
 Đẳng thức cuối đúng là do $2^{\mathrm{wt}(\bm{a}) - \mathrm{wt}(\bm{y})} - 1$ là số lẻ nào đó mà $\bm{y} \preccurlyeq \bm{x} \prec \bm{a}$. Suy ra $g(\bm{a}) = S \oplus f(\bm{a}) = \bigoplus\limits_{\bm{y} \preccurlyeq \bm{a}} f(\bm{y})$.
 ```
 
-````{prf:definition} Bậc của đa thức Zhegalkin
-Tương tự như bậc của một đa thức đại số thông thường, bậc của đa thức Zhegalkin là bậc của hạng tử chứa nhiều đơn thức $x_i$ nhất. Ký hiệu là $\deg(f)$.
-````
-
-````{prf:example}
-Xét hàm boolean $f(x, y, z) = 1 \oplus x \oplus yz \oplus xyz$. Khi đó $\deg(f) = 3$ vì hạng tử chứa nhiều đơn thức nhất là $xyz$ có 3 đơn thức.
-
-Xét hàm boolean $f(x, y, z) = 1 \oplus z \oplus zy \oplus xy$. Khi đó $\deg(f) = 2$ vì hạng tử chứa nhiều đơn thức nhất là $zy$ (cũng có thể xét $xy$).
-````
-
 ````{prf:corollary}
 $$\mu(\mu(f)) = f$$
-````
-
-````{prf:corollary}
-Đặt $f \in \mathcal{F}_n$. Khi đó $\deg f = n$ khi và chỉ khi $\mathrm{wt} (f)$ lẻ.
 ````
 
 ````{prf:remark}
@@ -426,74 +437,3 @@ Bước 2
 
 Như vậy ta có kết quả là $(0, 1, 1, 1)$, tương ứng với các hạng tử $1$, $y$, $x$, $xy$ (như trên). Vậy đa thức Zhegalkin là $f(x, y) = x \oplus y \oplus xy$.
 
-### Hàm affine và hàm tuyến tính
-
-````{prf:definition} Hàm boolean affine
-Xét hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$. Khi đó $f$ được gọi là **hàm boolean affine** nếu nó có dạng
-
-$$\begin{equation}
-    f(x_1, x_2, \ldots, x_n) = a_0 \oplus a_1 x_1 \oplus 
-    a_2 x_2 \oplus \ldots \oplus a_n x_n
-\end{equation}$$
-
-Khi $a_0 = 0$ thì ta gọi là **hàm boolean tuyến tính** (linear).
-````
-
-Ta thấy rằng chỉ có các hạng tử dạng $a_i x_i$ xuất hiện trong biểu diễn đa thức Zhegalkin tương ứng của hàm boolean đó. Hay  nói cách khác hàm boolean là affine khi $\deg(f) = 1$.
-
-````{prf:example}
-Hàm boolean $f(x, y) = x \oplus y$ là hàm boolean affine và cũng tuyến tính. Hàm boolean $f(x, y) = x \oplus xy$ không là hàm boolean affine.
-````
-
-Tiếp theo ta sẽ xét sự so sánh của hai vector và hàm boolean đơn điệu.
-
-### Hàm đơn điệu
-
-````{prf:definition} Vector so sánh được
-Xét hai vector $\bm{a} = (a_1, a_2, \ldots, a_n)$ và $\bm{b} = (b_1, b_2, \ldots, b_n)$ ($a_i, b_i \in \{0, 1\}$). Ta nói $\bm{a}$ **so sánh được nhỏ hơn** $\bm{b}$ nếu với mọi $i = 1, 2, \ldots, n$ ta có $a_i \leqslant b_i$. Ký hiệu $\bm{a} \prec \bm{b}$.
-````
-
-````{prf:example}
-Ta có $(1, 0, 0) \prec (1, 0, 1)$, còn $(1, 0, 0)$ và $(0, 1, 0)$
-thì không so sánh được (vị trí thứ 1 và thứ 2).
-````
-
-````{prf:definition} Hàm boolean đơn điệu
-Hàm boolean $n$ biến $f(x_1, x_2, \ldots, x_n)$ được gọi là **hàm boolean đơn điệu** (hay **monotone**) nếu với mọi vector $(a_1, a_2, \ldots, a_n) \prec (b_1, b_2, \ldots, b_n)$ thì ta có 
-
-$$\begin{equation}
-    f(a_1, a_2, \ldots, a_n) \leqslant f(b_1, b_2, \ldots, b_n)  
-\end{equation}$$
-````
-
-````{prf:example}
-Xét hàm boolean $f(x, y) = (0, 1, 0, 1)$.
-
-Ta thấy rằng:
-- $(0, 0) \prec (0, 1)$ và $f(0, 0) = 0 \leqslant 1 = f(0, 1)$
-- $(0, 0) \prec (1, 0)$ và $f(0, 0) = 0 \leqslant 0 = f(1, 0)$
-- $(0, 0) \prec (1, 1)$ và $f(0, 0) = 0 \leqslant 1 = f(1, 1)$
-- $(0, 1)$ và $(1, 0)$ không so sánh được nên bỏ qua
-- $(0, 1) \prec (1, 1)$ và $f(0, 1) = 1 \leqslant 1 = f(1, 1)$
-- $(1, 0) \prec (1, 1)$ và $f(1, 0) = 0 \leqslant 1 = f(1, 1)$
-
-Vậy đây là hàm đơn điệu.
-````
-
-#### Một số kí hiệu hay dùng
-
-1. Để chỉ tập hợp tất cả hàm boolean $n$ biến ta dùng $\mathcal{F}_n$.
-2. Để chỉ tập hợp tất cả hàm boolean affine $n$ biến ta dùng $\mathcal{A}_n$.
-3. Để chỉ tập hợp tất cả hàm boolean tuyến tính $n$ biến ta dùng $\mathcal{L}_n$.
-
-Ở trên đã tính được
-
-$$\lvert \mathcal{F}_n \rvert = 2^{2^n}.$$
-
-Số lượng hàm boolean affine là số cách chọn các hệ số $a_0$, $a_1$, ..., $a_n$. Như vậy cần chọn $n+1$ số trong $\mathbb{F}_2$ nên
-
-$$\lvert \mathcal{A}_n \rvert = 2^{n+1}.$$
-
-Đối với hàm boolean tuyến tính thì chọn từ $a_1$ tới $a_n$ nên cần chọn $n$ số, suy ra
-
-$$\lvert \mathcal{L}_n \rvert = 2^n.$$

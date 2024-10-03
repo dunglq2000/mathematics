@@ -12,7 +12,7 @@ Phép AND và OR có tính giao hoán, kết hợp.
 
 ### Một số luật logic
 
-Sau đây là một số "hằng đẳng thức đáng nhớ trong logic:
+Sau đây là một số "hằng đẳng thức đáng nhớ" trong logic:
 
 1. Luật bù:
     - $a \lor \neg a = 1$,
@@ -52,8 +52,7 @@ Biểu thức boolean với $n$ biến $x_1, \ldots, x_n$ ở dạng **full disj
 
 Ở ví dụ trên thì các term $a \land b$ và $b \land \neg c$ chỉ có hai literal nên không phải là full DNF.
 
-````{prf:example}
-Ví dụ về full DNF:
+````{prf:example} Ví dụ về full DNF
 
 $$(a \land b) \lor (a \land \neg b) \lor (\neg a \land b)$$
 ````
@@ -102,7 +101,7 @@ $$f(a, b, c) = (\neg a \land b \land \neg c) \lor (a \land \neg b \land \neg c) 
 Nếu biểu thức boolean được biểu diễn ở dạng tích của các tổng thì ta gọi là **conjunctive normal form** (hay **CNF**).
 
 ````{prf:example}
-$(a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)$
+$$(a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)$$
 ````
 
 Tương tự, mỗi tổng sẽ bao gồm các **literal** (hay **đơn tử**). Ví dụ với tổng $(a \lor \neg b \lor \neg c)$ thì các literal sẽ là $a$, $\neg b$ và $\neg c$.

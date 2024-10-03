@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.2. Trọng số của hàm boolean &#8212; Math Book</title>
+    <title>15.2. Khoảng cách Hamming &#8212; Math Book</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/weight-boolean';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.3. Nonlinearlity của hàm boolean" href="walsh-hadamard-spectre.html" />
+    <link rel="next" title="15.3. Hàm affine và hàm tuyến tính" href="boolean-aff-lin.html" />
     <link rel="prev" title="15.1. Hàm boolean" href="boolean-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -504,9 +506,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -517,20 +517,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Trọng số của hàm boolean</h1>
+    <h1>Khoảng cách Hamming</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.2.1. Trọng số của hàm boolean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#khoang-cach-hamming">15.2.2. Khoảng cách Hamming</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -540,98 +531,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="trong-so-cua-ham-boolean">
-<h1><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">15.2. </span>Trọng số của hàm boolean</a><a class="headerlink" href="#trong-so-cua-ham-boolean" title="Link to this heading">#</a></h1>
-<nav class="contents" id="contents">
-<p class="topic-title">Contents</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#trong-so-cua-ham-boolean" id="id2">Trọng số của hàm boolean</a></p>
-<ul>
-<li><p><a class="reference internal" href="#id1" id="id3">Trọng số của hàm boolean</a></p></li>
-<li><p><a class="reference internal" href="#khoang-cach-hamming" id="id4">Khoảng cách Hamming</a></p></li>
-</ul>
-</li>
-</ul>
-</nav>
-<p>Ở phần này ký hiệu vector không <span class="math notranslate nohighlight">\(\bm{0} = (0, \ldots, 0)\)</span>, vector một <span class="math notranslate nohighlight">\(\bm{1} = (1, \ldots, 1)\)</span>.</p>
-<section id="id1">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">15.2.1. </span>Trọng số của hàm boolean</a><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+  <section id="khoang-cach-hamming">
+<h1><span class="section-number">15.2. </span>Khoảng cách Hamming<a class="headerlink" href="#khoang-cach-hamming" title="Link to this heading">#</a></h1>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 15.8 </span> (Trọng số của hàm boolean)</p>
-<section class="definition-content" id="proof-content">
-<p><strong>Trọng số</strong> (hay <strong>weight</strong>, <strong>вес</strong>) của hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> là số lượng giá trị khác <span class="math notranslate nohighlight">\(0\)</span> của hàm <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<p>Ký hiệu là <span class="math notranslate nohighlight">\(\mathrm{wt}(f)\)</span>.</p>
-</section>
-</div><div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 15.8 </span></p>
-<section class="example-content" id="proof-content">
-<p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y) = (0, 1, 0, 1)\)</span> có trọng số <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = 2\)</span>.</p>
-<p>Hàm boolean <span class="math notranslate nohighlight">\(f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)\)</span> có trọng số <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = 5\)</span>.</p>
-</section>
-</div><p>Một số tính chất của trọng số:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(0 \leqslant \mathrm{wt}(f) \leqslant 2^n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathrm{wt}(f \oplus \bm{1}) = 2^n - \mathrm{wt}(f)\)</span></p></li>
-<li><p>Nếu <span class="math notranslate nohighlight">\(h\)</span> cũng là một hàm boolean từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span> thì</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[\mathrm{wt}(f \oplus h) = \mathrm{wt}(f) + \mathrm{wt}(h) - 2 \mathrm{wt}(fh)\]</div>
-<ol class="arabic simple" start="4">
-<li><p>Giá trị <span class="math notranslate nohighlight">\(\mathrm{wt}(f)\)</span> nhận giá trị lẻ khi và chỉ khi <span class="math notranslate nohighlight">\(\deg(f) = n\)</span>.</p></li>
-</ol>
-<div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 15.9 </span> (Hàm boolean cân bằng)</p>
-<section class="definition-content" id="proof-content">
-<p>Nếu hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(f\)</span> có trọng số bằng <span class="math notranslate nohighlight">\(2^{n-1}\)</span> thì <span class="math notranslate nohighlight">\(f\)</span> được gọi là hàm boolean <strong>cân bằng</strong> (hay <strong>balanced</strong>, <strong>сбалансированная</strong>).</p>
-</section>
-</div><div class="proof remark admonition" id="remark-3">
-<p class="admonition-title"><span class="caption-number">Remark 15.6 </span></p>
-<section class="remark-content" id="proof-content">
-<ol class="arabic simple">
-<li><p>Ta nói hàm boolean <span class="math notranslate nohighlight">\(g\)</span> <em>giả phụ thuộc</em> vào biến <span class="math notranslate nohighlight">\(y\)</span> nếu <span class="math notranslate nohighlight">\(g(x_1, \ldots, x_n, y) = f(x_1, \ldots x_n)\)</span>. Khi đó <span class="math notranslate nohighlight">\(\mathrm{wt} (g) = 2 \mathrm{wt} (f)\)</span>.</p></li>
-<li><p>Đặt <span class="math notranslate nohighlight">\(f(x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(y_1, \ldots, y_m)\)</span> là các hàm boolean phụ thuộc vào tập các biến không giao nhau. Khi đó:</p></li>
-</ol>
-<p>a) nếu <span class="math notranslate nohighlight">\(f\)</span> và <span class="math notranslate nohighlight">\(g\)</span> là các hàm số khác hằng <span class="math notranslate nohighlight">\(1\)</span> thì <span class="math notranslate nohighlight">\(f \cdot g\)</span> không là hàm cân bằng;</p>
-<p>b) <span class="math notranslate nohighlight">\(f\)</span> hoặc <span class="math notranslate nohighlight">\(g\)</span> cân bằng khi và chỉ khi <span class="math notranslate nohighlight">\(f \oplus g\)</span> cân bằng.</p>
-</section>
-</div><div class="danger dropdown admonition">
-<p class="admonition-title"><strong>Chứng minh</strong></p>
-<ol class="arabic simple">
-<li><p>Do</p></li>
-</ol>
-<div class="math notranslate nohighlight">
-\[g(x_1, \ldots, x_n, 0) = g(x_1, \ldots, x_n, 1) = f(x_1, \ldots, x_n)\]</div>
-<p>nên ta có điều phải chứng minh.</p>
-<ol class="arabic simple" start="2">
-<li><p>Đặt <span class="math notranslate nohighlight">\(\bm{x} = (x_1, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(\bm{y} = (y_1, \ldots, y_m)\)</span>.</p></li>
-</ol>
-<p>a) Đặt <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = r &lt; 2^n\)</span> và <span class="math notranslate nohighlight">\(\mathrm{wt}(g) = s &lt; 2^m\)</span>. Vì <span class="math notranslate nohighlight">\(f(\bm{x}) \cdot g(\bm{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\bm{x}) = g(\bm{y}) = 1\)</span> nên <span class="math notranslate nohighlight">\(\mathrm{wt}(f \cdot g) = r \cdot s\)</span>.</p>
-<p>Do đó nếu <span class="math notranslate nohighlight">\(f \cdot g\)</span> cân bằng thì <span class="math notranslate nohighlight">\(2^{n+m-1} = \mathrm{wt}(f \cdot g) = r \cdot s\)</span>.</p>
-<p>Như vậy <span class="math notranslate nohighlight">\(r = 2^k\)</span> và <span class="math notranslate nohighlight">\(s = 2^l\)</span> với <span class="math notranslate nohighlight">\(k \leqslant n-1\)</span> và <span class="math notranslate nohighlight">\(l \leqslant m-1\)</span>.</p>
-<p>Suy ra <span class="math notranslate nohighlight">\(r \cdot s \leqslant 2^{n+m-2}\)</span>. Điều này vô lý vì <span class="math notranslate nohighlight">\(r \cdot s = 2^{n + m - 1} &gt; 2^{n+m-2}\)</span>. Nghĩa là giả sử ban đầu <span class="math notranslate nohighlight">\(r &lt; 2^n\)</span> là sai, tương tự với <span class="math notranslate nohighlight">\(s\)</span> và ta có điều phải chứng minh.</p>
-<p>b) Chú ý rằng <span class="math notranslate nohighlight">\(f(\bm{x}) \oplus g(\bm{y}) = 1\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(f(\bm{x}) \neq g(\bm{y})\)</span>. Suy ra</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{wt}(f \oplus g) = \mathrm{wt}(f) \cdot \mathrm{wt}(\bar{g}) + \mathrm{wt}(\bar{f}) \cdot \mathrm{wt}(g)\]</div>
-<p><em>Điều kiện đủ.</em> Giả sử hàm <span class="math notranslate nohighlight">\(f\)</span> cân bằng, suy ra</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{wt}(f) = \mathrm{wt}(\bar{f}) = 2^{n-1}\]</div>
-<p>Như vậy</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{wt}(f \oplus g) = 2^{n-1} \cdot \mathrm{wt}(g) + 2^{n-1} \cdot \mathrm{wt}(\bar{g}) = 2^{n-1} \cdot 2^m\]</div>
-<p>Vậy <span class="math notranslate nohighlight">\(f \oplus g\)</span> là hàm cân bằng.</p>
-<p><em>Điều kiện cần.</em> Giả sử <span class="math notranslate nohighlight">\(\mathrm{wt}(f) = r \neq 2^{n-1}\)</span> và <span class="math notranslate nohighlight">\(\mathrm{wt}(g) = s\)</span>. Như vậy</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{wt}(f \oplus g) = r (2^m - s) + s (2^n - r) = 2^{n+m-1}\]</div>
-<p>do <span class="math notranslate nohighlight">\(f \oplus g\)</span> là hàm cân bằng. Tiếp theo</p>
-<div class="math notranslate nohighlight">
-\[s = \dfrac{2^{n+m-1} - 2^m \cdot r}{2^n - 2r} = 2^{m-1}\]</div>
-<p>Vậy <span class="math notranslate nohighlight">\(g\)</span> là hàm cân bằng.</p>
-</div>
-</section>
-<section id="khoang-cach-hamming">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">15.2.2. </span>Khoảng cách Hamming</a><a class="headerlink" href="#khoang-cach-hamming" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 15.10 </span> (Khoảng cách Hamming giữa hai vector)</p>
+<p class="admonition-title"><span class="caption-number">Definition 15.7 </span> (Khoảng cách Hamming giữa hai vector)</p>
 <section class="definition-content" id="proof-content">
 <p>Với hai vector <span class="math notranslate nohighlight">\(\bm{x}\)</span>, <span class="math notranslate nohighlight">\(\bm{y}\)</span> thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>, đặt</p>
 <div class="math notranslate nohighlight">
@@ -640,8 +543,8 @@ document.write(`
 \end{equation}\]</div>
 <p>là <strong>khoảng cách Hamming</strong> giữa hai vector <span class="math notranslate nohighlight">\(\bm{x}\)</span> và <span class="math notranslate nohighlight">\(\bm{y}\)</span>. Trong đó <span class="math notranslate nohighlight">\(\mathrm{wt}(\bm{z})\)</span> là trọng số vector <span class="math notranslate nohighlight">\(\bm{z}\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 15.11 </span> (Khoảng cách Hamming từ vector tới tập vector)</p>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 15.8 </span> (Khoảng cách Hamming từ vector tới tập vector)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét <span class="math notranslate nohighlight">\(M \subseteq \mathbb{F}_2^n\)</span>. Khi đó với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, ta nói khoảng cách từ <span class="math notranslate nohighlight">\(\bm{x}\)</span> tới <span class="math notranslate nohighlight">\(M\)</span> là</p>
 <div class="math notranslate nohighlight">
@@ -649,8 +552,8 @@ document.write(`
 	d(\bm{x}, M) = \min_{\bm{y} \in M} d (\bm{x}, \bm{y})
 \end{equation}\]</div>
 </section>
-</div><div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 15.12 </span> (Khoảng cách Hamming giữa hai hàm boolean)</p>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 15.9 </span> (Khoảng cách Hamming giữa hai hàm boolean)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai hàm boolean <span class="math notranslate nohighlight">\(n\)</span> biến là <span class="math notranslate nohighlight">\(f(x_1, x_2, \ldots, x_n)\)</span> và <span class="math notranslate nohighlight">\(g(x_1, x_2, \ldots, x_n)\)</span>. Khi đó khoảng cách Hamming từ hàm <span class="math notranslate nohighlight">\(f\)</span> tới hàm <span class="math notranslate nohighlight">\(g\)</span> là</p>
 <div class="math notranslate nohighlight">
@@ -659,7 +562,6 @@ document.write(`
 \end{equation}\]</div>
 </section>
 </div></section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -701,11 +603,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="walsh-hadamard-spectre.html"
+       href="boolean-aff-lin.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.3. </span>Nonlinearlity của hàm boolean</p>
+        <p class="prev-next-title"><span class="section-number">15.3. </span>Hàm affine và hàm tuyến tính</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -715,22 +617,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">15.2.1. Trọng số của hàm boolean</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#khoang-cach-hamming">15.2.2. Khoảng cách Hamming</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

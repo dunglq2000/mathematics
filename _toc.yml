@@ -48,6 +48,8 @@ parts:
       sections:
       - file: discrete-mathematics/boolean-function.md
       - file: discrete-mathematics/weight-boolean.md
+      - file: discrete-mathematics/boolean-aff-lin.md
+      - file: discrete-mathematics/boolean-monotone.md
       - file: discrete-mathematics/walsh-hadamard-spectre.md
       - file: discrete-mathematics/boolean-dnf-cnf.md
   - caption: Hình học

@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -271,7 +273,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -546,7 +547,7 @@ document.write(`
   <section id="sms4">
 <h1><span class="section-number">21.2. </span>SMS4<a class="headerlink" href="#sms4" title="Link to this heading">#</a></h1>
 <p>SM4 (trước đây là SMS4) là thuật toán mã hóa khối của Trung Quốc để bảo vệ mạng không dây. Thuật toán được phát triển vào năm 2006.</p>
-<p>Phần này mình dịch từ <span id="id1">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">6</a>]</span> hoặc bản dịch tiếng Anh là <span id="id2">[<a class="reference internal" href="../intro.html#id24" title="Whitfield Diffie and George Ledin (translators). SMS4 encryption algorithm for wireless networks. Cryptology ePrint Archive, Paper 2008/329, 2008. URL: https://eprint.iacr.org/2008/329.">11</a>]</span>.</p>
+<p>Phần này mình dịch từ <span id="id1">[<a class="reference internal" href="../intro.html#id3" title="Н. Н. Токарева. Симметричная криптография. Краткий курс. Novosibirsk State University, 2012. ISBN 978-5-4437-0067-0.">6</a>]</span> hoặc bản dịch tiếng Anh là <span id="id2">[<a class="reference internal" href="../intro.html#id24" title="Whitfield Diffie and George Ledin (translators). SMS4 encryption algorithm for wireless networks. Cryptology ePrint Archive, Paper 2008/329, 2008. URL: https://eprint.iacr.org/2008/329.">12</a>]</span>.</p>
 <p>Input, output và độ dài khóa của SMS4 đều là <span class="math notranslate nohighlight">\(128\)</span> bit. Thuật toán gồm <span class="math notranslate nohighlight">\(32\)</span> vòng.</p>
 <p>Plaintext <span class="math notranslate nohighlight">\(128\)</span> bit sẽ được chia thành <span class="math notranslate nohighlight">\(4\)</span> phần độ dài <span class="math notranslate nohighlight">\(32\)</span> bit (gọi là <strong>word</strong>). Giả sử plaintext là <span class="math notranslate nohighlight">\(P\)</span> có <span class="math notranslate nohighlight">\(128\)</span> bit sẽ được biểu diễn thành</p>
 <div class="math notranslate nohighlight">

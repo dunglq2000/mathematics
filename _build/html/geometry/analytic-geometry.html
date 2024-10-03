@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="17. Phép biến hình" href="transformation.html" />
-    <link rel="prev" title="15.4. Disjunctive và Conjunctive Normal Form" href="../discrete-mathematics/boolean-dnf-cnf.html" />
+    <link rel="prev" title="15.6. Disjunctive và Conjunctive Normal Form" href="../discrete-mathematics/boolean-dnf-cnf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -271,7 +273,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/dft.html">29.2. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
@@ -667,7 +668,7 @@ document.write(`
 <li><p>Nếu một đường thẳng cắt hai đường thẳng khiến tổng hai góc trong cùng phía nhỏ hơn hai vuông thì hai đường thẳng đó chắc chắn sẽ cắt nhau tại một điểm nào đó</p></li>
 </ol>
 <p>Tiên đề số 5 là rắc rối và phức tạp nhất. Nó không thực sự tự nhiên và có nhiều sự vướng mắc. Đây chính là tiên đề cho sự ra đời của hình học phi-Euclid hơn 1500 năm sau.</p>
-<p>Bộ <strong>Elements</strong> của Euclid bao gồm 13 quyển. Trong đó đề cập tới rất nhiều vấn đề của hình học, từ những phần tử đơn giản nhất cấu tạo nên hình học là điểm, đoạn thẳng, đường thẳng, tới những hình học lớn hơn như hình chữ nhật, hình tròn, đa giác, mặt phẳng. Thậm chí ông cũng đã có những dấu chân ở hình học không gian như hình chóp, hình cầu, hình nón (<span id="id4">[<a class="reference internal" href="../intro.html#id22" title="Euclid. Euclid's Elements of Geometry. Richard Fitzpatrick, revised and corrected edition, 2007. ISBN 978-0-6151-7984-1.">8</a>]</span>, <span id="id5">[<a class="reference internal" href="../intro.html#id23" title="Euclid John Casey. The first six books of the elements of euclid. 2007.">9</a>]</span>).</p>
+<p>Bộ <strong>Elements</strong> của Euclid bao gồm 13 quyển. Trong đó đề cập tới rất nhiều vấn đề của hình học, từ những phần tử đơn giản nhất cấu tạo nên hình học là điểm, đoạn thẳng, đường thẳng, tới những hình học lớn hơn như hình chữ nhật, hình tròn, đa giác, mặt phẳng. Thậm chí ông cũng đã có những dấu chân ở hình học không gian như hình chóp, hình cầu, hình nón (<span id="id4">[<a class="reference internal" href="../intro.html#id22" title="Euclid. Euclid's Elements of Geometry. Richard Fitzpatrick, revised and corrected edition, 2007. ISBN 978-0-6151-7984-1.">9</a>]</span>, <span id="id5">[<a class="reference internal" href="../intro.html#id23" title="Euclid John Casey. The first six books of the elements of euclid. 2007.">10</a>]</span>).</p>
 </section>
 </section>
 <section id="phuong-phap-toa-do-trong-mat-phang">
@@ -988,7 +989,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15.4. </span>Disjunctive và Conjunctive Normal Form</p>
+        <p class="prev-next-title"><span class="section-number">15.6. </span>Disjunctive và Conjunctive Normal Form</p>
       </div>
     </a>
     <a class="right-next"

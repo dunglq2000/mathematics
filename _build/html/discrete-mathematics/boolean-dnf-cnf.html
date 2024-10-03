@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15.4. Disjunctive và Conjunctive Normal Form &#8212; Math Book</title>
+    <title>15.6. Disjunctive và Conjunctive Normal Form &#8212; Math Book</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="16. Hình học giải tích (theo góc nhìn không giải tích)" href="../geometry/analytic-geometry.html" />
-    <link rel="prev" title="15.3. Nonlinearlity của hàm boolean" href="walsh-hadamard-spectre.html" />
+    <link rel="prev" title="15.5. Nonlinearlity của hàm boolean" href="walsh-hadamard-spectre.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -226,9 +226,11 @@
 <li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Trọng số của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.3. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
@@ -527,11 +529,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.4.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.4.4.1. Trường hợp ba biến</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.6.1. Một số luật logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.6.2. Tổng của tích</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.6.3. Tích của các tổng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.6.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.6.4.1. Trường hợp ba biến</a></li>
 </ul>
 </li>
 </ul>
@@ -546,7 +548,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="disjunctive-va-conjunctive-normal-form">
-<h1><span class="section-number">15.4. </span>Disjunctive và Conjunctive Normal Form<a class="headerlink" href="#disjunctive-va-conjunctive-normal-form" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">15.6. </span>Disjunctive và Conjunctive Normal Form<a class="headerlink" href="#disjunctive-va-conjunctive-normal-form" title="Link to this heading">#</a></h1>
 <p>Khi xử lý các mạch logic có ba toán tử chúng ta đặc biệt quan tâm là AND, OR, NOT. Điều này khác với đại số boolean ở phần trước chỉ quan tâm phép XOR và AND - phép cộng và nhân trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span>.</p>
 <p>Ở phần này kí hiệu:</p>
 <ul class="simple">
@@ -556,8 +558,8 @@ document.write(`
 </ul>
 <p>Phép AND và OR có tính giao hoán, kết hợp.</p>
 <section id="mot-so-luat-logic">
-<h2><span class="section-number">15.4.1. </span>Một số luật logic<a class="headerlink" href="#mot-so-luat-logic" title="Link to this heading">#</a></h2>
-<p>Sau đây là một số “hằng đẳng thức đáng nhớ trong logic:</p>
+<h2><span class="section-number">15.6.1. </span>Một số luật logic<a class="headerlink" href="#mot-so-luat-logic" title="Link to this heading">#</a></h2>
+<p>Sau đây là một số “hằng đẳng thức đáng nhớ” trong logic:</p>
 <ol class="arabic simple">
 <li><p>Luật bù:</p>
 <ul class="simple">
@@ -604,7 +606,7 @@ document.write(`
 </ol>
 </section>
 <section id="tong-cua-tich">
-<h2><span class="section-number">15.4.2. </span>Tổng của tích<a class="headerlink" href="#tong-cua-tich" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6.2. </span>Tổng của tích<a class="headerlink" href="#tong-cua-tich" title="Link to this heading">#</a></h2>
 <p>Nếu biểu thức boolean được biểu diễn ở dạng tổng của các tích thì ta gọi là <strong>disjunctive normal form</strong> (hay <strong>DNF</strong>).</p>
 <div class="proof example admonition" id="example-0">
 <p class="admonition-title"><span class="caption-number">Example 15.11 </span></p>
@@ -616,9 +618,8 @@ document.write(`
 <p>Biểu thức boolean với <span class="math notranslate nohighlight">\(n\)</span> biến <span class="math notranslate nohighlight">\(x_1, \ldots, x_n\)</span> ở dạng <strong>full disjunctive normal form</strong> (hay <strong>full DNF</strong>) mỗi term của nó có đủ <span class="math notranslate nohighlight">\(n\)</span> literal.</p>
 <p>Ở ví dụ trên thì các term <span class="math notranslate nohighlight">\(a \land b\)</span> và <span class="math notranslate nohighlight">\(b \land \neg c\)</span> chỉ có hai literal nên không phải là full DNF.</p>
 <div class="proof example admonition" id="example-1">
-<p class="admonition-title"><span class="caption-number">Example 15.12 </span></p>
+<p class="admonition-title"><span class="caption-number">Example 15.12 </span> (Ví dụ về full DNF)</p>
 <section class="example-content" id="proof-content">
-<p>Ví dụ về full DNF:</p>
 <div class="math notranslate nohighlight">
 \[(a \land b) \lor (a \land \neg b) \lor (\neg a \land b)\]</div>
 </section>
@@ -705,12 +706,13 @@ document.write(`
 </section>
 </div></section>
 <section id="tich-cua-cac-tong">
-<h2><span class="section-number">15.4.3. </span>Tích của các tổng<a class="headerlink" href="#tich-cua-cac-tong" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6.3. </span>Tích của các tổng<a class="headerlink" href="#tich-cua-cac-tong" title="Link to this heading">#</a></h2>
 <p>Nếu biểu thức boolean được biểu diễn ở dạng tích của các tổng thì ta gọi là <strong>conjunctive normal form</strong> (hay <strong>CNF</strong>).</p>
 <div class="proof example admonition" id="example-3">
 <p class="admonition-title"><span class="caption-number">Example 15.14 </span></p>
 <section class="example-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)\)</span></p>
+<div class="math notranslate nohighlight">
+\[(a \lor \neg b \lor \neg c) \land (a \lor b) \land (b \lor \neg c)\]</div>
 </section>
 </div><p>Tương tự, mỗi tổng sẽ bao gồm các <strong>literal</strong> (hay <strong>đơn tử</strong>). Ví dụ với tổng <span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c)\)</span> thì các literal sẽ là <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\neg b\)</span> và <span class="math notranslate nohighlight">\(\neg c\)</span>.</p>
 <p>Mỗi tích sẽ được gọi là <strong>term</strong> (hay <strong>hạng tử</strong>). Trong ví dụ trên có ba term là <span class="math notranslate nohighlight">\((a \lor \neg b \lor \neg c)\)</span>, <span class="math notranslate nohighlight">\((a \lor b)\)</span> và <span class="math notranslate nohighlight">\((b \lor \neg c)\)</span>.</p>
@@ -806,13 +808,13 @@ document.write(`
 </div>
 </section>
 <section id="phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">
-<h2><span class="section-number">15.4.4. </span>Phương pháp bìa Karnaugh tìm biểu thức tối tiểu<a class="headerlink" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.6.4. </span>Phương pháp bìa Karnaugh tìm biểu thức tối tiểu<a class="headerlink" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu" title="Link to this heading">#</a></h2>
 <p>Chúng ta đã thấy rằng từ một biểu thức DNF hoặc CNF thì tìm được biểu thức full DNF hoặc full CNF.</p>
 <p>Tuy nhiên trong thực tế chúng ta quan tâm đến biểu thức ít term, và mỗi term có ít literal nhất có thể. Do đó chúng ta cần một phương án rút gọn biểu thức boolean.</p>
 <p>Đối với hàm ba hoặc bốn biến chúng ta có thể sử dụng <strong>bìa Karnaugh</strong> (hay <strong>Karnaugh map</strong>, <strong>карта Карно</strong>).</p>
 <p>Ở phần sau mình sẽ trình bày cách tìm tất cả biểu thức tối tiểu đối với DNF. Đối với CNF làm ngược lại.</p>
 <section id="truong-hop-ba-bien">
-<h3><span class="section-number">15.4.4.1. </span>Trường hợp ba biến<a class="headerlink" href="#truong-hop-ba-bien" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">15.6.4.1. </span>Trường hợp ba biến<a class="headerlink" href="#truong-hop-ba-bien" title="Link to this heading">#</a></h3>
 <p>Giả sử ta có biểu thức boolean <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3)\)</span>.</p>
 <p>Ta viết bảng gồm <span class="math notranslate nohighlight">\(2\)</span> hàng (ứng với <span class="math notranslate nohighlight">\(2\)</span> giá trị của <span class="math notranslate nohighlight">\(x_1\)</span> là <span class="math notranslate nohighlight">\(\{0 ,1 \}\)</span>) và <span class="math notranslate nohighlight">\(4\)</span> cột (ứng với <span class="math notranslate nohighlight">\(4\)</span> giá trị <span class="math notranslate nohighlight">\(x_2 x_3\)</span> là <span class="math notranslate nohighlight">\(\{ 00, 01, 10, 11 \}\)</span>).</p>
 <div class="admonition important">
@@ -978,7 +980,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15.3. </span>Nonlinearlity của hàm boolean</p>
+        <p class="prev-next-title"><span class="section-number">15.5. </span>Nonlinearlity của hàm boolean</p>
       </div>
     </a>
     <a class="right-next"
@@ -1006,11 +1008,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.4.1. Một số luật logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.4.2. Tổng của tích</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.4.3. Tích của các tổng</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.4.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.4.4.1. Trường hợp ba biến</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mot-so-luat-logic">15.6.1. Một số luật logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-cua-tich">15.6.2. Tổng của tích</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tich-cua-cac-tong">15.6.3. Tích của các tổng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phuong-phap-bia-karnaugh-tim-bieu-thuc-toi-tieu">15.6.4. Phương pháp bìa Karnaugh tìm biểu thức tối tiểu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#truong-hop-ba-bien">15.6.4.1. Trường hợp ba biến</a></li>
 </ul>
 </li>
 </ul>
