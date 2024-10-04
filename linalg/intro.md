@@ -489,6 +489,41 @@ $$\bm{u}_{k+1} \cdot \bm{u}_2 = \bm{v}_{k+1} \cdot \bm{u}_2 - \dfrac{\bm{v}_{k+1
 
 Từ đây có thể thấy, sử dụng phương pháp quy nạp ta có thể chứng minh được rằng với mỗi số $n \geqslant 2$, thì mọi $k \geqslant n+1$ ta đều có $\bm{u}_k \cdot \bm{u}_n = 0$. Hay nói cách khác là khi thuật toán tính $\bm{u}_k$ thì nó sẽ trực giao với tất cả $\bm{u}_1$, $\bm{u}_2$, ..., $\bm{u}_{k-1}$.
 
+## Toán tử tuyến tính
+
+````{prf:definition} Ánh xạ tuyến tính
+Toán tử tuyến tính (hay **linear operator**, **линейный оператор**) là một ánh xạ 
+
+$$\bm{A}: \mathbb{R}^n \to \mathbb{R}^m$$
+
+thỏa hai điều kiện:
+
+1. Với mọi $\bm{u}, \bm{v} \in \mathbb{R}^n$ thì $\bm{A}(\bm{u}) + \bm{A}(\bm{v}) = \bm{A}(\bm{u} + \bm{v})$.
+2. Với mọi $\alpha \in \mathbb{R}$ và $\bm{u} \in \mathbb{R}^n$ thì $\bm{A} (\alpha \bm{u}) = \alpha \bm{A} (\bm{u})$.
+````
+
+Nếu $\bm{A}$ là một ma trận cỡ $m \times n$ thì đây là một ánh xạ tuyến tính với phép nhân ma trận với vector $\bm{A} \cdot \bm{x} = \bm{y}$.
+
+Ở đây $\bm{x} \in \mathbb{R}^n$ và $\bm{y} \in \mathbb{R}^m$ là các vector cột.
+
+````{prf:definition} Hạt nhân
+**Hạt nhân** (hay **kernel**, **ядро**) của ánh xạ tuyến tính $\bm{A}$ là tập hợp nghiệm của hệ thuần nhất và được ký hiệu là $\ker(A)$. Nói cách khác
+
+$$\ker(\bm{A}) = \{ \bm{x} \in \mathbb{R}^n: \, \bm{A} \cdot \bm{x} = \bm{0} \}$$
+````
+
+````{prf:definition} Ảnh
+**Ảnh** (hay **image**, **образ**) của ánh xạ tuyến tính $\bm{A}$ là tập hợp tất cả giá trị có thể của phép nhân ma trận và được ký hiệu là $\text{im} (A)$. Nói cách khác
+
+$$\text{im} (A) = \{ \bm{A} \cdot \bm{x}: \, \bm{x} \in \mathbb{R}^n \}$$
+````
+
+````{prf:property}
+Ánh xạ tuyến tính $\bm{A}: \mathbb{R}^n \to \mathbb{R}^m$ có tính chất:
+
+1. $\dim(\ker \bm{A}) + \dim(\text{im} \bm{A}) = n$.
+````
+
 ## Trị riêng và vector riêng
 
 ### Trị riêng và vector riêng
@@ -503,9 +538,75 @@ $$\begin{equation*}
 Giá trị $\lambda$ khi đó gọi là **trị riêng** (hay **eigenvalue**) tương ứng với vector riêng $\bm{v}$.
 ````
 
-Chuyển vế đẳng thức trên ta có $(\bm{A} - \lambda \bm{I}) \cdot \bm{v} = \bm{0}$. Ở đây $\bm{I}$ là ma trận cùng cỡ với $\bm{A}$ và có các phần tử ở hàng $i$ và cột $i$ bằng 1.
+Chuyển vế đẳng thức trên ta có $(\bm{A} - \lambda \bm{I}) \cdot \bm{v} = \bm{0}$. Ở đây $\bm{I}$ là ma trận cùng cỡ với $\bm{A}$ và có các phần tử ở hàng $i$ và cột $i$ bằng $1$ (ma trận đơn vị).
 
 Như vậy, để phương trình có nghiệm khác không thì ma trận $\bm{A} - \lambda \bm{I}$ suy biến, hay $\det (\bm{A} - \lambda \bm{I}) = 0$.
 
-Mỗi nghiệm $\lambda$ của phương trình $\det (\bm{A} - \lambda \bm{I}) = 0$ là một trị riêng. Với mỗi trị riêng $\lambda$ ta tìm được một vector riêng $\bm{v}$.
+Mỗi nghiệm $\lambda$ của phương trình $\det (\bm{A} - \lambda \bm{I}) = 0$ là một trị riêng. Với mỗi trị riêng $\lambda$ ta tìm được các vector riêng $\bm{v}$ tương ứng.
 
+````{prf:property} Một số tính chất của trị riêng và vector riêng
+Giả sử đối với ma trận $A$ cỡ $n \times n$ thì phương trình đặc trưng có đầy đủ $n$ nghiệm thực, ta có các tính chất sau:
+
+1. $\text{tr} A = \lambda_1 + \lambda_2 + \ldots + \lambda_n$
+2. $\det A = \lambda_1 \cdot \lambda_2 \cdots \lambda_n$
+````
+
+````{prf:property} Tính chất liên quan đến rank và trace
+
+1. $\text{tr} (AB) = \text{tr} (BA)$
+2. $\text{rank} (AB) \leqslant \min(\text{rank}(A), \text{rank}(B))$
+````
+
+### Bài tập
+
+**Bài 1.** Cho vector cột $\bm{v} \in \mathbb{R}^n$. Đặt $\bm{A} = \bm{v} \cdot \bm{v}^T$. Tìm $\text{spa} \bm{A}$.
+
+Các cột của $A$ có dạng $\bm{v} \cdot \bm{v}_1$, $\bm{v} \cdot \bm{v}_2$, ..., $\bm{v} \cdot \bm{v}_n$. Như vậy các cột đều tỉ lệ với cột đầu nên $\text{rank} \bm{A} = 1$.
+
+Suy ra $\dim \ker \bm{A} = n-1$ và do đó $\lambda = 0$ là nghiệm bậc $n-1$ trong phương trình đặc trưng.
+
+Như vậy phương trình đặc trưng còn một nghiệm $\lambda \neq 0$.
+
+Do $(\bm{v} \cdot \bm{v}^T) \bm{x} = \lambda \bm{x} \Leftrightarrow \bm{v} (\bm{v}^T \cdot \bm{x}) = \lambda \bm{x}$.
+
+Đặt $\bm{v}^T \cdot \bm{x} = \alpha$ thì $\alpha \bm{v} = \lambda \bm{x}$. Suy ra $\bm{x} = \bm{v}$ và do đó $\alpha = \lambda = \lVert \bm{v} \rVert^2$.
+
+Vậy $\text{spa} \bm{A} = \{ \lVert \bm{v} \rVert^2, 0, 0, \ldots, 0\}$.
+
+---
+
+**Bài 3.** Cho ma trận $\bm{A}_{3 \times 3}$. Biết rằng $\text{tr} \bm{A} = \text{tr} \bm{A}^{-1} = 0$ và $\det \bm{A} = 1$. Chứng minh rằng $\bm{A}^3 = \bm{I}$.
+
+Phương trình đặc trưng có dạng $P_3(\lambda) = -\lambda^3 + a_2 \lambda^2 + a_1 \lambda + a_0$.
+
+Theo tính chất trên thì $a_2 = \sum \lambda = \text{tr} \bm{A} = 0$.
+
+Do $\lambda$ là trị riêng nên $\bm{A} \bm{x} = \lambda \bm{x}$. Do $\bm{A}$ khả nghịch nên $\dfrac{1}{\lambda} \bm{x} = \bm{A}^{-1} \bm{x}$.
+
+Nghĩa là $\dfrac{1}{\lambda}$ là trị riêng của ma trận $\bm{A}^{-1}$. Suy ra $\dfrac{1}{\lambda_1} + \dfrac{1}{\lambda_2} + \dfrac{1}{\lambda_3} = \text{tr} A^{-1} = 0$.
+
+Từ đó suy ra $\lambda_1 \lambda_2 + \lambda_2 \lambda_3 + \lambda_3 \lambda_1 = 0$.
+
+Cuối cùng $\det \bm{A} = \lambda_1 \cdot \lambda_2 \cdot \lambda_3 = 1$.
+
+Vậy phương trình đặc trưng là $P_3(\lambda) = -\lambda^3 + 1$. Theo định lý Cayley-Hamilton thì $P_3(\bm{A}) = -\bm{A}^3 + \bm{I} = \bm{0}$, hay $\bm{A}^3 = \bm{I}$.
+
+---
+
+**Bài 4.** Cho ma trận $\bm{A}_{n \times n}$, $\bm{A}_{ij} \geqslant 0$. Giả sử ma trận có đủ $n$ trị riêng thực. Chứng minh rằng $\lambda_1^k + \lambda_2^k + \ldots + \lambda_n^k \geqslant 0$ với mọi $k \in \mathbb{N}$.
+
+Ta thấy rằng với $k=1$ thì $\lambda_1 + \ldots + \lambda_n = \text{tr}(\bm{A}) \geqslant 0$.
+
+Vì $\lambda_i$ là thỏa phương trình $\bm{A} \bm{x} = \lambda_i \bm{x}$ nên nhân hai vế cho $\bm{A}$ ta có $\bm{A} \cdot \bm{A} \bm{x} = \bm{A} \cdot \lambda_i \bm{x}$. Tương đương với $\bm{A}^2 \bm{x} = \lambda_i (\bm{A} \bm{x}) = \lambda_i^2 \bm{x}$.
+
+Nói cách khác, $\lambda_i^2$ là trị riêng của ma trận $\bm{A}^2$. Thực hiện tương tự ta có $\lambda_i^k$ là trị riêng của ma trận $\bm{A}^k$.
+
+Do đó $\lambda_1^k + \ldots + \lambda_n^k = \text{tr}(\bm{A}^k) \geqslant 0$.
+
+---
+
+**Bài 5.** Cho ma trận $\bm{A}$ khả nghịch. $\bm{X}$ là ma trận sao cho $\bm{A} \bm{X} + \bm{X} \bm{A} = \bm{0}$. Chứng minh rằng $\text{tr} \ \bm{X} = 0$.
+
+Nhân bên trái hai vế cho $\bm{A}^{-1}$ ta có $\bm{X} + \bm{A}^{-1} \bm{X} \bm{A} = \bm{0}$. Ta biết rằng $\bm{A}^{-1} \bm{X} \bm{A}$ là ma trận tương đương ma trận $\bm{X}$ nên $\text{tr} (\bm{A}^{-1} \bm{X} \bm{A}) = \text{tr} \ \bm{X}$.
+
+Suy ra $\text{tr} \bm{X} + \text{tr} \bm{X} = \text{tr} \ \bm{0} = 0$. Từ đây có $\text{tr} \ \bm{X} = 0$.
