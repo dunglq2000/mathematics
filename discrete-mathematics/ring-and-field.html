@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -573,10 +573,10 @@ document.write(`
 <section id="vanh">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">9.4.1. </span>Vành</a><a class="headerlink" href="#vanh" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 9.14 </span> (Ring, Vành)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.19 </span> (Vành)</p>
 <section class="definition-content" id="proof-content">
 <p>Cho tập hợp <span class="math notranslate nohighlight">\(R\)</span>, trên đó ta định nghĩa hai toán tử <strong>cộng</strong> và <strong>nhân</strong>.</p>
-<p>Khi đó, <span class="math notranslate nohighlight">\((R, +, \times)\)</span> tạo thành <strong>vành</strong> (hay <strong>ring</strong>) nếu</p>
+<p>Khi đó, <span class="math notranslate nohighlight">\((R, +, \times)\)</span> tạo thành <strong>vành</strong> (hay <strong>ring</strong>, <strong>кольцо</strong>) nếu</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\((R, +)\)</span> là nhóm Abel.</p></li>
 <li><p><span class="math notranslate nohighlight">\((R, \times)\)</span> có tính kết hợp với phép nhân. Với mọi <span class="math notranslate nohighlight">\(a, b, c \in R\)</span> thì <span class="math notranslate nohighlight">\(a \times (b \times c) = (a \times b) \times c\)</span>.</p></li>
@@ -584,59 +584,83 @@ document.write(`
 </ol>
 </section>
 </div><p>Tóm lại, <span class="math notranslate nohighlight">\((R, +, \times)\)</span> là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.</p>
+<p>Ta thường ký hiệu <span class="math notranslate nohighlight">\(0_R\)</span> (hoặc ngắn gọn là <span class="math notranslate nohighlight">\(0\)</span>) là phần tử đơn vị của phép cộng <span class="math notranslate nohighlight">\((R, +)\)</span> và gọi là <strong>phần tử trung hòa</strong>.</p>
+<p>Khi đó phần tử nghịch đảo của phép cộng gọi là <strong>phần tử đối</strong> và được ký hiệu là <span class="math notranslate nohighlight">\(-a\)</span>, chỉ phần tử đối của phần tử <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 9.7 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này <span class="math notranslate nohighlight">\((R, \times)\)</span> gọi là <strong>semigroup</strong> (hay <strong>nửa nhóm</strong>).</p>
 </section>
-</div><div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 9.15 </span> (Ring with identity, Vành với đơn vị)</p>
+</div><div class="proof property admonition" id="property-2">
+<p class="admonition-title"><span class="caption-number">Property 9.1 </span> (Tính chất của vành)</p>
+<section class="property-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> thì <span class="math notranslate nohighlight">\(a \times 0_R = 0_R \times a = 0_R\)</span>.</p></li>
+<li><p>Với mọi <span class="math notranslate nohighlight">\(a, b \in R\)</span> thì <span class="math notranslate nohighlight">\((-a) \times b = -(a \times b)\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Để chứng minh hai tính chất trên ta dùng định nghĩa vành.</p>
+<ol class="arabic simple">
+<li><p>Với mọi <span class="math notranslate nohighlight">\(a \in R\)</span>, ta có</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[a \times 0_R = a \times (0_R + 0_R) = a \times 0_R + a \times 0_R.\]</div>
+<p>Rút gọn <span class="math notranslate nohighlight">\(a \times 0_R\)</span> hai vế ta có <span class="math notranslate nohighlight">\(a \times 0_R = 0_R\)</span>. Tương tự cho <span class="math notranslate nohighlight">\(0_R \times a = 0_R\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Vì <span class="math notranslate nohighlight">\((-a) + a = 0_R\)</span> với mọi <span class="math notranslate nohighlight">\(a \in R\)</span>, nhân <span class="math notranslate nohighlight">\(b\)</span> hai vế và dùng tính chất đầu suy ra</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[(-a) \times b + a \times b = 0_R \times b = 0_R.\]</div>
+<p>Chuyển vế ta có <span class="math notranslate nohighlight">\((-a) \times b = - (a \times b)\)</span>.</p>
+</div>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 9.20 </span> (Vành với đơn vị)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu có phần tử <span class="math notranslate nohighlight">\(1_R \neq 0_R \in R\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(r \in R\)</span> ta đều có</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     1_R \times r = r \times 1_R = r
 \end{equation*}\]</div>
-<p>thì <span class="math notranslate nohighlight">\(1_R\)</span> được gọi là <strong>phần tử đơn vị</strong> đối với phép nhân.</p>
+<p>thì <span class="math notranslate nohighlight">\(1_R\)</span> được gọi là <strong>phần tử đơn vị</strong> đối với phép nhân và <span class="math notranslate nohighlight">\(R\)</span> được gọi là <strong>vành với đơn vị</strong> (hay <strong>ring with identity</strong>, <strong>кольцо с единицей</strong>)</p>
 </section>
-</div><p>Ta thường ký hiệu <span class="math notranslate nohighlight">\(0_R\)</span> là phần tử đơn vị của phép cộng <span class="math notranslate nohighlight">\((R, +)\)</span> và gọi là <strong>phần tử trung hòa</strong>.</p>
-<p>Khi đó phần tử nghịch đảo của phép cộng gọi là <strong>phần tử đối</strong> và được ký hiệu là <span class="math notranslate nohighlight">\(-a\)</span>, chỉ phần tử đối của phần tử <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p>Ta ký hiệu <span class="math notranslate nohighlight">\(1_R\)</span> là <strong>phần tử đơn vị</strong> đối với phép nhân <span class="math notranslate nohighlight">\((R, \times)\)</span>.</p>
+</div><p>Ta ký hiệu <span class="math notranslate nohighlight">\(1_R\)</span> (hoặc ngắn gọn là <span class="math notranslate nohighlight">\(1\)</span>) là <strong>phần tử đơn vị</strong> đối với phép nhân <span class="math notranslate nohighlight">\((R, \times)\)</span>.</p>
 <p>Từ phần tử đơn vị đối với phép nhân ta có khái niệm <strong>đặc số</strong> (hay <strong>số đặc trưng</strong>, <strong>characteristic</strong>) của vành với đơn vị.</p>
-<div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 9.16 </span> (Characteristic, Đặc số)</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 9.21 </span> (Characteristic)</p>
 <section class="definition-content" id="proof-content">
-<p>Xét trường <span class="math notranslate nohighlight">\(R\)</span> với phần tử đơn vị là <span class="math notranslate nohighlight">\(1\)</span> và phần tử trung hòa là 0. Số dương <span class="math notranslate nohighlight">\(p\)</span> nhỏ nhất sao cho</p>
+<p>Xét trường <span class="math notranslate nohighlight">\(R\)</span> với phần tử đơn vị là <span class="math notranslate nohighlight">\(1\)</span> và phần tử trung hòa là <span class="math notranslate nohighlight">\(0\)</span>. Số dương <span class="math notranslate nohighlight">\(p\)</span> nhỏ nhất sao cho</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
-    \underbrace{1 + 1 + \ldots + 1 + 1}_{n \text{ lần}} = 0
+    \underbrace{1 + 1 + \ldots + 1 + 1}_{p \text{ lần}} = 0
 \end{equation*}\]</div>
-<p>được gọi là <strong>đặc số</strong> (hay <strong>characteristic</strong>) của <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>được gọi là <strong>đặc số</strong> (hay <strong>characteristic</strong>, <strong>характеристика</strong>) của <span class="math notranslate nohighlight">\(R\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 9.17 </span> (Commutative Ring, Vành giao hoán)</p>
+</div><div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 9.22 </span> (Vành giao hoán)</p>
 <section class="definition-content" id="proof-content">
 <p>Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi <span class="math notranslate nohighlight">\(a, b \in \)</span> đều thỏa</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     a \times b = b \times a
 \end{equation*}\]</div>
-<p>thì ta nói là vành giao hoán.</p>
+<p>thì ta nói <span class="math notranslate nohighlight">\(R\)</span> là <strong>vành giao hoán</strong> (hay <strong>commutative ring</strong>, <strong>коммутативное кольцо</strong>).</p>
 </section>
 </div></section>
 <section id="truong">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">9.4.2. </span>Trường</a><a class="headerlink" href="#truong" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-5">
-<p class="admonition-title"><span class="caption-number">Definition 9.18 </span> (Field, Trường)</p>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 9.23 </span> (Trường)</p>
 <section class="definition-content" id="proof-content">
-<p>Cho tập hợp <span class="math notranslate nohighlight">\(F\)</span> và hai toán tử hai ngôi trên <span class="math notranslate nohighlight">\(F\)</span> là phép cộng <span class="math notranslate nohighlight">\(+\)</span> và phép nhân <span class="math notranslate nohighlight">\(\times\)</span>. Khi đó <span class="math notranslate nohighlight">\((F, +, \times)\)</span> là <strong>trường</strong> (hay <strong>field</strong>) nếu</p>
+<p>Cho tập hợp <span class="math notranslate nohighlight">\(F\)</span> và hai toán tử hai ngôi trên <span class="math notranslate nohighlight">\(F\)</span> là phép cộng <span class="math notranslate nohighlight">\(+\)</span> và phép nhân <span class="math notranslate nohighlight">\(\times\)</span>. Khi đó <span class="math notranslate nohighlight">\((F, +, \times)\)</span> là <strong>trường</strong> (hay <strong>field</strong>, <strong>поля</strong>) nếu</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\((F, +, \times)\)</span> là vành giao hoán với đơn vị.</p></li>
 <li><p>Với mọi phần tử <span class="math notranslate nohighlight">\(f \neq 0_F\)</span>, tồn tại nghịch đảo <span class="math notranslate nohighlight">\(f^{-1}\)</span> của <span class="math notranslate nohighlight">\(f\)</span> đối với phép nhân, nghĩa là <span class="math notranslate nohighlight">\(f \times f^{-1} = f^{-1} \times f = 1_F\)</span></p></li>
 </ol>
 </section>
 </div><p>Nói cách khác, <span class="math notranslate nohighlight">\((F, \times)\)</span> là nhóm Abel. Trên trường ta thực hiện được bốn phép tính cộng, trừ, nhân, chia.</p>
-<div class="proof example admonition" id="example-6">
+<div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 9.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Các tập hợp sau với phép cộng và nhân là trường.</p>
@@ -687,7 +711,7 @@ document.write(`
 <p>Ta thấy rằng phép cộng và nhân hai đa thức tạo thành một vành giao hoán với đơn vị (đa thức <span class="math notranslate nohighlight">\(f(x) \equiv 1\)</span>).</p>
 <p>Thêm nữa vành này có vô số phần tử. Ta cần một phương án để số phần tử là hữu hạn, và đồng thời là trường.</p>
 <p>Với <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố và <span class="math notranslate nohighlight">\(n\)</span> là số nguyên dương. Mình xét các đa thức có bậc tối đa là <span class="math notranslate nohighlight">\(n-1\)</span> với hệ số nằm trong tập hợp các số dư khi chia cho <span class="math notranslate nohighlight">\(p\)</span>. Như vậy mình có <span class="math notranslate nohighlight">\(p^n\)</span> đa thức như vậy.</p>
-<div class="proof example admonition" id="example-7">
+<div class="proof example admonition" id="example-8">
 <p class="admonition-title"><span class="caption-number">Example 9.10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Với <span class="math notranslate nohighlight">\(p=3\)</span> và <span class="math notranslate nohighlight">\(n=2\)</span>. Khi đó các đa thức có thể có là</p>
@@ -819,28 +843,28 @@ document.write(`
 </section>
 <section id="ideal">
 <h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">9.4.4. </span>Ideal</a><a class="headerlink" href="#ideal" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 9.19 </span> (Ideal)</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 9.24 </span> (Ideal)</p>
 <section class="definition-content" id="proof-content">
-<p>Xét vành <span class="math notranslate nohighlight">\((R, +, \times)\)</span>. Một tập con <span class="math notranslate nohighlight">\(I\)</span> của <span class="math notranslate nohighlight">\(R\)</span> được gọi là <strong>ideal trái</strong> nếu</p>
+<p>Xét vành <span class="math notranslate nohighlight">\((R, +, \times)\)</span>. Một tập con <span class="math notranslate nohighlight">\(I\)</span> của <span class="math notranslate nohighlight">\(R\)</span> được gọi là <strong>ideal trái</strong> (hay <strong>left ideal</strong>, <strong>левый идеал</strong>) nếu</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\((I, +)\)</span> là nhóm con của <span class="math notranslate nohighlight">\((R, +)\)</span>.</p></li>
 <li><p>Với mọi <span class="math notranslate nohighlight">\(r \in R\)</span>, với mọi <span class="math notranslate nohighlight">\(x \in I\)</span> thì <span class="math notranslate nohighlight">\(rx \in I\)</span>.</p></li>
 </ol>
 </section>
 </div><p>Ta định nghĩa tương tự với ideal phải, khi đó <span class="math notranslate nohighlight">\(xr \in I\)</span>. Từ đây về sau nếu không nói gì thêm nghĩa là mình xét ideal trái.</p>
-<div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 9.20 </span> (Principal Ideal, Ideal chính)</p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 9.25 </span> (Principal Ideal)</p>
 <section class="definition-content" id="proof-content">
-<p>Nếu <span class="math notranslate nohighlight">\(I = aR\)</span> với <span class="math notranslate nohighlight">\(a\)</span> là phần tử nào đó trong <span class="math notranslate nohighlight">\(R\)</span> thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>principal ideal</strong>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(I = aR\)</span> với <span class="math notranslate nohighlight">\(a\)</span> là phần tử nào đó trong <span class="math notranslate nohighlight">\(R\)</span> thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>principal ideal</strong> (hay <strong>ideal chính</strong>, <strong>главный идеал</strong>).</p>
 </section>
 </div><p>Nói cách khác, nếu có một phần tử trong <span class="math notranslate nohighlight">\(R\)</span> “sinh” ra được <span class="math notranslate nohighlight">\(I\)</span> thì <span class="math notranslate nohighlight">\(I\)</span> là principal.</p>
-<div class="proof definition admonition" id="definition-10">
-<p class="admonition-title"><span class="caption-number">Definition 9.21 </span> (Maximal Ideal, Ideal cực đại)</p>
+<div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 9.26 </span> (Maximal Ideal)</p>
 <section class="definition-content" id="proof-content">
-<p>Nếu <span class="math notranslate nohighlight">\(I\)</span> là một ideal của <span class="math notranslate nohighlight">\(R\)</span> và không tồn tại tập con <span class="math notranslate nohighlight">\(I'\)</span> mà <span class="math notranslate nohighlight">\(I \subset I' \subset R\)</span> (tập con thực thụ) thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>maximal ideal</strong>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(I\)</span> là một ideal của <span class="math notranslate nohighlight">\(R\)</span> và không tồn tại tập con <span class="math notranslate nohighlight">\(I'\)</span> mà <span class="math notranslate nohighlight">\(I \subset I' \subset R\)</span> (tập con thực thụ) thì <span class="math notranslate nohighlight">\(I\)</span> được gọi là <strong>maximal ideal</strong> (hay <strong>максимальный идеал</strong>).</p>
 </section>
-</div><div class="proof remark admonition" id="remark-11">
+</div><div class="proof remark admonition" id="remark-12">
 <p class="admonition-title"><span class="caption-number">Remark 9.8 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Xét vành số nguyên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Khi đó mọi ideal của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> đều là principal.</p>
@@ -854,7 +878,7 @@ document.write(`
 <p>Nói cách khác mọi phần tử <span class="math notranslate nohighlight">\(a \in I\)</span> đều có dạng <span class="math notranslate nohighlight">\(qn\)</span> với <span class="math notranslate nohighlight">\(q \in \mathbb{Z}\)</span>.</p>
 <p>Vậy mọi ideal đều là principal.</p>
 </div>
-<div class="proof remark admonition" id="remark-12">
+<div class="proof remark admonition" id="remark-13">
 <p class="admonition-title"><span class="caption-number">Remark 9.9 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Ideal <span class="math notranslate nohighlight">\(I\)</span> của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là maximal khi và chỉ khi <span class="math notranslate nohighlight">\(I = n\mathbb{Z}\)</span> với <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố.</p>
@@ -864,8 +888,8 @@ document.write(`
 <p>Ta chứng minh chiều thuận, chiều ngược tương tự. Sử dụng phản chứng, ta giả sử <span class="math notranslate nohighlight">\(n\)</span> là hợp số. Khi đó <span class="math notranslate nohighlight">\(n = n_1 n_2\)</span> (<span class="math notranslate nohighlight">\(n_1 \geqslant n_2 &gt; 1\)</span>).</p>
 <p>Khi đó <span class="math notranslate nohighlight">\(n \mathbb{Z} \subset n_1 \mathbb{Z} \subset \mathbb{Z}\)</span>, suy ra ideal không phải maximal. Ta có điều phải chứng minh.</p>
 </div>
-<div class="proof theorem admonition" id="theorem-13">
-<p class="admonition-title"><span class="caption-number">Theorem 9.2 </span></p>
+<div class="proof theorem admonition" id="theorem-14">
+<p class="admonition-title"><span class="caption-number">Theorem 9.4 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>Gọi <span class="math notranslate nohighlight">\(R\)</span> là vành giao hoán với đơn vị. Khi đó, nếu <span class="math notranslate nohighlight">\(I\)</span> là ideal của <span class="math notranslate nohighlight">\(R\)</span> thì <span class="math notranslate nohighlight">\(R / I\)</span> là trường khi và chỉ khi <span class="math notranslate nohighlight">\(I\)</span> là maximal ideal.</p>
 </section>
@@ -876,7 +900,7 @@ document.write(`
 <p><strong>Điều kiện đủ</strong>. Với <span class="math notranslate nohighlight">\(R / I\)</span> là trường. Ta giả sử <span class="math notranslate nohighlight">\(I\)</span> không là maximal ideal. Khi đó tồn tại <span class="math notranslate nohighlight">\(I'\)</span> sao cho <span class="math notranslate nohighlight">\(I \subset I' \subset R\)</span>.</p>
 <p>Khi đó tồn tại phần tử <span class="math notranslate nohighlight">\(a \in I'\)</span> và <span class="math notranslate nohighlight">\(a \not\in I\)</span> mà <span class="math notranslate nohighlight">\(a + I \neq 0\)</span>. Do đó <span class="math notranslate nohighlight">\((a + I) (b + I) = 1 + I\)</span> suy ra tồn tại <span class="math notranslate nohighlight">\(n \in I \subset I'\)</span> sao cho <span class="math notranslate nohighlight">\(a b = 1 + n\)</span>. Do <span class="math notranslate nohighlight">\(a, b \in I'\)</span> nên <span class="math notranslate nohighlight">\(1 \in I'\)</span>, từ đó <span class="math notranslate nohighlight">\(1 \in R\)</span> nên <span class="math notranslate nohighlight">\(I'\)</span> không phải maximal.</p>
 </div>
-<div class="proof example admonition" id="example-14">
+<div class="proof example admonition" id="example-15">
 <p class="admonition-title"><span class="caption-number">Example 9.11 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét tập hợp <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> là vành giao hoán với đơn vị. Khi đó nếu <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố thì <span class="math notranslate nohighlight">\(n \mathbb{Z}\)</span> là maximal ideal (đã chứng minh ở trên). Do đó tập <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span> là trường hữu hạn modulo nguyên tố gồm các phần tử <span class="math notranslate nohighlight">\(\{ 0, 1, \ldots, p-1 \}\)</span>.</p>
@@ -889,8 +913,8 @@ document.write(`
 <li><p>với mọi <span class="math notranslate nohighlight">\(a \in R\)</span>, <span class="math notranslate nohighlight">\(a \times 0 = 0 \times a = 0\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\((-a) \times b = - (a \times b)\)</span>.</p></li>
 </ul>
-<div class="proof definition admonition" id="definition-15">
-<p class="admonition-title"><span class="caption-number">Definition 9.22 </span> (Ring homomorphism)</p>
+<div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 9.27 </span> (Ring homomorphism)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai vành là <span class="math notranslate nohighlight">\((R_1, +, \times)\)</span> và <span class="math notranslate nohighlight">\((R_2, \boxplus, \otimes)\)</span> và ánh xạ <span class="math notranslate nohighlight">\(f: \, R_1 \to R_2\)</span>.</p>
 <p>Ánh xạ <span class="math notranslate nohighlight">\(f\)</span> được gọi là <strong>homomorphism</strong> trên hai vành nếu <span class="math notranslate nohighlight">\(f\)</span> là homomorphism trên phép cộng và phép nhân.</p>
@@ -899,18 +923,18 @@ document.write(`
 <li><p>với mọi <span class="math notranslate nohighlight">\(a, b \in R_1\)</span>, <span class="math notranslate nohighlight">\(f(a) \otimes f(b) = f(a \times b)\)</span>.</p></li>
 </ul>
 </section>
-</div><div class="proof definition admonition" id="definition-16">
-<p class="admonition-title"><span class="caption-number">Definition 9.23 </span> (Kernel, Hạt nhân)</p>
+</div><div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 9.28 </span> (Hạt nhân)</p>
 <section class="definition-content" id="proof-content">
-<p><strong>Hạt nhân</strong> (hay <strong>kernel</strong>) của <span class="math notranslate nohighlight">\(f\)</span> là</p>
+<p><strong>Hạt nhân</strong> (hay <strong>kernel</strong>, <strong>ядро</strong>) của <span class="math notranslate nohighlight">\(f\)</span> là</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     \ker f = \{x \vert x \in R_1, f(x) = 0_{2}\}
 \end{equation*}\]</div>
 <p>với <span class="math notranslate nohighlight">\(0_{2}\)</span> là phần tử trung hòa của <span class="math notranslate nohighlight">\(R_2\)</span>.</p>
 </section>
-</div><div class="proof theorem admonition" id="theorem-17">
-<p class="admonition-title"><span class="caption-number">Theorem 9.3 </span></p>
+</div><div class="proof theorem admonition" id="theorem-18">
+<p class="admonition-title"><span class="caption-number">Theorem 9.5 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\ker f\)</span> là một ideal của <span class="math notranslate nohighlight">\(R_1\)</span>.</p>
 </section>

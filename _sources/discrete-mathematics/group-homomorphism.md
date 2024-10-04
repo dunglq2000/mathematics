@@ -40,6 +40,69 @@ Tương tự như ánh xạ, chúng ta có các loại homomorphism sau
 Ánh xạ được gọi là **đẳng cấu** (hay **isomorphism**) nếu nó là ánh xạ one-to-one và onto (song ánh). Nói cách khác, ánh xạ này vừa là đơn cấu, vừa là toàn cấu.
 ````
 
+````{prf:theorem} Định lí Cayley
+Mọi nhóm hữu hạn đều đẳng cấu (isomorphism) với một nhóm con nào đó của nhóm hoán vị.
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Giả sử ta có nhóm hữu hạn $G = \{ g_1, g_2, \ldots g_n \}$. Với mỗi $g \in G$, ta xây dựng hoán vị $\varphi_g$ theo $g$:
+
+$$\begin{equation*}
+    \begin{pmatrix}
+        g_1 & g_2 & \ldots & g_i & \ldots & g_n \\
+        g_1 g & g_2 g & \ldots & g_i g & \ldots & g_n g
+    \end{pmatrix} = \varphi_g
+\end{equation*}$$
+
+Ta chọn $g', g'' \in G$. Khi đó:
+
+$$\begin{align*}
+    \varphi_{g' g''} = & \begin{pmatrix}
+        g_1 & g_2 & \ldots & g_i & \ldots g_n \\
+        g_1 g' g'' & g_2 g' g'' & \ldots & g_i g' g'' & \ldots & g_n g' g''
+    \end{pmatrix} \\ = & \begin{pmatrix}
+        g_1 & g_2 & \ldots & g_i & \ldots & g_n \\
+        g_1 g' & g_2 g' & \ldots & g_i g' & \ldots & g_n g'
+    \end{pmatrix} \\ \times &  \begin{pmatrix}
+        g_1 g' & g_2 g' & \ldots & g_i g' & \ldots & g_n g' \\
+        (g_1 g') g'' & (g_2 g') g'' & \ldots & (g_i g') g'' & \ldots & (g_n g') g''
+    \end{pmatrix}
+\end{align*}$$
+
+Do
+
+$$\begin{pmatrix}
+    g_1 & g_2 & \ldots g_i & \ldots & g_n \\
+    g_1 g' & g_2 g' & \ldots g_i g' & \ldots & g_n g'
+\end{pmatrix} = \varphi_{g'}$$
+
+và
+
+$$\begin{pmatrix}
+    g_1 g' & g_2 g' & \ldots & g_i g' & \ldots &  g_n g' \\
+    (g_1 g') g'' & (g_2 g') g'' & \ldots & (g_i g') g'' & \ldots & (g_n g') g''
+\end{pmatrix} = \varphi(g'')$$
+
+nên $\varphi_{g' g''} = \varphi(g') \cdot \varphi(g'')$ nên $\varphi$ là đồng cấu (homomorphism).
+
+Để chứng minh $\varphi$ là song ánh, ta chứng minh $\varphi$ là đơn ánh và toàn ánh.
+
+Giả sử $\varphi(g) = \varphi(g')$. Theo định nghĩa hoán vị thì $g = g'$ nên $\varphi$ là đơn ánh.
+
+Giả sử ta có hoán vị
+
+$$\sigma = \begin{pmatrix}
+    g_1 & g_2 & \ldots & g_n \\
+    g_1 g' & g_2 g' & \ldots & g_n g'
+\end{pmatrix},$$
+
+ta nhân với $g'^{-1}$ thì tìm được hoán vị ngược của $\sigma$. Như vậy $\varphi$ là toàn ánh.
+
+Kết luận: $\varphi$ là song ánh và là đẳng cấu (isomorphism).
+```
+
 ````{prf:definition} Automorphism, Tự đẳng cấu
 Ánh xạ được gọi là **tự đẳng cấu** (hay **automorphism**) nếu nó là song ánh từ nó lên chính nó. Ta ký hiệu tự đồng cấu nhóm $G$ là $\mathrm{Aut}(G)$.
 ````

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -547,8 +547,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chung-minh-thuat-toan-gram-schmidt">4.4.2. Chứng minh thuật toán Gram-Schmidt</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tri-rieng-va-vector-rieng">4.5. Trị riêng và vector riêng</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.5.1. Trị riêng và vector riêng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toan-tu-tuyen-tinh">4.5. Toán tử tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tri-rieng-va-vector-rieng">4.6. Trị riêng và vector riêng</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.1. Trị riêng và vector riêng</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">4.6.2. Bài tập</a></li>
 </ul>
 </li>
 </ul>
@@ -573,7 +575,8 @@ document.write(`
 <li><p><a class="reference internal" href="#to-hop-tuyen-tinh" id="id5">Tổ hợp tuyến tính</a></p></li>
 <li><p><a class="reference internal" href="#khong-gian-vector" id="id6">Không gian vector</a></p></li>
 <li><p><a class="reference internal" href="#khong-gian-euclide" id="id7">Không gian Euclide</a></p></li>
-<li><p><a class="reference internal" href="#tri-rieng-va-vector-rieng" id="id8">Trị riêng và vector riêng</a></p></li>
+<li><p><a class="reference internal" href="#toan-tu-tuyen-tinh" id="id8">Toán tử tuyến tính</a></p></li>
+<li><p><a class="reference internal" href="#tri-rieng-va-vector-rieng" id="id9">Trị riêng và vector riêng</a></p></li>
 </ul>
 </li>
 </ul>
@@ -1032,12 +1035,51 @@ Nói cách khác, ma trận <span class="math notranslate nohighlight">\((\alpha
 <p>Từ đây có thể thấy, sử dụng phương pháp quy nạp ta có thể chứng minh được rằng với mỗi số <span class="math notranslate nohighlight">\(n \geqslant 2\)</span>, thì mọi <span class="math notranslate nohighlight">\(k \geqslant n+1\)</span> ta đều có <span class="math notranslate nohighlight">\(\bm{u}_k \cdot \bm{u}_n = 0\)</span>. Hay nói cách khác là khi thuật toán tính <span class="math notranslate nohighlight">\(\bm{u}_k\)</span> thì nó sẽ trực giao với tất cả <span class="math notranslate nohighlight">\(\bm{u}_1\)</span>, <span class="math notranslate nohighlight">\(\bm{u}_2\)</span>, …, <span class="math notranslate nohighlight">\(\bm{u}_{k-1}\)</span>.</p>
 </section>
 </section>
-<section id="tri-rieng-va-vector-rieng">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">4.5. </span>Trị riêng và vector riêng</a><a class="headerlink" href="#tri-rieng-va-vector-rieng" title="Link to this heading">#</a></h2>
-<section id="id2">
-<h3><span class="section-number">4.5.1. </span>Trị riêng và vector riêng<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="toan-tu-tuyen-tinh">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">4.5. </span>Toán tử tuyến tính</a><a class="headerlink" href="#toan-tu-tuyen-tinh" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-19">
-<p class="admonition-title"><span class="caption-number">Definition 4.8 </span> (Trị riêng và vector riêng)</p>
+<p class="admonition-title"><span class="caption-number">Definition 4.8 </span> (Ánh xạ tuyến tính)</p>
+<section class="definition-content" id="proof-content">
+<p>Toán tử tuyến tính (hay <strong>linear operator</strong>, <strong>линейный оператор</strong>) là một ánh xạ</p>
+<div class="math notranslate nohighlight">
+\[\bm{A}: \mathbb{R}^n \to \mathbb{R}^m\]</div>
+<p>thỏa hai điều kiện:</p>
+<ol class="arabic simple">
+<li><p>Với mọi <span class="math notranslate nohighlight">\(\bm{u}, \bm{v} \in \mathbb{R}^n\)</span> thì <span class="math notranslate nohighlight">\(\bm{A}(\bm{u}) + \bm{A}(\bm{v}) = \bm{A}(\bm{u} + \bm{v})\)</span>.</p></li>
+<li><p>Với mọi <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span> và <span class="math notranslate nohighlight">\(\bm{u} \in \mathbb{R}^n\)</span> thì <span class="math notranslate nohighlight">\(\bm{A} (\alpha \bm{u}) = \alpha \bm{A} (\bm{u})\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\bm{A}\)</span> là một ma trận cỡ <span class="math notranslate nohighlight">\(m \times n\)</span> thì đây là một ánh xạ tuyến tính với phép nhân ma trận với vector <span class="math notranslate nohighlight">\(\bm{A} \cdot \bm{x} = \bm{y}\)</span>.</p>
+<p>Ở đây <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{R}^n\)</span> và <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{R}^m\)</span> là các vector cột.</p>
+<div class="proof definition admonition" id="definition-20">
+<p class="admonition-title"><span class="caption-number">Definition 4.9 </span> (Hạt nhân)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Hạt nhân</strong> (hay <strong>kernel</strong>, <strong>ядро</strong>) của ánh xạ tuyến tính <span class="math notranslate nohighlight">\(\bm{A}\)</span> là tập hợp nghiệm của hệ thuần nhất và được ký hiệu là <span class="math notranslate nohighlight">\(\ker(A)\)</span>. Nói cách khác</p>
+<div class="math notranslate nohighlight">
+\[\ker(\bm{A}) = \{ \bm{x} \in \mathbb{R}^n: \, \bm{A} \cdot \bm{x} = \bm{0} \}\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-21">
+<p class="admonition-title"><span class="caption-number">Definition 4.10 </span> (Ảnh)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Ảnh</strong> (hay <strong>image</strong>, <strong>образ</strong>) của ánh xạ tuyến tính <span class="math notranslate nohighlight">\(\bm{A}\)</span> là tập hợp tất cả giá trị có thể của phép nhân ma trận và được ký hiệu là <span class="math notranslate nohighlight">\(\text{im} (A)\)</span>. Nói cách khác</p>
+<div class="math notranslate nohighlight">
+\[\text{im} (A) = \{ \bm{A} \cdot \bm{x}: \, \bm{x} \in \mathbb{R}^n \}\]</div>
+</section>
+</div><div class="proof property admonition" id="property-22">
+<p class="admonition-title"><span class="caption-number">Property 4.1 </span></p>
+<section class="property-content" id="proof-content">
+<p>Ánh xạ tuyến tính <span class="math notranslate nohighlight">\(\bm{A}: \mathbb{R}^n \to \mathbb{R}^m\)</span> có tính chất:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dim(\ker \bm{A}) + \dim(\text{im} \bm{A}) = n\)</span>.</p></li>
+</ol>
+</section>
+</div></section>
+<section id="tri-rieng-va-vector-rieng">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">4.6. </span>Trị riêng và vector riêng</a><a class="headerlink" href="#tri-rieng-va-vector-rieng" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3><span class="section-number">4.6.1. </span>Trị riêng và vector riêng<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-23">
+<p class="admonition-title"><span class="caption-number">Definition 4.11 </span> (Trị riêng và vector riêng)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét toán tử tuyến tính được biểu diễn bởi ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span>. Khi đó vector <span class="math notranslate nohighlight">\(\bm{v}\)</span> khác không được gọi là <strong>vector riêng</strong> (hay <strong>eigenvector</strong>) của ma trận nếu tồn tại phần tử <span class="math notranslate nohighlight">\(\lambda\)</span> sao cho</p>
 <div class="math notranslate nohighlight">
@@ -1046,9 +1088,55 @@ Nói cách khác, ma trận <span class="math notranslate nohighlight">\((\alpha
 \end{equation*}\]</div>
 <p>Giá trị <span class="math notranslate nohighlight">\(\lambda\)</span> khi đó gọi là <strong>trị riêng</strong> (hay <strong>eigenvalue</strong>) tương ứng với vector riêng <span class="math notranslate nohighlight">\(\bm{v}\)</span>.</p>
 </section>
-</div><p>Chuyển vế đẳng thức trên ta có <span class="math notranslate nohighlight">\((\bm{A} - \lambda \bm{I}) \cdot \bm{v} = \bm{0}\)</span>. Ở đây <span class="math notranslate nohighlight">\(\bm{I}\)</span> là ma trận cùng cỡ với <span class="math notranslate nohighlight">\(\bm{A}\)</span> và có các phần tử ở hàng <span class="math notranslate nohighlight">\(i\)</span> và cột <span class="math notranslate nohighlight">\(i\)</span> bằng 1.</p>
+</div><p>Chuyển vế đẳng thức trên ta có <span class="math notranslate nohighlight">\((\bm{A} - \lambda \bm{I}) \cdot \bm{v} = \bm{0}\)</span>. Ở đây <span class="math notranslate nohighlight">\(\bm{I}\)</span> là ma trận cùng cỡ với <span class="math notranslate nohighlight">\(\bm{A}\)</span> và có các phần tử ở hàng <span class="math notranslate nohighlight">\(i\)</span> và cột <span class="math notranslate nohighlight">\(i\)</span> bằng <span class="math notranslate nohighlight">\(1\)</span> (ma trận đơn vị).</p>
 <p>Như vậy, để phương trình có nghiệm khác không thì ma trận <span class="math notranslate nohighlight">\(\bm{A} - \lambda \bm{I}\)</span> suy biến, hay <span class="math notranslate nohighlight">\(\det (\bm{A} - \lambda \bm{I}) = 0\)</span>.</p>
-<p>Mỗi nghiệm <span class="math notranslate nohighlight">\(\lambda\)</span> của phương trình <span class="math notranslate nohighlight">\(\det (\bm{A} - \lambda \bm{I}) = 0\)</span> là một trị riêng. Với mỗi trị riêng <span class="math notranslate nohighlight">\(\lambda\)</span> ta tìm được một vector riêng <span class="math notranslate nohighlight">\(\bm{v}\)</span>.</p>
+<p>Mỗi nghiệm <span class="math notranslate nohighlight">\(\lambda\)</span> của phương trình <span class="math notranslate nohighlight">\(\det (\bm{A} - \lambda \bm{I}) = 0\)</span> là một trị riêng. Với mỗi trị riêng <span class="math notranslate nohighlight">\(\lambda\)</span> ta tìm được các vector riêng <span class="math notranslate nohighlight">\(\bm{v}\)</span> tương ứng.</p>
+<div class="proof property admonition" id="property-24">
+<p class="admonition-title"><span class="caption-number">Property 4.2 </span> (Một số tính chất của trị riêng và vector riêng)</p>
+<section class="property-content" id="proof-content">
+<p>Giả sử đối với ma trận <span class="math notranslate nohighlight">\(A\)</span> cỡ <span class="math notranslate nohighlight">\(n \times n\)</span> thì phương trình đặc trưng có đầy đủ <span class="math notranslate nohighlight">\(n\)</span> nghiệm thực, ta có các tính chất sau:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\text{tr} A = \lambda_1 + \lambda_2 + \ldots + \lambda_n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\det A = \lambda_1 \cdot \lambda_2 \cdots \lambda_n\)</span></p></li>
+</ol>
+</section>
+</div><div class="proof property admonition" id="property-25">
+<p class="admonition-title"><span class="caption-number">Property 4.3 </span> (Tính chất liên quan đến rank và trace)</p>
+<section class="property-content" id="proof-content">
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\text{tr} (AB) = \text{tr} (BA)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{rank} (AB) \leqslant \min(\text{rank}(A), \text{rank}(B))\)</span></p></li>
+</ol>
+</section>
+</div></section>
+<section id="bai-tap">
+<h3><span class="section-number">4.6.2. </span>Bài tập<a class="headerlink" href="#bai-tap" title="Link to this heading">#</a></h3>
+<p><strong>Bài 1.</strong> Cho vector cột <span class="math notranslate nohighlight">\(\bm{v} \in \mathbb{R}^n\)</span>. Đặt <span class="math notranslate nohighlight">\(\bm{A} = \bm{v} \cdot \bm{v}^T\)</span>. Tìm <span class="math notranslate nohighlight">\(\text{spa} \bm{A}\)</span>.</p>
+<p>Các cột của <span class="math notranslate nohighlight">\(A\)</span> có dạng <span class="math notranslate nohighlight">\(\bm{v} \cdot \bm{v}_1\)</span>, <span class="math notranslate nohighlight">\(\bm{v} \cdot \bm{v}_2\)</span>, …, <span class="math notranslate nohighlight">\(\bm{v} \cdot \bm{v}_n\)</span>. Như vậy các cột đều tỉ lệ với cột đầu nên <span class="math notranslate nohighlight">\(\text{rank} \bm{A} = 1\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(\dim \ker \bm{A} = n-1\)</span> và do đó <span class="math notranslate nohighlight">\(\lambda = 0\)</span> là nghiệm bậc <span class="math notranslate nohighlight">\(n-1\)</span> trong phương trình đặc trưng.</p>
+<p>Như vậy phương trình đặc trưng còn một nghiệm <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\((\bm{v} \cdot \bm{v}^T) \bm{x} = \lambda \bm{x} \Leftrightarrow \bm{v} (\bm{v}^T \cdot \bm{x}) = \lambda \bm{x}\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\bm{v}^T \cdot \bm{x} = \alpha\)</span> thì <span class="math notranslate nohighlight">\(\alpha \bm{v} = \lambda \bm{x}\)</span>. Suy ra <span class="math notranslate nohighlight">\(\bm{x} = \bm{v}\)</span> và do đó <span class="math notranslate nohighlight">\(\alpha = \lambda = \lVert \bm{v} \rVert^2\)</span>.</p>
+<p>Vậy <span class="math notranslate nohighlight">\(\text{spa} \bm{A} = \{ \lVert \bm{v} \rVert^2, 0, 0, \ldots, 0\}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 3.</strong> Cho ma trận <span class="math notranslate nohighlight">\(\bm{A}_{3 \times 3}\)</span>. Biết rằng <span class="math notranslate nohighlight">\(\text{tr} \bm{A} = \text{tr} \bm{A}^{-1} = 0\)</span> và <span class="math notranslate nohighlight">\(\det \bm{A} = 1\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(\bm{A}^3 = \bm{I}\)</span>.</p>
+<p>Phương trình đặc trưng có dạng <span class="math notranslate nohighlight">\(P_3(\lambda) = -\lambda^3 + a_2 \lambda^2 + a_1 \lambda + a_0\)</span>.</p>
+<p>Theo tính chất trên thì <span class="math notranslate nohighlight">\(a_2 = \sum \lambda = \text{tr} \bm{A} = 0\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\lambda\)</span> là trị riêng nên <span class="math notranslate nohighlight">\(\bm{A} \bm{x} = \lambda \bm{x}\)</span>. Do <span class="math notranslate nohighlight">\(\bm{A}\)</span> khả nghịch nên <span class="math notranslate nohighlight">\(\dfrac{1}{\lambda} \bm{x} = \bm{A}^{-1} \bm{x}\)</span>.</p>
+<p>Nghĩa là <span class="math notranslate nohighlight">\(\dfrac{1}{\lambda}\)</span> là trị riêng của ma trận <span class="math notranslate nohighlight">\(\bm{A}^{-1}\)</span>. Suy ra <span class="math notranslate nohighlight">\(\dfrac{1}{\lambda_1} + \dfrac{1}{\lambda_2} + \dfrac{1}{\lambda_3} = \text{tr} A^{-1} = 0\)</span>.</p>
+<p>Từ đó suy ra <span class="math notranslate nohighlight">\(\lambda_1 \lambda_2 + \lambda_2 \lambda_3 + \lambda_3 \lambda_1 = 0\)</span>.</p>
+<p>Cuối cùng <span class="math notranslate nohighlight">\(\det \bm{A} = \lambda_1 \cdot \lambda_2 \cdot \lambda_3 = 1\)</span>.</p>
+<p>Vậy phương trình đặc trưng là <span class="math notranslate nohighlight">\(P_3(\lambda) = -\lambda^3 + 1\)</span>. Theo định lý Cayley-Hamilton thì <span class="math notranslate nohighlight">\(P_3(\bm{A}) = -\bm{A}^3 + \bm{I} = \bm{0}\)</span>, hay <span class="math notranslate nohighlight">\(\bm{A}^3 = \bm{I}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 4.</strong> Cho ma trận <span class="math notranslate nohighlight">\(\bm{A}_{n \times n}\)</span>, <span class="math notranslate nohighlight">\(\bm{A}_{ij} \geqslant 0\)</span>. Giả sử ma trận có đủ <span class="math notranslate nohighlight">\(n\)</span> trị riêng thực. Chứng minh rằng <span class="math notranslate nohighlight">\(\lambda_1^k + \lambda_2^k + \ldots + \lambda_n^k \geqslant 0\)</span> với mọi <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>.</p>
+<p>Ta thấy rằng với <span class="math notranslate nohighlight">\(k=1\)</span> thì <span class="math notranslate nohighlight">\(\lambda_1 + \ldots + \lambda_n = \text{tr}(\bm{A}) \geqslant 0\)</span>.</p>
+<p>Vì <span class="math notranslate nohighlight">\(\lambda_i\)</span> là thỏa phương trình <span class="math notranslate nohighlight">\(\bm{A} \bm{x} = \lambda_i \bm{x}\)</span> nên nhân hai vế cho <span class="math notranslate nohighlight">\(\bm{A}\)</span> ta có <span class="math notranslate nohighlight">\(\bm{A} \cdot \bm{A} \bm{x} = \bm{A} \cdot \lambda_i \bm{x}\)</span>. Tương đương với <span class="math notranslate nohighlight">\(\bm{A}^2 \bm{x} = \lambda_i (\bm{A} \bm{x}) = \lambda_i^2 \bm{x}\)</span>.</p>
+<p>Nói cách khác, <span class="math notranslate nohighlight">\(\lambda_i^2\)</span> là trị riêng của ma trận <span class="math notranslate nohighlight">\(\bm{A}^2\)</span>. Thực hiện tương tự ta có <span class="math notranslate nohighlight">\(\lambda_i^k\)</span> là trị riêng của ma trận <span class="math notranslate nohighlight">\(\bm{A}^k\)</span>.</p>
+<p>Do đó <span class="math notranslate nohighlight">\(\lambda_1^k + \ldots + \lambda_n^k = \text{tr}(\bm{A}^k) \geqslant 0\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 5.</strong> Cho ma trận <span class="math notranslate nohighlight">\(\bm{A}\)</span> khả nghịch. <span class="math notranslate nohighlight">\(\bm{X}\)</span> là ma trận sao cho <span class="math notranslate nohighlight">\(\bm{A} \bm{X} + \bm{X} \bm{A} = \bm{0}\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(\text{tr} \ \bm{X} = 0\)</span>.</p>
+<p>Nhân bên trái hai vế cho <span class="math notranslate nohighlight">\(\bm{A}^{-1}\)</span> ta có <span class="math notranslate nohighlight">\(\bm{X} + \bm{A}^{-1} \bm{X} \bm{A} = \bm{0}\)</span>. Ta biết rằng <span class="math notranslate nohighlight">\(\bm{A}^{-1} \bm{X} \bm{A}\)</span> là ma trận tương đương ma trận <span class="math notranslate nohighlight">\(\bm{X}\)</span> nên <span class="math notranslate nohighlight">\(\text{tr} (\bm{A}^{-1} \bm{X} \bm{A}) = \text{tr} \ \bm{X}\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(\text{tr} \bm{X} + \text{tr} \bm{X} = \text{tr} \ \bm{0} = 0\)</span>. Từ đây có <span class="math notranslate nohighlight">\(\text{tr} \ \bm{X} = 0\)</span>.</p>
 </section>
 </section>
 </section>
@@ -1135,8 +1223,10 @@ Nói cách khác, ma trận <span class="math notranslate nohighlight">\((\alpha
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chung-minh-thuat-toan-gram-schmidt">4.4.2. Chứng minh thuật toán Gram-Schmidt</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tri-rieng-va-vector-rieng">4.5. Trị riêng và vector riêng</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.5.1. Trị riêng và vector riêng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toan-tu-tuyen-tinh">4.5. Toán tử tuyến tính</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tri-rieng-va-vector-rieng">4.6. Trị riêng và vector riêng</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.6.1. Trị riêng và vector riêng</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">4.6.2. Bài tập</a></li>
 </ul>
 </li>
 </ul>

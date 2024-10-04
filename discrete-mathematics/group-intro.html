@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -531,8 +531,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-va-nhom-con">9.1.1. Nhóm và nhóm con</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-con">9.1.2. Nhóm con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coset">9.1.3. Coset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-subgroup">9.1.4. Normal Subgroup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-vong">9.1.3. Nhóm vòng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coset">9.1.4. Coset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-subgroup">9.1.5. Normal Subgroup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sum-of-modules">9.1.6. Direct sum of modules</a></li>
 </ul>
             </nav>
         </div>
@@ -553,8 +555,10 @@ document.write(`
 <ul>
 <li><p><a class="reference internal" href="#nhom-va-nhom-con" id="id2">Nhóm và nhóm con</a></p></li>
 <li><p><a class="reference internal" href="#nhom-con" id="id3">Nhóm con</a></p></li>
-<li><p><a class="reference internal" href="#coset" id="id4">Coset</a></p></li>
-<li><p><a class="reference internal" href="#normal-subgroup" id="id5">Normal Subgroup</a></p></li>
+<li><p><a class="reference internal" href="#nhom-vong" id="id4">Nhóm vòng</a></p></li>
+<li><p><a class="reference internal" href="#coset" id="id5">Coset</a></p></li>
+<li><p><a class="reference internal" href="#normal-subgroup" id="id6">Normal Subgroup</a></p></li>
+<li><p><a class="reference internal" href="#direct-sum-of-modules" id="id7">Direct sum of modules</a></p></li>
 </ul>
 </li>
 </ul>
@@ -562,9 +566,9 @@ document.write(`
 <section id="nhom-va-nhom-con">
 <h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">9.1.1. </span>Nhóm và nhóm con</a><a class="headerlink" href="#nhom-va-nhom-con" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 9.1 </span> (Group, Nhóm)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.1 </span> (Nhóm)</p>
 <section class="definition-content" id="proof-content">
-<p>Một tập hợp <span class="math notranslate nohighlight">\(G\)</span> và toán tử hai ngôi <span class="math notranslate nohighlight">\(\star\)</span> trên <span class="math notranslate nohighlight">\(G\)</span> tạo thành một <strong>nhóm</strong> nếu:</p>
+<p>Một tập hợp <span class="math notranslate nohighlight">\(G\)</span> và toán tử hai ngôi <span class="math notranslate nohighlight">\(\star\)</span> trên <span class="math notranslate nohighlight">\(G\)</span> tạo thành một <strong>nhóm</strong> (hay <strong>group</strong>, <strong>группа</strong>) nếu:</p>
 <ol class="arabic simple">
 <li><p>Tồn tại phần tử <span class="math notranslate nohighlight">\(e \in G\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> thì <span class="math notranslate nohighlight">\(g \star e = e \star g = g\)</span>. Khi đó <span class="math notranslate nohighlight">\(e\)</span> được gọi là <strong>phần tử đơn vị</strong> của <span class="math notranslate nohighlight">\(G\)</span>;</p></li>
 <li><p>Với mọi <span class="math notranslate nohighlight">\(g \in G\)</span>, tồn tại <span class="math notranslate nohighlight">\(g' \in G\)</span> sao cho <span class="math notranslate nohighlight">\(g \star g' = g' \star g = e\)</span>. Khi đó <span class="math notranslate nohighlight">\(g'\)</span> được gọi là <strong>phần tử nghịch đảo</strong> của <span class="math notranslate nohighlight">\(g\)</span>;</p></li>
@@ -572,9 +576,9 @@ document.write(`
 </ol>
 </section>
 </div><div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 9.2 </span> (Abelian Group, Nhóm Abel)</p>
+<p class="admonition-title"><span class="caption-number">Definition 9.2 </span> (Nhóm Abel)</p>
 <section class="definition-content" id="proof-content">
-<p>Nếu nhóm <span class="math notranslate nohighlight">\(G\)</span> có thêm tính giao hoán, tức là với mọi <span class="math notranslate nohighlight">\(a, b \in G\)</span> thì <span class="math notranslate nohighlight">\(a \star b = b \star a\)</span> thì <span class="math notranslate nohighlight">\(G\)</span> gọi là <strong>nhóm giao hoán</strong> hay <strong>nhóm Abel</strong>.</p>
+<p>Nếu nhóm <span class="math notranslate nohighlight">\(G\)</span> có thêm tính giao hoán, tức là với mọi <span class="math notranslate nohighlight">\(a, b \in G\)</span> thì <span class="math notranslate nohighlight">\(a \star b = b \star a\)</span> thì <span class="math notranslate nohighlight">\(G\)</span> gọi là <strong>nhóm giao hoán</strong> hoặc <strong>nhóm Abel</strong> (<strong>abelian group</strong>, <strong>commutative group</strong>, <strong>абелева группа</strong>, <strong>коммутативная группа</strong>).</p>
 </section>
 </div><div class="proof example admonition" id="example-2">
 <p class="admonition-title"><span class="caption-number">Example 9.1 </span></p>
@@ -598,16 +602,22 @@ document.write(`
 </ol>
 <p>Tương tự như nhóm <span class="math notranslate nohighlight">\((\mathbb{Z, +})\)</span>, nhóm <span class="math notranslate nohighlight">\((\mathbb{Q}^*, \cdot)\)</span> cũng là nhóm Abel.</p>
 </section>
-</div></section>
+</div><div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 9.3 </span> (Order của nhóm)</p>
+<section class="definition-content" id="proof-content">
+<p><strong>Order</strong> (hay <strong>порядок</strong>) của nhóm <span class="math notranslate nohighlight">\(G\)</span> là lực lượng (hay số phần tử, <strong>carninality</strong>) của nhóm đó và ký hiệu là <span class="math notranslate nohighlight">\(\lvert G \rvert\)</span>.</p>
+</section>
+</div><p>Đối với nhóm có vô hạn phần tử, ta quy ước order của nhóm bằng <span class="math notranslate nohighlight">\(0\)</span>, ví dụ như với hai nhóm <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> và <span class="math notranslate nohighlight">\((\mathbb{Q}^*, \cdot)\)</span> ở trên.</p>
+</section>
 <section id="nhom-con">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">9.1.2. </span>Nhóm con</a><a class="headerlink" href="#nhom-con" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 9.3 </span> (Subgroup, Nhóm con)</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 9.4 </span> (Nhóm con)</p>
 <section class="definition-content" id="proof-content">
-<p>Cho nhóm <span class="math notranslate nohighlight">\((G, \star)\)</span>. Tập hợp <span class="math notranslate nohighlight">\(H \subset G\)</span> được gọi là <strong>nhóm con</strong> của <span class="math notranslate nohighlight">\(G\)</span> nếu với mọi <span class="math notranslate nohighlight">\(a, b \in H\)</span> thì <span class="math notranslate nohighlight">\(a \star b \in H\)</span></p>
+<p>Cho nhóm <span class="math notranslate nohighlight">\((G, \star)\)</span>. Tập hợp <span class="math notranslate nohighlight">\(H \subset G\)</span> được gọi là <strong>nhóm con</strong> (hay <strong>subgroup</strong>, <strong>подгруппа</strong>) của <span class="math notranslate nohighlight">\(G\)</span> nếu với mọi <span class="math notranslate nohighlight">\(a, b \in H\)</span> thì <span class="math notranslate nohighlight">\(a \star b \in H\)</span></p>
 </section>
 </div><p>Nghĩa là toán tử <span class="math notranslate nohighlight">\(\star\)</span> đóng với các phần tử trong <span class="math notranslate nohighlight">\(H\)</span>.</p>
-<div class="proof example admonition" id="example-5">
+<div class="proof example admonition" id="example-6">
 <p class="admonition-title"><span class="caption-number">Example 9.3 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét nhóm <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span> như trên. Ta xét tập con gồm các số chẵn của nó</p>
@@ -617,11 +627,33 @@ document.write(`
 <p>Do đó <span class="math notranslate nohighlight">\((2\mathbb{Z}, +)\)</span> là nhóm con của <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span>.</p>
 <p>Tổng quát, mọi tập hợp có dạng <span class="math notranslate nohighlight">\(n \mathbb{Z}\)</span> đều là nhóm con của <span class="math notranslate nohighlight">\((\mathbb{Z}, +)\)</span>.</p>
 </section>
+</div><div class="proof theorem admonition" id="theorem-7">
+<p class="admonition-title"><span class="caption-number">Theorem 9.1 </span> (Định lý Lagrange)</p>
+<section class="theorem-content" id="proof-content">
+<p>Order của nhóm luôn chia hết order của một nhóm con bất kì của nó.</p>
+</section>
+</div></section>
+<section id="nhom-vong">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">9.1.3. </span>Nhóm vòng</a><a class="headerlink" href="#nhom-vong" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 9.5 </span> (Nhóm vòng)</p>
+<section class="definition-content" id="proof-content">
+<p>Nhóm <span class="math notranslate nohighlight">\(G\)</span> được gọi là <strong>nhóm vòng</strong> (hay <strong>cyclic group</strong>, <strong>циклическая группа</strong>) nếu tồn tại phần tử <span class="math notranslate nohighlight">\(g \in G\)</span> mà mọi phần tử trong <span class="math notranslate nohighlight">\(G\)</span> đều được biểu diễn dưới dạng <span class="math notranslate nohighlight">\(g^i\)</span>. Khi đó ta kí hiệu <span class="math notranslate nohighlight">\(G = \langle g \rangle\)</span> hoặc <span class="math notranslate nohighlight">\(G = \{ g, g^1, \ldots, g^n \}\)</span>.</p>
+</section>
+</div><p>Thông thường ta quy ước <span class="math notranslate nohighlight">\(g^n = g^0 = e\)</span>.</p>
+<p>Đối với nhóm <span class="math notranslate nohighlight">\((\mathbb{Z}_n, +_n)\)</span> xác định phép cộng modulo <span class="math notranslate nohighlight">\(n\)</span>, ta kí hiệu <span class="math notranslate nohighlight">\(ig = \underbrace{g + g + \ldots + g}_{i \,\text{lần}}\)</span>.</p>
+<p>Ta viết <span class="math notranslate nohighlight">\(G = \{ 1g, 2g, 3g, \ldots, ng \}\)</span>. Phần tử <span class="math notranslate nohighlight">\(g\)</span> được gọi là <strong>phần tử sinh</strong> (hay <strong>образующий элемент</strong>) của nhóm vòng <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p>Như vậy, số lượng phần tử sinh của <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> là <span class="math notranslate nohighlight">\(\varphi(n)\)</span> với <span class="math notranslate nohighlight">\(\varphi\)</span> là hàm Euler. Lúc này điều kiện để phần tử <span class="math notranslate nohighlight">\(j\)</span> là phần tử sinh tương đương với <span class="math notranslate nohighlight">\(\langle j \rangle = \mathbb{Z}_n \Longleftrightarrow (j, n) = 1\)</span>.</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 9.6 </span> (Elementary abelian group)</p>
+<section class="definition-content" id="proof-content">
+<p>Nhóm vòng được gọi là <strong>elementary abelian</strong> (hay <strong>примарная абелева группа</strong>) nếu bậc của nhóm là số nguyên tố.</p>
+</section>
 </div></section>
 <section id="coset">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">9.1.3. </span>Coset</a><a class="headerlink" href="#coset" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 9.4 </span> (Coset, lớp kề)</p>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">9.1.4. </span>Coset</a><a class="headerlink" href="#coset" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 9.7 </span> (Coset, lớp kề)</p>
 <section class="definition-content" id="proof-content">
 <p>Cho nhóm <span class="math notranslate nohighlight">\(G\)</span> và nhóm con <span class="math notranslate nohighlight">\(H\)</span> của <span class="math notranslate nohighlight">\(G\)</span>.</p>
 <p>Coset trái của <span class="math notranslate nohighlight">\(H\)</span> đối với phần tử <span class="math notranslate nohighlight">\(g \in G\)</span> là tập hợp</p>
@@ -643,7 +675,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[1 + 2\mathbb{Z} = \{\ldots, -3, -1, 1, 3, \ldots \}\]</div>
 <p>Rõ ràng hai coset trên rời nhau.</p>
-<div class="proof remark admonition" id="remark-7">
+<div class="proof remark admonition" id="remark-11">
 <p class="admonition-title"><span class="caption-number">Remark 9.1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Hai coset bất kì hoặc rời nhau, hoặc trùng nhau.</p>
@@ -658,32 +690,65 @@ document.write(`
 </div>
 </section>
 <section id="normal-subgroup">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">9.1.4. </span>Normal Subgroup</a><a class="headerlink" href="#normal-subgroup" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 9.5 </span> (Normal Subgroup, nhóm con chuẩn tắc)</p>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">9.1.5. </span>Normal Subgroup</a><a class="headerlink" href="#normal-subgroup" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-12">
+<p class="admonition-title"><span class="caption-number">Definition 9.8 </span> (Normal Subgroup)</p>
 <section class="definition-content" id="proof-content">
-<p>Nhóm con <span class="math notranslate nohighlight">\(H\)</span> của <span class="math notranslate nohighlight">\(G\)</span> được gọi là <strong>normal subgroup</strong> nếu với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> ta có coset trái trùng với coset phải.</p>
+<p>Nhóm con <span class="math notranslate nohighlight">\(H\)</span> của <span class="math notranslate nohighlight">\(G\)</span> được gọi là <strong>normal subgroup</strong> (hay <strong>нормальная подгруппа</strong>, <strong>nhóm con chuẩn tắc</strong>) nếu với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> ta có coset trái trùng với coset phải.</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation*}
     gH = Hg \quad \text{ với mọi } g \in G
 \end{equation*}\]</div>
 </section>
 </div><p>Nếu <span class="math notranslate nohighlight">\(H\)</span> là normal subgroup của <span class="math notranslate nohighlight">\(G\)</span> ta ký hiệu <span class="math notranslate nohighlight">\(H \triangleleft G\)</span>. Khi đó, với mọi <span class="math notranslate nohighlight">\(a, b \in G\)</span> thì <span class="math notranslate nohighlight">\((a H) (b H) = (ab) H\)</span>.</p>
-<div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 9.6 </span> (Quotient Group, nhóm thương)</p>
+<div class="proof definition admonition" id="definition-13">
+<p class="admonition-title"><span class="caption-number">Definition 9.9 </span> (Quotient Group)</p>
 <section class="definition-content" id="proof-content">
 <p>Với nhóm <span class="math notranslate nohighlight">\(G\)</span> và normal subgroup của nó là <span class="math notranslate nohighlight">\(H\)</span>.</p>
-<p>Quotient Group được ký hiệu là <span class="math notranslate nohighlight">\(G / H\)</span> và được định nghĩa là tập hợp các coset tương ứng với normal subgroup <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<p><strong>Quotient Group</strong> (hay <strong>nhóm thương</strong>) được ký hiệu là <span class="math notranslate nohighlight">\(G / H\)</span> và được định nghĩa là tập hợp các coset tương ứng với normal subgroup <span class="math notranslate nohighlight">\(H\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[G / H = \{gH : g \in H \}\]</div>
 <p>Ta thấy rằng điều này chỉ xảy ra nếu <span class="math notranslate nohighlight">\(H\)</span> là normal subgroup.</p>
 </section>
-</div><p>Quotient Group còn được gọi là Factor Group - <em>nhóm nhân tử</em>.</p>
-<div class="proof example admonition" id="example-10">
+</div><p>Quotient Group còn được gọi là <strong>Factor Group</strong> (hay <strong>nhóm nhân tử</strong>).</p>
+<div class="proof example admonition" id="example-14">
 <p class="admonition-title"><span class="caption-number">Example 9.4 </span></p>
 <section class="example-content" id="proof-content">
 <p>Với nhóm <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> và normal subgroup của nó là <span class="math notranslate nohighlight">\(2\mathbb{Z}\)</span>.
 Ta thấy <span class="math notranslate nohighlight">\(\mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z}\}\)</span></p>
+</section>
+</div></section>
+<section id="direct-sum-of-modules">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">9.1.6. </span>Direct sum of modules</a><a class="headerlink" href="#direct-sum-of-modules" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Прямая сумма</p>
+</div></blockquote>
+<p>Có hai dạng tổng là external và internal.</p>
+<div class="proof definition admonition" id="definition-15">
+<p class="admonition-title"><span class="caption-number">Definition 9.10 </span> (External direct sum)</p>
+<section class="definition-content" id="proof-content">
+<p>Giả sử ta có các nhóm <span class="math notranslate nohighlight">\((G_1, *)\)</span>, <span class="math notranslate nohighlight">\((G_2, \star)\)</span>, …, <span class="math notranslate nohighlight">\((G_t, \circ)\)</span>. Khi đó externel direct sum của các nhóm <span class="math notranslate nohighlight">\(G_1, \ldots, G_t\)</span> là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    G = G_1 \times G_2 \times G_t, \quad (G, \square).
+\end{equation*}\]</div>
+</section>
+</div><p>Giả sử <span class="math notranslate nohighlight">\(g = (g_1, g_2, \ldots, g_t) \in G\)</span> với <span class="math notranslate nohighlight">\(g_i \in G_i\)</span>, và <span class="math notranslate nohighlight">\(g' = (g'_1, g'_2, \ldots, g'_t) \in G\)</span> với <span class="math notranslate nohighlight">\(g'_i \in G_i\)</span>. Khi đó:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    g \square g' = (g_1 * g'_1, g_2 \star g'_2, \ldots, g_t \circ g'_t).
+\end{equation*}\]</div>
+<div class="proof definition admonition" id="definition-16">
+<p class="admonition-title"><span class="caption-number">Definition 9.11 </span> (Internal direct sum)</p>
+<section class="definition-content" id="proof-content">
+<p>Giả sử ta có nhóm <span class="math notranslate nohighlight">\((G, \circ)\)</span> và các nhóm con <span class="math notranslate nohighlight">\(G_1, G_2, \ldots, G_t\)</span> của <span class="math notranslate nohighlight">\(G\)</span>. Khi đó internal direct sum là:</p>
+<ol class="arabic simple">
+<li><p>Với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> thì <span class="math notranslate nohighlight">\(g = g_1 \circ g_2 \circ \ldots \circ g_t\)</span> với <span class="math notranslate nohighlight">\(g_i \in G_i\)</span>.</p></li>
+<li><p>Với mọi <span class="math notranslate nohighlight">\(i, j\)</span> mà <span class="math notranslate nohighlight">\(i \neq j\)</span>, <span class="math notranslate nohighlight">\(1 \leqslant i, j \leqslant t\)</span> ta có</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[g_i \circ g_j = g_j \circ g_i\]</div>
+<p>với mọi <span class="math notranslate nohighlight">\(g_i \in G_i\)</span> và <span class="math notranslate nohighlight">\(g_j \in G_j\)</span>.</p>
 </section>
 </div></section>
 </section>
@@ -754,8 +819,10 @@ Ta thấy <span class="math notranslate nohighlight">\(\mathbb{Z} / 2 \mathbb{Z}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-va-nhom-con">9.1.1. Nhóm và nhóm con</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-con">9.1.2. Nhóm con</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coset">9.1.3. Coset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-subgroup">9.1.4. Normal Subgroup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhom-vong">9.1.3. Nhóm vòng</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coset">9.1.4. Coset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-subgroup">9.1.5. Normal Subgroup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-sum-of-modules">9.1.6. Direct sum of modules</a></li>
 </ul>
   </nav></div>
 
