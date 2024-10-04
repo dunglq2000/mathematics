@@ -1,0 +1,77 @@
+\documentclass[multi={quantikz},crop,preview]{standalone}
+
+\usepackage{quantikz}
+\usepackage{tikz}
+\usepackage{geometry}
+
+\begin{document}
+
+\begin{quantikz}
+    \lstick{$\lvert x_1 \rangle$} & \targ{} & \ctrl{1} & \targ{} & \gate{H^{k_1}} & \ctrl{1} & & & \targ{} & \rstick[4]{$\lvert \psi \rangle$} \\
+    \lstick{$\lvert x_2 \rangle$} & \ctrl{-1} & \targ{} & \ctrl{-1} & \gate{H^{k_2}} & \targ{} & \ctrl{1} & & & \\
+    \lstick{$\lvert x_3 \rangle$} & \targ{} & \ctrl{1} & \targ{} & \gate{H^{k_3}} & & \targ{} & \ctrl{1} & & \\
+    \lstick{$\lvert x_4 \rangle$} & \ctrl{-1} & \targ{} & \ctrl{-1} & \gate{H^{k_4}} & & & \targ{} & \ctrl{-3} &  
+\end{quantikz}
+
+\begin{quantikz}
+        \lstick{$\lvert x_1 \rangle$} & \targ{} & \ctrl{3} & \targ{} & & & & \gate{H^{k_1}} & \ctrl{2} & & & & & & \targ{} & & \rstick[8]{$\psi$} \\
+        \lstick{$\lvert x_1 \rangle$} & & & & \ctrl{1} & \targ{} & \ctrl{1} & \gate{H^{k_1}} & & \ctrl{2} & & & & & & \targ{} & \\
+        \lstick{$\lvert x_2 \rangle$} & & & & \targ{} & \ctrl{-1} & \targ{} & \gate{H^{k_2}} & \targ{} & & \ctrl{2} & & & & & & \\
+        \lstick{$\lvert x_2 \rangle$} & \ctrl{-3} & \targ{} & \ctrl{-3} & & & & \gate{H^{k_2}} & & \targ{} & & \ctrl{2} & & & & & \\
+        \lstick{$\lvert x_3 \rangle$} & \ctrl{3} & \targ{} & \ctrl{3} & & & & \gate{H^{k_3}} & & & \targ{} & & \ctrl{2} & & & & \\
+        \lstick{$\lvert x_3 \rangle$} & & & & \targ{} & \ctrl{1} & \targ{} & \gate{H^{k_3}} & & & & \targ{} & & \ctrl{2} & & & \\
+        \lstick{$\lvert x_4 \rangle$} & & & & \ctrl{-1} & \targ{} & \ctrl{-1} & \gate{H^{k_4}} & & & & & \targ{} & & \ctrl{-6} & & \\
+        \lstick{$\lvert x_4 \rangle$} & \targ{} & \ctrl{-3} & \targ{} & & & & \gate{H^{k_4}} & & & & & & \targ{} & & \ctrl{-6} &
+\end{quantikz}
+
+\begin{quantikz}
+    \lstick{$\lvert x_1 \rangle$} & \targ{} & \ctrl{3} & \targ{} & \\
+    \lstick{$\lvert x_1 \rangle$} & & & & \\
+    \lstick{$\lvert x_2 \rangle$} & & & & \\
+    \lstick{$\lvert x_2 \rangle$} & \ctrl{-3} & \targ{} & \ctrl{-3} &
+\end{quantikz}
+
+\begin{quantikz}[slice all]
+    \lstick{$\lvert x_1 \rangle$} & \targ{} & \ctrl{1} &\targ{} & \\
+    \lstick{$\lvert x_2 \rangle$} & \ctrl{-1} & \targ{} & \ctrl{-1} &
+\end{quantikz}
+
+\begin{quantikz}[slice all]
+    \lstick{$\lvert x_1 \rangle$} & \ctrl{1} & \targ{} & \ctrl{1} & \\
+    \lstick{$\lvert x_2 \rangle$} & \targ{} & \ctrl{-1} & \targ{} &
+\end{quantikz}
+
+\begin{quantikz}
+    \lstick{$\lvert x_1 \rangle$} & \targ{} & \ctrl{3} & \targ{} & & & & \rstick{$\lvert x_2 \rangle$} \\
+    \lstick{$\lvert x_1 \rangle$} & & & & \ctrl{1} & \targ{} & \ctrl{1} & \rstick{$\lvert x_2 \rangle$}  \\
+    \lstick{$\lvert x_2 \rangle$} & & & & \targ{} & \ctrl{-1} & \targ{} & \rstick{$\lvert x_1 \rangle$} \\
+    \lstick{$\lvert x_2 \rangle$} & \ctrl{-3} & \targ{} & \ctrl{-3} & & & & \rstick{$\lvert x_1 \rangle$} \\
+    \lstick{$\lvert x_3 \rangle$} & \ctrl{3} & \targ{} & \ctrl{3} & & & & \rstick{$\lvert x_4 \rangle$} \\
+    \lstick{$\lvert x_3 \rangle$} & & & & \targ{} & \ctrl{1} & \targ{} & \rstick{$\lvert x_4 \rangle$}  \\
+    \lstick{$\lvert x_4 \rangle$} & & & & \ctrl{-1} & \targ{} & \ctrl{-1} & \rstick{$\lvert x_3 \rangle$} \\
+    \lstick{$\lvert x_4 \rangle$} & \targ{} & \ctrl{-3} & \targ{} & & & & \rstick{$\lvert x_3 \rangle$}
+\end{quantikz}
+
+\begin{quantikz}
+    \lstick{$\lvert x_2 \rangle$} & \gate{H^{k_1}} & \rstick{$\lvert z_2 \rangle$} \\
+    \lstick{$\lvert x_2 \rangle$} & \gate{H^{k_1}} & \rstick{$\lvert z_2 \rangle$} \\
+    \lstick{$\lvert x_1 \rangle$} & \gate{H^{k_2}} & \rstick{$\lvert z_1 \rangle$} \\
+    \lstick{$\lvert x_1 \rangle$} & \gate{H^{k_2}} & \rstick{$\lvert z_1 \rangle$} \\
+    \lstick{$\lvert x_4 \rangle$} & \gate{H^{k_3}} & \rstick{$\lvert z_4 \rangle$} \\
+    \lstick{$\lvert x_4 \rangle$} & \gate{H^{k_3}} & \rstick{$\lvert z_4 \rangle$} \\
+    \lstick{$\lvert x_3 \rangle$} & \gate{H^{k_4}} & \rstick{$\lvert z_3 \rangle$} \\
+    \lstick{$\lvert x_3 \rangle$} & \gate{H^{k_4}} & \rstick{$\lvert z_3 \rangle$}
+\end{quantikz}
+
+\begin{quantikz}[slice all]
+    \lstick{$\lvert z_2 \rangle$} & \ctrl{2} & & & & & & \targ{} & & \rstick[8]{$\psi$} \\
+    \lstick{$\lvert z_2 \rangle$} & & \ctrl{2} & & & & & & \targ{} & \\
+    \lstick{$\lvert z_1 \rangle$} & \targ{} & & \ctrl{2} & & & & & & \\
+    \lstick{$\lvert z_1 \rangle$} & & \targ{} & & \ctrl{2} & & & & & \\
+    \lstick{$\lvert z_4 \rangle$} & & & \targ{} & & \ctrl{2} & & & & \\
+    \lstick{$\lvert z_4 \rangle$} & & & & \targ{} & & \ctrl{2} & & & \\
+    \lstick{$\lvert z_3 \rangle$} & & & & & \targ{} & & \ctrl{-6} & & \\
+    \lstick{$\lvert z_3 \rangle$} & & & & & & \targ{} & & \ctrl{-6} &
+\end{quantikz}
+
+\end{document}

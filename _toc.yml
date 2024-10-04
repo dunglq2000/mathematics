@@ -106,6 +106,7 @@ parts:
       sections:
       - file: contests/2023/internet-olympiad/2023.md
       - file: contests/2023/siberian-maths-contest-2023.md
+      - file: contests/2023/nsucrypto-2023.md
     - file: contests/2024/2024.md
       sections:
       - file: contests/2024/internet-olympiad-2024.md
