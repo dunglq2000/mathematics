@@ -29,6 +29,7 @@ parts:
     numbered: true
     chapters:
     - file: probability/intro.md
+    - file: probability/Petrushko.md
   - caption: Toán rời rạc
     numbered: true
     chapters:
