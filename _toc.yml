@@ -81,6 +81,7 @@ parts:
     - file: cryptography/code-based.md
     - file: cryptography/elliptic.md
     - file: cryptography/discrete-logarithm.md
+    - file: cryptography/Hoffstein2014.md
   - caption: Đại số boolean và mật mã học
     numbered: true
     chapters:
