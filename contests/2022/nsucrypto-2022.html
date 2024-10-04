@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NSUCRYPTO 2022 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=80937f47" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contests/2022/nsucrypto-2022';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2023" href="../2023/2023.html" />
+    <link rel="prev" title="2022" href="2022.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">4. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../calculus/calculus.html">5. Giải tích</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/partial-derivative.html">5.5. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../calculus/series.html">6. Chuỗi số</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../calculus/differential-equation.html">7. Phương trình vi phân</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">8. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../probability/Petrushko.html">9. Курс высшей математики: Теория вероятностей</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">10. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">10.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">10.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">10.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">10.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">10.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/galois-theory.html">11. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">12. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">13. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">14. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/combinatoric.html">15. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">16. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">16.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/weight-boolean.html">16.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-aff-lin.html">16.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-monotone.html">16.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">16.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-dnf-cnf.html">16.6. Disjunctive và Conjunctive Normal Form</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/analytic-geometry.html">17. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">18. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">19. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">20. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">22.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/sms4.html">22.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/AES.html">22.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/toy-cipher.html">23.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">23.2. Phá mã vi sai trên TinyDES</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">24. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">26. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">29. Giới thiệu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">30. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">30.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2020/2020.html">2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/2021.html">2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/nsucrypto-2021.html">NSUCRYPTO 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2022.html">2022</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">NSUCRYPTO 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023/2023.html">2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023/internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/siberian-maths-contest-2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/nsucrypto-2023.html">NSUCRYPTO 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/internet-olympiad-2024.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/cryptofox-2024.html">CryptoFox 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/ASISCTF-2024.html">ASIS CTF 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fcontests/2022/nsucrypto-2022.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contests/2022/nsucrypto-2022.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NSUCRYPTO 2022</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-noi-dau">Lời nói đầu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5-super-dependent-s-box">Problem 5*. Super dependent S-box</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#giai">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-11-a-long-awaited-event">Problem 11. A long awaited event</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Giải</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nsucrypto-2022">
+<h1>NSUCRYPTO 2022<a class="headerlink" href="#nsucrypto-2022" title="Link to this heading">#</a></h1>
+<section id="loi-noi-dau">
+<h2>Lời nói đầu<a class="headerlink" href="#loi-noi-dau" title="Link to this heading">#</a></h2>
+<p>Thời kì đen tối …</p>
+<p>Đề thi năm 2022 khá lạ và phức tạp. Bảng điểm round 2 dành cho University student cũng ảo ma không kém.</p>
+</section>
+<section id="problem-5-super-dependent-s-box">
+<h2>Problem 5*. Super dependent S-box<a class="headerlink" href="#problem-5-super-dependent-s-box" title="Link to this heading">#</a></h2>
+<section id="de-bai">
+<h3>Đề bài<a class="headerlink" href="#de-bai" title="Link to this heading">#</a></h3>
+<p>Harry muốn tìm một super dependent S-box cho mã hóa mới. Anh ấy dùng một hoán vị liên kết chặt chẽ với mọi biến của nó và muốn ước lượng số các hoán vị như vậy.</p>
+<p>Một hàm boolean vectorial <span class="math notranslate nohighlight">\(F(x) = (f_1(\bm{x}), f_2(\bm{x}), \ldots, f_n(\bm{x}))\)</span>, với <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>, là một <strong>hoán vị</strong> trên <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> nếu nó là một ánh xạ one-to-one từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>.</p>
+<p>Các hàm tọa độ <span class="math notranslate nohighlight">\(f_k(\bm{x})\)</span> (là các hàm boolean từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>) được gọi là <em>essential depend</em> trên các biến <span class="math notranslate nohighlight">\(x_j\)</span> nếu tồn tại các giá trị <span class="math notranslate nohighlight">\(b_1, b_2, \ldots, b_{j-1}, b_{j+1}, \ldots, b_n \in \mathbb{F}_2\)</span> sao cho</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f_k(b_1, b_2, \ldots, b_{j-1}, 0, b_{j+1},  \ldots, b_n) \neq f_k(b_1, b_2, \ldots, b_{j-1}, 1, b_{j+1}, \ldots, b_n)
+\end{equation*}\]</div>
+<p>Nói cách khác, essential depend trên biến <span class="math notranslate nohighlight">\(x_j\)</span> nghĩa là trong dạng biểu diễn ANF (đa thức Zhegalkin) của hàm <span class="math notranslate nohighlight">\(f\)</span> có sự có mặt của biến <span class="math notranslate nohighlight">\(x_j\)</span>.</p>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét <span class="math notranslate nohighlight">\(n=3\)</span>. Khi đó hàm boolean <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3) = x_1 x_2 \oplus x_3\)</span> essential depend trên cả ba biến, nhưng hàm <span class="math notranslate nohighlight">\(g(x_1, x_2, x_3) = x_1 x_2 \oplus x_2 \oplus 1\)</span> chỉ essential depend trên <span class="math notranslate nohighlight">\(x_1\)</span> và <span class="math notranslate nohighlight">\(x_2\)</span>.</p>
+</section>
+</div><p><strong>Câu hỏi.</strong> Tìm số lượng hoán vị trên <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> mà các hàm tọa độ của nó đều essential depend trên cả <span class="math notranslate nohighlight">\(n\)</span> biến.</p>
+<p><strong>Q1.</strong> Tìm đáp án cho <span class="math notranslate nohighlight">\(n=2, 3\)</span>.</p>
+<p><strong>Q2.</strong> Tìm đáp án cho <span class="math notranslate nohighlight">\(n\)</span> (special prize).</p>
+</section>
+<section id="giai">
+<h3>Giải<a class="headerlink" href="#giai" title="Link to this heading">#</a></h3>
+<p>Q1 có thể được giải với SageMath. Tuy nhiên năm đó mình không dùng SageMath mà dùng Python thuần nên đáp án sai mất 😢. Đáp án cho Q1 với <span class="math notranslate nohighlight">\(n=2\)</span> là 0 (liệt kê tất cả hàm ra) và đáp án cho <span class="math notranslate nohighlight">\(n=3\)</span> là 24576.</p>
+<p>Ở Q2 các team giải ra chứng minh được rằng, đáp án sẽ là một số chia hết cho <span class="math notranslate nohighlight">\(2^n \cdot n!\)</span>.</p>
+</section>
+</section>
+<section id="problem-11-a-long-awaited-event">
+<h2>Problem 11. A long awaited event<a class="headerlink" href="#problem-11-a-long-awaited-event" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Đề bài<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Bob nhận được một thông điệp</p>
+<p>L78V8LC7GBEYEE</p>
+<p>về một sự kiện quan trọng từ Alice.</p>
+<p>Alice sử dụng một bảng chữ cái 37 ký tự gồm chữ cái từ A tới Z, số từ 0 tới 9 và dấu space. Các ký tự được encode như sau:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>F</p></th>
+<th class="head"><p>G</p></th>
+<th class="head"><p>H</p></th>
+<th class="head"><p>I</p></th>
+<th class="head"><p>J</p></th>
+<th class="head"><p>K</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>M</p></th>
+<th class="head"><p>N</p></th>
+<th class="head"><p>O</p></th>
+<th class="head"><p>P</p></th>
+<th class="head"><p>Q</p></th>
+<th class="head"><p>R</p></th>
+<th class="head"><p>S</p></th>
+<th class="head"><p>T</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>U</p></th>
+<th class="head"><p>V</p></th>
+<th class="head"><p>W</p></th>
+<th class="head"><p>X</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>Z</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+<th class="head"><p>SPACE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>25</p></td>
+<td><p>26</p></td>
+<td><p>27</p></td>
+<td><p>28</p></td>
+<td><p>29</p></td>
+<td><p>30</p></td>
+<td><p>31</p></td>
+<td><p>32</p></td>
+<td><p>33</p></td>
+<td><p>34</p></td>
+<td><p>35</p></td>
+<td><p>36</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Để mã hóa Alice sử dụng hàm <span class="math notranslate nohighlight">\(f\)</span> sao cho <span class="math notranslate nohighlight">\(f(x) = a x^2 + b x + c \pmod{37}\)</span> với số <span class="math notranslate nohighlight">\(a, b, c\)</span> nào đó và hàm <span class="math notranslate nohighlight">\(f\)</span> thỏa tính chất</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f(x-y) - 2 f(x) f(y) + f(1 + xy) = 1 \pmod{37} \, \text{với mọi số nguyên} \, x, y
+\end{equation*}\]</div>
+<p><strong>Q.</strong> Hãy giải mã thông điệp Bob nhận được.</p>
+</section>
+<section id="id2">
+<h3>Giải<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Sử dụng hàm <span class="math notranslate nohighlight">\(f\)</span>, ta có:</p>
+<ol class="arabic simple">
+<li><p>Nếu cho <span class="math notranslate nohighlight">\(y=0\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(x) - 2 f(x) \cdot f(0) + f(1) = 1 \pmod{37}\]</div>
+<p>với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{Z}_{37}\)</span>.</p>
+<p>Điều này tương đương với</p>
+<div class="math notranslate nohighlight">
+\[(1 - 2 f(0)) \cdot f(x) = 1 - f(1) \pmod{37}\]</div>
+<p>với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{Z}_{37}\)</span>.</p>
+<p>Đẳng thức trên đúng với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{Z}_{37}\)</span> khi và chỉ khi</p>
+<div class="math notranslate nohighlight">
+\[1 - 2 f(0) = 1 - f(1) = 0.\]</div>
+<p>Suy ra <span class="math notranslate nohighlight">\(f(0) = 19\)</span> và <span class="math notranslate nohighlight">\(f(1) = 1\)</span>.</p>
+<ol class="arabic simple" start="2">
+<li><p>Cho <span class="math notranslate nohighlight">\(x=y=1\)</span> thì</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(2) = 1 - f(0) - 2 \cdot (f(1))^2 = 21 \pmod{37}.\]</div>
+<p>Với các cặp giá trị <span class="math notranslate nohighlight">\((x, f(x))\)</span> là <span class="math notranslate nohighlight">\((0, 19)\)</span>, <span class="math notranslate nohighlight">\((1, 1)\)</span> và <span class="math notranslate nohighlight">\((2, 21)\)</span> thì ta tìm lại được (bằng nội suy hoặc phép thế) đa thức <span class="math notranslate nohighlight">\(f(x) = 19 x^2 + 19 \pmod{37}\)</span>.</p>
+<p>Khi đó, với mỗi giá trị <span class="math notranslate nohighlight">\(f(x)\)</span> ta có hai giá trị <span class="math notranslate nohighlight">\(x\)</span> thỏa mãn đẳng thức. Truy ngược ra đáp án khả thi cho ta thông điệp ban đầu.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ciphertext</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>V</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>L</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>G</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>Y</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>E</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Plaintext 1</p></td>
+<td><p><span style="color:red">N</span></p></td>
+<td><p><span style="color:red">S</span></p></td>
+<td><p>R</p></td>
+<td><p><span style="color:red">C</span></p></td>
+<td><p><span style="color:red">R</span></p></td>
+<td><p>N</p></td>
+<td><p><span style="color:red">P</span></p></td>
+<td><p>S</p></td>
+<td><p><span style="color:red">O</span></p></td>
+<td><p>B</p></td>
+<td><p>J</p></td>
+<td><p>L</p></td>
+<td><p>J</p></td>
+<td><p>J</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>13</p></td>
+<td><p>18</p></td>
+<td><p>17</p></td>
+<td><p>2</p></td>
+<td><p>17</p></td>
+<td><p>13</p></td>
+<td><p>15</p></td>
+<td><p>18</p></td>
+<td><p>14</p></td>
+<td><p>1</p></td>
+<td><p>9</p></td>
+<td><p>11</p></td>
+<td><p>9</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Plaintext 2</p></td>
+<td><p>Y</p></td>
+<td><p>T</p></td>
+<td><p><span style="color:red">U</span></p></td>
+<td><p>9</p></td>
+<td><p>U</p></td>
+<td><p><span style="color:red">Y</span></p></td>
+<td><p>W</p></td>
+<td><p><span style="color:red">T</span></p></td>
+<td><p>X</p></td>
+<td><p><span style="color:red">SPACE</span></p></td>
+<td><p><span style="color:red">2</span></p></td>
+<td><p><span style="color:red">0</span></p></td>
+<td><p><span style="color:red">2</span></p></td>
+<td><p><span style="color:red">2</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>24</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>35</p></td>
+<td><p>20</p></td>
+<td><p>24</p></td>
+<td><p>22</p></td>
+<td><p>19</p></td>
+<td><p>23</p></td>
+<td><p>36</p></td>
+<td><p>28</p></td>
+<td><p>26</p></td>
+<td><p>28</p></td>
+<td><p>28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Theo bảng tên thì thông điệp là “NSUCRYPTO 2022”.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contests/2022"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2022.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2022</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2023/2023.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loi-noi-dau">Lời nói đầu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5-super-dependent-s-box">Problem 5*. Super dependent S-box</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#giai">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-11-a-long-awaited-event">Problem 11. A long awaited event</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Giải</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

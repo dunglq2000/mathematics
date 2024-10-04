@@ -1,0 +1,911 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9. Курс высшей математики: Теория вероятностей &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'probability/Petrushko';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Lý thuyết nhóm" href="../discrete-mathematics/group.html" />
+    <link rel="prev" title="8. Xác suất thống kê" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../linalg/intro.html">4. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/calculus.html">5. Giải tích</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/partial-derivative.html">5.5. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/series.html">6. Chuỗi số</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/differential-equation.html">7. Phương trình vi phân</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">8. Xác suất thống kê</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Курс высшей математики: Теория вероятностей</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">10. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">10.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">10.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">10.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">10.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">10.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">11. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">12. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">13. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">14. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">15. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">16. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">16.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">16.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">16.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">16.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">16.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">16.6. Disjunctive và Conjunctive Normal Form</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">17. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">18. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">19. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">20. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">22.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">22.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">22.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/toy-cipher.html">23.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">23.2. Phá mã vi sai trên TinyDES</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">24. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">26. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">29. Giới thiệu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">30. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">30.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2020/2020.html">2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2021/2021.html">2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2021/nsucrypto-2021.html">NSUCRYPTO 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2022/2022.html">2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2022/nsucrypto-2022.html">NSUCRYPTO 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2023/2023.html">2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/siberian-maths-contest-2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/nsucrypto-2023.html">NSUCRYPTO 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2024/2024.html">2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2024/internet-olympiad-2024.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2024/cryptofox-2024.html">CryptoFox 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/ASISCTF-2024.html">ASIS CTF 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fprobability/Petrushko.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/probability/Petrushko.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Курс высшей математики: Теория вероятностей</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xac-suat-khong-lien-tuc">9.1. Xác suất không liên tục</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quy-tac-cong-va-nhan-xac-suat">9.2. Quy tắc cộng và nhân xác suất</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo">9.3. Quy tắc cộng và nhân xác suất (tiếp theo)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">9. </span>Курс высшей математики: Теория вероятностей<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Lời giải cho quyển sách <span id="id2">[<a class="reference internal" href="../intro.html#id26" title="Петрушко И.М. Курс высшей математики. Теория вероятностей. Лекции и практикум : учебное пособие. Издательство &quot;Лань&quot;, 3 edition, 2008. ISBN 978-5-8114-0728-6. URL: URL: https://e.lanbook.com/book/497.">3</a>]</span>. Đây là quyển mình được học trên trường.</p>
+<section id="xac-suat-khong-lien-tuc">
+<h2><span class="section-number">9.1. </span>Xác suất không liên tục<a class="headerlink" href="#xac-suat-khong-lien-tuc" title="Link to this heading">#</a></h2>
+<p><strong>Bài 1.</strong> Có 10 đội được chia ngẫu nhiên làm hai nhóm. Tính xác xuất để hai đội mạnh nhất vào hai nhóm khác nhau? … cùng một nhóm? … cùng vào nhóm thứ nhất?</p>
+<p><strong>Giải.</strong> 1. Một đội mạnh có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách chọn, đội còn lại sẽ vào nhóm còn lại. Tiếp theo, chọn 4 đội cho nhóm đầu có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách, 4 đội cho nhóm còn lại có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Không gian mẫu là <span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{5}{9}\)</span>.
+2. Hai đội mạnh vào cùng một nhóm, có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách. Chọn 3 đội cho nhóm đó có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách. Nhóm còn lại sẽ có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu là <span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{4}{9}\)</span>.
+3. Hai đội mạnh đều vào nhóm đầu nên chỉ có 1 cách chọn. Chọn 3 đội còn lại của nhóm đầu có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách. Chọn 5 đội cho nhóm còn lại có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu là <span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{2}{9}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 2.</strong> Một bộ bài đầy đủ có 52 lá. Lấy ngẫu nhiên ra ba lá. Tính xác suất để ba lá đó là 3, 7 và át? Tính xác suất để ba lá đó được lấy theo thứ tự trên?</p>
+<p><strong>Giải.</strong></p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(C^3_{52}\)</span>. Lấy một trong bốn con 3 có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách, tương tự cho lấy con 7 có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách và lấy con át có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{C^3_{52}} = \dfrac{16}{5525}\)</span>.</p></li>
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^3_{52}\)</span> vì có xét thứ tự. Cách chọn ba lá bài vẫn như trước. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{A^3_{52}} = \dfrac{8}{16575}\)</span>.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Bài 3.</strong> Trên đoạn thẳng <span class="math notranslate nohighlight">\(OA\)</span> độ dài <span class="math notranslate nohighlight">\(L\)</span> chọn ngẫu nhiên hai điểm <span class="math notranslate nohighlight">\(B\)</span> và <span class="math notranslate nohighlight">\(C\)</span>, điều kiện là <span class="math notranslate nohighlight">\(C\)</span> nằm bên phải so với <span class="math notranslate nohighlight">\(B\)</span>. Tính xác suất để độ dài <span class="math notranslate nohighlight">\(BC\)</span> nhỏ hơn độ dài <span class="math notranslate nohighlight">\(OB\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<figure class="align-default">
+<img alt="../_images/ch01-ex03.jpg" src="../_images/ch01-ex03.jpg" />
+</figure>
+<p>Gọi <span class="math notranslate nohighlight">\(L\)</span> là độ dài đoạn <span class="math notranslate nohighlight">\(OA\)</span>. Đặt <span class="math notranslate nohighlight">\(x\)</span> là độ dài <span class="math notranslate nohighlight">\(OB\)</span> và <span class="math notranslate nohighlight">\(y\)</span> là độ dài <span class="math notranslate nohighlight">\(BC\)</span>. Khi đó các độ dài này phải thỏa mãn các phương trình</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{cases}
+        y &lt; x \\
+        0 &lt; x + y &lt; L \\
+        x &gt; 0, y &gt; 0
+    \end{cases}
+\end{equation*}\end{split}\]</div>
+<p>Xác suất trên tương ứng biểu diễn hình học. Khi đó xác suất là tỉ lệ diện tích:</p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là tam giác vuông nên diện tích là <span class="math notranslate nohighlight">\(\dfrac{L^2}{2}\)</span>.</p></li>
+<li><p>Vùng giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(y = 0\)</span>, <span class="math notranslate nohighlight">\(y = x\)</span> và <span class="math notranslate nohighlight">\(x + y = L\)</span> là tam giác với diện tích là <span class="math notranslate nohighlight">\(\dfrac{L \cdot \dfrac{L}{2}}{2} = \dfrac{L^2}{4}\)</span>.</p></li>
+</ol>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span></p>
+<hr class="docutils" />
+<p><strong>Bài 4.</strong> Có 10 bilet nằm trên bàn giám thị được đánh số từ 1 tới 10. Tính xác suất để các sinh viên lấy bilet theo thứ tự từ 1 tới 10.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span> cách lấy 10 bilet theo tứ tự bất kì.</p>
+<p>Để lấy 10 bilet theo thứ tự, chỉ có duy nhất một cách lấy lần lượt 1, 2, \dots.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{10!}\)</span></p>
+<hr class="docutils" />
+<p><strong>Bài 5.</strong> Bốn người vào thang máy ở tầng 1 của tòa nhà 9 tầng. Biết rằng xác suất mỗi người rời khỏi thang máy là như nhau cho các tầng từ 2 tới 9. Tính xác suất để: a) mọi người rời thang máy ở các tầng khác nhau; b) mọi người rời thang máy cao hơn tầng 5; c) ở tầng 3 không ai rời thang máy</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(8^4\)</span> vì mỗi người đều có 8 cách chọn ra các tầng từ 2 tới 9.</p>
+<p>a) Chọn 4 tầng mà mỗi người sẽ ra, có <span class="math notranslate nohighlight">\(A^4_8\)</span> cách vì thứ tự có thể khác nhau. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{A^4_8}{8^4} = \dfrac{105}{256}\)</span>.</p>
+<p>b) Tầng cao hơn 5 có 4 phương án 6, 7, 8, 9. Khi đó mỗi người có 4 cách chọn nên bốn người có <span class="math notranslate nohighlight">\(4^4\)</span> cách chọn. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{4^4}{8^4} = \dfrac{1}{16}\)</span>.</p>
+<p>c) Do không ai rời thang máy tầng 3 nên mỗi người có 7 cách chọn 2, 4, 5, 6, 7, 8 và 9. Do đó số cách chọn của bốn người là <span class="math notranslate nohighlight">\(7^4\)</span>. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{7^4}{8^4} = \dfrac{2401}{4096}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 6.</strong> Lấy ngẫu nhiên bốn chữ số và xếp chúng theo vị trí bất kì. Tính xác suất để thu được số có 4 chữ số? Tính xác suất để thu được số có 4 chữ số chia hết cho 5?</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10^4\)</span> vì có 10 chữ số từ 0 tới 9.</p>
+<ol class="arabic simple">
+<li><p>Để tạo thành số có 4 chữ số thì chữ số đầu phải khác 0 nên có 9 cách chọn. Ba vị trí còn lại mỗi vị trí 10 cách chọn. Như vậy số cách chọn là <span class="math notranslate nohighlight">\(9 \cdot 10^3\)</span> nên đáp án là <span class="math notranslate nohighlight">\(\dfrac{9}{10}\)</span>.</p></li>
+<li><p>Tương tự, để tạo thành số có 4 chữ số thì chữ số đầu có 9 cách chọn. Vị trí cuối phải là 0 hoặc 5 để chia hết cho 5. Hai chữ số ở giữa tùy ý nên có <span class="math notranslate nohighlight">\(10^2\)</span> cách. Như vậy số cách chọn là <span class="math notranslate nohighlight">\(9 \cdot 2 \cdot 10^2\)</span> nên đáp án là <span class="math notranslate nohighlight">\(\dfrac{9}{50}\)</span>.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Bài 7.</strong> Có 20 bilet exam trên bàn giám thị theo thứ tự ngẫu nhiên. 10 sinh viên lần lượt bốc bilet ngẫu nhiên. Tính xác suất để bilet số 1 và 2 không được chọn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^{10}_{20}\)</span> do các sinh viên bốc lần lượt nên sẽ có thứ tự.</p>
+<p>Biến cố bilet số 1 và 2 không được chọn, như vậy sẽ còn 18 trường hợp và 10 sinh viên sẽ bốc ngẫu nhiên 10 bilet trong này. Do đó có <span class="math notranslate nohighlight">\(A^{10}_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^{10}_{18}}{A^{10}_{20}} = \dfrac{9}{38}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 8.</strong> Trong hộp có 6 quả bóng trắng, 4 quả bóng đen và 2 quả bóng đỏ. Lấy ngẫu nhiên 4 quả bóng. Tính xác suất để trong số 4 quả đó chỉ có bóng đen và bóng đỏ.</p>
+<p><strong>Giải.</strong> Có tất cả <span class="math notranslate nohighlight">\(6+4+2=12\)</span> quả bóng. Không gian mẫu là <span class="math notranslate nohighlight">\(C^4_{12}\)</span>.</p>
+<p>Bóng đen và bóng đỏ có tất cả <span class="math notranslate nohighlight">\(4+2=6\)</span> quả. Lấy 4 trong số đó có <span class="math notranslate nohighlight">\(C^4_6\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^4_6}{C^4_{12}} = \dfrac{1}{33}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 9.</strong> Có 10 quyển sách, trong đó có 3 quyển màu đỏ, được xếp theo thứ tự ngẫu nhiên trên kệ. Tính xác suất để 3 quyển màu đỏ nằm liền kề nhau.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span>.</p>
+<p>Nếu xem 3 quyển đỏ là cùng 1 khối thì lúc này trên kệ có 8 quyển. Số cách chọn là <span class="math notranslate nohighlight">\(8!\)</span>. Bên trong khối đó, 3 quyển màu đỏ có thể xếp theo thứ tự bất kì nên có <span class="math notranslate nohighlight">\(3!\)</span> hoán vị. Như vậy tổng số cách xếp là <span class="math notranslate nohighlight">\(8! \cdot 3!\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(\dfrac{8! \cdot 3!}{10!} = \dfrac{1}{15}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 10.</strong> Gieo 3 con súc sắc. Tính xác suất các biết cố: <span class="math notranslate nohighlight">\(A\)</span> – các súc sắc cho các số khác nhau; <span class="math notranslate nohighlight">\(B\)</span> – các súc sắc ra cùng số.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(6^3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Các súc sắc cho số khác nhau nên có <span class="math notranslate nohighlight">\(A^3_6\)</span> cách chọn vì có tính hoán vị. Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{A^3_6}{6^3} = \dfrac{5}{9}\)</span>.</p></li>
+<li><p>Các súc sắc ra cùng số có 6 trường hợp. Đáp án là <span class="math notranslate nohighlight">\(P(B) = \dfrac{6}{6^3} = \dfrac{1}{36}\)</span>.</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>Bài 11.</strong> Trong tủ có 5 đôi tất. Lấy ngẫu nhiên 2 chiếc tất. Tính xác suất để 2 chiếc tất đó cùng đôi.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(C^2_{10}\)</span>.</p>
+<p>Lấy 2 chiếc cùng đôi nghĩa là lấy 1 trong 5 đôi. Vậy có 5 cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{5}{C^2_{10}} = \dfrac{1}{9}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 13.</strong> Trong nhóm có 4 nam và 4 nữ được chia thành hai nhóm nhỏ, mỗi nhóm 4 người. Tính xác suất để ở mỗi nhóm nhỏ có 2 nam và 2 nữ.</p>
+<p><strong>Giải.</strong> Do có tất cả 8 người nên để chia thành hai nhóm nhỏ thì ta chọn 4 người cho nhóm đầu, có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách. Nhóm thứ hai có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Tuy nhiên có khả năng bị lặp (chọn A–B rồi C–D hoàn toàn giống chọn C–D rồi A–B). Do đó không gian mẫu cần chia <span class="math notranslate nohighlight">\(2!\)</span> nên <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \dfrac{C^4_8 \cdot C^4_4}{2!} = 35\)</span> cách.</p>
+<p>Tương tự, ta chọn 2 nam cho nhóm đầu thì có <span class="math notranslate nohighlight">\(C^2_4\)</span> cách và cho nhóm thứ hai có <span class="math notranslate nohighlight">\(C^2_2\)</span> cách. Như vậy có 6 cách chia 4 nam vào 2 nhóm. Nữ cũng vậy, có 6 cách. Theo bên trên, hai nhóm này có thể bị lặp nên cần phải chia <span class="math notranslate nohighlight">\(2!\)</span>. Suy ra số cách chia mỗi nhóm 2 nam 2 nữ là <span class="math notranslate nohighlight">\(\dfrac{6 \cdot 6}{2!} = 18\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{18}{35}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 14.</strong>
+Bên trong hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span> chọn ngẫu nhiên một điểm. Tính xác suất để điểm đó: a) nằm bên trong hình vuông nội tiếp; b) nằm bên trong tam giác đều nội tiếp.</p>
+<p><strong>Giải.</strong> Bài này sử dụng xác suất hình học. Khi đó không gian mẫu là diện tích hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span>, hay <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \pi R^2\)</span>.</p>
+<p>a) Biến cố điểm nằm trong hình vuông nội tiếp có xác suất bằng diện tích hình vuông chia diện tích hình tròn. Hình vuông nội tiếp đường tròn bán kính <span class="math notranslate nohighlight">\(R\)</span> có đường chéo bằng <span class="math notranslate nohighlight">\(2R\)</span> nên cạnh là <span class="math notranslate nohighlight">\(R \sqrt{2}\)</span>. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{2R^2}{\pi R^2} = \dfrac{2}{\pi}\)</span>.</p>
+<p>b) Tương tự, tam giác nội tiếp thì cạnh nối từ tâm tới đỉnh là <span class="math notranslate nohighlight">\(R\)</span>, bằng <span class="math notranslate nohighlight">\(2R/3\)</span> độ dài đường cao nên suy ra đường cao là <span class="math notranslate nohighlight">\(3R/2\)</span>. Suy ra cạnh là <span class="math notranslate nohighlight">\(R \sqrt{3}\)</span>. Diện tích tam giác nội tiếp là <span class="math notranslate nohighlight">\(\dfrac{R \sqrt{3} \cdot 3R/2}{2} = \dfrac{3\sqrt{3} \cdot R^2}{4}\)</span> nên đáp án là <span class="math notranslate nohighlight">\(\dfrac{3\sqrt{3}}{4 \pi}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 15.</strong> Trong một ngày có hai chuyến tàu cập cảng để dỡ hàng. Chuyến tàu thứ nhất cần 6 tiếng để dỡ hàng, trong khi chuyến tàu thứ hai cần 8 tiếng. Hai chuyến tàu đến cảng không phụ thuộc vào nhau. Tính xác suất để không chuyến tàu nào phải chờ chuyến tàu kia dỡ hàng xong mới được cập cảng.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(x\)</span> là thời gian chuyến tàu đầu cập cảng. Do mất 6 giờ để dỡ hàng nên tàu phải cập cảng trước 18 giờ. Suy ra <span class="math notranslate nohighlight">\(0 \leqslant x \leqslant 18\)</span>.</p>
+<p>Tương tự, gọi <span class="math notranslate nohighlight">\(y\)</span> là thời gian chuyến tàu thứ hai cập cảng. Suy ra <span class="math notranslate nohighlight">\(0 \leqslant y \leqslant 16\)</span>.</p>
+<p>Đến đây ta có hai trường hợp:</p>
+<ol class="arabic simple">
+<li><p>Chuyến tàu đầu cập cảng trước. Khi đó chuyến tàu thứ hai phải đến sau khi chuyến tàu đầu dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(y \geqslant x + 6\)</span>.</p></li>
+<li><p>Chuyến tàu thứ hai cập cảng trước. Tương tự, chuyến tàu đầu phải cập cảng sau khi chuyến thứ hai dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(x \geqslant y + 8\)</span>.</p></li>
+</ol>
+<p>Không gian mẫu là diện tích hình chữ nhật giới hạn bởi <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> và <span class="math notranslate nohighlight">\(y=16\)</span>.</p>
+<p>Không gian biến cố nằm trong hình giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(y=16\)</span>, <span class="math notranslate nohighlight">\(x+6=y\)</span> và <span class="math notranslate nohighlight">\(x-8=y\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{25}{72}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat">
+<h2><span class="section-number">9.2. </span>Quy tắc cộng và nhân xác suất<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat" title="Link to this heading">#</a></h2>
+<p><strong>Bài 1.</strong> Xác suất bóng đèn hoạt động tốt trong khoảng thời gian xác định của mỗi phần tử là 0,8. Một hệ thống có 3 phần tử như hình. Tính độ hoạt động tốt trong mỗi phần tử.</p>
+<p><strong>Giải.</strong> Nào vẽ hình rồi giải sau :)))</p>
+<hr class="docutils" />
+<p><strong>Bài 2.</strong> Trong hộp có 7 quả bóng trắng và 3 quả bóng đen. Lấy ngẫu nhiên lần lượt từng quả đến khi lấy được bóng đen. Tính xác suất đến khi dừng lại lấy được 4 quả bóng nếu: a) lấy có trả lại; b) lấy không trả lại.</p>
+<p><strong>Giải.</strong> Không gian mẫu gồm các cách lấy ra 4 quả bóng.</p>
+<p>a) Khi lấy có trả lại, ở mỗi lần lấy có 10 cách chọn nên không gian mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = 10^4\)</span>. Theo đề bài, nếu lấy có trả lại 4 quả bóng, 3 quả đầu là bóng trắng và có <span class="math notranslate nohighlight">\(7^3\)</span> cách chọn. Quả bóng cuối màu đen, có 3 cách chọn. Như vậy có <span class="math notranslate nohighlight">\(7^3 \cdot 3\)</span> cách chọn. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{1029}{10000}\)</span>.</p>
+<p>b) Khi lấy không trả lại, không gian mẫu là số cách lấy 4 quả bóng từ 10 quả bóng có thứ tự nên <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{10}\)</span>. Số cách chọn 4 quả sao cho 3 quả đầu màu trắng là <span class="math notranslate nohighlight">\(A^3_7\)</span>, và quả cuối màu đen là <span class="math notranslate nohighlight">\(A^1_3\)</span>. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{A^3_7 \cdot A^1_3}{A^4_{10}} = \dfrac{1}{8}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 3.</strong> Trong một bộ domino có 28 quân lấy ngẫu nhiên 7 quân. Tính xác suất có ít nhất một quân có nút 6.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ít nhất một quân có nút 6. Khi đó <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không có quân nào có nút 6.</p>
+<p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^7_{28}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\bar{A}\)</span> không chứa các quân có nút 6 nên sẽ có <span class="math notranslate nohighlight">\(28-7=21\)</span> quân (bỏ các cặp 0–6, 1–6, …, 6–6).</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(P(\bar{A}) = \dfrac{A^7_{21}}{A^7_{28}} = \dfrac{323}{3289}\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(P(A) = 1 - P(\bar{A}) = \dfrac{2966}{3289}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 4.</strong> Tung 4 cục súc sắc. Tính xác suất để chúng ra các mặt khác nhau.</p>
+<p><strong>Giải.</strong> Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^4_6}{6^4} = \dfrac{5}{18}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 5.</strong> Trong hộp có 5 quả bóng trắng, 7 quả bóng đỏ và 8 quả bóng xanh. Lấy ngẫu nhiên ra 2 quả. Tính xác suất để hai quả đó cùng màu.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> – biến cố lấy hai quả bóng cùng màu.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố lấy hai quả bóng trắng, hai quả bóng đỏ và hai quả bóng xanh.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{C^2_5 + C^2_7 + C^2_8}{C^2_{5+7+8}} = \dfrac{59}{190}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 6.</strong> Hai cung thủ bắn tên đồng thời độc lập nhau. Xác suất mỗi người bắn trúng là 0,2. Tính xác suất để chỉ một người bắn trúng.</p>
+<p><strong>Giải.</strong> Chọn một trong hai người bắn trúng, có 2 cách.</p>
+<p>Nếu người đó bắn trúng thì xác suất là 0,2. Người còn lại sẽ bắn trượt với xác suất 0,8.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(2 \cdot 0,2 \cdot 0,8 = 0,32\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 7.</strong> 12 đội bóng tham gia giải đấu. Trong giải đấu có 4 giải thưởng sẽ được trao cho 4 đội xuất sắc nhất. Giả sử 12 đội được chia thành 4 nhóm được đánh số, mỗi nhóm 5 đội. Tính xác suất để mỗi nhóm có một đội đạt giải? Tính xác suất để nhóm đầu không có đội nào đạt giải.</p>
+<p><strong>Giải.</strong> Số cách chọn 5 đội cho nhóm đầu là <span class="math notranslate nohighlight">\(C^5_{20}\)</span>, cho nhóm thứ hai là <span class="math notranslate nohighlight">\(C^5_{15}\)</span>, cho nhóm thứ ba là <span class="math notranslate nohighlight">\(C^5_{10}\)</span> và nhóm cuối là <span class="math notranslate nohighlight">\(C^5_5\)</span>. Do có xét thứ tự nhóm nên vẫn tính các hoán vị. Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \lvert \Omega \rvert = C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5
+\end{equation*}\]</div>
+<p>Trong 4 đội đạt giải, chọn một đội cho vào nhóm 1 thì có 4 cách chọn. Tiếp theo chọn 4 đội trong 16 đội không đạt giải vào nhóm 1 thì có <span class="math notranslate nohighlight">\(C^4_{16}\)</span> cách. Tương tự cho các nhóm 2, 3, 4 nên đáp án là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    P(A) = \dfrac{4 \cdot C^4_{16} \cdot 3 \cdot C^4_{12} \cdot 2 \cdot C^4_8 \cdot 1 \cdot C^4_4}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{125}{969}
+\end{equation*}\]</div>
+<p>Nếu nhóm đầu không có đội nào đạt giải, chọn 5 trong số 16 đội không đạt giải thì có <span class="math notranslate nohighlight">\(C^5_{16}\)</span> cách. Lúc này còn lại 15 đội. Chọn 5 đội cho nhóm thứ 2, 5 đội cho nhóm thứ 3 và 5 đội cho nhóm thứ 4 có <span class="math notranslate nohighlight">\(C^5_{15} \cdot C^5_{10} \cdot C^5_5\)</span> cách. Đáp án câu (b) là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    P(B) = \dfrac{C^5_{16} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_{5}}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{91}{323}
+\end{equation*}\]</div>
+<hr class="docutils" />
+<p><strong>Bài 8.</strong> Trong hộp đầu có 2 quả bóng trắng và 3 quả bóng đen, trong hộp thứ hai có 1 trắng và 2 xanh, trong hộp thứ ba có 3 trắng và 1 đỏ. Từ mỗi hộp lấy ngẫu nhiên một quả bóng. Tính xác suất các biến số sau: <span class="math notranslate nohighlight">\(A\)</span> – { chỉ lấy ra một bóng trắng }; <span class="math notranslate nohighlight">\(B\)</span> – { lấy ít nhất một bóng trắng }; <span class="math notranslate nohighlight">\(C\)</span> – { lấy ra các màu khác nhau }.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = (2 + 3) \cdot (1 + 2) \cdot (3 + 1) = 60\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố quả bóng trắng lấy từ hộp 1, 2 và 3. Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<ul class="simple">
+<li><p>Nếu quả bóng trắng lấy từ hộp 1 thì có 2 cách chọn. Ở hộp thứ hai và thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(2 \cdot 1\)</span> cách chọn. Suy ra <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{2 \cdot 2 \cdot 1}{60} = \dfrac{1}{15}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp 2 thì có 1 cách chọn. Ở hộp đầu và hộp thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(3 \cdot 1\)</span> cách. Vậy <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{1 \cdot 3 \cdot 1}{60} = \dfrac{1}{20}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp 3 thì có 3 cách chọn. Ở hộp đầu và hộp thứ hai lấy ra quả khác màu trắng có <span class="math notranslate nohighlight">\(3 \cdot 2\)</span> cách chọn. Vậy <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{3 \cdot 3 \cdot 2}{60} = \dfrac{3}{10}\)</span>.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{1}{15} + \dfrac{1}{20} + \dfrac{3}{10} = \dfrac{5}{12}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(B\)</span> là biến cố lấy ít nhất một bóng trắng nên <span class="math notranslate nohighlight">\(\bar{B}\)</span> là biến cố không lấy ra bóng trắng nào. Khi đó ở hộp 1 có 3 cách chọn (đen), hộp 2 có 2 cách chọn (xanh) và hộp 3 có 1 cách chọn (đỏ). Suy ra <span class="math notranslate nohighlight">\(P(\bar{B}) = \dfrac{3 \cdot 2 \cdot 1}{60} = \dfrac{1}{10}\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(B) = 1 - P(\bar{B}) = \dfrac{9}{10}\)</span>.</p>
+<p>Khi lấy ra ba quả bóng khác màu nhau có các trường hợp theo thứ tự hộp là:</p>
+<ul class="simple">
+<li><p>trắng–xanh–đỏ: có <span class="math notranslate nohighlight">\(2 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen–trắng–đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 1 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen–xanh–trắng: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 3\)</span> cách chọn</p></li>
+<li><p>đen–xanh–đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(C) = \dfrac{2 \cdot 2 \cdot 1 + 3 \cdot 1 \cdot 1 + 3 \cdot 2 \cdot 3 + 3 \cdot 2 \cdot 1}{60} = \dfrac{31}{60}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 9.</strong> Một bộ bài gồm 36 lá. Lấy ngẫu nhiên hai lá. Tính xác suất để hai lá đó có màu đỏ.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = C^2_{26}\)</span>.</p>
+<p>Lấy hai trong <span class="math notranslate nohighlight">\(36/2=18\)</span> lá đỏ có <span class="math notranslate nohighlight">\(C^2_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^2_{18}}{C^2_{26}} = \dfrac{17}{70}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 10.</strong> Trong thùng có 3 bóng đèn hỏng và 7 bóng đèn tốt. Lấy ngẫu nhiên các bóng lần lượt đến khi lấy được 2 bóng tốt thì dừng. Tính xác suất để lấy một nửa số bóng đèn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^5_{10}\)</span>.</p>
+<p>Trong số bốn bóng đèn đầu sẽ có một bóng tốt và 3 bóng hỏng. Bóng đèn thứ 5 sẽ là bóng tốt. Như vậy ta chọn vị trí cho bóng tốt trong 4 vị trí đầu, có 4 cách chọn. Chọn bóng tốt cho vị trí đó có 7 cách chọn. Chọn 3 bóng hỏng cho 3 vị trí còn lại có thứ tự, có <span class="math notranslate nohighlight">\(A^3_3\)</span> cách.</p>
+<p>Chọn bóng đèn tốt cho vị trí thứ 5 có 6 cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{4 \cdot 7 \cdot A^3_3 \cdot 6}{A^5_{10}} = \dfrac{1}{30}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat-tiep-theo">
+<h2><span class="section-number">9.3. </span>Quy tắc cộng và nhân xác suất (tiếp theo)<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo" title="Link to this heading">#</a></h2>
+<p><strong>Bài 1.</strong> Từ một bộ bài lấy ngẫu nhiên lần lượt bốn lá. Tính xác suất để tất cả các lá khác chất nhau? Tính xác suất để tất cả các lá khác số nhau?</p>
+<p><strong>Giải.</strong> Bộ bài có 36 lá (bài Nga) nên có không gian mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{36}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố tất cả các lá khác chất nhau.</p>
+<ul class="simple">
+<li><p>Chọn chất cho lá thứ nhất có 4 cách chọn. Chọn lá thứ nhất có 9 cách chọn (trong chất đó).</p></li>
+<li><p>Chọn chất cho lá thứ hai có 4 cách chọn. Chọn lá thứ hai có 9 cách chọn (trong chất đó).</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_A \rvert = 4! \cdot 9^4\)</span>. Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{\lvert \Omega_A \rvert}{\lvert \Omega \rvert} = \dfrac{729}{6545}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(B\)</span> là biến cố tất cả các lá có số khác nhau.</p>
+<ul class="simple">
+<li><p>Chọn số cho lá thứ nhất có 9 cách chọn. Chọn chất cho lá đó có 4 cách chọn.</p></li>
+<li><p>Chọn số cho lá thứ hai có 8 cách chọn. Chọn chất cho lá đó có 4 cách chọn.</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ  tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_B \rvert = A^4_9 \cdot 4^4\)</span>. Đáp án là <span class="math notranslate nohighlight">\(P(B) = \dfrac{\lvert \Omega_B \rvert}{\lvert \Omega \rvert} = \dfrac{512}{935}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 2.</strong> Trong rổ có 10 quả bóng tennis, 7 quả mới và 3 quả đã qua sử dụng. Lấy ngẫu nhiên 2 quả từ rổ cho trận đấu rồi trả lại. Tới trận đấu thứ hai cũng lấy ngẫu nhiên 2 quả. Tính xác suất để ở trận thứ hai lấy được 2 quả mới.</p>
+<p><strong>Giải.</strong> Sau khi chơi xong trận đầu thì những quả bóng mới sẽ trở thành bóng đã qua sử dụng.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(B\)</span> là biến cố trận thứ hai lấy được 2 quả mới.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span> và <span class="math notranslate nohighlight">\(A_3\)</span> lần lượt là biến cố trận đầu lấy được 2 quả bóng mới, 1 mới 1 đã qua sử dụng và 2 quả đã qua sử dụng. Ba biến cố này hợp thành biến cố đầy đủ cho việc lấy 2 quả ở trận đầu.</p>
+<p>Theo công thức xác suất toàn phần:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    P(B) = P(A_1) P(B \vert A_1) + P(A_2) P(B \vert A_2) + P(A_3) P(B \vert A_3)
+\end{equation*}\]</div>
+<p>Nếu ở trận đầu lấy 2 quả mới, ta có <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>. Sau khi trận đầu kết thúc, số bóng mới là <span class="math notranslate nohighlight">\(7-2=5\)</span> và số bóng đã qua sử dụng là <span class="math notranslate nohighlight">\(3+2=5\)</span> nên <span class="math notranslate nohighlight">\(P(B \vert A_1) = \dfrac{C^2_5}{C^2_{10}} = \dfrac{2}{9}\)</span>.</p>
+<p>Nếu ở trận đầu lấy 1 quả mới và 1 quả đã qua sử dụng, ta có <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{C^1_7 \cdot C^1_3}{C^2_{10}} = \dfrac{7}{15}\)</span>. Sau khi trận đầu kết thúc, số bóng mới là 6 và số bóng đã qua sử dụng là 4 nên <span class="math notranslate nohighlight">\(P(B \vert A_2) = \dfrac{C^2_6}{C^2_{10}} = \dfrac{1}{3}\)</span>.</p>
+<p>Nếu ở trận đầu lấy 2 quả đã qua sử dụng thì <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{C^2_3}{C^2_{10}} = \dfrac{1}{15}\)</span>. Sau khi trận đầu kết thúc, số bóng mới vẫn là 7 và số bóng đã qua sử dụng vẫn là 3 nên <span class="math notranslate nohighlight">\(P(B \vert A_3) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(P(B) = \dfrac{7}{15} \cdot \dfrac{2}{9} + \dfrac{7}{15} \cdot \dfrac{1}{3} + \dfrac{1}{15} \cdot \dfrac{7}{15} = \dfrac{196}{675} \approx 0,29\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 3.</strong> Trên mỗi cánh máy bay có 2 động cơ. Xác suất bị lỗi của mỗi động cơ trong một chuyến bay là <span class="math notranslate nohighlight">\(p\)</span>. Chuyến bay sẽ thành công nếu ở mỗi cách có ít nhất một động cơ hoạt động bình thường. Tính xác suất chuyến bay thành công.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ở một cánh có ít nhất một động cơ hoạt động. Suy ra <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không động cơ nào hoạt động ở cả một cánh.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(\bar{A}) = p^2\)</span> nên <span class="math notranslate nohighlight">\(P(A) = 1-p^2\)</span>. Áp dụng cho hai bên cánh (theo quy tắc nhân) ta có đáp án là <span class="math notranslate nohighlight">\((1-p^2)^2\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Bài 4.</strong> Sinh viên biết 20 trong 30 câu hỏi. Để qua bài thi cần trả lời đúng 2 câu hỏi bắt buộc hoặc trả lời đúng 1 trong 2 câu bắt buộc cộng thêm 1 câu hỏi phụ. Tính xác suất để sinh viên vượt qua bài thi?</p>
+<p><strong>Giải.</strong> Ở đây cần hiểu là sinh viên biết 20 câu trong số 30 câu, 10 câu kia là câu hỏi phụ. Khi đó có hai trường hợp:</p>
+<p>Trường hợp 1 là sinh viên trả lời đúng 2 câu trong số 20 câu sinh viên biết nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}}\)</span>.</p>
+<p>Trường hợp 2 là sinh viên trả lời đúng 1 trong 2 câu bắt buộc (có <span class="math notranslate nohighlight">\(A^2_{20} \cdot 2\)</span> cách chọn) và 1 câu hỏi phụ (10 cách chọn) nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}}\)</span>. Tổng số câu sinh viên trả lời là 3.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}} + \dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}} = \dfrac{152}{203}\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./probability"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Xác suất thống kê</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../discrete-mathematics/group.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Lý thuyết nhóm</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xac-suat-khong-lien-tuc">9.1. Xác suất không liên tục</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quy-tac-cong-va-nhan-xac-suat">9.2. Quy tắc cộng và nhân xác suất</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo">9.3. Quy tắc cộng và nhân xác suất (tiếp theo)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1549 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NSUCRYPTO 2023 &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=80937f47" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contests/2023/nsucrypto-2023';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2024" href="../2024/2024.html" />
+    <link rel="prev" title="Siberian Mathematical Contest 2023" href="siberian-maths-contest-2023.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../linalg/intro.html">4. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../calculus/calculus.html">5. Giải tích</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/partial-derivative.html">5.5. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../calculus/series.html">6. Chuỗi số</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../calculus/differential-equation.html">7. Phương trình vi phân</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../probability/intro.html">8. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../probability/Petrushko.html">9. Курс высшей математики: Теория вероятностей</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/group.html">10. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-intro.html">10.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/symmetric-group.html">10.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-homomorphism.html">10.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/ring-and-field.html">10.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/group-action.html">10.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/galois-theory.html">11. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/number-theory.html">12. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">13. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/partition.html">14. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../discrete-mathematics/combinatoric.html">15. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/boolean.html">16. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-function.html">16.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/weight-boolean.html">16.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-aff-lin.html">16.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-monotone.html">16.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/walsh-hadamard-spectre.html">16.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/boolean-dnf-cnf.html">16.6. Disjunctive và Conjunctive Normal Form</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/analytic-geometry.html">17. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/transformation.html">18. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../geometry/conics.html">19. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brachistochrone/brachistochrone.html">20. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/magma.html">22.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/sms4.html">22.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/AES.html">22.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/toy-cipher.html">23.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/differential-attack/tinydes.html">23.2. Phá mã vi sai trên TinyDES</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/quantum-computing.html">24. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/code-based.html">26. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../boolean/intro.html">29. Giới thiệu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vasilenko/intro.html">30. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vasilenko/discrete-fourier-transform.html">30.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2020/2020.html">2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/2021.html">2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/nsucrypto-2021.html">NSUCRYPTO 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/2022.html">2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/nsucrypto-2022.html">NSUCRYPTO 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2023.html">2023</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="siberian-maths-contest-2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">NSUCRYPTO 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/2024.html">2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/internet-olympiad-2024.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/cryptofox-2024.html">CryptoFox 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ctf/2024/ASISCTF-2024.html">ASIS CTF 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fcontests/2023/nsucrypto-2023.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contests/2023/nsucrypto-2023.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>NSUCRYPTO 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-affine-cipher">Problem 1. Affine cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#giai">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-simple-ideas-for-primes">Problem 2. Simple ideas for primes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3-mixed-hashes">Problem 3. Mixed hashes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4-column-functions">Problem 4*. Column functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binh-luan">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5-primes">Problem 5. Primes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6-an-aggregated-signature">Problem 6**. An aggregated signature</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Đề bài</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-7-a-unique-coding">Problem 7. A unique coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-8-algebraic-cryptanalysis">Problem 8. Algebraic cryptanalysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-9-finite-state-machines">Problem 9**. Finite-state machines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-10-quantum-encryption">Problem 10. Quantum encryption</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-11-antcipher">Problem 11. AntCipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Giải</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nsucrypto-2023">
+<h1>NSUCRYPTO 2023<a class="headerlink" href="#nsucrypto-2023" title="Link to this heading">#</a></h1>
+<section id="problem-1-affine-cipher">
+<h2>Problem 1. Affine cipher<a class="headerlink" href="#problem-1-affine-cipher" title="Link to this heading">#</a></h2>
+<p>Đây là bài 1 của round 2 và được giải bởi bạn Chương.</p>
+<section id="de-bai">
+<h3>Đề bài<a class="headerlink" href="#de-bai" title="Link to this heading">#</a></h3>
+<p>Ta xét bảng chữ cái {A, …, Z, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>} có 29 chữ cái. Ta đánh số A, …, Z từ 0 tới 25, và <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span> là 26, 27, 28.</p>
+<p>Ta sử dụng cryptosystem mã hóa từng khối 2 ký tự, gọi là bigram. Với <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span> là hai ký tự của bigram, thì plaintext sẽ là <span class="math notranslate nohighlight">\(P = 29 x + y\)</span>.</p>
+<p>Mã hóa sử dụng biến đổi affine (giống hệ mã affine) là <span class="math notranslate nohighlight">\(C = a P + b \pmod{841}\)</span>.</p>
+<p>Khi phân tích một đoạn văn bản dài, người ta phát hiện ra rằng các bigram sau xuất hiện nhiều nhất “<span class="math notranslate nohighlight">\(\beta\gamma\)</span>”, “UM” và “LC”. Đồng thời, trong tiếng Anh thì các bigram “TH”, “HE” và “IN” cũng xuất hiện nhiều nhất.</p>
+<p><strong>Q.</strong> Có thể giải mã “KEUDCR” mà không cần khóa hay không? Còn key thì sao?</p>
+</section>
+<section id="giai">
+<h3>Giải<a class="headerlink" href="#giai" title="Link to this heading">#</a></h3>
+<p>Theo thống kê các bigram xuất hiện nhiều nhất trong ciphertext và trong plaintext sẽ khớp nhau. Do đó có thể thấy “TH” mã hóa thành “<span class="math notranslate nohighlight">\(\beta\gamma\)</span>” và “HE” mã hóa thành “LC”. Như vậy ta có hệ phương trình</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} 
+    812 = a \cdot 558 + b \pmod{841} \\ 
+    321 = a \cdot 207 + b \pmod{841}
+\end{align*}\end{split}\]</div>
+<p>Giải hệ ta có <span class="math notranslate nohighlight">\(a = 15, b = 10\)</span>. Đây là key.</p>
+<p>Từ đây chúng ta có thể giải mã thành <strong>CRYPTO</strong> là plaintext ban đầu. Bài này ăn trọn 4/4 điểm.</p>
+</section>
+</section>
+<section id="problem-2-simple-ideas-for-primes">
+<h2>Problem 2. Simple ideas for primes<a class="headerlink" href="#problem-2-simple-ideas-for-primes" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Đề bài<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Chúng ta xem xét một số dãy số bao gồm các số nguyên tố.</p>
+<ul class="simple">
+<li><p><em>Số Fermat</em>, <span class="math notranslate nohighlight">\(F_k = 2^{2^k} + 1\)</span>, với <span class="math notranslate nohighlight">\(k\)</span> bắt đầu từ 0. Ta có các số <span class="math notranslate nohighlight">\(F_0, F_1, F_2, F_3, F_4\)</span> là các số nguyên tố, còn <span class="math notranslate nohighlight">\(F_5\)</span> thì không phải.</p></li>
+<li><p><em>Số Mersenne</em>, <span class="math notranslate nohighlight">\(M_k = 2^k-1\)</span>. Ta có <span class="math notranslate nohighlight">\(M_2, M_3, M_5, M_7\)</span> là các số nguyên tố, trong khi <span class="math notranslate nohighlight">\(M_{11}\)</span> là hợp số. Các số nguyên tố Mersenne là các số dạng <span class="math notranslate nohighlight">\(2^k-1\)</span> với <span class="math notranslate nohighlight">\(k\)</span> là số nguyên tố.</p></li>
+<li><p>Dãy số <span class="math notranslate nohighlight">\(31\)</span>, <span class="math notranslate nohighlight">\(331\)</span>, <span class="math notranslate nohighlight">\(3\,331\)</span>, <span class="math notranslate nohighlight">\(33\,331\)</span>, <span class="math notranslate nohighlight">\(333\,331\)</span>, <span class="math notranslate nohighlight">\(3\,333\,331\)</span>, <span class="math notranslate nohighlight">\(33\,333\,331\)</span> là các số nguyên tố được xây dựng theo quy tắc trên, nhưng số <span class="math notranslate nohighlight">\(333\,333\,331\)</span> là hợp số chia hết cho 17.</p></li>
+</ul>
+<p>Ta nói dãy Fermat trên có <em>sequence primality parameter</em> là 5, dãy Mersenne bằng 4, dãy cuối cùng bằng 7.</p>
+<p><strong>Q.</strong> Xây dựng một dãy bao gồm các số nguyên tố như vậy. Điều kiện quan trọng ở đây là các số hạng được xác định bởi chỉ số của dãy, không phụ thuộc vào các số trước nó.</p>
+</section>
+<section id="id2">
+<h3>Giải<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Bắt đầu với dãy Euler</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f(n) = n^2 + n + 41
+\end{equation*}\]</div>
+<p>Đây là dãy các số nguyên tố với <span class="math notranslate nohighlight">\(n=0, 1, \ldots, 39\)</span> và <span class="math notranslate nohighlight">\(f(40)\)</span> là hợp số. Như vậy đây là dãy nguyên tố độ dài 40.</p>
+<p>Và tất nhiên, dãy “ai cũng biết” thì chỉ được 2 điểm thôi 😅.</p>
+<p>Sau khi tham khảo những thí sinh khác thì có một số cách xây dựng nhằm cải tiến điều này, tham khảo từ <a class="footnote-reference brackets" href="#wolfram" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Nếu ta chuyển dãy trên thành</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    g(n) = f(n-40) = (n-40)^2 + (n-40) + 41 = n^2 - 79 n + 1601
+\end{equation*}\]</div>
+<p>thì thu được dãy số nguyên tố với độ dài 80. Các nhà toán học thế kỉ 20 đã chứng minh được rằng, nếu <span class="math notranslate nohighlight">\(p(x)\)</span> là một đa thức sinh ra dãy số nguyên tố với <span class="math notranslate nohighlight">\(0 \leqslant x \leqslant n\)</span> thì đa thức <span class="math notranslate nohighlight">\(p(n-x)\)</span> cũng vậy.</p>
+<p>Trong bảng, dãy nguyên tố có độ dài lớn nhất là 56 được biểu diễn bởi đa thức</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \frac{1}{4} \left( n^5 - 133 n^4 + 6729 n^3 - 158379 n^2 + 1720294 n - 6823316 \right)
+\end{equation*}\]</div>
+<p>Dựa theo lời giải của team Himanshu Sheoran, Yo Iida và Pranshu Kumar chúng ta có thể sinh một dãy có độ dài bất kì.</p>
+<p>Lời giải dựa trên bài blog của A. W. Walker<a class="footnote-reference brackets" href="#aw" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. Bài blog này phân tích về một bài báo năm 1977 bởi Chang và Lih với tiêu đề <em>Polynomial Representation of Primes</em> nhưng hiện tại không có bản online.</p>
+<p>Bài báo này đưa ra một phương pháp xây dựng đa thức <span class="math notranslate nohighlight">\(F(n)\)</span> bậc <span class="math notranslate nohighlight">\(n\)</span> mà với mọi <span class="math notranslate nohighlight">\(x \in [0, n]\)</span> thì <span class="math notranslate nohighlight">\(F(n)\)</span> đều là số nguyên tố.</p>
+<p>Bài báo có thể được tóm gọn như sau. Xét đa thức</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    F(x) = 1 + \left| \sum_{n=0}^{M} \frac{a_n}{x - n} \prod_{j = 0}^{M} (x - j) \right|
+\end{equation*}\]</div>
+<p>sẽ sinh ra các số nguyên tố với mọi <span class="math notranslate nohighlight">\(x \in [0, M]\)</span> nếu và chỉ nếu <span class="math notranslate nohighlight">\(a_n\)</span> phân biệt và <span class="math notranslate nohighlight">\((a_n \cdot M! + 1)\)</span> là các số nguyên tố. Như vậy ta có một thuật toán đơn giản để bruteforce các đa thức trên.</p>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Thuật toán sinh dãy nguyên tố độ dài <span class="math notranslate nohighlight">\(M\)</span>)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> Độ dài dãy nguyên tố <span class="math notranslate nohighlight">\(M\)</span></p>
+<p><strong>Output:</strong> Đa thức <span class="math notranslate nohighlight">\(F(x)\)</span> cho kết quả là số nguyên tố với mọi <span class="math notranslate nohighlight">\(x \in [0, M]\)</span></p>
+<ol class="arabic simple">
+<li><p>coeffs = [ ] chứa các số hạng <span class="math notranslate nohighlight">\(a_n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(an \gets 1\)</span></p></li>
+<li><p>While chưa đủ <span class="math notranslate nohighlight">\(M+1\)</span> số hạng trong coeffs</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\((an \cdot M! + 1)\)</span> là số nguyên tố</p>
+<ol class="arabic simple">
+<li><p>kết nạp <span class="math notranslate nohighlight">\(an\)</span> vào dãy coeffs</p></li>
+</ol>
+</li>
+<li><p>EndIf</p></li>
+<li><p><span class="math notranslate nohighlight">\(an \gets an + 1\)</span></p></li>
+</ol>
+</li>
+<li><p>EndWhile</p></li>
+</ol>
+</section>
+</div></section>
+</section>
+<section id="problem-3-mixed-hashes">
+<h2>Problem 3. Mixed hashes<a class="headerlink" href="#problem-3-mixed-hashes" title="Link to this heading">#</a></h2>
+</section>
+<section id="id5">
+<h2>Đề bài<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Alice và Bob trao đổi các thông điệp mã hóa. Họ dùng thuật toán mã hóa khối PRESENT với key 80-bit và ECB mode. Ở đây, thông tin được lưu dạng ảnh .ppm.</p>
+<p>Header của file .ppm gồm 3 dòng theo dạng <code class="docutils literal notranslate"><span class="pre">P6\nX\nY\n255</span></code>. Trong đó X và Y là kích thước của ảnh theo chiều ngang và dọc.</p>
+<p>Để đảm bảo an toàn, header sẽ được loại bỏ trước khi encrypt. Để có thể khôi phục header, hash của header sẽ được gửi đi thay vì header. Khi đó 3 phần của header sẽ được ngăn cách bởi dấu cách (space) thay vì newline như trên. Nghĩa là “P6 X Y 255”.</p>
+<p>Bob chuẩn bị 8 ảnh (trong file đính kèm) mà không có header. Bob encrypt 8 ảnh đó với cùng một key theo thuật toán PRESENT và ECB mode. Bob cũng gửi hash của 8 headers đi kèm. Tuy nhiên các hash đã bị trộn lẫn với nhau. Liệu chúng ta có thể khôi phục thông điệp mà Bob muốn gửi Alice?</p>
+<section id="id6">
+<h3>Giải<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Bài này là bài 3 ở round 1 và round 2. Trong thời gian 2 round mình đều giải ra (round 2 chi tiết hơn và trình bày đẹp hơn :v).</p>
+<p>Đề cho một file mẫu là mikky.ppm. Khi phân tích file này mình thấy rằng, nếu gọi <span class="math notranslate nohighlight">\(w\)</span> và <span class="math notranslate nohighlight">\(h\)</span> là độ rộng và độ cao của ảnh (lấy từ header) thì độ dài file không có header là <span class="math notranslate nohighlight">\(3 \cdot w \cdot h\)</span>.</p>
+<p>Sau khi encrypt bằng thuật toán mã hóa khối với ECB mode, độ dài sẽ là <span class="math notranslate nohighlight">\(3 \cdot w \cdot h + pd\)</span>, trong đó <span class="math notranslate nohighlight">\(pd\)</span> là padding. Theo thuật toán PRESENT thì <span class="math notranslate nohighlight">\(0 \leqslant pd \leqslant 8\)</span>.</p>
+<p>Với dự đoán rằng <span class="math notranslate nohighlight">\(w \approx h\)</span>, mình lấy căn bậc hai của độ dài các filel đề cho, và đưa ra dự đoán <span class="math notranslate nohighlight">\(w, h \in [400, 600]\)</span>. Nếu sai thì mình tăng độ rộng khoảng này thôi.</p>
+<p>Tiếp theo, bruteforce <span class="math notranslate nohighlight">\(w\)</span> và <span class="math notranslate nohighlight">\(h\)</span> trong khoảng này, cho tới khi hash “P6 <span class="math notranslate nohighlight">\(x\)</span> <span class="math notranslate nohighlight">\(y\)</span> 255” xuất hiện trong số các hash trên, và</p>
+<div class="math notranslate nohighlight">
+\[0 \leqslant \text{len} (ciphertext) - 3 * w * h \leqslant 8\]</div>
+<p>thì mình lấy <span class="math notranslate nohighlight">\(w\)</span> và <span class="math notranslate nohighlight">\(h\)</span> này. Thế là mình có header.</p>
+<p>Do cả 8 file được encrypt bởi cùng một key PRESENT, và key có 80 bit tương ứng 10 bytes, hay 10 ký tự, nhìn đề mình nhận thấy có chuỗi <code class="docutils literal notranslate"><span class="pre">P6</span> <span class="pre">X</span> <span class="pre">Y</span> <span class="pre">255</span></code> là hợp lý. Như vậy key cho PRESENT là chuỗi <code class="docutils literal notranslate"><span class="pre">P6</span> <span class="pre">X</span> <span class="pre">Y</span> <span class="pre">255</span></code>.</p>
+<p>Cuối cùng, mình giải mã lần lượt từng file với key trên, ghép header tương ứng vào, như vậy là mình giải mã được tất cả file rồi.</p>
+<p>Vậy thông điệp gốc là <code class="docutils literal notranslate"><span class="pre">💔Loveyou</span></code>. Bài này được 5/6 điểm vì không nộp code tính toán header, mất điểm vì chủ quan.</p>
+</section>
+</section>
+<section id="problem-4-column-functions">
+<h2>Problem 4*. Column functions<a class="headerlink" href="#problem-4-column-functions" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>Đề bài<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Alice muốn xây dựng mã đối xứng mạnh bằng việc giải một số bài toán khó.</p>
+<p>Xét <span class="math notranslate nohighlight">\(2^n\)</span> hàm vectorial one-to-one đôi một khác nhau, <span class="math notranslate nohighlight">\(G_i \ : \ \mathbb{F}_2^n \to \mathbb{F}_2^n\)</span>, với <span class="math notranslate nohighlight">\(i = 1, \ldots, 2^n\)</span>. Sử dụng các hàm này, chúng ta xây dựng một ma trận binary đặc biệt và xác định một số tính chất của nó.</p>
+<p>Với <span class="math notranslate nohighlight">\(n=2^m\)</span>, <span class="math notranslate nohighlight">\(m \geqslant 5\)</span>, ta định nghĩa ma trận <span class="math notranslate nohighlight">\(M\)</span> kích thước <span class="math notranslate nohighlight">\(2^n \times n 2^n\)</span> theo quy tắc sau. Hàm thứ <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i = 1, \ldots, 2^n\)</span>, là ghép của các giá trị <span class="math notranslate nohighlight">\(G_i(0, 0, \ldots, 0, 0)\)</span>, <span class="math notranslate nohighlight">\(G_i(0, 0, \ldots, 0, 1)\)</span>, …, <span class="math notranslate nohighlight">\(G_i(1, 1, \ldots, 1, 1)\)</span>. Các cột của <span class="math notranslate nohighlight">\(M\)</span> có thể được xem như các vector của <span class="math notranslate nohighlight">\(n 2^n\)</span> hàm boolean, mỗi hàm <span class="math notranslate nohighlight">\(n\)</span> biến. Ta gọi chúng là <em>column functions</em>.</p>
+<p>Chứng minh hoặc phản bác giả thuyết sau cho ít nhất một giá trị <span class="math notranslate nohighlight">\(m \geqslant 5\)</span>: với mọi cách xây dựng ma trận như trên, tồn tại <span class="math notranslate nohighlight">\(2^{n/2}\)</span> columns functions <span class="math notranslate nohighlight">\(f_1, \ldots, f_{2^{n/2}}\)</span> sao cho tồn tại một hàm boolean nonzero <span class="math notranslate nohighlight">\(f: \mathbb{F}_2^{2^{n/2}} \to \mathbb{F}_2\)</span> thỏa mãn các điều kiện sau:</p>
+<ul class="simple">
+<li><p>với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f(f_1(\bm{x}), f_2(\bm{x}), \ldots, f_{2^{n/2}}(\bm{x})) = 0;
+\end{equation*}\]</div>
+<ul class="simple">
+<li><p>với mọi <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^{2^{n/2}}\)</span>, giá trị <span class="math notranslate nohighlight">\(f(\bm{y})\)</span> có thể tính với không quá <span class="math notranslate nohighlight">\(2^{n/2}\)</span> phép cộng và phép nhân modulo 2.</p></li>
+</ul>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(m=1\)</span> thì <span class="math notranslate nohighlight">\(n=2\)</span> và ta xây dựng ma trận <span class="math notranslate nohighlight">\(4 \times 8\)</span>. Xét các hàm boolean vectorial one-to-one <span class="math notranslate nohighlight">\(G_1, G_2, G_3, G_4\)</span> từ <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> xác định bởi các giá trị <span class="math notranslate nohighlight">\((0, 1, 2, 3)\)</span>, <span class="math notranslate nohighlight">\((0, 2, 1, 3)\)</span>, <span class="math notranslate nohighlight">\((0, 3, 1, 2)\)</span> và <span class="math notranslate nohighlight">\((3, 2, 1, 0)\)</span>. Khi đó ma trận là</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+        0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
+        0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+        1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Ta cần tìm <span class="math notranslate nohighlight">\(2^{n/2} = 2\)</span> column functions. Gọi <span class="math notranslate nohighlight">\(f_1\)</span> và <span class="math notranslate nohighlight">\(f_2\)</span> là hàm bool ứng với cột đầu và cột thứ hai của ma trận, và <span class="math notranslate nohighlight">\(f(x_1, x_2) = x_1 \oplus x_2\)</span>. Khi đó <span class="math notranslate nohighlight">\(f(f_1(\bm{x}), f_2(\bm{x})) \equiv 0\)</span> vì <span class="math notranslate nohighlight">\(f_1(\bm{x}) = f_2(\bm{x}) = 0\)</span> với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>.</p>
+<p>Ta cũng thấy rằng có thể chọn <span class="math notranslate nohighlight">\(f_1\)</span> và <span class="math notranslate nohighlight">\(f_2\)</span> là cột 5 và 6 của ma trận. Khi đó, đặt <span class="math notranslate nohighlight">\(f(x_1, x_2) = x_1 x_2\)</span> thì <span class="math notranslate nohighlight">\(f(f_1(\bm{x}), f_2(\bm{x})) \equiv 0\)</span> vì <span class="math notranslate nohighlight">\(f_1(\bm{x}) \neq f_2(\bm{x})\)</span> với mọi <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^n\)</span>.</p>
+<p>Trong cả hai trường hợp ta chỉ cần đúng một phép tính. Lưu ý rằng hàm <span class="math notranslate nohighlight">\(f\)</span> thỏa <span class="math notranslate nohighlight">\(f_1\)</span> và <span class="math notranslate nohighlight">\(f_2\)</span> được gọi là <em>algebraically dependent</em>.</p>
+</section>
+</div></section>
+<section id="id8">
+<h3>Giải<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Cách giải của mình không đúng hoàn toàn nên chỉ được 1/8. Dưới đây trình bày cách giải của đội Robin Jadoul, Jack Pope và Esrever Yu được 8/8 điểm.</p>
+<p>Giả thuyết trong đề bài đúng với <span class="math notranslate nohighlight">\(m\)</span> lớn. Ý tưởng chính là chúng ta cố định các cột sẽ chọn, có một số lượng lũy thừa các hàm <span class="math notranslate nohighlight">\(f\)</span> (rất rất lớn) nhưng chỉ có số lượng đa thức các hàng (ít lớn hơn 😂), do đó chúng ta có thể chọn hàm <span class="math notranslate nohighlight">\(f\)</span> triệt tiêu tất cả hàng.</p>
+<div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho ma trận binary <span class="math notranslate nohighlight">\(M\)</span> kích thước <span class="math notranslate nohighlight">\(2^n \times n 2^n\)</span>. Với <span class="math notranslate nohighlight">\(n+1\)</span> column functions bất kì, tồn tại một hàm nonzero <span class="math notranslate nohighlight">\(f: \mathbb{F}_2^{n+1} \to \mathbb{F}_2\)</span> triệt tiêu trên các column functions và sử dụng nhiều nhất <span class="math notranslate nohighlight">\(2n + 1\)</span> toán tử cộng và nhân.</p>
+</section>
+</div><div class="danger admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Gọi <span class="math notranslate nohighlight">\(f_1, f_2, \ldots, f_{n+1}\)</span> là các column functions. Đặt</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    S = \{ (f_1(\bm{x}), f_2(\bm{x}), \ldots, f_{n+1}(\bm{x})) \in \mathbb{F}_2^{n+1} : \bm{x} \in \mathbb{F}_2^n \}
+\end{equation*}\]</div>
+<p>là tập hợp các bộ giá trị từ các column functions. Vì <span class="math notranslate nohighlight">\(\lvert S \rvert &lt; \lvert \mathbb{F}_2^{n+1} \rvert\)</span>, ta có thể chọn vector <span class="math notranslate nohighlight">\(\bm{z} = (z_1, \ldots, z_{n+1}) \in \mathbb{F}_2^{n+1} \setminus S\)</span>. Từ đây ta định nghĩa hàm <span class="math notranslate nohighlight">\(f\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f(x_1, \ldots, x_{n+1}) = (x_1 \oplus (z_1 \oplus 1)) \cdot (x_2 \oplus (z_2 \oplus 1)) \cdots (x_{n+1} \oplus (z_{n+1} \oplus 1))
+\end{equation*}\]</div>
+<p>Lúc này, <span class="math notranslate nohighlight">\(f\)</span> cho output là 1 chỉ khi <span class="math notranslate nohighlight">\(z\)</span> là input (?), do đó với mọi <span class="math notranslate nohighlight">\(\bm{y} \in S\)</span> thì <span class="math notranslate nohighlight">\(f(\bm{y}) = 0\)</span>.</p>
+<p>Đối với số lượng phép tính, với mọi <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(z_i \oplus 1\)</span> là hằng số nên ta không xét đến khi tính số lượng phép tính cho hàm <span class="math notranslate nohighlight">\(f\)</span>. Dựa trên vector <span class="math notranslate nohighlight">\(\bm{z}\)</span>, có tối đa <span class="math notranslate nohighlight">\(n+1\)</span> phép cộng (tương ứng <span class="math notranslate nohighlight">\(x_i \oplus (z_i \oplus 1)\)</span>) và <span class="math notranslate nohighlight">\(n\)</span> phép nhân <span class="math notranslate nohighlight">\(n+1\)</span> hạng tử với nhau. Vì vậy số phép tính tối đa là <span class="math notranslate nohighlight">\(2n+1\)</span>.</p>
+</div>
+<div class="proof corollary admonition" id="corollary-3">
+<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Giả thuyết trên đúng với mọi <span class="math notranslate nohighlight">\(m \geqslant 4\)</span>.</p>
+</section>
+</div><div class="danger admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Theo định lý trên ta có <span class="math notranslate nohighlight">\(f\)</span> (bài toán yêu cầu hàm <span class="math notranslate nohighlight">\(f\)</span> lấy <span class="math notranslate nohighlight">\(2^{n/2}\)</span> input. Tuy nhiên chúng ta có thể thêm các dummy input miễn là số lượng cột không lớn hơn <span class="math notranslate nohighlight">\(n+1\)</span> - mục tiêu ban đầu). Bây giờ ta chỉ cần chặn lại số lượng cột mà ta cần và số lượng phép tính.</p>
+<p>Với số lượng cột, ta cần <span class="math notranslate nohighlight">\(n + 1 \leqslant 2^{n/2}\)</span>. Với số lượng phép tính, ta cần <span class="math notranslate nohighlight">\(2n + 1 \leqslant 2^{n/2}\)</span>. Kết hợp cả hai ta có <span class="math notranslate nohighlight">\(n \geqslant 9\)</span>, tương đương với <span class="math notranslate nohighlight">\(m \geqslant 4\)</span>.</p>
+</div>
+</section>
+<section id="binh-luan">
+<h3>Bình luận<a class="headerlink" href="#binh-luan" title="Link to this heading">#</a></h3>
+<p>Về tổng thể cách giải của team kia hợp lý trừ phần mình đánh dấu, chưa hiểu lắm khi <span class="math notranslate nohighlight">\(\bm{z}\)</span> là input nghĩa là sao.</p>
+<p>Thêm nữa, chưa có cơ sở để nghĩ ra bài giải này. Có vẻ như Esrever đã rất căng não để giải ra 😅.</p>
+<p><strong>UPDATE.</strong> Ý nghĩa của phần đánh dấu (?) là do phép tính</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    f(x_1, \ldots, x_{n+1}) = (x_1 \oplus (z_1 \oplus 1)) \cdot (x_2 \oplus (z_2 \oplus 1)) \cdots (x_{n+1} \cdot (z_{n+1} \oplus 1))
+\end{equation*}\]</div>
+<p>Kết quả phép tính ra 1 khi vì chỉ khi tất cả hạng tử bằng 1. Nói cách khác <span class="math notranslate nohighlight">\(x_i \oplus (z_i \oplus 1) = 1\)</span> với mọi <span class="math notranslate nohighlight">\(1 \leqslant i \leqslant n+1\)</span>.</p>
+<p>Điều này tương đương với <span class="math notranslate nohighlight">\(x_i = z_i\)</span> với mọi <span class="math notranslate nohighlight">\(1 \leqslant i \leqslant n+1\)</span>. Nhưng điều này vô lý vì khi đó <span class="math notranslate nohighlight">\(\bm{x} \equiv \bm{z}\)</span> mà hai vector này nằm ở hai tập rời nhau.</p>
+<p>Do đó kết quả hàm <span class="math notranslate nohighlight">\(f\)</span> luôn là <span class="math notranslate nohighlight">\(0\)</span>. Ta có điều phải chứng minh.</p>
+</section>
+</section>
+<section id="problem-5-primes">
+<h2>Problem 5. Primes<a class="headerlink" href="#problem-5-primes" title="Link to this heading">#</a></h2>
+<p>Đây là bài 5 của round 2 và được giải bởi một bạn khác trong team.</p>
+<section id="id9">
+<h3>Đề bài<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Marcus chọn hai số nguyên tố lớn <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> rồi tính <span class="math notranslate nohighlight">\(n = p \cdot q\)</span> và <span class="math notranslate nohighlight">\(m = p + q\)</span>. Sau đó số <span class="math notranslate nohighlight">\(n \cdot m\)</span> được sử dụng trong cryptosystem.</p>
+<p>Khi test Marcus thấy các số <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> cho tích <span class="math notranslate nohighlight">\(n \cdot m\)</span> kết thúc bởi 2023. Điều đó khả thi không?</p>
+</section>
+<section id="id10">
+<h3>Giải<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Do <span class="math notranslate nohighlight">\(p\)</span> và <span class="math notranslate nohighlight">\(q\)</span> là các số nguyên tố lớn nên chúng lẻ. Suy ra <span class="math notranslate nohighlight">\(m = p + q\)</span> là số chẵn, nên tích <span class="math notranslate nohighlight">\(n \cdot m\)</span> cũng là số chẵn.</p>
+<p>Số chẵn kết thúc bởi 0, 2, 4, 6, 8 nên không thể kết thúc bởi 3. Do đó điều này không thể xảy ra.</p>
+</section>
+</section>
+<section id="problem-6-an-aggregated-signature">
+<h2>Problem 6**. An aggregated signature<a class="headerlink" href="#problem-6-an-aggregated-signature" title="Link to this heading">#</a></h2>
+<p>Bài này không biết làm 😅.</p>
+<section id="id11">
+<h3>Đề bài<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Trong một tổ chức quốc tế lớn, gọi là <strong>NSUCRYPTO association</strong>, mọi người quyết định tổ chức một tờ báo thông tin (news journal) trong lĩnh vực mật mã. Tổ chức muốn rằng, tin tức chỉ được công bố khi đã được kiểm duyệt bởi một nhóm lớn các nhà mật mã. Vì vậy, 10 000 chuyên gia mật mã đã được mời tới làm biên tập cho tờ báo.</p>
+<p>Quy định công bố như sau. Tin tức được công bố khi nó được ký bởi tất cả các thành viên biên tập. Tuy nhiên các nhà mật mã không rảnh để thu thập 10 000 chữ ký cá nhân (gặp mình thì mình cũng không muốn 😅). Do đó mọi người muốn một chữ ký postquantum dùng chung mà không thể chia nhỏ ra các chữ ký cá nhân.</p>
+<p>Yêu cầu là cần xây dựng mô hình chữ ký thỏa mãn các yêu cầu sau:</p>
+<ol class="arabic simple">
+<li><p>kích thước chữ ký không quá lớn, có thể hơn vài kilobytes;</p></li>
+<li><p>kích thước public key (để kiểm tra chữ ký) là nhỏ. Kích thước của key nên là cố định (hoặc gần cố định) kể cả khi số lượng chuyên gia tăng lên, ví dụ 20 000;</p></li>
+<li><p>việc kiểm tra chữ ký tốn không quá 2 phút;</p></li>
+<li><p>chữ ký có thể chống lại các tấn công trên máy tính lượng tử.</p></li>
+</ol>
+</section>
+</section>
+<section id="problem-7-a-unique-coding">
+<h2>Problem 7. A unique coding<a class="headerlink" href="#problem-7-a-unique-coding" title="Link to this heading">#</a></h2>
+<p>Bài này khi nhìn đề thì “có vẻ” câu hỏi Q2 là trường hợp nhỏ hơn của Q1. Mình giải Q2 (không chắc đúng hoàn toàn) nên lời giải sau đây áp dụng cho cả Q1 và Q2.</p>
+<section id="id12">
+<h3>Đề bài<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Xét binary error-correcting code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> với độ dài <span class="math notranslate nohighlight">\(n\)</span>. Code này chỉ đơn giản là tập con của <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> thôi và ta truyền một phần tử của code này qua các kênh truyền.</p>
+<p>Khi đi qua các kênh truyền các bit có thể bị sai, dẫn tới bị đảo bit. Khi nhận được vector <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^n\)</span>, ta sẽ decode thành một phần tử thuộc <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> mà có khoảng cách gần <span class="math notranslate nohighlight">\(\bm{y}\)</span> nhất, nói cách khác là Hamming weight ngắn nhất.</p>
+<p>Xét cơ chế decode maximal-likelihood. Giả sử ta nhận được <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^n\)</span>, ta muốn xét các trường hợp lỗi xảy ra ít nhất, gọi là <span class="math notranslate nohighlight">\(d_{\bm{y}}\)</span>, nghĩa là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    d_{\bm{y}} = \min_{\bm{x} \in \mathcal{C}} wt(\bm{x}, \bm{y})
+\end{equation*}\]</div>
+<p>Tiếp theo, đặt <span class="math notranslate nohighlight">\(\mathcal{D} (\bm{y}) = \{ \bm{x} \in \mathcal{C} : wt(\bm{x}, \bm{y}) = d_{\bm{y}} \}\)</span>. Cuối cùng ta decode <span class="math notranslate nohighlight">\(\bm{y}\)</span> thành phần tử <span class="math notranslate nohighlight">\(\bm{x}\)</span> nào đó trong <span class="math notranslate nohighlight">\(\mathcal{D}(\bm{y})\)</span>.</p>
+<p>Chúng ta quan tâm tới các trường hợp code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> khiến <span class="math notranslate nohighlight">\(\lvert \mathcal{D}(\bm{y}) \rvert = 1\)</span> với mọi <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^n\)</span>. Nói cách khác khi nhận được <span class="math notranslate nohighlight">\(\bm{y}\)</span> bất kì của <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span> ta có thể decode thành một dạng duy nhất.</p>
+<p><strong>Q1.</strong> Code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> như nào thì thỏa mãn tính chất này?</p>
+<p><strong>Q2.</strong> Code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> như nào thỏa mãn tính chất này và là không gian tuyến tính con của <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>?</p>
+</section>
+<section id="id13">
+<h3>Giải<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>Đầu tiên mình có nhận xét (khá rõ ràng) sau đây:</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Với mọi <span class="math notranslate nohighlight">\(n\)</span>, code <span class="math notranslate nohighlight">\(\mathcal{C} \equiv \mathbb{F}_2^n\)</span> thỏa mãn tính chất trên.</p>
+</section>
+</div><p>Chúng ta có thể thấy rằng với mọi <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^n\)</span> nhận được thì sẽ decode thành chính nó trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>.</p>
+<p>Tiếp theo, ta xét nửa trên của <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>. Trong hệ thập phân thì đó là các số từ <span class="math notranslate nohighlight">\(0\)</span> tới <span class="math notranslate nohighlight">\(2^{n-1} - 1\)</span> và có dạng</p>
+<div class="math notranslate nohighlight">
+\[\bm{x} = (0, x_1, x_2, \ldots, x_{n-1}).\]</div>
+<p>Nói cách khác, code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là tập hợp</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{C} = \{ \bm{x} = (0, x_1, x_2, \ldots, x_{n-1}): x_i \in \mathbb{F}_2 \}.\]</div>
+<p>Code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> này thỏa mãn tính chất trên và mình sẽ chứng minh ngay sau đây.</p>
+<div class="danger admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Giả sử ta nhận được <span class="math notranslate nohighlight">\(\bm{y} \in \mathbb{F}_2^n\)</span>. Ta có hai trường hợp:</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\(\bm{y} = (0, y_1, y_2, \ldots, y_{n-1})\)</span>, hay nói cách khác biểu diễn thập phân của <span class="math notranslate nohighlight">\(\bm{y}\)</span> là từ <span class="math notranslate nohighlight">\(0\)</span> tới <span class="math notranslate nohighlight">\(2^{n-1} - 1\)</span>, thì <span class="math notranslate nohighlight">\(\bm{y}\)</span> được decode thành chính nó trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>. Khi này <span class="math notranslate nohighlight">\(d_{\bm{y}} = 0\)</span> nhỏ nhất và không có vector nào khác cho Hamming weight bằng <span class="math notranslate nohighlight">\(0\)</span> trừ chính nó.</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(\bm{y} = (1, y_1, y_2, \ldots, y_{n-1})\)</span>, hay nói cách khác biểu diễn thập phân của <span class="math notranslate nohighlight">\(\bm{y}\)</span> là từ <span class="math notranslate nohighlight">\(2^{n-1}\)</span> tới <span class="math notranslate nohighlight">\(2^n - 1\)</span>, thì <span class="math notranslate nohighlight">\(\bm{y}\)</span> được decode thành <span class="math notranslate nohighlight">\(\bm{x} = (0, y_1, y_2, \ldots, y_{n-1})\)</span> trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>. Khi này <span class="math notranslate nohighlight">\(d_{\bm{y}} = 1\)</span> nhỏ nhất vì khác mỗi bit đầu tiên và cũng không có vector nào khác cho Hamming weight bằng <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+</ul>
+</div>
+<p>Tiếp theo, mình viết các vector trong <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> thành các hàng của 1 ma trận <span class="math notranslate nohighlight">\(2^{n-1} \times n\)</span>. Gọi <span class="math notranslate nohighlight">\(A\)</span> là ma trận hoán vị các cột của ma trận <span class="math notranslate nohighlight">\(2^{n-1} \times n\)</span> đó. Khi đó <span class="math notranslate nohighlight">\(A\)</span> là ma trận có tính chất: trên mỗi hàng và trên mỗi cột có đúng một phần tử (bằng 1) và ma trận <span class="math notranslate nohighlight">\(A\)</span> khả nghịch. Ví dụ, với <span class="math notranslate nohighlight">\(n=4\)</span>, ma trận để hoán vị cột 2 với cột 4 là <span class="math notranslate nohighlight">\(\begin{pmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix}\)</span>.</p>
+<p>Khi đó, nếu mình nhân ma trận <span class="math notranslate nohighlight">\(2^{n-1} \times n\)</span> của code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> với bất kì ma trận <span class="math notranslate nohighlight">\(A\)</span> nào như vậy thì code <span class="math notranslate nohighlight">\(\mathcal{C}'\)</span> nhận được cũng thỏa mãn tính chất trên.</p>
+<div class="proof example admonition" id="example-5">
+<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(n=4\)</span> thì code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> gồm các vector</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{C} = \{ 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111 \}\]</div>
+</section>
+</div><p>Với ma trận <span class="math notranslate nohighlight">\(A\)</span> hoán vị cột 2 và 4 như trên ta có
+$<span class="math notranslate nohighlight">\(
+\begin{equation*}
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 \\
+        0 &amp; 0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 1 &amp; 1 \\
+        0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 &amp; 1 \\
+        0 &amp; 1 &amp; 1 &amp; 0 \\
+        0 &amp; 1 &amp; 1 &amp; 1 
+    \end{pmatrix} \cdot 
+    \begin{pmatrix}
+        1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 \\ 
+        0 &amp; 0 &amp; 1 &amp; 0 \\ 
+        0 &amp; 1 &amp; 0 &amp; 0 
+    \end{pmatrix} = 
+    \begin{pmatrix} 
+        0 &amp; 0 &amp; 0 &amp; 0 \\ 
+        0 &amp; 1 &amp; 0 &amp; 0 \\ 
+        0 &amp; 0 &amp; 1 &amp; 0 \\ 
+        0 &amp; 1 &amp; 1 &amp; 0 \\ 
+        0 &amp; 0 &amp; 0 &amp; 1 \\ 
+        0 &amp; 1 &amp; 0 &amp; 1 \\ 
+        0 &amp; 0 &amp; 1 &amp; 1 \\ 
+        0 &amp; 1 &amp; 1 &amp; 1
+    \end{pmatrix} = \mathcal{C}'
+\end{equation*}\)</span>$</p>
+<p>Bây giờ mình sẽ chứng minh rằng với mọi ma trận <span class="math notranslate nohighlight">\(A\)</span> hoán vị các cột như vậy thì code <span class="math notranslate nohighlight">\(\mathcal{C}'\)</span> cũng thỏa mãn tính chất.</p>
+<div class="danger admonition">
+<p class="admonition-title"><strong>Chứng minh</strong></p>
+<p>Đặt</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \mathcal{C} = \{ (0, x_1, x_2, \ldots, x_{n-1}), x_i \in \mathbb{F}_2 \}
+\end{equation*}\]</div>
+<p>Gọi <span class="math notranslate nohighlight">\(A\)</span> là ma trận hoán vị cột kích thước <span class="math notranslate nohighlight">\(n \times n\)</span>. Khi đó ánh xạ</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    A: \mathbb{F}_2^n \to \mathbb{F}_2^n, \quad \bm{y} \to \bm{y} \cdot A
+\end{equation*}\]</div>
+<p>là song ánh do <span class="math notranslate nohighlight">\(A\)</span> là ma trận khả nghịch. Khi đó xét code</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}\mathcal{C}' = \{ \bm{x} \cdot A: \bm{x} \in \mathcal{C} \}
+\end{equation*}\]</div>
+<p>Mình vẫn có hai trường hợp.</p>
+<p><strong>Trường hợp 1.</strong> Với <span class="math notranslate nohighlight">\(\bm{y} = (0, y_1, y_2, \ldots, y_{n-1}) \in \mathbb{F}_2^n\)</span> từ <span class="math notranslate nohighlight">\(0\)</span> tới <span class="math notranslate nohighlight">\(2^{n-1}-1\)</span> như trên. Xét <span class="math notranslate nohighlight">\(\bm{y}' = \bm{y} \cdot A\)</span>.</p>
+<p>Khi đó, với <span class="math notranslate nohighlight">\(\bm{x} = (0, y_1, y_2, \ldots, y_{n-1}) \in \mathcal{C}\)</span>, ta có <span class="math notranslate nohighlight">\(\bm{x}' = \bm{x} \cdot A \in \mathcal{C}'\)</span>. Từ đây suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    wt(\bm{x}' \oplus \bm{y}') = wt((\bm{x} \cdot A) \oplus (\bm{y} \cdot A)) = wt((\bm{x} \oplus \bm{y}) \cdot A) = wt(\bm{0} \cdot A) = 0
+\end{equation*}\]</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(\bm{0} = (0, 0, \ldots, 0) \in \mathbb{F}_2^n\)</span>.</p>
+<p>Nói cách khác <span class="math notranslate nohighlight">\(d_{\bm{y}'} = 0\)</span> và có duy nhất một vector <span class="math notranslate nohighlight">\(\bm{x}'\)</span> được định nghĩa như trên thỏa mãn. Do đó <span class="math notranslate nohighlight">\(\lvert \mathcal{D}(\bm{y}') \rvert = 1\)</span>.</p>
+<p><strong>Trường hợp 2.</strong> Với <span class="math notranslate nohighlight">\(\bm{y} = (1, y_1, y_2, \ldots, y_{n-1}) \in \mathbb{F}_2^n\)</span> từ <span class="math notranslate nohighlight">\(2^{n-1}\)</span> tới <span class="math notranslate nohighlight">\(2^n-1\)</span> như trên. Ta cũng xét <span class="math notranslate nohighlight">\(\bm{y}' = \bm{y} \cdot A\)</span>.</p>
+<p>Khi đó, với <span class="math notranslate nohighlight">\(\bm{x} = (0, y_1, y_2, \ldots, y_{n-1}) \in \mathcal{C}\)</span>, ta cũng có <span class="math notranslate nohighlight">\(\bm{x}' = \bm{x} \cdot \in \mathcal{C}'\)</span>. Từ đây ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    wt(\bm{x}' \oplus \bm{y}') = wt((\bm{x} \cdot A) \oplus (\bm{y} \cdot A)) = wt((\bm{x} \oplus \bm{y}) \cdot A) = wt((1, 0, 0, \ldots, 0) \cdot A) = 1
+\end{equation*}\]</div>
+<p>Ở phép nhân vector <span class="math notranslate nohighlight">\((1, 0, \ldots, 0)\)</span> với ma trận <span class="math notranslate nohighlight">\(A\)</span>, vì ma trận <span class="math notranslate nohighlight">\(A\)</span> chỉ có duy nhất một cột có dạng <span class="math notranslate nohighlight">\((1, 0, \ldots, 0)^T\)</span> nên kết quả phép nhân là một vector có đúng một phần tử 1, còn lại là 0.</p>
+<p>Nói cách khác <span class="math notranslate nohighlight">\(d_{\bm{y}'} = 1\)</span> và có duy nhất một vector <span class="math notranslate nohighlight">\(\bm{x}'\)</span> được định nghĩa như trên thỏa mãn. Do đó <span class="math notranslate nohighlight">\(\lvert \mathcal{D}(\bm{y}') \rvert = 1\)</span>.</p>
+<p>Như vậy ta đã chứng minh xong.</p>
+</div>
+<p>Hoàn toàn tương tự, khi code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> là các vector bắt đầu với hai số 0 thì ta lần lượt xét <span class="math notranslate nohighlight">\(\bm{y}\)</span> trong các khoảng <span class="math notranslate nohighlight">\([0, 2^{n-2}-1]\)</span>, <span class="math notranslate nohighlight">\([2^{n-2}, 2^{n-1}-1]\)</span>, <span class="math notranslate nohighlight">\([2^{n-1}, 2^{n-1} + 2^{n-2}-1]\)</span>, <span class="math notranslate nohighlight">\([2^{n-1} + 2^{n-2} - 1, 2^n-1]\)</span>. Nghĩa là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \mathcal{C} = \{ \bm{x} = (0, 0, x_1, x_2, \ldots, x_{n-2}: x_i \in \mathbb{F}_2^n) \}
+\end{equation*}\]</div>
+<p>Khi đó ta xét các vector <span class="math notranslate nohighlight">\(\bm{y}\)</span> có dạng:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bm{y} = (0, 0, y_1, y_2, \ldots, y_{n-2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{y} = (0, 1, y_1, y_2, \ldots, y_{n-2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{y} = (1, 0, y_1, y_2, \ldots, y_{n-2})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{y} = (1, 1, y_1, y_2, \ldots, y_{n-2})\)</span></p></li>
+</ul>
+<p>Theo quy nạp thì code <span class="math notranslate nohighlight">\(C\)</span> bắt đầu với <span class="math notranslate nohighlight">\(i\)</span> số 0 đều đúng, <span class="math notranslate nohighlight">\(0 \leqslant i \leqslant n\)</span>. Nghĩa là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \mathcal{C} = \{ \bm{x} = (0, \ldots, 0, x_1, x_2, \ldots, x_{n-i}): x_i \in \mathbb{F}_2 \}
+\end{equation*}\]</div>
+<p>Sau đó chúng ta lại áp dụng phép nhân với ma trận hoán vị cột <span class="math notranslate nohighlight">\(A\)</span> như bên trên thì các code <span class="math notranslate nohighlight">\(\mathcal{C}'\)</span> cũng thỏa mãn.</p>
+<p>Vấn đề ở đây là, những code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> như vậy là không gian vector sinh bởi <span class="math notranslate nohighlight">\(i\)</span> vector (<span class="math notranslate nohighlight">\(0 \leqslant i \leqslant n\)</span>) trong các vector sau:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \bm{v}_1 &amp; = (1, 0, 0, \ldots, 0, 0) \\ 
+    \bm{v}_2 &amp; = (0, 1, 0, \ldots, 0, 0) \\ 
+    \bm{v}_3 &amp; = (0, 0, 1, \ldots, 0, 0) \\ 
+    \cdots &amp; = \cdots \\ 
+    \bm{v}_n &amp; = (0, 0, 0, \ldots, 0, 1)
+\end{align*}\end{split}\]</div>
+<p>Số cách chọn <span class="math notranslate nohighlight">\(i\)</span> vector từ <span class="math notranslate nohighlight">\(n\)</span> vector là</p>
+<div class="math notranslate nohighlight">
+\[C_n^0 + C_n^1 + \ldots + C_n^n = 2^n \, \text{cách}.\]</div>
+<p>Nói cách khác có <span class="math notranslate nohighlight">\(2^n\)</span> code <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> thỏa tính chất đề bài và là không gian tuyến tính của <span class="math notranslate nohighlight">\(\mathbb{F}_2^n\)</span>.</p>
+<div class="proof example admonition" id="example-6">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<section class="example-content" id="proof-content">
+<p>Với <span class="math notranslate nohighlight">\(n=3\)</span> thì các code sau thỏa mãn tính chất</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; \mathcal{C}_1 = \{ 000 \}, \\
+    &amp; \mathcal{C}_2 = \{ 000, 001 \}, \\
+    &amp; \mathcal{C}_3 = \{ 000, 010 \}, \\
+    &amp; \mathcal{C}_4 = \{ 000, 100 \}, \\
+    &amp; \mathcal{C}_5 = \{ 000, 001, 010, 011 \}, \\
+    &amp; \mathcal{C}_6 = \{ 000, 001, 100, 101 \}, \\
+    &amp; \mathcal{C}_7 = \{ 000, 010, 100, 110 \}, \\
+    &amp; \mathcal{C}_8 = \{ 000, 001, 010, 011, 100, 101, 110, 111 \}
+\end{align*}\end{split}\]</div>
+</section>
+</div></section>
+<section id="id14">
+<h3>Bình luận<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Đối với Q1 có thể thấy rằng bất cứ code nào chỉ chứa đúng một vector sẽ thỏa mãn điều kiện. Lý do là vì bất cứ <span class="math notranslate nohighlight">\(\bm{y}\)</span> nào được gửi tới cũng sẽ decode ra vector đó.</p>
+<p>Bài này mình được 6/12 điểm vì đưa ra cách xây dựng tốt, trình bày đẹp.</p>
+</section>
+</section>
+<section id="problem-8-algebraic-cryptanalysis">
+<h2>Problem 8. Algebraic cryptanalysis<a class="headerlink" href="#problem-8-algebraic-cryptanalysis" title="Link to this heading">#</a></h2>
+<p>Bài này là bài 7 ở round 1 và là bài 8 ở round 2. Bài này mình giải khá qua loa ở round 1 và được giải đầy đủ, rõ ràng hơn bởi người đồng đội vip pro Chương ở round 2.</p>
+<section id="id15">
+<h3>Đề bài<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Bob muốn xây dựng stream cipher <strong>BOB-0.1</strong>.</p>
+<p>Bob sử dụng một binary key độ dài 8 là <span class="math notranslate nohighlight">\(K = (k_1, \ldots, k_8)\)</span>. Sau đó anh ấy sinh ra dãy nhị phân <span class="math notranslate nohighlight">\(\beta\)</span> theo quy tắc:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_n = k_n\)</span> khi <span class="math notranslate nohighlight">\(n = 1, 2, \ldots, 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_n = \beta_{n-1} \oplus \beta_{n-8}\)</span> khi <span class="math notranslate nohighlight">\(n \geqslant 9\)</span></p></li>
+</ul>
+<p>Sau đó Bob sinh dãy nhị phân <span class="math notranslate nohighlight">\(\gamma\)</span> dùng trong phép XOR với plaintext. Dãy <span class="math notranslate nohighlight">\(\gamma\)</span> được tạo bởi quy tắc <span class="math notranslate nohighlight">\(\gamma_n = \beta_n \cdot \beta_{n+2} \oplus \beta_{n+7}\)</span> với <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>.</p>
+<p>Alice chặn được 8 bit của <span class="math notranslate nohighlight">\(\gamma\)</span> sau khi để lỡ 1200 bit. Các bit đó là <code class="docutils literal notranslate"><span class="pre">00100001</span></code>. Liệu Alice có thể tìm lại được key <span class="math notranslate nohighlight">\(K\)</span> ban đầu không?</p>
+</section>
+<section id="id16">
+<h3>Giải<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p>Độ dài <span class="math notranslate nohighlight">\(K\)</span> là 8 bit, nếu chúng ta brutefore <span class="math notranslate nohighlight">\(K = (k_1, \ldots, k_8)\)</span> rồi sinh ra 1208 bit <span class="math notranslate nohighlight">\(\gamma\)</span> theo quy tắc trên và so sánh xem <span class="math notranslate nohighlight">\(\gamma_{1201}, \ldots, \gamma_{1208}\)</span> nào khớp với 8 bit trên thì ta có thể biết được <span class="math notranslate nohighlight">\(K\)</span> ban đầu là gì.</p>
+<p>Và, bất ngờ chưa, có tới hai trường hợp <span class="math notranslate nohighlight">\(K\)</span> thỏa mãn :v :v</p>
+<p>Bây giờ thì chúng ta cần xem xem tại sao lại có hai trường hợp thỏa mãn.</p>
+<p>Cùng nhau khai triển <span class="math notranslate nohighlight">\(\beta_{n+1}, \ldots, \beta_{n+8}\)</span> theo <span class="math notranslate nohighlight">\((\beta_{n-7}, \ldots, \beta_n)\)</span> nào.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+1} = \beta_{n} \oplus \beta_{n-7}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+2} = \beta_{n+1} \oplus \beta_{n-6} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+3} = \beta_{n+2} \oplus \beta_{n-5} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+4} = \beta_{n+3} \oplus \beta_{n-4} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5} \oplus \beta_{n-4}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+5} = \beta_{n+4} \oplus \beta_{n-3} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5} \oplus \beta_{n-4} \oplus \beta_{n-3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+6} = \beta_{n+5} \oplus \beta_{n-2} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5} \oplus \beta_{n-4} \oplus \beta_{n-3} \oplus \beta_{n-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+7} = \beta_{n+6} \oplus \beta_{n-1} = \beta_n \oplus \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5} \oplus \beta_{n-4} \oplus \beta_{n-3} \oplus \beta_{n-2} \oplus \beta_{n-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_{n+8} = \beta_{n+7} \oplus \beta_n = \beta_{n-7} \oplus \beta_{n-6} \oplus \beta_{n-5} \oplus \beta_{n-4} \oplus \beta_{n-3} \oplus \beta_{n-2} \oplus \beta_{n-1}\)</span></p></li>
+</ul>
+<p>Nếu viết ở dạng phép nhân ma trận modulo 2 ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{pmatrix}
+        \beta_{n+1} \\ \beta_{n+2} \\ \beta_{n+3} \\ \beta_{n+4} \\ \beta_{n+5} \\ \beta_{n+6} \\ \beta_{n+7} \\ \beta_{n+8}
+    \end{pmatrix} = \begin{pmatrix}
+        1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+        1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0
+    \end{pmatrix} \begin{pmatrix}
+        \beta_{n-7} \\ \beta_{n-6} \\ \beta_{n-5} \\ \beta_{n-4} \\ \beta_{n-3} \\ \beta_{n-2} \\ \beta_{n-1} \\ \beta_n
+    \end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Ma trận to to kia là ma trận khả nghịch. Do đó, nếu chúng ta có các <span class="math notranslate nohighlight">\(\beta_{n+1}, \ldots, \beta_{n+8}\)</span> thì chúng ta có thể tìm ngược lại <span class="math notranslate nohighlight">\(\beta_{n-7}, \ldots, \beta_n\)</span>. Tiếp tục quá trình này cuối cùng ta có thể tìm lại <span class="math notranslate nohighlight">\((\beta_1, \ldots, \beta_8) = K\)</span>.</p>
+<p>Tiếp theo, cũng tương tự, chúng ta biểu diễn dãy <span class="math notranslate nohighlight">\(\gamma\)</span> theo <span class="math notranslate nohighlight">\(\beta\)</span>..</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+1} = \beta_{n+1} \cdot \beta_{n+3} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+2} = \beta_{n+2} \cdot \beta_{n+4} \oplus \beta_{n+1} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+3} = \beta_{n+3} \cdot \beta_{n+5} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+4} = \beta_{n+4} \cdot \beta_{n+6} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+5} = \beta_{n+5} \cdot \beta_{n+7} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+6} = \beta_{n+6} \cdot \beta_{n+8} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+7} = \beta_{n+7} \cdot \beta_{n+1} \oplus \beta_{n+7} \cdot \beta_{n+8} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \oplus \beta_{n+6} \oplus \beta_{n+8}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma_{n+8} = \beta_{n+8} \cdot \beta_{n+1} \oplus \beta_{n+8} \cdot \beta_{n+2} \oplus \beta_{n+1} \oplus \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \oplus \beta_{n+6} \oplus \beta_{n+7}\)</span></p></li>
+</ul>
+<p><strong>Trường hợp 1.</strong> <span class="math notranslate nohighlight">\(\beta_{n+1} = 0\)</span>. Khi đó từ <span class="math notranslate nohighlight">\(\gamma_{1201}\)</span> tới <span class="math notranslate nohighlight">\(\gamma_{1208}\)</span> tương đương với hệ phương trình</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+0 &amp; = \beta_{n+8} \\
+0 &amp; = \beta_{n+2} \cdot \beta_{n+4} \\
+1 &amp; = \beta_{n+3} \cdot \beta_{n+5} \oplus \beta_{n+2} \\
+0 &amp; = \beta_{n+4} \cdot \beta_{n+6} \oplus \beta_{n+2} \oplus \beta_{n+3} \\
+0 &amp; = \beta_{n+5} \cdot \beta_{n+7} \oplus \beta_{n+2} \oplus \beta_{n+3} \cdot \beta_{n+4} \\
+0 &amp; = \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \\
+0 &amp; = \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \oplus \beta_{n+6} \\
+1 &amp; = \beta_{n+2} \oplus \beta_{n+3} \oplus \beta_{n+4} \oplus \beta_{n+5} \oplus \beta_{n+6} \oplus \beta_{n+7} \\
+\end{align*}\end{split}\]</div>
+<p>Hệ phương trình trên có nghiệm duy nhất <span class="math notranslate nohighlight">\((\beta_{i}) = (0, 1, 1, 0, 0, 0, 1, 0)\)</span>.</p>
+<p><strong>Trường hợp 2.</strong> <span class="math notranslate nohighlight">\(\beta_{n+1} = 1\)</span>. Tương tự hệ phương trình cũng có nghiệm duy nhất <span class="math notranslate nohighlight">\((\beta_i) = (1, 1, 1, 0, 0, 0, 0, 1)\)</span>.</p>
+<p>Như vậy ta có hai nghiệm thỏa mãn chuỗi 8 bit <span class="math notranslate nohighlight">\(\gamma_{1201}, \ldots, \gamma_{1208}\)</span>. Do không có điều kiện nào thêm, ta không thể xác định đâu là khóa trong hai trường hợp trên.</p>
+<p>Bài này bạn Chương được 4/4 điểm. Good job nigga 😅.</p>
+</section>
+</section>
+<section id="problem-9-finite-state-machines">
+<h2>Problem 9**. Finite-state machines<a class="headerlink" href="#problem-9-finite-state-machines" title="Link to this heading">#</a></h2>
+<p>Bài này không biết làm!!!</p>
+<section id="id17">
+<h3>Đề bài<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>Alice muốn tạo một generator để sinh một dãy số với độ dài chu kỳ lớn nhất có thể. Vì cô ấy biết về finite-state machine, generator <span class="math notranslate nohighlight">\(G\)</span> sẽ được xây dựng bởi hai machine <span class="math notranslate nohighlight">\(A_1\)</span> và <span class="math notranslate nohighlight">\(A_2\)</span> sao cho:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1 = (\mathbb{F}_2^n, \mathbb{F}_2, g_1, f_1)\)</span> với hàm state-transition (hàm chuyển trạng thái) <span class="math notranslate nohighlight">\(g_1 : \mathbb{F}_2^n \to \mathbb{F}_2^n\)</span> và hàm output <span class="math notranslate nohighlight">\(f_1: \mathbb{F}_2^n \to \mathbb{F}_2\)</span>, <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2 = (\mathbb{F}_2, \mathbb{F}_2^m, \mathbb{F}_2, g_2, f_2)\)</span> với hàm state-transition <span class="math notranslate nohighlight">\(g_2 : \mathbb{F}_2 \times \mathbb{F}_2^m \to \mathbb{F}_2^n\)</span> và hàm output <span class="math notranslate nohighlight">\(f_2 : \mathbb{F}_2 \times \mathbb{F}_2^m \to \mathbb{F}_2\)</span>, <span class="math notranslate nohighlight">\(m \geqslant 1\)</span>.</p></li>
+</ul>
+<figure class="align-default">
+<img alt="../../_images/prob-09.jpg" src="../../_images/prob-09.jpg" />
+</figure>
+<p>Với mỗi <span class="math notranslate nohighlight">\(t=1, 2, \ldots\)</span>, đặt</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> và <span class="math notranslate nohighlight">\(y(t)\)</span> là trạng thái của <span class="math notranslate nohighlight">\(A_1\)</span> và <span class="math notranslate nohighlight">\(A_2\)</span>, <span class="math notranslate nohighlight">\(x(1)\)</span> và <span class="math notranslate nohighlight">\(y(1)\)</span> là các giá trị khởi tạo;</p></li>
+<li><p><span class="math notranslate nohighlight">\(x(t+1) = g_1 (t)\)</span> là trạng thái tiếp theo của <span class="math notranslate nohighlight">\(A_1\)</span> và <span class="math notranslate nohighlight">\(u(t) = f_1 (x(t))\)</span> là output bit của <span class="math notranslate nohighlight">\(A_1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(y(t+1) = g_2(u(t), y(t))\)</span> là trạng thái tiếp theo của <span class="math notranslate nohighlight">\(A_2\)</span> và <span class="math notranslate nohighlight">\(z(t) = f_2(u(t), y(t))\)</span> là output bit của <span class="math notranslate nohighlight">\(A_2\)</span>.</p></li>
+</ol>
+<p>Dãy <span class="math notranslate nohighlight">\(z(1), z(2), z(3), \ldots\)</span> là output của generator <span class="math notranslate nohighlight">\(G\)</span>. Dễ thấy rằng dãy sinh bởi <span class="math notranslate nohighlight">\(G\)</span> có chu kỳ nhỏ nhất không vượt quá <span class="math notranslate nohighlight">\(2^{n+m}\)</span>.</p>
+<p>Theo thí nghiệm Alice thấy rằng, dãy output của <span class="math notranslate nohighlight">\(G\)</span> sẽ có chu kỳ nhỏ nhất nhỏ hơn <span class="math notranslate nohighlight">\(2^{n+m}\)</span> nếu Hamming weight của <span class="math notranslate nohighlight">\(f_1\)</span> là chẵn. Hãy chứng minh hoặc phủ định nhận xét của Alice.</p>
+</section>
+<section id="id18">
+<h3>Giải<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p>Note theo gợi ý của thầy Kolomeec, chưa hiểu hết.</p>
+<p>Dễ thấy rằng nếu <span class="math notranslate nohighlight">\(z(t)\)</span> có chu kỳ tối đa thì các máy trạng thái <span class="math notranslate nohighlight">\(A_1\)</span> và <span class="math notranslate nohighlight">\(A_2\)</span> phải có chu kỳ tối đa lần lượt là <span class="math notranslate nohighlight">\(2^n\)</span> và <span class="math notranslate nohighlight">\(2^m\)</span>.</p>
+<p>Các giá trị của <span class="math notranslate nohighlight">\(g_2\)</span> có thể chia ra hai phần là <span class="math notranslate nohighlight">\(g_2(0, \bm{x})\)</span> và <span class="math notranslate nohighlight">\(g_2(1, \bm{x})\)</span> với <span class="math notranslate nohighlight">\(\bm{x} \in \mathbb{F}_2^m\)</span>. Trong đó 0 và 1 xác định từ <span class="math notranslate nohighlight">\(f_1\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(g_2\)</span> có chu kỳ cực đại thì trọng số phải là <span class="math notranslate nohighlight">\(2^{m}\)</span>, nói cách khác là hàm cân bằng, suy ra <span class="math notranslate nohighlight">\(g_2(0, \bm{x})\)</span> và <span class="math notranslate nohighlight">\(g_2(1, \bm{x})\)</span> đều có số chẵn phần tử.</p>
+<p>Điều này có nghĩa là <span class="math notranslate nohighlight">\(g_2\)</span> sẽ sinh ra dãy có chu kỳ tạo thành hoán vị chẵn.</p>
+<p>Tuy nhiên nếu <span class="math notranslate nohighlight">\(g_2\)</span> có chu kỳ cực đại thì chu kỳ đó phải tạo thành hoán vị lẻ vì khi đó hoán vị</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    1 \to 2 \to \cdots \to t \to 1 = (1, 2) (1, 3) \cdots (1, t)
+\end{equation*}\]</div>
+<p>có <span class="math notranslate nohighlight">\(t - 1\)</span> tranposition. Nói cách khác đây là hoán vị lẻ vì <span class="math notranslate nohighlight">\(t=2^{m}\)</span> chẵn.</p>
+<p>Như vậy để chu trình đạt chu kỳ tối đa thì nó phải là hoán vị lẻ, mâu thuẫn với phân tích ở trên <span class="math notranslate nohighlight">\(g_2\)</span> sẽ sinh ra dãy là hoán vị chẵn.</p>
+<p>Trong cách giải này có hai chỗ mình không biết thầy lấy đâu ra: tại sao <span class="math notranslate nohighlight">\(g_2\)</span> cân bằng thì cả <span class="math notranslate nohighlight">\(g_2(0, \bm{x})\)</span> và <span class="math notranslate nohighlight">\(g_2(1, \bm{x})\)</span> đều phải có số chẵn phần tử mà không phải là đều có số lẻ? Liên hệ giữa trọng số hàm bool và hoán vị chẵn/lẻ là gì?</p>
+</section>
+</section>
+<section id="problem-10-quantum-encryption">
+<h2>Problem 10. Quantum encryption<a class="headerlink" href="#problem-10-quantum-encryption" title="Link to this heading">#</a></h2>
+<p>Đây là bài 8 của round 1 và bài 10 của round 2. Bài này sai gần bước cuối mới cay 😭.</p>
+<section id="id19">
+<h3>Đề bài<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>Bob tạo một thuật toán mã hóa encrypt 4 bit <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4)\)</span> bằng key cũng 4 bit <span class="math notranslate nohighlight">\((k_1, k_2, k_3, k_4)\)</span> với mạch sau:</p>
+<figure class="align-default">
+<img alt="../../_images/prob-10-1.jpg" src="../../_images/prob-10-1.jpg" />
+</figure>
+<p>Plaintext 4 bit <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4)\)</span> được biểu diễn ở dạng 4-qubit “plainstate” <span class="math notranslate nohighlight">\(\lvert x1, x2, x3, x4 \rangle\)</span>. Quantum state này là input cho mạch ở dạng qubit đơn đi qua các cổng.</p>
+<p>Ở đây hai loại cổng được sửa dụng là CNOT và Hadamard.</p>
+<p>Ký hiệu <span class="math notranslate nohighlight">\(H^b\)</span> với <span class="math notranslate nohighlight">\(b \in \{ 0, 1 \}\)</span> có nghĩa là, nếu <span class="math notranslate nohighlight">\(b = 0\)</span> thì cổng đồng nhất <span class="math notranslate nohighlight">\(I\)</span> được sử dụng (không thay đổi), còn nếu <span class="math notranslate nohighlight">\(b = 1\)</span> thì cổng Hadamard sẽ được sử dụng.</p>
+<p>Kết quả sau khi qua mạch là “cipherstate” <span class="math notranslate nohighlight">\(\lvert \psi \rangle\)</span>.</p>
+<p>Bob có nhiệm vụ tăng số qubit đầu vào lên nhằm giảm các sai số khi tính toán và truyền dữ liệu trên kênh quantum. Do đó Bob biến đổi thành mạch sau:</p>
+<figure class="align-default">
+<img alt="../../_images/prob-10-2.jpg" src="../../_images/prob-10-2.jpg" />
+</figure>
+<p>Alice nói rằng cô ấy có thể tìm lại được key nếu biết <span class="math notranslate nohighlight">\(N\)</span> amplitude của kết quả <span class="math notranslate nohighlight">\(\lvert \psi \rangle\)</span>. Do có 8 qubits ở kết quả nên số lượng amplitude tối đa là <span class="math notranslate nohighlight">\(2^8 = 256\)</span>, nói cách khác <span class="math notranslate nohighlight">\(N \leqslant 256\)</span>. Vậy Alice cần ít nhất bao nhiêu amplitude là đủ để tìm lại key?</p>
+</section>
+<section id="id20">
+<h3>Giải<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>Đầu tiên xét 4 dây trên, 4 dây dưới tương tự.</p>
+<figure class="align-default">
+<img alt="../../_images/prob-10-3.jpg" src="../../_images/prob-10-3.jpg" />
+</figure>
+<p>Chúng ta xét dây 1 và 4 của mạch (tương tự cho dây 2 và 3). Áp dụng cổng CNOT liên tiếp 3 lần ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \lvert x_1 \rangle \otimes \lvert x_2 \rangle \to \lvert x_1 \oplus x_2 \rangle \otimes \lvert x_2 \rangle \to \lvert x_1 \oplus x_2 \rangle \otimes \lvert x_1 \rangle \to \lvert x_2 \rangle \otimes \lvert x_1 \rangle
+\end{equation*}\]</div>
+<figure class="align-default" id="id24">
+<img alt="../../_images/prob-10-4.jpg" src="../../_images/prob-10-4.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Dây 1 và dây 4</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id25">
+<img alt="../../_images/prob-10-5.jpg" src="../../_images/prob-10-5.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Dây 2 và dây 3</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Nói cách khác là đảo bit 😆.</p>
+<p>Tương tự cho các cặp dây (5, 8) và (6, 7). Do đó khi tới trước các cổng Hadamard thì thứ tự các qubit từ trên xuống dưới là hình sau.</p>
+<figure class="align-default" id="id26">
+<img alt="../../_images/prob-10-6.jpg" src="../../_images/prob-10-6.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Qubits trước Hadamard</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Mạch ở dây 1 và 2 đều có dạng <span class="math notranslate nohighlight">\(\lvert x_2 \rangle\)</span> đi qua <span class="math notranslate nohighlight">\(H^{k_1}\)</span> nên sau khi qua cổng mình đặt <span class="math notranslate nohighlight">\(\lvert z_2 \rangle = H^{k_1} \lvert x_2 \rangle\)</span>.</p>
+<p>Tương tự, <span class="math notranslate nohighlight">\(\lvert z_1 \rangle = H^{k_2} \lvert x_1 \rangle\)</span> cho dây 3 và 4, <span class="math notranslate nohighlight">\(\lvert z_4 \rangle = H^{k_3} \lvert x_4 \rangle\)</span> cho dây 5 và 6, <span class="math notranslate nohighlight">\(\lvert z_3 \rangle = H^{k_4} \lvert x_3 \rangle\)</span> cho dây 7 và 8.</p>
+<p>Mạch sau khi đi qua Hadamard có dạng</p>
+<figure class="align-default" id="id27">
+<img alt="../../_images/prob-10-7.jpg" src="../../_images/prob-10-7.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Qubits sau Hadamard</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Ở đây chúng ta có một lưu ý nhỏ có thể giúp ích trong việc giới hạn số lượng amplitude theo đề bài. Nếu <span class="math notranslate nohighlight">\(k_1 = 0\)</span> thì <span class="math notranslate nohighlight">\(\lvert z_2 \rangle = \lvert x_2 \rangle\)</span>. Nếu <span class="math notranslate nohighlight">\(k_1 = 1\)</span> thì <span class="math notranslate nohighlight">\(\lvert z_2 \rangle = \dfrac{\lvert 0 \rangle + (-1)^{x_2} \lvert 1 \rangle}{\sqrt{2}}\)</span>. Như vậy, hệ số trước <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span> của <span class="math notranslate nohighlight">\(\lvert z_2 \rangle\)</span> có thể là <span class="math notranslate nohighlight">\(0, 1, \dfrac{1}{\sqrt{2}}\)</span> đều không âm.</p>
+<p>Bây giờ chúng ta quay lại toán tử CNOT. Ma trận tương ứng của toán tử CNOT là <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix}\)</span>. Kết quả sau khi thực hiện toán tử CNOT là hệ số trước <span class="math notranslate nohighlight">\(\lvert 00 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert 01 \rangle\)</span> giữ nguyên, còn hệ số trước <span class="math notranslate nohighlight">\(\lvert 10 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert 11 \rangle\)</span> đổi chỗ cho nhau.</p>
+<p>Đối với 3 qubit, mình <strong>dự đoán</strong> tương tự.</p>
+<p>Ở cổng CNOT đầu tiên, dây 1 control dây 3. Nếu mình chỉ xét 3 dây đầu thì tích các qubit gồm <span class="math notranslate nohighlight">\(\lvert 000 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 001 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 010 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 011 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 100 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 101 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 110 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 111 \rangle\)</span>.</p>
+<p>Áp dụng “chiến thuật” tương tự, mình chỉ quan tâm vị trí 1 và 3. Nghĩa là hệ số của <span class="math notranslate nohighlight">\(\lvert 0 x 0 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert 0 x 1 \rangle\)</span> giữ nguyên, còn hệ số trước <span class="math notranslate nohighlight">\(\lvert 1 x 0 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert 1 x 1 \rangle\)</span> đổi chỗ cho nhau, với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span>. Nói cách khác, 8 hệ số trước amplitude chỉ thay đổi vị trí chứ không nhiều hơn hay ít đi, hay tập hợp hệ số giữ nguyên.</p>
+<figure class="align-default">
+<img alt="../../_images/prob-10-8.jpg" src="../../_images/prob-10-8.jpg" />
+</figure>
+<p>Như vậy, giả sử <span class="math notranslate nohighlight">\(\lvert z_2 \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert z_1 \rangle = c \lvert 0 \rangle + \lvert 1 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert z_4 \rangle = e \lvert 0 \rangle + f \lvert 1 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert z_3 \rangle = g \lvert 0 \rangle + h \lvert 1 \rangle\)</span>. Khi đó kết quả cipherstate là</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \lvert \psi \rangle = \lvert z_2 \rangle \otimes \lvert z_2 \rangle \otimes \lvert z_1 \rangle \otimes \lvert z_1 \rangle \otimes \lvert z_4 \rangle \otimes \lvert z_4 \rangle \otimes \lvert z_3 \rangle \otimes \lvert z_3 \rangle
+\end{equation*}\]</div>
+<p>Xét <span class="math notranslate nohighlight">\(\lvert z_2 \rangle \otimes \lvert z_2 \rangle = a^2 \lvert 00 \rangle + ab \lvert 01 \rangle + ab \lvert 10 \rangle + b^2 \lvert 11 \rangle\)</span>. Ở đây có 3 hệ số khác nhau là <span class="math notranslate nohighlight">\((a^2, ab, b^2)\)</span>. Với lưu ý bên trên <span class="math notranslate nohighlight">\(a \geqslant 0\)</span> nên từ <span class="math notranslate nohighlight">\(a^2\)</span> tính được <span class="math notranslate nohighlight">\(a\)</span>. Từ <span class="math notranslate nohighlight">\(a\)</span>, ta cần thêm <span class="math notranslate nohighlight">\(ab\)</span> để xác định <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Như vậy mình cần <span class="math notranslate nohighlight">\(2^4 = 16\)</span> hệ số để tìm lại các key ban đầu.</p>
+</section>
+<section id="id21">
+<h3>Bình luận<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>Thế éo nào mình lại nhầm khúc cuối mà lấy cả <span class="math notranslate nohighlight">\(a^2\)</span>, <span class="math notranslate nohighlight">\(ab\)</span> và <span class="math notranslate nohighlight">\(b^2\)</span> nên kết quả ra <span class="math notranslate nohighlight">\(3^4 = 81\)</span>. Tất nhiên là <strong>SAI BÉT</strong> nên chỉ được 2/8 😭.</p>
+</section>
+</section>
+<section id="problem-11-antcipher">
+<h2>Problem 11. AntCipher<a class="headerlink" href="#problem-11-antcipher" title="Link to this heading">#</a></h2>
+<p>Bài này là bài số 2 ở round 1 và là bài số 11 ở round 2. Lúc thi round 1 mình không biết giải, còn ở round 2 thì mình đã giải theo cách như sau.</p>
+<section id="id22">
+<h3>Đề bài<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>Đặt</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    f = (x_1 \lor x_2 \lor x_9) \land (\lnot x_1 \lor \lnot x_2 \lor \lnot x_9) \land (\lnot x_1 \lor x_2 \lnot x_9) \land (x_1 \lor \lnot x_2 \lor x_9) \land \\
+    (x_1 \lor x_2 \lor x_3) \land (\lnot x_9 \lor \lnot x_{10} \lor \lnot x_3) \land (x_1 \lor \lnot x_2 \lor x_4) \land (\lnot x_9 \lor x_{10} \lor \lnot x_4) \land \\
+    (\lnot x_1 \lor x_2 \lor x_5) \land (x_9 \lor \lnot x_{10} \lor \lnot x_5) \land (\lnot x_1 \lor \lnot x_2 \lor x_6) \land (x_9 \lor x_{10} \lor \lnot x_6) \land \\
+    (x_1 \lor x_2 \lor x_3 \lor x_4 \lor \lnot x_7) \land (x_2 \lor x_3 \lor x_4 \lor \lnot x_7 \lor \lnot x_8)
+\end{align*}\end{split}\]</div>
+<p>Hàm <span class="math notranslate nohighlight">\(f\)</span> gồm 10 biến được viết dưới dạng CNF (conjunctive normal form). Thuật toán mã hóa dựa trên hàm <span class="math notranslate nohighlight">\(f\)</span> biến đối hai bit plaintext <span class="math notranslate nohighlight">\((x_1, x_2)\)</span> thành hai bit ciphertext <span class="math notranslate nohighlight">\((x_9, x_{10})\)</span> khi giá trị hàm <span class="math notranslate nohighlight">\(f = True\)</span>. Hàm <span class="math notranslate nohighlight">\(f\)</span> này có 10 biến <span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_{10}\)</span> và 46 literals, là các hạng tử trong biểu diễn CNF của hàm. Ví dụ với dấu ngoặc thứ hai có 3 literals là <span class="math notranslate nohighlight">\(\lnot x_1\)</span>, <span class="math notranslate nohighlight">\(\lnot x_2\)</span> và <span class="math notranslate nohighlight">\(\lnot x_9\)</span>.</p>
+<p><strong>Q.</strong> Vì các giới hạn tính toán nên chúng ta chỉ có thể sử dụng tối đa 16 biến với 20 literals. Nhắc lại rằng hàm <span class="math notranslate nohighlight">\(f\)</span> ở trên có 10 biến và 46 literals. Hãy tìm cách biểu diễn tương đương của thuật toán mã hóa trên với giới hạn đã cho.</p>
+</section>
+<section id="id23">
+<h3>Giải<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>Khi mình code hàm để tính giá trị hàm <span class="math notranslate nohighlight">\(f\)</span> và xem xét những vector</p>
+<div class="math notranslate nohighlight">
+\[\bm{x} = (x_1, \ldots, x_{10})\]</div>
+<p>mà <span class="math notranslate nohighlight">\(f = True\)</span>, mình nhận thấy rằng:</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\((x_1, x_2) = (0, 0)\)</span> thì <span class="math notranslate nohighlight">\((x_9, x_{10}) = (1, 0)\)</span></p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\((x_1, x_2) = (0, 1)\)</span> thì <span class="math notranslate nohighlight">\((x_9, x_{10}) = (1, 1)\)</span></p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\((x_1, x_2) = (1, 0)\)</span> thì <span class="math notranslate nohighlight">\((x_9, x_{10}) = (0, 0)\)</span></p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\((x_1, x_2) = (1, 1)\)</span> thì <span class="math notranslate nohighlight">\((x_9, x_{10}) = (0, 1)\)</span></p></li>
+</ul>
+<p>Mình nhận ra rằng các biến <span class="math notranslate nohighlight">\(x_3, x_4, \ldots, x_7, x_8\)</span> hoàn toàn không tác động lên việc mã hóa từ <span class="math notranslate nohighlight">\((x_1, x_2)\)</span> thành <span class="math notranslate nohighlight">\((x_9, x_{10})\)</span> (ít nhất là ở những chỗ <span class="math notranslate nohighlight">\(f = True\)</span> :v).</p>
+<p>Như vậy bài toán được rút gọn thành hàm boolean 4 biến <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_9\)</span> và <span class="math notranslate nohighlight">\(x_{10}\)</span>. Ở đó <span class="math notranslate nohighlight">\(f(0010) = f(0111) = f(1000) = f(1101) = 1\)</span>. Các vector còn lại thì <span class="math notranslate nohighlight">\(f=0\)</span>. Ở dưới là bảng chân trị.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_9\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(x_{10}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(f\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Từ bảng chân trị trên, sử dụng phương pháp bìa Karnaugh mình rút gọn được thành</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    f(x_1, x_2, x_9, x_{10}) = &amp; (\lnot x_1 \lor \lnot x_9) \land (x_1 \lor x_9) \land \\ 
+    &amp; (\lnot x_1 \lor \lnot x_2 \lor x_{10}) \land (x_1 \lor x_2 \lor \lnot x_{10}) \land \\
+    &amp; (\lnot x_1 \lor x_2 \lor \lnot x_{10}) \land (x_1 \lor \lnot x_2 \lor x_{10})
+\end{align*}\end{split}\]</div>
+<p>CNF này có 4 biến và 16 literals, thỏa mãn yêu cầu đề bài và ăn trọn 6/6 điểm 😌.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="wolfram" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://mathworld.wolfram.com/Prime-GeneratingPolynomial.html">https://mathworld.wolfram.com/Prime-GeneratingPolynomial.html</a></p>
+</aside>
+<aside class="footnote brackets" id="aw" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://awwalker.com/2017/02/27/prime-generating-polynomials/">https://awwalker.com/2017/02/27/prime-generating-polynomials/</a></p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contests/2023"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="siberian-maths-contest-2023.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Siberian Mathematical Contest 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2024/2024.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2024</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-1-affine-cipher">Problem 1. Affine cipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-bai">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#giai">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-2-simple-ideas-for-primes">Problem 2. Simple ideas for primes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-3-mixed-hashes">Problem 3. Mixed hashes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Đề bài</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-4-column-functions">Problem 4*. Column functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binh-luan">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-5-primes">Problem 5. Primes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-6-an-aggregated-signature">Problem 6**. An aggregated signature</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Đề bài</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-7-a-unique-coding">Problem 7. A unique coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-8-algebraic-cryptanalysis">Problem 8. Algebraic cryptanalysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-9-finite-state-machines">Problem 9**. Finite-state machines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Giải</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-10-quantum-encryption">Problem 10. Quantum encryption</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Giải</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Bình luận</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-11-antcipher">Problem 11. AntCipher</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Đề bài</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Giải</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

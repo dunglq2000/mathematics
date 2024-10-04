@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.3. Group homomorphism &#8212; Math Book</title>
+    <title>10.3. Group homomorphism &#8212; Math Book</title>
   
   
   
@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
   
@@ -64,8 +64,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'discrete-mathematics/group-homomorphism';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.4. Vành và trường" href="ring-and-field.html" />
-    <link rel="prev" title="9.2. Nhóm hoán vị" href="symmetric-group.html" />
+    <link rel="next" title="10.4. Vành và trường" href="ring-and-field.html" />
+    <link rel="prev" title="10.2. Nhóm hoán vị" href="symmetric-group.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,79 +208,93 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">8. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../probability/Petrushko.html">9. Курс высшей математики: Теория вероятностей</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="group.html">9. Lý thuyết nhóm</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="group-intro.html">9.1. Nhóm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symmetric-group.html">9.2. Nhóm hoán vị</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.3. Group homomorphism</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ring-and-field.html">9.4. Vành và trường</a></li>
-<li class="toctree-l2"><a class="reference internal" href="group-action.html">9.5. Tác động nhóm</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="group.html">10. Lý thuyết nhóm</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="group-intro.html">10.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symmetric-group.html">10.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ring-and-field.html">10.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group-action.html">10.5. Tác động nhóm</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="galois-theory.html">10. Lý thuyết Galois</a></li>
-<li class="toctree-l1"><a class="reference internal" href="number-theory.html">11. Số học</a></li>
-<li class="toctree-l1"><a class="reference internal" href="binary-relation.html">12. Quan hệ hai ngôi</a></li>
-<li class="toctree-l1"><a class="reference internal" href="partition.html">13. Phân hoạch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combinatoric.html">14. Đại cương tổ hợp</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="boolean.html">15. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">15.1. Hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">15.2. Khoảng cách Hamming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boolean-aff-lin.html">15.3. Hàm affine và hàm tuyến tính</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boolean-monotone.html">15.4. Hàm đơn điệu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">15.5. Nonlinearlity của hàm boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">15.6. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="galois-theory.html">11. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="number-theory.html">12. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary-relation.html">13. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partition.html">14. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combinatoric.html">15. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="boolean.html">16. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="boolean-function.html">16.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-boolean.html">16.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-aff-lin.html">16.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-monotone.html">16.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="walsh-hadamard-spectre.html">16.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean-dnf-cnf.html">16.6. Disjunctive và Conjunctive Normal Form</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">16. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">17. Phép biến hình</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">18. Ba đường Conic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">19. Đường đoản thời</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">17. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">18. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">19. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">20. Đường đoản thời</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">20. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">20.1. Linear Feedback Shift Register</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">21. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">21.1. Magma</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">21.2. SMS4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">21.3. AES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">21.4. Kuznyechik</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">22.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">22.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">22.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">22. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/toy-cipher.html">22.1. Nhập môn phá mã vi sai</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">22.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/toy-cipher.html">23.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">23.2. Phá mã vi sai trên TinyDES</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">23. Quantum computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">24. Lattice-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">25. Code-based cryptography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">26. Đường cong elliptic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">27. Discrete logarithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">24. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">26. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">28. Giới thiệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">29. Giới thiệu</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">29. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">29.1. Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">30. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">30.1. Biến đổi Fourier rời rạc</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contests</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2020/2020.html">2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2021/2021.html">2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2021/nsucrypto-2021.html">NSUCRYPTO 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2022/2022.html">2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2022/nsucrypto-2022.html">NSUCRYPTO 2022</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2023/2023.html">2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contests/2023/internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contests/2023/siberian-maths-contest-2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/nsucrypto-2023.html">NSUCRYPTO 2023</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2024/2024.html">2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -529,9 +543,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-cau-nhom">9.3.1. Đồng cấu nhóm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-loai-homomorphism">9.3.2. Các loại homomorphism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-nhan-va-anh">9.3.3. Hạt nhân và ảnh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-cau-nhom">10.3.1. Đồng cấu nhóm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-loai-homomorphism">10.3.2. Các loại homomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-nhan-va-anh">10.3.3. Hạt nhân và ảnh</a></li>
 </ul>
             </nav>
         </div>
@@ -544,7 +558,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="group-homomorphism">
-<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">9.3. </span>Group homomorphism</a><a class="headerlink" href="#group-homomorphism" title="Link to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">10.3. </span>Group homomorphism</a><a class="headerlink" href="#group-homomorphism" title="Link to this heading">#</a></h1>
 <nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -558,16 +572,16 @@ document.write(`
 </ul>
 </nav>
 <section id="dong-cau-nhom">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">9.3.1. </span>Đồng cấu nhóm</a><a class="headerlink" href="#dong-cau-nhom" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink"><span class="section-number">10.3.1. </span>Đồng cấu nhóm</a><a class="headerlink" href="#dong-cau-nhom" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 9.12 </span> (Homomorphism, Đồng cấu nhóm)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.12 </span> (Homomorphism, Đồng cấu nhóm)</p>
 <section class="definition-content" id="proof-content">
 <p>Xét hai nhóm <span class="math notranslate nohighlight">\((G, \star)\)</span> và <span class="math notranslate nohighlight">\((H, *)\)</span> và một ánh xạ <span class="math notranslate nohighlight">\(f: G \to H\)</span>.
 Ánh xạ <span class="math notranslate nohighlight">\(f\)</span> được gọi là <strong>đồng cấu</strong> (hay <strong>homomorphism</strong>) nếu với mọi <span class="math notranslate nohighlight">\(g_1\)</span>, <span class="math notranslate nohighlight">\(g_2\)</span> thuộc <span class="math notranslate nohighlight">\(G\)</span> ta có <span class="math notranslate nohighlight">\(f(g_1 \star g_2) = f(g_1) * f(g_2)\)</span>.</p>
 </section>
 </div><p>Do <span class="math notranslate nohighlight">\(g_1\)</span>, <span class="math notranslate nohighlight">\(g_2\)</span> là các phần tử thuộc <span class="math notranslate nohighlight">\(G\)</span> nên toán tử giữa chúng là <span class="math notranslate nohighlight">\(\star\)</span>. Trong khi đó <span class="math notranslate nohighlight">\(f(g_1)\)</span>, <span class="math notranslate nohighlight">\(f(g_2)\)</span> là các phần tử thuộc <span class="math notranslate nohighlight">\(H\)</span> nên toán tử giữa chúng là <span class="math notranslate nohighlight">\(*\)</span>.</p>
 <div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 9.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 10.5 </span></p>
 <section class="remark-content" id="proof-content">
 <ol class="arabic simple">
 <li><p>Gọi <span class="math notranslate nohighlight">\(e_G\)</span> là phần tử đơn vị của <span class="math notranslate nohighlight">\(G\)</span> và <span class="math notranslate nohighlight">\(e_H\)</span> là phần tử đơn
@@ -584,25 +598,25 @@ vị của <span class="math notranslate nohighlight">\(H\)</span>. Khi đó <sp
 </div>
 </section>
 <section id="cac-loai-homomorphism">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">9.3.2. </span>Các loại homomorphism</a><a class="headerlink" href="#cac-loai-homomorphism" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">10.3.2. </span>Các loại homomorphism</a><a class="headerlink" href="#cac-loai-homomorphism" title="Link to this heading">#</a></h2>
 <p>Tương tự như ánh xạ, chúng ta có các loại homomorphism sau</p>
 <div class="proof definition admonition" id="definition-2">
-<p class="admonition-title"><span class="caption-number">Definition 9.13 </span> (Monomorphism, Đơn cấu)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.13 </span> (Monomorphism, Đơn cấu)</p>
 <section class="definition-content" id="proof-content">
 <p>Ánh xạ được gọi là <strong>đơn cấu</strong> (hay <strong>monomorphism</strong>) nếu nó là ánh xạ one-to-one (đơn ánh). Nói cách khác, với mọi <span class="math notranslate nohighlight">\(g_1 \neq g_2\)</span> và <span class="math notranslate nohighlight">\(g_1\)</span>, <span class="math notranslate nohighlight">\(g_2 \in G\)</span>, thì <span class="math notranslate nohighlight">\(f(g_1) \neq f(g_2)\)</span></p>
 </section>
 </div><div class="proof definition admonition" id="definition-3">
-<p class="admonition-title"><span class="caption-number">Definition 9.14 </span> (Epimorphism, Toàn cấu)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.14 </span> (Epimorphism, Toàn cấu)</p>
 <section class="definition-content" id="proof-content">
 <p>Ánh xạ được gọi là <strong>toàn cấu</strong> (hay <strong>epimorphism</strong>) nếu nó là ánh xạ onto (toàn ánh). Nói cách khác, với mọi <span class="math notranslate nohighlight">\(h \in H\)</span> thì tồn tại <span class="math notranslate nohighlight">\(g \in G\)</span> mà <span class="math notranslate nohighlight">\(f(g) = h\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="definition-4">
-<p class="admonition-title"><span class="caption-number">Definition 9.15 </span> (Isomorphism, Đẳng cấu)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.15 </span> (Isomorphism, Đẳng cấu)</p>
 <section class="definition-content" id="proof-content">
 <p>Ánh xạ được gọi là <strong>đẳng cấu</strong> (hay <strong>isomorphism</strong>) nếu nó là ánh xạ one-to-one và onto (song ánh). Nói cách khác, ánh xạ này vừa là đơn cấu, vừa là toàn cấu.</p>
 </section>
 </div><div class="proof theorem admonition" id="theorem-5">
-<p class="admonition-title"><span class="caption-number">Theorem 9.2 </span> (Định lí Cayley)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 10.2 </span> (Định lí Cayley)</p>
 <section class="theorem-content" id="proof-content">
 <p>Mọi nhóm hữu hạn đều đẳng cấu (isomorphism) với một nhóm con nào đó của nhóm hoán vị.</p>
 </section>
@@ -655,16 +669,16 @@ vị của <span class="math notranslate nohighlight">\(H\)</span>. Khi đó <sp
 <p>Kết luận: <span class="math notranslate nohighlight">\(\varphi\)</span> là song ánh và là đẳng cấu (isomorphism).</p>
 </div>
 <div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 9.16 </span> (Automorphism, Tự đẳng cấu)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.16 </span> (Automorphism, Tự đẳng cấu)</p>
 <section class="definition-content" id="proof-content">
 <p>Ánh xạ được gọi là <strong>tự đẳng cấu</strong> (hay <strong>automorphism</strong>) nếu nó là song ánh từ nó lên chính nó. Ta ký hiệu tự đồng cấu nhóm <span class="math notranslate nohighlight">\(G\)</span> là <span class="math notranslate nohighlight">\(\mathrm{Aut}(G)\)</span>.</p>
 </section>
 </div></section>
 <section id="hat-nhan-va-anh">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">9.3.3. </span>Hạt nhân và ảnh</a><a class="headerlink" href="#hat-nhan-va-anh" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">10.3.3. </span>Hạt nhân và ảnh</a><a class="headerlink" href="#hat-nhan-va-anh" title="Link to this heading">#</a></h2>
 <p>Xét một homomorphism <span class="math notranslate nohighlight">\(f\)</span> từ nhóm <span class="math notranslate nohighlight">\((G, \star)\)</span> tới nhóm <span class="math notranslate nohighlight">\((H, *)\)</span>. Ta nói:</p>
 <div class="proof definition admonition" id="definition-7">
-<p class="admonition-title"><span class="caption-number">Definition 9.17 </span> (Kernel, Hạt nhân)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.17 </span> (Kernel, Hạt nhân)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Hạt nhân</strong> (hay <strong>kernel</strong>) của <span class="math notranslate nohighlight">\(f\)</span> là tập hợp các phần tử của <span class="math notranslate nohighlight">\(G\)</span> cho ảnh là <span class="math notranslate nohighlight">\(e_H\)</span>, ký hiệu là <span class="math notranslate nohighlight">\(\ker f\)</span>. Nói cách khác</p>
 <div class="math notranslate nohighlight">
@@ -674,7 +688,7 @@ vị của <span class="math notranslate nohighlight">\(H\)</span>. Khi đó <sp
 <p>Như vậy <span class="math notranslate nohighlight">\(\ker f\)</span> là tập con của <span class="math notranslate nohighlight">\(G\)</span>.</p>
 </section>
 </div><div class="proof remark admonition" id="remark-8">
-<p class="admonition-title"><span class="caption-number">Remark 9.6 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 10.6 </span></p>
 <section class="remark-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(K = \ker f\)</span> là normal subgroup của <span class="math notranslate nohighlight">\(G\)</span>.</p>
 </section>
@@ -691,7 +705,7 @@ f(g) * e_H * f(g^{-1}) = f(g) * f(g^{-1})\]</div>
 <p>mà theo tính chất của homomorphism thì <span class="math notranslate nohighlight">\(f(g^{-1}) = f(g)^{-1}\)</span> nên <span class="math notranslate nohighlight">\(f(g \star k \star g^{-1}) = f(g) * f(g)^{-1} = e_H\)</span> nên <span class="math notranslate nohighlight">\(g \star k \star g^{-1} \in K\)</span> với mọi <span class="math notranslate nohighlight">\(g \in G\)</span>, với mọi <span class="math notranslate nohighlight">\(k \in K\)</span>. Do đó <span class="math notranslate nohighlight">\(g K g^{-1} = K\)</span> và ta có điều phải chứng minh.</p>
 </div>
 <div class="proof definition admonition" id="definition-9">
-<p class="admonition-title"><span class="caption-number">Definition 9.18 </span> (Image, Ảnh)</p>
+<p class="admonition-title"><span class="caption-number">Definition 10.18 </span> (Image, Ảnh)</p>
 <section class="definition-content" id="proof-content">
 <p><strong>Ảnh</strong> (hay <strong>image</strong>) của <span class="math notranslate nohighlight">\(f\)</span> là tập hợp tất cả giá trị nhận được khi biến các phần tử thuộc <span class="math notranslate nohighlight">\(G\)</span> thành phần tử thuộc <span class="math notranslate nohighlight">\(H\)</span>. Nói cách khác</p>
 <div class="math notranslate nohighlight">
@@ -703,7 +717,7 @@ f(g) * e_H * f(g^{-1}) = f(g) * f(g^{-1})\]</div>
 </div><p>Dựa trên hai khái niệm này, chúng ta có một định lý quan trọng trong lý
 thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</strong> (First isomorphism theorem).</p>
 <div class="proof theorem admonition" id="theorem-10">
-<p class="admonition-title"><span class="caption-number">Theorem 9.3 </span> (First isomorphism theorem)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 10.3 </span> (First isomorphism theorem)</p>
 <section class="theorem-content" id="proof-content">
 <p>Với hai nhóm <span class="math notranslate nohighlight">\((G, \star)\)</span> và <span class="math notranslate nohighlight">\((H, *)\)</span>. Xét homomorphism <span class="math notranslate nohighlight">\(f: G \to H\)</span>. Khi đó <span class="math notranslate nohighlight">\(\mathrm{im} f\)</span> đẳng cấu (isomorphism) với nhóm thương <span class="math notranslate nohighlight">\(G / \ker f\)</span>.</p>
 </section>
@@ -768,7 +782,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>Nhóm hoán vị</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>Nhóm hoán vị</p>
       </div>
     </a>
     <a class="right-next"
@@ -776,7 +790,7 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.4. </span>Vành và trường</p>
+        <p class="prev-next-title"><span class="section-number">10.4. </span>Vành và trường</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -796,9 +810,9 @@ thuyết nhóm là <strong>Định lý thứ nhất về sự đẳng cấu</str
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-cau-nhom">9.3.1. Đồng cấu nhóm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-loai-homomorphism">9.3.2. Các loại homomorphism</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-nhan-va-anh">9.3.3. Hạt nhân và ảnh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dong-cau-nhom">10.3.1. Đồng cấu nhóm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-loai-homomorphism">10.3.2. Các loại homomorphism</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hat-nhan-va-anh">10.3.3. Hạt nhân và ảnh</a></li>
 </ul>
   </nav></div>
 
