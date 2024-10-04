@@ -158,3 +158,34 @@ Quotient Group còn được gọi là **Factor Group** (hay **nhóm nhân tử*
 Với nhóm $\mathbb{Z}$ và normal subgroup của nó là $2\mathbb{Z}$.
 Ta thấy $\mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z}\}$
 ````
+
+### Direct sum of modules
+
+> Прямая сумма
+
+Có hai dạng tổng là external và internal.
+
+````{prf:definition} External direct sum
+Giả sử ta có các nhóm $(G_1, *)$, $(G_2, \star)$, ..., $(G_t, \circ)$. Khi đó externel direct sum của các nhóm $G_1, \ldots, G_t$ là:
+
+$$\begin{equation*}
+    G = G_1 \times G_2 \times G_t, \quad (G, \square).
+\end{equation*}$$
+````
+
+Giả sử $g = (g_1, g_2, \ldots, g_t) \in G$ với $g_i \in G_i$, và $g' = (g'_1, g'_2, \ldots, g'_t) \in G$ với $g'_i \in G_i$. Khi đó:
+
+$$\begin{equation*}
+    g \square g' = (g_1 * g'_1, g_2 \star g'_2, \ldots, g_t \circ g'_t).
+\end{equation*}$$
+
+````{prf:definition} Internal direct sum
+Giả sử ta có nhóm $(G, \circ)$ và các nhóm con $G_1, G_2, \ldots, G_t$ của $G$. Khi đó internal direct sum là:
+
+1. Với mọi $g \in G$ thì $g = g_1 \circ g_2 \circ \ldots \circ g_t$ với $g_i \in G_i$.
+2. Với mọi $i, j$ mà $i \neq j$, $1 \leqslant i, j \leqslant t$ ta có
+
+$$g_i \circ g_j = g_j \circ g_i$$
+
+với mọi $g_i \in G_i$ và $g_j \in G_j$.
+````
