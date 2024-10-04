@@ -5,10 +5,10 @@
 
 ### Vành
 
-````{prf:definition} Ring, Vành
+````{prf:definition} Vành
 Cho tập hợp $R$, trên đó ta định nghĩa hai toán tử **cộng** và **nhân**.
 
-Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**) nếu
+Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**, **кольцо**) nếu
 
 1. $(R, +)$ là nhóm Abel.
 2. $(R, \times)$ có tính kết hợp với phép nhân. Với mọi $a, b, c \in R$ thì $a \times (b \times c) = (a \times b) \times c$.
@@ -17,52 +17,75 @@ Khi đó, $(R, +, \times)$ tạo thành **vành** (hay **ring**) nếu
 
 Tóm lại, $(R, +, \times)$ là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.
 
+Ta thường ký hiệu $0_R$ (hoặc ngắn gọn là $0$) là phần tử đơn vị của phép cộng $(R, +)$ và gọi là **phần tử trung hòa**.
+
+Khi đó phần tử nghịch đảo của phép cộng gọi là **phần tử đối** và được ký hiệu là $-a$, chỉ phần tử đối của phần tử $a$.
+
 ````{prf:remark}
 Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này $(R, \times)$ gọi là **semigroup** (hay **nửa nhóm**).
 ````
 
-````{prf:definition} Ring with identity, Vành với đơn vị
+````{prf:property} Tính chất của vành
+1. Với mọi $a \in R$ thì $a \times 0_R = 0_R \times a = 0_R$.
+2. Với mọi $a, b \in R$ thì $(-a) \times b = -(a \times b)$.
+````
+
+```{admonition} **Chứng minh**
+:class: danger, dropdown
+
+Để chứng minh hai tính chất trên ta dùng định nghĩa vành.
+
+1. Với mọi $a \in R$, ta có
+
+$$a \times 0_R = a \times (0_R + 0_R) = a \times 0_R + a \times 0_R.$$
+
+Rút gọn $a \times 0_R$ hai vế ta có $a \times 0_R = 0_R$. Tương tự cho $0_R \times a = 0_R$.
+
+2. Vì $(-a) + a = 0_R$ với mọi $a \in R$, nhân $b$ hai vế và dùng tính chất đầu suy ra
+
+$$(-a) \times b + a \times b = 0_R \times b = 0_R.$$
+
+Chuyển vế ta có $(-a) \times b = - (a \times b)$.
+```
+
+````{prf:definition} Vành với đơn vị
 Nếu có phần tử $1_R \neq 0_R \in R$ sao cho với mọi $r \in R$ ta đều có
 
 $$\begin{equation*}
     1_R \times r = r \times 1_R = r
 \end{equation*}$$
 
-thì $1_R$ được gọi là **phần tử đơn vị** đối với phép nhân.
+thì $1_R$ được gọi là **phần tử đơn vị** đối với phép nhân và $R$ được gọi là **vành với đơn vị** (hay **ring with identity**, **кольцо с единицей**)
 ````
 
-Ta thường ký hiệu $0_R$ là phần tử đơn vị của phép cộng $(R, +)$ và gọi là **phần tử trung hòa**.
-
-Khi đó phần tử nghịch đảo của phép cộng gọi là **phần tử đối** và được ký hiệu là $-a$, chỉ phần tử đối của phần tử $a$.
-
-Ta ký hiệu $1_R$ là **phần tử đơn vị** đối với phép nhân $(R, \times)$.
+Ta ký hiệu $1_R$ (hoặc ngắn gọn là $1$) là **phần tử đơn vị** đối với phép nhân $(R, \times)$.
 
 Từ phần tử đơn vị đối với phép nhân ta có khái niệm **đặc số** (hay **số đặc trưng**, **characteristic**) của vành với đơn vị.
 
-````{prf:definition} Characteristic, Đặc số
-Xét trường $R$ với phần tử đơn vị là $1$ và phần tử trung hòa là 0. Số dương $p$ nhỏ nhất sao cho
+````{prf:definition} Characteristic
+Xét trường $R$ với phần tử đơn vị là $1$ và phần tử trung hòa là $0$. Số dương $p$ nhỏ nhất sao cho
 
 $$\begin{equation*}
-    \underbrace{1 + 1 + \ldots + 1 + 1}_{n \text{ lần}} = 0
+    \underbrace{1 + 1 + \ldots + 1 + 1}_{p \text{ lần}} = 0
 \end{equation*}$$
 
-được gọi là **đặc số** (hay **characteristic**) của $R$.
+được gọi là **đặc số** (hay **characteristic**, **характеристика**) của $R$.
 ````
 
-````{prf:definition} Commutative Ring, Vành giao hoán
+````{prf:definition} Vành giao hoán
 Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi $a, b \in $ đều thỏa
 
 $$\begin{equation*}
     a \times b = b \times a
 \end{equation*}$$
 
-thì ta nói là vành giao hoán.
+thì ta nói $R$ là **vành giao hoán** (hay **commutative ring**, **коммутативное кольцо**).
 ````
 
 ### Trường
 
-````{prf:definition} Field, Trường
-Cho tập hợp $F$ và hai toán tử hai ngôi trên $F$ là phép cộng $+$ và phép nhân $\times$. Khi đó $(F, +, \times)$ là **trường** (hay **field**) nếu
+````{prf:definition} Trường
+Cho tập hợp $F$ và hai toán tử hai ngôi trên $F$ là phép cộng $+$ và phép nhân $\times$. Khi đó $(F, +, \times)$ là **trường** (hay **field**, **поля**) nếu
 
 1. $(F, +, \times)$ là vành giao hoán với đơn vị.
 2. Với mọi phần tử $f \neq 0_F$, tồn tại nghịch đảo $f^{-1}$ của $f$ đối với phép nhân, nghĩa là $f \times f^{-1} = f^{-1} \times f = 1_F$
@@ -157,7 +180,7 @@ Ta thấy rằng bảng phép nhân đối xứng qua đường chéo chính. Đ
 ### Ideal
 
 ````{prf:definition} Ideal
-Xét vành $(R, +, \times)$. Một tập con $I$ của $R$ được gọi là **ideal trái** nếu
+Xét vành $(R, +, \times)$. Một tập con $I$ của $R$ được gọi là **ideal trái** (hay **left ideal**, **левый идеал**) nếu
 
 1. $(I, +)$ là nhóm con của $(R, +)$.
 2. Với mọi $r \in R$, với mọi $x \in I$ thì $rx \in I$.
@@ -165,14 +188,14 @@ Xét vành $(R, +, \times)$. Một tập con $I$ của $R$ được gọi là **
 
 Ta định nghĩa tương tự với ideal phải, khi đó $xr \in I$. Từ đây về sau nếu không nói gì thêm nghĩa là mình xét ideal trái.
 
-````{prf:definition} Principal Ideal, Ideal chính
-Nếu $I = aR$ với $a$ là phần tử nào đó trong $R$ thì $I$ được gọi là **principal ideal**.
+````{prf:definition} Principal Ideal
+Nếu $I = aR$ với $a$ là phần tử nào đó trong $R$ thì $I$ được gọi là **principal ideal** (hay **ideal chính**, **главный идеал**).
 ````
 
 Nói cách khác, nếu có một phần tử trong $R$ "sinh" ra được $I$ thì $I$ là principal.
 
-````{prf:definition} Maximal Ideal, Ideal cực đại
-Nếu $I$ là một ideal của $R$ và không tồn tại tập con $I'$ mà $I \subset I' \subset R$ (tập con thực thụ) thì $I$ được gọi là **maximal ideal**.
+````{prf:definition} Maximal Ideal
+Nếu $I$ là một ideal của $R$ và không tồn tại tập con $I'$ mà $I \subset I' \subset R$ (tập con thực thụ) thì $I$ được gọi là **maximal ideal** (hay **максимальный идеал**).
 ````
 
 ````{prf:remark}
@@ -211,6 +234,7 @@ Gọi $R$ là vành giao hoán với đơn vị. Khi đó, nếu $I$ là ideal c
 
 ```{admonition} **Chứng minh**
 :class: danger, dropdown
+
 Ta chứng minh điều kiện cần và điều kiện đủ.
 
 **Điều kiện cần**. Ta có $I$ là maximal ideal. Ta thấy rằng $a + I \neq 0 \Leftrightarrow a \not\in I$. Vì nếu $a \in I$ thì tồn tại $-a \in I$. Theo định nghĩa vành thì $a R$ cũng là ideal nên $I + a R$ là ideal, mà $a \not\in I$ và $a \in I + a R$ suy ra $I \subset I + a R$. Ta lại có $I$ là maximal nên $I + aR = R$, do đó tồn tại $n \in I$ và $b \in R$ sao cho $n + ab = 1$. Tóm lại là tồn tại nghịch đảo của phép nhân, do đó $R / I$ là trường.
@@ -240,8 +264,8 @@ Xét hai vành là $(R_1, +, \times)$ và $(R_2, \boxplus, \otimes)$ và ánh x�
 - với mọi $a, b \in R_1$, $f(a) \otimes f(b) = f(a \times b)$.
 ````
 
-````{prf:definition} Kernel, Hạt nhân
-**Hạt nhân** (hay **kernel**) của $f$ là
+````{prf:definition} Hạt nhân
+**Hạt nhân** (hay **kernel**, **ядро**) của $f$ là
 
 $$\begin{equation*}
     \ker f = \{x \vert x \in R_1, f(x) = 0_{2}\}
