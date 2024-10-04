@@ -93,6 +93,9 @@ parts:
         - file: vasilenko/discrete-fourier-transform.md
   - caption: Contests
     chapters:
+    - file: contests/2020/2020.md
+      sections:
+      - file: contests/2020/nsucrypto-2020.md
     - file: contests/2023/2023.md
       sections:
       - file: contests/2023/internet-olympiad/2023.md
