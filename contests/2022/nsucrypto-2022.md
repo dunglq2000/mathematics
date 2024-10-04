@@ -70,15 +70,29 @@ $$\begin{equation*}
 
 Sử dụng hàm $f$, ta có:
 
-1. Nếu cho $y=0$ thì $f(x) - 2 f(x) \cdot f(0) + f(1) = 1 \pmod{37}$ với mọi $x \in \mathbb{Z}_{37}$.
+1. Nếu cho $y=0$ thì 
 
-Điều này tương đương với $(1 - 2 f(0)) \cdot f(x) = 1 - f(1) \pmod{37}$ với mọi $x \in \mathbb{Z}_{37}$.
+$$f(x) - 2 f(x) \cdot f(0) + f(1) = 1 \pmod{37}$$
 
-Đẳng thức trên đúng với mọi $x \in \mathbb{Z}_{37}$ khi và chỉ khi $1 - 2 f(0) = 1 - f(1) = 0$. Suy ra $f(0) = 19$ và $f(1) = 1$.
+với mọi $x \in \mathbb{Z}_{37}$.
 
-2. Cho $x=y=1$ thì $f(2) = 1 - f(0) - 2 \cdot (f(1))^2 = 21 \pmod{37}$.
+Điều này tương đương với
 
-Với các cặp giá trị $(x, f(x))$ là (0, 19), (1, 1) và (2, 21) thì ta tìm lại được (bằng nội suy hoặc phép thế) đa thức $f(x) = 19 x^2 + 19 \pmod{37}$.
+$$(1 - 2 f(0)) \cdot f(x) = 1 - f(1) \pmod{37}$$
+
+với mọi $x \in \mathbb{Z}_{37}$.
+
+Đẳng thức trên đúng với mọi $x \in \mathbb{Z}_{37}$ khi và chỉ khi
+
+$$1 - 2 f(0) = 1 - f(1) = 0.$$
+
+Suy ra $f(0) = 19$ và $f(1) = 1$.
+
+2. Cho $x=y=1$ thì
+
+$$f(2) = 1 - f(0) - 2 \cdot (f(1))^2 = 21 \pmod{37}.$$
+
+Với các cặp giá trị $(x, f(x))$ là $(0, 19)$, $(1, 1)$ và $(2, 21)$ thì ta tìm lại được (bằng nội suy hoặc phép thế) đa thức $f(x) = 19 x^2 + 19 \pmod{37}$.
 
 Khi đó, với mỗi giá trị $f(x)$ ta có hai giá trị $x$ thỏa mãn đẳng thức. Truy ngược ra đáp án khả thi cho ta thông điệp ban đầu.
 
