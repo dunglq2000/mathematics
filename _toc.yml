@@ -99,6 +99,9 @@ parts:
     - file: contests/2021/2021.md
       sections:
       - file: contests/2021/nsucrypto-2021.md
+    - file: contests/2022/2022.md
+      sections:
+      - file: contests/2022/nsucrypto-2022.md
     - file: contests/2023/2023.md
       sections:
       - file: contests/2023/internet-olympiad/2023.md
