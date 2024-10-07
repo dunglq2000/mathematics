@@ -2,7 +2,9 @@
 
 Lời giải cho quyển sách {cite}`Hoffstein2014` của Hoffstein (quyển sách crypto có vẻ là được ... overrated nhất).
 
-### Chapter 2. Discrete Logarithms and Diffie- Hellman
+Trong phần này, bài giải mình sẽ viết tiếng Việt còn đề bài là tiếng Anh (mình lười nên chép lại từ sách :v).
+
+### Chapter 2. Discrete Logarithms and Diffie-Hellman
 
 **Câu 2.3** Let $g$ be a primitive root of $\mathbb{F}_p$.
 
@@ -16,9 +18,11 @@ Lời giải cho quyển sách {cite}`Hoffstein2014` của Hoffstein (quyển s�
 
 (a) Cả $a$ and $b$ là nghiệm của đồng dư $g^x \equiv h$ (mod $p$) nên $g^a \equiv h \pmod p$ và $g^b \equiv h \pmod p$. 
     
-Suy ra ta có $g^{-b} \equiv h^{-1} \pmod p$. Nhân kết quả với đồng dư đầu $g^a g^{-b} \equiv h h^{-1} \equiv 1 \pmod p$, hay $g^{a-b} \equiv 1 \pmod p$. 
-    
-Do $g$ là primitive root of $\mathbb{F}_p$ tên ta có $\phi(p) \vert (a-b)$, tương đương với $(p-1) \vert (a-b)$.
+Suy ra ta có $g^{-b} \equiv h^{-1} \pmod p$.
+
+Ta nhân kết quả với đồng dư đầu thì được $g^a g^{-b} \equiv h h^{-1} \equiv 1 \pmod p$, hay $g^{a-b} \equiv 1 \pmod p$. 
+
+Do $g$ là primitive root of $\mathbb{F}_p$ tên ta có $\phi(p) \mid (a-b)$, tương đương với $(p-1) \mid (a-b)$.
 
 Như vậy $a - b \equiv 0 \pmod{p-1}$ hay $a \equiv b \pmod {p-1}$ (đpcm).
 
@@ -34,19 +38,33 @@ Từ (1) và (2), $\log_g h_1 + \log_g h_2 = \log_g (h_1 h_2)$.
 
 ---
 
-**Câu 2.5** Let $p$ be an odd prime and let $g$ be a primitive root modulo $p$. Prove that $a$ has a square root modulo $p$ if and only if its discrete logarithm $\log_g(a)$ modulo $p-1$ is even. 
+**Câu 2.5** Let $p$ be an odd prime and let $g$ be a primitive root modulo $p$.
 
-**Giải.** Ta có $g^{p-1} \equiv 1 \pmod p$.
+Prove that $a$ has a square root modulo $p$ if and only if its discrete logarithm $\log_g(a)$ modulo $p-1$ is even. 
+
+**Giải.** Ta có $g^{p-1} \equiv 1 \pmod p$ do $g$ là primitive root modulo $p$.
 
 **Điều kiện đủ.** Nếu  $a$ là số chính phương modulo $p$ thì tồn tại số $b$ sao cho $b \equiv a^2 \pmod p$.
 
-Suy ra $\log_g a = \log_g(b^2) = 2 \log_g b \pmod{p-1}$, như vậy $\log_ga$ chẵn. 
+Suy ra
+
+$$\log_g a = \log_g(b^2) = 2 \log_g b \pmod{p-1},$$
+
+như vậy $\log_ga$ chẵn. 
 
 **Điều kiện cần.** Nếu $\log_g a$ modulo $p-1$ chẵn.
 
-Điều này xảy ra khi $\log_ga = 2\log_g b \pmod{p-1}$ với số $b \in \mathbb{F}_p$ nào đó.
+Điều này xảy ra khi
 
-Suy ra $\log_ga = \log_g (b^2) \pmod{p-1}$, hay $a \equiv b^2 \pmod{p-1}$.
+$$\log_ga = 2\log_g b \pmod{p-1}$$
+
+với số $b \in \mathbb{F}_p$ nào đó.
+
+Suy ra
+
+$$\log_ga = \log_g (b^2) \pmod{p-1},$$
+
+hay $a \equiv b^2 \pmod{p-1}$.
 
 Như vậy $a$ có căn bậc hai modulo $p-1$.
 
@@ -54,7 +72,15 @@ Như vậy $a$ có căn bậc hai modulo $p-1$.
 
 **Câu 2.10** The exercise describes a public key cryptosystem that requires Bob and Alice to exchange several messages. We illustrate the system with an example.
 
-Bob and Alice fix a publicly known prime $p=32611$, and all of other numbers used are private. Alice takes her message $m=11111$, chooses a random exponent $a=3589$, and sends the number $u=m^a$ (mod $p$) $=15950$ to Bob. Bob chooses a random exponent $b=4037$ and sends $v=u^b$ (mod $p$) $=15422$ back to Alice. Alice then computes $w=v^{15619} \equiv 27257$ (mod $32611$) and sends $w=27257$ to Bob. Finally, Bob computes $w^{31883}$ (mod $32611$) and recovers the value $11111$ of Alice's message.
+Bob and Alice fix a publicly known prime $p=32611$, and all of other numbers used are private.
+
+Alice takes her message $m=11111$, chooses a random exponent $a=3589$, and sends the number $u=m^a$ (mod $p$) $=15950$ to Bob.
+
+Bob chooses a random exponent $b=4037$ and sends $v=u^b$ (mod $p$) $=15422$ back to Alice.
+
+Alice then computes $w=v^{15619} \equiv 27257$ (mod $32611$) and sends $w=27257$ to Bob. 
+
+Finally, Bob computes $w^{31883}$ (mod $32611$) and recovers the value $11111$ of Alice's message.
 
 (a) Explain why this algorithm works. In particular, Alice uses the numbers $a=3589$ and 15619 as exponents. How are they related? Similarly, how are Bob's exponents $b=4037$ and 31883 related?
 
@@ -64,21 +90,23 @@ Bob and Alice fix a publicly known prime $p=32611$, and all of other numbers use
 
 (d) Are there any advantages of this cryptosystem over Elgamal? In particular, can Eve break it if she can solve the discrete logarithm problem? Can Eve break it if she can solve the Diffie-Hellman problem?
 
-<!-- **Giải.** 
+**Giải.** 
 
-(a) We have $3589 \cdot 15619 \equiv 4073 \cdot 31883 \equiv 1$ (mod $p-1$)
+(a) Ta có
 
-(b) Alice chooses $a$ and $a'$ satisfy that $aa' \equiv 1$ (mod $p-1$)
+$$3589 \cdot 15619 \equiv 4073 \cdot 31883 \equiv 1 \pmod{p-1}.$$
 
-Bob chooses $b$ and $b'$ satisfy that $bb' \equiv 1$ (mod $p-1$)
+(b) Alice chọn $a$ và $a'$ sao cho $aa' \equiv 1 \pmod{p-1}$.
 
-From this, we have $aa' = k(p-1)+1$ and $bb' = l(p-1) + 1$
+Tương tự, Bob chọn $b$ và $b'$ sao cho $bb' \equiv 1 \pmod{p-1}$.
 
-$\Rightarrow v \equiv u^b \equiv (m^a)^b \equiv m^{ab}$ (mod $p$)
+Do đó ta có $aa' = k(p-1)+1$ và $bb' = l(p-1) + 1$.
 
-$\Rightarrow w \equiv v^{a'} \equiv (m^{ab})^{a'} \equiv m^{aa'b}$ (mod $p$)
-
-$\Rightarrow w^{b'} \equiv m^{aa'bb'} \equiv m^{[k(p-1)+1]x[l(p-1)+1]} \equiv m^{D(p-1)+1} \equiv m$ (mod $p$) -->
+$$\begin{align*}
+    & \Rightarrow v \equiv u^b \equiv (m^a)^b \equiv m^{ab} \pmod p \\
+    & \Rightarrow w \equiv v^{a'} \equiv (m^{ab})^{a'} \equiv m^{aa'b} \pmod p \\
+    & \Rightarrow w^{b'} \equiv m^{aa'bb'} \equiv m^{[k(p-1)+1]x[l(p-1)+1]} \equiv m^{D(p-1)+1} \equiv m \pmod p.
+\end{align*}$$
 
 ---
 
@@ -107,19 +135,29 @@ Compute the following values in the group $S_3$:
 Is $S_3$ a commutative group?
 
 
-<!-- **Giải.**
+**Giải.**
 
-(a) $\tau\sigma^2 = \tau\sigma\sigma = \sigma^2\tau\sigma = \sigma\sigma^2\tau = \sigma^3\tau = e\tau = \tau$
+(a) 
 
-(b) $\tau(\sigma\tau)=(\tau\sigma)\tau = \sigma^2\tau\tau = \sigma^2\tau^2 = \sigma^2e = \sigma^2$
+$$\tau\sigma^2 = \tau\sigma\sigma = \sigma^2\tau\sigma = \sigma\sigma^2\tau = \sigma^3\tau = e\tau = \tau$$
 
-(c) $(\sigma\tau)(\sigma\tau) = \sigma(\tau\sigma)\tau=\sigma(\sigma^2\tau)\tau=\sigma^3\tau^2=ee=e$
+(b) 
 
-(d) $(\sigma\tau)(\sigma^2\tau)=(\sigma\tau)(\tau\sigma)=\sigma\tau^2\sigma=\sigma e \sigma = \sigma^2$
+$$\tau(\sigma\tau)=(\tau\sigma)\tau = \sigma^2\tau\tau = \sigma^2\tau^2 = \sigma^2e = \sigma^2$$
 
-$S_3$ is not a commutative group because:
+(c) 
 
-$\sigma\tau = \sigma\tau$ but $\tau\sigma = \sigma^2\tau$ (2 distinct elements in $S_3$) -->
+$$(\sigma\tau)(\sigma\tau) = \sigma(\tau\sigma)\tau=\sigma(\sigma^2\tau)\tau=\sigma^3\tau^2=ee=e$$
+
+(d) 
+
+$$(\sigma\tau)(\sigma^2\tau)=(\sigma\tau)(\tau\sigma)=\sigma\tau^2\sigma=\sigma e \sigma = \sigma^2$$
+
+$S_3$ không là nhóm giao hoán vì:
+
+$$\sigma\tau = \sigma\tau, \quad \tau\sigma = \sigma^2\tau,$$
+
+đây là hai phần tử phân biệt trong $S_3$.
 
 ---
 
@@ -138,31 +176,59 @@ $$\begin{equation*}
 (d) Show by an example that is $G$ is not a commutative group, then $G[d]$ need not be a group. (*Hint.* Use Exercise 2.11.)
 
 
-<!-- **Giải.**
+**Giải.**
 
-(a) Because $g \star g^{-1} = e \Rightarrow g \star e \star g^{-1} = e \Rightarrow g \star g \star g^{-1} \star g^{-1} = e \Rightarrow g^2 \star (g^{-1})^2 = e$.
+(a) Vì $g \star g^{-1} = e$ nên 
 
-Do more $d-2$ times and we get $g^d \star (g^{-1})^d = e \Rightarrow e \star (g^{-1})^2 = e \Rightarrow (g^{-1})^2 = e \Rightarrow g^{-1} \in G[d]$.
+$$\begin{align*}
+    & g \star e \star g^{-1} = e \\
+    \Rightarrow & g \star g \star g^{-1} \star g^{-1} = e \\
+    \Rightarrow & g^2 \star (g^{-1})^2 = e.
+\end{align*}$$
 
-(b) We have $g_1^d = e$ and $g_2^d = e$. Because $G$ is commutative, $g_1^d \star g_2^d = (g_1 \star g_2)^d \Rightarrow (g_1 \star g_2)^d = e \star e = e \Rightarrow g_1 \star g_2 \in G[d]$.
+Thực hiện thêm $d-2$ lần nữa và ta nhận được
 
-(c) From (b), we have $\forall g_1, g_2 \in G[d]$, then $g_1 \star g_2 \in G[d]$.
+$$\begin{align*}
+    & g^d \star (g^{-1})^d = e \\
+    \Rightarrow & e \star (g^{-1})^2 = e \\ 
+    \Rightarrow & (g^{-1})^2 = e \\
+    \Rightarrow & g^{-1} \in G[d]
+\end{align*}$$
 
-We easily see that $e \in G[d]$, so it is identity element of $G[d]$ $\Rightarrow$ identity law.
+(b) Ta có $g_1^d = e$ and $g_2^d = e$. 
 
-From (a) we have inverse law.
+Do $G$ là nhóm hoán vị nên $g_1^d \star g_2^d = (g_1 \star g_2)^d$.
 
-With $a, b, c \in G[d]$, which means $a^d = b^d = c^d = e$, then $b^d c^d = (bc)^d$ and
+Suy ra $(g_1 \star g_2)^d = e \star e = e$.
 
-$$\begin{equation*}
-    a^d \star (b^d \star c^d) = a^d \star (bc)^d =(a \star b \star c)^d = (a \star b)^d \star c^d = (a^d \star b^d) \star c^d
-\end{equation*}$$
+Như vậy $g_1 \star g_2 \in G[d]$.
 
-$\Rightarrow$ associative law.
+(c) Từ câu (b), ta có với mọi $g_1, g_2 \in G[d]$, thì $g_1 \star g_2 \in G[d]$.
 
-So, $G[d]$ is a group.
+Do $e$ là phần tử đơn vị của $G$ nên cũng là phần tử đơn vị của $G[d]$.
 
-(d) Using exercise 2.11, $S_3[2] = \{\tau, \sigma\tau, \sigma^2, \tau, e \}$. Because $(\sigma\tau)\tau = \sigma\tau^2 = \sigma \notin S_3[2]$, $S_3[2]$ is not a group.  -->
+Từ câu (a) ta chứng minh được sự tồn tại của phần tử nghịch đảo.
+
+Với $a, b, c \in G[d]$ thì $a^d = b^d = c^d = e$.
+
+Ta có $b^d \star c^d = (b \star c)^d$ do tính giao hoán, suy ra
+
+$$\begin{align*}
+    a^d \star (b^d \star c^d) & = a^d \star (b \star c)^d = (a \star b \star c)^d \\
+    & = (a \star b)^d \star c^d = (a^d \star b^d) \star c^d.
+\end{align*}$$
+
+Như vậy ta chứng minh được tính kết hợp. Và từ đó $G[d]$ là nhóm.
+
+(d) Sử dụng kết quả câu 2.11
+
+$$S_3[2] = \{\tau, \sigma\tau, \sigma^2, \tau, e \}.$$
+
+Vì
+
+$$(\sigma\tau)\tau = \sigma\tau^2 = \sigma \notin S_3[2]$$
+
+nên $S_3[2]$ không là nhóm. 
 
 ---
 
@@ -178,34 +244,72 @@ $$\phi(e_G) = e_H \quad\quad \text{and} \quad\quad \phi(g^{-1}) = \phi(g)^{-1}$$
 
 (b) Let $G$ be a commutative group. Prove that the map $\phi: G \rightarrow G$ defined by $\phi(g)=g^2$ is a homomorphism. Give an example of a noncommutative group for which this map is not a homomorphism.
 
-(c) Same question as (b) for the map $\phi(g)=g^{-1}$
+(c) Same question as (b) for the map $\phi(g)=g^{-1}$.
 
 
-<!-- **Giải.**
+**Giải.**
 
-(a) $\forall g \in G$: $g = g \star e = e \star g \Rightarrow \phi(g) = \phi(g \star e_G) = \phi(e_G \star g) \Rightarrow \phi(g) = \phi(g) \star \phi(e_G) = \phi(e_G) \star \phi(g)$.
+(a) Với mọi $g \in G$ thì $g = g \star e = e \star g$. Suy ra
 
-Because $\phi(g) \in H$, $\phi(e_G)$ is identity element of $H$ $\Leftrightarrow \phi(e_G) = e_H$
+$$\begin{align*}
+    & \phi(g) = \phi(g \star e_G) = \phi(e_G \star g) \\
+    \Longleftrightarrow \ & \phi(g) = \phi(g) \star \phi(e_G) = \phi(e_G) \star \phi(g)
+\end{align*}$$
 
-In group $G$, $g \star g^{-1} = e_G \Rightarrow \phi(g \star g^{-1}) = \phi(e_G) \Rightarrow \phi(g) \star \phi(g^{-1}) = \phi(e_G) \Rightarrow \phi(g) \star \phi(g^{-1}) = e_H \Rightarrow \phi(g^{-1}) = \phi(g)^{-1}$
+Do $\phi(g) \in H$, $\phi(e_G)$ là phần tử đơn vị của $H$, nói cách khác là $\phi(e_G) = e_H$.
 
-(b) $\phi: G \rightarrow G$, $\phi(g) = g^2$. For all $g_1, g_2 \in G$, $\phi(g_1 \star g_2) = (g_1 \star g_2)^2 = g_1^2 \star g_2^2$ (because $G$ is commutative).
+Trong nhóm $G$, $g \star g^{-1} = e_G$. Suy ra
 
-And we have $g_1^2 \star g_2^2 = \phi(g_1) \star \phi(g_2)$, which means $\phi(g_1 \star g_2) = \phi(g_1) \star \phi(g_2)$ \\ $\Rightarrow$ $G$ is homomorphism.
+$$\begin{align*}
+    & \phi(g \star g^{-1}) = \phi(e_G) \\
+    \Longleftrightarrow \ & \phi(g) \star \phi(g^{-1}) = \phi(e_G) \\
+    \Longleftrightarrow \ & \phi(g) \star \phi(g^{-1}) = e_H \\
+    \Longleftrightarrow \ & \phi(g^{-1}) = \phi(g)^{-1}
+\end{align*}$$
 
-Now we consider group in Exercise 2.11 and the map $\phi: G \rightarrow G$, $\phi(g)=g^2$, then $\phi(e) = e^2 = e$, $\phi(\sigma) = \sigma^2$, $\phi(\tau) = \tau^2 = e$, $\phi(\sigma\tau) = (\sigma\tau)^2 = e$
+(b) $\phi: G \rightarrow G$, $\phi(g) = g^2$. Với mọi $g_1, g_2 \in G$, do $G$ là nhóm giao hoán nên
 
-We have $\phi(\sigma\tau) = e \neq \sigma^2 = \phi(\sigma)\phi(\tau)$. Therefore, $G$ is not homomorphism.
+$$\phi(g_1 \star g_2) = (g_1 \star g_2)^2 = g_1^2 \star g_2^2$$
 
-(c) $\phi: G \rightarrow G$, $\phi(g) = g^{-1}$. For all $g_1, g_2 \in G$, $g_1 g_1^{-1} = e$, $g_2 g_2^{-1} = e \Rightarrow g_1 g_1^{-1} g_2 g_2^{-1} = e$, but $G$ is commutative $\Rightarrow (g_1 g_2)(g_1^{-1} g_2^{-1}) = e \Rightarrow g_1^{-1} g_2^{-1} = (g_1 g_2)^{-1} \Rightarrow \phi(g_1 g_2) = (g_1 g_2)^{-1} = g_1^{-1} g_2^{-1} = \phi(g_1) \phi(g_2) \Rightarrow$ $G$ is homomorphism.
+Ta có $g_1^2 \star g_2^2 = \phi(g_1) \star \phi(g_2)$ nên $\phi(g_1 \star g_2) = \phi(g_1) \star \phi(g_2)$. Như vậy $G$ là homomorphism.
 
-Now we consider group in Exercise 2.11 and the map $\phi: G \rightarrow G$, $\phi(g) = g^{-1}$. We have
+Xét nhóm ở Câu 2.11 và ánh xạ $\phi: G \rightarrow G$, $\phi(g)=g^2$.
 
-$$\begin{equation*}
-    \sigma\sigma^2 = e = \sigma^2\sigma = e, \quad \tau^2 = e, \quad (\sigma\tau)^2 = e, \quad (\sigma^2\tau)^2 = e
-\end{equation*}
+Khi đó
+
+$$\begin{align*}
+    \phi(e) = e^2 = e, & \quad \phi(\sigma) = \sigma^2, \\
+    \phi(\tau) = \tau^2 = e, & \quad \phi(\sigma\tau) = (\sigma\tau)^2 = e.
+\end{align*}$$
+
+Vì
+
+$$\phi(\sigma\tau) = e \neq \sigma^2 = \phi(\sigma)\phi(\tau),$$
+
+nên $G$ không là homomorphism.
+
+(c) $\phi: G \rightarrow G$, $\phi(g) = g^{-1}$.
+
+Với mọi $g_1, g_2 \in G$ thì $g_1 g_1^{-1} = e$ và $g_2 g_2^{-1} = e$
+
+Do đó $g_1 g_1^{-1} g_2 g_2^{-1} = e$, mà $G$ là nhóm hoán vị nên $(g_1 g_2)(g_1^{-1} g_2^{-1}) = e$, tương đương với $g_1^{-1} g_2^{-1} = (g_1 g_2)^{-1}$. Như vậy
+
+$$\phi(g_1 g_2) = (g_1 g_2)^{-1} = g_1^{-1} g_2^{-1} = \phi(g_1) \phi(g_2)$$
+
+Kết luận: $G$ là homomorphism.
+
+Xét nhóm ở Câu 2.11 và ánh xạ $\phi: G \rightarrow G$, $\phi(g) = g^{-1}$. Ta có
+
+$$\begin{align*}
+    \sigma\sigma^2 = e = \sigma^2\sigma = e, \quad \tau^2 = e, \quad (\sigma\tau)^2 = e, \quad (\sigma^2\tau)^2 = e.
+\end{align*}
 $$
-$\Rightarrow \phi(\sigma\tau) = \sigma\tau$ \quad and \quad $\phi(\sigma) = \sigma^2$, $\phi(\tau) = \tau \Rightarrow \phi(\sigma\tau) = \sigma\tau \neq \sigma^2\tau = \phi(\sigma)\phi(\tau)$ $\Rightarrow$ $G$ is not homomorphism. -->
+
+Suy ra
+
+$$\phi(\sigma\tau) = \sigma\tau, \quad \phi(\sigma) = \sigma^2, \quad \phi(\tau) = \tau$$
+
+Vì $\phi(\sigma\tau) = \sigma\tau \neq \sigma^2\tau = \phi(\sigma)\phi(\tau)$ nên $G$ không là homomorphism.
 
 ---
 
@@ -213,21 +317,27 @@ $\Rightarrow \phi(\sigma\tau) = \sigma\tau$ \quad and \quad $\phi(\sigma) = \sig
 
 (a) The map $\phi: \mathbb{Z} \rightarrow \mathbb{Z}/N\mathbb{Z}$ that sends $a \in Z$ to $a$ mod $N$ in $\mathbb{Z}/N\mathbb{Z}$.
 
-<!-- For all $a, b \in \mathbb{Z}$, 
-
-$$\begin{align*}
-    \phi(ab) &= (ab) \pmod N \\
-    &= (a \bmod N)(b \bmod N) \pmod N \\
-    &= \phi(a)\phi(b) \\ 
-\end{align*}$$
-
-$\Rightarrow$ homomorphism. -->
-
 (b) The map $\phi: \mathbb{R}^* \to GL_2(\mathbb{R})$ defined by $\phi(a) = \begin{pmatrix}a & 0 \\ 0 & a^{-1}\end{pmatrix}$.
 
-<!-- For all $a, b \in \mathbb{R}^*$, $\phi(ab)=\begin{pmatrix}ab & 0 \\ 0 & (ab)^{-1}\end{pmatrix}$
+(c) The discrete logarithm map $\log_g: \mathbb{F}_p^* \rightarrow \mathbb{Z}/(p-1)\mathbb{Z}$, where $g$ is a primitive root modulo $p$.
 
-And we have
+**Giải.**
+
+(a) Với mọi $a, b \in \mathbb{Z}$, 
+
+$$\begin{align*}
+    \phi(ab) & = (ab) \pmod N \\
+    & = (a \bmod N) \ (b \bmod N) \pmod N \\
+    & = \phi(a) \phi(b) \\ 
+\end{align*}$$
+
+Do đó $\phi$ là homomorphism.
+
+(b) Với mọi $a, b \in \mathbb{R}^*$ thì
+
+$$\phi(ab)=\begin{pmatrix}ab & 0 \\ 0 & (ab)^{-1}\end{pmatrix}$$
+
+Ta có
 
 $$\begin{equation*}
     \phi(a)\phi(b) = \begin{pmatrix}a & 0 \\ 0 & a^{-1}\end{pmatrix}
@@ -235,17 +345,15 @@ $$\begin{equation*}
     \begin{pmatrix}ab & 0 \\ 0 & a^{-1}b^{-1}\end{pmatrix}
 \end{equation*}$$
 
-It is clear that $(ab)^{-1} = a^{-1}b^{-1}$, so $\phi(ab) = \phi(a)\phi(b)$ $\Rightarrow$ homomorphism. -->
+Trong $\mathbb{R}^*$ ta có tính chất $(ab)^{-1} = a^{-1}b^{-1}$, do đó $\phi(ab) = \phi(a)\phi(b)$. Suy ra $\phi$ là homomorphism.
 
-(c) The discrete logarithm map $\log_g: \mathbb{F}_p^* \rightarrow \mathbb{Z}/(p-1)\mathbb{Z}$, where $g$ is a primitive root modulo $p$.
+(c) Ta chọn ánh xạ $\phi(a) = x$ thỏa mãn $g^x \equiv a \pmod p$.
 
-<!-- We choose map $\phi(a) = x$ satisfying $g^x \equiv a \pmod p$.
+Khi đó, với mọi $a, b \in \mathbb{F}_p^*$, $\phi(a) = x$, hay $g^x \equiv a \pmod p$, và $\phi(b) = y$, hay $g^y \equiv b \pmod p$.
 
-Then for all $a, b \in \mathbb{F}_p^*$, $\phi(a) = x$ (or $g^x \equiv a \pmod p$) and $\phi(b) = y$ (or $g^y \equiv b \pmod p$).
+Ta có $\phi(a) \phi(b) = x+y$ vì $x$, $y \in \mathbb{Z}/(p-1)\mathbb{Z}$, đây là phép cộng trong modulo $p-1$.
 
-$\Rightarrow \phi(a) \phi(b) = x+y$ because $x$, $y \in \mathbb{Z}/(p-1)\mathbb{Z}$, whose rule of group is addition modulo $p-1$.
-
-And we have $g^{x+y} \equiv ab \pmod p \Rightarrow \phi(ab)=x+y \Rightarrow \phi(a)\phi(b) = \phi(ab) \Rightarrow$ homomorphism. -->
+Ta lại có $g^{x+y} \equiv ab \pmod p$, suy ra $\phi(ab) = x + y$. Như vậy $\phi(a)\phi(b) = \phi(ab)$ và $\phi$ là homomorphism.
 
 ---
 
@@ -253,31 +361,42 @@ And we have $g^{x+y} \equiv ab \pmod p \Rightarrow \phi(ab)=x+y \Rightarrow \phi
 
 (a) Prove that $\text{GL}_2(\mathbb{F}_p)$ is a group.
 
-<!-- If $A$ and $B$ is 2 matrices in $GL_2(\mathbb{F}_p)$, then $AB$ also in $GL_2(\mathbb{F}_p)$ (because derminant will be modulo 2).
-
-Identity element is $E = \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}$ because $AE=EA=A$ for all matrix $A \in GL_2(\mathbb{F}_p)$.
-
-For all $A \in GL_2(\mathbb{F}_p)$, because $\det A \neq 0 \Rightarrow$ $A$ has inverse in $GL_2(\mathbb{F}_p)$.
-
-For all $A, B, C \in GL_2(\mathbb{F}_p)$, we have $(AB)C=A(BC)$ (associative law for matrix multiplication).
-
-Therefore, $GL_2(\mathbb{F}_p)$ is a group. -->
-
 (b) Show that $GL_2(\mathbb{F}_p)$ is a noncommutative group for every prime $p$.
-
-<!-- Suppose we have $A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix}$ and $B=\begin{pmatrix}b_{11} & b_{12} \\ b_{21} & b_{22}\end{pmatrix}$, $A, B \in GL_2(\mathbb{F}_p)$.
-
-Top left element of product $AB$ is $(a_{11}b_{11}+a_{12}b_{21}) \pmod p$.
-
-Top left element of product $BA$ is $(b_{11}a_{11} + b_{12}a_{21}) \pmod p$.
-
-If we choose $a_{12} \not\equiv b_{21}^{-1}a_{21}b_{21} \pmod p$, then $AB \neq BA$, which means noncommutative. -->
 
 (c) Describe $GL_2(\mathbb{F}_p)$ completely. That is, list its elements and describe the multiplication table.
 
-<!-- Firstly we list all elements, $A_1 = \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}$, $A_2 = \begin{pmatrix}0 & 1\\1 & 1\end{pmatrix}$, $A_3 = \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}$, $A_4 = \begin{pmatrix}1 & 0\\1 & 1\end{pmatrix}$, $A_5 = \begin{pmatrix}1 & 1\\0 & 1\end{pmatrix}$, $A_6 = \begin{pmatrix}1 & 1\\1 & 0\end{pmatrix}$.
+(d) How many elements are there in the group $GL_2(\mathbb{F}_p)$?
 
-Multiplication table:
+(e) How many elements are there in the group $GL_n(\mathbb{F}_p)$?
+
+**Giải.**
+
+(a) Nếu $A$ và $B$ là hai ma trận thuộc $GL_2(\mathbb{F}_p)$ thì $AB$ cũng thuộc $GL_2(\mathbb{F}_p)$ do $\det(AB) = \det(A) \cdot \det(B)$ khác $0$.
+
+Phần tử đơn vị là $E = \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}$.
+
+Với mọi $A \in GL_2(\mathbb{F}_p)$, do $\det A \neq 0$ nên luôn tồn tại nghịch đảo của $A$ trong $GL_2(\mathbb{F}_p)$.
+
+Với mọi $A, B, C \in GL_2(\mathbb{F}_p)$ ta đều có $(AB)C=A(BC)$ vì phép nhân ma trận có tính kết hợp.
+
+Kết luận: $GL_2(\mathbb{F}_p)$ là nhóm.
+
+Giả sử ta có $A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix}$ và $B=\begin{pmatrix}b_{11} & b_{12} \\ b_{21} & b_{22}\end{pmatrix}$ với $A, B \in GL_2(\mathbb{F}_p)$.
+
+Phần tử ở hàng $1$ và cột $1$ của tích $AB$ là $(a_{11}b_{11}+a_{12}b_{21}) \pmod p$.
+
+Phần tử ở hàng $1$ và cột $1$ của tích $BA$ là $(b_{11}a_{11} + b_{12}a_{21}) \pmod p$.
+
+Nếu ta chọn $a_{12} \not\equiv b_{21}^{-1}a_{21}b_{21} \pmod p$ thì $AB \neq BA$, do đó nhóm không có tính giao hoán.
+
+(c) Ta liệt kê tất cả ma trận:
+
+$$\begin{align*}
+    A_1 = \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}, \quad A_2 = \begin{pmatrix}0 & 1\\1 & 1\end{pmatrix}, \quad A_3 = \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}, \\
+    A_4 = \begin{pmatrix}1 & 0\\1 & 1\end{pmatrix}, \quad A_5 = \begin{pmatrix}1 & 1\\0 & 1\end{pmatrix}, \quad A_6 = \begin{pmatrix}1 & 1\\1 & 0\end{pmatrix}.
+\end{align*}$$
+
+Bảng phép nhân sẽ như sau:
 
 | | $A_1$ | $A_2$ | $A_3$ | $A_4$ | $A_5$ | $A_6$ |
 | - | - | - | - | - | - | - |
@@ -286,27 +405,23 @@ Multiplication table:
 | $A_3$ | $A_1$ | $A_2$ | $A_3$ | $A_4$ | $A_5$ | $A_6$ |
 | $A_4$ | $A_2$ | $A_1$ | $A_4$ | $A_3$ | $A_6$ | $A_5$ |
 | $A_5$ | $A_6$ | $A_4$ | $A_5$ | $A_2$ | $A_3$ | $A_1$ |
-| $A_6$ | $A_5$ | $A_3$ | $A_6$ | $A_1$ | $A_4$ | $A_2$ | -->
+| $A_6$ | $A_5$ | $A_3$ | $A_6$ | $A_1$ | $A_4$ | $A_2$ |
 
-(d) How many elements are there in the group $GL_2(\mathbb{F}_p)$?
+(d) Hàng đầu $\bm{u}_1$ là vector bất kì thuộc $\mathbb{F}_p^2$ ngoại trừ $(0, 0)$. Do đó ta có $p^2-1$ cách chọn.
 
-<!-- First row $\bm{u}_1$ is any vector but $(0, 0)$. We have $p^2-1$ ways.
+Hàng thứ hai $\bm{u}_2$ là vector bất kì ngoại trừ một bội của hàng đầu. Do đó ta có $p^2-p$ cách (loại các cách chọn $i \cdot \bm{u}_1$ với $i = 0, 1, \ldots, p-1$).
 
-Second row $\bm{u}_2$ is any vector but multiple of first vector. We have $p^2-p$ ways (remove $0 \cdot \bm{u}_1$ to $(p-1) \cdot \bm{u}_1$).
+Kết luận: có $(p^2-1)(p^2-p)$ phần tử trong $GL_2(\mathbb{F}_p)$.
 
-$\Rightarrow$ There are $(p^2-1)(p^2-p)$ elements. -->
+(e) Tương tự (d), ta chọn hàng đầu $\bm{u}_1$ là bất kì vector nào ngoại từ $(0,0)$. Ta có $p^n-1$ cách chọn.
 
-(e) How many elements are there in the group $GL_n(\mathbb{F}_p)$?
+Hàng thứ hai $\bm{u}_2$ là bất kì vector nào ngoại trừ bội của hàng đầu, nghĩa là loại các tổ hợp $i \cdot \bm{u}_1$ với $i = 0, 1, \ldots, p-1$. Ta có $p^n-p$ cách chọn.
 
-<!-- Similar to (d), we need first row $\bm{u}_1$ is any vector but $(0,0)$. We have $p^n-1$ ways.
+Hàng thứ ba $\bm{u}_3$ là bất kì vector nào ngoại trừ các tổ hợp tuyến tính của $\bm{u}_1$ và $\bm{u}_2$. Số lượng tổ hợp tuyến tính $a_1 \cdot \bm{u}_1 + a_2 \cdot \bm{u}_2$ chính là số lượng cặp $(a_1, a_2)$ và ta có $p^2$ trường hợp (vì $a_1, a_2 \in \mathbb{F}_p$). Như vậy hàng thứ ba có $p^n-p^2$ cách chọn.
 
-Second vector $\bm{u}_2$ is any vector but a multiple of first row. We have $p^n-p$ ways.
+Tổng quát, vector thứ $n$ (hàng thứ $n$) là bất kì vector nào ngoại trừ tổ hợp tuyến tính của các vector trước đó $\bm{u}_1$, $\bm{u}_2$, ..., $\bm{u}_{n-1}$. Như vậy ta có $p^n-p^{n-1}$ cách chọn.
 
-Third vector $\bm{u}_3$ is any vector but a linear combination of $\bm{u}_1$ and $\bm{u}_2$. The number of $a_1 \cdot \bm{u}_1 + a_2 \cdot \bm{u}_2$ is the number of pair $(a_1, a_2)$ and there is $p^2$ posibilities ($a_1, a_2 \in \mathbb{F}_p$). So third vector has $p^n-p^2$ ways.
-
-In general, $n$-th vector is any vector but a linear combination of $u_1$, $u_2$, ..., $u_{n-1}$, so there is $p^n-p^{n-1}$ ways.
-
-$\Rightarrow$ There are $(p^n-1)(p^n-p)...(p^n-p^{n-1})$ elements. -->
+Kết luận: có tất cả $(p^n-1)(p^n-p) \cdots (p^n-p^{n-1})$ phần tử trong $GL_n(\mathbb{F}_p)$.
 
 ---
 
@@ -314,49 +429,55 @@ $\Rightarrow$ There are $(p^n-1)(p^n-p)...(p^n-p^{n-1})$ elements. -->
 
 (a) $x \equiv 3 \pmod 7$ and $x \equiv 4 \pmod 9$
 
-<!-- We have $N=7 \times 9=63$, $T_1=63/7=9$, $T_1^{-1} \bmod 7 = 4$, $T_2=63/9=7$, $T_2^{-1} \bmod 9 = 4$
-
-$\Rightarrow x \equiv 3 \times 9 \times 4 + 4 \times 7 \times 4 \equiv 220 \equiv 31 \pmod {63}$ -->
-
 (b) $x \equiv 137 \pmod {423}$ and $x \equiv 87 \pmod {191}$
-
-<!-- We have $N=423 \times 191=90793$, $T_1=N/423=191$, $T_1^{-1} \bmod 423 = 392$, $T_2=N/191=423$, $T_2^{-1} \bmod 191 = 14$
-
-$\Rightarrow x \equiv 137 \times 191 \times 392 + 87 \times 423 \times 14 \equiv 27209 \pmod N$ -->
-
-<!-- (c) Cannot calculate because $gcd(451, 697)=41 \neq 1$. -->
 
 (d) $x \equiv 5 \pmod 9$, $x \equiv 6 \pmod {10}$ and $x \equiv 7 \pmod {11}$
 
-<!-- We have $N=9 \times 10 \times 11 = 990$, $T_1=N/9=110$, $T_1^{-1} \bmod 9 = 5$, $T_2=N/10=99$, $T_2^{-1} \bmod 10=9$, $T_3=N/11=90$, $T_3^{-1} \bmod 11 = 6$
-
-$\Rightarrow x \equiv 5 \times 110 \times 5 + 6 \times 99 \times 9 + 7 \times 90 \times 6 \equiv 986 \pmod N$
-
 (e) $x \equiv 37 \pmod {43}$, $x \equiv 22 \pmod {49}$ and $x \equiv 18 \pmod {71}$
 
-We have $N=43 \times 49 \times 71=149597$, $T_1=N/43=3479$, $T_1^{-1} \bmod 43 = 32$, $T_2=N/49=3053$, $T_2^{-1} \bmod 49=36$, $T_3=N/71=2107$, $T_3^{-1} \bmod 71 = 37$
+**Giải.**
 
-$\Rightarrow x \equiv 37 \times 3479 \times 32 + 22 \times 3053 \times 36 + 18  \times 2107 \times 37 \equiv 11733 \pmod N$
+(a) Vì $N = 7 \cdot 9 = 63$, đặt $T_1 = 63/7 = 9$, $T_1^{-1} \bmod 7 = 4$, $T_2 = 63/9 = 7$, $T_2^{-1} \bmod 9 = 4$.
 
-2.19. Solve the 1700-year-old Chinese remainder problem from the \textit{Sun Tzu Suan Ching} stated on page 84.
+$$\Rightarrow x \equiv 3 \cdot 9 \cdot 4 + 4 \cdot 7 \cdot 4 \equiv 220 \equiv 31 \pmod {63}$$
 
-$x \equiv 2 \pmod 3$, $x \equiv 3 \pmod 5$ and $x \equiv 2 \pmod 7$ $\Rightarrow x \equiv 23 \pmod {105}$ -->
+(b) Vì $N=423 \cdot 191=90793$, đặt $T_1=N/423=191$, $T_1^{-1} \bmod 423 = 392$, $T_2=N/191=423$, $T_2^{-1} \bmod 191 = 14$.
+
+$$\Rightarrow x \equiv 137 \cdot 191 \cdot 392 + 87 \cdot 423 \cdot 14 \equiv 27209 \pmod N$$
+
+(c) Không thể tính vì $\gcd(451, 697) = 41 \neq 1$.
+
+(d) Vì $N=9 \cdot 10 \cdot 11 = 990$, đặt $T_1=N/9=110$, $T_1^{-1} \bmod 9 = 5$, $T_2=N/10=99$, $T_2^{-1} \bmod 10=9$, $T_3=N/11=90$, $T_3^{-1} \bmod 11 = 6$
+
+$$\Rightarrow x \equiv 5 \cdot 110 \cdot 5 + 6 \cdot 99 \cdot 9 + 7 \cdot 90 \cdot 6 \equiv 986 \pmod N$$
+
+(e) Vì $N=43 \cdot 49 \cdot 71=149597$, đặt $T_1=N/43=3479$, $T_1^{-1} \bmod 43 = 32$, $T_2=N/49=3053$, $T_2^{-1} \bmod 49=36$, $T_3=N/71=2107$, $T_3^{-1} \bmod 71 = 37$
+
+$$\Rightarrow x \equiv 37 \cdot 3479 \cdot 32 + 22 \cdot 3053 \cdot 36 + 18 \cdot 2107 \cdot 37 \equiv 11733 \pmod N$$
+
+---
+
+**Câu 2.19.** Solve the 1700-year-old Chinese remainder problem from the *Sun Tzu Suan Ching* stated on page 84.
+
+$$\begin{cases}
+    x \equiv 2 \pmod 3 \\
+    x \equiv 3 \pmod 5 \\
+    x \equiv 2 \pmod 7
+\end{cases},$$
+
+$\Rightarrow x \equiv 23 \pmod {105}$.
+
+---
 
 **Câu 2.21.**
 
 (a) Let $a,b,c$ be positive integers and suppose that
 
 $$\begin{equation*}
-    a \mid c, \quad b \mid c, \quad \text{and} \quad gcd(a,b)=1
+    a \mid c, \quad b \mid c, \quad \text{and} \quad \gcd(a,b)=1
 \end{equation*}$$
 
 Prove that $ab \mid c$
-
-<!-- Because $a \mid c \Leftrightarrow c=ka$, $(k \in \mathbb{Z})$ and $b \mid c \Leftrightarrow c=lb$ $(l \in \mathbb{Z}) \Rightarrow ka = lb$. 
-
-However $gcd(a,b) = 1 \Rightarrow a \mid l \Leftrightarrow l = ma, m \in \mathbb{Z}$
-
-$\Rightarrow c=lb=lma  \Rightarrow ab \mid c$. -->
 
 (b) Let $x=c$ and $x=c'$ be two solutions to the system of simultaneous congruences in the Chinese remainder theorem. Prove that
 
@@ -364,11 +485,25 @@ $$\begin{equation*}
     c \equiv c' \pmod{m_1m_2...m_k}
 \end{equation*}$$
 
-<!-- If $c \equiv c' (\equiv a_i) \pmod m_i$, then $c \equiv c' \pmod{m_1m_2...m_k}$. -->
+**Giải.**
+
+(a) Do $a \mid c$ nên tồn tại $k \in \mathbb{Z}$ sao cho $c = ka$.
+
+Do $b \mid c$ nên tồn tại $l \in \mathbb{Z}$ sao cho $c = lb$.
+
+Như vậy $ka = lb$. 
+
+Tuy nhiên do $\gcd(a,b) = 1$ nên $a \mid l$, hay $l = ma$ với $m \in \mathbb{Z}$
+
+Như vậy $c=lb=lma$, hay $ab \mid c$.
+
+(b) Nếu $c \equiv c' (\equiv a_i) \pmod m_i$ thì $c \equiv c' \pmod{m_1 m_2 \cdots m_k}$.
 
 ---
 
-<!-- **Câu 2.23.** Find square roots modulo the following composite moduli
+**Câu 2.23.** Find square roots modulo the following composite moduli
+
+**Giải.**
 
 (a) 215
 
@@ -376,7 +511,7 @@ $$\begin{equation*}
 
 (c) 1712, 2477, 3187, 1002
 
-(d) $(\pm 1 \cdot 317 \cdot 1 \pm 1 \cdot 124 \cdot 3 \pm 10 \cdot 28 \cdot 10) \pmod{868}$ -->
+(d) $(\pm 1 \cdot 317 \cdot 1 \pm 1 \cdot 124 \cdot 3 \pm 10 \cdot 28 \cdot 10) \pmod{868}$
 
 ---
 
@@ -392,49 +527,61 @@ $$\begin{equation*}
 
 (e) Use the method in (c) to compute the square root of 3 modulo $13^3$, given that $9^2\equiv 3 \pmod{13}$
 
-<!-- **Giải.**
+**Giải.**
 
-(a) Let $f(b_n)=b_n^2-a \pmod{p^n}$, with $b_1=b \Rightarrow f(b_1)=b^2-a\equiv 0 \pmod p$
+(a) Đặt $f(b_n)=b_n^2-a \pmod{p^n}$ với $b_1 = b$. Suy ra $f(b_1) = b^2-a \equiv 0 \pmod p$.
 
-We need to find $b_2$, $f(b_2)=b_2^2-a \equiv 0 \pmod{p^2}$
+Ta cần tìm $b_2$ thỏa $f(b_2)=b_2^2-a \equiv 0 \pmod{p^2}$.
 
-Which means, $f(b_1+kp)=(b_1+kp)^2-a=b_1^2+2b_1kp+(kp)^2-a \equiv 0 \pmod{p^2}$
+Nói cách khác, $b_2 = b_1 + kp$ nên suy ra
 
-$\Leftrightarrow 2b_1k \equiv -(b_1^2-a)/p \pmod{p^2}$ (because $b_1^2-a \equiv 0 \pmod p$)
+$$f(b_1 + kp) = (b_1 + kp)^2 - a = b_1^2 + 2 b_1 kp + (kp)^2 - a \equiv 0 \pmod{p^2}$$
 
-And because $2b_1 \not\equiv 0 \pmod{p^2}$, then exist $k$ satisfying the equation
+Tương đương với
 
-(b) $k=-(b^2-a)/p \times (2b)^-1 \pmod{p^2}$
+$$2b_1k \equiv -(b_1^2-a)/p \pmod{p^2},$$
 
-(c) We prove by induction that for each $n \geqslant 1$, there is a $b_n \in \mathbb{Z}$ such that
+vì $b_1^2-a \equiv 0 \pmod p$.
+
+Do $2b_1 \not\equiv 0 \pmod{p^2}$ nên tồn tại $k$ thỏa mãn đẳng thức.
+
+(b) Ta có công thức
+
+$$k=-(b^2-a)/p \times (2b)^{-1} \pmod{p^2}$$
+
+(c) Ta chứng minh theo quy nạp với mọi $n \geqslant 1$, tồn tại $b_n \in \mathbb{Z}$ sao cho
 
 $$\begin{align*}
-    f(b_n) & =b_n^2-a \equiv 0 \pmod{p^n} \\
+    f(b_n) & = b_n^2-a \equiv 0 \pmod{p^n} \\
     b_n & = b \pmod{p^n}
 \end{align*}$$
 
-The case $n=1$ is trivial, using $b_1=b$. If the inductive hypothesis holds for $n$, which means:
+Trường hợp $n = 1$ là điều kiện ban đầu với $b_1 = b$. Giả sử mệnh đề đúng tới $n$, nghĩa là:
 
 $$\begin{align*}
     f(b_n) & = b_n^2 - a \pmod{p^n} \\
     b_n & = b \pmod{p^n} 
 \end{align*}$$
 
-With $b_{n+1}$, $f(b_{n+1})=b_{n+1}^2-a \equiv 0 \pmod{p^{n+1}}$. We write $b_{n+1}=b_n+p^nt_n$
+Xét $b_{n+1}$
 
-$\Rightarrow  f(b_{n+1})=b_n^2+2b_np^nt_n+p^{2n}t_n^2 - a \equiv 0 \pmod{p^{n+1}}$
+$$f(b_{n+1})=b_{n+1}^2-a \equiv 0 \pmod{p^{n+1}}.$$
 
-$\Rightarrow b_n^2+2b_np^nt_n-a \equiv 0 \pmod{p^{n+1}}$ (because $2n \geqslant n+1$)
+Ta viết $b_{n+1}=b_n+p^nt_n$.
 
-$\Rightarrow 2 b_n t_n \equiv -(b_n^2-a)/p^n \pmod{p^{n+1}}$ (from (2)). 
+$$\begin{align*}
+    \Rightarrow  f(b_{n+1})=b_n^2+2b_np^nt_n+p^{2n}t_n^2 - a \equiv 0 \pmod{p^{n+1}} \\
+    \Rightarrow b_n^2+2b_np^nt_n-a \equiv 0 \pmod{p^{n+1}} \ (\text{vì} \ 2n \geqslant n+1) \\
+    \Rightarrow 2 b_n t_n \equiv -(b_n^2-a)/p^n \pmod{p^{n+1}} \ \text{từ} \ (2)
+\end{align*}$$ 
 
-Therefore, exists solution for $t_n$ because we assumed that $2b_n \equiv 0 \pmod{p^{n}}$
+Nghiệm $t_n$ tồn tại vì ta đã giả sử $2b_n \equiv 0 \pmod{p^{n}}$. Như vậy
 
-$\Rightarrow f(b_{n+1}) \equiv 0 \pmod{p^{n+1}}$, and $b_{n+1} \equiv b_n \pmod{p^n}$
+$$f(b_{n+1}) \equiv 0 \pmod{p^{n+1}}, \quad \text{và} \quad b_{n+1} \equiv b_n \pmod{p^n}.$$
 
-This proof is used for $b+jp^n$ modulo $p^n$, not for $p^{n+1}$
+Chứng minh này dùng cho $b+jp^n$ modulo $p^n$, không phải cho $p^{n+1}$.
 
-(d) Using induction we get that. If $p=2$, then any integers is right -->
+(d) Sử dụng quy nạp. Đặc biệt, nếu $p=2$ thì mọi số nguyên đều thỏa.
 
 ---
 
@@ -460,143 +607,240 @@ $$\begin{equation*}
 
 is a ring homomorphism. It is called the *Frobenius homomorphism*.
 
-<!-- **Giải.** With $\phi(a+b)=\phi(a)+\phi(b)$ and $\phi(a \star b) = \phi(a) \star \phi(b)$ for all $a, b \in R$.
+**Giải.** Điều kiện đề bài là $\phi(a+b)=\phi(a)+\phi(b)$ và $\phi(a \star b) = \phi(a) \star \phi(b)$ với mọi $a, b \in R$.
 
-(a) In $R, \forall a \in R: a+0_R=0_R+a=a \Rightarrow \phi(a)=\phi(a+0_R)=\phi(0_R+a) \Rightarrow \phi(a)=\phi(a)+\phi(0_R)=\phi(0_R)+\phi(a)$.
+(a) Trong $R$, với mọi $a \in R$ ta có 
 
-Let $\phi(a)=b \in S$. Hence $b=b+\phi(0_R)=\phi(0_R)+b \Rightarrow \phi(0_R)=0_S$
+$$a+0_R = 0_R+a = a.$$
 
-In $R, \forall a \in R$, $a \star 1_R = 1_R \star a = a \Rightarrow \phi(a \star 1_R) = \phi(1_R \star a) = \phi(a) \Rightarrow \phi(a) \star \phi(1_R) = \phi(1_R) \star \phi(a) = \phi(a) \Rightarrow \phi(1_R) = 1_S$.
+Suy ra
 
-With $\phi(-a) = -\phi(a)$, we have in $R, a + (-a) = (-a) + a = 0_R \Rightarrow \phi(a+(-a))=\phi((-a)+a)=\phi(0_R) \Rightarrow \phi(a)+\phi(-a)=\phi(-a)+\phi(a)=\phi(0_R)=0_S \Rightarrow \phi(-a) = -\phi(a)$.
+$$\phi(a)=\phi(a+0_R)=\phi(0_R+a),$$
 
-With $\phi(a^{-1}) = \phi(a)^{-1}$, we have in $R, a \star a^{-1} = a^{-1} \star a = 1_R \Rightarrow \phi(a \star a^{-1}) = \phi(a^{-1} \star a) = \phi(1_R) \Rightarrow \phi(a) \star \phi(a^{-1}) = \phi(a^{-1}) \star \phi(a) = \phi(1_R) = 1_S \Rightarrow \phi(a^{-1})=\phi(a)^{-1}$.
+hay
 
-(b) $\phi: R \rightarrow R$, 
+$$\phi(a)=\phi(a)+\phi(0_R)=\phi(0_R)+\phi(a).$$
 
-$$\phi(a)=a^p \Rightarrow \displaystyle{\phi(a+b)=(a+b)^p=\sum_{i=0}{p} \binom{p}{i} a^i b^{p-1}}.$$
+Đặt $\phi(a)=b \in S$. Khi đó
 
-And we have $p \mid \binom{p}{i} = \dfrac{p!}{(p-i)!i!}$ (because $p$ is prime) $\Rightarrow 1 \leqslant i \leqslant p-1: \binom{p}{i} = 0$ (because $pa=0$)
+$$b=b+\phi(0_R)=\phi(0_R)+b$$
+
+nên suy ra $\phi(0_R)=0_S$.
+
+Trong $R$, với mọi $a \in R$ thì
+
+$$a \star 1_R = 1_R \star a = a.$$
+
+Khi đó
+
+$$\phi(a \star 1_R) = \phi(1_R \star a) = \phi(a)$$
+
+nên suy ra
+
+$$\phi(a) \star \phi(1_R) = \phi(1_R) \star \phi(a) = \phi(a),$$
+
+hay $\phi(1_R) = 1_S$.
+
+Với $\phi(-a) = -\phi(a)$, trong $R$ ta có
+
+$$a + (-a) = (-a) + a = 0_R,$$
+
+suy ra
+
+$$\phi(a+(-a))=\phi((-a)+a)=\phi(0_R),$$
+
+tương đương với
+
+$$\phi(a)+\phi(-a)=\phi(-a)+\phi(a)=\phi(0_R)=0_S.$$
+
+Như vậy $\phi(-a) = -\phi(a)$.
+
+Với $\phi(a^{-1}) = \phi(a)^{-1}$, trong $R$ ta có
+
+$$a \star a^{-1} = a^{-1} \star a = 1_R,$$
+
+suy ra
+
+$$\phi(a \star a^{-1}) = \phi(a^{-1} \star a) = \phi(1_R),$$
+
+tương đương với
+
+$$\phi(a) \star \phi(a^{-1}) = \phi(a^{-1}) \star \phi(a) = \phi(1_R) = 1_S.$$
+
+Như vậy $\phi(a^{-1})=\phi(a)^{-1}$.
+
+(b) Ánh xạ $\phi: R \rightarrow R$ cho bởi $\phi(a)=a^p$, suy ra
+
+$$\displaystyle{\phi(a+b)=(a+b)^p=\sum_{i=0}{p} \binom{p}{i} a^i b^{p-1}}.$$
+
+Vì $p \mid \displaystyle{\binom{p}{i}} = \dfrac{p!}{(p-i)! \cdot i!}$ ($p$ là số nguyên tố) nên suy ra với mọi $1 \leqslant i \leqslant p-1$, ta có $\displaystyle{\binom{p}{i}} = 0$ (do $pa=0$).
 
 $\Rightarrow \phi(a+b)=a^p+b^p=\phi(a)+\phi(b)$ (1)
 
 $\Rightarrow \phi(ab)=(ab)^p=a^p b^p = \phi(a) \phi(b)$ (2)
 
-From (1) and (2) $\Rightarrow$ ring homomorphism. -->
+Từ (1) và (2) ta thu được ring homomorphism.
 
 ---
 
 **Câu 2.32.** Prove Proposition 2.41
 
-<!-- We have $a_1 \equiv a_2 \pmod m \Rightarrow m \mid (a_1 - a_2)$
+Vì $a_1 \equiv a_2 \pmod m$ nên $m \mid (a_1 - a_2)$.
 
-$\Rightarrow \exists k \in R: a_1 - a_2 = k \star m$ 
+Nói cách khác là tồn tại $k \in R$ sao cho $a_1 - a_2 = k \star m$.
 
-Similarly, $\exists l \in R: b_1 - b_2 = l \star m$ 
+Tương tự, tồn tại $l \in R$ sao cho $b_1 - b_2 = l \star m$.
 
-$\Rightarrow a_1 - a_2 + b_1 - b_2 = (k+l) \star m$ 
+Từ đó
 
-$\Leftrightarrow m \mid (a_1 + b_1 - (a_2 + b_2))$ 
+$$a_1 - a_2 + b_1 - b_2 = (k+l) \star m,$$
 
-$\Leftrightarrow a_1 + b_1 \equiv a_2 + b_2 \equiv m$ 
+tương đương với
 
-Similarly for $a_1-b_1 \equiv a_2-b_2 \pmod m$
+$$m \mid (a_1 + b_1 - (a_2 + b_2)),$$
+
+hay
+
+$$a_1 + b_1 \equiv a_2 + b_2 \pmod m.$$
+
+Tương tự cho $a_1-b_1 \equiv a_2-b_2 \pmod m$.
+
+Đối với phép nhân, do
 
 $$\begin{equation*}
     \begin{cases}
-        a_1 = a_2 + k \star m \\ b_1 = b_2 + k \star m
+        a_1 = a_2 + k \star m \\ b_1 = b_2 + l \star m
     \end{cases}
 \end{equation*}$$
 
-$\Rightarrow a_1 \star b_1 = (a_2 + k \star m)(b_2 + k \star m) = a_2 \star b_2 + a_2 \star l \star m + k \star b_2 \star m + k \star l \star m^2$
+ta có
 
-$\Rightarrow m \mid (a_1 \star b_1 - a_2 \star b_2)$
+$$\begin{align*}
+    a_1 \star b_1 & = (a_2 + k \star m)(b_2 + l \star m) \\
+    & = a_2 \star b_2 + a_2 \star l \star m + k \star b_2 \star m + k \star l \star m^2
+\end{align*}$$
 
-$\Rightarrow a_1 \star b_1 \equiv a_2 \star b_2 \pmod m$ -->
+Suy ra $m \mid (a_1 \star b_1 - a_2 \star b_2)$ hay nói cách khác là
+
+$$a_1 \star b_1 \equiv a_2 \star b_2 \pmod m.$$
 
 ---
 
 **Câu 2.33.** Prove Proposition 2.43
 
-<!-- According to Exercise 2.32, if we have
+Theo Câu 2.32, nếu ta có $a' \in \bar{a}$ thì tương đương $a' \equiv a \pmod m$.
 
-$$\begin{equation*}
-    \begin{cases}
-        a' \in \bar{a} \Leftrightarrow a' \equiv a \pmod m \\ 
-        b' \in \bar{b} \Leftrightarrow b' \equiv b \pmod m
-    \end{cases}
-\end{equation*}$$
+Tương tự, nếu ta có $b' \in \bar{b}$ thì tương đương $b' \equiv b \pmod m$.
 
-$$\begin{equation*}
-    \Rightarrow \begin{cases}
-    a' + b' \equiv a+b \pmod m \\ 
-    a' \star b' \equiv a \star b \pmod m
-    \end{cases} 
-\end{equation*}$$
+Như vậy, theo Câu 2.32 thì
 
-$\Rightarrow a'+b' \in \overline{a+b}$ and $a' \star b' \in \overline{a \star b}$. Hence the set is **closed**.
+$$a' + b' \equiv a+b \pmod m, \quad a' \star b' \equiv a \star b \pmod m$$
 
-We have $m \equiv 0 \pmod m \Rightarrow \forall a \in R, \overline{a} + \overline{m} = \overline{a+m} = \overline{a} = \overline{m+a} = \overline{m} + \overline{a}$
+Nói cách khác
 
-$\Rightarrow$ **identity element** is $\overline{m}$.
+$$a'+b' \in \overline{a+b} \quad \text{và} \quad a' \star b' \in \overline{a \star b},$$
 
-Also, because $R$ is ring, $m+(-x) \in R, x \in R$
+nói cách khác phép tính cộng và nhân đóng trên $R$ (closed).
 
-$\forall a \in R, \overline{a} + \overline{m-a} = \overline{a + m - a} = \overline{m} = \overline{m-a} + \overline{a}$
+Với mọi $a \in R$ ta có
 
-$\Rightarrow \overline{m-a}$ is additive inverse of $a$
+$$\overline{a} + \overline{0} = \overline{a+0} = \overline{a} = \overline{0+a} = \overline{0} + \overline{a}$$
 
-Easily see that $\overline{a} + (\overline{b}+\overline{c}) = \overline{a} + \overline{b+c} = \overline{a+b+c} = \overline{a+b} + \overline{c} = (\overline{a}+\overline{b})+\overline{c}$ **associative**
+Như vậy phần tử trung hòa của phép cộng là $\overline{0}$.
 
-$\forall a, b \in R, \overline{a}+\overline{b}=\overline{a+b}=\overline{b+a}=\overline{b}+\overline{a} \Rightarrow$  **commutative**.
+Với mọi $a \in R$ thì
 
-We have $a \star 1 \equiv a \pmod m \forall a \in R$
+$$\overline{a} + \overline{m-a} = \overline{a + m - a} = \overline{0} = \overline{m-a} + \overline{a},$$
 
-$\Rightarrow \overline{a} \star \overline{1} = \overline{a \star 1} = \overline{a} = \overline{1 \star a} = \overline{1} \star \overline{a}$
+suy ra $\overline{m-a}$ là phần tử đối của phần tử $a$ trong phép cộng.
 
-$\Rightarrow$ **multiplicative identity** is $\overline{1}$
+Phép cộng trong modulo cũng có tính kết hợp
 
-$\forall a, b, c \in R, a(bc)=(ab)c \pmod m$
+$$\overline{a} + (\overline{b}+\overline{c}) = \overline{a} + \overline{b+c} = \overline{a+b+c} = \overline{a+b} + \overline{c} = (\overline{a}+\overline{b})+\overline{c}$$
 
-$\Rightarrow \overline{a} \star (\overline{b} \star \overline{c}) = \overline{a} \star \overline{bc} = \overline{abc} = \overline{ab} \star \overline{c} = (\overline{a} \star \overline{b}) \star \overline{c} \Rightarrow$ **associative**.
+Với mọi $a, b \in R$
 
-And $\overline{a} \star \overline{b} = \overline{a \star b} = \overline{b \star a} = \overline{b} \star \overline{a} \Rightarrow$ **commutative**.
+$$\overline{a}+\overline{b}=\overline{a+b}=\overline{b+a}=\overline{b}+\overline{a}$$
 
-With $\overline{a} \star (\overline{b} + \overline{b}) = \overline{a} \star \overline{b + c} = \overline{a(b+c)} = \overline{ab + ac} = \overline{ab} + \overline{ac} = \overline{a} \star \overline{b} + \overline{a} \star \overline{c} \Rightarrow$ **distribute**.
+nên phép cộng modulo có tính giao hoán.
 
-Hence, $R/(m)$ is a ring -->
+Vì $a \star 1 \equiv a \pmod m$ với mọi $a \in R$ nên
+
+$$\overline{a} \star \overline{1} = \overline{a \star 1} = \overline{a} = \overline{1 \star a} = \overline{1} \star \overline{a}.$$
+
+Suy ra phần tử đơn vị của phép nhân là $\overline{1}$.
+
+Với mọi $a, b, c \in R$ ta có $a(bc)=(ab)c \pmod m$. Suy ra tính kết hợp của phép nhân
+
+$$\overline{a} \star (\overline{b} \star \overline{c}) = \overline{a} \star \overline{bc} = \overline{abc} = \overline{ab} \star \overline{c} = (\overline{a} \star \overline{b}) \star \overline{c}.$$
+
+Vì
+
+$$\overline{a} \star \overline{b} = \overline{a \star b} = \overline{b \star a} = \overline{b} \star \overline{a}$$
+
+ta có tính giao hoán của phép nhân.
+
+Tính phân phối giữa phép nhân và phép cộng:
+
+$$\overline{a} \star (\overline{b} + \overline{c}) = \overline{a} \star \overline{b + c} = \overline{a(b+c)} = \overline{ab + ac} = \overline{ab} + \overline{ac} = \overline{a} \star \overline{b} + \overline{a} \star \overline{c}.$$
+
+Như vậy, $R/(m)$ là vành (cụ thể vừa là vành với đơn vị vừa là vành giao hoán).
 
 ---
 
 **Câu 2.34.** Let $\mathbb{F}$ be a field and let $\mathbf{a}$ and $\mathbf{b}$ be nonzero polynomials in $\mathbb{F}[x]$
 
-(a) Prove that $deg(\mathbf{a} \cdot \mathbf{b}) = deg(\mathbf{a}) + deg(\mathbf{b})$
-
-<!-- Let $a=a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$, with $a_i \in \mathbb{F}[x]$ $\Rightarrow deg(\mathbf{a}) = n$ \\ Let $b = b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0$, with $a_i \in \mathbb{F}[x]$ $\Rightarrow deg(b) = m$ 
-
-$\Rightarrow deg(a \cdot b) = m+n = deg(a) + deg(b)$ -->
+(a) Prove that $\deg(\mathbf{a} \cdot \mathbf{b}) = \deg(\mathbf{a}) + \deg(\mathbf{b})$
 
 (b) Prove that $\mathbf{a}$ has a multiplicative inverse in $\mathbb{F}[x]$ if and only if $\mathbb{a}$ is in $\mathbb{F}$, i.e., if and only if $\mathbb{a}$ is a constant polynomial
 
-<!-- With $\mathbf{a} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$
-
-Suppose that $\mathbf{a}$ has multiplicative inverse in $\mathbb{F}[x]$ which is $\mathbf{b}=b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0$.
-
-$$\begin{align*}
-\Rightarrow \mathbf{ab} = \sum_{i=0}^n a_i x_i \sum_{j=0}^m b_j x^j = 1  \\ \Rightarrow \sum_{i=0}^n \sum_{j=0}^m a_i b_j x^{i+j} = 1
-\end{align*}$$
-
-Which means $a_0 b_0 = 1$, other coefficients is 0, so $\mathbf{a}$ is constant polynomial -->
-
 (c) Prove that every nonzero element of $\mathbb{F}[x]$ can be factored into a product of irreducible polynomials. (*Hint.* Use (a), (b) and induction on the degree of the polynomial.)
 
-(d) Let $R$ be ring ing $\mathbb{Z}/6\mathbb{Z}$. Give an example to show tha (a) is false for some polynomials $\mathbf{a}$ and $\mathbf{b}$ in $R[x]$
+(d) Let $R$ be ring $\mathbb{Z}/6\mathbb{Z}$. Give an example to show that (a) is false for some polynomials $\mathbf{a}$ and $\mathbf{b}$ in $R[x]$.
 
-<!-- $a=2x^2 + 3x + 1$, $b=3x+2$
+**Giải.**
 
-$\Rightarrow ab = x^2 + 3x + 2$
+(a) Đặt
 
-$deg(ab) = 2 < 3 = deg(a) + deg(b)$ -->
+$$\mathbf{a} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,$$
+
+với $a_i \in \mathbb{F}$ và $\deg(\mathbf{a}) = n$.
+
+Đặt
+
+$$b = b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0,$$
+
+với $b_i \in \mathbb{F}$ và $\deg(\mathbf{b}) = m$. 
+
+Hạng tử với bậc cao nhất trong phép nhân $\mathbf{a} \cdot \mathbf{b}$ là $x^{n+m}$, do đó
+
+$$\deg(\mathbf{a} \cdot \mathbf{b}) = n + m = \deg(\mathbf{a}) + \deg(\mathbf{b}).$$
+
+(b) Với
+
+$$\mathbf{a} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$$
+
+Giả sử $\mathbf{a}$ có nghịch đảo trong $\mathbb{F}[x]$ là đa thức
+
+$$\mathbf{b}=b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0.$$
+
+Vì
+
+$$\begin{align*}
+    \mathbf{ab} = & \sum_{i=0}^n a_i x_i \sum_{j=0}^m b_j x^j  = \sum_{i=0}^n \sum_{j=0}^m a_i b_j x^{i+j} = 1
+\end{align*}$$
+
+Đồng nhất hệ số ta có $a_0 b_0 = 1$, các tích khác bằng $0$. Như vậy $\mathbf{a}$ là đa thức hằng.
+
+(c)
+
+(d) $\mathbf{a} = 2x^2 + 3x + 1$, $\mathbf{b} = 3x + 2$.
+
+Trong $\mathbb{Z}/6\mathbb{Z}$ các hệ số được modulo cho $6$ và ta có
+
+$$\mathbf{a} \mathbf{b} = x^2 + 3x + 2$$
+
+Như vậy $\deg(\mathbf{a} \mathbf{b}) = 2 < 3 = \deg(\mathbf{a}) + \deg(\mathbf{b})$
 
 ---
 
@@ -606,7 +850,15 @@ $deg(ab) = 2 < 3 = deg(a) + deg(b)$ -->
 
 **Câu 2.37.** Prove that the polynomial $x^3+x+1$ is irreducible in $\mathbb{F}_2[x]$
 
-<!-- If $f(x) = x^3+x+1$ has any factor rather than 1 and itself, it must have degree less than 3. So we have $0, x+1, x^2, x^2+1, x^2+x, x^2+x+1, x$ but $f(x)$ is not divided by any of them. Hence irreducible -->
+**Giải.**
+
+Nếu $f(x) = x^3+x+1$ có nhân tử nào khác $1$ và chính nó thì đa thức đó phải có bậc nhỏ hơn $3$.
+
+Các đa thức như vậy trong $\mathbb{F}_2[x]$ là
+
+$$0, x+1, x^2, x^2+1, x^2+x, x^2+x+1, x.$$
+
+Tuy nhiên $f(x)$ không chia hết cho bất kì đa thức nào kể trên nên $f(x)$ là đa thức tối giản.
 
 ---
 
@@ -656,21 +908,9 @@ So $m$ is a prime  -->
 
 $$\phi(N) = | \{0 \leqslant k < N: \gcd(k, N)=1\} |.$$
 
-<!-- $\phi(p)=p-1$.
+**Giải.**
 
-Consider the set $\{ai_1, ai_2, \ldots, ai_{\phi(N)}\}$ is the set of numbers which are coprime with $N$, which means $\gcd(ai_j, N)=1$. We prove that those elements are distinct.
-
-Suppose that there are $aj$ and $ak$, satisfying $aj \equiv ak \pmod{N}$
-
-Because $\gcd(a, N)=1 \Rightarrow j \equiv k \pmod{N}$. So every element is distinct. 
-
-Moreover, if $ai_j \equiv j_k \pmod{N}$, which means $j_k \neq 0$, so the set 
-\begin{equation*}
-\{ai_1, \ldots, ai_{\phi(N)}\}
-\end{equation*}
-is a permutation of the set $\{i_1, \ldots, i_{\phi(N)}\}$. So we have \[ai_1 \times ai_2 \times \cdots \times ai_{\phi(N)} \equiv i_1 \times i_2 \times \cdots \times i_{\phi(N)} \pmod{N}\]
-
-Therefore $a^{\phi(N)} \equiv 1 \pmod{N}$ -->
+Chứng minh định lý Euler đã có trong bài viết về hàm Euler.
 
 ---
 
@@ -678,25 +918,9 @@ Therefore $a^{\phi(N)} \equiv 1 \pmod{N}$ -->
 
 If $p$ and $q$ are distinct primes, how is $\phi(pq)$ related to $\phi(p)$ and $\phi(q)$?
 
-<!-- We consider numbers from 1 to $pq$, there are $pq$ elements
+**Giải.**
 
-Notice that $iq = jq$ if and only if $i=q$ and $j=p$ because $p$ and $q$ are distinct primes \\ Next, we subtract the number of divisors having factor $p$, there are $q$ elements ($1 \times p, 2 \times p, \cdots, q \times p$) \\ Next, we subtract the number of divisors having factor $q$, there are $p$ elements ($1 \times q$, $2 \times q, \cdots, p \times q$) \\ Here we get $pq - p - q$ elements, but remember that we have subtracted element $pq$ twice, so we need to add 1 \\ $\Rightarrow \phi(pq) = pq - p - q + 1 = (p-1)(q-1) = \phi(p)\phi(q)$
-If $p$ is prime, what is the value of $\phi(p^2)$? How about $\phi(p^j)$? \\ From 1 to $p^j$ there are $p^j$ elements, we subtract the number of divisors having factor $p$, those are $\{1p, 2p, \cdots, p^{j-1}p\} \Rightarrow p^{j-1}$ numbers \\ $\Rightarrow \phi(p^j) = p^j - p^{j-1}$
-We write numbers from 1 to $mn$ as matrix $m$ rows and $n$ columns
-\begin{center}
-\begin{tabular}{c c c c}
-    $0m+1$ & $1m+1$ & $\cdots$ & $(n-1)m+1$ \\ 
-    $0m+2$ & $1m+2$ & $\cdots$ & $(n-1)m+2$ \\ 
-    $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\ 
-    $0m + m-1$ & $1m + m-1$ & $\cdots$ & $(n-1)m + m - 1$ \\
-    $0m + m$ & $1 m + m$ & $\cdots$ & $(n-1)m + m$
-\end{tabular}
-\end{center}
-With number $r$ that satisfies $\gcd(r,m)=1$, we get $gcd(km+r,r)=1$ ($k=\overline{0, n-1}$). Here $km+r$ is all numbers on $r$-th row, which means there are $\phi(m)$ rows, whose elements coprime with $m$ \\ On those $\phi(m)$ rows, each row has $\phi(n)$ elements that coprime with $n$. Hence $\phi(m)\phi(n)=\phi(mn)$
-From (b) we get $\phi(p_i) = p_i - 1$
-\begin{align*}
-\Rightarrow \phi(N) & = \phi(p_1)\phi(p_2)\cdots\phi(p_r) \\ & = (p_1 - 1)(p_2 -1)\cdots(p_r-1) \\ & = N\prod_{i=1}^{r}\Bigg(1-\frac{1}{p_i}\Bigg)
-\end{align*} -->
+Chứng minh tính chất nhân tính của hàm Euler đã có ở bài viết về hàm Euler.
 
 ---
 
@@ -704,11 +928,19 @@ From (b) we get $\phi(p_i) = p_i - 1$
 
 Explain how to solve the congruence $x^e \equiv c \pmod{N}$ assuming that you know the value of $\phi(N)$
 
-<!-- Because of $\gcd(e, \phi(N)) = 1$, we can find an integers $d$ satisfying that $ed \equiv 1 \pmod{\phi(N)}$ (using Extended Euclidean Algorithm)
+**Giải.**
 
-$\Rightarrow ed = k\phi(N) + 1$ with $k \in \mathbb{Z}$
+Vì $\gcd(e, \phi(N)) = 1$, ta có thể tìm số $d \in \mathbb{Z}$ sao cho $ed \equiv 1 \pmod{\phi(N)}$ với thuật toán Euclid mở rộng.
 
-And because of $\gcd(N, c)=1 \Rightarrow \gcd(N,x)=1$, and \[c^d = \Big(x^e\Big)^d = x^{ed} = x^{k\phi(N) + 1} = (x^k)^{\phi(N)}x\] and we have known that $(x^k)^{\phi(N)} \equiv 1 \pmod{N}$ from Exercise 3.4. Therefore we get \[c^d \equiv x \pmod{N}\], we finish finding solution -->
+Khi đó $ed = k\phi(N) + 1$ với $k \in \mathbb{Z}$.
+
+VÌ $\gcd(N, c)=1$ nên $\gcd(N,x)=1$, hay
+
+$$c^d = \Big(x^e\Big)^d = x^{ed} = x^{k\phi(N) + 1} = (x^k)^{\phi(N)}x,$$
+
+và ta đã biết $(x^k)^{\phi(N)} \equiv 1 \pmod{N}$ từ Câu 3.4.
+
+Như vậy $c^d \equiv x \pmod{N}$.
 
 ---
 
@@ -730,18 +962,35 @@ $$x \equiv c_2 \pmod{p} \qquad \text{and} \qquad x \equiv c_2 \pmod{q}$$
     
 Prove that Alice's solution $x$ is equal to Bob's plaintext $m$.
 
-<!-- First we have $c_1 \equiv mg_1^{s_1} \pmod{N} \equiv mg_1^{s_1} \pmod{p} \equiv m \pmod{p}$ \\ (because $g_1^{s_1} = (g_1^{s_1 r_1})^{(p-1)} \equiv 1 \pmod{p}$) \\ Similarly, we have $c_2 \equiv m \pmod{q}$ \\ The solution of congurences is \[x \equiv c_1 q q' + c_2 p p' \pmod N\] with $p p' + q q' = 1$ \\ $\Rightarrow x \equiv m p p' + m q q' \equiv m(p p' + q q') \equiv m \pmod N$
+**Giải.**
+
+Ta có
+
+$$c_1 \equiv mg_1^{s_1} \pmod{N} \equiv mg_1^{s_1} \pmod{p} \equiv m \pmod{p}$$
+
+do $g_1^{s_1} = (g_1^{s_1 r_1})^{(p-1)} \equiv 1 \pmod{p}$.
+
+Tương tự ta có $c_2 \equiv m \pmod{q}$.
+
+Nghiệm của hệ đồng dư là
+
+$$x \equiv c_1 q q' + c_2 p p' \pmod N$$
+
+với $p p' + q q' = 1$.
+
+$\Rightarrow x \equiv m p p' + m q q' \equiv m(p p' + q q') \equiv m \pmod N$
         
-We have 
-\[g_1 \equiv g^{r_1 (p-1)} \pmod N \equiv g^{r_1 (p-1)} \pmod p \equiv 1 \pmod p\]
+Ta có
 
-$\Rightarrow p = \gcd(g_1-1, N)$. Similarly, $q = \gcd(g_2-1, N)$
+$$g_1 \equiv g^{r_1 (p-1)} \pmod N \equiv g^{r_1 (p-1)} \pmod p \equiv 1 \pmod p.$$
 
-From here we have recovered private keys -->
+Suy ra $p = \gcd(g_1-1, N)$. Tương tự, $q = \gcd(g_2-1, N)$.
+
+Như vậy ta đã khôi phục lại private key.
 
 ---
 
-**Câu 3.13.** Find $x$, $y$ such that $xe_1 + ye_2=1=gcd(e_1,e_2)$
+**Câu 3.13.** Find $x$, $y$ such that $xe_1 + ye_2=1=\gcd(e_1,e_2)$
 
 $$\Rightarrow m=c_1^x c_2^y = m^{e_1 x + e_2 y} = m \pmod{N}$$
 
@@ -876,14 +1125,17 @@ From definition of $T(p, q)$, we have result $$(-1)^{T(p, q) + T(q, p)} = (-1)^{
 
 Let $a$ be a quadratic residue modulo $p$. Prove that the number
 
-$$b \equiv a^{\dfrac{p+1}{4}} \pmod p$$
+$$b \equiv a^{\frac{p+1}{4}} \pmod p$$
 
 has the property that $b^2 \equiv a \pmod p$. (*Hint.* Write $\dfrac{p+1}{2}$ as $1+\dfrac{p-1}{2}$ and use Exercise 3.37.) This gives an easy way to take square roots modulo $p$ for primes that are congruent to 3 modulo 4.
 
-<!-- \begin{proof}
-Using Exercise 3.37, $a^{\frac{p-1}{2}} \equiv 1 \pmod p$ because $a$ is quadratic residue modulo $p$. Therefore 
-\[b^2 \equiv a^{\frac{p+1}{2}} \equiv a^{1+\frac{p-1}{2}} \equiv a \cdot a^{\frac{p-1}{2}} \equiv a \cdot 1 \equiv 1 \pmod p\]
-\end{proof} -->
+**Giải.**
+
+Dùng Câu 3.37, $a^{\frac{p-1}{2}} \equiv 1 \pmod p$ vì $a$ là thặng dư chính phương modulo $p$.
+
+Khi đó
+
+$$b^2 \equiv a^{\frac{p+1}{2}} \equiv a^{1+\frac{p-1}{2}} \equiv a \cdot a^{\frac{p-1}{2}} \equiv a \cdot 1 \equiv 1 \pmod p$$
 
 ---
 
@@ -893,45 +1145,61 @@ $$log_g(h) = \varepsilon_0 + 2\varepsilon_1 + 4\varepsilon_2 + 8\varepsilon_3 + 
 
 Give an algorithm that generalizes Example 3.69 and allows you to rapidly compute $\varepsilon_0, \varepsilon_1, \cdots, \varepsilon_{s-1}$, thereby proving that the first $s$ bits of the discrete logarithm are insecure.
 
-<!-- \begin{algorithm}
-\caption{Algorithm to find $s$ least significant bits of $x$ in $g^x \equiv h \pmod p$}
-\begin{algorithmic}
-    \Require{$g$, $h$, $p$ ($p-1=2^s m$)}
-    \Ensure{$s$ least significant bits of $x: g^x \equiv h \pmod p$}
-    
-    Array $\varepsilon_0, \varepsilon_1, \cdots, \varepsilon_{s-1}$\;
-    \For{$i = 0, \ldots, s-1$}{
-        \If{$h$ is quadratic residue}
-            $\varepsilon_i = 0$, $h = \sqrt{h} \pmod p$
-        \ElsIf{$\varepsilon_i = 1$}
-            $h = \sqrt{g^{-1}h} \pmod p$
-        \EndIf
-    \EndFor
-    }
-\end{algorithmic}
-\end{algorithm} -->
+**Giải.**
+
+````{prf:algorithm} Thuật toán tìm $s$ least significant bit (LSB) của $x$ trong $g^x \equiv h \pmod p$
+**Input:** $g$, $h$, $p$ ($p-1=2^s m$)
+
+**Output:** $s$ least significant bits của $x$ trong $g^x \equiv h \pmod p$
+
+1. Ta sẽ tìm mảng $\varepsilon_0, \varepsilon_1, \cdots, \varepsilon_{s-1}$
+2. For $i = 0, \ldots, s-1$
+    1. If $h$ là thặng dư chính phương
+        1. $\varepsilon_i = 0$, $h = \sqrt{h} \pmod p$
+    2. ElseIf $\varepsilon_i = 1$
+        1. $h = \sqrt{g^{-1}h} \pmod p$
+    3. EndIf
+3. EndFor
+````
 
 ---
 
 **Câu 3.41.** Let $p$ be a prime satisfying $p \equiv 1 \pmod 3$. We say that $a$ is a *cubic residue modulo $p$* if $p \nmid a$ and there is an integer $c$ satisfying $a \equiv c^3 \pmod p$.
 
-<!-- Let $a$ and $b$ be cubic residues modulo $p$. Prove that $ab$ is a cubic residue modulo $p$.
+(a) Let $a$ and $b$ be cubic residues modulo $p$. Prove that $ab$ is a cubic residue modulo $p$.
 
-\begin{proof}
-$a \equiv x^3 \pmod p$, $y \equiv y^3 \pmod p$. Therefore $$ab \equiv x^3 y^3 = (xy)^3 \pmod p$$, which is cubic residue
-Give an example to show that (unlike the case with quadratic residues) it is possible for none of $a$, $b$ and $ab$ to the a cubic residue modulo $p$
+(b) Give an example to show that (unlike the case with quadratic residues) it is possible for none of $a$, $b$ and $ab$ to the a cubic residue modulo $p$
 
-Let $g$ be primitive root modulo $p$. Choose $a \equiv g^{3k+1} \pmod p$, $b \equiv g^{3k'+1} \pmod p$. Hence $ab \equiv g^{(3k+1)+(3k'+1)} \equiv g^{3(k+k')+2} \pmod p$, which is not cubic residue
-Let $g$ be a primitive root modulo $p$. Prove that $a$ is a cubic residue modulo $p$ if and only if $3 \mid \log_g(a)$, where $\log_g(a)$ is the discrete logarithm of $a$ to the base $g$.
+(c) Let $g$ be a primitive root modulo $p$. Prove that $a$ is a cubic residue modulo $p$ if and only if $3 \mid \log_g(a)$, where $\log_g(a)$ is the discrete logarithm of $a$ to the base $g$.
 
-\underline{Proof of sufficient condition}: If $a$ is a cubic residue modulo $p$, $3 \mid \log_g(a)$. Suppose $a \equiv c^3 \pmod 3$ and $c \equiv g^u = \pmod p$. Hence $a = g^3u \pmod p \Rightarrow 3 \mid \log_g(a)$
+(d) Suppose instead that $p \equiv 2 \pmod 3$. Prove that for every integer $a$ there is an integerr $c$ satisfying $a \equiv c^3 \pmod p$. In other words, if $p \equiv 2 \pmod 3$, show that every number is a cube modulo $p$.
 
-\underline{Proof of necessary condition}: If $3 | \log_g(a)$, $a$ is a cubic residue modulo $p$. This is obviously.
-Suppose instead that $p \equiv 2 \pmod 3$. Prove that for every integer $a$ there is an integerr $c$ satisfying $a \equiv c^3 \pmod p$. In other words, if $p \equiv 2 \pmod 3$, show that every number is a cube modulo $p$.
+**Giải.**
 
-\underline{Return to problem}: Because $p \equiv 2 \pmod 3 \Rightarrow \gcd(p-1, 3) = 1$. Which means that exist element $d$ such that $3d \equiv 1 \pmod{p-1}$. Hence, equation $x^3 \equiv a \pmod p$ has solution $a^d = x \pmod p$. So every number is a cube modulo $p$.
+(a) Ta có $a \equiv x^3 \pmod p$ và $y \equiv y^3 \pmod p$ với $x$ và $y$ nào đó thuộc $\mathbb{F}_p$.
 
-\end{proof} -->
+Suy ra $ab \equiv x^3 y^3 = (xy)^3 \pmod p$ cũng là thặng dư bậc ba.
+
+(b) Gọi $g$ là primitive root modulo $p$.
+
+Ta chọn $a \equiv g^{3k+1} \pmod p$ và $b \equiv g^{3k'+1} \pmod p$.
+
+Khi đó $ab \equiv g^{(3k+1)+(3k'+1)} \equiv g^{3(k+k')+2} \pmod p$ không phải thặng dư bậc ba.
+
+(c)
+
+**Điều kiện đủ**. Nếu $a$ là thặng dư bậc ba modulo $p$, giả sử $a \equiv c^3 \pmod 3$ và $c \equiv g^u = \pmod p$.
+
+Khi đó $a = g^{3u} \pmod p$ và theo định lý Lagrange thì $3 \mid \log_g(a)$.
+
+**Điều kiện cần.** Nếu $3 \mid \log_g(a)$ thì làm ngược lại bước chứng minh điều kiện đủ.
+
+
+(d) Vì $p \equiv 2 \pmod 3$ nên $\gcd(p-1, 3) = 1$. Khi đó tồn tại phần tử $d$ là nghịch đảo của $3$ modulo $p-1$.
+
+Suy ra phương trình $x^3 \equiv a \pmod p$ có nghiệm $a^d = x \pmod p$.
+
+Nói cách khác mọi phần tử đều là số bậc ba modulo $p$.
 
 ---
 
