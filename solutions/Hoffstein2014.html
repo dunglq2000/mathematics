@@ -1,0 +1,1714 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>An Introduction to Mathematical Cryptography &#8212; Math Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=80937f47" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solutions/Hoffstein2014';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CTF 2020" href="../ctf/2020/2020.html" />
+    <link rel="prev" title="Abstract Algebra: Theory and Applications" href="Judson.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Euler_Stamp.jpg" class="logo__image only-light" alt="Math Book - Home"/>
+    <script>document.write(`<img src="../_static/Euler_Stamp.jpg" class="logo__image only-dark" alt="Math Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Toán học và những niềm đau
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algebra/algebra.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/polynomial.html">2. Đa thức</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/lagrange-interpolation.html">2.1. Đa thức nội suy Lagrange</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../algebra/infinity.html">3. Sự vô hạn</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số tuyến tính</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../linalg/intro.html">4. Ma trận</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải tích</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/calculus.html">5. Giải tích</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/partial-derivative.html">5.5. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/series.html">6. Chuỗi số</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../calculus/differential-equation.html">7. Phương trình vi phân</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Xác suất</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../probability/intro.html">8. Xác suất thống kê</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../probability/Petrushko.html">9. Курс высшей математики: Теория вероятностей</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Toán rời rạc</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/group.html">10. Lý thuyết nhóm</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-intro.html">10.1. Nhóm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/symmetric-group.html">10.2. Nhóm hoán vị</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-homomorphism.html">10.3. Group homomorphism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/ring-and-field.html">10.4. Vành và trường</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/group-action.html">10.5. Tác động nhóm</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/galois-theory.html">11. Lý thuyết Galois</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/number-theory.html">12. Số học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">13. Quan hệ hai ngôi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/partition.html">14. Phân hoạch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">15. Đại cương tổ hợp</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/boolean.html">16. Đại số boolean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-function.html">16.1. Hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/weight-boolean.html">16.2. Khoảng cách Hamming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-aff-lin.html">16.3. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-monotone.html">16.4. Hàm đơn điệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/walsh-hadamard-spectre.html">16.5. Nonlinearlity của hàm boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/boolean-dnf-cnf.html">16.6. Disjunctive và Conjunctive Normal Form</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hình học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../geometry/analytic-geometry.html">17. Hình học giải tích (theo góc nhìn không giải tích)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/transformation.html">18. Phép biến hình</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometry/conics.html">19. Ba đường Conic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brachistochrone/brachistochrone.html">20. Đường đoản thời</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mật mã học (và những niềm đau)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/stream-cipher.html">21. Stream cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/linear-feedback-shift-register.html">21.1. Linear Feedback Shift Register</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/block-cipher.html">22. Block cipher</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/magma.html">22.1. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/sms4.html">22.2. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/AES.html">22.3. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/kuznyechik.html">22.4. Kuznyechik</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/differential-attack/differential-attack.html">23. Phá mã vi sai</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/toy-cipher.html">23.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/differential-attack/tinydes.html">23.2. Phá mã vi sai trên TinyDES</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/quantum-computing.html">24. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/lattice-based.html">25. Lattice-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/code-based.html">26. Code-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/elliptic.html">27. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/discrete-logarithm.html">28. Discrete logarithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Đại số boolean và mật mã học</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../boolean/intro.html">29. Giới thiệu</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Теоретико-числовые алгоритмы в криптографии</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vasilenko/intro.html">30. Теоретико-числовые алгоритмы в криптографии</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vasilenko/discrete-fourier-transform.html">30.1. Biến đổi Fourier rời rạc</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2020/2020.html">2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2021/2021.html">2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2021/nsucrypto-2021.html">NSUCRYPTO 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2022/2022.html">2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2022/nsucrypto-2022.html">NSUCRYPTO 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2023/2023.html">2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/internet-olympiad/2023.html">Internet Olympiad 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/siberian-maths-contest-2023.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2023/nsucrypto-2023.html">NSUCRYPTO 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contests/2024/2024.html">2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2024/internet-olympiad-2024.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contests/2024/cryptofox-2024.html">CryptoFox 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bài tập và lời giải</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">An Introduction to Mathematical Cryptography</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CTF</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2020/2020.html">CTF 2020</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2021/2021.html">CTF 2021</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/cryptoCTF-2021.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2021/googleCTF-2021.html">Google CTF 2021</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2022/2022.html">CTF 2022</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/isitdtu-2022.html">ISITDTU Quals 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/downunderCTF-2022.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2022/sekaiCTF-2022.html">Sekai CTF 2022</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2023/2023.html">CTF 2023</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/AmateursCTF-2023.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/diceCTF-2023.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/googleCTF-2023.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/backdoorCTF-2023.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/utctf-2023.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2023/wolvCTF-2023.html">Wolv CTF 2023</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ctf/2024/2024.html">CTF 2024</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/0xL4ughCTF-2024.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-1.html">TJCTF 2024 phần 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-2.html">TJCTF 2024 phần 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/TJCTF/TJCTF-2024-part-3.html">TJCTF 2024 phần 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ctf/2024/ASISCTF-2024.html">ASIS CTF 2024</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review sách</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../book-review/intro.html">Review sách</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../book-review/thien-tai-va-so-phan.html">Sách <em>Thiên tài và số phận</em></a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dunglq2000/mathematics/issues/new?title=Issue%20on%20page%20%2Fsolutions/Hoffstein2014.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/solutions/Hoffstein2014.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>An Introduction to Mathematical Cryptography</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-discrete-logarithms-and-diffie-hellman">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-integer-factorization-and-rsa">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-lattices-and-cryptography">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="an-introduction-to-mathematical-cryptography">
+<h1>An Introduction to Mathematical Cryptography<a class="headerlink" href="#an-introduction-to-mathematical-cryptography" title="Link to this heading">#</a></h1>
+<p>Lời giải cho quyển sách <span id="id1">[<a class="reference internal" href="../intro.html#id14" title="Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silverman. An Introduction to Mathematical Cryptography. Springer, 2 edition, 2014. ISBN 978-1-4939-1710-5. doi:10.1007/978-1-4939-1711-2.">15</a>]</span> của Hoffstein (quyển sách crypto có vẻ là được … overrated nhất).</p>
+<p>Trong phần này, bài giải mình sẽ viết tiếng Việt còn đề bài là tiếng Anh (mình lười nên chép lại từ sách :v).</p>
+<section id="chapter-2-discrete-logarithms-and-diffie-hellman">
+<h2>Chapter 2. Discrete Logarithms and Diffie-Hellman<a class="headerlink" href="#chapter-2-discrete-logarithms-and-diffie-hellman" title="Link to this heading">#</a></h2>
+<p><strong>Câu 2.3</strong> Let <span class="math notranslate nohighlight">\(g\)</span> be a primitive root of <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span>.</p>
+<p>(a) Suppose that <span class="math notranslate nohighlight">\(x = a\)</span> and <span class="math notranslate nohighlight">\(x = b\)</span> are both integer solutions to the congruence <span class="math notranslate nohighlight">\(g^x \equiv h\)</span> (mod <span class="math notranslate nohighlight">\(p\)</span>). Prove that <span class="math notranslate nohighlight">\(a \equiv b\)</span> (mod <span class="math notranslate nohighlight">\(p-1\)</span>). Explain why this implies that the map (2.1) on page 64 is well-defined</p>
+<p>(b) Prove that <span class="math notranslate nohighlight">\(\log_g(h_1 h_2) = \log_g(h_1) + \log_g(h_2)\)</span> for all <span class="math notranslate nohighlight">\(h_1, h_2 \in \mathbb{F}^*_p\)</span></p>
+<p>(c) Prove that <span class="math notranslate nohighlight">\(\log_g(h^n) = n\log_g(h)\)</span> for all <span class="math notranslate nohighlight">\(h \in \mathbb{F}^{*}_p\)</span> and <span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span></p>
+<p><strong>Giải.</strong> Các tính chất cơ bản của hàm Euler.</p>
+<p>(a) Cả <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> là nghiệm của đồng dư <span class="math notranslate nohighlight">\(g^x \equiv h\)</span> (mod <span class="math notranslate nohighlight">\(p\)</span>) nên <span class="math notranslate nohighlight">\(g^a \equiv h \pmod p\)</span> và <span class="math notranslate nohighlight">\(g^b \equiv h \pmod p\)</span>.</p>
+<p>Suy ra ta có <span class="math notranslate nohighlight">\(g^{-b} \equiv h^{-1} \pmod p\)</span>.</p>
+<p>Ta nhân kết quả với đồng dư đầu thì được <span class="math notranslate nohighlight">\(g^a g^{-b} \equiv h h^{-1} \equiv 1 \pmod p\)</span>, hay <span class="math notranslate nohighlight">\(g^{a-b} \equiv 1 \pmod p\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(g\)</span> là primitive root of <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span> tên ta có <span class="math notranslate nohighlight">\(\phi(p) \mid (a-b)\)</span>, tương đương với <span class="math notranslate nohighlight">\((p-1) \mid (a-b)\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(a - b \equiv 0 \pmod{p-1}\)</span> hay <span class="math notranslate nohighlight">\(a \equiv b \pmod {p-1}\)</span> (đpcm).</p>
+<p>(b) Giả sử <span class="math notranslate nohighlight">\(h_1 \equiv g^{x_1} \pmod p\)</span> và <span class="math notranslate nohighlight">\(h_2 \equiv g^{x_2} \pmod p\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(x_1 = \log_g h_1\)</span> và <span class="math notranslate nohighlight">\(x_2 = \log_g h_2\)</span> (1).</p>
+<p>Do <span class="math notranslate nohighlight">\(h_1 h_2 \equiv g^{x_1 + x_2} \pmod p\)</span> nên <span class="math notranslate nohighlight">\(x_1 + x_2 = \log_g(h_1 h_2)\)</span> (2).</p>
+<p>Từ (1) và (2), <span class="math notranslate nohighlight">\(\log_g h_1 + \log_g h_2 = \log_g (h_1 h_2)\)</span>.</p>
+<p>(c) tương tự (b).</p>
+<hr class="docutils" />
+<p><strong>Câu 2.5</strong> Let <span class="math notranslate nohighlight">\(p\)</span> be an odd prime and let <span class="math notranslate nohighlight">\(g\)</span> be a primitive root modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Prove that <span class="math notranslate nohighlight">\(a\)</span> has a square root modulo <span class="math notranslate nohighlight">\(p\)</span> if and only if its discrete logarithm <span class="math notranslate nohighlight">\(\log_g(a)\)</span> modulo <span class="math notranslate nohighlight">\(p-1\)</span> is even.</p>
+<p><strong>Giải.</strong> Ta có <span class="math notranslate nohighlight">\(g^{p-1} \equiv 1 \pmod p\)</span> do <span class="math notranslate nohighlight">\(g\)</span> là primitive root modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><strong>Điều kiện đủ.</strong> Nếu  <span class="math notranslate nohighlight">\(a\)</span> là số chính phương modulo <span class="math notranslate nohighlight">\(p\)</span> thì tồn tại số <span class="math notranslate nohighlight">\(b\)</span> sao cho <span class="math notranslate nohighlight">\(b \equiv a^2 \pmod p\)</span>.</p>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\log_g a = \log_g(b^2) = 2 \log_g b \pmod{p-1},\]</div>
+<p>như vậy <span class="math notranslate nohighlight">\(\log_ga\)</span> chẵn.</p>
+<p><strong>Điều kiện cần.</strong> Nếu <span class="math notranslate nohighlight">\(\log_g a\)</span> modulo <span class="math notranslate nohighlight">\(p-1\)</span> chẵn.</p>
+<p>Điều này xảy ra khi</p>
+<div class="math notranslate nohighlight">
+\[\log_ga = 2\log_g b \pmod{p-1}\]</div>
+<p>với số <span class="math notranslate nohighlight">\(b \in \mathbb{F}_p\)</span> nào đó.</p>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\log_ga = \log_g (b^2) \pmod{p-1},\]</div>
+<p>hay <span class="math notranslate nohighlight">\(a \equiv b^2 \pmod{p-1}\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(a\)</span> có căn bậc hai modulo <span class="math notranslate nohighlight">\(p-1\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.10</strong> The exercise describes a public key cryptosystem that requires Bob and Alice to exchange several messages. We illustrate the system with an example.</p>
+<p>Bob and Alice fix a publicly known prime <span class="math notranslate nohighlight">\(p=32611\)</span>, and all of other numbers used are private.</p>
+<p>Alice takes her message <span class="math notranslate nohighlight">\(m=11111\)</span>, chooses a random exponent <span class="math notranslate nohighlight">\(a=3589\)</span>, and sends the number <span class="math notranslate nohighlight">\(u=m^a\)</span> (mod <span class="math notranslate nohighlight">\(p\)</span>) <span class="math notranslate nohighlight">\(=15950\)</span> to Bob.</p>
+<p>Bob chooses a random exponent <span class="math notranslate nohighlight">\(b=4037\)</span> and sends <span class="math notranslate nohighlight">\(v=u^b\)</span> (mod <span class="math notranslate nohighlight">\(p\)</span>) <span class="math notranslate nohighlight">\(=15422\)</span> back to Alice.</p>
+<p>Alice then computes <span class="math notranslate nohighlight">\(w=v^{15619} \equiv 27257\)</span> (mod <span class="math notranslate nohighlight">\(32611\)</span>) and sends <span class="math notranslate nohighlight">\(w=27257\)</span> to Bob.</p>
+<p>Finally, Bob computes <span class="math notranslate nohighlight">\(w^{31883}\)</span> (mod <span class="math notranslate nohighlight">\(32611\)</span>) and recovers the value <span class="math notranslate nohighlight">\(11111\)</span> of Alice’s message.</p>
+<p>(a) Explain why this algorithm works. In particular, Alice uses the numbers <span class="math notranslate nohighlight">\(a=3589\)</span> and 15619 as exponents. How are they related? Similarly, how are Bob’s exponents <span class="math notranslate nohighlight">\(b=4037\)</span> and 31883 related?</p>
+<p>(b) Formulate a general version of this cryptosystem, i.e., using variables, and show how it works in general.</p>
+<p>(c) What is the disadvantage of this cryptosystem over Elgamal? (<em>Hint.</em> How many times must Alice and Bob exchange data?)</p>
+<p>(d) Are there any advantages of this cryptosystem over Elgamal? In particular, can Eve break it if she can solve the discrete logarithm problem? Can Eve break it if she can solve the Diffie-Hellman problem?</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Ta có</p>
+<div class="math notranslate nohighlight">
+\[3589 \cdot 15619 \equiv 4073 \cdot 31883 \equiv 1 \pmod{p-1}.\]</div>
+<p>(b) Alice chọn <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(a'\)</span> sao cho <span class="math notranslate nohighlight">\(aa' \equiv 1 \pmod{p-1}\)</span>.</p>
+<p>Tương tự, Bob chọn <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(b'\)</span> sao cho <span class="math notranslate nohighlight">\(bb' \equiv 1 \pmod{p-1}\)</span>.</p>
+<p>Do đó ta có <span class="math notranslate nohighlight">\(aa' = k(p-1)+1\)</span> và <span class="math notranslate nohighlight">\(bb' = l(p-1) + 1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; \Rightarrow v \equiv u^b \equiv (m^a)^b \equiv m^{ab} \pmod p \\
+    &amp; \Rightarrow w \equiv v^{a'} \equiv (m^{ab})^{a'} \equiv m^{aa'b} \pmod p \\
+    &amp; \Rightarrow w^{b'} \equiv m^{aa'bb'} \equiv m^{[k(p-1)+1]x[l(p-1)+1]} \equiv m^{D(p-1)+1} \equiv m \pmod p.
+\end{align*}\end{split}\]</div>
+<hr class="docutils" />
+<p><strong>Câu 2.11</strong> The group <span class="math notranslate nohighlight">\(S_3\)</span> consists of the following six distinct elements</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    e, \sigma, \sigma^2, \tau, \sigma\tau, \sigma^2\tau
+\end{equation*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(e\)</span> is the identity element and multiplication is performed using the rules</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \sigma^3 = e, \quad \tau^2 = e, \quad \tau\sigma = \sigma^2\tau
+\end{equation*}\]</div>
+<p>Compute the following values in the group <span class="math notranslate nohighlight">\(S_3\)</span>:</p>
+<p>(a)  <span class="math notranslate nohighlight">\(\tau\sigma^2\)</span></p>
+<p>(b)  <span class="math notranslate nohighlight">\(\tau(\sigma\tau)\)</span></p>
+<p>(c)  <span class="math notranslate nohighlight">\((\sigma\tau)(\sigma\tau)\)</span></p>
+<p>(d)  <span class="math notranslate nohighlight">\((\sigma\tau)(\sigma^2\tau)\)</span></p>
+<p>Is <span class="math notranslate nohighlight">\(S_3\)</span> a commutative group?</p>
+<p><strong>Giải.</strong></p>
+<p>(a)</p>
+<div class="math notranslate nohighlight">
+\[\tau\sigma^2 = \tau\sigma\sigma = \sigma^2\tau\sigma = \sigma\sigma^2\tau = \sigma^3\tau = e\tau = \tau\]</div>
+<p>(b)</p>
+<div class="math notranslate nohighlight">
+\[\tau(\sigma\tau)=(\tau\sigma)\tau = \sigma^2\tau\tau = \sigma^2\tau^2 = \sigma^2e = \sigma^2\]</div>
+<p>(c)</p>
+<div class="math notranslate nohighlight">
+\[(\sigma\tau)(\sigma\tau) = \sigma(\tau\sigma)\tau=\sigma(\sigma^2\tau)\tau=\sigma^3\tau^2=ee=e\]</div>
+<p>(d)</p>
+<div class="math notranslate nohighlight">
+\[(\sigma\tau)(\sigma^2\tau)=(\sigma\tau)(\tau\sigma)=\sigma\tau^2\sigma=\sigma e \sigma = \sigma^2\]</div>
+<p><span class="math notranslate nohighlight">\(S_3\)</span> không là nhóm giao hoán vì:</p>
+<div class="math notranslate nohighlight">
+\[\sigma\tau = \sigma\tau, \quad \tau\sigma = \sigma^2\tau,\]</div>
+<p>đây là hai phần tử phân biệt trong <span class="math notranslate nohighlight">\(S_3\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.12</strong> Let <span class="math notranslate nohighlight">\(G\)</span> be a group, let <span class="math notranslate nohighlight">\(d \geqslant 1\)</span> be an integer, and define a subset of <span class="math notranslate nohighlight">\(G\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    G[d] = \{g \in G: g^d = e\}
+\end{equation*}\]</div>
+<p>(a) Prove that if <span class="math notranslate nohighlight">\(g\)</span> is in <span class="math notranslate nohighlight">\(G[d]\)</span>, then <span class="math notranslate nohighlight">\(g^{-1}\)</span> is in <span class="math notranslate nohighlight">\(G[d]\)</span></p>
+<p>(b) Suppose that <span class="math notranslate nohighlight">\(G\)</span> is commutative. Prove that is <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span> are in <span class="math notranslate nohighlight">\(G[d]\)</span>, then their product <span class="math notranslate nohighlight">\(g_1 \star g_2\)</span> is in <span class="math notranslate nohighlight">\(G[d]\)</span></p>
+<p>(c) Deduce that if <span class="math notranslate nohighlight">\(G\)</span> is commutative, then <span class="math notranslate nohighlight">\(G[d]\)</span> is a group.</p>
+<p>(d) Show by an example that is <span class="math notranslate nohighlight">\(G\)</span> is not a commutative group, then <span class="math notranslate nohighlight">\(G[d]\)</span> need not be a group. (<em>Hint.</em> Use Exercise 2.11.)</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Vì <span class="math notranslate nohighlight">\(g \star g^{-1} = e\)</span> nên</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; g \star e \star g^{-1} = e \\
+    \Rightarrow &amp; g \star g \star g^{-1} \star g^{-1} = e \\
+    \Rightarrow &amp; g^2 \star (g^{-1})^2 = e.
+\end{align*}\end{split}\]</div>
+<p>Thực hiện thêm <span class="math notranslate nohighlight">\(d-2\)</span> lần nữa và ta nhận được</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; g^d \star (g^{-1})^d = e \\
+    \Rightarrow &amp; e \star (g^{-1})^2 = e \\ 
+    \Rightarrow &amp; (g^{-1})^2 = e \\
+    \Rightarrow &amp; g^{-1} \in G[d]
+\end{align*}\end{split}\]</div>
+<p>(b) Ta có <span class="math notranslate nohighlight">\(g_1^d = e\)</span> and <span class="math notranslate nohighlight">\(g_2^d = e\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(G\)</span> là nhóm hoán vị nên <span class="math notranslate nohighlight">\(g_1^d \star g_2^d = (g_1 \star g_2)^d\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\((g_1 \star g_2)^d = e \star e = e\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(g_1 \star g_2 \in G[d]\)</span>.</p>
+<p>(c) Từ câu (b), ta có với mọi <span class="math notranslate nohighlight">\(g_1, g_2 \in G[d]\)</span>, thì <span class="math notranslate nohighlight">\(g_1 \star g_2 \in G[d]\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(e\)</span> là phần tử đơn vị của <span class="math notranslate nohighlight">\(G\)</span> nên cũng là phần tử đơn vị của <span class="math notranslate nohighlight">\(G[d]\)</span>.</p>
+<p>Từ câu (a) ta chứng minh được sự tồn tại của phần tử nghịch đảo.</p>
+<p>Với <span class="math notranslate nohighlight">\(a, b, c \in G[d]\)</span> thì <span class="math notranslate nohighlight">\(a^d = b^d = c^d = e\)</span>.</p>
+<p>Ta có <span class="math notranslate nohighlight">\(b^d \star c^d = (b \star c)^d\)</span> do tính giao hoán, suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    a^d \star (b^d \star c^d) &amp; = a^d \star (b \star c)^d = (a \star b \star c)^d \\
+    &amp; = (a \star b)^d \star c^d = (a^d \star b^d) \star c^d.
+\end{align*}\end{split}\]</div>
+<p>Như vậy ta chứng minh được tính kết hợp. Và từ đó <span class="math notranslate nohighlight">\(G[d]\)</span> là nhóm.</p>
+<p>(d) Sử dụng kết quả câu 2.11</p>
+<div class="math notranslate nohighlight">
+\[S_3[2] = \{\tau, \sigma\tau, \sigma^2, \tau, e \}.\]</div>
+<p>Vì</p>
+<div class="math notranslate nohighlight">
+\[(\sigma\tau)\tau = \sigma\tau^2 = \sigma \notin S_3[2]\]</div>
+<p>nên <span class="math notranslate nohighlight">\(S_3[2]\)</span> không là nhóm.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.13</strong> Let <span class="math notranslate nohighlight">\(G\)</span> and <span class="math notranslate nohighlight">\(H\)</span> be groups. A function <span class="math notranslate nohighlight">\(\phi: G \rightarrow H\)</span> is called a (<em>group</em>) <em>homomorphism</em> if it satisfies</p>
+<div class="math notranslate nohighlight">
+\[\phi(g_1 \star g_2) = \phi(g_1) \star \phi(g_2) \quad \text{for all} \ g_1, g_2 \in G\]</div>
+<p>(Note that the product <span class="math notranslate nohighlight">\(g_1 \star g_2\)</span> uses the group law in the group <span class="math notranslate nohighlight">\(G\)</span>, while the product <span class="math notranslate nohighlight">\(\phi(g_1) \star \phi(g_2)\)</span> uses the group law in the group <span class="math notranslate nohighlight">\(H\)</span>.)</p>
+<p>(a) Let <span class="math notranslate nohighlight">\(e_G\)</span> be the identity element of <span class="math notranslate nohighlight">\(G\)</span>, let <span class="math notranslate nohighlight">\(e_H\)</span> be identity element of <span class="math notranslate nohighlight">\(H\)</span>, and the <span class="math notranslate nohighlight">\(g \in G\)</span>. Prove that</p>
+<div class="math notranslate nohighlight">
+\[\phi(e_G) = e_H \quad\quad \text{and} \quad\quad \phi(g^{-1}) = \phi(g)^{-1}\]</div>
+<p>(b) Let <span class="math notranslate nohighlight">\(G\)</span> be a commutative group. Prove that the map <span class="math notranslate nohighlight">\(\phi: G \rightarrow G\)</span> defined by <span class="math notranslate nohighlight">\(\phi(g)=g^2\)</span> is a homomorphism. Give an example of a noncommutative group for which this map is not a homomorphism.</p>
+<p>(c) Same question as (b) for the map <span class="math notranslate nohighlight">\(\phi(g)=g^{-1}\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Với mọi <span class="math notranslate nohighlight">\(g \in G\)</span> thì <span class="math notranslate nohighlight">\(g = g \star e = e \star g\)</span>. Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; \phi(g) = \phi(g \star e_G) = \phi(e_G \star g) \\
+    \Longleftrightarrow \ &amp; \phi(g) = \phi(g) \star \phi(e_G) = \phi(e_G) \star \phi(g)
+\end{align*}\end{split}\]</div>
+<p>Do <span class="math notranslate nohighlight">\(\phi(g) \in H\)</span>, <span class="math notranslate nohighlight">\(\phi(e_G)\)</span> là phần tử đơn vị của <span class="math notranslate nohighlight">\(H\)</span>, nói cách khác là <span class="math notranslate nohighlight">\(\phi(e_G) = e_H\)</span>.</p>
+<p>Trong nhóm <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(g \star g^{-1} = e_G\)</span>. Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    &amp; \phi(g \star g^{-1}) = \phi(e_G) \\
+    \Longleftrightarrow \ &amp; \phi(g) \star \phi(g^{-1}) = \phi(e_G) \\
+    \Longleftrightarrow \ &amp; \phi(g) \star \phi(g^{-1}) = e_H \\
+    \Longleftrightarrow \ &amp; \phi(g^{-1}) = \phi(g)^{-1}
+\end{align*}\end{split}\]</div>
+<p>(b) <span class="math notranslate nohighlight">\(\phi: G \rightarrow G\)</span>, <span class="math notranslate nohighlight">\(\phi(g) = g^2\)</span>. Với mọi <span class="math notranslate nohighlight">\(g_1, g_2 \in G\)</span>, do <span class="math notranslate nohighlight">\(G\)</span> là nhóm giao hoán nên</p>
+<div class="math notranslate nohighlight">
+\[\phi(g_1 \star g_2) = (g_1 \star g_2)^2 = g_1^2 \star g_2^2\]</div>
+<p>Ta có <span class="math notranslate nohighlight">\(g_1^2 \star g_2^2 = \phi(g_1) \star \phi(g_2)\)</span> nên <span class="math notranslate nohighlight">\(\phi(g_1 \star g_2) = \phi(g_1) \star \phi(g_2)\)</span>. Như vậy <span class="math notranslate nohighlight">\(G\)</span> là homomorphism.</p>
+<p>Xét nhóm ở Câu 2.11 và ánh xạ <span class="math notranslate nohighlight">\(\phi: G \rightarrow G\)</span>, <span class="math notranslate nohighlight">\(\phi(g)=g^2\)</span>.</p>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \phi(e) = e^2 = e, &amp; \quad \phi(\sigma) = \sigma^2, \\
+    \phi(\tau) = \tau^2 = e, &amp; \quad \phi(\sigma\tau) = (\sigma\tau)^2 = e.
+\end{align*}\end{split}\]</div>
+<p>Vì</p>
+<div class="math notranslate nohighlight">
+\[\phi(\sigma\tau) = e \neq \sigma^2 = \phi(\sigma)\phi(\tau),\]</div>
+<p>nên <span class="math notranslate nohighlight">\(G\)</span> không là homomorphism.</p>
+<p>(c) <span class="math notranslate nohighlight">\(\phi: G \rightarrow G\)</span>, <span class="math notranslate nohighlight">\(\phi(g) = g^{-1}\)</span>.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(g_1, g_2 \in G\)</span> thì <span class="math notranslate nohighlight">\(g_1 g_1^{-1} = e\)</span> và <span class="math notranslate nohighlight">\(g_2 g_2^{-1} = e\)</span></p>
+<p>Do đó <span class="math notranslate nohighlight">\(g_1 g_1^{-1} g_2 g_2^{-1} = e\)</span>, mà <span class="math notranslate nohighlight">\(G\)</span> là nhóm hoán vị nên <span class="math notranslate nohighlight">\((g_1 g_2)(g_1^{-1} g_2^{-1}) = e\)</span>, tương đương với <span class="math notranslate nohighlight">\(g_1^{-1} g_2^{-1} = (g_1 g_2)^{-1}\)</span>. Như vậy</p>
+<div class="math notranslate nohighlight">
+\[\phi(g_1 g_2) = (g_1 g_2)^{-1} = g_1^{-1} g_2^{-1} = \phi(g_1) \phi(g_2)\]</div>
+<p>Kết luận: <span class="math notranslate nohighlight">\(G\)</span> là homomorphism.</p>
+<p>Xét nhóm ở Câu 2.11 và ánh xạ <span class="math notranslate nohighlight">\(\phi: G \rightarrow G\)</span>, <span class="math notranslate nohighlight">\(\phi(g) = g^{-1}\)</span>. Ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+    \sigma\sigma^2 = e = \sigma^2\sigma = e, \quad \tau^2 = e, \quad (\sigma\tau)^2 = e, \quad (\sigma^2\tau)^2 = e.
+\end{align*}
+\]</div>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\phi(\sigma\tau) = \sigma\tau, \quad \phi(\sigma) = \sigma^2, \quad \phi(\tau) = \tau\]</div>
+<p>Vì <span class="math notranslate nohighlight">\(\phi(\sigma\tau) = \sigma\tau \neq \sigma^2\tau = \phi(\sigma)\phi(\tau)\)</span> nên <span class="math notranslate nohighlight">\(G\)</span> không là homomorphism.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.14.</strong> Prove that each of the following maps is a group homomophism.</p>
+<p>(a) The map <span class="math notranslate nohighlight">\(\phi: \mathbb{Z} \rightarrow \mathbb{Z}/N\mathbb{Z}\)</span> that sends <span class="math notranslate nohighlight">\(a \in Z\)</span> to <span class="math notranslate nohighlight">\(a\)</span> mod <span class="math notranslate nohighlight">\(N\)</span> in <span class="math notranslate nohighlight">\(\mathbb{Z}/N\mathbb{Z}\)</span>.</p>
+<p>(b) The map <span class="math notranslate nohighlight">\(\phi: \mathbb{R}^* \to GL_2(\mathbb{R})\)</span> defined by <span class="math notranslate nohighlight">\(\phi(a) = \begin{pmatrix}a &amp; 0 \\ 0 &amp; a^{-1}\end{pmatrix}\)</span>.</p>
+<p>(c) The discrete logarithm map <span class="math notranslate nohighlight">\(\log_g: \mathbb{F}_p^* \rightarrow \mathbb{Z}/(p-1)\mathbb{Z}\)</span>, where <span class="math notranslate nohighlight">\(g\)</span> is a primitive root modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Với mọi <span class="math notranslate nohighlight">\(a, b \in \mathbb{Z}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \phi(ab) &amp; = (ab) \pmod N \\
+    &amp; = (a \bmod N) \ (b \bmod N) \pmod N \\
+    &amp; = \phi(a) \phi(b) \\ 
+\end{align*}\end{split}\]</div>
+<p>Do đó <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism.</p>
+<p>(b) Với mọi <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}^*\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\phi(ab)=\begin{pmatrix}ab &amp; 0 \\ 0 &amp; (ab)^{-1}\end{pmatrix}\end{split}\]</div>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \phi(a)\phi(b) = \begin{pmatrix}a &amp; 0 \\ 0 &amp; a^{-1}\end{pmatrix}
+    \begin{pmatrix}b &amp; 0 \\ 0 &amp; b^{-1}\end{pmatrix} = 
+    \begin{pmatrix}ab &amp; 0 \\ 0 &amp; a^{-1}b^{-1}\end{pmatrix}
+\end{equation*}\end{split}\]</div>
+<p>Trong <span class="math notranslate nohighlight">\(\mathbb{R}^*\)</span> ta có tính chất <span class="math notranslate nohighlight">\((ab)^{-1} = a^{-1}b^{-1}\)</span>, do đó <span class="math notranslate nohighlight">\(\phi(ab) = \phi(a)\phi(b)\)</span>. Suy ra <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism.</p>
+<p>(c) Ta chọn ánh xạ <span class="math notranslate nohighlight">\(\phi(a) = x\)</span> thỏa mãn <span class="math notranslate nohighlight">\(g^x \equiv a \pmod p\)</span>.</p>
+<p>Khi đó, với mọi <span class="math notranslate nohighlight">\(a, b \in \mathbb{F}_p^*\)</span>, <span class="math notranslate nohighlight">\(\phi(a) = x\)</span>, hay <span class="math notranslate nohighlight">\(g^x \equiv a \pmod p\)</span>, và <span class="math notranslate nohighlight">\(\phi(b) = y\)</span>, hay <span class="math notranslate nohighlight">\(g^y \equiv b \pmod p\)</span>.</p>
+<p>Ta có <span class="math notranslate nohighlight">\(\phi(a) \phi(b) = x+y\)</span> vì <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y \in \mathbb{Z}/(p-1)\mathbb{Z}\)</span>, đây là phép cộng trong modulo <span class="math notranslate nohighlight">\(p-1\)</span>.</p>
+<p>Ta lại có <span class="math notranslate nohighlight">\(g^{x+y} \equiv ab \pmod p\)</span>, suy ra <span class="math notranslate nohighlight">\(\phi(ab) = x + y\)</span>. Như vậy <span class="math notranslate nohighlight">\(\phi(a)\phi(b) = \phi(ab)\)</span> và <span class="math notranslate nohighlight">\(\phi\)</span> là homomorphism.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.15.</strong></p>
+<p>(a) Prove that <span class="math notranslate nohighlight">\(\text{GL}_2(\mathbb{F}_p)\)</span> is a group.</p>
+<p>(b) Show that <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span> is a noncommutative group for every prime <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>(c) Describe <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span> completely. That is, list its elements and describe the multiplication table.</p>
+<p>(d) How many elements are there in the group <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span>?</p>
+<p>(e) How many elements are there in the group <span class="math notranslate nohighlight">\(GL_n(\mathbb{F}_p)\)</span>?</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Nếu <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> là hai ma trận thuộc <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span> thì <span class="math notranslate nohighlight">\(AB\)</span> cũng thuộc <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span> do <span class="math notranslate nohighlight">\(\det(AB) = \det(A) \cdot \det(B)\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Phần tử đơn vị là <span class="math notranslate nohighlight">\(E = \begin{pmatrix}1 &amp; 0\\0 &amp; 1\end{pmatrix}\)</span>.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(A \in GL_2(\mathbb{F}_p)\)</span>, do <span class="math notranslate nohighlight">\(\det A \neq 0\)</span> nên luôn tồn tại nghịch đảo của <span class="math notranslate nohighlight">\(A\)</span> trong <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span>.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(A, B, C \in GL_2(\mathbb{F}_p)\)</span> ta đều có <span class="math notranslate nohighlight">\((AB)C=A(BC)\)</span> vì phép nhân ma trận có tính kết hợp.</p>
+<p>Kết luận: <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span> là nhóm.</p>
+<p>Giả sử ta có <span class="math notranslate nohighlight">\(A = \begin{pmatrix}a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{pmatrix}\)</span> và <span class="math notranslate nohighlight">\(B=\begin{pmatrix}b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22}\end{pmatrix}\)</span> với <span class="math notranslate nohighlight">\(A, B \in GL_2(\mathbb{F}_p)\)</span>.</p>
+<p>Phần tử ở hàng <span class="math notranslate nohighlight">\(1\)</span> và cột <span class="math notranslate nohighlight">\(1\)</span> của tích <span class="math notranslate nohighlight">\(AB\)</span> là <span class="math notranslate nohighlight">\((a_{11}b_{11}+a_{12}b_{21}) \pmod p\)</span>.</p>
+<p>Phần tử ở hàng <span class="math notranslate nohighlight">\(1\)</span> và cột <span class="math notranslate nohighlight">\(1\)</span> của tích <span class="math notranslate nohighlight">\(BA\)</span> là <span class="math notranslate nohighlight">\((b_{11}a_{11} + b_{12}a_{21}) \pmod p\)</span>.</p>
+<p>Nếu ta chọn <span class="math notranslate nohighlight">\(a_{12} \not\equiv b_{21}^{-1}a_{21}b_{21} \pmod p\)</span> thì <span class="math notranslate nohighlight">\(AB \neq BA\)</span>, do đó nhóm không có tính giao hoán.</p>
+<p>(c) Ta liệt kê tất cả ma trận:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    A_1 = \begin{pmatrix}0 &amp; 1\\1 &amp; 0\end{pmatrix}, \quad A_2 = \begin{pmatrix}0 &amp; 1\\1 &amp; 1\end{pmatrix}, \quad A_3 = \begin{pmatrix}1 &amp; 0\\0 &amp; 1\end{pmatrix}, \\
+    A_4 = \begin{pmatrix}1 &amp; 0\\1 &amp; 1\end{pmatrix}, \quad A_5 = \begin{pmatrix}1 &amp; 1\\0 &amp; 1\end{pmatrix}, \quad A_6 = \begin{pmatrix}1 &amp; 1\\1 &amp; 0\end{pmatrix}.
+\end{align*}\end{split}\]</div>
+<p>Bảng phép nhân sẽ như sau:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_1\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_2\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_3\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_4\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_5\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(A_6\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>(d) Hàng đầu <span class="math notranslate nohighlight">\(\bm{u}_1\)</span> là vector bất kì thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_p^2\)</span> ngoại trừ <span class="math notranslate nohighlight">\((0, 0)\)</span>. Do đó ta có <span class="math notranslate nohighlight">\(p^2-1\)</span> cách chọn.</p>
+<p>Hàng thứ hai <span class="math notranslate nohighlight">\(\bm{u}_2\)</span> là vector bất kì ngoại trừ một bội của hàng đầu. Do đó ta có <span class="math notranslate nohighlight">\(p^2-p\)</span> cách (loại các cách chọn <span class="math notranslate nohighlight">\(i \cdot \bm{u}_1\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, p-1\)</span>).</p>
+<p>Kết luận: có <span class="math notranslate nohighlight">\((p^2-1)(p^2-p)\)</span> phần tử trong <span class="math notranslate nohighlight">\(GL_2(\mathbb{F}_p)\)</span>.</p>
+<p>(e) Tương tự (d), ta chọn hàng đầu <span class="math notranslate nohighlight">\(\bm{u}_1\)</span> là bất kì vector nào ngoại từ <span class="math notranslate nohighlight">\((0,0)\)</span>. Ta có <span class="math notranslate nohighlight">\(p^n-1\)</span> cách chọn.</p>
+<p>Hàng thứ hai <span class="math notranslate nohighlight">\(\bm{u}_2\)</span> là bất kì vector nào ngoại trừ bội của hàng đầu, nghĩa là loại các tổ hợp <span class="math notranslate nohighlight">\(i \cdot \bm{u}_1\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, p-1\)</span>. Ta có <span class="math notranslate nohighlight">\(p^n-p\)</span> cách chọn.</p>
+<p>Hàng thứ ba <span class="math notranslate nohighlight">\(\bm{u}_3\)</span> là bất kì vector nào ngoại trừ các tổ hợp tuyến tính của <span class="math notranslate nohighlight">\(\bm{u}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{u}_2\)</span>. Số lượng tổ hợp tuyến tính <span class="math notranslate nohighlight">\(a_1 \cdot \bm{u}_1 + a_2 \cdot \bm{u}_2\)</span> chính là số lượng cặp <span class="math notranslate nohighlight">\((a_1, a_2)\)</span> và ta có <span class="math notranslate nohighlight">\(p^2\)</span> trường hợp (vì <span class="math notranslate nohighlight">\(a_1, a_2 \in \mathbb{F}_p\)</span>). Như vậy hàng thứ ba có <span class="math notranslate nohighlight">\(p^n-p^2\)</span> cách chọn.</p>
+<p>Tổng quát, vector thứ <span class="math notranslate nohighlight">\(n\)</span> (hàng thứ <span class="math notranslate nohighlight">\(n\)</span>) là bất kì vector nào ngoại trừ tổ hợp tuyến tính của các vector trước đó <span class="math notranslate nohighlight">\(\bm{u}_1\)</span>, <span class="math notranslate nohighlight">\(\bm{u}_2\)</span>, …, <span class="math notranslate nohighlight">\(\bm{u}_{n-1}\)</span>. Như vậy ta có <span class="math notranslate nohighlight">\(p^n-p^{n-1}\)</span> cách chọn.</p>
+<p>Kết luận: có tất cả <span class="math notranslate nohighlight">\((p^n-1)(p^n-p) \cdots (p^n-p^{n-1})\)</span> phần tử trong <span class="math notranslate nohighlight">\(GL_n(\mathbb{F}_p)\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.18.</strong> Solve each of the following simultaneous systems of congruences (or explain why no solutions exists).</p>
+<p>(a) <span class="math notranslate nohighlight">\(x \equiv 3 \pmod 7\)</span> and <span class="math notranslate nohighlight">\(x \equiv 4 \pmod 9\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(x \equiv 137 \pmod {423}\)</span> and <span class="math notranslate nohighlight">\(x \equiv 87 \pmod {191}\)</span></p>
+<p>(d) <span class="math notranslate nohighlight">\(x \equiv 5 \pmod 9\)</span>, <span class="math notranslate nohighlight">\(x \equiv 6 \pmod {10}\)</span> and <span class="math notranslate nohighlight">\(x \equiv 7 \pmod {11}\)</span></p>
+<p>(e) <span class="math notranslate nohighlight">\(x \equiv 37 \pmod {43}\)</span>, <span class="math notranslate nohighlight">\(x \equiv 22 \pmod {49}\)</span> and <span class="math notranslate nohighlight">\(x \equiv 18 \pmod {71}\)</span></p>
+<p><strong>Giải.</strong></p>
+<p>(a) Vì <span class="math notranslate nohighlight">\(N = 7 \cdot 9 = 63\)</span>, đặt <span class="math notranslate nohighlight">\(T_1 = 63/7 = 9\)</span>, <span class="math notranslate nohighlight">\(T_1^{-1} \bmod 7 = 4\)</span>, <span class="math notranslate nohighlight">\(T_2 = 63/9 = 7\)</span>, <span class="math notranslate nohighlight">\(T_2^{-1} \bmod 9 = 4\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow x \equiv 3 \cdot 9 \cdot 4 + 4 \cdot 7 \cdot 4 \equiv 220 \equiv 31 \pmod {63}\]</div>
+<p>(b) Vì <span class="math notranslate nohighlight">\(N=423 \cdot 191=90793\)</span>, đặt <span class="math notranslate nohighlight">\(T_1=N/423=191\)</span>, <span class="math notranslate nohighlight">\(T_1^{-1} \bmod 423 = 392\)</span>, <span class="math notranslate nohighlight">\(T_2=N/191=423\)</span>, <span class="math notranslate nohighlight">\(T_2^{-1} \bmod 191 = 14\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow x \equiv 137 \cdot 191 \cdot 392 + 87 \cdot 423 \cdot 14 \equiv 27209 \pmod N\]</div>
+<p>(c) Không thể tính vì <span class="math notranslate nohighlight">\(\gcd(451, 697) = 41 \neq 1\)</span>.</p>
+<p>(d) Vì <span class="math notranslate nohighlight">\(N=9 \cdot 10 \cdot 11 = 990\)</span>, đặt <span class="math notranslate nohighlight">\(T_1=N/9=110\)</span>, <span class="math notranslate nohighlight">\(T_1^{-1} \bmod 9 = 5\)</span>, <span class="math notranslate nohighlight">\(T_2=N/10=99\)</span>, <span class="math notranslate nohighlight">\(T_2^{-1} \bmod 10=9\)</span>, <span class="math notranslate nohighlight">\(T_3=N/11=90\)</span>, <span class="math notranslate nohighlight">\(T_3^{-1} \bmod 11 = 6\)</span></p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow x \equiv 5 \cdot 110 \cdot 5 + 6 \cdot 99 \cdot 9 + 7 \cdot 90 \cdot 6 \equiv 986 \pmod N\]</div>
+<p>(e) Vì <span class="math notranslate nohighlight">\(N=43 \cdot 49 \cdot 71=149597\)</span>, đặt <span class="math notranslate nohighlight">\(T_1=N/43=3479\)</span>, <span class="math notranslate nohighlight">\(T_1^{-1} \bmod 43 = 32\)</span>, <span class="math notranslate nohighlight">\(T_2=N/49=3053\)</span>, <span class="math notranslate nohighlight">\(T_2^{-1} \bmod 49=36\)</span>, <span class="math notranslate nohighlight">\(T_3=N/71=2107\)</span>, <span class="math notranslate nohighlight">\(T_3^{-1} \bmod 71 = 37\)</span></p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow x \equiv 37 \cdot 3479 \cdot 32 + 22 \cdot 3053 \cdot 36 + 18 \cdot 2107 \cdot 37 \equiv 11733 \pmod N\]</div>
+<hr class="docutils" />
+<p><strong>Câu 2.19.</strong> Solve the 1700-year-old Chinese remainder problem from the <em>Sun Tzu Suan Ching</em> stated on page 84.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    x \equiv 2 \pmod 3 \\
+    x \equiv 3 \pmod 5 \\
+    x \equiv 2 \pmod 7
+\end{cases},\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow x \equiv 23 \pmod {105}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.21.</strong></p>
+<p>(a) Let <span class="math notranslate nohighlight">\(a,b,c\)</span> be positive integers and suppose that</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    a \mid c, \quad b \mid c, \quad \text{and} \quad \gcd(a,b)=1
+\end{equation*}\]</div>
+<p>Prove that <span class="math notranslate nohighlight">\(ab \mid c\)</span></p>
+<p>(b) Let <span class="math notranslate nohighlight">\(x=c\)</span> and <span class="math notranslate nohighlight">\(x=c'\)</span> be two solutions to the system of simultaneous congruences in the Chinese remainder theorem. Prove that</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    c \equiv c' \pmod{m_1m_2...m_k}
+\end{equation*}\]</div>
+<p><strong>Giải.</strong></p>
+<p>(a) Do <span class="math notranslate nohighlight">\(a \mid c\)</span> nên tồn tại <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span> sao cho <span class="math notranslate nohighlight">\(c = ka\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(b \mid c\)</span> nên tồn tại <span class="math notranslate nohighlight">\(l \in \mathbb{Z}\)</span> sao cho <span class="math notranslate nohighlight">\(c = lb\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(ka = lb\)</span>.</p>
+<p>Tuy nhiên do <span class="math notranslate nohighlight">\(\gcd(a,b) = 1\)</span> nên <span class="math notranslate nohighlight">\(a \mid l\)</span>, hay <span class="math notranslate nohighlight">\(l = ma\)</span> với <span class="math notranslate nohighlight">\(m \in \mathbb{Z}\)</span></p>
+<p>Như vậy <span class="math notranslate nohighlight">\(c=lb=lma\)</span>, hay <span class="math notranslate nohighlight">\(ab \mid c\)</span>.</p>
+<p>(b) Nếu <span class="math notranslate nohighlight">\(c \equiv c' (\equiv a_i) \pmod m_i\)</span> thì <span class="math notranslate nohighlight">\(c \equiv c' \pmod{m_1 m_2 \cdots m_k}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.23.</strong> Find square roots modulo the following composite moduli</p>
+<p><strong>Giải.</strong></p>
+<p>(a) 215</p>
+<p>(b) 2654</p>
+<p>(c) 1712, 2477, 3187, 1002</p>
+<p>(d) <span class="math notranslate nohighlight">\((\pm 1 \cdot 317 \cdot 1 \pm 1 \cdot 124 \cdot 3 \pm 10 \cdot 28 \cdot 10) \pmod{868}\)</span></p>
+<hr class="docutils" />
+<p><strong>Câu 2.24.</strong> Let <span class="math notranslate nohighlight">\(p\)</span> be an odd prime, let <span class="math notranslate nohighlight">\(a\)</span> be an integer that is not divisible by <span class="math notranslate nohighlight">\(p\)</span>, and let <span class="math notranslate nohighlight">\(b\)</span> is a square root of <span class="math notranslate nohighlight">\(a\)</span> modulo <span class="math notranslate nohighlight">\(p\)</span>. This exercise investigates the square root of <span class="math notranslate nohighlight">\(a\)</span> modulo powers of <span class="math notranslate nohighlight">\(p\)</span></p>
+<p>(a) Prove that for some choise of <span class="math notranslate nohighlight">\(k\)</span>, the number <span class="math notranslate nohighlight">\(b+kp\)</span> is a square root of <span class="math notranslate nohighlight">\(a\)</span> modulo <span class="math notranslate nohighlight">\(p^2\)</span>, i.e., <span class="math notranslate nohighlight">\((b+kp)^2 \equiv a \pmod{p^2}\)</span></p>
+<p>(b) The number <span class="math notranslate nohighlight">\(b=537\)</span> is a square root of <span class="math notranslate nohighlight">\(a=476\)</span> modulo the prime <span class="math notranslate nohighlight">\(p=1291\)</span>. Use the idea in (a) to compute a square root of 476 modulo <span class="math notranslate nohighlight">\(p^2\)</span></p>
+<p>(c) Suppose that <span class="math notranslate nohighlight">\(b\)</span> is a square root of <span class="math notranslate nohighlight">\(a\)</span> modulo <span class="math notranslate nohighlight">\(p^n\)</span>. Prove that for some choice of <span class="math notranslate nohighlight">\(j\)</span>, the number <span class="math notranslate nohighlight">\(b+jp^n\)</span> is a square root of <span class="math notranslate nohighlight">\(a\)</span> modulo <span class="math notranslate nohighlight">\(p^{n+1}\)</span></p>
+<p>(d) Explain why (c) implies the following statements: If <span class="math notranslate nohighlight">\(p\)</span> is an odd prime and if <span class="math notranslate nohighlight">\(a\)</span> has a square root modulo <span class="math notranslate nohighlight">\(p\)</span>, then <span class="math notranslate nohighlight">\(a\)</span> has a square root modulo <span class="math notranslate nohighlight">\(p^n\)</span> for every power of <span class="math notranslate nohighlight">\(p\)</span>. Is this true if <span class="math notranslate nohighlight">\(p=2\)</span>?</p>
+<p>(e) Use the method in (c) to compute the square root of 3 modulo <span class="math notranslate nohighlight">\(13^3\)</span>, given that <span class="math notranslate nohighlight">\(9^2\equiv 3 \pmod{13}\)</span></p>
+<p><strong>Giải.</strong></p>
+<p>(a) Đặt <span class="math notranslate nohighlight">\(f(b_n)=b_n^2-a \pmod{p^n}\)</span> với <span class="math notranslate nohighlight">\(b_1 = b\)</span>. Suy ra <span class="math notranslate nohighlight">\(f(b_1) = b^2-a \equiv 0 \pmod p\)</span>.</p>
+<p>Ta cần tìm <span class="math notranslate nohighlight">\(b_2\)</span> thỏa <span class="math notranslate nohighlight">\(f(b_2)=b_2^2-a \equiv 0 \pmod{p^2}\)</span>.</p>
+<p>Nói cách khác, <span class="math notranslate nohighlight">\(b_2 = b_1 + kp\)</span> nên suy ra</p>
+<div class="math notranslate nohighlight">
+\[f(b_1 + kp) = (b_1 + kp)^2 - a = b_1^2 + 2 b_1 kp + (kp)^2 - a \equiv 0 \pmod{p^2}\]</div>
+<p>Tương đương với</p>
+<div class="math notranslate nohighlight">
+\[2b_1k \equiv -(b_1^2-a)/p \pmod{p^2},\]</div>
+<p>vì <span class="math notranslate nohighlight">\(b_1^2-a \equiv 0 \pmod p\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(2b_1 \not\equiv 0 \pmod{p^2}\)</span> nên tồn tại <span class="math notranslate nohighlight">\(k\)</span> thỏa mãn đẳng thức.</p>
+<p>(b) Ta có công thức</p>
+<div class="math notranslate nohighlight">
+\[k=-(b^2-a)/p \times (2b)^{-1} \pmod{p^2}\]</div>
+<p>(c) Ta chứng minh theo quy nạp với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>, tồn tại <span class="math notranslate nohighlight">\(b_n \in \mathbb{Z}\)</span> sao cho</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    f(b_n) &amp; = b_n^2-a \equiv 0 \pmod{p^n} \\
+    b_n &amp; = b \pmod{p^n}
+\end{align*}\end{split}\]</div>
+<p>Trường hợp <span class="math notranslate nohighlight">\(n = 1\)</span> là điều kiện ban đầu với <span class="math notranslate nohighlight">\(b_1 = b\)</span>. Giả sử mệnh đề đúng tới <span class="math notranslate nohighlight">\(n\)</span>, nghĩa là:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    f(b_n) &amp; = b_n^2 - a \pmod{p^n} \\
+    b_n &amp; = b \pmod{p^n} 
+\end{align*}\end{split}\]</div>
+<p>Xét <span class="math notranslate nohighlight">\(b_{n+1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[f(b_{n+1})=b_{n+1}^2-a \equiv 0 \pmod{p^{n+1}}.\]</div>
+<p>Ta viết <span class="math notranslate nohighlight">\(b_{n+1}=b_n+p^nt_n\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \Rightarrow  f(b_{n+1})=b_n^2+2b_np^nt_n+p^{2n}t_n^2 - a \equiv 0 \pmod{p^{n+1}} \\
+    \Rightarrow b_n^2+2b_np^nt_n-a \equiv 0 \pmod{p^{n+1}} \ (\text{vì} \ 2n \geqslant n+1) \\
+    \Rightarrow 2 b_n t_n \equiv -(b_n^2-a)/p^n \pmod{p^{n+1}} \ \text{từ} \ (2)
+\end{align*}\end{split}\]</div>
+<p>Nghiệm <span class="math notranslate nohighlight">\(t_n\)</span> tồn tại vì ta đã giả sử <span class="math notranslate nohighlight">\(2b_n \equiv 0 \pmod{p^{n}}\)</span>. Như vậy</p>
+<div class="math notranslate nohighlight">
+\[f(b_{n+1}) \equiv 0 \pmod{p^{n+1}}, \quad \text{và} \quad b_{n+1} \equiv b_n \pmod{p^n}.\]</div>
+<p>Chứng minh này dùng cho <span class="math notranslate nohighlight">\(b+jp^n\)</span> modulo <span class="math notranslate nohighlight">\(p^n\)</span>, không phải cho <span class="math notranslate nohighlight">\(p^{n+1}\)</span>.</p>
+<p>(d) Sử dụng quy nạp. Đặc biệt, nếu <span class="math notranslate nohighlight">\(p=2\)</span> thì mọi số nguyên đều thỏa.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.31</strong> Let <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(S\)</span> be rings. A functions <span class="math notranslate nohighlight">\(\phi: R \rightarrow S\)</span> is called a (<em>ring</em>) <em>homomorphism</em> if it satisfies</p>
+<div class="math notranslate nohighlight">
+\[\phi(a+b)=\phi(a) + \phi(b) \quad \text{and} \quad \phi(a \star b) = \phi(a) \star \phi(b)\]</div>
+<p>for all <span class="math notranslate nohighlight">\(a, b \in R\)</span>.</p>
+<p>(a) Let <span class="math notranslate nohighlight">\(0_R\)</span>, <span class="math notranslate nohighlight">\(0_S\)</span>, <span class="math notranslate nohighlight">\(1_R\)</span> and <span class="math notranslate nohighlight">\(1_S\)</span> denote the additive and multiplicative identities of <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(S\)</span>, respectively. Prove that</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \phi(0_R)=0_S, \, \phi(1_R)=1_S, \, \phi(-a)=-\phi(a), \, \phi(a^{-1})=\phi(a)^{-1}
+\end{equation*}\]</div>
+<p>where the last equality holds for those <span class="math notranslate nohighlight">\(a \in R\)</span> that have a multiplicative inverse.</p>
+<p>(b) Let <span class="math notranslate nohighlight">\(p\)</span> be a prime, and let <span class="math notranslate nohighlight">\(R\)</span> be a ring with the property that <span class="math notranslate nohighlight">\(pa = 0\)</span> for every <span class="math notranslate nohighlight">\(a \in R\)</span>. (Here <span class="math notranslate nohighlight">\(pa\)</span> means to add <span class="math notranslate nohighlight">\(a\)</span> to itself <span class="math notranslate nohighlight">\(p\)</span> times.) Prove that the map</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \phi: R \rightarrow R, \quad \phi(a)=a^p
+\end{equation*}\]</div>
+<p>is a ring homomorphism. It is called the <em>Frobenius homomorphism</em>.</p>
+<p><strong>Giải.</strong> Điều kiện đề bài là <span class="math notranslate nohighlight">\(\phi(a+b)=\phi(a)+\phi(b)\)</span> và <span class="math notranslate nohighlight">\(\phi(a \star b) = \phi(a) \star \phi(b)\)</span> với mọi <span class="math notranslate nohighlight">\(a, b \in R\)</span>.</p>
+<p>(a) Trong <span class="math notranslate nohighlight">\(R\)</span>, với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[a+0_R = 0_R+a = a.\]</div>
+<p>Suy ra</p>
+<div class="math notranslate nohighlight">
+\[\phi(a)=\phi(a+0_R)=\phi(0_R+a),\]</div>
+<p>hay</p>
+<div class="math notranslate nohighlight">
+\[\phi(a)=\phi(a)+\phi(0_R)=\phi(0_R)+\phi(a).\]</div>
+<p>Đặt <span class="math notranslate nohighlight">\(\phi(a)=b \in S\)</span>. Khi đó</p>
+<div class="math notranslate nohighlight">
+\[b=b+\phi(0_R)=\phi(0_R)+b\]</div>
+<p>nên suy ra <span class="math notranslate nohighlight">\(\phi(0_R)=0_S\)</span>.</p>
+<p>Trong <span class="math notranslate nohighlight">\(R\)</span>, với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[a \star 1_R = 1_R \star a = a.\]</div>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[\phi(a \star 1_R) = \phi(1_R \star a) = \phi(a)\]</div>
+<p>nên suy ra</p>
+<div class="math notranslate nohighlight">
+\[\phi(a) \star \phi(1_R) = \phi(1_R) \star \phi(a) = \phi(a),\]</div>
+<p>hay <span class="math notranslate nohighlight">\(\phi(1_R) = 1_S\)</span>.</p>
+<p>Với <span class="math notranslate nohighlight">\(\phi(-a) = -\phi(a)\)</span>, trong <span class="math notranslate nohighlight">\(R\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[a + (-a) = (-a) + a = 0_R,\]</div>
+<p>suy ra</p>
+<div class="math notranslate nohighlight">
+\[\phi(a+(-a))=\phi((-a)+a)=\phi(0_R),\]</div>
+<p>tương đương với</p>
+<div class="math notranslate nohighlight">
+\[\phi(a)+\phi(-a)=\phi(-a)+\phi(a)=\phi(0_R)=0_S.\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(\phi(-a) = -\phi(a)\)</span>.</p>
+<p>Với <span class="math notranslate nohighlight">\(\phi(a^{-1}) = \phi(a)^{-1}\)</span>, trong <span class="math notranslate nohighlight">\(R\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[a \star a^{-1} = a^{-1} \star a = 1_R,\]</div>
+<p>suy ra</p>
+<div class="math notranslate nohighlight">
+\[\phi(a \star a^{-1}) = \phi(a^{-1} \star a) = \phi(1_R),\]</div>
+<p>tương đương với</p>
+<div class="math notranslate nohighlight">
+\[\phi(a) \star \phi(a^{-1}) = \phi(a^{-1}) \star \phi(a) = \phi(1_R) = 1_S.\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(\phi(a^{-1})=\phi(a)^{-1}\)</span>.</p>
+<p>(b) Ánh xạ <span class="math notranslate nohighlight">\(\phi: R \rightarrow R\)</span> cho bởi <span class="math notranslate nohighlight">\(\phi(a)=a^p\)</span>, suy ra</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle{\phi(a+b)=(a+b)^p=\sum_{i=0}{p} \binom{p}{i} a^i b^{p-1}}.\]</div>
+<p>Vì <span class="math notranslate nohighlight">\(p \mid \displaystyle{\binom{p}{i}} = \dfrac{p!}{(p-i)! \cdot i!}\)</span> (<span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố) nên suy ra với mọi <span class="math notranslate nohighlight">\(1 \leqslant i \leqslant p-1\)</span>, ta có <span class="math notranslate nohighlight">\(\displaystyle{\binom{p}{i}} = 0\)</span> (do <span class="math notranslate nohighlight">\(pa=0\)</span>).</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \phi(a+b)=a^p+b^p=\phi(a)+\phi(b)\)</span> (1)</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \phi(ab)=(ab)^p=a^p b^p = \phi(a) \phi(b)\)</span> (2)</p>
+<p>Từ (1) và (2) ta thu được ring homomorphism.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.32.</strong> Prove Proposition 2.41</p>
+<p>Vì <span class="math notranslate nohighlight">\(a_1 \equiv a_2 \pmod m\)</span> nên <span class="math notranslate nohighlight">\(m \mid (a_1 - a_2)\)</span>.</p>
+<p>Nói cách khác là tồn tại <span class="math notranslate nohighlight">\(k \in R\)</span> sao cho <span class="math notranslate nohighlight">\(a_1 - a_2 = k \star m\)</span>.</p>
+<p>Tương tự, tồn tại <span class="math notranslate nohighlight">\(l \in R\)</span> sao cho <span class="math notranslate nohighlight">\(b_1 - b_2 = l \star m\)</span>.</p>
+<p>Từ đó</p>
+<div class="math notranslate nohighlight">
+\[a_1 - a_2 + b_1 - b_2 = (k+l) \star m,\]</div>
+<p>tương đương với</p>
+<div class="math notranslate nohighlight">
+\[m \mid (a_1 + b_1 - (a_2 + b_2)),\]</div>
+<p>hay</p>
+<div class="math notranslate nohighlight">
+\[a_1 + b_1 \equiv a_2 + b_2 \pmod m.\]</div>
+<p>Tương tự cho <span class="math notranslate nohighlight">\(a_1-b_1 \equiv a_2-b_2 \pmod m\)</span>.</p>
+<p>Đối với phép nhân, do</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation*}
+    \begin{cases}
+        a_1 = a_2 + k \star m \\ b_1 = b_2 + l \star m
+    \end{cases}
+\end{equation*}\end{split}\]</div>
+<p>ta có</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    a_1 \star b_1 &amp; = (a_2 + k \star m)(b_2 + l \star m) \\
+    &amp; = a_2 \star b_2 + a_2 \star l \star m + k \star b_2 \star m + k \star l \star m^2
+\end{align*}\end{split}\]</div>
+<p>Suy ra <span class="math notranslate nohighlight">\(m \mid (a_1 \star b_1 - a_2 \star b_2)\)</span> hay nói cách khác là</p>
+<div class="math notranslate nohighlight">
+\[a_1 \star b_1 \equiv a_2 \star b_2 \pmod m.\]</div>
+<hr class="docutils" />
+<p><strong>Câu 2.33.</strong> Prove Proposition 2.43</p>
+<p>Theo Câu 2.32, nếu ta có <span class="math notranslate nohighlight">\(a' \in \bar{a}\)</span> thì tương đương <span class="math notranslate nohighlight">\(a' \equiv a \pmod m\)</span>.</p>
+<p>Tương tự, nếu ta có <span class="math notranslate nohighlight">\(b' \in \bar{b}\)</span> thì tương đương <span class="math notranslate nohighlight">\(b' \equiv b \pmod m\)</span>.</p>
+<p>Như vậy, theo Câu 2.32 thì</p>
+<div class="math notranslate nohighlight">
+\[a' + b' \equiv a+b \pmod m, \quad a' \star b' \equiv a \star b \pmod m\]</div>
+<p>Nói cách khác</p>
+<div class="math notranslate nohighlight">
+\[a'+b' \in \overline{a+b} \quad \text{và} \quad a' \star b' \in \overline{a \star b},\]</div>
+<p>nói cách khác phép tính cộng và nhân đóng trên <span class="math notranslate nohighlight">\(R\)</span> (closed).</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> ta có</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} + \overline{0} = \overline{a+0} = \overline{a} = \overline{0+a} = \overline{0} + \overline{a}\]</div>
+<p>Như vậy phần tử trung hòa của phép cộng là <span class="math notranslate nohighlight">\(\overline{0}\)</span>.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} + \overline{m-a} = \overline{a + m - a} = \overline{0} = \overline{m-a} + \overline{a},\]</div>
+<p>suy ra <span class="math notranslate nohighlight">\(\overline{m-a}\)</span> là phần tử đối của phần tử <span class="math notranslate nohighlight">\(a\)</span> trong phép cộng.</p>
+<p>Phép cộng trong modulo cũng có tính kết hợp</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} + (\overline{b}+\overline{c}) = \overline{a} + \overline{b+c} = \overline{a+b+c} = \overline{a+b} + \overline{c} = (\overline{a}+\overline{b})+\overline{c}\]</div>
+<p>Với mọi <span class="math notranslate nohighlight">\(a, b \in R\)</span></p>
+<div class="math notranslate nohighlight">
+\[\overline{a}+\overline{b}=\overline{a+b}=\overline{b+a}=\overline{b}+\overline{a}\]</div>
+<p>nên phép cộng modulo có tính giao hoán.</p>
+<p>Vì <span class="math notranslate nohighlight">\(a \star 1 \equiv a \pmod m\)</span> với mọi <span class="math notranslate nohighlight">\(a \in R\)</span> nên</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} \star \overline{1} = \overline{a \star 1} = \overline{a} = \overline{1 \star a} = \overline{1} \star \overline{a}.\]</div>
+<p>Suy ra phần tử đơn vị của phép nhân là <span class="math notranslate nohighlight">\(\overline{1}\)</span>.</p>
+<p>Với mọi <span class="math notranslate nohighlight">\(a, b, c \in R\)</span> ta có <span class="math notranslate nohighlight">\(a(bc)=(ab)c \pmod m\)</span>. Suy ra tính kết hợp của phép nhân</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} \star (\overline{b} \star \overline{c}) = \overline{a} \star \overline{bc} = \overline{abc} = \overline{ab} \star \overline{c} = (\overline{a} \star \overline{b}) \star \overline{c}.\]</div>
+<p>Vì</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} \star \overline{b} = \overline{a \star b} = \overline{b \star a} = \overline{b} \star \overline{a}\]</div>
+<p>ta có tính giao hoán của phép nhân.</p>
+<p>Tính phân phối giữa phép nhân và phép cộng:</p>
+<div class="math notranslate nohighlight">
+\[\overline{a} \star (\overline{b} + \overline{c}) = \overline{a} \star \overline{b + c} = \overline{a(b+c)} = \overline{ab + ac} = \overline{ab} + \overline{ac} = \overline{a} \star \overline{b} + \overline{a} \star \overline{c}.\]</div>
+<p>Như vậy, <span class="math notranslate nohighlight">\(R/(m)\)</span> là vành (cụ thể vừa là vành với đơn vị vừa là vành giao hoán).</p>
+<hr class="docutils" />
+<p><strong>Câu 2.34.</strong> Let <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> be a field and let <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> be nonzero polynomials in <span class="math notranslate nohighlight">\(\mathbb{F}[x]\)</span></p>
+<p>(a) Prove that <span class="math notranslate nohighlight">\(\deg(\mathbf{a} \cdot \mathbf{b}) = \deg(\mathbf{a}) + \deg(\mathbf{b})\)</span></p>
+<p>(b) Prove that <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> has a multiplicative inverse in <span class="math notranslate nohighlight">\(\mathbb{F}[x]\)</span> if and only if <span class="math notranslate nohighlight">\(\mathbb{a}\)</span> is in <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>, i.e., if and only if <span class="math notranslate nohighlight">\(\mathbb{a}\)</span> is a constant polynomial</p>
+<p>(c) Prove that every nonzero element of <span class="math notranslate nohighlight">\(\mathbb{F}[x]\)</span> can be factored into a product of irreducible polynomials. (<em>Hint.</em> Use (a), (b) and induction on the degree of the polynomial.)</p>
+<p>(d) Let <span class="math notranslate nohighlight">\(R\)</span> be ring <span class="math notranslate nohighlight">\(\mathbb{Z}/6\mathbb{Z}\)</span>. Give an example to show that (a) is false for some polynomials <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> in <span class="math notranslate nohighlight">\(R[x]\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Đặt</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,\]</div>
+<p>với <span class="math notranslate nohighlight">\(a_i \in \mathbb{F}\)</span> và <span class="math notranslate nohighlight">\(\deg(\mathbf{a}) = n\)</span>.</p>
+<p>Đặt</p>
+<div class="math notranslate nohighlight">
+\[b = b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0,\]</div>
+<p>với <span class="math notranslate nohighlight">\(b_i \in \mathbb{F}\)</span> và <span class="math notranslate nohighlight">\(\deg(\mathbf{b}) = m\)</span>.</p>
+<p>Hạng tử với bậc cao nhất trong phép nhân <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b}\)</span> là <span class="math notranslate nohighlight">\(x^{n+m}\)</span>, do đó</p>
+<div class="math notranslate nohighlight">
+\[\deg(\mathbf{a} \cdot \mathbf{b}) = n + m = \deg(\mathbf{a}) + \deg(\mathbf{b}).\]</div>
+<p>(b) Với</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0\]</div>
+<p>Giả sử <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> có nghịch đảo trong <span class="math notranslate nohighlight">\(\mathbb{F}[x]\)</span> là đa thức</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{b}=b_m x^m + b_{m-1} x^{m-1} + \cdots + b_1 x + b_0.\]</div>
+<p>Vì</p>
+<div class="math notranslate nohighlight">
+\[\begin{align*}
+    \mathbf{ab} = &amp; \sum_{i=0}^n a_i x_i \sum_{j=0}^m b_j x^j  = \sum_{i=0}^n \sum_{j=0}^m a_i b_j x^{i+j} = 1
+\end{align*}\]</div>
+<p>Đồng nhất hệ số ta có <span class="math notranslate nohighlight">\(a_0 b_0 = 1\)</span>, các tích khác bằng <span class="math notranslate nohighlight">\(0\)</span>. Như vậy <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> là đa thức hằng.</p>
+<p>(c)</p>
+<p>(d) <span class="math notranslate nohighlight">\(\mathbf{a} = 2x^2 + 3x + 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b} = 3x + 2\)</span>.</p>
+<p>Trong <span class="math notranslate nohighlight">\(\mathbb{Z}/6\mathbb{Z}\)</span> các hệ số được modulo cho <span class="math notranslate nohighlight">\(6\)</span> và ta có</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} \mathbf{b} = x^2 + 3x + 2\]</div>
+<p>Như vậy <span class="math notranslate nohighlight">\(\deg(\mathbf{a} \mathbf{b}) = 2 &lt; 3 = \deg(\mathbf{a}) + \deg(\mathbf{b})\)</span></p>
+<hr class="docutils" />
+<p><strong>Câu 2.35</strong>, <strong>Câu 2.36</strong>. Programming on Sagemath</p>
+<hr class="docutils" />
+<p><strong>Câu 2.37.</strong> Prove that the polynomial <span class="math notranslate nohighlight">\(x^3+x+1\)</span> is irreducible in <span class="math notranslate nohighlight">\(\mathbb{F}_2[x]\)</span></p>
+<p><strong>Giải.</strong></p>
+<p>Nếu <span class="math notranslate nohighlight">\(f(x) = x^3+x+1\)</span> có nhân tử nào khác <span class="math notranslate nohighlight">\(1\)</span> và chính nó thì đa thức đó phải có bậc nhỏ hơn <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<p>Các đa thức như vậy trong <span class="math notranslate nohighlight">\(\mathbb{F}_2[x]\)</span> là</p>
+<div class="math notranslate nohighlight">
+\[0, x+1, x^2, x^2+1, x^2+x, x^2+x+1, x.\]</div>
+<p>Tuy nhiên <span class="math notranslate nohighlight">\(f(x)\)</span> không chia hết cho bất kì đa thức nào kể trên nên <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức tối giản.</p>
+<hr class="docutils" />
+<p><strong>Câu 2.38.</strong> Programming on Sagemath</p>
+<hr class="docutils" />
+<p><strong>Câu 2.39.</strong> The field <span class="math notranslate nohighlight">\(\mathbb{F}_7[x]/(x^2+1)\)</span> is a field with 49 elements, which for the moment we donote by <span class="math notranslate nohighlight">\(\mathbb{F}_{49}\)</span></p>
+<p>Using example <strong>2.58</strong>, every element in <span class="math notranslate nohighlight">\(\mathbb{F}_7[x]/(x^2+1)\)</span> has form <span class="math notranslate nohighlight">\(f(x)=a+bx\)</span>, so in <span class="math notranslate nohighlight">\(\mathbb{F}_{49}\)</span> it has form <span class="math notranslate nohighlight">\(a+bi\)</span> (here <span class="math notranslate nohighlight">\(i^2=-1\)</span>)</p>
+<p>(a) Is <span class="math notranslate nohighlight">\(2+5x\)</span> is a primitive root in <span class="math notranslate nohighlight">\(\mathbb{F}_{49}\)</span>? No because <span class="math notranslate nohighlight">\((2+5x)^8=1\)</span></p>
+<p>(b) Is <span class="math notranslate nohighlight">\(2+x\)</span> is a primitive root in <span class="math notranslate nohighlight">\(\mathbb{F}_{49}\)</span>? Yes</p>
+<p>(c) Is <span class="math notranslate nohighlight">\(1+x\)</span> is a primitive root in <span class="math notranslate nohighlight">\(\mathbb{F}_{49}\)</span>? No because <span class="math notranslate nohighlight">\((1+x)^{24} = 1\)</span></p>
+<hr class="docutils" />
+<p><strong>Câu 2.41.</strong> Let <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> is a finite field.</p>
+<p>(a) Prove that there is an integer <span class="math notranslate nohighlight">\(m \geqslant 1\)</span> such that if we add 1 to itself <span class="math notranslate nohighlight">\(m\)</span> times,</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{1+1+\cdots+1}_{m \text{ ones}}\]</div>
+<p>then we get 0. Note that here 1 and 0 are the multiplicative and additive identity elements of the field <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>.</p>
+<!-- Because 1 is element of $\mathbb{F}$, then $\underbrace{1+1+\cdots+1}_{n \text{ times}}$ always is an element of $\mathbb{F}$. And $\mathbb{F}$ is finite field, so there is $m \geqslant 1$ such that $\underbrace{1+1+\cdots+1}_{m \text{ times}}$ equals to 0 (1, 1+1, 1+1+1, ... cannot all be different) -->
+<p>(b) Let <span class="math notranslate nohighlight">\(m\)</span> be the smallest positive integer with the property described in (a). Prove that <span class="math notranslate nohighlight">\(m\)</span> is prime. This prime is called the <em>characteristic of the field <span class="math notranslate nohighlight">\(\mathbb{F}\)</span></em>.</p>
+<!-- Suppose that $m$ can be factor, so $m=pq$ ($1 < p, q < m$) and then 
+
+$\Rightarrow \underbrace{1+1+\cdots+1}_{m \text{ times}} = 0$. Therefore we can write as \[ \overbrace{\underbrace{(1+1+\cdots+1)}_{p \text{ times}} + \underbrace{(1+1+\cdots+1)}_{p \text{ times}} + \cdots + \underbrace{(1+1+\cdots+1)}_{p \text{ times}}}^{q \text{ times}}\] 
+
+Because $\mathbb{F}$ is a finite field, $\underbrace{1+1+\cdots+1}_{p \text{ times}} = a \in \mathbb{F}$ 
+
+$\Rightarrow q \cdot a = 0$ ($q > 1$ and $a$ cannot be 0 because $m$ is the smallest number that satisfies $1+1+\cdots+1=0$
+
+$\Rightarrow$ contraction $\Rightarrow \mathbb{F}$ cannot be a field.
+
+So $m$ is a prime  -->
+</section>
+<section id="chapter-3-integer-factorization-and-rsa">
+<h2>Chapter 3. Integer Factorization and RSA<a class="headerlink" href="#chapter-3-integer-factorization-and-rsa" title="Link to this heading">#</a></h2>
+<p><strong>Câu 3.4.</strong> <em>Euler’s phi function <span class="math notranslate nohighlight">\(\phi(N)\)</span></em> is the function defined by</p>
+<div class="math notranslate nohighlight">
+\[\phi(N) = | \{0 \leqslant k &lt; N: \gcd(k, N)=1\} |.\]</div>
+<p><strong>Giải.</strong></p>
+<p>Chứng minh định lý Euler đã có trong bài viết về hàm Euler.</p>
+<hr class="docutils" />
+<p><strong>Câu 3.5.</strong> Properties of Euler’s phi function</p>
+<p>If <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are distinct primes, how is <span class="math notranslate nohighlight">\(\phi(pq)\)</span> related to <span class="math notranslate nohighlight">\(\phi(p)\)</span> and <span class="math notranslate nohighlight">\(\phi(q)\)</span>?</p>
+<p><strong>Giải.</strong></p>
+<p>Chứng minh tính chất nhân tính của hàm Euler đã có ở bài viết về hàm Euler.</p>
+<hr class="docutils" />
+<p><strong>Câu 3.6.</strong> Let <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, and <span class="math notranslate nohighlight">\(e\)</span> be positive integers satisfying the conditions <span class="math notranslate nohighlight">\(\gcd(N,c)=1\)</span> and <span class="math notranslate nohighlight">\(\gcd(e,\phi(N))=1\)</span>.</p>
+<p>Explain how to solve the congruence <span class="math notranslate nohighlight">\(x^e \equiv c \pmod{N}\)</span> assuming that you know the value of <span class="math notranslate nohighlight">\(\phi(N)\)</span></p>
+<p><strong>Giải.</strong></p>
+<p>Vì <span class="math notranslate nohighlight">\(\gcd(e, \phi(N)) = 1\)</span>, ta có thể tìm số <span class="math notranslate nohighlight">\(d \in \mathbb{Z}\)</span> sao cho <span class="math notranslate nohighlight">\(ed \equiv 1 \pmod{\phi(N)}\)</span> với thuật toán Euclid mở rộng.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(ed = k\phi(N) + 1\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
+<p>VÌ <span class="math notranslate nohighlight">\(\gcd(N, c)=1\)</span> nên <span class="math notranslate nohighlight">\(\gcd(N,x)=1\)</span>, hay</p>
+<div class="math notranslate nohighlight">
+\[c^d = \Big(x^e\Big)^d = x^{ed} = x^{k\phi(N) + 1} = (x^k)^{\phi(N)}x,\]</div>
+<p>và ta đã biết <span class="math notranslate nohighlight">\((x^k)^{\phi(N)} \equiv 1 \pmod{N}\)</span> từ Câu 3.4.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(c^d \equiv x \pmod{N}\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 3.11.</strong> Alice chooses two large primes <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> and she publishes <span class="math notranslate nohighlight">\(N=pq\)</span>. It is assumed that <span class="math notranslate nohighlight">\(N\)</span> is hard to factor. Alice also chooses three random numbers <span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span>, and <span class="math notranslate nohighlight">\(r_2\)</span> modulo <span class="math notranslate nohighlight">\(N\)</span> and computes</p>
+<div class="math notranslate nohighlight">
+\[g_1 \equiv g^{r_1(p-1)} \pmod{N} \qquad \text{and} \qquad g_2 \equiv g^{r_2(q-1)} \pmod{N}\]</div>
+<p>Her public key is the triple <span class="math notranslate nohighlight">\((N, g_1, g_2)\)</span> and her private key is the pair of primes <span class="math notranslate nohighlight">\((p, q)\)</span>.</p>
+<p>Now Bob wants to send the message <span class="math notranslate nohighlight">\(m\)</span> to Alice, where <span class="math notranslate nohighlight">\(m\)</span> is a number modulo <span class="math notranslate nohighlight">\(N\)</span>. He chooses two random integers <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> modulo <span class="math notranslate nohighlight">\(N\)</span> and computes</p>
+<div class="math notranslate nohighlight">
+\[c_1 \equiv mg_1^{s_1} \pmod{N} \qquad \text{and} \qquad c_2 \equiv mg_2^{s_2} \pmod{N}\]</div>
+<p>Bob sends the ciphertext <span class="math notranslate nohighlight">\((c_1, c_2)\)</span> to Alice.</p>
+<p>Decryption is extreamly fast and essy. Alice uses the Chinese remainder theorem to solve the pair of congruences</p>
+<div class="math notranslate nohighlight">
+\[x \equiv c_2 \pmod{p} \qquad \text{and} \qquad x \equiv c_2 \pmod{q}\]</div>
+<p>Prove that Alice’s solution <span class="math notranslate nohighlight">\(x\)</span> is equal to Bob’s plaintext <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[c_1 \equiv mg_1^{s_1} \pmod{N} \equiv mg_1^{s_1} \pmod{p} \equiv m \pmod{p}\]</div>
+<p>do <span class="math notranslate nohighlight">\(g_1^{s_1} = (g_1^{s_1 r_1})^{(p-1)} \equiv 1 \pmod{p}\)</span>.</p>
+<p>Tương tự ta có <span class="math notranslate nohighlight">\(c_2 \equiv m \pmod{q}\)</span>.</p>
+<p>Nghiệm của hệ đồng dư là</p>
+<div class="math notranslate nohighlight">
+\[x \equiv c_1 q q' + c_2 p p' \pmod N\]</div>
+<p>với <span class="math notranslate nohighlight">\(p p' + q q' = 1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow x \equiv m p p' + m q q' \equiv m(p p' + q q') \equiv m \pmod N\)</span></p>
+<p>Ta có</p>
+<div class="math notranslate nohighlight">
+\[g_1 \equiv g^{r_1 (p-1)} \pmod N \equiv g^{r_1 (p-1)} \pmod p \equiv 1 \pmod p.\]</div>
+<p>Suy ra <span class="math notranslate nohighlight">\(p = \gcd(g_1-1, N)\)</span>. Tương tự, <span class="math notranslate nohighlight">\(q = \gcd(g_2-1, N)\)</span>.</p>
+<p>Như vậy ta đã khôi phục lại private key.</p>
+<hr class="docutils" />
+<p><strong>Câu 3.13.</strong> Find <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> such that <span class="math notranslate nohighlight">\(xe_1 + ye_2=1=\gcd(e_1,e_2)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow m=c_1^x c_2^y = m^{e_1 x + e_2 y} = m \pmod{N}\]</div>
+<hr class="docutils" />
+<!-- **Câu 3.14.** Because 3, 11 and 17 are primes number, $a \equiv a^3 \pmod 3$, $a \equiv a^{11} \pmod{11}$, $a \equiv a^{17} \pmod{17}$. We have system congruence
+
+$$\begin{align*}
+    a & \equiv a^3 \pmod 3 \\ a & \equiv a^{11} \pmod{11} \\ a & \equiv a^{17} \pmod{17}
+\end{align*}$$
+
+Consider that $a^3 \equiv a \pmod 3$, $a^{3^2} \equiv a^3 \equiv a \pmod 3$, $\cdots$, $a^{3^i} \equiv a \pmod 3$. And $561 = 2 \cdot 3^5 + 2 \cdot 3^3 + 2 \cdot 3^2 + 3^1$, $a^{561} \equiv a^2 \cdot a^2 \cdot a^2 \cdot a \equiv a^9 \equiv a \pmod 3$.
+
+Similarly, $a^{561} \equiv a \pmod{11}$, $a^{561} \equiv a \pmod{17}$. From system congruence:
+
+$$\begin{align*}
+    a^{561} & \equiv a \pmod 3 \\ a^{561} & \equiv a \pmod{11} \\ a^{561} & \equiv a \pmod{17}
+\end{align*}$$
+
+Using CRT, $a^{561} = (187 \cdot 1 \cdot a + 51 \cdot 8 \cdot a + 33 \cdot 16 \cdot a) \pmod{561} = a \pmod{561}$
+
+Suppose that $n$ is even ($n \geqslant 4$), we have 
+
+$$(n-1)^{n-1} = (-1)^{n-1} = -1 \pmod n,$$
+
+but $a^{n-1} \equiv 1 \pmod n$ for all $a$, which is contrary. So $n$ must be odd.
+Suppose that $n = p_1^{e_1} p_2^{e_2} \cdots p_r^{e_r}$ ($p_i$ is odd prime). Because $a^{p^{e-1} (p-1)} \equiv 1 \pmod{p^e}$ and $a^{n-1} \equiv 1 \pmod n$, we have $a^{n-1} \equiv 1 \pmod{p^e}$.
+
+$\Rightarrow p^{e-1}(p-1) \mid (n-1) \Rightarrow p^{e-1} \mid (n-1)$, but $p^{e-1} \mid n$, which is contrary if $e \geqslant 2$. Hence $e$ must be 1.
+
+So $n = p_1 p_2 \cdots p_r$ -->
+<hr class="docutils" />
+<!-- **Câu 3.37.**
+
+$$\Big(a^{\frac{p-1}{2}}\Big)^2 \equiv a^{p-1} \equiv 1 \pmod p$$
+
+$\Rightarrow \binom{a}{p} = \pm 1$
+
+$\Rightarrow \Big(a^{\frac{p-1}{2}} - 1\Big)\Big(a^{\frac{p-1}{2}} + 1\Big) \equiv 0 \pmod p$
+
+$\Rightarrow a^{\frac{p-1}{2}} \equiv \pm 1 \pmod p$
+    
+If $a$ is quadratic residue, then $a \equiv b^2 \pmod p$ 
+
+$\Rightarrow a^{\frac{p-1}{2}} \equiv (b^2)^{\frac{p-1}{2}} = b^{p-1} \equiv 1 \pmod p$
+
+If $a^{\frac{p-1}{2}} \equiv 1 \pmod p$
+
+Let $g$ be generator modulo $p$, then $a \equiv g^m \pmod p$
+
+If $m$ is even $\Rightarrow a \equiv g^{2k} \pmod p \Rightarrow a^{\frac{p-1}{2}} \equiv 1 \pmod p$
+
+If $m$ is odd $\Rightarrow a = g^{2k+1} \pmod p \Rightarrow a^{\frac{p-1}{2}} \equiv g^{(2k+1)\frac{p-1}{2}} \equiv g^{p-1} g^{\frac{p-1}{2}} \equiv g^{\frac{p-1}{2}}\not\equiv 1 \pmod p$, because $p-1$ is smallest number that $g^{p-1} \equiv 1 \pmod p$
+
+From (a) and (b) $\binom{-1}{p} \equiv (-1)^{\frac{p-1}{2}} \pmod p$, if $p=4k+1 \Rightarrow (-1)^{\frac{p-1}{2}} \equiv (-1)^{2k} \equiv 1 \pmod p$ \\ If $p=4k+3 \Rightarrow (-1)^{\frac{p-1}{2}} \equiv (-1)^{2k+1} \equiv -1 \pmod p$ -->
+<hr class="docutils" />
+<p><strong>Câu 3.38.</strong> Prove that the three parts of the quadratic reciprocity theorem are equivalent to the following three concise formulas, where <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> are odd primes.</p>
+<!-- $\Big(\frac{-1}{p}\Big) = (-1)^{\frac{p-1}{2}}$
+
+With $p \equiv 1 \pmod 4 \Rightarrow \Big(\frac{-1}{p}\Big) = 1 = (-1)^{\frac{p-1}{2}} \pmod p$ \\ Similarly with $p \equiv 3 \pmod 4$
+    $\Big(\frac{2}{p}\Big) = (-1)^{\frac{p^2-1}{8}}$
+
+First we need a lemma (**Gauss lemma**): suppose $p$ is an odd prime, and $a \in \mathbb{Z}$, $\gcd(a, p) = 1$. Consider the set
+\[a, 2a, 3a, \cdots, \frac{p-1}{2}a\]
+
+If $s$ of those residues are greater than $\frac{p}{2}$, then $\binom{a}{p} = (-1)^s$
+
+\underline{Proof of lemma}: Among smallest residues of 
+\[a, 2a, 3a, \cdots, \frac{p-1}{2}a\], suppose that 
+\[u_1, u_2, \cdots, u_s\] are residues greater than $\frac{p}{2}$, and 
+\[v_1, v_2, \cdots, v_t\] are residues smaller than $\frac{p}{2}$
+
+Because $\gcd(ja, p)=1 \forall j, 1 \leqslant j \leqslant \frac{p-1}{2}$, all $u_i, v_j \neq 0 \Leftrightarrow u_i, v_j \in \{1,2,\cdots,p-1\}$. We will prove that, the set 
+\[\{p-u_1, p-u_2, \cdots, p-u_s, v_1, v_2, \cdots, v_t\}\] 
+is a permutation of $\{1,2,\cdots,\frac{p-1}{2}\}$
+
+It is clear that there are no 2 numbers $u_i$ or 2 numbers $v_j$ simultaneously congruent modulo $p$. Because if $ma \equiv na \pmod p$ and $\gcd(a,p)=1$, then $m\equiv n \pmod p \Rightarrow$ contrast with $m,n \leqslant \frac{p-1}{2}$
+
+Similarly, we see that there are no numbers $p-u_i$ congruent with $v_j$, so $$\Rightarrow (p-u_1)(p-u_2)\cdots(p-u_s)v_1 v_2 \cdots v_t \equiv \Big(\frac{p-1}{2}\Big)! \pmod p$$
+
+On the other hand, 
+\[u_1,u_2,\cdots,u_s, v_1, v_2, \cdots, v_t\] 
+are smallest residues of 
+\[a, 2a, 3a, \cdots, \frac{p-1}{2}\], so 
+\[\Rightarrow u_1 u_2 \cdots u_s v_1 v_2 \cdots v_t \equiv a^{\frac{p-1}{2}} \Big(\frac{p-1}{2}\Big)! \pmod p\]
+
+So $(-1)^s a^{\frac{p-1}{2}} \Big(\frac{p-1}{2}\Big)! \equiv \Big(\frac{p-1}{2}\Big)! \pmod p$
+
+And because $\gcd(p, \Big(\frac{p-1}{2}\Big)!) = 1 \Rightarrow (-1)^s a^{\frac{p-1}{2}} \equiv 1 \pmod p$
+
+$\Rightarrow a^{\frac{p-1}{2}} \equiv (-1)^s \pmod p$ and $\binom{a}{p} = a^{\frac{p-1}{2}}$
+
+$\Rightarrow \binom{a}{p} = (-1)^s \pmod p$
+
+\underline{Return to problem}: using theorem above, we need to find the number of residues, which are greater than $\frac{p}{2}$ among $1 \cdot 2$, $2 \cdot 2$, $\cdots$, $\frac{p-1}{2} \cdot 2$. Therefore we only need to know which numbers are greater than $\frac{p}{2}$
+
+$\Rightarrow$ there are $s = \frac{p-1}{2} - \Big[\frac{p}{4}\Big] \Rightarrow \Big(\frac{2}{p}\Big) = (-1)^{\frac{p-1}{2} - \Big[\frac{p}{4}\Big] }$
+
+With $p \equiv 1, 3, 5, 7 \pmod 8$, we have 
+\[\frac{p-1}{2} - \Big[\frac{p}{4}\Big] \equiv \frac{p^2-1}{8} \pmod 2\] 
+
+\[\Rightarrow \Big(\frac{2}{p}\Big) = (-1)^{\frac{p^2-1}{8}}\]
+
+    $\Big(\frac{p}{q}\Big)\Big(\frac{q}{p}\Big) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}$
+
+We need a lemma: Suppose $p$ is an odd prime, $a$ is odd and $\gcd(a, p) = 1$, then $\Big(\frac{a}{p}\Big) = (-1)^{T(a, p)}$, with 
+\[T(a, p) = \sum_{j=1}^{\frac{p-1}{2}}\Big[\frac{ja}{p}\Big]\]
+
+\underline{Proof of lemma}: consider smallest residues of $a$, $2a$, $3a$, $\cdots$, $\frac{p-1}{2} \cdot a$. As Gauss's lemma, $u_1$, $u_2$, $\cdots$, $u_s$, $v_1$, $v_2$, $\cdots$, $v_t$ are residues greater and less than $\frac{p}{2}$ respectively. According to Euclidean divisor: $$ja = p \Big[\frac{ja}{p}\Big] + \text{remainder}$$, remainder is $u_i$ or $v_j$. We have such $\frac{p-1}{2}$ equations and add them together $$\Rightarrow \sum_{j=1}^{\frac{p-1}{2}}ja = \sum_{j=1}^{\frac{p-1}{2}}p\Big[\frac{ja}{p}\Big] + \sum_{i=1}^{s}u_i + \sum_{j=1}^{t}v_j$$
+As we pointed out in Gauss's lemma, the set $p-u_1$, $p-u_2$, $\cdots$, $p-u_s$, $v_1$, $v_2$, $\cdots$, $v_t$ is a permutation of the set 1, 2, $\cdots$, $\frac{p-1}{2}$
+$$\sum_{j=1}^{\frac{p-1}{2}}j = \sum_{i=1}^{s}(p-u_i) + \sum_{j=1}^{t}v_t = ps - \sum_{i=1}^{s}u_i + \sum_{j=1}^{t}v_t$$
+$$\Rightarrow \sum_{j=1}^{\frac{p-1}{2}}ja - \sum_{j=1}^{\frac{p-1}{2}}j = \sum_{j=1}^{\frac{p-1}{2}}p\Big[\frac{ja}{p}\Big] - ps + 2\sum_{i=1}^{s}u_i$$
+From formula of $T(a, p)$, $(a-1)\sum_{j=1}^{\frac{p-1}{2}}j = pT(a, p) - ps + 2 \sum_{i=1}^{s}u_i$
+
+Because $a$, $p$ are odd, $T(a, p) \equiv s \pmod 2$. From Gauss's lemma we finish.
+
+\underline{Return to problem}: Consider pairs $(x, y)$, where $1 \leqslant x \leqslant \frac{p-1}{2}$ and $1 \leqslant y \leqslant \frac{q-1}{2}$, there are $\frac{p-1}{2}\cdot\frac{q-1}{2}$ pairs. We divide those pairs into 2 groups, depending on the magnitude of $px$ and $qy$.
+
+Because $p$, $q$ are two different primes, $px \neq qy$, $\forall (x, y)$
+
+We consider pairs with $qx > py$. With every fixed element of $x$ ($1 \leqslant x \leqslant \frac{p-1}{2}$), exist $\Big[\frac{qx}{p}\Big]$ elements $y$ satisfying $1 \leqslant y \leqslant \frac{qx}{p}$. Therefore, there are $\sum_{i=1}^{\frac{p-1}{2}}\Big[\frac{iq}{p}\Big]$ pairs. When $qx < py$, similarly, there are $\sum_{j=1}^{\frac{q-1}{2}}\Big[\frac{jp}{q}\Big]$ pairs. Because there are $\frac{p-1}{2} \cdot \frac{q-1}{2}$ pairs, we have equation $$\sum_{i=1}^{\frac{p-1}{2}}\Big[\frac{iq}{p}\Big] + \sum_{j=1}^{\frac{q-1}{2}}\Big[\frac{jp}{q}\Big] = \frac{p-1}{2} \cdot \frac{q-1}{2}$$
+From definition of $T(p, q)$, we have result $$(-1)^{T(p, q) + T(q, p)} = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}$$ -->
+<hr class="docutils" />
+<p><strong>Câu 3.39.</strong> Let <span class="math notranslate nohighlight">\(p\)</span> be a prime satisfying <span class="math notranslate nohighlight">\(p \equiv 3 \pmod 4\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(a\)</span> be a quadratic residue modulo <span class="math notranslate nohighlight">\(p\)</span>. Prove that the number</p>
+<div class="math notranslate nohighlight">
+\[b \equiv a^{\frac{p+1}{4}} \pmod p\]</div>
+<p>has the property that <span class="math notranslate nohighlight">\(b^2 \equiv a \pmod p\)</span>. (<em>Hint.</em> Write <span class="math notranslate nohighlight">\(\dfrac{p+1}{2}\)</span> as <span class="math notranslate nohighlight">\(1+\dfrac{p-1}{2}\)</span> and use Exercise 3.37.) This gives an easy way to take square roots modulo <span class="math notranslate nohighlight">\(p\)</span> for primes that are congruent to 3 modulo 4.</p>
+<p><strong>Giải.</strong></p>
+<p>Dùng Câu 3.37, <span class="math notranslate nohighlight">\(a^{\frac{p-1}{2}} \equiv 1 \pmod p\)</span> vì <span class="math notranslate nohighlight">\(a\)</span> là thặng dư chính phương modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Khi đó</p>
+<div class="math notranslate nohighlight">
+\[b^2 \equiv a^{\frac{p+1}{2}} \equiv a^{1+\frac{p-1}{2}} \equiv a \cdot a^{\frac{p-1}{2}} \equiv a \cdot 1 \equiv 1 \pmod p\]</div>
+<hr class="docutils" />
+<p><strong>Câu 3.40.</strong> Let <span class="math notranslate nohighlight">\(p\)</span> be and odd prime, let <span class="math notranslate nohighlight">\(g \in \mathbb{F}^{*}_p\)</span> be a primitive root, and let <span class="math notranslate nohighlight">\(h \in \mathbb{F}^{*}_p\)</span>. Write <span class="math notranslate nohighlight">\(p - 1 = 2^sm\)</span> with <span class="math notranslate nohighlight">\(m\)</span> odd and <span class="math notranslate nohighlight">\(s \geqslant 1\)</span>, and write the binary expansion of <span class="math notranslate nohighlight">\(\log_g(h)\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[log_g(h) = \varepsilon_0 + 2\varepsilon_1 + 4\varepsilon_2 + 8\varepsilon_3 + \cdots \quad \text{with} \quad \varepsilon_0, \varepsilon_1, \cdots \in \{0, 1\}\]</div>
+<p>Give an algorithm that generalizes Example 3.69 and allows you to rapidly compute <span class="math notranslate nohighlight">\(\varepsilon_0, \varepsilon_1, \cdots, \varepsilon_{s-1}\)</span>, thereby proving that the first <span class="math notranslate nohighlight">\(s\)</span> bits of the discrete logarithm are insecure.</p>
+<p><strong>Giải.</strong></p>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span> (Thuật toán tìm <span class="math notranslate nohighlight">\(s\)</span> least significant bit (LSB) của <span class="math notranslate nohighlight">\(x\)</span> trong <span class="math notranslate nohighlight">\(g^x \equiv h \pmod p\)</span>)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> <span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(p\)</span> (<span class="math notranslate nohighlight">\(p-1=2^s m\)</span>)</p>
+<p><strong>Output:</strong> <span class="math notranslate nohighlight">\(s\)</span> least significant bits của <span class="math notranslate nohighlight">\(x\)</span> trong <span class="math notranslate nohighlight">\(g^x \equiv h \pmod p\)</span></p>
+<ol class="arabic simple">
+<li><p>Ta sẽ tìm mảng <span class="math notranslate nohighlight">\(\varepsilon_0, \varepsilon_1, \cdots, \varepsilon_{s-1}\)</span></p></li>
+<li><p>For <span class="math notranslate nohighlight">\(i = 0, \ldots, s-1\)</span></p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(h\)</span> là thặng dư chính phương</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\varepsilon_i = 0\)</span>, <span class="math notranslate nohighlight">\(h = \sqrt{h} \pmod p\)</span></p></li>
+</ol>
+</li>
+<li><p>ElseIf <span class="math notranslate nohighlight">\(\varepsilon_i = 1\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(h = \sqrt{g^{-1}h} \pmod p\)</span></p></li>
+</ol>
+</li>
+<li><p>EndIf</p></li>
+</ol>
+</li>
+<li><p>EndFor</p></li>
+</ol>
+</section>
+</div><hr class="docutils" />
+<p><strong>Câu 3.41.</strong> Let <span class="math notranslate nohighlight">\(p\)</span> be a prime satisfying <span class="math notranslate nohighlight">\(p \equiv 1 \pmod 3\)</span>. We say that <span class="math notranslate nohighlight">\(a\)</span> is a <em>cubic residue modulo <span class="math notranslate nohighlight">\(p\)</span></em> if <span class="math notranslate nohighlight">\(p \nmid a\)</span> and there is an integer <span class="math notranslate nohighlight">\(c\)</span> satisfying <span class="math notranslate nohighlight">\(a \equiv c^3 \pmod p\)</span>.</p>
+<p>(a) Let <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> be cubic residues modulo <span class="math notranslate nohighlight">\(p\)</span>. Prove that <span class="math notranslate nohighlight">\(ab\)</span> is a cubic residue modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>(b) Give an example to show that (unlike the case with quadratic residues) it is possible for none of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(ab\)</span> to the a cubic residue modulo <span class="math notranslate nohighlight">\(p\)</span></p>
+<p>(c) Let <span class="math notranslate nohighlight">\(g\)</span> be a primitive root modulo <span class="math notranslate nohighlight">\(p\)</span>. Prove that <span class="math notranslate nohighlight">\(a\)</span> is a cubic residue modulo <span class="math notranslate nohighlight">\(p\)</span> if and only if <span class="math notranslate nohighlight">\(3 \mid \log_g(a)\)</span>, where <span class="math notranslate nohighlight">\(\log_g(a)\)</span> is the discrete logarithm of <span class="math notranslate nohighlight">\(a\)</span> to the base <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<p>(d) Suppose instead that <span class="math notranslate nohighlight">\(p \equiv 2 \pmod 3\)</span>. Prove that for every integer <span class="math notranslate nohighlight">\(a\)</span> there is an integerr <span class="math notranslate nohighlight">\(c\)</span> satisfying <span class="math notranslate nohighlight">\(a \equiv c^3 \pmod p\)</span>. In other words, if <span class="math notranslate nohighlight">\(p \equiv 2 \pmod 3\)</span>, show that every number is a cube modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<p>(a) Ta có <span class="math notranslate nohighlight">\(a \equiv x^3 \pmod p\)</span> và <span class="math notranslate nohighlight">\(y \equiv y^3 \pmod p\)</span> với <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span> nào đó thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span>.</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(ab \equiv x^3 y^3 = (xy)^3 \pmod p\)</span> cũng là thặng dư bậc ba.</p>
+<p>(b) Gọi <span class="math notranslate nohighlight">\(g\)</span> là primitive root modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Ta chọn <span class="math notranslate nohighlight">\(a \equiv g^{3k+1} \pmod p\)</span> và <span class="math notranslate nohighlight">\(b \equiv g^{3k'+1} \pmod p\)</span>.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(ab \equiv g^{(3k+1)+(3k'+1)} \equiv g^{3(k+k')+2} \pmod p\)</span> không phải thặng dư bậc ba.</p>
+<p>(c)</p>
+<p><strong>Điều kiện đủ</strong>. Nếu <span class="math notranslate nohighlight">\(a\)</span> là thặng dư bậc ba modulo <span class="math notranslate nohighlight">\(p\)</span>, giả sử <span class="math notranslate nohighlight">\(a \equiv c^3 \pmod 3\)</span> và <span class="math notranslate nohighlight">\(c \equiv g^u = \pmod p\)</span>.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(a = g^{3u} \pmod p\)</span> và theo định lý Lagrange thì <span class="math notranslate nohighlight">\(3 \mid \log_g(a)\)</span>.</p>
+<p><strong>Điều kiện cần.</strong> Nếu <span class="math notranslate nohighlight">\(3 \mid \log_g(a)\)</span> thì làm ngược lại bước chứng minh điều kiện đủ.</p>
+<p>(d) Vì <span class="math notranslate nohighlight">\(p \equiv 2 \pmod 3\)</span> nên <span class="math notranslate nohighlight">\(\gcd(p-1, 3) = 1\)</span>. Khi đó tồn tại phần tử <span class="math notranslate nohighlight">\(d\)</span> là nghịch đảo của <span class="math notranslate nohighlight">\(3\)</span> modulo <span class="math notranslate nohighlight">\(p-1\)</span>.</p>
+<p>Suy ra phương trình <span class="math notranslate nohighlight">\(x^3 \equiv a \pmod p\)</span> có nghiệm <span class="math notranslate nohighlight">\(a^d = x \pmod p\)</span>.</p>
+<p>Nói cách khác mọi phần tử đều là số bậc ba modulo <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<hr class="docutils" />
+<!-- ### Chapter 4
+
+**Câu 4.1.** $d = 561517$, $N=661643$, $sig = 206484$
+
+---
+
+**Câu 4.2.** $S$ and $S''$
+
+---
+
+**Câu 4.3.** $p = 212081$, $q=128311$
+
+$\Rightarrow d = 18408628619 \Rightarrow S = D^d \pmod N = 22054770669$
+
+---
+
+**Câu 4.4.** With $c = m^{e_B} \pmod{N_B}$ and $s = Hash(m)^{d_A} \pmod{N_A}$
+
+$\Rightarrow c^{d_B} = m^{e_B\cdot d_B} \pmod{N_B} = m$ and $s^{e_A} = Hash(m)^{d_A \cdot e_A} \pmod{N_A} = Hash(m)$. Hence this method works
+
+
+**Câu 4.5.** $A = g^a \pmod p = 2065$
+
+$S_1 = g^k \pmod p = 3534$
+
+$S_2 = (D-a\cdot S_1)K^{-1} \pmod{p-1} = 5888$
+
+Hence signature is $(S_1, S_2) = (3534, 5888)$
+
+---
+
+**Câu 4.6.** $A^{S_1} \cdot S_1^{S_2} \equiv g^D \pmod p$
+
+$\Rightarrow (S_1^", S_2^")$ is valid signature.
+
+---
+
+**Câu 4.8.** $S_1 = S_1' = g^k \pmod p$, from here Eve can know at first glance that the same random element $k$ is used
+        
+$S_2 = (D-aS_1)k^{-1} \pmod{p-1}$, $S_2' = (D'-aS_1')k^{-1} \pmod{p-1}$
+
+$\Rightarrow S_2 - S_2' \equiv (D - D')k^{-1} \pmod{p-1}$ (as $aS_1 = aS_2$)
+
+$\Rightarrow k = (D-D')(S_2-S_2')^{-1} \pmod{p-1}$
+
+Here we get $D - aS_1 = S_2 k \pmod{p-1}$
+
+$\Rightarrow \begin{cases}
+    a = (D - S_2 k) S_1{-1} \pmod{p-1} \\ a = (D'-S_2' k) S_1^{-1} \pmod{p-1}
+\end{cases}$
+
+---
+
+**Câu 4.9.** $p \equiv 1 \pmod q$, $1 \leqslant a \leqslant q-1$, $A=g^a \pmod p$, $S_1 = (g^k \bmod p) \bmod q$, $S_2 = (D + aS_1) k^{-1} \pmod q$
+
+<!-- Verify: $V_1 = D \cdot S_2^{-1} \pmod q$, $V_2 = S_1 S_2^{-1} \pmod q$. We need to prove that $(g^{V_1} \cdot A^{V_2} \bmod p) \bmod q = S_1$
+
+Here we have
+
+$$\begin{align*}
+    g^{V_1} \cdot A^{V_2} & \equiv g^{D \cdot S_2^{-1}} \cdot g^{aS_1 S_2^{-1}} \pmod p \\ & \equiv g^{(D+aS_1)S_2^{-1}} \pmod p \\ & \equiv g^k \pmod p
+\end{align*}$$
+
+$\Rightarrow (g^{V_1} A^{V_2} \bmod p) \bmod q = S_1$
+
+---
+
+**Câu 4.10.** $(p, q, g) = (22531, 751, 4488)$. Public key $A = 22476$ $\Rightarrow$ Not valid.
+
+---
+
+**Câu 4.11.** $A = g^a \pmod p$. $A = 31377$, $g = 21947$, $p = 103687 \Rightarrow a = 602$
+
+$S_1 = (g^k \bmod p) \bmod q = 439$
+
+$S_2 = (D + aS_1)k^{-1} \pmod q = 1259$ -->
+</section>
+<section id="chapter-7-lattices-and-cryptography">
+<h2>Chapter 7. Lattices and Cryptography<a class="headerlink" href="#chapter-7-lattices-and-cryptography" title="Link to this heading">#</a></h2>
+<p><strong>Câu 7.43.</strong> <span class="math notranslate nohighlight">\(t = \dfrac{\bm{b}_1 \cdot \bm{b}_2}{\lVert \bm{b}_1 \rVert^2}\)</span> và <span class="math notranslate nohighlight">\(\bm{b}_2^* = \bm{b}_2 - t \bm{b}_1\)</span> nên suy ra</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}
+    \bm{b}_2^* \cdot \bm{b}_1 = \bm{b}_1 (\bm{b}_2 - t \bm{b}_1) = \bm{b}_1 \cdot \bm{b}_2 - t \lVert \bm{b}_1 \rVert^2 = \bm{b}_1 \cdot \bm{b}_2 - \dfrac{\bm{b}_1 \cdot \bm{b}_2}{\lVert \bm{b}_1 \rVert^2} \cdot \lVert \bm{b}_1 \rVert^2 = 0
+\end{equation*}\]</div>
+<p>Do đó <span class="math notranslate nohighlight">\(\bm{b}_2^* \perp \bm{b}_1\)</span> và <span class="math notranslate nohighlight">\(\bm{b}_2^*\)</span> là hình chiếu của <span class="math notranslate nohighlight">\(\bm{b}_2\)</span> lên orthogonal complement của <span class="math notranslate nohighlight">\(\bm{b}_1\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Câu 7.44.</strong> <span class="math notranslate nohighlight">\(\lVert \bm{a} - t \bm{b} \rVert^2 = (\bm{a} - t \bm{b})^2 = \bm{a}^2 - 2t \bm{a} \cdot \bm{b} + t^2 \bm{b}^2 = \lVert \bm{a} \rVert^2 + t^2 \lVert \bm{b} \rVert^2 - 2t \bm{a} \cdot \bm{b} \geqslant 0\)</span> với mọi <span class="math notranslate nohighlight">\(t \in \mathbb{R}\)</span>.</p>
+<p>Cho <span class="math notranslate nohighlight">\(\bm{a} - t \bm{b} = 0\)</span> ta có <span class="math notranslate nohighlight">\(t = \dfrac{\bm{a} \cdot \bm{b}}{\lVert \bm{b} \rVert^2}\)</span>.</p>
+<p>Từ đó ta có <span class="math notranslate nohighlight">\((\bm{a} - t \bm{b}) \cdot \bm{b} = \bm{a} \cdot \bm{b} - t \lVert \bm{b} \rVert^2 = \bm{a} \cdot \bm{b} - \dfrac{\bm{a} \cdot \bm{b}}{\lVert \bm{b} \rVert^2} \cdot \lVert \bm{b} \rVert^2 = 0\)</span>.</p>
+<p>Vì vậy <span class="math notranslate nohighlight">\(\bm{a} - t \bm{b}\)</span> là hình chiếu của <span class="math notranslate nohighlight">\(\bm{a}\)</span> lên orthogonal complement của <span class="math notranslate nohighlight">\(b\)</span> (tương tự 7.43).</p>
+<hr class="docutils" />
+<p><strong>Câu 7.45.</strong> Thuật toán Gauss’s lattice reduction.</p>
+<div class="proof algorithm admonition" id="algorithm-1">
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span> (Thuật toán Gauss’s latice reduction)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>While True</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\lVert \bm{v}_2 \rVert &lt; \lVert \bm{v}_1 \rVert\)</span></p>
+<ol class="arabic simple">
+<li><p>swap <span class="math notranslate nohighlight">\(\bm{v}_1\)</span> and <span class="math notranslate nohighlight">\(\bm{v}_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m \gets \lfloor \bm{v}_1 \cdot \bm{v}_2 / \lVert \bm{v}_1 \rVert^2 \rceil\)</span></p></li>
+</ol>
+</li>
+<li><p>EndIf</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(m = 0\)</span></p>
+<ol class="arabic simple">
+<li><p>return <span class="math notranslate nohighlight">\((\bm{v}_1, \bm{v}_2)\)</span></p></li>
+</ol>
+</li>
+<li><p>EndIf</p></li>
+<li><p>Replace <span class="math notranslate nohighlight">\(\bm{v}_2\)</span> with <span class="math notranslate nohighlight">\(\bm{v}_2 - m\bm{v}_1\)</span></p></li>
+</ol>
+</li>
+<li><p>EndWhile</p></li>
+</ol>
+</section>
+</div><p><span class="math notranslate nohighlight">\(\bm{v}_1 = (14, -47)\)</span>, <span class="math notranslate nohighlight">\(\bm{v}_2 = (-362, -131)\)</span>, 6 steps.</p>
+<p><span class="math notranslate nohighlight">\(\bm{v}_1 = (14, -47)\)</span>, <span class="math notranslate nohighlight">\(\bm{v}_2 = (-362, -131)\)</span>, 6 steps.</p>
+<p><span class="math notranslate nohighlight">\(\bm{v}_1 = (147, 330)\)</span>, <span class="math notranslate nohighlight">\(\bm{v}_2 = (690, -207)\)</span>, 7 steps.</p>
+<hr class="docutils" />
+<p><strong>Câu 7.46.</strong> Do <span class="math notranslate nohighlight">\(W^\perp\)</span> là orthogonal complement của <span class="math notranslate nohighlight">\(W\)</span> trong <span class="math notranslate nohighlight">\(V\)</span> nên nếu <span class="math notranslate nohighlight">\(\bm{z} \in W^\perp\)</span> thì <span class="math notranslate nohighlight">\(\bm{z} \cdot \bm{y} = 0\)</span>, với mọi <span class="math notranslate nohighlight">\(\bm{y} \in W\)</span>.</p>
+<p>Với hai vector <span class="math notranslate nohighlight">\(\bm{z}_1, \bm{z}_2 \in W^\perp\)</span> ta có <span class="math notranslate nohighlight">\(\bm{z}_1 \cdot \bm{y} = \bm{z}_2 \cdot \bm{y} = 0\)</span>, với mọi <span class="math notranslate nohighlight">\(\bm{y} \in W\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\((\bm{z}_1 + \bm{z}_2) \cdot \bm{y} = 0 \Rightarrow \bm{z}_1 + \bm{z}_2 \in W^\perp\)</span>.</p>
+<p>Ta lại có <span class="math notranslate nohighlight">\(\alpha \bm{z}_1 \cdot \bm{y} = \alpha \cdot 0 = 0 \Rightarrow \alpha\bm{z}_1 \in W^\perp\)</span> với mọi <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>.</p>
+<p>Tới đây ta có hai cách giải.</p>
+<p><strong>Cách 1.</strong> Ta có <span class="math notranslate nohighlight">\(W \cup W^\perp = \{\bm{0}\}\)</span>. Nếu <span class="math notranslate nohighlight">\(\bm{u}\)</span> thuộc cả hai tập <span class="math notranslate nohighlight">\(W\)</span> và <span class="math notranslate nohighlight">\(W^\perp\)</span> thì <span class="math notranslate nohighlight">\(\bm{u} \cdot \bm{u} = 0 \Rightarrow \bm{u} = \bm{0}\)</span>.</p>
+<p>Ký hiệu <span class="math notranslate nohighlight">\(U = W + W^\perp\)</span>, ta chứng minh <span class="math notranslate nohighlight">\(W = V\)</span>.</p>
+<p>Ta có thể chọn một cơ sở trực chuẩn (orthonormal basis) trong <span class="math notranslate nohighlight">\(U\)</span> và mở rộng nó thành cơ sở trực chuẩn trong <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>Khi đó, nếu <span class="math notranslate nohighlight">\(U \neq V\)</span> thì có một phần tử <span class="math notranslate nohighlight">\(\bm{e}\)</span> trong cơ sở của <span class="math notranslate nohighlight">\(V\)</span> vuông góc với <span class="math notranslate nohighlight">\(U\)</span>. Do <span class="math notranslate nohighlight">\(U\)</span> chứa <span class="math notranslate nohighlight">\(W\)</span> và <span class="math notranslate nohighlight">\(\bm{e}\)</span> vuông góc với <span class="math notranslate nohighlight">\(U\)</span> nên <span class="math notranslate nohighlight">\(\bm{e} \in W^\perp\)</span>.</p>
+<p>Phần sau là không gian con của <span class="math notranslate nohighlight">\(W\)</span>, do đó <span class="math notranslate nohighlight">\(e\)</span> thuộc <span class="math notranslate nohighlight">\(W\)</span>, mâu thuẫn.</p>
+<p><strong>Cách 2.</strong> Đặt <span class="math notranslate nohighlight">\(\{ \bm{e}_1, \bm{e}_2, \cdots, \bm{e}_k \}\)</span> là cơ sở trực chuẩn của không gian con <span class="math notranslate nohighlight">\(W\)</span>. Với mỗi <span class="math notranslate nohighlight">\(\bm{v} \in V\)</span>, đặt</p>
+<div class="math notranslate nohighlight">
+\[P(\bm{v}) = \sum_{j=1}^{k} (\bm{v} \cdot \bm{e}_j)  \cdot \bm{e}_j\]</div>
+<p>Khi đó với mọi <span class="math notranslate nohighlight">\(\bm{v} \in V\)</span> thì <span class="math notranslate nohighlight">\(\bm{v} = \underbrace{P(\bm{v})}_{\in W} + \underbrace{(\bm{v} - P(\bm{v}))}_{\in W^\perp}\)</span>.</p>
+<p>Ở đây <span class="math notranslate nohighlight">\(\bm{v} - P(\bm{v}) \in W^\perp\)</span> là vì nếu <span class="math notranslate nohighlight">\(j \in \{ 1, 2, \cdots, k \}\)</span> thì</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    (\bm{v} - P(\bm{v})) \cdot e_j &amp; = \left(\bm{v} - \sum_{l=1}^{k} (\bm{v} \cdot \bm{e}_l) \cdot \bm{e}_l \right) \cdot \bm{e}_j \\
+        &amp; = \bm{v} \cdot \bm{e}_j - \bm{v} \cdot \bm{e}_j = 0	
+\end{align*}\end{split}\]</div>
+<p>Do <span class="math notranslate nohighlight">\(\{ \bm{e}_1, \cdots, \bm{e}_k \}\)</span> là cơ sở của <span class="math notranslate nohighlight">\(W\)</span>, điều này cho ta <span class="math notranslate nohighlight">\(\bm{v} - P(\bm{v}) \in W^\perp\)</span>.</p>
+<p>Như vậy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+    \lVert \bm{v} \rVert^2 &amp; = (a \bm{w} + b \bm{w}')^2 = a^2 \bm{w}^2 + 2ab \bm{w} \bm{w}' + b^2 \bm{w}'^2 \\
+    &amp; = a^2 \lVert \bm{w} \rVert^2 + 0 + b^2 \lVert \bm{w}' \rVert^2 = a^2 \lVert \bm{w} \rVert^2 + b^2 \lvert \bm{w}' \rVert^2.
+\end{align*}\end{split}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Judson.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Abstract Algebra: Theory and Applications</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ctf/2020/2020.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">CTF 2020</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-discrete-logarithms-and-diffie-hellman">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-integer-factorization-and-rsa">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-lattices-and-cryptography">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By myself
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
